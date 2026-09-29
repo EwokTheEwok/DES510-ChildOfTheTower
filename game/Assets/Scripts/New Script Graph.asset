@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95e66c6366d904e98bc83428217d4fd7, type: 3}
+  m_Name: New Script Graph
+  m_EditorClassIdentifier: Unity.VisualScripting.Flow::Unity.VisualScripting.ScriptGraphAsset
+  _data:
+    _json: '{"graph":{"variables":{"Kind":"Flow","collection":{"$content":[],"$version":"A"},"$version":"A"},"controlInputDefinitions":[],"controlOutputDefinitions":[],"valueInputDefinitions":[],"valueOutputDefinitions":[],"title":"Player
+      Controller","summary":"Controls player movement","pan":{"x":-294.0391,"y":144.0},"zoom":1.0,"elements":[{"chainable":false,"parameterNames":["message"],"member":{"name":"print","parameterTypes":["System.Object"],"targetType":"UnityEngine.MonoBehaviour","targetTypeName":"UnityEngine.MonoBehaviour","$version":"A"},"defaultValues":{},"position":{"x":362.0,"y":-230.0},"guid":"2c8a4a05-0e8e-4e89-bd5a-86887d43d88f","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"9"},{"type":"System.String","value":{"$content":"test","$type":"System.String"},"defaultValues":{},"position":{"x":197.0,"y":-81.0},"guid":"d5bdcdc5-2958-445e-91d3-5800be5f7e04","$version":"A","$type":"Unity.VisualScripting.Literal","$id":"13"},{"coroutine":false,"defaultValues":{},"position":{"x":-646.0,"y":10.0},"guid":"b38b3678-8913-4071-ba16-127b793aea4b","$version":"A","$type":"Unity.VisualScripting.Update","$id":"15"},{"chainable":false,"parameterNames":["speed"],"member":{"name":"SimpleMove","parameterTypes":["UnityEngine.Vector3"],"targetType":"UnityEngine.CharacterController","targetTypeName":"UnityEngine.CharacterController","$version":"A"},"defaultValues":{"target":null,"%speed":{"x":5.0,"y":0.0,"z":0.0,"$type":"UnityEngine.Vector3"}},"position":{"x":-431.0,"y":3.0},"guid":"5d775cd5-23ce-4089-bf59-6ae4e11eef18","$version":"A","$type":"Unity.VisualScripting.InvokeMember","$id":"17"},{"chainable":false,"parameterNames":["axisName"],"member":{"name":"GetAxis","parameterTypes":["System.String"],"targetType":"UnityEngine.Input","targetTypeName":"UnityEngine.Input","$version":"A"},"defaultValues":{"%axisName":{"$content":"Move","$type":"System.String"}},"position":{"x":-451.0,"y":177.0},"guid":"2906ca5b-987f-437b-8b63-0c67d37576be","$version":"A","$type":"Unity.VisualScripting.InvokeMember"},{"sourceUnit":{"$ref":"15"},"sourceKey":"trigger","destinationUnit":{"$ref":"17"},"destinationKey":"enter","guid":"f283d466-b5f8-444b-afc3-f408dd905730","$type":"Unity.VisualScripting.ControlConnection"},{"sourceUnit":{"$ref":"13"},"sourceKey":"output","destinationUnit":{"$ref":"9"},"destinationKey":"%message","guid":"9be85564-45b8-4a03-aa74-a346e84f7981","$type":"Unity.VisualScripting.ValueConnection"}],"$version":"A"}}'
+    _objectReferences: []
