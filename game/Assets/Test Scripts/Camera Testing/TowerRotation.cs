@@ -6,7 +6,7 @@ using UnityEngine;
 public class TowerRotation : MonoBehaviour
 {
     public Transform pivot;                  // the fixed point to orbit around (we can hook an object up to the script IN unity)
-    public float rotationStep = 45f;         // degrees per key press
+    public float rotationStep = 60f;         // degrees per key press
     public float camRotationDuration = 0.5f;
     public Ease ease = Ease.InOutSine;
 
