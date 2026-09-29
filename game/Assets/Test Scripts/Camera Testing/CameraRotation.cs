@@ -6,7 +6,7 @@ using UnityEngine;
 public class CameraRotation : MonoBehaviour
 {
     public float camRotationSpeed = 90f;
-    float camRotation;
+    float camRotation = 0;
 
     float camRotationDuration = 0.5f;
     bool isCameraRotating = false;
@@ -17,7 +17,6 @@ public class CameraRotation : MonoBehaviour
     }
     void RotateCamera()
     {
-        camRotation = Input.GetAxis("Horizontal") * camRotationSpeed;
 
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
@@ -25,8 +24,8 @@ public class CameraRotation : MonoBehaviour
             if (!isCameraRotating)
             {
                 camRotation += 45;
+                transform.DORotate(new Vector3(0, camRotation, 0), camRotationDuration);
                 isCameraRotating = true;
-                transform.DORotate(new Vector3(40, camRotation, 0), camRotationDuration);
                 Invoke("SetCameraRotateToFalse", camRotationDuration);
             }
         }
@@ -37,8 +36,8 @@ public class CameraRotation : MonoBehaviour
             if (!isCameraRotating)
             {
                 camRotation -= 45;
+                transform.DORotate(new Vector3(0, camRotation, 0), camRotationDuration);
                 isCameraRotating = true;
-                transform.DORotate(new Vector3(40, -camRotation, 0), camRotationDuration);
                 Invoke("SetCameraRotateToFalse", camRotationDuration);
             }
         }

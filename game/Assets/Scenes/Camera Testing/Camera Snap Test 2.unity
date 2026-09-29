@@ -470,6 +470,7 @@ GameObject:
   - component: {fileID: 944146921}
   - component: {fileID: 944146920}
   - component: {fileID: 944146919}
+  - component: {fileID: 944146923}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -565,7 +566,7 @@ Transform:
   m_GameObject: {fileID: 944146918}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0030819, y: 3.5694, z: 2.3296}
+  m_LocalPosition: {x: 0, y: 0, z: 5}
   m_LocalScale: {x: 1.730259, y: 4.6162, z: 1.730259}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -575,6 +576,19 @@ Transform:
   - {fileID: 1235029789}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &944146923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 944146918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 338707c1e58d06a4683f68251b02be52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraRotation
+  camRotationSpeed: 90
 --- !u!1 &1078782845
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +841,6 @@ GameObject:
   - component: {fileID: 1883148770}
   - component: {fileID: 1883148769}
   - component: {fileID: 1883148772}
-  - component: {fileID: 1883148773}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -878,7 +891,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 20
+  orthographic size: 15
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -902,13 +915,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1883148768}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3420201, y: 0, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
+  m_LocalPosition: {x: 0, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 40, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}
 --- !u!114 &1883148772
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -953,19 +966,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!114 &1883148773
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1883148768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 338707c1e58d06a4683f68251b02be52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraRotation
-  camRotationSpeed: 90
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
