@@ -18,7 +18,7 @@ public class CameraRotation : MonoBehaviour
     void RotateCamera()
     {
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
+        if (Input.GetKeyDown(KeyCode.E))
         {
 
             if (!isCameraRotating)
@@ -30,7 +30,7 @@ public class CameraRotation : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
 
             if (!isCameraRotating)
