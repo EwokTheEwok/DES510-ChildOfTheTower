@@ -1,4 +1,3 @@
-using System.Drawing;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,6 +6,7 @@ public class CameraRuules : MonoBehaviour
     public Transform player;
     Camera cam;
     float size = 2.0f;
+    Vector3 worldPivotPos = new (0,0,0);
 
     void Awake()
     {
@@ -34,14 +34,20 @@ public class CameraRuules : MonoBehaviour
     }
     void Update()
     {
-        var dir = player.transform.position - transform.position;
-        var ray = new Ray(transform.position, dir.normalized);
+        var cameraToPivot = worldPivotPos - transform.position;
+        var pivotToPlayer = player.transform.position - worldPivotPos;
+        var orthoCameraPos = pivotToPlayer + cameraToPivot;
+
+        var dir = cameraToPivot.normalized;
+
+        //var ray = new Ray(transform.position, dir);
         LayerMask wallMask = LayerMask.GetMask("Wall");
 
-        //Debug.DrawRay(transform.position, dir.normalized * 1000, Color.white, 0.1f, true);
+
+        Debug.DrawRay(orthoCameraPos, dir.normalized * 1000, Color.white, 0.1f, true);
 
 
-        if (Physics.Raycast(transform.position, dir.normalized, Mathf.Infinity, wallMask))
+        if (Physics.Raycast(orthoCameraPos, dir.normalized, Mathf.Infinity, wallMask))
         {
             Shader.SetGlobalInt("BehindWall", 1);
             Debug.Log(true);
