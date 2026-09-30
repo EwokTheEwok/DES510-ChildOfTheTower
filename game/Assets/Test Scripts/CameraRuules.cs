@@ -4,6 +4,9 @@ using UnityEngine.UI;
 public class CameraRuules : MonoBehaviour
 {
     public Transform player;
+    public MeshCollider towerCollider;
+    public CapsuleCollider playerCollider;
+
     Camera cam;
     float size = 2.0f;
     Vector3 worldPivotPos = new (0,0,0);
@@ -25,7 +28,7 @@ public class CameraRuules : MonoBehaviour
         // When the wall is infront of the player
         Shader.SetGlobalVector("PlayerWorldPos", playerPos);
         Shader.SetGlobalVector("CameraForward", transform.forward);
-        Debug.Log(vp);
+        //Debug.Log(vp);
 
         // Flattening the camera veiw to stop weird graphical glitch effect on angled walls
         Vector3 flat = transform.forward;
@@ -34,28 +37,32 @@ public class CameraRuules : MonoBehaviour
     }
     void Update()
     {
-        var cameraToPivot = worldPivotPos - transform.position;
-        var pivotToPlayer = player.transform.position - worldPivotPos;
-        var orthoCameraPos = pivotToPlayer + cameraToPivot;
+        Vector3 playerCameraSpaceOffset = cam.worldToCameraMatrix.MultiplyPoint3x4(player.transform.position);
+        Vector3 cameraHorizontalPos = transform.position + cam.cameraToWorldMatrix.MultiplyVector(new Vector3(playerCameraSpaceOffset.x, 0, 0));
+        Vector3 cameraToPlayer = player.position - cameraHorizontalPos;
+        var disp = cameraToPlayer;
 
-        var dir = cameraToPivot.normalized;
+        Debug.DrawRay(cameraHorizontalPos, disp, Color.white, 0.1f, true);
 
-        //var ray = new Ray(transform.position, dir);
-        LayerMask wallMask = LayerMask.GetMask("Wall");
-
-
-        Debug.DrawRay(orthoCameraPos, dir.normalized * 1000, Color.white, 0.1f, true);
-
-
-        if (Physics.Raycast(orthoCameraPos, dir.normalized, Mathf.Infinity, wallMask))
+        /*if (towerCollider.bounds.Intersects(playerCollider.bounds))
         {
-            Shader.SetGlobalInt("BehindWall", 1);
-            Debug.Log(true);
+            Shader.SetGlobalInteger("InsideTower", 1);
         }
         else
         {
-            Shader.SetGlobalInt("BehindWall", 0);
-            Debug.Log(false);
+            
+        }*/
+
+            LayerMask wallMask = LayerMask.GetMask("Wall");
+        if (Physics.Raycast(cameraHorizontalPos, disp, disp.magnitude, wallMask))
+        {
+            Shader.SetGlobalInteger("BehindWall", 1);
+            //Debug.Log(true);
+        }
+        else
+        {
+            Shader.SetGlobalInteger("BehindWall", 0);
+            //Debug.Log(false);
         }
     }
 }
