@@ -9,16 +9,19 @@ public class BrickBehaviorTest : MonoBehaviour
     // Brick Prefab
     [SerializeField] private GameObject _brickPrefab;
 
-    [SerializeField] private GameObject _currentBrick;
+    public GameObject _currentBrick;
 
     private Transform[] _spawnLocations;
 
     private int _spawnCount;
 
-    private int _spawnLimit;
+    public int _spawnLimit;
 
     [SerializeField] private LayerMask _blockMask;
 
+    public BrickAnimHandler AnimationHandler;
+
+    // Depending on which key is pressed, the corresponding spawn location is mapped and a new brick is instantiated (if not blocked by a previous brick)
     void BrickExtend()
     {
         if (Keyboard.current.spaceKey.wasPressedThisFrame && _spawnCount < _spawnLimit)
@@ -28,6 +31,7 @@ public class BrickBehaviorTest : MonoBehaviour
             if (!IsBlocked(sp))
             {
                 _currentBrick = Instantiate(_brickPrefab, sp.position, sp.rotation);
+                AnimationHandler.AnimationHandler();
                 _spawnCount++;
                 CacheSpawnLocations();
             }
@@ -40,6 +44,7 @@ public class BrickBehaviorTest : MonoBehaviour
             if (!IsBlocked(sp))
             {
                 _currentBrick = Instantiate(_brickPrefab, sp.position, sp.rotation);
+                AnimationHandler.AnimationHandler();
                 _spawnCount++;
                 CacheSpawnLocations();
             }
@@ -52,6 +57,7 @@ public class BrickBehaviorTest : MonoBehaviour
             if (!IsBlocked(sp))
             {
                 _currentBrick = Instantiate(_brickPrefab, sp.position, sp.rotation);
+                AnimationHandler.AnimationHandler();
                 _spawnCount++;
                 CacheSpawnLocations();
             }
@@ -64,6 +70,7 @@ public class BrickBehaviorTest : MonoBehaviour
             if (!IsBlocked(sp))
             {
                 _currentBrick = Instantiate(_brickPrefab, sp.position, sp.rotation);
+                AnimationHandler.AnimationHandler();
                 _spawnCount++;
                 CacheSpawnLocations();
             }
@@ -76,6 +83,7 @@ public class BrickBehaviorTest : MonoBehaviour
             if (!IsBlocked(sp))
             {
                 _currentBrick = Instantiate(_brickPrefab, sp.position, sp.rotation);
+                AnimationHandler.AnimationHandler();
                 _spawnCount++;
                 CacheSpawnLocations();
             }
@@ -88,18 +96,21 @@ public class BrickBehaviorTest : MonoBehaviour
             if (!IsBlocked(sp))
             {
                 _currentBrick = Instantiate(_brickPrefab, sp.position, sp.rotation);
+                AnimationHandler.AnimationHandler();
                 _spawnCount++;
                 CacheSpawnLocations();
             }
         }
     }
 
+    // Bool which determines whether a brick is blocked by using a CheckBox
     private bool IsBlocked(Transform sp)
     {
         Vector3 halfExtents = new Vector3(0.3f, 0.3f, 0.3f);
         return Physics.CheckBox(sp.position, halfExtents, sp.rotation, _blockMask);
     }
 
+    // After a new brick is spawned, updates the transforms used for collision detection to be relative to the new brick
     void CacheSpawnLocations()
     {
         _spawnLocations = new Transform[_currentBrick.transform.childCount];
@@ -113,7 +124,9 @@ public class BrickBehaviorTest : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _spawnLimit = 100;
+        //_spawnLimit = 100;
+
+        //AnimationHandler.AnimationHandler();
 
         CacheSpawnLocations();
     }
