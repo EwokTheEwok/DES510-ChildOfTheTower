@@ -1,26 +1,29 @@
+using System.Drawing;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraRuules : MonoBehaviour
 {
     public Transform player;
-
     Camera cam;
+    float size = 2.0f;
 
     void Awake()
     {
         cam = GetComponent<Camera>();
+        Shader.SetGlobalFloat("Size", size);
     }
 
     void LateUpdate()
     {
-        Vector3 target = player.position + Vector3.up;
+        Vector3 playerPos = player.position + Vector3.up;
 
         // Where the player is on screen
-        Vector3 vp = cam.WorldToViewportPoint(target);
-        Shader.SetGlobalVector("Position", new Vector4(vp.x, vp.y, 0, 0));
+        Vector3 vp = cam.WorldToViewportPoint(playerPos);
+        Shader.SetGlobalVector("PlayerScreenPos", new Vector4(vp.x, vp.y, 0, 0));
 
         // When the wall is infront of the player
-        Shader.SetGlobalVector("PlayerPos2", target);
+        Shader.SetGlobalVector("PlayerWorldPos", playerPos);
         Shader.SetGlobalVector("CameraForward", transform.forward);
         Debug.Log(vp);
 
@@ -28,5 +31,25 @@ public class CameraRuules : MonoBehaviour
         Vector3 flat = transform.forward;
         flat.y = 0;
         Shader.SetGlobalVector("CameraForwardFlat", flat.normalized);
+    }
+    void Update()
+    {
+        var dir = player.transform.position - transform.position;
+        var ray = new Ray(transform.position, dir.normalized);
+        LayerMask wallMask = LayerMask.GetMask("Wall");
+
+        //Debug.DrawRay(transform.position, dir.normalized * 1000, Color.white, 0.1f, true);
+
+
+        if (Physics.Raycast(transform.position, dir.normalized, Mathf.Infinity, wallMask))
+        {
+            Shader.SetGlobalInt("BehindWall", 1);
+            Debug.Log(true);
+        }
+        else
+        {
+            Shader.SetGlobalInt("BehindWall", 0);
+            Debug.Log(false);
+        }
     }
 }
