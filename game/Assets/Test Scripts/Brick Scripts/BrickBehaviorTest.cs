@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.Mathematics;
 using Unity.VisualScripting;
@@ -21,6 +22,12 @@ public class BrickBehaviorTest : MonoBehaviour
 
     public BrickAnimHandler AnimationHandler;
 
+    GameObject MostRecentBrick;
+    
+    List<GameObject> instances = new List<GameObject>();
+
+    [SerializeField] GameObject _startingBrick;
+
     // Depending on which key is pressed, the corresponding spawn location is mapped and a new brick is instantiated (if not blocked by a previous brick)
     void BrickExtend()
     {
@@ -31,6 +38,10 @@ public class BrickBehaviorTest : MonoBehaviour
             if (!IsBlocked(sp))
             {
                 _currentBrick = Instantiate(_brickPrefab, sp.position, sp.rotation);
+                
+                instances.Add(_currentBrick);
+                MostRecentBrick = _currentBrick;
+
                 AnimationHandler.AnimationHandler();
                 _spawnCount++;
                 CacheSpawnLocations();
@@ -44,6 +55,10 @@ public class BrickBehaviorTest : MonoBehaviour
             if (!IsBlocked(sp))
             {
                 _currentBrick = Instantiate(_brickPrefab, sp.position, sp.rotation);
+
+                instances.Add(_currentBrick);
+                MostRecentBrick = _currentBrick;
+
                 AnimationHandler.AnimationHandler();
                 _spawnCount++;
                 CacheSpawnLocations();
@@ -57,6 +72,10 @@ public class BrickBehaviorTest : MonoBehaviour
             if (!IsBlocked(sp))
             {
                 _currentBrick = Instantiate(_brickPrefab, sp.position, sp.rotation);
+
+                instances.Add(_currentBrick);
+                MostRecentBrick = _currentBrick;
+
                 AnimationHandler.AnimationHandler();
                 _spawnCount++;
                 CacheSpawnLocations();
@@ -70,6 +89,10 @@ public class BrickBehaviorTest : MonoBehaviour
             if (!IsBlocked(sp))
             {
                 _currentBrick = Instantiate(_brickPrefab, sp.position, sp.rotation);
+
+                instances.Add(_currentBrick);
+                MostRecentBrick = _currentBrick;
+
                 AnimationHandler.AnimationHandler();
                 _spawnCount++;
                 CacheSpawnLocations();
@@ -83,6 +106,10 @@ public class BrickBehaviorTest : MonoBehaviour
             if (!IsBlocked(sp))
             {
                 _currentBrick = Instantiate(_brickPrefab, sp.position, sp.rotation);
+
+                instances.Add(_currentBrick);
+                MostRecentBrick = _currentBrick;
+
                 AnimationHandler.AnimationHandler();
                 _spawnCount++;
                 CacheSpawnLocations();
@@ -96,6 +123,10 @@ public class BrickBehaviorTest : MonoBehaviour
             if (!IsBlocked(sp))
             {
                 _currentBrick = Instantiate(_brickPrefab, sp.position, sp.rotation);
+
+                instances.Add(_currentBrick);
+                MostRecentBrick = _currentBrick;
+
                 AnimationHandler.AnimationHandler();
                 _spawnCount++;
                 CacheSpawnLocations();
@@ -124,16 +155,31 @@ public class BrickBehaviorTest : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //_spawnLimit = 100;
-
-        //AnimationHandler.AnimationHandler();
-
         CacheSpawnLocations();
     }
 
     // Update is called once per frame
     void Update()
     {
+        DespawnBrick();
         BrickExtend();
+    }
+
+    void DespawnBrick()
+    {
+        if (Keyboard.current.zKey.wasPressedThisFrame)
+        {
+            if (instances.Count == 0) return;
+
+            var last = instances[instances.Count - 1];
+            instances.RemoveAt(instances.Count - 1);
+            Destroy(last);
+            _spawnCount--;
+
+            MostRecentBrick = instances.Count > 0 ? instances[instances.Count - 1] : null;
+            _currentBrick = MostRecentBrick != null ? MostRecentBrick : _startingBrick;
+
+            CacheSpawnLocations();
+        }
     }
 }
