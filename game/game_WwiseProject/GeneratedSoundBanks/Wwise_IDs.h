@@ -21,6 +21,7 @@ namespace AK
         static const AkUniqueID BRICK_05 = 11539578U;
         static const AkUniqueID BRICK_06 = 11539577U;
         static const AkUniqueID BRICK_07 = 11539576U;
+        static const AkUniqueID BRICK_REVERSE = 2599784423U;
         static const AkUniqueID BRICKMODE_START = 2475923824U;
         static const AkUniqueID PLAY_TITLELOOP = 1355629322U;
     } // namespace EVENTS

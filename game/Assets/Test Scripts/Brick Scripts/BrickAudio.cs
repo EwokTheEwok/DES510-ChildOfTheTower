@@ -6,6 +6,8 @@ public class BrickAudio : MonoBehaviour
 
     public AK.Wwise.Event[] _brickEvents;
 
+    public AK.Wwise.Event _brickReverseEvent;
+
     public void PostBrickEvent()
     {
         //if (_brickBehaviorTest == null || _brickEvents.Length == 0) return;
@@ -15,13 +17,8 @@ public class BrickAudio : MonoBehaviour
         _brickEvents[i].Post(gameObject);
     }
 
-    void Start()
+    public void BrickReverse()
     {
-        
-    }
-
-    void Update()
-    {
-        
+        _brickReverseEvent.Post(gameObject);
     }
 }

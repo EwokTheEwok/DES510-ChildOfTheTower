@@ -182,6 +182,9 @@ public class BrickBehaviorTest : MonoBehaviour
             var last = instances[instances.Count - 1];
             instances.RemoveAt(instances.Count - 1);
             Destroy(last);
+
+            _brickAudio.BrickReverse();
+
             _spawnCount--;
 
             MostRecentBrick = instances.Count > 0 ? instances[instances.Count - 1] : null;

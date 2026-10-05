@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{BCB7C12A-1790-60AF-FB50-DD26ACEDEFD5}",
+    "Hash": "{90615DBB-FD96-C4CB-6138-75DA5E21DEEA}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -22,6 +22,14 @@
       "Location": "Memory",
       "ShortName": "sfx_brickplace_007.wav",
       "CachePath": "0B/{0B8ECC67-90D4-D0FF-8FCC-A2EE521D8D9A}.wem"
+     },
+     {
+      "Id": "95717730",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickreverse_004.wav",
+      "CachePath": "35/{357910F8-91B1-761A-868A-A5FF4D507D23}.wem"
      },
      {
       "Id": "100967751",
@@ -40,12 +48,36 @@
       "CachePath": "2D/{2DBBD0FA-F941-D5AC-0763-C38EDDF5B2E9}.wem"
      },
      {
+      "Id": "485851107",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickreverse_003.wav",
+      "CachePath": "A7/{A7F5B52F-EF64-8E19-86D7-A89E1A18F20E}.wem"
+     },
+     {
+      "Id": "541945125",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickreverse_005.wav",
+      "CachePath": "19/{1966865C-4D28-D1C1-A7A1-13C4F9F04D46}.wem"
+     },
+     {
       "Id": "618140102",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "sfx_brickplace_004.wav",
       "CachePath": "71/{711A4671-A4B6-D922-5024-35085F8D9E6B}.wem"
+     },
+     {
+      "Id": "730654876",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickreverse_001.wav",
+      "CachePath": "00/{00458767-6806-E832-DDDB-EA16F7E9B501}.wem"
      },
      {
       "Id": "749983052",
@@ -86,6 +118,14 @@
       "Location": "Memory",
       "ShortName": "sfx_brickplace_002.wav",
       "CachePath": "F2/{F2CE1D33-6B36-50E7-784D-8D8B5FC8A63C}.wem"
+     },
+     {
+      "Id": "1009954480",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickreverse_002.wav",
+      "CachePath": "1B/{1B6537A8-6006-D9ED-FE42-74D40CEC0A0D}.wem"
      }
     ],
     "Events": [
@@ -1090,6 +1130,33 @@
       ]
      },
      {
+      "Id": "2599784423",
+      "Name": "Brick_Reverse",
+      "ObjectPath": "\\Events\\SFX Events\\Brick_Reverse",
+      "GUID": "{CCC78528-A90C-4007-92EE-6BAF0DC9F041}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "0.9200417",
+      "DurationMax": "0.9200417",
+      "MediaRefs": [
+       {
+        "Id": "95717730"
+       },
+       {
+        "Id": "485851107"
+       },
+       {
+        "Id": "541945125"
+       },
+       {
+        "Id": "730654876"
+       },
+       {
+        "Id": "1009954480"
+       }
+      ]
+     },
+     {
       "Id": "2475923824",
       "Name": "BrickMode_Start",
       "ObjectPath": "\\Events\\SFX Events\\BrickMode_Start",
@@ -1189,6 +1256,6 @@
     ]
    }
   ],
-  "FileHash": "{265B0063-FFCF-C48D-DF28-C9A73FAC0EAF}"
+  "FileHash": "{F82585C6-1B53-C926-B960-E20F3A74E825}"
  }
 }
