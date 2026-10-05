@@ -1,4 +1,5 @@
-using System;
+using System.ComponentModel;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,6 +18,8 @@ public class Player : MonoBehaviour
     Vector3 displacement;
     bool moveInput = false;
 
+    public Vector3 cameraSpaceMoveDir;
+
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -27,6 +30,8 @@ public class Player : MonoBehaviour
     private void FixedUpdate()
     {
         float timeStep = Time.fixedDeltaTime;
+        cameraSpaceMoveDir = playerInput.camera.transform.TransformDirection(new Vector3(moveDir.x, 0f, moveDir.y));
+       // Vector3 cameraWorldLook = cameraLook * playerInput.camera.cameraToWorldMatrix();
 
         //Vertical movement (jump/gravity)
         if (charControl.isGrounded)
@@ -38,7 +43,7 @@ public class Player : MonoBehaviour
             velocity.y -= gravity * timeStep;
 
         if (moveInput)
-            velocity = Vector3.MoveTowards(velocity, new Vector3(moveDir.x * maxSpeed, velocity.y, moveDir.y * maxSpeed), moveAccel * timeStep);
+            velocity = Vector3.MoveTowards(velocity, new Vector3(cameraSpaceMoveDir.x * maxSpeed, velocity.y, cameraSpaceMoveDir.z * maxSpeed), moveAccel * timeStep);
         else
             velocity = Vector3.MoveTowards(velocity, new Vector3(0f, velocity.y, 0f), moveDeaccel * timeStep);
 
