@@ -1,5 +1,4 @@
-using System.ComponentModel;
-using Unity.Collections;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +19,7 @@ public class Player : MonoBehaviour
 
     public Vector3 cameraSpaceMoveDir;
 
+
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -31,7 +31,6 @@ public class Player : MonoBehaviour
     {
         float timeStep = Time.fixedDeltaTime;
         cameraSpaceMoveDir = playerInput.camera.transform.TransformDirection(new Vector3(moveDir.x, 0f, moveDir.y));
-       // Vector3 cameraWorldLook = cameraLook * playerInput.camera.cameraToWorldMatrix();
 
         //Vertical movement (jump/gravity)
         if (charControl.isGrounded)
