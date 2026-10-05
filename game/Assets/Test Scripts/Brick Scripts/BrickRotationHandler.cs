@@ -37,7 +37,7 @@ public class BrickRotationHandler : MonoBehaviour
 
     private void FixedUpdate()
     {
-        RaycastHit hit;
+        //RaycastHit hit;
 
         //if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, _brickMask))
         //{
