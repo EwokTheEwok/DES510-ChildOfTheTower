@@ -10,6 +10,7 @@ public class PlayerCamera : MonoBehaviour
     public float rotationDegrees = 60f;            //Angle of rotation
     public float camRotationDuration = 0.5f;    //Smoothing
     public Ease ease = Ease.InOutSine;          //Interpolation
+    public Transform virtualCamera;
 
     //Private
     bool isCameraRotating = false;
@@ -19,7 +20,8 @@ public class PlayerCamera : MonoBehaviour
     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        playerInput.camera.transform.LookAt(pivotObject, Vector3.up);
+        Vector3 towerStart = new Vector3(pivotObject.position.x, transform.position.y, pivotObject.position.z);
+        virtualCamera.LookAt(towerStart, Vector3.up);
 
     }
 
@@ -38,7 +40,7 @@ public class PlayerCamera : MonoBehaviour
             () => Rotation,                                         //Getter (get rotation)
             newRotation => { float delta = newRotation - Rotation;  //Setter (set rotation and other functionality)
                              Rotation = newRotation;                //update rotation, then rotate around pivot using the tweened delta
-                             playerInput.camera.transform.RotateAround(pivotObject.position, Vector3.up, delta); },
+                             virtualCamera.RotateAround(pivotObject.position, Vector3.up, delta); },
             degrees,
             camRotationDuration).SetEase(ease).OnComplete(() => isCameraRotating = false);
     }
