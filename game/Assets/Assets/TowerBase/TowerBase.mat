@@ -21,8 +21,8 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TowerBase
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
-  m_Parent: {fileID: 2100000, guid: 86de56b43fc1b3948a3f14c26fb14c7b, type: 2}
+  m_Shader: {fileID: -6465566751694194690, guid: 3a98f8beb21d81d489732cbbe9c3c79f, type: 3}
+  m_Parent: {fileID: -876546973899608171, guid: 3a98f8beb21d81d489732cbbe9c3c79f, type: 3}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -30,8 +30,7 @@ Material:
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses:
   - MOTIONVECTORS
   m_LockedProperties: 
@@ -42,6 +41,7 @@ Material:
     m_Floats:
     - Size: 3
     - Smoothness: 0.5
+    - _QueueControl: 0
     - _WorkflowMode: 1
     m_Colors:
     - Position: {r: 0.5, g: 0.5, b: 0, a: 0}
