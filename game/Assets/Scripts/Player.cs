@@ -12,8 +12,6 @@ public class Player : MonoBehaviour
     public float jumpSpeed = 7.0f;
     public float moveAccel = 10.0f;
     public float moveDeaccel = 20.0f;
-    float speed;
-    Vector2 accel;
     Vector2 moveDir;
     Vector3 velocity;
     Vector3 displacement;
@@ -38,31 +36,12 @@ public class Player : MonoBehaviour
         }
         else
             velocity.y -= gravity * timeStep;
-        
-        /*
-        speed = new Vector2(velocity.x, velocity.z).magnitude;
-        accel = new Vector2(0.0f, 0.0f);
-        if (moveInput) {
-            accel = moveDir * new Vector2(moveAccel, moveAccel);
-            if (Math.Abs(velocity.x) > maxSpeed)
-                velocity.x = maxSpeed;
-            if (Math.Abs(velocity.z) > maxSpeed)
-                velocity.x = maxSpeed;
-        }
-        else if (!moveInput)
-        {
-            if (Math.Abs(velocity.x) > 0.0f)
-                accel = new Vector2(Mathf.Sign(velocity.x) * -moveDeaccel, Mathf.Sign(velocity.z) * -moveDeaccel);
-            else
-                velocity.x = 0.0f;
 
-            if (Math.Abs(velocity.z) > 0.0f)
-                accel = new Vector2(Mathf.Sign(velocity.x) * -moveDeaccel, Mathf.Sign(velocity.z) * -moveDeaccel);
-            else
-                velocity.z = 0.0f;
-        }
-        */
-        velocity = Vector3.MoveTowards(velocity, new Vector3(moveDir.x * maxSpeed, 0f, moveDir.y * maxSpeed), moveAccel * timeStep);//velocity + new Vector3(accel.x * timeStep, 0, accel.y * timeStep);
+        if (moveInput)
+            velocity = Vector3.MoveTowards(velocity, new Vector3(moveDir.x * maxSpeed, velocity.y, moveDir.y * maxSpeed), moveAccel * timeStep);
+        else
+            velocity = Vector3.MoveTowards(velocity, new Vector3(0f, velocity.y, 0f), moveDeaccel * timeStep);
+
         displacement = velocity * timeStep;
         charControl.Move(displacement);
     }
@@ -84,7 +63,7 @@ public class Player : MonoBehaviour
     {
         if (context.started && charControl.isGrounded)
         {
-            velocity.y = jumpSpeed;//jumpHeight / 0.5f;
+            velocity.y = jumpSpeed;
         }
     }
 }
