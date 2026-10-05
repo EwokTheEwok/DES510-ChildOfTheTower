@@ -426,6 +426,7 @@ GameObject:
   m_Component:
   - component: {fileID: 489514848}
   - component: {fileID: 489514847}
+  - component: {fileID: 489514849}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -473,6 +474,31 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &489514849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489514846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0ed6cf9e9cce54d920a1d56b0cdc0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkBank
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c6664eac0a0f33a4f99413cd22b36520, type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!1001 &1005143447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -541,6 +567,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8151967534945850543, guid: bb01baff7e6491045bc6704aed77e736, type: 3}
+      propertyPath: _brickBehaviorTest
+      value: 
+      objectReference: {fileID: 1787951815}
     - target: {fileID: 8199815500350723969, guid: bb01baff7e6491045bc6704aed77e736, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1
@@ -742,6 +772,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 785767859534364182, guid: bb01baff7e6491045bc6704aed77e736, type: 3}
   m_PrefabInstance: {fileID: 1005143447}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1419997580 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8151967534945850543, guid: bb01baff7e6491045bc6704aed77e736, type: 3}
+  m_PrefabInstance: {fileID: 1005143447}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419997579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127d531ba0632dc45891eb2a9564ff58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BrickAudio
 --- !u!1 &1787951814
 GameObject:
   m_ObjectHideFlags: 0
@@ -774,12 +815,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BrickBehaviorTest
   _brickPrefab: {fileID: 785767859534364182, guid: bb01baff7e6491045bc6704aed77e736, type: 3}
   _currentBrick: {fileID: 1419997579}
-  _spawnLimit: 15
+  _spawnCount: 0
+  _spawnLimit: 8
   _blockMask:
     serializedVersion: 2
     m_Bits: 64
   AnimationHandler: {fileID: 1787951817}
   _startingBrick: {fileID: 1419997579}
+  _brickAudio: {fileID: 1419997580}
 --- !u!4 &1787951816
 Transform:
   m_ObjectHideFlags: 0

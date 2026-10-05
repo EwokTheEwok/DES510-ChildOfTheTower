@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7529913016693781629}
   - component: {fileID: 4472108840906832748}
   - component: {fileID: 2581786830093217431}
+  - component: {fileID: 8151967534945850543}
   m_Layer: 6
   m_Name: Brick
   m_TagString: Brick
@@ -148,6 +149,43 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8151967534945850543
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 785767859534364182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 127d531ba0632dc45891eb2a9564ff58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BrickAudio
+  _brickEvents:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2904430e621aa65439cbc7d359e3ce12, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f81f0bcd05690fc419af3bfaa5924c66, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c8f98528d75fe8e4b8fd26a450fec9db, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9b705c1040dff3e4e93d2acc9196e51e, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0803e2e7165231b4e90242003cd12436, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1b3ef33379d10244399c471611703cb6, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: e3a398251dfa52a4c8f3afc6d71dcc89, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 53ff16204489b1b4d81677b95be93e63, type: 2}
 --- !u!1 &2090042730840049763
 GameObject:
   m_ObjectHideFlags: 0

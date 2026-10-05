@@ -6,8 +6,48 @@
 				<SoundcasterSession Name="Soundcaster" ID="{64375876-3E96-4A0D-BD44-78159E915DA3}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="Play_MusicTest" ID="{55A2DF37-CDAD-4E14-9553-F710D0374D35}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<ObjectRef Name="Play_TitleLoop" ID="{55A2DF37-CDAD-4E14-9553-F710D0374D35}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
 							<Position X="0" Y="0"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="BrickTest" ID="{CFA3D8D1-10F0-45DB-9F16-BC87CE31F093}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="BrickMode_Start" ID="{0623E312-C834-4E74-99DB-6F596933E6B6}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_0" ID="{74B4BEDF-CE76-4E01-8D7C-2F0E1207AC49}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_04" ID="{9FFBE545-8E93-467A-93DD-3738E5FD312C}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_01" ID="{BE6F6600-CE68-4F9F-84FD-6F3A7ECE0645}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_05" ID="{B2BDA832-9C90-4CC1-9AC8-E66CF9600EF4}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_02" ID="{B6A6A0DB-F576-4F15-B89F-D203A797D8CF}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_06" ID="{9BC08913-D594-4905-BEB6-5A00C4F2B621}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_03" ID="{1A127CE9-59B1-47F2-BFCB-CC7319649FD8}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_07" ID="{9A177A7F-E175-4D32-B4E5-38665680B8F6}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="4" Y="2"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>

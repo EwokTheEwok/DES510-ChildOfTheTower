@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{595D8B45-8386-48E6-A777-B36127D6A1DB}" SchemaVersion="133">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{595D8B45-8386-48E6-A777-B36127D6A1DB}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{595D8B45-8386-48E6-A777-B36127D6A1DB}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="BrickBuilding" ID="{01F874EC-5CAC-4066-85A4-74EEDEC7A799}">
+					<ChildrenList>
+						<State Name="None" ID="{1AD2C52F-4514-4778-8334-F3447D8E7CB4}"/>
+						<State Name="Brick_0" ID="{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"/>
+						<State Name="Brick_01" ID="{2E8E7386-933C-4145-8213-D16258FA9929}"/>
+						<State Name="Brick_02" ID="{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"/>
+						<State Name="Brick_03" ID="{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"/>
+						<State Name="Brick_04" ID="{4C233910-7CBA-4724-854B-83BF1BB63B83}"/>
+						<State Name="Brick_05" ID="{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"/>
+						<State Name="Brick_06" ID="{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"/>
+						<State Name="Brick_07" ID="{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

@@ -13,8 +13,39 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAY_MUSICTEST = 1414448543U;
+        static const AkUniqueID BRICK_0 = 3945088981U;
+        static const AkUniqueID BRICK_01 = 11539582U;
+        static const AkUniqueID BRICK_02 = 11539581U;
+        static const AkUniqueID BRICK_03 = 11539580U;
+        static const AkUniqueID BRICK_04 = 11539579U;
+        static const AkUniqueID BRICK_05 = 11539578U;
+        static const AkUniqueID BRICK_06 = 11539577U;
+        static const AkUniqueID BRICK_07 = 11539576U;
+        static const AkUniqueID BRICKMODE_START = 2475923824U;
+        static const AkUniqueID PLAY_TITLELOOP = 1355629322U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace BRICKBUILDING
+        {
+            static const AkUniqueID GROUP = 4138857472U;
+
+            namespace STATE
+            {
+                static const AkUniqueID BRICK_0 = 3945088981U;
+                static const AkUniqueID BRICK_01 = 11539582U;
+                static const AkUniqueID BRICK_02 = 11539581U;
+                static const AkUniqueID BRICK_03 = 11539580U;
+                static const AkUniqueID BRICK_04 = 11539579U;
+                static const AkUniqueID BRICK_05 = 11539578U;
+                static const AkUniqueID BRICK_06 = 11539577U;
+                static const AkUniqueID BRICK_07 = 11539576U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace BRICKBUILDING
+
+    } // namespace STATES
 
     namespace BANKS
     {

@@ -10,37 +10,1185 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{877DD881-AABF-E5EF-FC5A-96B023620FA6}",
+    "Hash": "{BCB7C12A-1790-60AF-FB50-DD26ACEDEFD5}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
     "Media": [
      {
-      "Id": "344617986",
+      "Id": "36094104",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "Title001_inprogress.wav",
-      "CachePath": "9A/{9A35795B-A3BB-3270-DA56-7617A94D3ED5}.wem"
+      "ShortName": "sfx_brickplace_007.wav",
+      "CachePath": "0B/{0B8ECC67-90D4-D0FF-8FCC-A2EE521D8D9A}.wem"
+     },
+     {
+      "Id": "100967751",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickplace_003.wav",
+      "CachePath": "74/{74386D23-3194-55C1-427E-87D6D0E847D7}.wem"
+     },
+     {
+      "Id": "352805634",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickplace_005.wav",
+      "CachePath": "2D/{2DBBD0FA-F941-D5AC-0763-C38EDDF5B2E9}.wem"
+     },
+     {
+      "Id": "618140102",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickplace_004.wav",
+      "CachePath": "71/{711A4671-A4B6-D922-5024-35085F8D9E6B}.wem"
+     },
+     {
+      "Id": "749983052",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickplace_008.wav",
+      "CachePath": "14/{1411206C-2E86-6276-1DFF-BE07F0A5F7D1}.wem"
+     },
+     {
+      "Id": "860063534",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickplace_001.wav",
+      "CachePath": "A9/{A9E96425-FE9A-63BC-E210-913E8CC5A5FF}.wem"
+     },
+     {
+      "Id": "908228558",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickplace_006.wav",
+      "CachePath": "BF/{BF1CE75C-96CC-357A-FE6F-C44CA721F8EE}.wem"
+     },
+     {
+      "Id": "999715590",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "mx_titleloop_150bpm_001.wav",
+      "CachePath": "80/{800707FA-B58B-1BBB-B782-B678BCE1D92D}.wem"
+     },
+     {
+      "Id": "1007541037",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickplace_002.wav",
+      "CachePath": "F2/{F2CE1D33-6B36-50E7-784D-8D8B5FC8A63C}.wem"
      }
     ],
     "Events": [
      {
-      "Id": "1414448543",
-      "Name": "Play_MusicTest",
-      "ObjectPath": "\\Events\\Music Events\\Play_MusicTest",
+      "Id": "3945088981",
+      "Name": "Brick_0",
+      "ObjectPath": "\\Events\\SFX Events\\Brick_0",
+      "GUID": "{74B4BEDF-CE76-4E01-8D7C-2F0E1207AC49}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539579",
+         "GUID": "{4C233910-7CBA-4724-854B-83BF1BB63B83}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "352805634"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "3945088981",
+         "GUID": "{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "860063534"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539577",
+         "GUID": "{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "36094104"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539581",
+         "GUID": "{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "100967751"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539578",
+         "GUID": "{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "908228558"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539582",
+         "GUID": "{2E8E7386-933C-4145-8213-D16258FA9929}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1007541037"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539576",
+         "GUID": "{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "749983052"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539580",
+         "GUID": "{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "618140102"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "4138857472",
+        "Id": "3945088981",
+        "Name": "Brick_0",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_0",
+        "GUID": "{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"
+       }
+      ]
+     },
+     {
+      "Id": "11539582",
+      "Name": "Brick_01",
+      "ObjectPath": "\\Events\\SFX Events\\Brick_01",
+      "GUID": "{BE6F6600-CE68-4F9F-84FD-6F3A7ECE0645}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539579",
+         "GUID": "{4C233910-7CBA-4724-854B-83BF1BB63B83}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "352805634"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "3945088981",
+         "GUID": "{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "860063534"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539577",
+         "GUID": "{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "36094104"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539581",
+         "GUID": "{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "100967751"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539578",
+         "GUID": "{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "908228558"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539582",
+         "GUID": "{2E8E7386-933C-4145-8213-D16258FA9929}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1007541037"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539576",
+         "GUID": "{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "749983052"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539580",
+         "GUID": "{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "618140102"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "4138857472",
+        "Id": "11539582",
+        "Name": "Brick_01",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_01",
+        "GUID": "{2E8E7386-933C-4145-8213-D16258FA9929}"
+       }
+      ]
+     },
+     {
+      "Id": "11539581",
+      "Name": "Brick_02",
+      "ObjectPath": "\\Events\\SFX Events\\Brick_02",
+      "GUID": "{B6A6A0DB-F576-4F15-B89F-D203A797D8CF}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539579",
+         "GUID": "{4C233910-7CBA-4724-854B-83BF1BB63B83}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "352805634"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "3945088981",
+         "GUID": "{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "860063534"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539577",
+         "GUID": "{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "36094104"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539581",
+         "GUID": "{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "100967751"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539578",
+         "GUID": "{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "908228558"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539582",
+         "GUID": "{2E8E7386-933C-4145-8213-D16258FA9929}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1007541037"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539576",
+         "GUID": "{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "749983052"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539580",
+         "GUID": "{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "618140102"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "4138857472",
+        "Id": "11539581",
+        "Name": "Brick_02",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_02",
+        "GUID": "{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"
+       }
+      ]
+     },
+     {
+      "Id": "11539580",
+      "Name": "Brick_03",
+      "ObjectPath": "\\Events\\SFX Events\\Brick_03",
+      "GUID": "{1A127CE9-59B1-47F2-BFCB-CC7319649FD8}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539579",
+         "GUID": "{4C233910-7CBA-4724-854B-83BF1BB63B83}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "352805634"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "3945088981",
+         "GUID": "{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "860063534"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539577",
+         "GUID": "{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "36094104"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539581",
+         "GUID": "{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "100967751"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539578",
+         "GUID": "{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "908228558"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539582",
+         "GUID": "{2E8E7386-933C-4145-8213-D16258FA9929}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1007541037"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539576",
+         "GUID": "{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "749983052"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539580",
+         "GUID": "{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "618140102"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "4138857472",
+        "Id": "11539580",
+        "Name": "Brick_03",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_03",
+        "GUID": "{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"
+       }
+      ]
+     },
+     {
+      "Id": "11539579",
+      "Name": "Brick_04",
+      "ObjectPath": "\\Events\\SFX Events\\Brick_04",
+      "GUID": "{9FFBE545-8E93-467A-93DD-3738E5FD312C}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539579",
+         "GUID": "{4C233910-7CBA-4724-854B-83BF1BB63B83}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "352805634"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "3945088981",
+         "GUID": "{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "860063534"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539577",
+         "GUID": "{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "36094104"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539581",
+         "GUID": "{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "100967751"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539578",
+         "GUID": "{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "908228558"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539582",
+         "GUID": "{2E8E7386-933C-4145-8213-D16258FA9929}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1007541037"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539576",
+         "GUID": "{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "749983052"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539580",
+         "GUID": "{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "618140102"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "4138857472",
+        "Id": "11539579",
+        "Name": "Brick_04",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_04",
+        "GUID": "{4C233910-7CBA-4724-854B-83BF1BB63B83}"
+       }
+      ]
+     },
+     {
+      "Id": "11539578",
+      "Name": "Brick_05",
+      "ObjectPath": "\\Events\\SFX Events\\Brick_05",
+      "GUID": "{B2BDA832-9C90-4CC1-9AC8-E66CF9600EF4}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539579",
+         "GUID": "{4C233910-7CBA-4724-854B-83BF1BB63B83}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "352805634"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "3945088981",
+         "GUID": "{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "860063534"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539577",
+         "GUID": "{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "36094104"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539581",
+         "GUID": "{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "100967751"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539578",
+         "GUID": "{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "908228558"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539582",
+         "GUID": "{2E8E7386-933C-4145-8213-D16258FA9929}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1007541037"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539576",
+         "GUID": "{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "749983052"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539580",
+         "GUID": "{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "618140102"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "4138857472",
+        "Id": "11539578",
+        "Name": "Brick_05",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_05",
+        "GUID": "{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"
+       }
+      ]
+     },
+     {
+      "Id": "11539577",
+      "Name": "Brick_06",
+      "ObjectPath": "\\Events\\SFX Events\\Brick_06",
+      "GUID": "{9BC08913-D594-4905-BEB6-5A00C4F2B621}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539579",
+         "GUID": "{4C233910-7CBA-4724-854B-83BF1BB63B83}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "352805634"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "3945088981",
+         "GUID": "{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "860063534"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539577",
+         "GUID": "{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "36094104"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539581",
+         "GUID": "{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "100967751"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539578",
+         "GUID": "{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "908228558"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539582",
+         "GUID": "{2E8E7386-933C-4145-8213-D16258FA9929}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1007541037"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539576",
+         "GUID": "{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "749983052"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539580",
+         "GUID": "{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "618140102"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "4138857472",
+        "Id": "11539577",
+        "Name": "Brick_06",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_06",
+        "GUID": "{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"
+       }
+      ]
+     },
+     {
+      "Id": "11539576",
+      "Name": "Brick_07",
+      "ObjectPath": "\\Events\\SFX Events\\Brick_07",
+      "GUID": "{9A177A7F-E175-4D32-B4E5-38665680B8F6}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "2.5",
+      "DurationMax": "2.5",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539579",
+         "GUID": "{4C233910-7CBA-4724-854B-83BF1BB63B83}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "352805634"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "3945088981",
+         "GUID": "{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "860063534"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539577",
+         "GUID": "{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "36094104"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539581",
+         "GUID": "{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "100967751"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539578",
+         "GUID": "{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "908228558"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539582",
+         "GUID": "{2E8E7386-933C-4145-8213-D16258FA9929}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1007541037"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539576",
+         "GUID": "{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "749983052"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4138857472",
+         "Id": "11539580",
+         "GUID": "{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "618140102"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "4138857472",
+        "Id": "11539576",
+        "Name": "Brick_07",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_07",
+        "GUID": "{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"
+       }
+      ]
+     },
+     {
+      "Id": "2475923824",
+      "Name": "BrickMode_Start",
+      "ObjectPath": "\\Events\\SFX Events\\BrickMode_Start",
+      "GUID": "{0623E312-C834-4E74-99DB-6F596933E6B6}",
+      "Color": "13",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "4138857472",
+        "Id": "3945088981",
+        "Name": "Brick_0",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_0",
+        "GUID": "{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"
+       }
+      ]
+     },
+     {
+      "Id": "1355629322",
+      "Name": "Play_TitleLoop",
+      "ObjectPath": "\\Events\\Music Events\\Play_TitleLoop",
       "GUID": "{55A2DF37-CDAD-4E14-9553-F710D0374D35}",
       "Color": "24",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "344617986"
+        "Id": "999715590"
+       }
+      ]
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "4138857472",
+      "Name": "BrickBuilding",
+      "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding",
+      "GUID": "{01F874EC-5CAC-4066-85A4-74EEDEC7A799}",
+      "States": [
+       {
+        "Id": "11539576",
+        "Name": "Brick_07",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_07",
+        "GUID": "{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"
+       },
+       {
+        "Id": "11539577",
+        "Name": "Brick_06",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_06",
+        "GUID": "{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"
+       },
+       {
+        "Id": "11539578",
+        "Name": "Brick_05",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_05",
+        "GUID": "{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"
+       },
+       {
+        "Id": "11539579",
+        "Name": "Brick_04",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_04",
+        "GUID": "{4C233910-7CBA-4724-854B-83BF1BB63B83}"
+       },
+       {
+        "Id": "11539580",
+        "Name": "Brick_03",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_03",
+        "GUID": "{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"
+       },
+       {
+        "Id": "11539581",
+        "Name": "Brick_02",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_02",
+        "GUID": "{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"
+       },
+       {
+        "Id": "11539582",
+        "Name": "Brick_01",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_01",
+        "GUID": "{2E8E7386-933C-4145-8213-D16258FA9929}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\None",
+        "GUID": "{1AD2C52F-4514-4778-8334-F3447D8E7CB4}"
+       },
+       {
+        "Id": "3945088981",
+        "Name": "Brick_0",
+        "ObjectPath": "\\States\\Default Work Unit\\BrickBuilding\\Brick_0",
+        "GUID": "{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{DE72B17D-8C22-23AC-CEA5-1C2C9CBBB06E}"
+  "FileHash": "{265B0063-FFCF-C48D-DF28-C9A73FAC0EAF}"
  }
 }

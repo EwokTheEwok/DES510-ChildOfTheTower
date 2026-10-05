@@ -14,7 +14,7 @@ public class BrickBehaviorTest : MonoBehaviour
 
     private Transform[] _spawnLocations;
 
-    private int _spawnCount;
+    public int _spawnCount;
 
     public int _spawnLimit;
 
@@ -27,6 +27,8 @@ public class BrickBehaviorTest : MonoBehaviour
     List<GameObject> instances = new List<GameObject>();
 
     [SerializeField] GameObject _startingBrick;
+
+    public BrickAudio _brickAudio;
 
     // Depending on which key is pressed, the corresponding spawn location is mapped and a new brick is instantiated (if not blocked by a previous brick)
     void BrickExtend()
@@ -43,6 +45,7 @@ public class BrickBehaviorTest : MonoBehaviour
                 MostRecentBrick = _currentBrick;
 
                 AnimationHandler.AnimationHandler();
+                _brickAudio.PostBrickEvent();
                 _spawnCount++;
                 CacheSpawnLocations();
             }
@@ -60,6 +63,7 @@ public class BrickBehaviorTest : MonoBehaviour
                 MostRecentBrick = _currentBrick;
 
                 AnimationHandler.AnimationHandler();
+                _brickAudio.PostBrickEvent();
                 _spawnCount++;
                 CacheSpawnLocations();
             }
@@ -77,6 +81,7 @@ public class BrickBehaviorTest : MonoBehaviour
                 MostRecentBrick = _currentBrick;
 
                 AnimationHandler.AnimationHandler();
+                _brickAudio.PostBrickEvent();
                 _spawnCount++;
                 CacheSpawnLocations();
             }
@@ -94,6 +99,7 @@ public class BrickBehaviorTest : MonoBehaviour
                 MostRecentBrick = _currentBrick;
 
                 AnimationHandler.AnimationHandler();
+                _brickAudio.PostBrickEvent();
                 _spawnCount++;
                 CacheSpawnLocations();
             }
@@ -111,6 +117,7 @@ public class BrickBehaviorTest : MonoBehaviour
                 MostRecentBrick = _currentBrick;
 
                 AnimationHandler.AnimationHandler();
+                _brickAudio.PostBrickEvent();
                 _spawnCount++;
                 CacheSpawnLocations();
             }
@@ -128,6 +135,7 @@ public class BrickBehaviorTest : MonoBehaviour
                 MostRecentBrick = _currentBrick;
 
                 AnimationHandler.AnimationHandler();
+                _brickAudio.PostBrickEvent();
                 _spawnCount++;
                 CacheSpawnLocations();
             }
