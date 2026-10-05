@@ -1209,7 +1209,7 @@ GameObject:
   - component: {fileID: 994322943}
   m_Layer: 0
   m_Name: Floor
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1804,6 +1804,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1238088836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2190020376120934415, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+  m_PrefabInstance: {fileID: 1492653124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1238088837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238088836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252b69e9047996242be1832424a3041d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BrickSpawnIntro
+  _introBrick: {fileID: 7835491139000275487, guid: 97df1a4b217ba8f4381a6102a1917865, type: 3}
+  _introBrickSpawn: {fileID: 2088864950}
 --- !u!1 &1241817683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +2002,106 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1492653124
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1242154570284542413, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4.5499
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242154570284542413, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 23.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242154570284542413, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 5.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242154570284542413, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -73.664
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242154570284542413, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242154570284542413, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242154570284542413, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242154570284542413, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242154570284542413, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242154570284542413, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242154570284542413, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2190020376120934415, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_Name
+      value: DropBrickTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824243453481982116, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: tagFilter
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824243453481982116, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: destroyOntriggerEnter
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824243453481982116, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824243453481982116, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1238088837}
+    - target: {fileID: 2824243453481982116, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DropIntroBrick
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824243453481982116, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BrickSpawnIntro, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2824243453481982116, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: onTriggerEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307102635952896000, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7307102635952896000, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2190020376120934415, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1238088837}
+  m_SourcePrefab: {fileID: 100100000, guid: 547b14fba79eb284baaefd41dbf7cc26, type: 3}
 --- !u!1 &1959381556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1997,7 +2116,7 @@ GameObject:
   - component: {fileID: 1959381557}
   m_Layer: 0
   m_Name: Floor (1)
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2148,6 +2267,37 @@ MonoBehaviour:
   PrimaryCamera: {fileID: 997778624}
   VirtualCameras:
   - {fileID: 1212678468}
+--- !u!1 &2088864949
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2088864950}
+  m_Layer: 0
+  m_Name: BrickSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2088864950
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2088864949}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 28.07, y: 38.8, z: -6.71}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2136257580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2244,3 +2394,5 @@ SceneRoots:
   - {fileID: 1222826498}
   - {fileID: 955645782}
   - {fileID: 1229463229}
+  - {fileID: 1492653124}
+  - {fileID: 2088864950}
