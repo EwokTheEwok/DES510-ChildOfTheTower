@@ -420,6 +420,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 9055808513177996404, guid: 24c1462392cd9d64e8dc387265683951, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 961739752}
+    - target: {fileID: 9055808513177996404, guid: 24c1462392cd9d64e8dc387265683951, type: 3}
       propertyPath: m_ActionEvents.Array.size
       value: 23
       objectReference: {fileID: 0}
@@ -977,11 +981,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -11.96
+  near clip plane: 0.1
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 27.5
+  orthographic size: 15.9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1005,8 +1009,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 961739749}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.09484703, y: 0, z: 0, w: 0.9954919}
-  m_LocalPosition: {x: 81.350464, y: 30.61919, z: -68.23424}
+  m_LocalRotation: {x: -0.002814515, y: 0, z: 0, w: 0.9999961}
+  m_LocalPosition: {x: -32.2, y: 7.61, z: -115.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1602,8 +1606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50bd511837487dd4dbff704b57e3766b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerRotation
-  pivot: {fileID: 812008617}
-  rotationStep: 60
+  pivotObject: {fileID: 0}
+  rotationDegrees: 60
   camRotationDuration: 0.5
   ease: 4
 --- !u!1 &1222826494
@@ -1756,7 +1760,7 @@ MonoBehaviour:
   data:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: fc8e2703ea1e10e489fd5e719241d045, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 8d7f6f47d77d7ee40a064338ac47b022, type: 2}
   useCallbacks: 0
   stopSoundOnDisable: 1
   Callbacks: []
@@ -1834,6 +1838,7 @@ GameObject:
   - component: {fileID: 1241817685}
   - component: {fileID: 1241817684}
   - component: {fileID: 1241817686}
+  - component: {fileID: 1241817687}
   m_Layer: 0
   m_Name: CameraTriggerTower
   m_TagString: CameraZones
@@ -1890,6 +1895,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fec8a923262faa449d223feb2d754c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+--- !u!114 &1241817687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1241817683}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ee48f0e3ffc934e8f284f88d5cac22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerMusicLoop
+  TriggerLevelMusicLoop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 20b9165b41849a64a866be5f4b9effe1, type: 2}
 --- !u!1 &1268043287
 GameObject:
   m_ObjectHideFlags: 0

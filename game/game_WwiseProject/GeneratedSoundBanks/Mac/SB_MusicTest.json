@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{90615DBB-FD96-C4CB-6138-75DA5E21DEEA}",
+    "Hash": "{049E8A04-57D5-4D48-4778-EECF7B118FE7}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -22,6 +22,14 @@
       "Location": "Memory",
       "ShortName": "sfx_brickplace_007.wav",
       "CachePath": "0B/{0B8ECC67-90D4-D0FF-8FCC-A2EE521D8D9A}.wem"
+     },
+     {
+      "Id": "51018325",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "mx_lvl1_mainloop_150bpm_003.wav",
+      "CachePath": "0A/{0A5F6C58-32BD-63DE-C7B6-42D3F98430D1}.wem"
      },
      {
       "Id": "95717730",
@@ -38,6 +46,14 @@
       "Location": "Memory",
       "ShortName": "sfx_brickplace_003.wav",
       "CachePath": "74/{74386D23-3194-55C1-427E-87D6D0E847D7}.wem"
+     },
+     {
+      "Id": "220746774",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "mx_lvl1_introloop_150bpm_001.wav",
+      "CachePath": "E4/{E41CDB8D-0FB7-CA3D-63F9-C1395D39CB78}.wem"
      },
      {
       "Id": "352805634",
@@ -86,6 +102,14 @@
       "Location": "Memory",
       "ShortName": "sfx_brickplace_008.wav",
       "CachePath": "14/{1411206C-2E86-6276-1DFF-BE07F0A5F7D1}.wem"
+     },
+     {
+      "Id": "797308141",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "mx_lvl1_transition_150bpm_001.wav",
+      "CachePath": "C6/{C6B08E22-C93B-EC2F-FDB1-371ACBE8C542}.wem"
      },
      {
       "Id": "860063534",
@@ -1177,6 +1201,56 @@
       ]
      },
      {
+      "Id": "528465658",
+      "Name": "Play_IntroLoop",
+      "ObjectPath": "\\Events\\Music Events\\Lvl1 Events\\Play_IntroLoop",
+      "GUID": "{5141A12A-7C53-4A7C-8E8D-98DE16D8F73D}",
+      "Color": "24",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "797308141"
+       }
+      ],
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4257138351",
+         "Id": "1125500713",
+         "GUID": "{9505323B-7767-41A2-A7C4-50A4C81FBE95}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "220746774"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "4257138351",
+         "Id": "1257464028",
+         "GUID": "{44EEFD56-F979-4D14-B3FC-6410C4CA368A}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "51018325"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "4257138351",
+        "Id": "1125500713",
+        "Name": "Intro",
+        "ObjectPath": "\\States\\Default Work Unit\\MusicState_Level1\\Intro",
+        "GUID": "{9505323B-7767-41A2-A7C4-50A4C81FBE95}"
+       }
+      ]
+     },
+     {
       "Id": "1355629322",
       "Name": "Play_TitleLoop",
       "ObjectPath": "\\Events\\Music Events\\Play_TitleLoop",
@@ -1186,6 +1260,26 @@
       "MediaRefs": [
        {
         "Id": "999715590"
+       }
+      ]
+     },
+     {
+      "Id": "282115962",
+      "Name": "Transition_MainLoop",
+      "ObjectPath": "\\Events\\Music Events\\Lvl1 Events\\Transition_MainLoop",
+      "GUID": "{27124751-2513-4E35-BAF6-513B2DBDB2AC}",
+      "Color": "24",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "4257138351",
+        "Id": "1257464028",
+        "Name": "MainLoop",
+        "ObjectPath": "\\States\\Default Work Unit\\MusicState_Level1\\MainLoop",
+        "GUID": "{44EEFD56-F979-4D14-B3FC-6410C4CA368A}"
        }
       ]
      }
@@ -1252,10 +1346,36 @@
         "GUID": "{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"
        }
       ]
+     },
+     {
+      "Id": "4257138351",
+      "Name": "MusicState_Level1",
+      "ObjectPath": "\\States\\Default Work Unit\\MusicState_Level1",
+      "GUID": "{D2A8C71F-D125-4F86-B8F3-07B30ECB157A}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\MusicState_Level1\\None",
+        "GUID": "{73303B34-4BA0-4678-B61D-87F42F2C542F}"
+       },
+       {
+        "Id": "1125500713",
+        "Name": "Intro",
+        "ObjectPath": "\\States\\Default Work Unit\\MusicState_Level1\\Intro",
+        "GUID": "{9505323B-7767-41A2-A7C4-50A4C81FBE95}"
+       },
+       {
+        "Id": "1257464028",
+        "Name": "MainLoop",
+        "ObjectPath": "\\States\\Default Work Unit\\MusicState_Level1\\MainLoop",
+        "GUID": "{44EEFD56-F979-4D14-B3FC-6410C4CA368A}"
+       }
+      ]
      }
     ]
    }
   ],
-  "FileHash": "{F82585C6-1B53-C926-B960-E20F3A74E825}"
+  "FileHash": "{48786EDE-D60B-1D18-B198-12EDF159B970}"
  }
 }
