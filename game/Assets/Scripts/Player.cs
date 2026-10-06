@@ -1,30 +1,30 @@
-using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
-    CharacterController charControl;
-    PlayerInput playerInput;
+    //Public
     public float gravity = 20f;
     public float minSpeed = 1.0f;
     public float maxSpeed = 5.0f;
     public float jumpSpeed = 7.0f;
     public float moveAccel = 10.0f;
     public float moveDeaccel = 20.0f;
+    //Private
+    CharacterController charControl;
+    PlayerInput playerInput;
     Vector2 moveDir;
     Vector3 velocity;
     Vector3 displacement;
     bool moveInput = false;
-
-    public Vector3 cameraSpaceMoveDir;
+    Vector3 cameraSpaceMoveDir;
 
 
     void Start()
     {
+        charControl = GetComponent<CharacterController>();
         playerInput = GetComponent<PlayerInput>();
         playerInput.actions.FindActionMap("Player").Enable();
-        charControl = GetComponent<CharacterController>();
     }
 
     private void FixedUpdate()
@@ -48,10 +48,6 @@ public class Player : MonoBehaviour
 
         displacement = velocity * timeStep;
         charControl.Move(displacement);
-    }
-    void Update()
-    {
-        
     }
 
     public void OnMove(InputAction.CallbackContext context)
