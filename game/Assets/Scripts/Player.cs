@@ -4,66 +4,67 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     //Public
-    public float gravity = 20f;
-    public float minSpeed = 1.0f;
-    public float maxSpeed = 5.0f;
-    public float jumpSpeed = 7.0f;
-    public float moveAccel = 10.0f;
-    public float moveDeaccel = 20.0f;
-    //Private
-    CharacterController charControl;
-    PlayerInput playerInput;
-    Vector2 moveDir;
-    Vector3 velocity;
-    Vector3 displacement;
-    bool moveInput = false;
-    Vector3 cameraSpaceMoveDir;
+    public float _Gravity = 20f;
+    public float _MinSpeed = 1.0f;
+    public float _MaxSpeed = 5.0f;
+    public float _JumpSpeed = 7.0f;
+    public float _MoveAccel = 10.0f;
+    public float _MoveDeaccel = 20.0f;
+    public Camera _Camera;
 
+    //Private
+    CharacterController _CharControl;
+    PlayerInput _PlayerInput;
+    Vector2 _MoveDir;
+    Vector3 _Velocity;
+    Vector3 _Displacement;
+    bool _MoveInput = false;
+    Vector3 _CameraSpaceMoveDir;
 
     void Start()
     {
-        charControl = GetComponent<CharacterController>();
-        playerInput = GetComponent<PlayerInput>();
-        playerInput.actions.FindActionMap("Player").Enable();
+        _CharControl = GetComponent<CharacterController>();
+        _PlayerInput = GetComponent<PlayerInput>();
+        _PlayerInput.actions.FindActionMap("Player").Enable();
     }
 
     private void FixedUpdate()
     {
         float timeStep = Time.fixedDeltaTime;
-        cameraSpaceMoveDir = playerInput.camera.transform.TransformDirection(new Vector3(moveDir.x, 0f, moveDir.y));
+        _CameraSpaceMoveDir = _Camera.transform.TransformDirection(new Vector3(_MoveDir.x, 0f, _MoveDir.y));
 
         //Vertical movement (jump/gravity)
-        if (charControl.isGrounded)
+        if (_CharControl.isGrounded)
         {
-            if (velocity.y < 0)
-                velocity.y = -1.0f;
+            if (_Velocity.y < 0)
+                _Velocity.y = -1.0f;
         }
         else
-            velocity.y -= gravity * timeStep;
+            _Velocity.y -= _Gravity * timeStep;
 
-        if (moveInput)
-            velocity = Vector3.MoveTowards(velocity, new Vector3(cameraSpaceMoveDir.x * maxSpeed, velocity.y, cameraSpaceMoveDir.z * maxSpeed), moveAccel * timeStep);
+        if (_MoveInput)
+            _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(_CameraSpaceMoveDir.x * _MaxSpeed, _Velocity.y, _CameraSpaceMoveDir.z * _MaxSpeed), _MoveAccel * timeStep);
         else
-            velocity = Vector3.MoveTowards(velocity, new Vector3(0f, velocity.y, 0f), moveDeaccel * timeStep);
+            _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(0f, _Velocity.y, 0f), _MoveDeaccel * timeStep);
 
-        displacement = velocity * timeStep;
-        charControl.Move(displacement);
+        _Displacement = _Velocity * timeStep;
+        _CharControl.Move(_Displacement);
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        moveDir = context.ReadValue<Vector2>();
-        if (moveDir.magnitude > 0.0f)
-            moveInput = true;
+        _MoveDir = context.ReadValue<Vector2>();
+        if (_MoveDir.magnitude > 0.0f)
+            _MoveInput = true;
         else
-            moveInput = false;
+            _MoveInput = false;
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && charControl.isGrounded)
+        if (context.started && _CharControl.isGrounded)
         {
-            velocity.y = jumpSpeed;
+            _Velocity.y = _JumpSpeed;
         }
     }
 }
