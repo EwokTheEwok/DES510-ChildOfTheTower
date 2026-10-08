@@ -57,6 +57,31 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Start_Music" ID="{9A97C6C1-0CEB-4330-A3F7-CD55E362B206}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="4"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{A0ABDAEB-8831-43B7-9FBF-241185489694}" ShortID="662720049">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Title" ID="{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8B91837C-194F-49F0-94D7-2596C34FC5C3}" ShortID="604194356">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MSW_Master" ID="{BA9BC550-36F4-480B-8895-4D0BD3267772}" WorkUnitID="{6C3C909C-86D2-4B3E-93D4-FD4C2DADD8D7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
