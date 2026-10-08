@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 public class PlayerCamera : MonoBehaviour
 {
     //Public
-    public Transform _PivotObject;               //Object to pivot around
+    //public Transform _PivotObject;               //Object to pivot around
     public float _CamRotationDuration = 0.5f;    //Smoothing
     public int _RotationSides = 6;
     public Ease _Ease = Ease.InOutSine;          //Interpolation
