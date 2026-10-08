@@ -55,10 +55,8 @@ public class BlockController : MonoBehaviour
             //Placement
             Vector3 placementPoint = _ClosestSurface.GetComponent<BoxCollider>().ClosestPoint(transform.position);
             _TestBlock.transform.position = Vector3.MoveTowards(placementPoint, placementPoint + _ClosestSurface.transform.up, _BlockSize * 0.5f);
-            //up = _ClosestSurface.transform.up;
-            _TestBlock.transform.up = _ClosestSurface.transform.up;
-            _TestBlock.transform.forward = _ClosestSurface.transform.forward;
-            _TestBlock.transform.right = _ClosestSurface.transform.right;
+            
+            _TestBlock.transform.rotation = _ClosestSurface.transform.rotation;
         } 
         else
         {
