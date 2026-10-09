@@ -8,7 +8,7 @@ public class PlayerCamera : MonoBehaviour
     //Public
     //public Transform _PivotObject;               //Object to pivot around
     public float _CamRotationDuration = 0.5f;    //Smoothing
-    public int _RotationSides = 6;
+    public int _RotationSides = 8;
     public Ease _Ease = Ease.InOutSine;          //Interpolation
     public CinemachineCamera _PlayerCamera;
 
@@ -23,11 +23,10 @@ public class PlayerCamera : MonoBehaviour
     {
         _TargetTransform = _PlayerCamera.Target.TrackingTarget;
         _TargetTransform.position = transform.position;
-        //playerInput.camera.transform.LookAt(_PivotObject, Vector3.up);
         if (_RotationSides != 0)
-            _RotationDegrees = 360 / (float)_RotationSides;
+            _RotationDegrees = 360f / (float)_RotationSides;
         else
-            _RotationDegrees = 360 / 6f;
+            _RotationDegrees = 360f / 8f;
 
     }
 
@@ -39,9 +38,6 @@ public class PlayerCamera : MonoBehaviour
             {
                 OrbitCamera(_CameraMoveDir * _RotationDegrees);
             }
-            //targetTransform.position = new Vector3(pivotObject.position.x, transform.position.y, pivotObject.position.z);
-            if (_IsCameraRotating)
-                _PlayerCamera.transform.eulerAngles = new Vector3(_PlayerCamera.transform.eulerAngles.x, _TweenRotation, _PlayerCamera.transform.eulerAngles.z);
         }
     }
 
@@ -51,7 +47,9 @@ public class PlayerCamera : MonoBehaviour
         float endRotation = _TweenRotation + degrees;
         DOTween.To(
             () => _TweenRotation,
-            lambaRotation => _TweenRotation = lambaRotation,
+            lambaRotation => { _TweenRotation = lambaRotation;
+                               _PlayerCamera.transform.eulerAngles = new Vector3(_PlayerCamera.transform.eulerAngles.x, _TweenRotation, _PlayerCamera.transform.eulerAngles.z);
+            },
             endRotation,
             _CamRotationDuration).SetEase(_Ease).OnComplete(() => _IsCameraRotating = false);
     }

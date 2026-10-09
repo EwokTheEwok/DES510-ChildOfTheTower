@@ -30,7 +30,10 @@ public class Player : MonoBehaviour
     private void Update()
     {
         float deltaTime = Time.deltaTime;
+
         _CameraSpaceMoveDir = _Camera.transform.TransformDirection(new Vector3(_MoveDir.x, 0f, _MoveDir.y));
+        _CameraSpaceMoveDir.y = 0f;
+        _CameraSpaceMoveDir.Normalize();
 
         //Vertical movement (jump/gravity)
         if (_CharControl.isGrounded && _Velocity.y < 0)
