@@ -14,8 +14,6 @@ GameObject:
   - component: {fileID: 7990201974574080657}
   - component: {fileID: 2989873134638656984}
   - component: {fileID: 1744924615411652172}
-  - component: {fileID: 980224774229506427}
-  - component: {fileID: 4240014849415867946}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -179,7 +177,7 @@ MonoBehaviour:
     m_ActionName: 'Player/Jump[/Keyboard/space]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 980224774229506427}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PlayerCamera, Assembly-CSharp
         m_MethodName: OnCameraMove
         m_Mode: 0
@@ -226,49 +224,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c0cdd82e2e424448645fa2c6bbb352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  _Gravity: 20
+  _Gravity: 30
   _MinSpeed: 1
   _MaxSpeed: 5
-  _JumpSpeed: 7
+  _JumpSpeed: 12
   _MoveAccel: 10
   _MoveDeaccel: 20
   _Camera: {fileID: 0}
---- !u!114 &980224774229506427
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118030202727208779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50bd511837487dd4dbff704b57e3766b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
-  _CamRotationDuration: 0.5
-  _RotationSides: 8
-  _Ease: 4
-  _PlayerCamera: {fileID: 0}
---- !u!114 &4240014849415867946
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118030202727208779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28bd02bd56d7f4140a15e546c5a01b91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BlockController
-  _PlaceRange: 5
-  _MaxDetectableSurfaces: 5
-  _BlockLimit: 1
-  _BlockSize: 2
-  _BlockSurfaceTag: Block Surface
-  _BlockSurfaceLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  _PlayerCamera: {fileID: 0}
-  _GuideBlockPrefab: {fileID: 2741366402790427780, guid: fefcb85cb12b5c940b655160ec18117a, type: 3}
-  _BlockUIPrefab: {fileID: 4426684099784562912, guid: 347bd05a054a400458d449c4493cc538, type: 3}
+  _CanControl: 1

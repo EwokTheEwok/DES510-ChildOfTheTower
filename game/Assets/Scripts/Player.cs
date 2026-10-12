@@ -4,13 +4,14 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     //Public
-    public float _Gravity = 20f;
+    public float _Gravity = 30f;
     public float _MinSpeed = 1.0f;
     public float _MaxSpeed = 5.0f;
-    public float _JumpSpeed = 7.0f;
+    public float _JumpSpeed = 12.0f;
     public float _MoveAccel = 10.0f;
     public float _MoveDeaccel = 20.0f;
     public Camera _Camera;
+    public bool _CanControl = true;
 
     //Private
     CharacterController _CharControl;
@@ -42,7 +43,7 @@ public class Player : MonoBehaviour
             _Velocity.y -= _Gravity * deltaTime;
 
         //Horizontral movement
-        if (_MoveInput)
+        if (_MoveInput && _CanControl)
             _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(_CameraSpaceMoveDir.x * _MaxSpeed, _Velocity.y, _CameraSpaceMoveDir.z * _MaxSpeed), _MoveAccel * deltaTime);
         else
             _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(0f, _Velocity.y, 0f), _MoveDeaccel * deltaTime);

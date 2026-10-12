@@ -3,26 +3,23 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerCamera : MonoBehaviour
+public class CameraController : MonoBehaviour
 {
     //Public
-    //public Transform _PivotObject;               //Object to pivot around
     public float _CamRotationDuration = 0.5f;    //Smoothing
     public int _RotationSides = 8;
     public Ease _Ease = Ease.InOutSine;          //Interpolation
-    public CinemachineCamera _PlayerCamera;
 
     //Private
+    CinemachineCamera _CCamera;
     bool _IsCameraRotating = false;
     float _RotationDegrees = 0f;
     float _TweenRotation = 0f;
     float _CameraMoveDir;
-    Transform _TargetTransform;
 
     void Start()
     {
-        _TargetTransform = _PlayerCamera.Target.TrackingTarget;
-        _TargetTransform.position = transform.position;
+        _CCamera = GetComponent<CinemachineCamera>();
         if (_RotationSides != 0)
             _RotationDegrees = 360f / (float)_RotationSides;
         else
@@ -32,7 +29,7 @@ public class PlayerCamera : MonoBehaviour
 
     void Update()
     {
-        if (_PlayerCamera.isActiveAndEnabled)
+        if (_CCamera.isActiveAndEnabled)
         {
             if (!_IsCameraRotating && _CameraMoveDir != 0f)
             {
@@ -48,7 +45,7 @@ public class PlayerCamera : MonoBehaviour
         DOTween.To(
             () => _TweenRotation,
             lambaRotation => { _TweenRotation = lambaRotation;
-                               _PlayerCamera.transform.eulerAngles = new Vector3(_PlayerCamera.transform.eulerAngles.x, _TweenRotation, _PlayerCamera.transform.eulerAngles.z);
+                               _CCamera.transform.eulerAngles = new Vector3(_CCamera.transform.eulerAngles.x, _TweenRotation, _CCamera.transform.eulerAngles.z);
             },
             endRotation,
             _CamRotationDuration).SetEase(_Ease).OnComplete(() => _IsCameraRotating = false);
