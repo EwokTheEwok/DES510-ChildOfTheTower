@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     Vector2 _MoveDir;
     Vector3 _Velocity;
     bool _MoveInput = false;
-    Vector3 _CameraSpaceMoveDir;
+    Vector3 _WorldMoveDir;
 
     void Start()
     {
@@ -32,9 +32,7 @@ public class Player : MonoBehaviour
     {
         float deltaTime = Time.deltaTime;
 
-        _CameraSpaceMoveDir = _Camera.transform.TransformDirection(new Vector3(_MoveDir.x, 0f, _MoveDir.y));
-        _CameraSpaceMoveDir.y = 0f;
-        _CameraSpaceMoveDir.Normalize();
+        _WorldMoveDir = Quaternion.AngleAxis(_Camera.transform.eulerAngles.y, new Vector3(0f, 1f, 0f)) * new Vector3(_MoveDir.x, 0f, _MoveDir.y);
 
         //Vertical movement (jump/gravity)
         if (_CharControl.isGrounded && _Velocity.y < 0)
@@ -44,7 +42,7 @@ public class Player : MonoBehaviour
 
         //Horizontral movement
         if (_MoveInput && _CanControl)
-            _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(_CameraSpaceMoveDir.x * _MaxSpeed, _Velocity.y, _CameraSpaceMoveDir.z * _MaxSpeed), _MoveAccel * deltaTime);
+            _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(_WorldMoveDir.x * _MaxSpeed, _Velocity.y, _WorldMoveDir.z * _MaxSpeed), _MoveAccel * deltaTime);
         else
             _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(0f, _Velocity.y, 0f), _MoveDeaccel * deltaTime);
 

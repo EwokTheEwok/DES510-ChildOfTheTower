@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,6 +11,8 @@ public class BlockController : MonoBehaviour
     public int _MaxDetectableSurfaces = 5;
     public int _BlockLimit = 1;
     public float _BlockSize = 2f;
+    public Ease _BlockEasing = Ease.InOutSine;
+    public float _TweenDuration = 0.25f;
     public string _BlockSurfaceTag = "Block Surface";
     public LayerMask _BlockSurfaceLayer;
     public GameObject _GuideBlockPrefab;
@@ -22,6 +25,8 @@ public class BlockController : MonoBehaviour
     //Private
     bool _IsPlacing = false;
     bool _ActiveSurface = false;
+    bool _MovingBlock = false;
+    public float _BlockRayScale = 1.25f;
     readonly List<GameObject> _BlockList = new();
     EntityId _ActiveSurfaceID;
     Collider[] _SurfaceColList;
@@ -37,6 +42,7 @@ public class BlockController : MonoBehaviour
     Vector2 _InputDir;
     Vector3 _InputModifier;
     
+    public 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -148,7 +154,7 @@ public class BlockController : MonoBehaviour
 
     public void OnBlockMove(InputAction.CallbackContext context)
     {
-        if (context.started && _IsPlacing && _BlockList.Count < _BlockLimit)
+        if (context.started && _IsPlacing && _BlockList.Count < _BlockLimit && !_MovingBlock)
         {
             _InputDir = context.ReadValue<Vector2>();
             Transform blockTransform = _Block.transform;
@@ -158,16 +164,46 @@ public class BlockController : MonoBehaviour
             localDirection.z = _InputDir.x * _InputModifier.z * _BlockSize;
             localDirection.y = _InputDir.y * _BlockSize;
 
-            bool hit = Physics.Raycast(blockTransform.position, blockTransform.TransformDirection(localDirection), _BlockSize * 1.5f);
-            Debug.DrawRay(blockTransform.position, blockTransform.TransformDirection(localDirection) * 1.5f, Color.white, 5);
+            bool hit = Physics.Raycast(blockTransform.position, blockTransform.TransformDirection(localDirection), _BlockSize * _BlockRayScale);
+            Debug.DrawRay(blockTransform.position, blockTransform.TransformDirection(localDirection) * _BlockRayScale, Color.white, 5);
 
             if (!hit)
             {
+                _MovingBlock = true;
                 Vector3 newBlockPlacement = blockTransform.position + blockTransform.TransformDirection(localDirection);
-                _Block = Instantiate(_BlockPrefab, newBlockPlacement, blockTransform.rotation);
+                _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation);
+                _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => _MovingBlock = false);
                 _BlockList.Add(_Block);
                 _Block.SetActive(true);
+                _CinemachineCamera.Target.TrackingTarget = _Block.transform;
+            }
+        }
+    }
 
+    public void OnUndoBlock(InputAction.CallbackContext context)
+    {
+        if (context.started && _IsPlacing && !_MovingBlock)
+        {
+            if (_BlockList.Count > 1)
+            {
+                _MovingBlock = true;
+                Vector3 previousPosition = _BlockList[^2].transform.position;
+                _Block.transform.DOMove(previousPosition, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => { 
+                    _MovingBlock = false;
+                    _BlockList.RemoveAt(_BlockList.Count - 1);
+                    Destroy(_Block);
+                    _Block = _BlockList[^1];
+                    _CinemachineCamera.Target.TrackingTarget = _Block.transform;
+                });
+            }
+            else
+            {
+                _BlockList.RemoveAt(0);
+                Destroy(_Block);
+                _IsPlacing = false;
+                _ActiveSurface = false;
+                _Player._CanControl = true;
+                _CinemachineCamera.Target.TrackingTarget = _Player.transform;
             }
         }
     }
@@ -176,7 +212,9 @@ public class BlockController : MonoBehaviour
     {
         if (_ClosestSurface == null)
             return false;
-        else if (_ClosestSurface.GetEntityId().CompareTo(_ActiveSurfaceID) != 0)
+        else if (_ActiveSurface == false)
+            return true;
+        else if (_ActiveSurface == true && _ClosestSurface.GetEntityId().CompareTo(_ActiveSurfaceID) != 0)
             return true;
         return false;
     }
@@ -203,10 +241,6 @@ public class BlockController : MonoBehaviour
 
     private void HandleRotationAndDisplayInput(Transform _transform)
     {
-        Vector3 cameraLook = _Camera.transform.forward;
-        Vector3 horizontalLook = new(cameraLook.x, 0f, cameraLook.z);
-        horizontalLook.Normalize();
-
         Vector3 blockEulerRotation = _transform.eulerAngles;
         Vector3 cameraEulerRotation = _Camera.transform.eulerAngles;
         float angleDifference = cameraEulerRotation.y - blockEulerRotation.y;
