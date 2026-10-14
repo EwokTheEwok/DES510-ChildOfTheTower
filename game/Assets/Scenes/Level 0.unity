@@ -720,22 +720,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5741174448488666723, guid: 7b75fe63e3addd0418cbc26a1dd8fa48, type: 3}
---- !u!114 &338051668 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-  m_PrefabInstance: {fileID: 773710748}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58c0cdd82e2e424448645fa2c6bbb352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player
---- !u!4 &338051673 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5308223972824557961, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-  m_PrefabInstance: {fileID: 773710748}
-  m_PrefabAsset: {fileID: 0}
 --- !u!64 &414568942
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -792,90 +776,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1241074854105163345, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _Camera
+      value: 
+      objectReference: {fileID: 1352730136}
     - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: _Camera
       value: 
       objectReference: {fileID: 1352730136}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1964257095}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1045013271}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1045013271}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1045013271}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnCameraMove
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnPlaceBlock
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnBlockMove
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnUndoBlock
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: CameraController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BlockController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BlockController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: BlockController, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
-    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 5308223972824557961, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.2
@@ -921,75 +829,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
---- !u!1001 &799669684
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 912001098742780727, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: m_Name
-      value: BlockController
-      objectReference: {fileID: 0}
-    - target: {fileID: 6952911959239971229, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.00057
-      objectReference: {fileID: 0}
-    - target: {fileID: 6952911959239971229, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6952911959239971229, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -2.91494
-      objectReference: {fileID: 0}
-    - target: {fileID: 6952911959239971229, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6952911959239971229, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6952911959239971229, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6952911959239971229, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6952911959239971229, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6952911959239971229, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6952911959239971229, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8202474738953429943, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: _Camera
-      value: 
-      objectReference: {fileID: 1352730136}
-    - target: {fileID: 8202474738953429943, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: _Player
-      value: 
-      objectReference: {fileID: 338051668}
-    - target: {fileID: 8202474738953429943, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-      propertyPath: _CinemachineCamera
-      value: 
-      objectReference: {fileID: 1079905709}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
 --- !u!64 &845095121
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1113,17 +952,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1045013271 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8202474738953429943, guid: 1e090a923736ff64ba753a4208037ee5, type: 3}
-  m_PrefabInstance: {fileID: 799669684}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28bd02bd56d7f4140a15e546c5a01b91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BlockController
 --- !u!64 &1047818585
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1146,82 +974,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8314571269056883277, guid: 7b75fe63e3addd0418cbc26a1dd8fa48, type: 3}
---- !u!1001 &1079905708
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1714346313533235322, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: m_Name
-      value: CCamera Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528598960761816714, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528598960761816714, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 20.251007
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528598960761816714, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -58.09463
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528598960761816714, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9848078
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528598960761816714, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.17364816
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528598960761816714, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528598960761816714, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528598960761816714, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528598960761816714, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2528598960761816714, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5769029285310065178, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: Lens.NearClipPlane
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 5769029285310065178, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-      propertyPath: Target.TrackingTarget
-      value: 
-      objectReference: {fileID: 338051673}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
---- !u!114 &1079905709 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5769029285310065178, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-  m_PrefabInstance: {fileID: 1079905708}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1 &1352730134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,17 +1414,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -153830957423991239, guid: 7b75fe63e3addd0418cbc26a1dd8fa48, type: 3}
---- !u!114 &1964257095 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7902914496520095433, guid: 6ced16aeb97e3b448a74ae18d3f6f3fe, type: 3}
-  m_PrefabInstance: {fileID: 1079905708}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50bd511837487dd4dbff704b57e3766b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1682,7 +1423,5 @@ SceneRoots:
   - {fileID: 935308657}
   - {fileID: 171545911}
   - {fileID: 46085129}
-  - {fileID: 799669684}
   - {fileID: 773710748}
   - {fileID: 6731980}
-  - {fileID: 1079905708}

@@ -1,8 +1,10 @@
-using System.Collections.Generic;
 using DG.Tweening;
+using System.Collections.Generic;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class BlockController : MonoBehaviour
 {
@@ -18,9 +20,7 @@ public class BlockController : MonoBehaviour
     public GameObject _GuideBlockPrefab;
     public GameObject _BlockUIPrefab;
     public GameObject _BlockPrefab;
-    public Camera _Camera;
     public CinemachineCamera _CinemachineCamera;
-    public Player _Player;
 
     //Private
     bool _IsPlacing = false;
@@ -41,12 +41,24 @@ public class BlockController : MonoBehaviour
     RectTransform _BlockUIRight;
     Vector2 _InputDir;
     Vector3 _InputModifier;
-    
+    //Player
+    Transform _PlayerTransform;
+    PlayerMovement _PlayerMovement;
+    //Camera
+    PlayerCamera _PlayerCamera;
+    int _CameraCubeSegment;
+    Camera _Camera;
+
     public 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _Camera = Camera.main;
+        _PlayerMovement = GetComponent<PlayerMovement>();
+        _PlayerCamera = GetComponentInChildren<PlayerCamera>();
+        _PlayerTransform = transform;
+
         SetUpSurfaces();
         _SurfaceColList = new Collider[_MaxDetectableSurfaces];
 
@@ -74,7 +86,7 @@ public class BlockController : MonoBehaviour
                     continue;
 
                 GameObject surface = col.gameObject;
-                float distance = Vector3.Distance(_Player.transform.position, surface.GetComponent<BoxCollider>().ClosestPoint(_Player.transform.position));
+                float distance = Vector3.Distance(_PlayerTransform.position, surface.GetComponent<BoxCollider>().ClosestPoint(_PlayerTransform.position));
                 if (distance < shortestDistance)
                 {
                     shortestDistance = distance;
@@ -92,7 +104,7 @@ public class BlockController : MonoBehaviour
         {
             _GuideBlock.SetActive(true);
             //Placement
-            Vector3 placementPoint = _ClosestSurface.GetComponent<BoxCollider>().ClosestPoint(_Player.transform.position);
+            Vector3 placementPoint = _ClosestSurface.GetComponent<BoxCollider>().ClosestPoint(_PlayerTransform.position);
             Vector3 blockPosition = Vector3.MoveTowards(placementPoint, placementPoint + _ClosestSurface.transform.up, _BlockSize * 0.5f);
             _GuideBlock.transform.position = blockPosition;
             _GuideBlock.transform.eulerAngles = new Vector3(0f, _ClosestSurface.transform.rotation.eulerAngles.y, 0f); ;
@@ -126,7 +138,7 @@ public class BlockController : MonoBehaviour
             _ActiveSurface = true;
             _IsPlacing = true;
             _ActiveSurfaceID = _ClosestSurface.GetEntityId();
-            _Player._CanControl = false;
+            _PlayerMovement.SetControl(false);
             _Block = Instantiate(_BlockPrefab, _GuideBlock.transform.position, _GuideBlock.transform.rotation);
             _BlockList.Add(_Block);
 
@@ -134,21 +146,25 @@ public class BlockController : MonoBehaviour
 
             _Block.SetActive(true);
             _GuideBlock.SetActive(false);
+
+            _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
         } //re-control active surface
         else if (context.started && _ActiveSurface && !_IsPlacing)
         {
             _CinemachineCamera.Target.TrackingTarget = _Block.transform;
 
             _IsPlacing = true;
-            _Player._CanControl = false;
+            _PlayerMovement.SetControl(false);
+            _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
         } //control player
         else if (context.started && _IsPlacing)
         {
-            _CinemachineCamera.Target.TrackingTarget = _Player.transform;
+            _CinemachineCamera.Target.TrackingTarget = _PlayerTransform.transform;
 
             _BlockUI.SetActive(false);
             _IsPlacing = false;
-            _Player._CanControl = true;
+            _PlayerMovement.SetControl(true);
+            _PlayerCamera.SetOctaMode();
         }
     }
 
@@ -202,8 +218,10 @@ public class BlockController : MonoBehaviour
                 Destroy(_Block);
                 _IsPlacing = false;
                 _ActiveSurface = false;
-                _Player._CanControl = true;
-                _CinemachineCamera.Target.TrackingTarget = _Player.transform;
+                _PlayerMovement.SetControl(true);
+                _CinemachineCamera.Target.TrackingTarget = _PlayerTransform;
+                _PlayerCamera.SetOctaMode();
+                _BlockUI.SetActive(false);
             }
         }
     }
@@ -233,7 +251,7 @@ public class BlockController : MonoBehaviour
 
     private bool NearSurfaces()
     {
-        _SurfaceTotal = Physics.OverlapSphereNonAlloc(_Player.transform.position, _PlaceRange, _SurfaceColList, _BlockSurfaceLayer);
+        _SurfaceTotal = Physics.OverlapSphereNonAlloc(_PlayerTransform.position, _PlaceRange, _SurfaceColList, _BlockSurfaceLayer);
         if (_SurfaceTotal > 0)
             return true;
         return false;
@@ -245,33 +263,34 @@ public class BlockController : MonoBehaviour
         Vector3 cameraEulerRotation = _Camera.transform.eulerAngles;
         float angleDifference = cameraEulerRotation.y - blockEulerRotation.y;
         angleDifference = Mathf.Repeat(angleDifference, 360f);
-        int segment = Mathf.RoundToInt(angleDifference / 45f);
+        int segmentOcta = Mathf.RoundToInt(angleDifference / 45f);
+        _CameraCubeSegment = Mathf.RoundToInt(angleDifference / 90f);
 
         float blockUIDist = _BlockSize + 1f;
         _BlockUIUp.position = _Camera.WorldToScreenPoint(_transform.position + _transform.up * blockUIDist);
         _BlockUIDown.position = _Camera.WorldToScreenPoint(_transform.position - _transform.up * blockUIDist);
 
-        switch (segment)
+        switch (_CameraCubeSegment)
         {
-            case 0: case 8: case 1:
+            case 0: case 4:
                 _InputModifier = new (1f, 0f, 0f);
-                _BlockUILeft.position = _Camera.WorldToScreenPoint(_transform.position + _transform.right * blockUIDist);
-                _BlockUIRight.position = _Camera.WorldToScreenPoint(_transform.position - _transform.right * blockUIDist);
-                break;
-            case 2: case 3:
-                _InputModifier = new(0f, 0f, -1f);
-                _BlockUIRight.position = _Camera.WorldToScreenPoint(_transform.position + _transform.forward * blockUIDist);
-                _BlockUILeft.position = _Camera.WorldToScreenPoint(_transform.position - _transform.forward * blockUIDist);
-                break;
-            case 4: case 5:
-                _InputModifier = new(-1f, 0f, 0f);
-                _BlockUIRight.position = _Camera.WorldToScreenPoint(_transform.position + _transform.right * blockUIDist);
                 _BlockUILeft.position = _Camera.WorldToScreenPoint(_transform.position - _transform.right * blockUIDist);
+                _BlockUIRight.position = _Camera.WorldToScreenPoint(_transform.position + _transform.right * blockUIDist);
                 break;
-            case 6: case 7:
-                _InputModifier = new(0f, 0f, 1f);
-                _BlockUILeft.position = _Camera.WorldToScreenPoint(_transform.position + _transform.forward * blockUIDist);
+            case 1:
+                _InputModifier = new(0f, 0f, -1f);
                 _BlockUIRight.position = _Camera.WorldToScreenPoint(_transform.position - _transform.forward * blockUIDist);
+                _BlockUILeft.position = _Camera.WorldToScreenPoint(_transform.position + _transform.forward * blockUIDist);
+                break;
+            case 2:
+                _InputModifier = new(-1f, 0f, 0f);
+                _BlockUIRight.position = _Camera.WorldToScreenPoint(_transform.position - _transform.right * blockUIDist);
+                _BlockUILeft.position = _Camera.WorldToScreenPoint(_transform.position + _transform.right * blockUIDist);
+                break;
+            case 3:
+                _InputModifier = new(0f, 0f, 1f);
+                _BlockUILeft.position = _Camera.WorldToScreenPoint(_transform.position - _transform.forward * blockUIDist);
+                _BlockUIRight.position = _Camera.WorldToScreenPoint(_transform.position + _transform.forward * blockUIDist);
                 break;
             default:
                 break;

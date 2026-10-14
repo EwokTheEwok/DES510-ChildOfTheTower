@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Player : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     //Public
     public float _Gravity = 30f;
@@ -10,19 +10,21 @@ public class Player : MonoBehaviour
     public float _JumpSpeed = 12.0f;
     public float _MoveAccel = 10.0f;
     public float _MoveDeaccel = 20.0f;
-    public Camera _Camera;
-    public bool _CanControl = true;
+
 
     //Private
+    Camera _Camera;
     CharacterController _CharControl;
     PlayerInput _PlayerInput;
     Vector2 _MoveDir;
     Vector3 _Velocity;
     bool _MoveInput = false;
     Vector3 _WorldMoveDir;
+    bool _CanControl = true;
 
     void Start()
     {
+        _Camera = Camera.main;
         _CharControl = GetComponent<CharacterController>();
         _PlayerInput = GetComponent<PlayerInput>();
         _PlayerInput.actions.FindActionMap("Player").Enable();
@@ -47,6 +49,11 @@ public class Player : MonoBehaviour
             _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(0f, _Velocity.y, 0f), _MoveDeaccel * deltaTime);
 
         _CharControl.Move(_Velocity * deltaTime);
+    }
+
+    public void SetControl(bool _value)
+    {
+        _CanControl = _value;
     }
 
     public void OnMove(InputAction.CallbackContext context)
