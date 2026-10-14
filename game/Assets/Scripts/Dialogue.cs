@@ -15,33 +15,37 @@ public class Dialogue : MonoBehaviour
 
     private int lineIndex = 0;
 
-    private bool isInteracting = false;
-    private bool canInteract = false;
+    private bool _InRange = false;
+    private bool _IsActive = false;
+    private bool _IsTyping = false;
 
-    public float timer;
     public float delay = 2.0f;
-    public bool running;
+    public float height = 2.0f;
+
+    private RectTransform dialogueTransform;
+    private IEnumerator coroutine;
+  
+    private void Start()
+    {
+        dialogueTransform = DialogueBox.transform as RectTransform;
+        
+    }
 
     private void Update()
     {
 
-        if (canInteract && !isInteracting)
+        if (_InRange)
         {
-            StartDialogue();
-        }
-
-        if (isInteracting)
-        {
-            running = true;
-
-            if (running)
+            if (!_IsActive) {
+                StartDialogue();
+            }
+            else
             {
-                timer += Time.deltaTime;
-                if (timer > delay)
+                dialogueTransform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, height, 0));
+                if (!_IsTyping)
                 {
-                    NextLine();
-                    running = false;
-                    timer = 0.0f;
+                    Debug.Log("a");
+                    WriteLine();
                 }
             }
         }
@@ -49,48 +53,49 @@ public class Dialogue : MonoBehaviour
 
     private void StartDialogue()
     {
-        canInteract = false;
-        isInteracting = true;
+        _IsActive = true;
 
         DialogueText.text = "";
         DialogueBox.SetActive(true);
 
         lineIndex = 0;
-        StartCoroutine(WriteLine());
     }
 
-    private IEnumerator WriteLine()
+    private IEnumerator WriteLetters()
     {
+        _IsTyping = true;
         foreach (char c in DialogueLines[lineIndex])
         {
             DialogueText.text += c;
             yield return new WaitForSeconds(TypeSpeed);
         }
+        yield return new WaitForSeconds(delay);
+        _IsTyping = false;
     }
 
-    private void NextLine()
+    private void WriteLine()
     {
-        if (lineIndex < DialogueLines.Length - 1) 
+        if (lineIndex < DialogueLines.Length) 
         {
             DialogueText.text = "";
 
+            coroutine = WriteLetters();
+            StartCoroutine(coroutine);
             lineIndex++;
-            StartCoroutine(WriteLine());
         }
         else
         {
             DialogueBox.SetActive (false);
 
-            isInteracting = false;
-            canInteract = true;
+            _IsActive = false;
         }
     }
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("Player") && !isInteracting)
+        if (collision.CompareTag("Player") && !_IsActive)
         {
-            canInteract = true;
+            _InRange = true;
         }
     }
 
@@ -98,11 +103,11 @@ public class Dialogue : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            canInteract = false;
-            isInteracting = false;
+            StopCoroutine(coroutine);
+            _InRange = false;
+            _IsActive = false;
+            _IsTyping = false;
             DialogueBox.SetActive(false);
-            running = false;
-            timer = 0.0f;
         }
     }
 }
