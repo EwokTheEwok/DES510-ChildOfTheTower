@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class BrickAudio : MonoBehaviour
 {
-    public BrickBehaviorTest _brickBehaviorTest;
 
     public AK.Wwise.Event[] _brickEvents;
 
@@ -12,7 +11,7 @@ public class BrickAudio : MonoBehaviour
     {
         //if (_brickBehaviorTest == null || _brickEvents.Length == 0) return;
 
-        int i = _brickBehaviorTest._spawnCount;
+        int i = 5;
 
         _brickEvents[i].Post(gameObject);
     }
