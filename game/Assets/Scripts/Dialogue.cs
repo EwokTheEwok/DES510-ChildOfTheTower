@@ -11,7 +11,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TMP_Text DialogueText;
 
     [SerializeField] private string[] DialogueLines;
-    [SerializeField] private float TypeSpeed = 2.0f;
+    [SerializeField] private float TypeSpeed = 0.05f;
 
     private int lineIndex = 0;
 
@@ -19,16 +19,17 @@ public class Dialogue : MonoBehaviour
     private bool _IsActive = false;
     private bool _IsTyping = false;
 
-    public float delay = 2.0f;
+    public float _LineDelay = 2.0f;
+    public float _EndDelay = 7.0f;
     public float height = 2.0f;
 
     private RectTransform dialogueTransform;
     private IEnumerator coroutine;
-  
+
     private void Start()
     {
         dialogueTransform = DialogueBox.transform as RectTransform;
-        
+
     }
 
     private void Update()
@@ -36,6 +37,13 @@ public class Dialogue : MonoBehaviour
 
         if (_InRange)
         {
+            dialogueTransform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, height, 0));
+            if (!_IsActive)
+            {
+                coroutine = StartDia();
+                StartCoroutine(coroutine);
+            }
+            /*
             if (!_IsActive) {
                 StartDialogue();
             }
@@ -47,10 +55,40 @@ public class Dialogue : MonoBehaviour
                     Debug.Log("a");
                     WriteLine();
                 }
-            }
+            }*/
         }
-    }   
+    }
 
+    private IEnumerator StartDia()
+    {
+        lineIndex = 0;
+        _IsActive = true;
+        DialogueBox.SetActive(true);
+
+        foreach (string line in DialogueLines)
+        {
+            DialogueText.text = "";
+            foreach (char c in line)
+            {
+                DialogueText.text += c;
+                yield return new WaitForSeconds(TypeSpeed);
+            }
+            yield return new WaitForSeconds(_LineDelay);
+        }
+
+        DialogueBox.SetActive(false);
+        yield return new WaitForSeconds(Mathf.Abs(_EndDelay - _LineDelay));
+
+        StopTalking();
+    }
+
+    private void StopTalking()
+    {
+        _IsActive = false;
+        DialogueText.text = "";
+        DialogueBox.SetActive(false);
+    }
+    /*
     private void StartDialogue()
     {
         _IsActive = true;
@@ -69,7 +107,7 @@ public class Dialogue : MonoBehaviour
             DialogueText.text += c;
             yield return new WaitForSeconds(TypeSpeed);
         }
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(_LineDelay);
         _IsTyping = false;
     }
 
@@ -90,7 +128,7 @@ public class Dialogue : MonoBehaviour
             _IsActive = false;
         }
     }
-
+    */
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.CompareTag("Player") && !_IsActive)
@@ -101,13 +139,12 @@ public class Dialogue : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-        if(collision.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             StopCoroutine(coroutine);
+            StopTalking();
             _InRange = false;
-            _IsActive = false;
-            _IsTyping = false;
-            DialogueBox.SetActive(false);
+
         }
     }
 }
