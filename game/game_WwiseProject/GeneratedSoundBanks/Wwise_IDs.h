@@ -25,6 +25,7 @@ namespace AK
         static const AkUniqueID BRICKMODE_START = 2475923824U;
         static const AkUniqueID PLAY_INTROLOOP = 528465658U;
         static const AkUniqueID PLAY_TITLELOOP = 1355629322U;
+        static const AkUniqueID START_MUSIC = 540993415U;
         static const AkUniqueID TRANSITION_MAINLOOP = 282115962U;
     } // namespace EVENTS
 
@@ -47,6 +48,19 @@ namespace AK
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace BRICKBUILDING
+
+        namespace LEVEL
+        {
+            static const AkUniqueID GROUP = 2782712965U;
+
+            namespace STATE
+            {
+                static const AkUniqueID LVL1 = 141331490U;
+                static const AkUniqueID LVL2 = 141331489U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID TITLE = 3705726509U;
+            } // namespace STATE
+        } // namespace LEVEL
 
         namespace MUSICSTATE_LEVEL1
         {

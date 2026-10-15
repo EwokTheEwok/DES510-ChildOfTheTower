@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{049E8A04-57D5-4D48-4778-EECF7B118FE7}",
+    "Hash": "{049E16B7-A7CC-BAFC-00DE-6FE4CB928A88}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -80,6 +80,14 @@
       "CachePath": "19/{1966865C-4D28-D1C1-A7A1-13C4F9F04D46}.wem"
      },
      {
+      "Id": "554800566",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "mx_lvl2_mainloop_75bpm_005.wav",
+      "CachePath": "59/{5964FCB0-ACFC-26EE-F97A-8A5340B4C94C}.wem"
+     },
+     {
       "Id": "618140102",
       "Language": "SFX",
       "Streaming": "false",
@@ -118,6 +126,14 @@
       "Location": "Memory",
       "ShortName": "sfx_brickplace_001.wav",
       "CachePath": "A9/{A9E96425-FE9A-63BC-E210-913E8CC5A5FF}.wem"
+     },
+     {
+      "Id": "892562092",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "mx_lvl2_intro_75bpm_003.wav",
+      "CachePath": "00/{0086BA8A-829F-75A6-934C-178BCE7D1BF2}.wem"
      },
      {
       "Id": "908228558",
@@ -1264,6 +1280,95 @@
       ]
      },
      {
+      "Id": "540993415",
+      "Name": "Start_Music",
+      "ObjectPath": "\\Events\\Music Events\\Start_Music",
+      "GUID": "{9A97C6C1-0CEB-4330-A3F7-CD55E362B206}",
+      "Color": "4",
+      "DurationType": "Infinite",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "141331490",
+         "GUID": "{863C7175-F5DA-4DC0-B5C4-53BC5F074DDB}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "797308141"
+         }
+        ],
+        "Children": [
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "4257138351",
+           "Id": "1125500713",
+           "GUID": "{9505323B-7767-41A2-A7C4-50A4C81FBE95}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "220746774"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "4257138351",
+           "Id": "1257464028",
+           "GUID": "{44EEFD56-F979-4D14-B3FC-6410C4CA368A}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "51018325"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "141331489",
+         "GUID": "{9FC27A63-68FE-47C0-BA0E-77310CA275B5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "554800566"
+         },
+         {
+          "Id": "892562092"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "3705726509",
+         "GUID": "{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "999715590"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "2782712965",
+        "Id": "3705726509",
+        "Name": "Title",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\Title",
+        "GUID": "{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}"
+       }
+      ]
+     },
+     {
       "Id": "282115962",
       "Name": "Transition_MainLoop",
       "ObjectPath": "\\Events\\Music Events\\Lvl1 Events\\Transition_MainLoop",
@@ -1285,6 +1390,38 @@
      }
     ],
     "StateGroups": [
+     {
+      "Id": "2782712965",
+      "Name": "Level",
+      "ObjectPath": "\\States\\Default Work Unit\\Level",
+      "GUID": "{8C02021C-5ABD-45E2-AD8D-08C504A3BA7D}",
+      "States": [
+       {
+        "Id": "141331489",
+        "Name": "Lvl2",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\Lvl2",
+        "GUID": "{9FC27A63-68FE-47C0-BA0E-77310CA275B5}"
+       },
+       {
+        "Id": "141331490",
+        "Name": "Lvl1",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\Lvl1",
+        "GUID": "{863C7175-F5DA-4DC0-B5C4-53BC5F074DDB}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\None",
+        "GUID": "{D7D2ED78-A347-4B9A-BCD8-D19CFA466400}"
+       },
+       {
+        "Id": "3705726509",
+        "Name": "Title",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\Title",
+        "GUID": "{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}"
+       }
+      ]
+     },
      {
       "Id": "4138857472",
       "Name": "BrickBuilding",
@@ -1376,6 +1513,6 @@
     ]
    }
   ],
-  "FileHash": "{4ABFD5C2-C101-533A-0A93-2097E07A1CBB}"
+  "FileHash": "{C1E6878E-F95E-F5AD-D2E8-FFD536CC743C}"
  }
 }
