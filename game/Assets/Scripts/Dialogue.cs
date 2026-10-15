@@ -8,9 +8,12 @@ public class Dialogue : MonoBehaviour
 {
 
     [SerializeField] private GameObject DialogueBox;
+    [SerializeField] private GameObject NameBox;
     [SerializeField] private TMP_Text DialogueText;
+    [SerializeField] private TMP_Text NameText;
 
     [SerializeField] private string[] DialogueLines;
+    [SerializeField] private string NPCName;
     [SerializeField] private float TypeSpeed = 0.05f;
 
     private int lineIndex = 0;
@@ -24,6 +27,7 @@ public class Dialogue : MonoBehaviour
     public float height = 2.0f;
 
     private RectTransform dialogueTransform;
+
     private IEnumerator coroutine;
 
     private void Start()
@@ -35,14 +39,17 @@ public class Dialogue : MonoBehaviour
     private void Update()
     {
 
+
         if (_InRange)
         {
             dialogueTransform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, height, 0));
             if (!_IsActive)
+
             {
                 coroutine = StartDia();
                 StartCoroutine(coroutine);
             }
+
             /*
             if (!_IsActive) {
                 StartDialogue();
@@ -64,6 +71,8 @@ public class Dialogue : MonoBehaviour
         lineIndex = 0;
         _IsActive = true;
         DialogueBox.SetActive(true);
+        NameBox.SetActive(true);
+        NameText.text = NPCName;
 
         foreach (string line in DialogueLines)
         {
@@ -87,6 +96,8 @@ public class Dialogue : MonoBehaviour
         _IsActive = false;
         DialogueText.text = "";
         DialogueBox.SetActive(false);
+        NameBox.SetActive(false);
+        NameText.text = "";
     }
     /*
     private void StartDialogue()
