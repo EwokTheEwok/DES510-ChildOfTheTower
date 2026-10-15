@@ -13,7 +13,7 @@ public class PlayerCircleSync : MonoBehaviour
 
     void Update()
     {
-        var dir = Camera.transform.position - transform.position;
+        /*var dir = Camera.transform.position - transform.position;
         var ray = new Ray(transform.position, dir.normalized);
 
         if (Physics.Raycast(ray, 30000, Mask))
@@ -22,7 +22,7 @@ public class PlayerCircleSync : MonoBehaviour
             WallMaterial.SetFloat (SizeID, 0);
 
             var veiw = Camera.WorldToViewportPoint(transform.position);
-        WallMaterial.SetVector(PosID, veiw);
+        WallMaterial.SetVector(PosID, veiw);*/
     }
 
 }

@@ -18,6 +18,70 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Lvl1 Events" ID="{0B9BEEAE-9342-44DD-A0D9-0D363E90757A}" ShortID="333419833">
+					<ChildrenList>
+						<Event Name="Play_IntroLoop" ID="{5141A12A-7C53-4A7C-8E8D-98DE16D8F73D}">
+							<ChildrenList>
+								<Action Name="" ID="{760E94F3-37D9-424E-955C-6F8CBDFFBEF1}" ShortID="136352026">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Intro" ID="{9505323B-7767-41A2-A7C4-50A4C81FBE95}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{2FCB56FD-BCE9-468D-935B-77D2A4B85D04}" ShortID="805614185">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MSW_Lvl1" ID="{E1995D58-DB3D-480F-9D26-A7ED221ECA7C}" WorkUnitID="{6C3C909C-86D2-4B3E-93D4-FD4C2DADD8D7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Transition_MainLoop" ID="{27124751-2513-4E35-BAF6-513B2DBDB2AC}">
+							<ChildrenList>
+								<Action Name="" ID="{8C2F03AC-15A4-4212-ADA4-7DADBC8DFFDD}" ShortID="335297764">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MainLoop" ID="{44EEFD56-F979-4D14-B3FC-6410C4CA368A}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Event Name="Start_Music" ID="{9A97C6C1-0CEB-4330-A3F7-CD55E362B206}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="4"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{A0ABDAEB-8831-43B7-9FBF-241185489694}" ShortID="662720049">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Title" ID="{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{8B91837C-194F-49F0-94D7-2596C34FC5C3}" ShortID="604194356">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MSW_Master" ID="{BA9BC550-36F4-480B-8895-4D0BD3267772}" WorkUnitID="{6C3C909C-86D2-4B3E-93D4-FD4C2DADD8D7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

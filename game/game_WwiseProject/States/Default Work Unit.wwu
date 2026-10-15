@@ -16,6 +16,21 @@
 						<State Name="Brick_07" ID="{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"/>
 					</ChildrenList>
 				</StateGroup>
+				<StateGroup Name="MusicState_Level1" ID="{D2A8C71F-D125-4F86-B8F3-07B30ECB157A}">
+					<ChildrenList>
+						<State Name="None" ID="{73303B34-4BA0-4678-B61D-87F42F2C542F}"/>
+						<State Name="Intro" ID="{9505323B-7767-41A2-A7C4-50A4C81FBE95}"/>
+						<State Name="MainLoop" ID="{44EEFD56-F979-4D14-B3FC-6410C4CA368A}"/>
+					</ChildrenList>
+				</StateGroup>
+				<StateGroup Name="Level" ID="{8C02021C-5ABD-45E2-AD8D-08C504A3BA7D}">
+					<ChildrenList>
+						<State Name="None" ID="{D7D2ED78-A347-4B9A-BCD8-D19CFA466400}"/>
+						<State Name="Title" ID="{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}"/>
+						<State Name="Lvl1" ID="{863C7175-F5DA-4DC0-B5C4-53BC5F074DDB}"/>
+						<State Name="Lvl2" ID="{9FC27A63-68FE-47C0-BA0E-77310CA275B5}"/>
+					</ChildrenList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>
