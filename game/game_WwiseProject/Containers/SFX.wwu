@@ -9,6 +9,7 @@
 			<ChildrenList>
 				<SwitchContainer Name="SWC_BrickBuilding" ID="{BC8866BD-1460-4B35-9597-26BF34C63735}" ShortID="734642022">
 					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 						<Property Name="MaxSoundPerInstance" Type="int16">
 							<ValueList>
 								<Value>1</Value>
@@ -28,7 +29,7 @@
 							<ObjectRef Name="None" ID="{1AD2C52F-4514-4778-8334-F3447D8E7CB4}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+							<ObjectRef Name="AudioObjects" ID="{A1065881-998C-4B5A-B989-73098B9FF0BB}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 						</Reference>
 						<Reference Name="SwitchGroupOrStateGroup">
 							<ObjectRef Name="BrickBuilding" ID="{01F874EC-5CAC-4066-85A4-74EEDEC7A799}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
@@ -339,6 +340,7 @@
 				</SwitchContainer>
 				<RandomSequenceContainer Name="RMC_BrickReverse" ID="{D119474C-484F-43FC-A734-25E11498D598}" ShortID="186039485">
 					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 						<Property Name="MaxSoundPerInstance" Type="int16">
 							<ValueList>
 								<Value>1</Value>
@@ -346,7 +348,7 @@
 						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-4</Value>
+								<Value>-8</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -355,7 +357,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+							<ObjectRef Name="AudioObjects" ID="{A1065881-998C-4B5A-B989-73098B9FF0BB}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>

@@ -10,6 +10,39 @@
 						</Reference>
 					</ReferenceList>
 				</Bus>
+				<Bus Name="Music" ID="{02E380AC-3A1C-4EF2-8D9F-075879842A3F}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="24"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="SFX" ID="{1B9EC4CE-05CF-4AD6-A9B0-57ABC853B9ED}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="13"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="AudioObjects" ID="{A1065881-998C-4B5A-B989-73098B9FF0BB}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="8"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
 			</ChildrenList>
 		</WorkUnit>
 	</Busses>
