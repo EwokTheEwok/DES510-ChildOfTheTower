@@ -24,7 +24,7 @@ public class Dialogue : MonoBehaviour
 
     public float _LineDelay = 2.0f;
     public float _EndDelay = 7.0f;
-    public float height = 2.0f;
+    public float height = 100000f;
 
     private RectTransform dialogueTransform;
 

@@ -245,7 +245,7 @@ MonoBehaviour:
   TypeSpeed: 0.05
   _LineDelay: 2
   _EndDelay: 7
-  height: 6
+  height: 2
 --- !u!135 &22447459
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2483,7 +2483,7 @@ RectTransform:
   m_GameObject: {fileID: 851983425}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.39601338, y: 0.39601338, z: 0.39601338}
+  m_LocalScale: {x: 0.22448018, y: 0.22448018, z: 0.22448018}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 183528108}
@@ -2492,7 +2492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 8.0194}
   m_SizeDelta: {x: 450, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851983427
@@ -3152,7 +3152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -3173,7 +3173,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1352730136}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -3483,7 +3483,7 @@ Transform:
   m_GameObject: {fileID: 1671488735}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.69, y: 27.97, z: -6.41}
+  m_LocalPosition: {x: -6.69, y: 3.04, z: -6.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
