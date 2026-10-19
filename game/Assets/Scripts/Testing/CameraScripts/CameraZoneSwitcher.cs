@@ -30,12 +30,12 @@ public class CameraZoneSwtcher : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag(PlayerTag)) {
-            SwitchToCamera(PrimaryCamera);
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.CompareTag(PlayerTag)) {
+    //        SwitchToCamera(PrimaryCamera);
+    //    }
+    //}
 
     private void SwitchToCamera(CinemachineCamera targetCamera)
     {
