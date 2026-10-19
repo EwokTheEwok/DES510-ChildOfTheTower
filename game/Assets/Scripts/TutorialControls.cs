@@ -1,15 +1,19 @@
+using System.Collections;
+using TMPro;
 using Unity.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using TMPro;
-using System.Collections;
+using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 public class TutorialControls : MonoBehaviour
 {
-    [SerializeField] private GameObject DialogueBox;
-    [SerializeField] private TMP_Text DialogueText;
+    [SerializeField] private UnityEngine.UI.Image controlBox;
+    [SerializeField] private GameObject ControlBox;
+    [SerializeField] private TMP_Text ControlText;
+    [SerializeField] private UnityEngine.UI.Image buttons;
 
-    [SerializeField] private string[] DialogueLines;
+    [SerializeField] private string[] UIText;
     [SerializeField] private float TypeSpeed = 0.05f;
 
     private int lineIndex = 0;
@@ -22,8 +26,16 @@ public class TutorialControls : MonoBehaviour
     public float _EndDelay = 7.0f;
     public float height = 100000f;
 
-
     private IEnumerator coroutine;
+
+
+
+    private void Start()
+    {
+        controlBox.CrossFadeAlpha(0.0f, 0.05f, false);
+        ControlText.CrossFadeAlpha(0.0f, 0.05f, false);
+        buttons.CrossFadeAlpha(0.0f, 0.05f, false);
+    }
 
     private void Update()
     {
@@ -45,14 +57,18 @@ public class TutorialControls : MonoBehaviour
     {
         lineIndex = 0;
         _IsActive = true;
-        DialogueBox.SetActive(true);
+        ControlBox.SetActive(true);
+        controlBox.CrossFadeAlpha(1.0f, 0.5f, false);
+        ControlText.CrossFadeAlpha(1.0f, 0.5f, false);
+        buttons.CrossFadeAlpha(1.0f, 0.5f, false);
 
-        foreach (string line in DialogueLines)
+
+        foreach (string line in UIText)
         {
-            DialogueText.text = "";
+            ControlText.text = "";
             foreach (char c in line)
             {
-                DialogueText.text += c;
+                ControlText.text += c;
                 yield return new WaitForSeconds(TypeSpeed);
             }
             yield return new WaitForSeconds(_LineDelay);
@@ -62,8 +78,11 @@ public class TutorialControls : MonoBehaviour
     private void StopTalking()
     {
         _IsActive = false;
-        DialogueText.text = "";
-        DialogueBox.SetActive(false);
+        ControlText.text = "";
+        controlBox.CrossFadeAlpha(0.0f, 0.3f, false);
+        ControlText.CrossFadeAlpha(0.0f, 0.3f, false);
+        buttons.CrossFadeAlpha(0.0f, 0.3f, false);
+        //ControlBox.SetActive(false);
     }
   
     private void OnTriggerEnter(Collider collision)

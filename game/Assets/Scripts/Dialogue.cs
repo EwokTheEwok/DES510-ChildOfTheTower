@@ -104,8 +104,8 @@ public class Dialogue : MonoBehaviour
     {
         _IsActive = true;
 
-        DialogueText.text = "";
-        DialogueBox.SetActive(true);
+        ControlText.text = "";
+        ControlBox.SetActive(true);
 
         lineIndex = 0;
     }
@@ -113,9 +113,9 @@ public class Dialogue : MonoBehaviour
     private IEnumerator WriteLetters()
     {
         _IsTyping = true;
-        foreach (char c in DialogueLines[lineIndex])
+        foreach (char c in UIText[lineIndex])
         {
-            DialogueText.text += c;
+            ControlText.text += c;
             yield return new WaitForSeconds(TypeSpeed);
         }
         yield return new WaitForSeconds(_LineDelay);
@@ -124,9 +124,9 @@ public class Dialogue : MonoBehaviour
 
     private void WriteLine()
     {
-        if (lineIndex < DialogueLines.Length) 
+        if (lineIndex < UIText.Length) 
         {
-            DialogueText.text = "";
+            ControlText.text = "";
 
             coroutine = WriteLetters();
             StartCoroutine(coroutine);
@@ -134,7 +134,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            DialogueBox.SetActive (false);
+            ControlBox.SetActive (false);
 
             _IsActive = false;
         }
