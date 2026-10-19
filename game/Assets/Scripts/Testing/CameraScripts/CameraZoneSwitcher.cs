@@ -6,21 +6,25 @@ using System.Collections;
 
 public class CameraZoneSwtcher : MonoBehaviour
 {
-    public string TriggerTag;
+    public string PlayerTag = "Player";
 
     public CinemachineCamera PrimaryCamera;
-    public CinemachineCamera[] VirtualCameras;
+    public CinemachineCamera PlayerCamera;
+
+    CinemachineCamera[] VirtualCameras = new CinemachineCamera[2];
 
     private void Start() {
 
-        SwitchToCamera(PrimaryCamera);
+        VirtualCameras[0] = PrimaryCamera;
+        VirtualCameras[1] = PlayerCamera;
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag(TriggerTag))
+        if (other.CompareTag(PlayerTag))
         {
+            Debug.Log("Yes");
             CinemachineCamera targetCamera = other.GetComponentInChildren<CinemachineCamera>();
             SwitchToCamera(targetCamera);
         }
@@ -28,16 +32,17 @@ public class CameraZoneSwtcher : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag(TriggerTag)) {
+        if (other.CompareTag(PlayerTag)) {
             SwitchToCamera(PrimaryCamera);
         }
     }
 
-        private void SwitchToCamera(CinemachineCamera targetCamera)
+    private void SwitchToCamera(CinemachineCamera targetCamera)
     {
-        foreach (CinemachineCamera camera in VirtualCameras) {
-            camera.enabled = camera == targetCamera;
-        }
 
+        foreach (CinemachineCamera cam in VirtualCameras)
+        {
+            cam.enabled = cam == targetCamera;
+        }
     }
 }
