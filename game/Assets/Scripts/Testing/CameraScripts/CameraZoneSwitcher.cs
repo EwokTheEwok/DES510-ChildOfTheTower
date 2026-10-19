@@ -24,7 +24,6 @@ public class CameraZoneSwtcher : MonoBehaviour
     {
         if (other.CompareTag(PlayerTag))
         {
-            Debug.Log("Yes");
             CinemachineCamera targetCamera = other.GetComponentInChildren<CinemachineCamera>();
             SwitchToCamera(targetCamera);
         }
@@ -39,7 +38,6 @@ public class CameraZoneSwtcher : MonoBehaviour
 
     private void SwitchToCamera(CinemachineCamera targetCamera)
     {
-
         foreach (CinemachineCamera cam in VirtualCameras)
         {
             cam.enabled = cam == targetCamera;
