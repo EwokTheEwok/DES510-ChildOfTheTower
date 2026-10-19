@@ -27,7 +27,7 @@ public class BlockController : MonoBehaviour
     bool _ActiveSurface = false;
     bool _MovingBlock = false;
     public float _BlockRayScale = 1.25f;
-    readonly List<GameObject> _BlockList = new();
+    public List<GameObject> _BlockList = new();
     EntityId _ActiveSurfaceID;
     Collider[] _SurfaceColList;
     int _SurfaceTotal;
@@ -48,6 +48,9 @@ public class BlockController : MonoBehaviour
     PlayerCamera _PlayerCamera;
     int _CameraCubeSegment;
     Camera _Camera;
+
+    //Audio
+    public BrickAudioSystem _BrickAudioSystem;
 
     public 
 
@@ -140,6 +143,8 @@ public class BlockController : MonoBehaviour
             _ActiveSurfaceID = _ClosestSurface.GetEntityId();
             _PlayerMovement.SetControl(false);
             _Block = Instantiate(_BlockPrefab, _GuideBlock.transform.position, _GuideBlock.transform.rotation);
+            //play audio
+            _BrickAudioSystem.PlaceBrick();
             _BlockList.Add(_Block);
 
             _CinemachineCamera.Target.TrackingTarget = _Block.transform;
@@ -189,6 +194,11 @@ public class BlockController : MonoBehaviour
                 Vector3 newBlockPlacement = blockTransform.position + blockTransform.TransformDirection(localDirection);
                 _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation);
                 _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => _MovingBlock = false);
+                //play audio
+                if (_BlockList.Count <= 7)
+                {
+                    _BrickAudioSystem.PlaceBrick();
+                }
                 _BlockList.Add(_Block);
                 _Block.SetActive(true);
                 _CinemachineCamera.Target.TrackingTarget = _Block.transform;
@@ -208,6 +218,8 @@ public class BlockController : MonoBehaviour
                     _MovingBlock = false;
                     _BlockList.RemoveAt(_BlockList.Count - 1);
                     Destroy(_Block);
+                    //play audio
+                    _BrickAudioSystem.RemoveBrick();
                     _Block = _BlockList[^1];
                     _CinemachineCamera.Target.TrackingTarget = _Block.transform;
                 });
@@ -215,6 +227,7 @@ public class BlockController : MonoBehaviour
             else
             {
                 _BlockList.RemoveAt(0);
+                // Audio hook here
                 Destroy(_Block);
                 _IsPlacing = false;
                 _ActiveSurface = false;
