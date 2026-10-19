@@ -40,7 +40,7 @@ public class PlayerCamera : MonoBehaviour
 
     void Update()
     {
-        if (_CCamera.isActiveAndEnabled && !_IsCameraRotating)
+        if (_CCamera.IsLive && !_IsCameraRotating)
         {
             if (_CameraMoveDir != 0f)
             {

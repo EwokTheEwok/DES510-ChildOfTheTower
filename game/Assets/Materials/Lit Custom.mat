@@ -30,7 +30,7 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2450
+  m_CustomRenderQueue: -1
   stringTagMap:
     RenderType: TransparentCutout
   disabledShaderPasses:
@@ -101,7 +101,7 @@ Material:
     - _AlphaClip: 1
     - _AlphaToMask: 1
     - _Blend: 0
-    - _BlendModePreserveSpecular: 0
+    - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
     - _CastShadows: 1
     - _ClearCoatMask: 0
@@ -109,15 +109,18 @@ Material:
     - _Cull: 2
     - _Cutoff: 1
     - _DETAIL_MULX2: 0
+    - _DepthCutoff: 10
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EMISSION: 0
     - _EnvironmentReflections: 1
+    - _Feather: 0.05
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _KeyholeRadius: 0.25
     - _METALLICSPECGLOSSMAP: 0
     - _Metallic: 0
     - _NORMALMAP: 0
@@ -143,7 +146,7 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Player_Screen_Position: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _KeyholeCenter: {r: 0.5, g: 0.5, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
