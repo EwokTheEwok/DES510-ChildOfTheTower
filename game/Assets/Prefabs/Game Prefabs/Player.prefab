@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.2, y: 3.15, z: -11.11}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.6187, y: 1.6187, z: 1.6187}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2528598960761816714}
@@ -264,8 +264,6 @@ MonoBehaviour:
   _JumpSpeed: 12
   _MoveAccel: 10
   _MoveDeaccel: 20
-  _Camera: {fileID: 0}
-  _CanControl: 1
 --- !u!114 &1241074854105163345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,9 +289,10 @@ MonoBehaviour:
   _GuideBlockPrefab: {fileID: 2741366402790427780, guid: fefcb85cb12b5c940b655160ec18117a, type: 3}
   _BlockUIPrefab: {fileID: 4426684099784562912, guid: 347bd05a054a400458d449c4493cc538, type: 3}
   _BlockPrefab: {fileID: 8990706033399320676, guid: b0929d630b1f8204381e7f2148d7b6c5, type: 3}
-  _Camera: {fileID: 0}
   _CinemachineCamera: {fileID: 5769029285310065178}
   _BlockRayScale: 1.25
+  _BlockList: []
+  _BrickAudioSystem: {fileID: 0}
 --- !u!1 &1714346313533235322
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,5 +414,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCamera
   _CamRotationDuration: 0.5
-  _RotationSides: 8
+  _RotationSidesOcta: 8
+  _RotationSidesCube: 4
   _Ease: 4
