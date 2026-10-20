@@ -20,6 +20,101 @@
 							<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
 						</Reference>
 					</ReferenceList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<RTPC Name="" ID="{3982FD32-04AC-4FE4-979C-6A11490AD27B}" ShortID="551941515">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="RTPC_MXDucking" ID="{2F7F2B53-C6EB-4666-9036-92C07213C0F1}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{F01569D1-93B3-4394-A8E7-46C960A83F2C}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>-48</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log1</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>-24.35951</XPos>
+														<YPos>-0.06921</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>Log2</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>-12.10146</XPos>
+														<YPos>-16.4324</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>-0.001</XPos>
+														<YPos>-16.90199</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>200</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+							<RTPC Name="" ID="{7A618482-E67E-4053-B63C-811216A5ECFB}" ShortID="161996692">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="Lowpass"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="RTPC_MXDucking" ID="{2F7F2B53-C6EB-4666-9036-92C07213C0F1}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{F6A522F4-417D-4053-BF40-A538D65BFCC4}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="65537"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>-48</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>Log1</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>-24.32344</XPos>
+														<YPos>-1</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>Log2</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>-11.062</XPos>
+														<YPos>66</YPos>
+														<Flags>0</Flags>
+													</Point>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>67</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+						</ObjectList>
+					</ObjectLists>
 				</Bus>
 				<Bus Name="SFX" ID="{1B9EC4CE-05CF-4AD6-A9B0-57ABC853B9ED}">
 					<PropertyList>
@@ -31,10 +126,44 @@
 							<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
 						</Reference>
 					</ReferenceList>
+					<ObjectLists>
+						<ObjectList Name="Effects">
+							<EffectSlot Name="" ID="{5DF20048-3B3B-4B23-980D-39B74AC985CE}" ShortID="819777012">
+								<ReferenceList>
+									<Reference Name="Effect">
+										<Custom>
+											<Effect Name="Meter (Custom)" ID="{1CFF79ED-F681-401E-96CE-208EEEDD405C}" ShortID="302392573" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+												<PropertyList>
+													<Property Name="Hold" Type="Real32" Value="0.5"/>
+													<Property Name="ReleaseTime" Type="Real32" Value="0.75"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="GameParameter">
+														<ObjectRef Name="RTPC_MXDucking" ID="{2F7F2B53-C6EB-4666-9036-92C07213C0F1}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+													</Reference>
+												</ReferenceList>
+											</Effect>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</EffectSlot>
+						</ObjectList>
+					</ObjectLists>
 				</Bus>
 				<Bus Name="AudioObjects" ID="{A1065881-998C-4B5A-B989-73098B9FF0BB}">
 					<PropertyList>
 						<Property Name="Color" Type="int16" Value="8"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+							<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
+						</Reference>
+					</ReferenceList>
+				</Bus>
+				<Bus Name="Ambience" ID="{7DEAD1D9-A9C5-4B87-9802-76B50CABE0C9}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="4"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>

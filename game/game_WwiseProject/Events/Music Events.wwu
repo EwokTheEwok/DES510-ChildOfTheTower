@@ -82,6 +82,24 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="MusicAmbTest" ID="{B24AE495-86AA-4865-9672-CAC9A6FB826D}">
+					<ChildrenList>
+						<Action Name="" ID="{988BF7DA-9628-4F24-8714-1304A2056908}" ShortID="634346771">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BLC_Ambience" ID="{0CDB9107-013F-4B82-8225-9ED01BD38F66}" WorkUnitID="{62A7DCA5-8F9D-473B-BD55-46E25E3FE3D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{C043E815-7550-4F6F-8E1D-1EEBB74FD139}" ShortID="639624095">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="MSW_Master" ID="{BA9BC550-36F4-480B-8895-4D0BD3267772}" WorkUnitID="{6C3C909C-86D2-4B3E-93D4-FD4C2DADD8D7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

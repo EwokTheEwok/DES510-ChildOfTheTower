@@ -6,6 +6,61 @@
 				<Property Name="Color" Type="int16" Value="4"/>
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
+			<ChildrenList>
+				<BlendContainer Name="BLC_Ambience" ID="{0CDB9107-013F-4B82-8225-9ED01BD38F66}" ShortID="720086734">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Ambience" ID="{7DEAD1D9-A9C5-4B87-9802-76B50CABE0C9}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sfx_amb_lvl1_indoor_002" ID="{16ADBBE7-51D2-4EF9-A05B-EDBD8DA7754B}" ShortID="875574667">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_amb_lvl1_indoor_002" ID="{D361CFEB-6A6B-406A-BE93-0ACEABF78330}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_amb_lvl1_indoor_002.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="143126068"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_amb_lvl1_indoor_002" ID="{D361CFEB-6A6B-406A-BE93-0ACEABF78330}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<BlendTrackList>
+						<BlendTrack Name="Lvl 1 Indoor" ID="{B0AA0AB2-4EDF-43F6-AED9-4CF0C8FE1BE1}" ShortID="826477271">
+							<BlendTrackAssocList>
+								<BlendTrackAssoc>
+									<ItemRef Name="sfx_amb_lvl1_indoor_002" ID="{16ADBBE7-51D2-4EF9-A05B-EDBD8DA7754B}"/>
+								</BlendTrackAssoc>
+							</BlendTrackAssocList>
+						</BlendTrack>
+					</BlendTrackList>
+				</BlendContainer>
+			</ChildrenList>
 		</WorkUnit>
 	</Containers>
 </WwiseDocument>
