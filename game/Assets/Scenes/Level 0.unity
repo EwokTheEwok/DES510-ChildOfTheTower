@@ -4292,7 +4292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 545180965}
   - component: {fileID: 545180963}
-  - component: {fileID: 545180964}
+  - component: {fileID: 545180966}
   m_Layer: 0
   m_Name: Starting CCamera
   m_TagString: Untagged
@@ -4325,9 +4325,9 @@ MonoBehaviour:
     CustomLookAtTarget: 0
   Lens:
     FieldOfView: 40
-    OrthographicSize: 12.2
-    NearClipPlane: -48.89
-    FarClipPlane: 4712
+    OrthographicSize: 11.8
+    NearClipPlane: -150.3
+    FarClipPlane: 2107
     Dutch: 0
     ModeOverride: 0
     PhysicalProperties:
@@ -4343,7 +4343,22 @@ MonoBehaviour:
       BarrelClipping: 0.25
       Anamorphism: 0
   BlendHint: 0
---- !u!114 &545180964
+--- !u!4 &545180965
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 545180962}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.08558919, y: 0.2552827, z: -0.022693565, w: 0.96280336}
+  m_LocalPosition: {x: -217.53122, y: 21.42081, z: -58.915764}
+  m_LocalScale: {x: 0.857097, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 732420548}
+  m_LocalEulerAnglesHint: {x: 10.16, y: 29.7, z: 0}
+--- !u!114 &545180966
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4361,22 +4376,7 @@ MonoBehaviour:
     AngularDampingMode: 0
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
-  FollowOffset: {x: 0, y: 0, z: -95.04}
---- !u!4 &545180965
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 545180962}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.002814515, y: -0, z: -0, w: 0.9999961}
-  m_LocalPosition: {x: -158.30583, y: -2.33919, z: -34.065765}
-  m_LocalScale: {x: 0.857097, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 732420548}
-  m_LocalEulerAnglesHint: {x: -0.323, y: 0, z: 0}
+  FollowOffset: {x: -69.1, y: 23.76, z: -119.89}
 --- !u!1 &548614803
 GameObject:
   m_ObjectHideFlags: 0
@@ -9073,11 +9073,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: -48.89
-  far clip plane: 4712
+  near clip plane: -150.3
+  far clip plane: 2107
   field of view: 40
   orthographic: 1
-  orthographic size: 12.2
+  orthographic size: 11.8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -9101,8 +9101,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352730134}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.002814515, y: 0, z: 0, w: 0.9999961}
-  m_LocalPosition: {x: -103.8, y: -1.52, z: -92.4}
+  m_LocalRotation: {x: 0.08558919, y: 0.2552827, z: -0.022693565, w: 0.96280336}
+  m_LocalPosition: {x: -172.9, y: 22.24, z: -117.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
