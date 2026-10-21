@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     //animation variables
     private Animator _Animator;
 
+    //audio script reference
+    public TriggerPlayerAudio PlayerAudio;
+
     void Start()
     {
         _Camera = Camera.main;
@@ -86,6 +89,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.started && _CharControl.isGrounded)
         {
+            PlayerAudio.PlayJump();
             _Velocity.y = _JumpSpeed;
         }
     }

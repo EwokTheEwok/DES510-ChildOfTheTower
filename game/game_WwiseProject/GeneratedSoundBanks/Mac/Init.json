@@ -10,11 +10,21 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{AF697AAD-2D21-2EE1-1826-72D60247CCA8}",
+    "Hash": "{AA1E429B-B65F-D19F-4F32-E16DCD036177}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
+     "Custom": [
+      {
+       "Id": "302392573",
+       "Name": "Meter (Custom)",
+       "ObjectPath": "\\Busses\\Default Work Unit\\SFX\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
+       "GUID": "{1CFF79ED-F681-401E-96CE-208EEEDD405C}",
+       "LibName": "Wwise Meter",
+       "LibId": "8454147"
+      }
+     ],
      "AudioDevices": [
       {
        "Id": "2317455096",
@@ -36,11 +46,25 @@
     },
     "Busses": [
      {
+      "Id": "85412153",
+      "Name": "Ambience",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Ambience",
+      "GUID": "{7DEAD1D9-A9C5-4B87-9802-76B50CABE0C9}",
+      "Color": "4"
+     },
+     {
       "Id": "393239870",
       "Name": "SFX",
       "ObjectPath": "\\Busses\\Default Work Unit\\SFX",
       "GUID": "{1B9EC4CE-05CF-4AD6-A9B0-57ABC853B9ED}",
-      "Color": "13"
+      "Color": "13",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "302392573"
+        }
+       ]
+      }
      },
      {
       "Id": "2246998526",
@@ -63,6 +87,22 @@
       "Color": "24"
      }
     ],
+    "GameParameters": [
+     {
+      "Id": "3739513706",
+      "Name": "RTPC_ShadowDistance",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\RTPC_ShadowDistance",
+      "GUID": "{F36820F7-C0BF-4C9F-B1D9-16242535787B}",
+      "Color": "10"
+     },
+     {
+      "Id": "4238634557",
+      "Name": "RTPC_MXDucking",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\RTPC_MXDucking",
+      "GUID": "{2F7F2B53-C6EB-4666-9036-92C07213C0F1}",
+      "Color": "10"
+     }
+    ],
     "StateGroups": [
      {
       "Id": "2782712965",
@@ -70,6 +110,12 @@
       "ObjectPath": "\\States\\Default Work Unit\\Level",
       "GUID": "{8C02021C-5ABD-45E2-AD8D-08C504A3BA7D}",
       "States": [
+       {
+        "Id": "141331488",
+        "Name": "Lvl3",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\Lvl3",
+        "GUID": "{E3F8CBF0-7A13-49BF-B957-A8DDC7832151}"
+       },
        {
         "Id": "141331489",
         "Name": "Lvl2",
@@ -81,6 +127,12 @@
         "Name": "Lvl1",
         "ObjectPath": "\\States\\Default Work Unit\\Level\\Lvl1",
         "GUID": "{863C7175-F5DA-4DC0-B5C4-53BC5F074DDB}"
+       },
+       {
+        "Id": "141331495",
+        "Name": "Lvl4",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\Lvl4",
+        "GUID": "{616BC274-61E1-4F64-8776-A9C822D71FF7}"
        },
        {
         "Id": "748895195",
@@ -187,6 +239,6 @@
     ]
    }
   ],
-  "FileHash": "{C4195772-93A1-C004-3264-A605FCD30A18}"
+  "FileHash": "{A57A662D-B6DC-D765-5274-53BC8AD03E32}"
  }
 }
