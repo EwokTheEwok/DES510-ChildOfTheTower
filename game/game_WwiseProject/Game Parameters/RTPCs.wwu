@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}" SchemaVersion="133">
+	<GameParameters>
+		<WorkUnit Name="RTPCs" ID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="10"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<GameParameter Name="RTPC_ShadowDistance" ID="{F36820F7-C0BF-4C9F-B1D9-16242535787B}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="RTPC_MXDucking" ID="{2F7F2B53-C6EB-4666-9036-92C07213C0F1}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="-48"/>
+						<Property Name="Max" Type="Real64" Value="0"/>
+						<Property Name="Min" Type="Real64" Value="-48"/>
+					</PropertyList>
+				</GameParameter>
+			</ChildrenList>
+		</WorkUnit>
+	</GameParameters>
+</WwiseDocument>
