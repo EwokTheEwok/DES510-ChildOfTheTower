@@ -25,13 +25,18 @@ public class PlayerMovement : MonoBehaviour
     //animation variables
     private Animator _Animator;
 
+    private void Awake()
+    {
+        _Animator = GetComponentInChildren<Animator>();
+    }
+
     void Start()
     {
         _Camera = Camera.main;
         _CharControl = GetComponent<CharacterController>();
         _PlayerInput = GetComponent<PlayerInput>();
         _PlayerInput.actions.FindActionMap("Player").Enable();
-        _Animator = GetComponent<Animator>();
+        //_Animator = GetComponent<Animator>();
     }
 
     private void Update()
