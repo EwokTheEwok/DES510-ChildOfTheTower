@@ -22,12 +22,16 @@ public class PlayerMovement : MonoBehaviour
     Vector3 _WorldMoveDir;
     bool _CanControl = true;
 
+    //animation variables
+    private Animator _Animator;
+
     void Start()
     {
         _Camera = Camera.main;
         _CharControl = GetComponent<CharacterController>();
         _PlayerInput = GetComponent<PlayerInput>();
         _PlayerInput.actions.FindActionMap("Player").Enable();
+        _Animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -58,7 +62,20 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        _Animator.SetBool("isWalking", true);
+
+        if (context.canceled)
+        {
+            _Animator.SetBool("isWalking", false);
+            _Animator.SetFloat("lastInputX", _MoveDir.x);
+            _Animator.SetFloat("lastInputY", _MoveDir.y);
+        }
+
         _MoveDir = context.ReadValue<Vector2>();
+
+        _Animator.SetFloat("inputX", _MoveDir.x);
+        _Animator.SetFloat("inputY", _MoveDir.y);
+
         if (_MoveDir.magnitude > 0.0f)
             _MoveInput = true;
         else
