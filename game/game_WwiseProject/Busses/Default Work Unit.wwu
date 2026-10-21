@@ -9,6 +9,45 @@
 							<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<AuxBus Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="7"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{5DEBB2DB-5037-4F7E-8DAE-51EC66003850}" ShortID="619536302">
+										<PropertyList>
+											<Property Name="Bypass" Type="bool" Value="True"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+												<ObjectRef Name="Hall_Large_Dark" ID="{0F6A7D6D-131C-4650-9561-FC05F5C7A37B}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+							</ObjectLists>
+						</AuxBus>
+						<AuxBus Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="7"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{B653C36B-B2A8-4A89-A4C7-6863AD97C25E}" ShortID="329661910">
+										<ReferenceList>
+											<Reference Name="Effect" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+												<ObjectRef Name="Have_U_Ever_Been_Outside" ID="{FE29AE8D-FD86-4652-A95D-68D32F5760EC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+							</ObjectLists>
+						</AuxBus>
+					</ChildrenList>
 				</Bus>
 				<Bus Name="Music" ID="{02E380AC-3A1C-4EF2-8D9F-075879842A3F}">
 					<PropertyList>
@@ -116,40 +155,6 @@
 						</ObjectList>
 					</ObjectLists>
 				</Bus>
-				<Bus Name="SFX" ID="{1B9EC4CE-05CF-4AD6-A9B0-57ABC853B9ED}">
-					<PropertyList>
-						<Property Name="Color" Type="int16" Value="13"/>
-						<Property Name="OverrideColor" Type="bool" Value="True"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
-							<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
-						</Reference>
-					</ReferenceList>
-					<ObjectLists>
-						<ObjectList Name="Effects">
-							<EffectSlot Name="" ID="{5DF20048-3B3B-4B23-980D-39B74AC985CE}" ShortID="819777012">
-								<ReferenceList>
-									<Reference Name="Effect">
-										<Custom>
-											<Effect Name="Meter (Custom)" ID="{1CFF79ED-F681-401E-96CE-208EEEDD405C}" ShortID="302392573" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
-												<PropertyList>
-													<Property Name="Hold" Type="Real32" Value="0.5"/>
-													<Property Name="ReleaseTime" Type="Real32" Value="0.75"/>
-												</PropertyList>
-												<ReferenceList>
-													<Reference Name="GameParameter">
-														<ObjectRef Name="RTPC_MXDucking" ID="{2F7F2B53-C6EB-4666-9036-92C07213C0F1}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
-													</Reference>
-												</ReferenceList>
-											</Effect>
-										</Custom>
-									</Reference>
-								</ReferenceList>
-							</EffectSlot>
-						</ObjectList>
-					</ObjectLists>
-				</Bus>
 				<Bus Name="AudioObjects" ID="{A1065881-998C-4B5A-B989-73098B9FF0BB}">
 					<PropertyList>
 						<Property Name="Color" Type="int16" Value="8"/>
@@ -172,6 +177,55 @@
 						</Reference>
 					</ReferenceList>
 				</Bus>
+				<Folder Name="SFXBusses" ID="{7C1A4CA7-DD4B-4EEE-80B6-D2044FBF49A5}" ShortID="199027502">
+					<ChildrenList>
+						<Bus Name="SFX_Ducking" ID="{1B9EC4CE-05CF-4AD6-A9B0-57ABC853B9ED}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="13"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+									<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{1564EE6D-A4AB-469B-8E1A-68870A7EE19D}" ShortID="557542908">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Meter (Custom)" ID="{BEC757C0-48AD-4A1F-B6D6-6B3F97EB285F}" ShortID="442399366" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+														<PropertyList>
+															<Property Name="Hold" Type="Real32" Value="0.5"/>
+															<Property Name="ReleaseTime" Type="Real32" Value="0.75"/>
+														</PropertyList>
+														<ReferenceList>
+															<Reference Name="GameParameter">
+																<ObjectRef Name="RTPC_MXDucking" ID="{2F7F2B53-C6EB-4666-9036-92C07213C0F1}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+															</Reference>
+														</ReferenceList>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+							</ObjectLists>
+						</Bus>
+						<Bus Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="13"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+									<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
+								</Reference>
+							</ReferenceList>
+						</Bus>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Busses>
