@@ -16,7 +16,7 @@ public class BrickDialogue : MonoBehaviour
     private int lineIndex;
 
     private bool _InRange = false;
-    private bool _IsActive = true;
+    private bool _IsTalking = false;
 
     public float _LineDelay = 5.0f;
     public float _EndDelay = 10.0f;
@@ -35,11 +35,10 @@ public class BrickDialogue : MonoBehaviour
     private void Update()
     {
 
-        if (!_InRange)
+        if (_InRange)
         {
             dialogueTransform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, height, 0));
-            if (_IsActive)
-
+            if (!_IsTalking)
             {
                 coroutine = StartDia();
                 StartCoroutine(coroutine);
@@ -49,35 +48,35 @@ public class BrickDialogue : MonoBehaviour
 
     private IEnumerator StartDia()
     {
+        _IsTalking = true;
         lineIndex = Random.Range(0, BrickLines.Length);
-        
-        BrickBox.SetActive(true);
 
+        BrickBox.SetActive(true);
         BrickText.text = "";
+
         foreach (char c in BrickLines[lineIndex])
         {
-             BrickText.text += c;
-             yield return new WaitForSeconds(TypeSpeed);
+            BrickText.text += c;
+            yield return new WaitForSeconds(TypeSpeed);
         }
-        Debug.Log("yes");
+
         yield return new WaitForSeconds(Mathf.Abs(_LineDelay));
-        _IsActive = false;
-        Debug.Log("i am");
         BrickBox.SetActive(false);
+
         yield return new WaitForSeconds(Mathf.Abs(_EndDelay - _LineDelay));
-        Debug.Log("working");
+        _IsTalking = false;
     }
 
     private void StopTalking()
     {
-        _IsActive = false;
+        _IsTalking = false;
         BrickText.text = "";
         BrickBox.SetActive(false);
     }
    
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("NPC") && !_IsActive)
+        if (collision.CompareTag("NPC"))
         {
             StopCoroutine(coroutine);
             StopTalking();
