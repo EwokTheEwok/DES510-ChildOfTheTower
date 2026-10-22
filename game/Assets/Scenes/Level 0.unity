@@ -354,6 +354,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1241074854105163345, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -444,6 +448,9 @@ PrefabInstance:
       insertIndex: 3
       addedObject: {fileID: 1118178027}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 118030202727208779, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      insertIndex: 4
+      addedObject: {fileID: 1074620481}
     - targetCorrespondingSourceObject: {fileID: 118030202727208779, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1074620474}
@@ -7503,7 +7510,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5105890595199779603, guid: 0700bfd6501bad2458508e28a3745c37, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7
+      value: -40.77
       objectReference: {fileID: 0}
     - target: {fileID: 5105890595199779603, guid: 0700bfd6501bad2458508e28a3745c37, type: 3}
       propertyPath: m_LocalPosition.z
@@ -8364,6 +8371,33 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+--- !u!114 &1074620481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1074620472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54c8244961e90104e84ee21d3d0faeb4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlockControllerExp
+  _PlaceRange: 5
+  _MaxDetectableSurfaces: 5
+  _BlockLimit: 1
+  _BlockSize: 2
+  _BlockEasing: 4
+  _TweenDuration: 0.25
+  _BlockSurfaceTag: Block Surface
+  _BlockSurfaceLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  _GuideBlockPrefab: {fileID: 2741366402790427780, guid: fefcb85cb12b5c940b655160ec18117a, type: 3}
+  _BlockUIPrefab: {fileID: 4426684099784562912, guid: 347bd05a054a400458d449c4493cc538, type: 3}
+  _BlockPrefab: {fileID: 8990706033399320676, guid: b0929d630b1f8204381e7f2148d7b6c5, type: 3}
+  _CinemachineCamera: {fileID: 1184508006}
+  _BlockRayScale: 1.25
 --- !u!1001 &1075558856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9220,6 +9254,17 @@ MonoBehaviour:
   _WindowFade: 0.5
   _Player: {fileID: 1074620472}
   _CCamera: {fileID: 1184507997}
+--- !u!114 &1184508006 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5769029285310065178, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+  m_PrefabInstance: {fileID: 26829258}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1184507997}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1 &1199278363
 GameObject:
   m_ObjectHideFlags: 0
