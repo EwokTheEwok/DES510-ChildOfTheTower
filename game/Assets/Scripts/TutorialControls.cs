@@ -12,6 +12,13 @@ public class TutorialControls : MonoBehaviour
     [SerializeField] private GameObject ControlBox;
     [SerializeField] private TMP_Text ControlText;
     [SerializeField] private UnityEngine.UI.Image buttons;
+    [SerializeField] private UnityEngine.UI.Image buttons2;
+    [SerializeField] private UnityEngine.UI.Image buttons3;
+    [SerializeField] private UnityEngine.UI.Image buttons4;
+    [SerializeField] private UnityEngine.UI.Image buttons5;
+    [SerializeField] private UnityEngine.UI.Image buttons6;
+
+
 
     [SerializeField] private string[] UIText;
     [SerializeField] private float TypeSpeed = 0.05f;
@@ -35,6 +42,11 @@ public class TutorialControls : MonoBehaviour
         controlBox.CrossFadeAlpha(0.0f, 0.05f, false);
         ControlText.CrossFadeAlpha(0.0f, 0.05f, false);
         buttons.CrossFadeAlpha(0.0f, 0.05f, false);
+        buttons2.CrossFadeAlpha(0.0f, 0.05f, false);
+        buttons3.CrossFadeAlpha(0.0f, 0.05f, false);
+        buttons4.CrossFadeAlpha(0.0f, 0.05f, false);
+        buttons5.CrossFadeAlpha(0.0f, 0.05f, false);
+        buttons6.CrossFadeAlpha(0.0f, 0.05f, false);
     }
 
     private void Update()
@@ -61,6 +73,11 @@ public class TutorialControls : MonoBehaviour
         controlBox.CrossFadeAlpha(1.0f, 0.5f, false);
         ControlText.CrossFadeAlpha(1.0f, 0.5f, false);
         buttons.CrossFadeAlpha(1.0f, 0.5f, false);
+        buttons2.CrossFadeAlpha(1.0f, 0.5f, false);
+        buttons3.CrossFadeAlpha(1.0f, 0.5f, false);
+        buttons4.CrossFadeAlpha(1.0f, 0.5f, false);
+        buttons5.CrossFadeAlpha(1.0f, 0.5f, false);
+        buttons6.CrossFadeAlpha(1.0f, 0.5f, false);
 
 
         foreach (string line in UIText)
@@ -82,6 +99,12 @@ public class TutorialControls : MonoBehaviour
         controlBox.CrossFadeAlpha(0.0f, 0.3f, false);
         ControlText.CrossFadeAlpha(0.0f, 0.3f, false);
         buttons.CrossFadeAlpha(0.0f, 0.3f, false);
+        buttons2.CrossFadeAlpha(0.0f, 0.3f, false);
+        buttons3.CrossFadeAlpha(0.0f, 0.3f, false);
+        buttons4.CrossFadeAlpha(0.0f, 0.3f, false);
+        buttons5.CrossFadeAlpha(0.0f, 0.3f, false);
+        buttons6.CrossFadeAlpha(0.0f, 0.3f, false);
+
         //ControlBox.SetActive(false);
     }
   
