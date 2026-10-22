@@ -26,7 +26,7 @@
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="AudioObjects" ID="{A1065881-998C-4B5A-B989-73098B9FF0BB}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+							<ObjectRef Name="AudioObjects_Brick" ID="{A1065881-998C-4B5A-B989-73098B9FF0BB}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
@@ -163,7 +163,7 @@
 							<ObjectRef Name="None" ID="{D7D2ED78-A347-4B9A-BCD8-D19CFA466400}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
 						</Reference>
 						<Reference Name="OutputBus">
-							<ObjectRef Name="AudioObjects" ID="{A1065881-998C-4B5A-B989-73098B9FF0BB}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+							<ObjectRef Name="AudioObjects_Brick" ID="{A1065881-998C-4B5A-B989-73098B9FF0BB}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 						</Reference>
 						<Reference Name="SwitchGroupOrStateGroup">
 							<ObjectRef Name="Level" ID="{8C02021C-5ABD-45E2-AD8D-08C504A3BA7D}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
@@ -841,7 +841,7 @@
 									<PropertyList>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
-												<Value>-10</Value>
+												<Value>5</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -870,7 +870,7 @@
 									<PropertyList>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
-												<Value>-15</Value>
+												<Value>10</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -1784,6 +1784,9 @@
 						<Reference Name="UserAuxSend0">
 							<ObjectRef Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 						</Reference>
+						<Reference Name="UserAuxSend1">
+							<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+						</Reference>
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="sfx_footsteps_003_001" ID="{1F6EA1A1-D9D9-41A6-81B4-E28217365946}" ShortID="836438211">
@@ -2046,6 +2049,9 @@
 						</Reference>
 						<Reference Name="UserAuxSend0">
 							<ObjectRef Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+						</Reference>
+						<Reference Name="UserAuxSend1">
+							<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
