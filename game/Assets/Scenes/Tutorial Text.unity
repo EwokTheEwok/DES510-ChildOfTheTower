@@ -377,6 +377,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 118030202727208779, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1654935245}
+    - targetCorrespondingSourceObject: {fileID: 118030202727208779, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1654935250}
   m_SourcePrefab: {fileID: 100100000, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
 --- !u!1 &219236565
 GameObject:
@@ -757,7 +760,6 @@ GameObject:
   m_Component:
   - component: {fileID: 307584245}
   - component: {fileID: 307584246}
-  - component: {fileID: 307584247}
   m_Layer: 0
   m_Name: brick placeholder
   m_TagString: Untagged
@@ -840,29 +842,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &307584247
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 307584244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef640f8e5473cb46a3237fb6b4c3be7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BrickDialogue
-  BrickBox: {fileID: 1232483948}
-  BrickText: {fileID: 815030069}
-  BrickLines:
-  - test 1
-  - test 2
-  - test 3
-  - test 4
-  TypeSpeed: 0.05
-  _LineDelay: 5
-  _EndDelay: 10
-  height: 2
 --- !u!1 &321906486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,6 +2585,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1654935250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1654935237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef640f8e5473cb46a3237fb6b4c3be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BrickDialogue
+  BrickBox: {fileID: 1232483948}
+  BrickText: {fileID: 815030069}
+  BrickLines:
+  - test 1
+  - test 2
+  - test 3
+  - test 4
+  TypeSpeed: 0.05
+  _LineDelay: 5
+  _EndDelay: 10
+  height: 2
 --- !u!1 &1666416504
 GameObject:
   m_ObjectHideFlags: 0

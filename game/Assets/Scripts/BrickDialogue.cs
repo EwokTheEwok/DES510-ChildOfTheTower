@@ -35,11 +35,12 @@ public class BrickDialogue : MonoBehaviour
     private void Update()
     {
 
-        if (_InRange)
+        if (!_InRange)
         {
             dialogueTransform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, height, 0));
             if (!_IsTalking)
             {
+                Debug.Log("aaa");
                 coroutine = StartDia();
                 StartCoroutine(coroutine);
             }
@@ -78,8 +79,11 @@ public class BrickDialogue : MonoBehaviour
     {
         if (collision.CompareTag("NPC"))
         {
-            StopCoroutine(coroutine);
-            StopTalking();
+            if (coroutine != null)
+            {
+                StopCoroutine(coroutine);
+                StopTalking();
+            }
             _InRange = true;
         }
     }
@@ -89,7 +93,6 @@ public class BrickDialogue : MonoBehaviour
         if (collision.CompareTag("NPC"))
         {
             _InRange = false;
-
         }
     }
 }
