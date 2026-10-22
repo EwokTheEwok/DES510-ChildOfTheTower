@@ -25,6 +25,9 @@ public class PlayerMovement : MonoBehaviour
     //animation variables
     private Animator _Animator;
 
+    //audio script reference
+    private TriggerPlayerAudio PlayerAudio;
+
     private void Awake()
     {
         _Animator = GetComponentInChildren<Animator>();
@@ -37,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
         _PlayerInput = GetComponent<PlayerInput>();
         _PlayerInput.actions.FindActionMap("Player").Enable();
         //_Animator = GetComponent<Animator>();
+        PlayerAudio = GetComponent<TriggerPlayerAudio>();
     }
 
     private void Update()
@@ -91,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.started && _CharControl.isGrounded)
         {
+            PlayerAudio.PlayJump();
             _Velocity.y = _JumpSpeed;
         }
     }
