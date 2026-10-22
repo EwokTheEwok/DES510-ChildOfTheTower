@@ -51,7 +51,7 @@ public class Dialogue : MonoBehaviour
             }
 
             /*
-            if (!_IsActive) {
+            if (!_IsTalking) {
                 StartDialogue();
             }
             else
@@ -102,7 +102,7 @@ public class Dialogue : MonoBehaviour
     /*
     private void StartDialogue()
     {
-        _IsActive = true;
+        _IsTalking = true;
 
         ControlText.text = "";
         ControlBox.SetActive(true);
@@ -136,7 +136,7 @@ public class Dialogue : MonoBehaviour
         {
             ControlBox.SetActive (false);
 
-            _IsActive = false;
+            _IsTalking = false;
         }
     }
     */
