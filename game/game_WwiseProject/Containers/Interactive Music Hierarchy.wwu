@@ -18,7 +18,7 @@
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+							<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
 						</Reference>
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Music" ID="{02E380AC-3A1C-4EF2-8D9F-075879842A3F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
@@ -122,6 +122,11 @@
 							<PropertyList>
 								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
 								<Property Name="Tempo" Type="Real64" Value="150"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -551,7 +556,7 @@
 								<Property Name="Tempo" Type="Real64" Value="75"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-6</Value>
+										<Value>-10</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -911,6 +916,13 @@
 							</ChildrenList>
 						</MusicPlaylistContainer>
 						<MusicPlaylistContainer Name="Lvl3Loop" ID="{967C3064-7BBB-4CAB-8C86-5CBE2D28ECC7}" ShortID="454552071">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-9</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
@@ -1033,6 +1045,11 @@
 							<PropertyList>
 								<Property Name="OverrideClockSettings" Type="bool" Value="True"/>
 								<Property Name="Tempo" Type="Real64" Value="110"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-2</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -1212,6 +1229,24 @@
 											<ReferenceList>
 												<Reference Name="EntryPathObject">
 													<ObjectRef Name="Title" ID="{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</PluginInnerObject>
+									</ObjectList>
+								</ObjectLists>
+							</MultiSwitchEntry>
+							<MultiSwitchEntry Name="" ID="{33881CCF-0DD5-4EC6-8D37-717AF1CF9E89}">
+								<ReferenceList>
+									<Reference Name="AudioNode">
+										<ObjectRef Name="Lvl3Loop" ID="{967C3064-7BBB-4CAB-8C86-5CBE2D28ECC7}" WorkUnitID="{6C3C909C-86D2-4B3E-93D4-FD4C2DADD8D7}"/>
+									</Reference>
+								</ReferenceList>
+								<ObjectLists>
+									<ObjectList Name="EntryPath">
+										<PluginInnerObject Name="" ID="{92D57BEE-D10D-4F4D-8980-B30EAADDE0A2}" PluginName="EntryPathSlot" CompanyID="0" PluginID="88">
+											<ReferenceList>
+												<Reference Name="EntryPathObject">
+													<ObjectRef Name="Lvl3" ID="{E3F8CBF0-7A13-49BF-B957-A8DDC7832151}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
 												</Reference>
 											</ReferenceList>
 										</PluginInnerObject>

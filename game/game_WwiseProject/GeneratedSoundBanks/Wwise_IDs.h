@@ -23,7 +23,10 @@ namespace AK
         static const AkUniqueID BRICK_07 = 11539576U;
         static const AkUniqueID BRICK_REVERSE = 2599784423U;
         static const AkUniqueID BRICKMODE_START = 2475923824U;
+        static const AkUniqueID MUSICAMBTEST = 1200446142U;
+        static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
         static const AkUniqueID PLAY_INTROLOOP = 528465658U;
+        static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_TITLELOOP = 1355629322U;
         static const AkUniqueID START_MUSIC = 540993415U;
         static const AkUniqueID TRANSITION_MAINLOOP = 282115962U;
@@ -57,6 +60,8 @@ namespace AK
             {
                 static const AkUniqueID LVL1 = 141331490U;
                 static const AkUniqueID LVL2 = 141331489U;
+                static const AkUniqueID LVL3 = 141331488U;
+                static const AkUniqueID LVL4 = 141331495U;
                 static const AkUniqueID NONE = 748895195U;
                 static const AkUniqueID TITLE = 3705726509U;
             } // namespace STATE
@@ -76,6 +81,12 @@ namespace AK
 
     } // namespace STATES
 
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID RTPC_MXDUCKING = 4238634557U;
+        static const AkUniqueID RTPC_SHADOWDISTANCE = 3739513706U;
+    } // namespace GAME_PARAMETERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
@@ -84,6 +95,7 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID AMBIENCE = 85412153U;
         static const AkUniqueID AUDIOOBJECTS = 3149422595U;
         static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
         static const AkUniqueID MUSIC = 3991942870U;

@@ -4,8 +4,10 @@ State Group	ID	Name			Wwise Object Path	Notes
 	4257138351	MusicState_Level1			\Default Work Unit\MusicState_Level1	
 
 State	ID	Name	State Group			Notes
+	141331488	Lvl3	Level			
 	141331489	Lvl2	Level			
 	141331490	Lvl1	Level			
+	141331495	Lvl4	Level			
 	748895195	None	Level			
 	3705726509	Title	Level			
 	11539576	Brick_07	BrickBuilding			
@@ -21,11 +23,18 @@ State	ID	Name	State Group			Notes
 	1125500713	Intro	MusicState_Level1			
 	1257464028	MainLoop	MusicState_Level1			
 
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	4238634557	RTPC_MXDucking			\RTPCs\RTPC_MXDucking	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	85412153	Ambience			\Default Work Unit\Ambience	
 	393239870	SFX			\Default Work Unit\SFX	
 	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
 	3149422595	AudioObjects			\Default Work Unit\AudioObjects	
 	3991942870	Music			\Default Work Unit\Music	
+
+Effect plug-ins	ID	Name	Type				Notes
+	302392573	Meter (Custom)	Wwise Meter			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			
