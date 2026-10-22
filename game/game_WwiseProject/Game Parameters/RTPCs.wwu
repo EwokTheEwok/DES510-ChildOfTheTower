@@ -19,6 +19,15 @@
 						<Property Name="Min" Type="Real64" Value="-48"/>
 					</PropertyList>
 				</GameParameter>
+				<GameParameter Name="RTPC_AmbienceSwitcher" ID="{7DFAED41-25C6-48C0-A9B5-85A8591CD539}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="Max" Type="Real64" Value="1"/>
+						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="1"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="1"/>
+					</PropertyList>
+				</GameParameter>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>
