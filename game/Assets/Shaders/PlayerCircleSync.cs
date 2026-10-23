@@ -4,8 +4,8 @@ using System.Collections;
 
 public class PlayerCircleSync : MonoBehaviour
 {
-    public static int PosID = Shader.PropertyToID("Position");
-    public static int SizeID = Shader.PropertyToID("Size");
+    public int PosID = Shader.PropertyToID("Position");
+    public int SizeID = Shader.PropertyToID("Size");
 
     public Material WallMaterial;
     public Camera Camera;
