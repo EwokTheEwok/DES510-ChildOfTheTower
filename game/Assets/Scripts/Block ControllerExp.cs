@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class BlockControllerExp : MonoBehaviour
@@ -19,6 +20,10 @@ public class BlockControllerExp : MonoBehaviour
     public GameObject _BlockUIPrefab;
     public GameObject _BlockPrefab;
     public CinemachineCamera _CinemachineCamera;
+    //Events
+    [Header("Block Events")]
+    public BlockEvent _BlockEvent;
+    public UnityEvent<GameObject> _UndoEvent;
 
     //Private
     bool _IsPlacing = false;
@@ -142,6 +147,7 @@ public class BlockControllerExp : MonoBehaviour
 
             _Block.SetActive(true);
             _GuideBlock.SetActive(false);
+            _BlockEvent?.Invoke(0, _Block);
 
             _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
         } //re-control active surface
@@ -181,6 +187,7 @@ public class BlockControllerExp : MonoBehaviour
 
             if (!hit)
             {
+                _BlockEvent?.Invoke(_BlockList.Count, _Block);
                 _MovingBlock = true;
                 Vector3 newBlockPlacement = blockTransform.position + blockTransform.TransformDirection(localDirection);
                 _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation);
@@ -196,6 +203,7 @@ public class BlockControllerExp : MonoBehaviour
     {
         if (context.started && _IsPlacing && !_MovingBlock)
         {
+            _UndoEvent?.Invoke(_Block);
             if (_BlockList.Count > 1)
             {
                 _MovingBlock = true;
@@ -297,3 +305,7 @@ public class BlockControllerExp : MonoBehaviour
         Debug.DrawRay(_transform.position, _transform.forward * 5.0f, Color.softBlue);
     }
 }
+
+
+[System.Serializable]
+public class BlockEvent : UnityEvent<int, GameObject> { }
