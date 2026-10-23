@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8125A5EA-BE73-4683-A280-F78FA24B2ACE}" SchemaVersion="133">
+	<Events>
+		<WorkUnit Name="AMB Events" ID="{8125A5EA-BE73-4683-A280-F78FA24B2ACE}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Amb_Outdoor_Lvl1" ID="{6E86CEA4-1E4C-4875-8530-3E74C1D5E6BA}">
+					<ChildrenList>
+						<Action Name="" ID="{E9E05823-BADE-45B6-AE0F-102E3065F2EA}" ShortID="649043755">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_AmbienceSwitcher" ID="{7DFAED41-25C6-48C0-A9B5-85A8591CD539}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{293DBF25-1BFF-4842-9918-43355F832E98}" ShortID="512921754">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BLC_Ambience" ID="{0CDB9107-013F-4B82-8225-9ED01BD38F66}" WorkUnitID="{62A7DCA5-8F9D-473B-BD55-46E25E3FE3D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

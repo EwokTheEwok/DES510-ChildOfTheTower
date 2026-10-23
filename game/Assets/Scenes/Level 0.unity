@@ -328,15 +328,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: _JumpEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _JumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: _JumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 715413787}
+      objectReference: {fileID: 1118178031}
     - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: _JumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _JumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayJump
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _JumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TriggerPlayerAudio, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _JumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2528598960761816714, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_LocalPosition.y
@@ -7604,6 +7620,7 @@ GameObject:
   - component: {fileID: 935308660}
   - component: {fileID: 935308659}
   - component: {fileID: 935308658}
+  - component: {fileID: 935308661}
   m_Layer: 0
   m_Name: WwiseGlobal
   m_TagString: Untagged
@@ -7729,6 +7746,35 @@ MonoBehaviour:
   unloadTriggerList: 958ca0ea
   bankNameInternal: 
   valueGuidInternal: 
+--- !u!114 &935308661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935308655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0b5b018ba585ef4d93d9b9ff0041003, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkEvent
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: bb3480659bb6f564db6f6fe983de24ce, type: 2}
+  useCallbacks: 0
+  stopSoundOnDisable: 1
+  Callbacks: []
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
 --- !u!1 &939438414
 GameObject:
   m_ObjectHideFlags: 0
@@ -8437,6 +8483,11 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _BlockRayScale: 1.25
+--- !u!143 &1074620485 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 7990201974574080657, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+  m_PrefabInstance: {fileID: 26829258}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1075558856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8945,6 +8996,7 @@ GameObject:
   - component: {fileID: 1118178029}
   - component: {fileID: 1118178028}
   - component: {fileID: 1118178030}
+  - component: {fileID: 1118178031}
   m_Layer: 0
   m_Name: CharSprite
   m_TagString: Untagged
@@ -9061,6 +9113,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83984a49e37556b49836af3545def438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollowTest
+--- !u!114 &1118178031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1118178026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886e764854a98734d822e34569d0305b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerPlayerAudio
+  FootstepsEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 0acc1c571aeb4204281f8644b972e4fe, type: 2}
+  JumpEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: af9df9ab6a2d60f45a4fc251d64b3895, type: 2}
+  CharControl: {fileID: 1074620485}
 --- !u!1001 &1132711696
 PrefabInstance:
   m_ObjectHideFlags: 0
