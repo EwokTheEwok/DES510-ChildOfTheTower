@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         _PlayerInput = GetComponent<PlayerInput>();
         _PlayerInput.actions.FindActionMap("Player").Enable();
         //_Animator = GetComponent<Animator>();
-        PlayerAudio = GetComponent<TriggerPlayerAudio>();
+        //PlayerAudio = GetComponent<TriggerPlayerAudio>();
     }
 
     private void Update()
@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.started && _CharControl.isGrounded)
         {
-            PlayerAudio.PlayJump();
+            //PlayerAudio.PlayJump();
             _Velocity.y = _JumpSpeed;
         }
     }
