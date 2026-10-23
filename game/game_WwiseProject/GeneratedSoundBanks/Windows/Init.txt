@@ -28,13 +28,22 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	85412153	Ambience			\Default Work Unit\Ambience	
-	393239870	SFX			\Default Work Unit\SFX	
+	217780010	SFX_Player			\Default Work Unit\SFX\SFX_Player	
 	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
-	3149422595	AudioObjects			\Default Work Unit\AudioObjects	
+	2519613073	AudioObjects_Brick			\Default Work Unit\AudioObjects\AudioObjects_Brick	
+	3093856314	SFX_Ducking			\Default Work Unit\SFX\SFX_Ducking	
 	3991942870	Music			\Default Work Unit\Music	
 
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	202033071	Reverb_Tower			\Default Work Unit\Main Audio Bus\Reverb_Tower	
+	1578973140	Reverb_Outdoor			\Default Work Unit\Main Audio Bus\Reverb_Outdoor	
+
 Effect plug-ins	ID	Name	Type				Notes
-	302392573	Meter (Custom)	Wwise Meter			
+	48620415	Have_U_Ever_Been_Outside	Wwise RoomVerb			
+	442399366	Meter (Custom)	Wwise Meter			
+	465678910	Sidechain Send (Custom)	Ak Sidechain Send			
+	1062664613	Parametric EQ (Custom)	Wwise Parametric EQ			
+	3442768367	Hall_Large_Dark	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes
 	2317455096	No_Output	No Output			

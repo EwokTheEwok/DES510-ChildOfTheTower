@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{8A633FED-1B78-E3DB-58E8-71CC0D84F437}",
+    "Hash": "{50850BD8-AC35-016C-6A11-068A983E7443}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -45,7 +45,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "sfx_amb_lvl1_indoor_002.wav",
-      "CachePath": "F9/{F901C17D-EC2A-A284-5B87-92E3802BFF79}.wem"
+      "CachePath": "8B/{8B255934-62BA-9566-3C0F-38EFF698F938}.wem"
      },
      {
       "Id": "179492109",
@@ -254,6 +254,14 @@
       "Location": "Memory",
       "ShortName": "sfx_jump_001.wav",
       "CachePath": "7D/{7DCCC970-81A5-7CB4-FA9A-68B9EAD31640}.wem"
+     },
+     {
+      "Id": "701294168",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_amb_lvl1_outdoor_001.wav",
+      "CachePath": "D4/{D496BAAB-F86B-153B-736F-B8DF4698670C}.wem"
      },
      {
       "Id": "730654876",
@@ -3362,6 +3370,9 @@
       "MediaRefs": [
        {
         "Id": "143126068"
+       },
+       {
+        "Id": "701294168"
        }
       ],
       "SwitchContainers": [
@@ -3490,6 +3501,22 @@
        {
         "Id": "953363089"
        }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
       ]
      },
      {
@@ -3534,6 +3561,13 @@
       ],
       "ActionSetState": [
        {
+        "GroupId": "2782712965",
+        "Id": "141331490",
+        "Name": "Lvl1",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\Lvl1",
+        "GUID": "{863C7175-F5DA-4DC0-B5C4-53BC5F074DDB}"
+       },
+       {
         "GroupId": "4257138351",
         "Id": "1125500713",
         "Name": "Intro",
@@ -3554,6 +3588,22 @@
       "MediaRefs": [
        {
         "Id": "678363493"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
        }
       ]
      },
@@ -3693,6 +3743,15 @@
       ]
      }
     ],
+    "GameParameters": [
+     {
+      "Id": "1038293638",
+      "Name": "RTPC_AmbienceSwitcher",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\RTPC_AmbienceSwitcher",
+      "GUID": "{7DFAED41-25C6-48C0-A9B5-85A8591CD539}",
+      "Color": "10"
+     }
+    ],
     "StateGroups": [
      {
       "Id": "2782712965",
@@ -3829,6 +3888,6 @@
     ]
    }
   ],
-  "FileHash": "{F4E0A737-C6C5-CE1F-9B69-9A6359614776}"
+  "FileHash": "{E4038A8C-1CB6-2BAE-151B-B284DBAE663A}"
  }
 }
