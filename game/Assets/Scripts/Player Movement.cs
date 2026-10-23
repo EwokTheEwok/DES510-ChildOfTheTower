@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,7 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public float _JumpSpeed = 12.0f;
     public float _MoveAccel = 10.0f;
     public float _MoveDeaccel = 20.0f;
-
+    //Events
+    public UnityEvent<GameObject> _JumpEvent;
 
     //Private
     Camera _Camera;
@@ -22,11 +24,9 @@ public class PlayerMovement : MonoBehaviour
     Vector3 _WorldMoveDir;
     bool _CanControl = true;
 
-    //animation variables
+    //Animator
     private Animator _Animator;
 
-    //audio script reference
-    private TriggerPlayerAudio PlayerAudio;
 
     private void Awake()
     {
@@ -39,8 +39,6 @@ public class PlayerMovement : MonoBehaviour
         _CharControl = GetComponent<CharacterController>();
         _PlayerInput = GetComponent<PlayerInput>();
         _PlayerInput.actions.FindActionMap("Player").Enable();
-        //_Animator = GetComponent<Animator>();
-        PlayerAudio = GetComponent<TriggerPlayerAudio>();
     }
 
     private void Update()
@@ -95,7 +93,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.started && _CharControl.isGrounded)
         {
-            PlayerAudio.PlayJump();
+            _JumpEvent?.Invoke(gameObject);
             _Velocity.y = _JumpSpeed;
         }
     }
