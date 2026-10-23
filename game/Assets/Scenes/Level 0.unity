@@ -312,7 +312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: _MaxSpeed
-      value: 10
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_Enabled
@@ -325,6 +325,18 @@ PrefabInstance:
     - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: _MoveDeaccel
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _JumpEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _JumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 715413787}
+    - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _JumpEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2528598960761816714, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6468,7 +6480,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715413787}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a24c4c4982f081a4f987d0633c1875d8, type: 3}
   m_Name: 
@@ -8394,6 +8406,36 @@ MonoBehaviour:
   _BlockUIPrefab: {fileID: 4426684099784562912, guid: 347bd05a054a400458d449c4493cc538, type: 3}
   _BlockPrefab: {fileID: 8990706033399320676, guid: b0929d630b1f8204381e7f2148d7b6c5, type: 3}
   _CinemachineCamera: {fileID: 1184508006}
+  _BlockEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 715413788}
+        m_TargetAssemblyTypeName: BrickAudioSystem, Assembly-CSharp
+        m_MethodName: PlaceBrick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _UndoEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 715413788}
+        m_TargetAssemblyTypeName: BrickAudioSystem, Assembly-CSharp
+        m_MethodName: RemoveBrick
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _BlockRayScale: 1.25
 --- !u!1001 &1075558856
 PrefabInstance:

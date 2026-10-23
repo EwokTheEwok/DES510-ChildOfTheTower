@@ -22,8 +22,8 @@ public class BlockControllerExp : MonoBehaviour
     public CinemachineCamera _CinemachineCamera;
     //Events
     [Header("Block Events")]
-    public BlockEvent _BlockEvent;
-    public UnityEvent<GameObject> _UndoEvent;
+    public BlockEvent _BlockEvent = new();
+    public UnityEvent<GameObject> _UndoEvent = new();
 
     //Private
     bool _IsPlacing = false;
