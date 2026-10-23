@@ -10,19 +10,53 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{AA1E429B-B65F-D19F-4F32-E16DCD036177}",
+    "Hash": "{D54C4C52-3094-EF3E-2D7F-B3248D3217EB}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
      "Custom": [
       {
-       "Id": "302392573",
+       "Id": "442399366",
        "Name": "Meter (Custom)",
-       "ObjectPath": "\\Busses\\Default Work Unit\\SFX\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
-       "GUID": "{1CFF79ED-F681-401E-96CE-208EEEDD405C}",
+       "ObjectPath": "\\Busses\\Default Work Unit\\SFX\\SFX_Ducking\\[Effect Slot [0]: (Meter)]\\Meter (Custom)",
+       "GUID": "{BEC757C0-48AD-4A1F-B6D6-6B3F97EB285F}",
        "LibName": "Wwise Meter",
        "LibId": "8454147"
+      },
+      {
+       "Id": "465678910",
+       "Name": "Sidechain Send (Custom)",
+       "ObjectPath": "\\Busses\\Default Work Unit\\AudioObjects\\AudioObjects_Brick\\[Effect Slot [0]: (Sidechain Send)]\\Sidechain Send (Custom)",
+       "GUID": "{7312AF2B-9CC6-49DC-B6FE-309E232A90F6}",
+       "LibName": "Ak Sidechain Send",
+       "LibId": "12648451"
+      },
+      {
+       "Id": "1062664613",
+       "Name": "Parametric EQ (Custom)",
+       "ObjectPath": "\\Busses\\Default Work Unit\\Music\\[Effect Slot [0]: (Parametric EQ)]\\Parametric EQ (Custom)",
+       "GUID": "{A4658F22-13DA-42DB-AEB4-220FFA72CEA2}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      }
+     ],
+     "ShareSets": [
+      {
+       "Id": "48620415",
+       "Name": "Have_U_Ever_Been_Outside",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Exteriors\\Have_U_Ever_Been_Outside",
+       "GUID": "{FE29AE8D-FD86-4652-A95D-68D32F5760EC}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      },
+      {
+       "Id": "3442768367",
+       "Name": "Hall_Large_Dark",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Halls\\Hall_Large_Dark",
+       "GUID": "{0F6A7D6D-131C-4650-9561-FC05F5C7A37B}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
       }
      ],
      "AudioDevices": [
@@ -53,18 +87,11 @@
       "Color": "4"
      },
      {
-      "Id": "393239870",
-      "Name": "SFX",
-      "ObjectPath": "\\Busses\\Default Work Unit\\SFX",
-      "GUID": "{1B9EC4CE-05CF-4AD6-A9B0-57ABC853B9ED}",
-      "Color": "13",
-      "PluginRefs": {
-       "Custom": [
-        {
-         "Id": "302392573"
-        }
-       ]
-      }
+      "Id": "217780010",
+      "Name": "SFX_Player",
+      "ObjectPath": "\\Busses\\Default Work Unit\\SFX\\SFX_Player",
+      "GUID": "{E7362750-41B7-424C-9FC4-DD2494D4374B}",
+      "Color": "13"
      },
      {
       "Id": "2246998526",
@@ -73,21 +100,86 @@
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      },
      {
-      "Id": "3149422595",
-      "Name": "AudioObjects",
-      "ObjectPath": "\\Busses\\Default Work Unit\\AudioObjects",
+      "Id": "2519613073",
+      "Name": "AudioObjects_Brick",
+      "ObjectPath": "\\Busses\\Default Work Unit\\AudioObjects\\AudioObjects_Brick",
       "GUID": "{A1065881-998C-4B5A-B989-73098B9FF0BB}",
-      "Color": "8"
+      "Color": "8",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "465678910"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "3093856314",
+      "Name": "SFX_Ducking",
+      "ObjectPath": "\\Busses\\Default Work Unit\\SFX\\SFX_Ducking",
+      "GUID": "{1B9EC4CE-05CF-4AD6-A9B0-57ABC853B9ED}",
+      "Color": "13",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "442399366"
+        }
+       ]
+      }
      },
      {
       "Id": "3991942870",
       "Name": "Music",
       "ObjectPath": "\\Busses\\Default Work Unit\\Music",
       "GUID": "{02E380AC-3A1C-4EF2-8D9F-075879842A3F}",
-      "Color": "24"
+      "Color": "24",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "1062664613"
+        }
+       ]
+      }
+     }
+    ],
+    "AuxBusses": [
+     {
+      "Id": "202033071",
+      "Name": "Reverb_Tower",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+      "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+      "Color": "7",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3442768367"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "1578973140",
+      "Name": "Reverb_Outdoor",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+      "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+      "Color": "7",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "48620415"
+        }
+       ]
+      }
      }
     ],
     "GameParameters": [
+     {
+      "Id": "1038293638",
+      "Name": "RTPC_AmbienceSwitcher",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\RTPC_AmbienceSwitcher",
+      "GUID": "{7DFAED41-25C6-48C0-A9B5-85A8591CD539}",
+      "Color": "10"
+     },
      {
       "Id": "3739513706",
       "Name": "RTPC_ShadowDistance",
@@ -239,6 +331,6 @@
     ]
    }
   ],
-  "FileHash": "{A57A662D-B6DC-D765-5274-53BC8AD03E32}"
+  "FileHash": "{A027D5B7-6463-1C6D-2306-98FF20ACE6C7}"
  }
 }

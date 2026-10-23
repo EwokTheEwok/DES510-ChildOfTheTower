@@ -4,6 +4,20 @@
   "BasePlatform": "Mac",
   "PluginLibs": [
    {
+    "LibName": "Wwise Parametric EQ",
+    "LibId": "6881283",
+    "Type": "Effect",
+    "DLL": "AkParametricEQ",
+    "StaticLib": "AkParametricEQFX"
+   },
+   {
+    "LibName": "Wwise RoomVerb",
+    "LibId": "7733251",
+    "Type": "Effect",
+    "DLL": "AkRoomVerb",
+    "StaticLib": "AkRoomVerbFX"
+   },
+   {
     "LibName": "Wwise Meter",
     "LibId": "8454147",
     "Type": "Effect",
@@ -19,8 +33,15 @@
     "LibName": "No Output",
     "LibId": "11862023",
     "Type": "AudioDevice"
+   },
+   {
+    "LibName": "Ak Sidechain Send",
+    "LibId": "12648451",
+    "Type": "Effect",
+    "DLL": "AkSidechain",
+    "StaticLib": "AkSidechainFX"
    }
   ],
-  "FileHash": "{F1CE410D-C0BD-C0B4-5B06-BECB7D9C1937}"
+  "FileHash": "{98147D6E-2041-D088-DC56-BF787E0F027D}"
  }
 }

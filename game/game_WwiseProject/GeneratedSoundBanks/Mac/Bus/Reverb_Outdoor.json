@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Mac",
+  "BasePlatform": "Mac",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1578973140",
+    "Type": "Bus",
+    "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+    "Language": "SFX",
+    "Hash": "{E29CBB1F-5773-9553-92C7-6F15554F3E0F}",
+    "ObjectPath": "Reverb_Outdoor",
+    "ShortName": "Reverb_Outdoor",
+    "Path": "Bus/Reverb_Outdoor.bnk",
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "48620415",
+       "Name": "Have_U_Ever_Been_Outside",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Exteriors\\Have_U_Ever_Been_Outside",
+       "GUID": "{FE29AE8D-FD86-4652-A95D-68D32F5760EC}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      }
+     ]
+    },
+    "AuxBusses": [
+     {
+      "Id": "1578973140",
+      "Name": "Reverb_Outdoor",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+      "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+      "Color": "7",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "48620415"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{A20EE135-FFE7-C389-4E73-6F67AB8E42E1}"
+ }
+}
