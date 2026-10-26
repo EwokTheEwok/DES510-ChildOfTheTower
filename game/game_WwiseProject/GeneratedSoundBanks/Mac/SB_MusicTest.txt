@@ -11,8 +11,10 @@ Event	ID	Name			Wwise Object Path	Notes
 	540993415	Start_Music			\Music Events\Start_Music	
 	1200446142	MusicAmbTest			\Music Events\MusicAmbTest	
 	1355629322	Play_TitleLoop			\Music Events\Play_TitleLoop	
+	1579460802	Brick_PlacementError			\SFX Events\Brick Events\Brick_PlacementError	
 	2475923824	BrickMode_Start			\SFX Events\Brick Events\BrickMode_Start	
 	2599784423	Brick_Reverse			\SFX Events\Brick Events\Brick_Reverse	
+	3234418437	Play_Shadows			\SFX Events\Play_Shadows	
 	3689126666	Play_Jump			\SFX Events\Player Events\Play_Jump	
 	3813572857	Play_Amb_Outdoor_Lvl1			\AMB Events\Play_Amb_Outdoor_Lvl1	
 	3854155799	Play_Footsteps			\SFX Events\Player Events\Play_Footsteps	
@@ -45,6 +47,7 @@ State	ID	Name	State Group			Notes
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	1038293638	RTPC_AmbienceSwitcher			\RTPCs\RTPC_AmbienceSwitcher	
+	3739513706	RTPC_ShadowDistance			\RTPCs\RTPC_ShadowDistance	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	45364070	sfx_brickplace_lvl1_008	.cache\42\{4288FCA3-6687-142D-BD3B-89805D927E16}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl1\sfx_brickplace_lvl1_008		384096
@@ -52,6 +55,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	95717730	sfx_brickreverse_004	.cache\35\{357910F8-91B1-761A-868A-A5FF4D507D23}.wem		\Containers\SFX\RMC_BrickReverse\sfx_brickreverse_004		176744
 	143126068	sfx_amb_lvl1_indoor_002	.cache\8B\{8B255934-62BA-9566-3C0F-38EFF698F938}.wem		\Containers\Ambiences\BLC_Ambience\sfx_amb_lvl1_indoor_002		2911899
 	179492109	sfx_footsteps_003_003	.cache\DF\{DF80FE6B-DB94-4F10-1BE3-932AF5F38BFB}.wem		\Containers\SFX\RMC_PlayerFootsteps\sfx_footsteps_003_003		18822
+	210645277	sfx_shadow_001	.cache\97\{97ADF6EA-1832-49F3-BAC3-4E3721A2BAD0}.wem		\Containers\SFX\BLC_Shadows\sfx_shadow_001		679396
 	220746774	mx_lvl1_introloop_150bpm_001	.cache\8F\{8FB4D2FB-5755-9AEC-10CD-60280F3971B2}.wem		\Containers\Interactive Music Hierarchy\MSW_Master\MSW_Lvl1\IntroLoop\mx_lvl1_introloop_150bpm_001\mx_lvl1_introloop_150bpm_001		99840
 	237216902	sfx_footsteps_003_009	.cache\41\{414851DE-8059-2D9B-417E-35DC6C076168}.wem		\Containers\SFX\RMC_PlayerFootsteps\sfx_footsteps_003_009		18822
 	237792949	sfx_footsteps_003_004	.cache\B4\{B4DB02D4-A679-4806-3C5C-DF04135491AF}.wem		\Containers\SFX\RMC_PlayerFootsteps\sfx_footsteps_003_004		18822
@@ -63,17 +67,22 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	429895228	sfx_brickplace_lvl2_002	.cache\FF\{FFF0340E-5D64-57F9-E85C-42F540BD8BB0}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl2\sfx_brickplace_lvl2_002		384096
 	462369481	sfx_brickplace_lvl3_002	.cache\F1\{F1DFA969-C550-8482-DFA9-C626C8929BB3}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl3\sfx_brickplace_lvl3_002		384096
 	478934652	sfx_brickplace_lvl2_007	.cache\AA\{AAE946BD-4E2E-66D8-D4BD-F0455D85EA77}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl2\sfx_brickplace_lvl2_007		384096
+	483199654	sfx_shadow_005	.cache\35\{35113EC8-62BF-017D-08F6-6D90D0FDC6DD}.wem		\Containers\SFX\BLC_Shadows\sfx_shadow_005		5323992
 	485851107	sfx_brickreverse_003	.cache\A7\{A7F5B52F-EF64-8E19-86D7-A89E1A18F20E}.wem		\Containers\SFX\RMC_BrickReverse\sfx_brickreverse_003		176744
 	486694317	sfx_brickplace_lvl3_001	.cache\42\{42CEB341-521B-7A3A-34AD-F9476C7789B9}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl3\sfx_brickplace_lvl3_001		384096
 	509693614	sfx_brickplace_lvl2_001	.cache\14\{14C21131-035F-8CC3-C701-1905A99E2117}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl2\sfx_brickplace_lvl2_001		384096
 	511643272	sfx_brickplace_lvl3_003	.cache\C0\{C033C079-E4CC-B395-7988-9E0C48909B4F}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl3\sfx_brickplace_lvl3_003		384096
 	541945125	sfx_brickreverse_005	.cache\19\{1966865C-4D28-D1C1-A7A1-13C4F9F04D46}.wem		\Containers\SFX\RMC_BrickReverse\sfx_brickreverse_005		176744
+	546286611	sfx_placementerror_001	.cache\B8\{B84DB95C-941E-A009-67A2-FC56DAF2AE6F}.wem		\Containers\SFX\PlacementError\sfx_placementerror_001		17004
 	554800566	mx_lvl2_mainloop_75bpm_005	.cache\CA\{CA4FD973-6139-B3B9-A53B-8484098398A9}.wem		\Containers\Interactive Music Hierarchy\MSW_Master\Lvl2Loop\mx_lvl2_mainloop_75bpm_005\mx_lvl2_mainloop_75bpm_005		1888050
+	596249139	sfx_shadow_004	.cache\3B\{3B94137D-B911-B5BA-9CE4-D7D1A1898427}.wem		\Containers\SFX\BLC_Shadows\sfx_shadow_004		3784332
 	615780904	sfx_footsteps_003_007	.cache\97\{974A71D4-AE58-0D0F-6281-ED736DBA9BE8}.wem		\Containers\SFX\RMC_PlayerFootsteps\sfx_footsteps_003_007		18822
 	619837463	sfx_footsteps_003_010	.cache\0B\{0BB15352-07C0-165B-3A57-CEBF64CD42B3}.wem		\Containers\SFX\RMC_PlayerFootsteps\sfx_footsteps_003_010		18822
+	627671946	sfx_shadow_003	.cache\44\{44D632A4-677E-5B4D-8E92-AF4B9F4C4B98}.wem		\Containers\SFX\BLC_Shadows\sfx_shadow_003		3628060
 	638969122	sfx_footsteps_003_001	.cache\FD\{FD5DFAA3-E9A3-4E55-C6D9-F8DE9A78C14C}.wem		\Containers\SFX\RMC_PlayerFootsteps\sfx_footsteps_003_001		18822
 	643300300	sfx_brickplace_lvl2_003	.cache\CC\{CC2DAE50-EA09-DC30-BD3E-72D26EE05609}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl2\sfx_brickplace_lvl2_003		384096
 	645220113	sfx_brickplace_lvl1_007	.cache\B3\{B331388A-4339-6CA3-BC56-B8359DC31CDC}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl1\sfx_brickplace_lvl1_007		384096
+	663990711	sfx_shadow_002	.cache\16\{16763776-C9E3-1BDF-71DA-1D3AD1256A3B}.wem		\Containers\SFX\BLC_Shadows\sfx_shadow_002		4101140
 	665708152	sfx_brickplace_lvl2_005	.cache\F2\{F2DC64DE-46AB-EDFD-0869-59EBD84C7165}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl2\sfx_brickplace_lvl2_005		384096
 	673032471	sfx_brickplace_lvl3_005	.cache\36\{36D1D4B6-DF4D-9F03-B851-A3C2C770FE34}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl3\sfx_brickplace_lvl3_005		384096
 	678363493	sfx_jump_001	.cache\7D\{7DCCC970-81A5-7CB4-FA9A-68B9EAD31640}.wem		\Containers\SFX\Jump\sfx_jump_001		20306
@@ -90,6 +99,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	892562092	mx_lvl2_intro_75bpm_003	.cache\A0\{A0036C3A-C2F9-286A-CDE6-BD37B31BCA77}.wem		\Containers\Interactive Music Hierarchy\MSW_Master\Lvl2Loop\mx_lvl2_intro_75bpm_003\mx_lvl2_intro_75bpm_003		587629
 	911890141	sfx_brickplace_lvl2_006	.cache\D5\{D533D7CF-2F69-5933-DEB8-A6504C4889B6}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl2\sfx_brickplace_lvl2_006		384096
 	912748975	sfx_brickplace_lvl1_005	.cache\0E\{0E8FCF29-A831-1DBB-54ED-49B2B2A854AA}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl1\sfx_brickplace_lvl1_005		384096
+	913654748	sfx_shadow_006	.cache\6D\{6D820883-389B-B686-0012-7DB4C7891600}.wem		\Containers\SFX\BLC_Shadows\sfx_shadow_006		6331036
 	944157133	sfx_brickplace_lvl1_001	.cache\28\{28719F8F-0A9C-B751-1202-454A2A34A274}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl1\sfx_brickplace_lvl1_001		384096
 	953363089	sfx_footsteps_003_008	.cache\19\{19715373-E304-8907-EF9A-CF38F296AA2A}.wem		\Containers\SFX\RMC_PlayerFootsteps\sfx_footsteps_003_008		18822
 	981137394	sfx_brickplace_lvl2_004	.cache\AB\{AB6C1213-10E5-C14D-EF1A-B81E2C8F17BF}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl2\sfx_brickplace_lvl2_004		384096

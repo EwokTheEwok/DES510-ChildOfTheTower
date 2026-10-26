@@ -241,6 +241,17 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Play_Shadows" ID="{94F97942-AB3A-49D3-9187-72739ACAAE1C}">
+					<ChildrenList>
+						<Action Name="" ID="{0AF10883-4246-4F17-B18A-A3B2CC5FED82}" ShortID="749030621">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BLC_Shadows" ID="{672B4107-335F-42F3-B5D3-265214C71EAE}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
