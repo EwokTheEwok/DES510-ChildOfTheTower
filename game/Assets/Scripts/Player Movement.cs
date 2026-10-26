@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float _MoveAccel = 10.0f;
     public float _MoveDeaccel = 20.0f;
     //Events
+    [Header("Player Events")]
     public UnityEvent<GameObject> _JumpEvent;
 
     //Private

@@ -2,8 +2,8 @@ using DG.Tweening;
 using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
-
 
 public class BlockController : MonoBehaviour
 {
@@ -20,13 +20,17 @@ public class BlockController : MonoBehaviour
     public GameObject _BlockUIPrefab;
     public GameObject _BlockPrefab;
     public CinemachineCamera _CinemachineCamera;
+    //Events
+    [Header("Block Events")]
+    public BlockEvent _BlockEvent = new();
+    public UnityEvent<GameObject> _UndoEvent = new();
 
     //Private
     bool _IsPlacing = false;
     bool _ActiveSurface = false;
     bool _MovingBlock = false;
     public float _BlockRayScale = 1.25f;
-    public List<GameObject> _BlockList = new();
+    readonly List<GameObject> _BlockList = new();
     EntityId _ActiveSurfaceID;
     Collider[] _SurfaceColList;
     int _SurfaceTotal;
@@ -47,11 +51,6 @@ public class BlockController : MonoBehaviour
     PlayerCamera _PlayerCamera;
     int _CameraCubeSegment;
     Camera _Camera;
-
-    //Audio
-    //public BrickAudioSystem _BrickAudioSystem;
-
-    public 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -142,14 +141,13 @@ public class BlockController : MonoBehaviour
             _ActiveSurfaceID = _ClosestSurface.GetEntityId();
             _PlayerMovement.SetControl(false);
             _Block = Instantiate(_BlockPrefab, _GuideBlock.transform.position, _GuideBlock.transform.rotation);
-            //play audio
-            //_BrickAudioSystem.PlaceBrick();
             _BlockList.Add(_Block);
 
             _CinemachineCamera.Target.TrackingTarget = _Block.transform;
 
             _Block.SetActive(true);
             _GuideBlock.SetActive(false);
+            _BlockEvent?.Invoke(0, _Block);
 
             _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
         } //re-control active surface
@@ -172,7 +170,7 @@ public class BlockController : MonoBehaviour
         }
     }
 
-    public void OnBlockMove(InputAction.CallbackContext context)
+    public void OnMoveBlock(InputAction.CallbackContext context)
     {
         if (context.started && _IsPlacing && _BlockList.Count < _BlockLimit && !_MovingBlock)
         {
@@ -189,15 +187,11 @@ public class BlockController : MonoBehaviour
 
             if (!hit)
             {
+                _BlockEvent?.Invoke(_BlockList.Count, _Block);
                 _MovingBlock = true;
                 Vector3 newBlockPlacement = blockTransform.position + blockTransform.TransformDirection(localDirection);
                 _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation);
                 _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => _MovingBlock = false);
-                //play audio
-                //if (_BlockList.Count <= 7)
-                //{
-                //    _BrickAudioSystem.PlaceBrick();
-                //}
                 _BlockList.Add(_Block);
                 _Block.SetActive(true);
                 _CinemachineCamera.Target.TrackingTarget = _Block.transform;
@@ -209,6 +203,7 @@ public class BlockController : MonoBehaviour
     {
         if (context.started && _IsPlacing && !_MovingBlock)
         {
+            _UndoEvent?.Invoke(_Block);
             if (_BlockList.Count > 1)
             {
                 _MovingBlock = true;
@@ -217,8 +212,6 @@ public class BlockController : MonoBehaviour
                     _MovingBlock = false;
                     _BlockList.RemoveAt(_BlockList.Count - 1);
                     Destroy(_Block);
-                    //play audio
-                    //_BrickAudioSystem.RemoveBrick();
                     _Block = _BlockList[^1];
                     _CinemachineCamera.Target.TrackingTarget = _Block.transform;
                 });
@@ -226,7 +219,6 @@ public class BlockController : MonoBehaviour
             else
             {
                 _BlockList.RemoveAt(0);
-                // Audio hook here
                 Destroy(_Block);
                 _IsPlacing = false;
                 _ActiveSurface = false;
@@ -313,3 +305,7 @@ public class BlockController : MonoBehaviour
         Debug.DrawRay(_transform.position, _transform.forward * 5.0f, Color.softBlue);
     }
 }
+
+
+[System.Serializable]
+public class BlockEvent : UnityEvent<int, GameObject> { }
