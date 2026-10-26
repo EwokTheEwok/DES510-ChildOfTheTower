@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{86E0999E-0D12-9D50-DC24-A7B31FF6332E}",
+    "Hash": "{3E8AAD46-8F11-39EB-8A44-070A017D1E25}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -54,6 +54,14 @@
       "Location": "Memory",
       "ShortName": "sfx_footsteps_003_003.wav",
       "CachePath": "DF/{DF80FE6B-DB94-4F10-1BE3-932AF5F38BFB}.wem"
+     },
+     {
+      "Id": "210645277",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_shadow_-001.wav",
+      "CachePath": "97/{97ADF6EA-1832-49F3-BAC3-4E3721A2BAD0}.wem"
      },
      {
       "Id": "220746774",
@@ -144,6 +152,14 @@
       "CachePath": "AA/{AAE946BD-4E2E-66D8-D4BD-F0455D85EA77}.wem"
      },
      {
+      "Id": "483199654",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_shadow_-005.wav",
+      "CachePath": "35/{35113EC8-62BF-017D-08F6-6D90D0FDC6DD}.wem"
+     },
+     {
       "Id": "485851107",
       "Language": "SFX",
       "Streaming": "false",
@@ -184,12 +200,28 @@
       "CachePath": "19/{1966865C-4D28-D1C1-A7A1-13C4F9F04D46}.wem"
      },
      {
+      "Id": "546286611",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_placementerror_001.wav",
+      "CachePath": "B8/{B84DB95C-941E-A009-67A2-FC56DAF2AE6F}.wem"
+     },
+     {
       "Id": "554800566",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "mx_lvl2_mainloop_75bpm_005.wav",
       "CachePath": "CA/{CA4FD973-6139-B3B9-A53B-8484098398A9}.wem"
+     },
+     {
+      "Id": "596249139",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_shadow_-004.wav",
+      "CachePath": "3B/{3B94137D-B911-B5BA-9CE4-D7D1A1898427}.wem"
      },
      {
       "Id": "615780904",
@@ -206,6 +238,14 @@
       "Location": "Memory",
       "ShortName": "sfx_footsteps_003_010.wav",
       "CachePath": "0B/{0BB15352-07C0-165B-3A57-CEBF64CD42B3}.wem"
+     },
+     {
+      "Id": "627671946",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_shadow_-003.wav",
+      "CachePath": "44/{44D632A4-677E-5B4D-8E92-AF4B9F4C4B98}.wem"
      },
      {
       "Id": "638969122",
@@ -230,6 +270,14 @@
       "Location": "Memory",
       "ShortName": "sfx_brickplace_lvl1_007.wav",
       "CachePath": "B3/{B331388A-4339-6CA3-BC56-B8359DC31CDC}.wem"
+     },
+     {
+      "Id": "663990711",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_shadow_-002.wav",
+      "CachePath": "16/{16763776-C9E3-1BDF-71DA-1D3AD1256A3B}.wem"
      },
      {
       "Id": "665708152",
@@ -358,6 +406,14 @@
       "Location": "Memory",
       "ShortName": "sfx_brickplace_lvl1_005.wav",
       "CachePath": "0E/{0E8FCF29-A831-1DBB-54ED-49B2B2A854AA}.wem"
+     },
+     {
+      "Id": "913654748",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_shadow_-006.wav",
+      "CachePath": "6D/{6D820883-389B-B686-0012-7DB4C7891600}.wem"
      },
      {
       "Id": "944157133",
@@ -3314,6 +3370,21 @@
       ]
      },
      {
+      "Id": "1579460802",
+      "Name": "Brick_PlacementError",
+      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Brick_PlacementError",
+      "GUID": "{3CF23999-84A1-4513-82C1-3788A7A6F51C}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "0.1730993",
+      "DurationMax": "0.17920363",
+      "MediaRefs": [
+       {
+        "Id": "546286611"
+       }
+      ]
+     },
+     {
       "Id": "2599784423",
       "Name": "Brick_Reverse",
       "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Brick_Reverse",
@@ -3624,6 +3695,34 @@
       ]
      },
      {
+      "Id": "3234418437",
+      "Name": "Play_Shadows",
+      "ObjectPath": "\\Events\\SFX Events\\Play_Shadows",
+      "GUID": "{94F97942-AB3A-49D3-9187-72739ACAAE1C}",
+      "Color": "13",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "210645277"
+       },
+       {
+        "Id": "483199654"
+       },
+       {
+        "Id": "596249139"
+       },
+       {
+        "Id": "627671946"
+       },
+       {
+        "Id": "663990711"
+       },
+       {
+        "Id": "913654748"
+       }
+      ]
+     },
+     {
       "Id": "1355629322",
       "Name": "Play_TitleLoop",
       "ObjectPath": "\\Events\\Music Events\\Play_TitleLoop",
@@ -3766,6 +3865,13 @@
       "ObjectPath": "\\Game Parameters\\RTPCs\\RTPC_AmbienceSwitcher",
       "GUID": "{7DFAED41-25C6-48C0-A9B5-85A8591CD539}",
       "Color": "10"
+     },
+     {
+      "Id": "3739513706",
+      "Name": "RTPC_ShadowDistance",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\RTPC_ShadowDistance",
+      "GUID": "{F36820F7-C0BF-4C9F-B1D9-16242535787B}",
+      "Color": "10"
      }
     ],
     "StateGroups": [
@@ -3904,6 +4010,6 @@
     ]
    }
   ],
-  "FileHash": "{C9939E3F-F94D-E627-7ABD-63E064509F35}"
+  "FileHash": "{E555D205-5DBA-15D5-27D6-390BD4D47FE1}"
  }
 }
