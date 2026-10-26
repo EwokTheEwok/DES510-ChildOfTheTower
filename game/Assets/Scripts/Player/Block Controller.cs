@@ -25,6 +25,7 @@ public class BlockController : MonoBehaviour
     [Header("Block Events")]
     public BlockEvent _BlockEvent = new();
     public UnityEvent<GameObject> _UndoEvent = new();
+    public UnityEvent<GameObject> _LimitEvent = new();
 
     //Private
     bool _IsPlacing = false;
@@ -172,29 +173,36 @@ public class BlockController : MonoBehaviour
 
     public void OnMoveBlock(InputAction.CallbackContext context)
     {
-        if (context.started && _IsPlacing && _BlockList.Count < _BlockLimit && !_MovingBlock)
+        if (context.started && _IsPlacing && !_MovingBlock)
         {
-            _InputDir = context.ReadValue<Vector2>();
-            Transform blockTransform = _Block.transform;
-
-            Vector3 localDirection = Vector3.zero;
-            localDirection.x = _InputDir.x * _InputModifier.x * _BlockSize;
-            localDirection.z = _InputDir.x * _InputModifier.z * _BlockSize;
-            localDirection.y = _InputDir.y * _BlockSize;
-
-            bool hit = Physics.Raycast(blockTransform.position, blockTransform.TransformDirection(localDirection), _BlockSize * _BlockRayScale);
-            Debug.DrawRay(blockTransform.position, blockTransform.TransformDirection(localDirection) * _BlockRayScale, Color.white, 5);
-
-            if (!hit)
+            if (_BlockList.Count < _BlockLimit)
             {
-                _BlockEvent?.Invoke(_BlockList.Count, _Block);
-                _MovingBlock = true;
-                Vector3 newBlockPlacement = blockTransform.position + blockTransform.TransformDirection(localDirection);
-                _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation);
-                _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => _MovingBlock = false);
-                _BlockList.Add(_Block);
-                _Block.SetActive(true);
-                _CinemachineCamera.Target.TrackingTarget = _Block.transform;
+                _InputDir = context.ReadValue<Vector2>();
+                Transform blockTransform = _Block.transform;
+
+                Vector3 localDirection = Vector3.zero;
+                localDirection.x = _InputDir.x * _InputModifier.x * _BlockSize;
+                localDirection.z = _InputDir.x * _InputModifier.z * _BlockSize;
+                localDirection.y = _InputDir.y * _BlockSize;
+
+                bool hit = Physics.Raycast(blockTransform.position, blockTransform.TransformDirection(localDirection), _BlockSize * _BlockRayScale);
+                Debug.DrawRay(blockTransform.position, blockTransform.TransformDirection(localDirection) * _BlockRayScale, Color.white, 5);
+
+                if (!hit)
+                {
+                    _BlockEvent?.Invoke(_BlockList.Count, _Block);
+                    _MovingBlock = true;
+                    Vector3 newBlockPlacement = blockTransform.position + blockTransform.TransformDirection(localDirection);
+                    _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation);
+                    _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => _MovingBlock = false);
+                    _BlockList.Add(_Block);
+                    _Block.SetActive(true);
+                    _CinemachineCamera.Target.TrackingTarget = _Block.transform;
+                }
+            } 
+            else
+            {
+                _LimitEvent?.Invoke(_Block);
             }
         }
     }
@@ -267,7 +275,7 @@ public class BlockController : MonoBehaviour
         Vector3 cameraEulerRotation = _Camera.transform.eulerAngles;
         float angleDifference = cameraEulerRotation.y - blockEulerRotation.y;
         angleDifference = Mathf.Repeat(angleDifference, 360f);
-        int segmentOcta = Mathf.RoundToInt(angleDifference / 45f);
+        //int segmentOcta = Mathf.RoundToInt(angleDifference / 45f);
         _CameraCubeSegment = Mathf.RoundToInt(angleDifference / 90f);
 
         float blockUIDist = _BlockSize + 1f;

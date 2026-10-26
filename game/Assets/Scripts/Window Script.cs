@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class WindowScript : MonoBehaviour
 {
-    public float _WindowSize = 1f;
+    public float _WindowSize = 5f;
     public float _WindowFade = 0.5f;
     public GameObject _Player;
     public GameObject _CCamera;
@@ -27,8 +27,6 @@ public class WindowScript : MonoBehaviour
         Physics.Raycast(floorRay, out RaycastHit hitinfo);
         Vector3 floorPos = hitinfo.point;
 
-        Shader.SetGlobalFloat("_Window_Size", _WindowSize);
-        Shader.SetGlobalFloat("_Window_Fade", _WindowFade);
         Shader.SetGlobalFloat("_Floor_Position", floorPos.y);
         Shader.SetGlobalVector("_Player_Camera_Position", playerCameraPos);
         Shader.SetGlobalVector("_Player_World_Position", playerWorldPos);
