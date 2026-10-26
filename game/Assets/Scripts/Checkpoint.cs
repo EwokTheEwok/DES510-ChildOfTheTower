@@ -2,14 +2,11 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-[System.Serializable]
-public class GameObjectEvent : UnityEvent<GameObject> {}
-
-public class Archway : MonoBehaviour
+public class Checkpoint : MonoBehaviour
 {
     bool _Activated = false;
     Vector3 _RestartPosition;
-    public GameObjectEvent _ActivateEvent = new GameObjectEvent();
+    public UnityEvent<GameObject> _ActivateEvent = new ();
 
     void Start()
     {
