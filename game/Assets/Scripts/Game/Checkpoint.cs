@@ -1,12 +1,13 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class Checkpoint : MonoBehaviour
 {
+    public bool _StartStopOcean = true;
+
     bool _Activated = false;
     Vector3 _RestartPosition;
-    public UnityEvent<GameObject> _ActivateEvent = new ();
+    UnityEvent<GameObject, bool> _ActivateEvent = new();
 
     void Start()
     {
@@ -18,7 +19,7 @@ public class Checkpoint : MonoBehaviour
         return _RestartPosition;
     }
     
-    public void OnActivate(UnityAction<GameObject> call)
+    public void OnActivate(UnityAction<GameObject, bool> call)
     {
         _ActivateEvent.AddListener(call);
     }
@@ -28,7 +29,7 @@ public class Checkpoint : MonoBehaviour
         if (!_Activated && other.CompareTag("Player"))
         {
             _Activated = true;
-            _ActivateEvent.Invoke(gameObject);
+            _ActivateEvent?.Invoke(gameObject, _StartStopOcean);
         }
     }
 }
