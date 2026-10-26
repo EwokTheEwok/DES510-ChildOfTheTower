@@ -12,6 +12,7 @@ public class BlockController : MonoBehaviour
     public int _MaxDetectableSurfaces = 5;
     public int _BlockLimit = 1;
     public float _BlockSize = 2f;
+    public float _BlockRayScale = 1.25f;
     public Ease _BlockEasing = Ease.InOutSine;
     public float _TweenDuration = 0.25f;
     public string _BlockSurfaceTag = "Block Surface";
@@ -29,7 +30,6 @@ public class BlockController : MonoBehaviour
     bool _IsPlacing = false;
     bool _ActiveSurface = false;
     bool _MovingBlock = false;
-    public float _BlockRayScale = 1.25f;
     readonly List<GameObject> _BlockList = new();
     EntityId _ActiveSurfaceID;
     Collider[] _SurfaceColList;

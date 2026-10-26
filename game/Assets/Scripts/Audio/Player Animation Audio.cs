@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TriggerPlayerAudio : MonoBehaviour
+public class PlayerAnimationAudio : MonoBehaviour
 {
     public AK.Wwise.Event FootstepsEvent;
     public AK.Wwise.Event JumpEvent;
