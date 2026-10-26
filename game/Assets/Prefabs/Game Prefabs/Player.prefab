@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7990201974574080657}
   - component: {fileID: 2989873134638656984}
   - component: {fileID: 1744924615411652172}
-  - component: {fileID: 1241074854105163345}
+  - component: {fileID: 3988335460039247159}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -71,7 +71,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6c1b21a91bd6f6a47b09cf9fa99571b0, type: 2}
+  - {fileID: 2100000, guid: 1070ff2e8af12f04885e4aafcfa5a108, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -195,7 +195,7 @@ MonoBehaviour:
     m_ActionName: 'Player/CameraMove[/Keyboard/z,/Keyboard/x]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1241074854105163345}
+      - m_Target: {fileID: 3988335460039247159}
         m_TargetAssemblyTypeName: BlockController, Assembly-CSharp
         m_MethodName: OnPlaceBlock
         m_Mode: 0
@@ -211,9 +211,9 @@ MonoBehaviour:
     m_ActionName: 'Player/PlaceBlock[/Keyboard/c]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1241074854105163345}
+      - m_Target: {fileID: 3988335460039247159}
         m_TargetAssemblyTypeName: BlockController, Assembly-CSharp
-        m_MethodName: OnBlockMove
+        m_MethodName: OnMoveBlock
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -227,7 +227,7 @@ MonoBehaviour:
     m_ActionName: 'Player/MoveBlock[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1241074854105163345}
+      - m_Target: {fileID: 3988335460039247159}
         m_TargetAssemblyTypeName: BlockController, Assembly-CSharp
         m_MethodName: OnUndoBlock
         m_Mode: 0
@@ -262,9 +262,12 @@ MonoBehaviour:
   _MinSpeed: 1
   _MaxSpeed: 5
   _JumpSpeed: 12
-  _MoveAccel: 10
-  _MoveDeaccel: 20
---- !u!114 &1241074854105163345
+  _MoveAccel: 20
+  _MoveDeaccel: 50
+  _JumpEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3988335460039247159
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -273,12 +276,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 118030202727208779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28bd02bd56d7f4140a15e546c5a01b91, type: 3}
+  m_Script: {fileID: 11500000, guid: 54c8244961e90104e84ee21d3d0faeb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockController
   _PlaceRange: 5
   _MaxDetectableSurfaces: 5
-  _BlockLimit: 10
+  _BlockLimit: 1
   _BlockSize: 2
   _BlockEasing: 4
   _TweenDuration: 0.25
@@ -290,9 +293,13 @@ MonoBehaviour:
   _BlockUIPrefab: {fileID: 4426684099784562912, guid: 347bd05a054a400458d449c4493cc538, type: 3}
   _BlockPrefab: {fileID: 8990706033399320676, guid: b0929d630b1f8204381e7f2148d7b6c5, type: 3}
   _CinemachineCamera: {fileID: 5769029285310065178}
+  _BlockEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _UndoEvent:
+    m_PersistentCalls:
+      m_Calls: []
   _BlockRayScale: 1.25
-  _BlockList: []
-  _BrickAudioSystem: {fileID: 0}
 --- !u!1 &1714346313533235322
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,7 +328,7 @@ Transform:
   m_GameObject: {fileID: 1714346313533235322}
   serializedVersion: 2
   m_LocalRotation: {x: 0.17364816, y: -0, z: -0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 17.101007, z: -46.98463}
+  m_LocalPosition: {x: 0, y: 10.564654, z: -29.02615}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
