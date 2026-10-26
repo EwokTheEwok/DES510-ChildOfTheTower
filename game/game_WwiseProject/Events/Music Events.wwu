@@ -22,6 +22,16 @@
 					<ChildrenList>
 						<Event Name="Play_IntroLoop" ID="{5141A12A-7C53-4A7C-8E8D-98DE16D8F73D}">
 							<ChildrenList>
+								<Action Name="" ID="{E1D21826-40A9-44B0-ACE7-0F052A294B4D}" ShortID="728077283">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="22"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Lvl1" ID="{863C7175-F5DA-4DC0-B5C4-53BC5F074DDB}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{760E94F3-37D9-424E-955C-6F8CBDFFBEF1}" ShortID="136352026">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="22"/>
@@ -70,6 +80,16 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Title" ID="{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{391A973B-0543-4329-A564-ED221B96719F}" ShortID="14353297">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="39"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_MXDucking" ID="{2F7F2B53-C6EB-4666-9036-92C07213C0F1}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

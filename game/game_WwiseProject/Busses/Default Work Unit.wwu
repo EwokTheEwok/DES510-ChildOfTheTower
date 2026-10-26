@@ -60,6 +60,49 @@
 						</Reference>
 					</ReferenceList>
 					<ObjectLists>
+						<ObjectList Name="Effects">
+							<EffectSlot Name="" ID="{D5CF7A50-2A3E-49CA-BFBF-881E9566CE8F}" ShortID="390195537">
+								<ReferenceList>
+									<Reference Name="Effect">
+										<Custom>
+											<Effect Name="Parametric EQ (Custom)" ID="{A4658F22-13DA-42DB-AEB4-220FFA72CEA2}" ShortID="1062664613" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+												<PropertyList>
+													<Property Name="AttackTimeBand2" Type="Real32" Value="0.05"/>
+													<Property Name="AttackTimeBand3" Type="Real32" Value="0.05"/>
+													<Property Name="AttackTimeBand4" Type="Real32" Value="0.05"/>
+													<Property Name="DynamicsEnableBand2" Type="bool" Value="True"/>
+													<Property Name="DynamicsEnableBand3" Type="bool" Value="True"/>
+													<Property Name="DynamicsEnableBand4" Type="bool" Value="True"/>
+													<Property Name="FrequencyBand2" Type="Real32" Value="1012.244"/>
+													<Property Name="FrequencyBand3" Type="Real32" Value="134.657"/>
+													<Property Name="FrequencyBand4" Type="Real32" Value="1730.748"/>
+													<Property Name="GainBand3" Type="Real32" Value="0.09102402"/>
+													<Property Name="GainBand4" Type="Real32" Value="0.03034134"/>
+													<Property Name="NumBands" Type="int32" Value="4"/>
+													<Property Name="OnOffBand1" Type="bool" Value="False"/>
+													<Property Name="OnOffBand3" Type="bool" Value="True"/>
+													<Property Name="OnOffBand4" Type="bool" Value="True"/>
+													<Property Name="RangeBand2" Type="Real32" Value="-13.1"/>
+													<Property Name="RangeBand3" Type="Real32" Value="-18.1"/>
+													<Property Name="RangeBand4" Type="Real32" Value="-17.5"/>
+													<Property Name="ReleaseTimeBand2" Type="Real32" Value="0.03"/>
+													<Property Name="ReleaseTimeBand3" Type="Real32" Value="0.03"/>
+													<Property Name="ReleaseTimeBand4" Type="Real32" Value="0.03"/>
+													<Property Name="ThresholdBand2" Type="Real32" Value="-45"/>
+													<Property Name="ThresholdBand3" Type="Real32" Value="-32.5"/>
+													<Property Name="ThresholdBand4" Type="Real32" Value="-40.6"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="DynamicsSidechainRef">
+														<ObjectRef Name="Sidechain_Brick" ID="{7BDA1035-B120-4F0A-A0DE-758286FA6AE0}" WorkUnitID="{C62D698E-3D1B-450E-A789-AA66E9110234}"/>
+													</Reference>
+												</ReferenceList>
+											</Effect>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</EffectSlot>
+						</ObjectList>
 						<ObjectList Name="RTPC">
 							<RTPC Name="" ID="{3982FD32-04AC-4FE4-979C-6A11490AD27B}" ShortID="551941515">
 								<PropertyList>
@@ -100,7 +143,7 @@
 													</Point>
 													<Point>
 														<XPos>0</XPos>
-														<YPos>200</YPos>
+														<YPos>-16.81287</YPos>
 														<Flags>37</Flags>
 													</Point>
 												</PointList>
@@ -155,17 +198,6 @@
 						</ObjectList>
 					</ObjectLists>
 				</Bus>
-				<Bus Name="AudioObjects" ID="{A1065881-998C-4B5A-B989-73098B9FF0BB}">
-					<PropertyList>
-						<Property Name="Color" Type="int16" Value="8"/>
-						<Property Name="OverrideColor" Type="bool" Value="True"/>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
-							<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
-						</Reference>
-					</ReferenceList>
-				</Bus>
 				<Bus Name="Ambience" ID="{7DEAD1D9-A9C5-4B87-9802-76B50CABE0C9}">
 					<PropertyList>
 						<Property Name="Color" Type="int16" Value="4"/>
@@ -177,7 +209,7 @@
 						</Reference>
 					</ReferenceList>
 				</Bus>
-				<Folder Name="SFXBusses" ID="{7C1A4CA7-DD4B-4EEE-80B6-D2044FBF49A5}" ShortID="199027502">
+				<Folder Name="SFX" ID="{7C1A4CA7-DD4B-4EEE-80B6-D2044FBF49A5}" ShortID="199027502">
 					<ChildrenList>
 						<Bus Name="SFX_Ducking" ID="{1B9EC4CE-05CF-4AD6-A9B0-57ABC853B9ED}">
 							<PropertyList>
@@ -223,6 +255,40 @@
 									<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
 								</Reference>
 							</ReferenceList>
+						</Bus>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="AudioObjects" ID="{2D6141D4-B9BC-44CD-A03E-3C2A8D1D8124}" ShortID="146514147">
+					<ChildrenList>
+						<Bus Name="AudioObjects_Brick" ID="{A1065881-998C-4B5A-B989-73098B9FF0BB}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="8"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+									<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{264DA4D7-6145-4D5F-910D-58303C69217C}" ShortID="500025597">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Sidechain Send (Custom)" ID="{7312AF2B-9CC6-49DC-B6FE-309E232A90F6}" ShortID="465678910" PluginName="Ak Sidechain Send" CompanyID="0" PluginID="193" PluginType="3">
+														<ReferenceList>
+															<Reference Name="SidechainRef">
+																<ObjectRef Name="Sidechain_Brick" ID="{7BDA1035-B120-4F0A-A0DE-758286FA6AE0}" WorkUnitID="{C62D698E-3D1B-450E-A789-AA66E9110234}"/>
+															</Reference>
+														</ReferenceList>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+							</ObjectLists>
 						</Bus>
 					</ChildrenList>
 				</Folder>

@@ -24,6 +24,7 @@ namespace AK
         static const AkUniqueID BRICK_REVERSE = 2599784423U;
         static const AkUniqueID BRICKMODE_START = 2475923824U;
         static const AkUniqueID MUSICAMBTEST = 1200446142U;
+        static const AkUniqueID PLAY_AMB_OUTDOOR_LVL1 = 3813572857U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
         static const AkUniqueID PLAY_INTROLOOP = 528465658U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
@@ -83,6 +84,7 @@ namespace AK
 
     namespace GAME_PARAMETERS
     {
+        static const AkUniqueID RTPC_AMBIENCESWITCHER = 1038293638U;
         static const AkUniqueID RTPC_MXDUCKING = 4238634557U;
         static const AkUniqueID RTPC_SHADOWDISTANCE = 3739513706U;
     } // namespace GAME_PARAMETERS
@@ -96,11 +98,18 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID AMBIENCE = 85412153U;
-        static const AkUniqueID AUDIOOBJECTS = 3149422595U;
+        static const AkUniqueID AUDIOOBJECTS_BRICK = 2519613073U;
         static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
         static const AkUniqueID MUSIC = 3991942870U;
-        static const AkUniqueID SFX = 393239870U;
+        static const AkUniqueID SFX_DUCKING = 3093856314U;
+        static const AkUniqueID SFX_PLAYER = 217780010U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID REVERB_OUTDOOR = 1578973140U;
+        static const AkUniqueID REVERB_TOWER = 202033071U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

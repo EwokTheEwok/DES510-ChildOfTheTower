@@ -49,7 +49,7 @@ public class BlockController : MonoBehaviour
     Camera _Camera;
 
     //Audio
-    public BrickAudioSystem _BrickAudioSystem;
+    //public BrickAudioSystem _BrickAudioSystem;
 
     public 
 
@@ -143,7 +143,7 @@ public class BlockController : MonoBehaviour
             _PlayerMovement.SetControl(false);
             _Block = Instantiate(_BlockPrefab, _GuideBlock.transform.position, _GuideBlock.transform.rotation);
             //play audio
-            _BrickAudioSystem.PlaceBrick();
+            //_BrickAudioSystem.PlaceBrick();
             _BlockList.Add(_Block);
 
             _CinemachineCamera.Target.TrackingTarget = _Block.transform;
@@ -194,10 +194,10 @@ public class BlockController : MonoBehaviour
                 _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation);
                 _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => _MovingBlock = false);
                 //play audio
-                if (_BlockList.Count <= 7)
-                {
-                    _BrickAudioSystem.PlaceBrick();
-                }
+                //if (_BlockList.Count <= 7)
+                //{
+                //    _BrickAudioSystem.PlaceBrick();
+                //}
                 _BlockList.Add(_Block);
                 _Block.SetActive(true);
                 _CinemachineCamera.Target.TrackingTarget = _Block.transform;
@@ -218,7 +218,7 @@ public class BlockController : MonoBehaviour
                     _BlockList.RemoveAt(_BlockList.Count - 1);
                     Destroy(_Block);
                     //play audio
-                    _BrickAudioSystem.RemoveBrick();
+                    //_BrickAudioSystem.RemoveBrick();
                     _Block = _BlockList[^1];
                     _CinemachineCamera.Target.TrackingTarget = _Block.transform;
                 });

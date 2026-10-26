@@ -202,6 +202,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Brick_PlacementError" ID="{3CF23999-84A1-4513-82C1-3788A7A6F51C}">
+							<ChildrenList>
+								<Action Name="" ID="{0BF0D9FC-E632-450D-A36C-E758324D5D6A}" ShortID="494397747">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PlacementError" ID="{9BAACEED-A84A-4A6F-ACF5-36060FF7F98E}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Player Events" ID="{7DC762B1-921A-4625-9FB3-E7867BAD1984}" ShortID="803210255">

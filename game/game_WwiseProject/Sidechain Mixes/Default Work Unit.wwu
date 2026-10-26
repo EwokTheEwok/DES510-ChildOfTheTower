@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C62D698E-3D1B-450E-A789-AA66E9110234}" SchemaVersion="133">
 	<SidechainMixes>
-		<WorkUnit Name="Default Work Unit" ID="{C62D698E-3D1B-450E-A789-AA66E9110234}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C62D698E-3D1B-450E-A789-AA66E9110234}" PersistMode="Standalone">
+			<ChildrenList>
+				<SidechainMix Name="Sidechain_Brick" ID="{7BDA1035-B120-4F0A-A0DE-758286FA6AE0}">
+					<PropertyList>
+						<Property Name="SidechainMixChannelConfig" Type="int32">
+							<ValueList>
+								<Value>3584</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+				</SidechainMix>
+			</ChildrenList>
+		</WorkUnit>
 	</SidechainMixes>
 </WwiseDocument>

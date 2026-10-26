@@ -7,26 +7,18 @@ public class BrickAudioSystem : MonoBehaviour
     public AK.Wwise.Event RemoveEvent;
     public AK.Wwise.Event BrickReset;
 
-    // Block Controller Reference
-    public BlockController BlockControllerScript;
-
-    public void PlaceBrick()
+    public void PlaceBrick(int count, GameObject gameobject)
     {
-        int i = BlockControllerScript._BlockList.Count;
-
-        GameObject gameobject = BlockControllerScript._BlockPrefab;
-
-        if (i == 0)
+        Debug.Log("sound: " + count);
+        if (count == 0)
            BrickReset.Post(gameObject);
 
-        BrickPlaceEvents[i].Post(gameObject);
-        Debug.Log(i);
+        if (count < BrickPlaceEvents.Length)
+            BrickPlaceEvents[count].Post(gameObject);
     }
 
-    public void RemoveBrick()
+    public void RemoveBrick(GameObject gameobject)
     {
-        GameObject gameobject = BlockControllerScript._BlockPrefab;
-
         RemoveEvent.Post(gameObject);
     }
 }
