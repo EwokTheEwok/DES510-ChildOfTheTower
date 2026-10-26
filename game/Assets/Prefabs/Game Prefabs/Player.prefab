@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5068522659616340483}
   - component: {fileID: 6440392076667985014}
-  - component: {fileID: 7364589340031769371}
   m_Layer: 0
   m_Name: Block Sprite
   m_TagString: Untagged
@@ -27,11 +26,11 @@ Transform:
   m_GameObject: {fileID: 93949058760210755}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.13, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.42, z: 0}
+  m_LocalScale: {x: 1.6187, y: 1.6187, z: 1.6187}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5308223972824557961}
+  m_Father: {fileID: 241968102112503927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6440392076667985014
 SpriteRenderer:
@@ -93,18 +92,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
---- !u!114 &7364589340031769371
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 93949058760210755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83984a49e37556b49836af3545def438, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraFollowTest
 --- !u!1 &118030202727208779
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,9 +127,8 @@ Transform:
   m_Children:
   - {fileID: 7294467313144425951}
   - {fileID: 543654086215500388}
-  - {fileID: 5068522659616340483}
-  - {fileID: 182860728236397972}
   - {fileID: 2528598960761816714}
+  - {fileID: 241968102112503927}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &7990201974574080657
@@ -163,7 +149,7 @@ CharacterController:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Height: 2
+  m_Height: 1.5
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.5
@@ -400,7 +386,6 @@ GameObject:
   - component: {fileID: 182860728236397972}
   - component: {fileID: 4133413840891034979}
   - component: {fileID: 4651880933723171455}
-  - component: {fileID: 2330537217329241868}
   - component: {fileID: 7560637097302876305}
   m_Layer: 0
   m_Name: Character Sprite
@@ -418,11 +403,11 @@ Transform:
   m_GameObject: {fileID: 1654051806638906206}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.17, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.6187, y: 1.6187, z: 1.6187}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5308223972824557961}
+  m_Father: {fileID: 241968102112503927}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4133413840891034979
 SpriteRenderer:
@@ -506,18 +491,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2330537217329241868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654051806638906206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83984a49e37556b49836af3545def438, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::CameraFollowTest
 --- !u!114 &7560637097302876305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -757,6 +730,52 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 5f8191e31a05a914b8da196408eb4504, type: 2}
+--- !u!1 &6501130293988552659
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 241968102112503927}
+  - component: {fileID: 2749216352956783194}
+  m_Layer: 0
+  m_Name: Player Sprites
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &241968102112503927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501130293988552659}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6177797, y: 0.6177797, z: 0.6177797}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 182860728236397972}
+  - {fileID: 5068522659616340483}
+  m_Father: {fileID: 5308223972824557961}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2749216352956783194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6501130293988552659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83984a49e37556b49836af3545def438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraFollowTest
 --- !u!1 &7610425375220724855
 GameObject:
   m_ObjectHideFlags: 0
