@@ -1,4 +1,5 @@
 using AK.Wwise;
+using Unity.Android.Types;
 using UnityEngine;
 
 public class ShadowAudio : MonoBehaviour
@@ -7,7 +8,11 @@ public class ShadowAudio : MonoBehaviour
 
     private GameObject _player;
 
-    private float _playerDistance = 10;
+    //test objects
+    public GameObject _cube;
+    public bool off;
+
+    private float _playerDistance = 99;
     private float _playerDistanceThreshold = 100;
 
     private bool _isPlaying = false;
@@ -15,11 +20,20 @@ public class ShadowAudio : MonoBehaviour
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("Player");
+       
+        //for testing
+
+        AkUnitySoundEngine.SetRTPCValue("RTPC_ShadowDistance", _playerDistance);
+
+        if (off)
+        {
+            _cube.gameObject.SetActive(false);
+        }
     }
 
     void Update()
     {
-        AkUnitySoundEngine.SetRTPCValue("RTPC_ShadowDistance", _playerDistance);
+        //AkUnitySoundEngine.SetRTPCValue("RTPC_ShadowDistance", _playerDistance);
 
         if (_playerDistance < _playerDistanceThreshold && !_isPlaying)
         {
