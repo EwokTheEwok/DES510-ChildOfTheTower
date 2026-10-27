@@ -22,6 +22,7 @@ public class PlayerCamera : MonoBehaviour
     bool _CubeMode = false;
     bool _SwapToCube = false;
     float _BlockRotationY = 0f;
+    float _CameraRotationY = 0f;
 
     void Start()
     {
@@ -64,6 +65,7 @@ public class PlayerCamera : MonoBehaviour
         _CubeMode = true;
         _SwapToCube = true;
         _BlockRotationY = _blockRotationY;
+        _CameraRotationY = _CCamera.transform.eulerAngles.y;
     }
 
     public void SetOctaMode()
@@ -74,11 +76,11 @@ public class PlayerCamera : MonoBehaviour
     void TweenNearest()
     {
         _IsCameraRotating = true;
-        float differenceAngle = _CCamera.transform.eulerAngles.y - _BlockRotationY;
-        float nearestAngle = Mathf.Round(differenceAngle / 90f) * 90f;
+        float differenceAngle = _CameraRotationY - _BlockRotationY;
+        float nearestAngle = Mathf.Round((differenceAngle / 90f) + 0.01f) * 90f;
         float endRotation = nearestAngle + _BlockRotationY;
         _TweenRotation = _CCamera.transform.eulerAngles.y;
-        //Debug.Log("(" + _BlockRotationY + " / " + _CCamera.transform.eulerAngles.y + " )/ " + differenceAngle + " / " + nearestAngle + " / " + endRotation);
+        Debug.Log("(" + _BlockRotationY + " / " + _CCamera.transform.eulerAngles.y + " )/ " + differenceAngle + " / " + nearestAngle + " / " + endRotation);
         DOTween.To(
             () => _TweenRotation,
             lambaRotation => {
