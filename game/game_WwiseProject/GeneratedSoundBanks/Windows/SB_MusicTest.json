@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{3E8AAD46-8F11-39EB-8A44-070A017D1E25}",
+    "Hash": "{B74FC994-5F71-B4DE-8D4C-86DA92B1B5C9}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -277,7 +277,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "sfx_shadow_-002.wav",
-      "CachePath": "16/{16763776-C9E3-1BDF-71DA-1D3AD1256A3B}.wem"
+      "CachePath": "F5/{F55DF3C2-38D8-F7D9-C89B-92E16259C419}.wem"
      },
      {
       "Id": "665708152",
@@ -309,7 +309,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "sfx_amb_lvl1_outdoor_001.wav",
-      "CachePath": "D4/{D496BAAB-F86B-153B-736F-B8DF4698670C}.wem"
+      "CachePath": "70/{70EF8933-DF58-FAEE-B629-8C7490ADB742}.wem"
      },
      {
       "Id": "730654876",
@@ -358,6 +358,14 @@
       "Location": "Memory",
       "ShortName": "sfx_brickplace_lvl2_008.wav",
       "CachePath": "78/{78BCD022-8458-AB0C-8A95-3BC9A8A35084}.wem"
+     },
+     {
+      "Id": "823717908",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_playerland_001.wav",
+      "CachePath": "FF/{FF6C8F7C-920B-4DC1-B4ED-C5AF54B72250}.wem"
      },
      {
       "Id": "850230600",
@@ -3695,6 +3703,21 @@
       ]
      },
      {
+      "Id": "4285282925",
+      "Name": "Play_Land",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Play_Land",
+      "GUID": "{A9B495E2-E378-4FC9-BAA4-DC4CF1BBAA53}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "0.66",
+      "DurationMax": "0.66",
+      "MediaRefs": [
+       {
+        "Id": "823717908"
+       }
+      ]
+     },
+     {
       "Id": "3234418437",
       "Name": "Play_Shadows",
       "ObjectPath": "\\Events\\SFX Events\\Play_Shadows",
@@ -3836,6 +3859,17 @@
         "GUID": "{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}"
        }
       ]
+     },
+     {
+      "Id": "3212186303",
+      "Name": "Stop_Shadows",
+      "ObjectPath": "\\Events\\SFX Events\\Stop_Shadows",
+      "GUID": "{0DB25F3A-F317-49F4-8A7D-4672DDC6A109}",
+      "Color": "13",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      },
      {
       "Id": "282115962",
@@ -4010,6 +4044,6 @@
     ]
    }
   ],
-  "FileHash": "{29EBD3F7-6EA0-C9D4-8BF5-942B97FB9B23}"
+  "FileHash": "{2E1C85FA-C7B6-18E2-706B-0AA8ADF72EFD}"
  }
 }

@@ -1165,11 +1165,6 @@
 						</Sound>
 						<Sound Name="sfx_shadow_002" ID="{28EFF7F1-5C15-4D1D-BBFF-35CDA3C45B04}" ShortID="825642654">
 							<PropertyList>
-								<Property Name="InitialDelay" Type="Real64">
-									<ValueList>
-										<Value>3.538</Value>
-									</ValueList>
-								</Property>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 							</PropertyList>
 							<ReferenceList>
@@ -1182,6 +1177,10 @@
 							</ReferenceList>
 							<ChildrenList>
 								<AudioFileSource Name="sfx_shadow_-002" ID="{F368660B-D4BD-42E1-8304-248ADB139F7C}">
+									<PropertyList>
+										<Property Name="FadeInDuration" Type="Real64" Value="1.57542"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
 									<Language>SFX</Language>
 									<AudioFile>sfx_shadow_-002.wav</AudioFile>
 									<MediaIDList>
@@ -1327,18 +1326,18 @@
 																<Flags>5</Flags>
 															</Point>
 															<Point>
-																<XPos>80</XPos>
+																<XPos>10.4</XPos>
 																<YPos>-200</YPos>
 																<Flags>0</Flags>
 																<SegmentShape>SCurve</SegmentShape>
 															</Point>
 															<Point>
-																<XPos>85</XPos>
+																<XPos>11.05</XPos>
 																<YPos>0.18287</YPos>
 																<Flags>0</Flags>
 															</Point>
 															<Point>
-																<XPos>100</XPos>
+																<XPos>13</XPos>
 																<YPos>0</YPos>
 																<Flags>37</Flags>
 															</Point>
@@ -1354,76 +1353,9 @@
 								<BlendTrackAssoc>
 									<ItemRef Name="sfx_shadow_002" ID="{28EFF7F1-5C15-4D1D-BBFF-35CDA3C45B04}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>78.019801980198</LeftEdgePos>
+										<LeftEdgePos>10.1425742574257</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>100</RightEdgePos>
-										<RightFadingMode>Automatic</RightFadingMode>
-									</CrossfadingInfo>
-								</BlendTrackAssoc>
-							</BlendTrackAssocList>
-						</BlendTrack>
-						<BlendTrack Name="Intro to Int 1" ID="{A555313D-0C64-457C-A772-C79E11E7ADE5}" ShortID="393264416">
-							<PropertyList>
-								<Property Name="EnableCrossFading" Type="bool" Value="True"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="LayerCrossFadeControlInput">
-									<ObjectRef Name="RTPC_ShadowDistance" ID="{F36820F7-C0BF-4C9F-B1D9-16242535787B}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
-								</Reference>
-							</ReferenceList>
-							<ObjectLists>
-								<ObjectList Name="RTPC">
-									<RTPC Name="" ID="{877DF47B-FF96-43F4-95B4-B0708D4CDF92}" ShortID="533967153">
-										<PropertyList>
-											<Property Name="PropertyName" Type="string" Value="Volume"/>
-										</PropertyList>
-										<ReferenceList>
-											<Reference Name="ControlInput">
-												<ObjectRef Name="RTPC_ShadowDistance" ID="{F36820F7-C0BF-4C9F-B1D9-16242535787B}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
-											</Reference>
-											<Reference Name="Curve">
-												<Custom>
-													<Curve Name="" ID="{0C232C94-A3C4-4741-BCFE-4B944F22614F}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-200</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>80</XPos>
-																<YPos>-200</YPos>
-																<Flags>0</Flags>
-																<SegmentShape>SCurve</SegmentShape>
-															</Point>
-															<Point>
-																<XPos>85</XPos>
-																<YPos>0</YPos>
-																<Flags>0</Flags>
-															</Point>
-															<Point>
-																<XPos>100</XPos>
-																<YPos>0</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</Custom>
-											</Reference>
-										</ReferenceList>
-									</RTPC>
-								</ObjectList>
-							</ObjectLists>
-							<BlendTrackAssocList>
-								<BlendTrackAssoc>
-									<ItemRef Name="sfx_shadow_001" ID="{D5483192-3E99-4F4D-831D-9FB809EE0607}"/>
-									<CrossfadingInfo>
-										<LeftEdgePos>79.009900990099</LeftEdgePos>
-										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>100</RightEdgePos>
+										<RightEdgePos>13</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
@@ -1461,29 +1393,29 @@
 																<Flags>5</Flags>
 															</Point>
 															<Point>
-																<XPos>53.79032</XPos>
+																<XPos>6.9927416</XPos>
 																<YPos>-200</YPos>
 																<Flags>0</Flags>
 																<SegmentShape>SCurve</SegmentShape>
 															</Point>
 															<Point>
-																<XPos>60</XPos>
+																<XPos>7.8</XPos>
 																<YPos>0.25989</YPos>
 																<Flags>0</Flags>
 															</Point>
 															<Point>
-																<XPos>82.62097</XPos>
+																<XPos>10.7407261</XPos>
 																<YPos>0</YPos>
 																<Flags>0</Flags>
 																<SegmentShape>InvertedSCurve</SegmentShape>
 															</Point>
 															<Point>
-																<XPos>89.03226</XPos>
+																<XPos>11.5741938</XPos>
 																<YPos>-200</YPos>
 																<Flags>0</Flags>
 															</Point>
 															<Point>
-																<XPos>100</XPos>
+																<XPos>13</XPos>
 																<YPos>-200</YPos>
 																<Flags>37</Flags>
 															</Point>
@@ -1499,9 +1431,9 @@
 								<BlendTrackAssoc>
 									<ItemRef Name="sfx_shadow_003" ID="{377496F0-A289-47F9-BD8A-DBA061F0D0D7}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>54.2574257425743</LeftEdgePos>
+										<LeftEdgePos>7.05346534653466</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>85.9405940594059</RightEdgePos>
+										<RightEdgePos>11.1722772277228</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
@@ -1539,29 +1471,29 @@
 																<Flags>5</Flags>
 															</Point>
 															<Point>
-																<XPos>35</XPos>
+																<XPos>4.55</XPos>
 																<YPos>-200</YPos>
 																<Flags>0</Flags>
 																<SegmentShape>SCurve</SegmentShape>
 															</Point>
 															<Point>
-																<XPos>40</XPos>
+																<XPos>5.2</XPos>
 																<YPos>0</YPos>
 																<Flags>0</Flags>
 															</Point>
 															<Point>
-																<XPos>56.20968</XPos>
+																<XPos>7.3072584</XPos>
 																<YPos>0</YPos>
 																<Flags>0</Flags>
 																<SegmentShape>InvertedSCurve</SegmentShape>
 															</Point>
 															<Point>
-																<XPos>63.02419</XPos>
+																<XPos>8.1931447</XPos>
 																<YPos>-200</YPos>
 																<Flags>0</Flags>
 															</Point>
 															<Point>
-																<XPos>100</XPos>
+																<XPos>13</XPos>
 																<YPos>-200</YPos>
 																<Flags>37</Flags>
 															</Point>
@@ -1577,9 +1509,9 @@
 								<BlendTrackAssoc>
 									<ItemRef Name="sfx_shadow_004" ID="{CBD4104C-A698-4E8B-ACDA-C427BD57ED89}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>33.4653465346535</LeftEdgePos>
+										<LeftEdgePos>4.35049504950496</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>62.970297029703</RightEdgePos>
+										<RightEdgePos>8.18613861386139</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
@@ -1617,29 +1549,29 @@
 																<Flags>5</Flags>
 															</Point>
 															<Point>
-																<XPos>15</XPos>
+																<XPos>1.95</XPos>
 																<YPos>-200</YPos>
 																<Flags>0</Flags>
 																<SegmentShape>SCurve</SegmentShape>
 															</Point>
 															<Point>
-																<XPos>20</XPos>
+																<XPos>2.6</XPos>
 																<YPos>0</YPos>
 																<Flags>0</Flags>
 															</Point>
 															<Point>
-																<XPos>36.00806</XPos>
+																<XPos>4.6810478</XPos>
 																<YPos>0</YPos>
 																<Flags>0</Flags>
 																<SegmentShape>InvertedSCurve</SegmentShape>
 															</Point>
 															<Point>
-																<XPos>41.81452</XPos>
+																<XPos>5.4358876</XPos>
 																<YPos>-200</YPos>
 																<Flags>0</Flags>
 															</Point>
 															<Point>
-																<XPos>100</XPos>
+																<XPos>13</XPos>
 																<YPos>-200</YPos>
 																<Flags>37</Flags>
 															</Point>
@@ -1655,9 +1587,9 @@
 								<BlendTrackAssoc>
 									<ItemRef Name="sfx_shadow_005" ID="{AAB5C8BB-0213-4B36-A738-6F1EB533D397}"/>
 									<CrossfadingInfo>
-										<LeftEdgePos>12.6732673267327</LeftEdgePos>
+										<LeftEdgePos>1.64752475247525</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>44.1584158415842</RightEdgePos>
+										<RightEdgePos>5.74059405940595</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
@@ -1695,18 +1627,18 @@
 																<Flags>5</Flags>
 															</Point>
 															<Point>
-																<XPos>15</XPos>
+																<XPos>1.95</XPos>
 																<YPos>-0.18287</YPos>
 																<Flags>0</Flags>
 																<SegmentShape>InvertedSCurve</SegmentShape>
 															</Point>
 															<Point>
-																<XPos>22.21774</XPos>
+																<XPos>2.8883062</XPos>
 																<YPos>-200</YPos>
 																<Flags>0</Flags>
 															</Point>
 															<Point>
-																<XPos>100</XPos>
+																<XPos>13</XPos>
 																<YPos>-200</YPos>
 																<Flags>37</Flags>
 															</Point>
@@ -1724,7 +1656,7 @@
 									<CrossfadingInfo>
 										<LeftEdgePos>0</LeftEdgePos>
 										<LeftFadingMode>Automatic</LeftFadingMode>
-										<RightEdgePos>24.1584158415842</RightEdgePos>
+										<RightEdgePos>3.14059405940595</RightEdgePos>
 										<RightFadingMode>Automatic</RightFadingMode>
 									</CrossfadingInfo>
 								</BlendTrackAssoc>
@@ -2178,6 +2110,93 @@
 								<ReferenceList>
 									<Reference Name="PlaylistObject">
 										<ObjectRef Name="sfx_placementerror_001" ID="{A83BE975-34F3-45F8-93EA-6DAC53F25722}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+									</Reference>
+								</ReferenceList>
+							</PluginInnerObject>
+						</ObjectList>
+					</ObjectLists>
+				</RandomSequenceContainer>
+				<RandomSequenceContainer Name="PlayerLand" ID="{80EAC2AE-9AB5-4455-8C46-6B3E8F59216A}" ShortID="556188332">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+						<Property Name="Pitch" Type="int32">
+							<ModifierList>
+								<ModifierInfo>
+									<Modifier Name="" ID="{FCF2890B-6E29-4328-9314-CE62807D5F60}"/>
+								</ModifierInfo>
+							</ModifierList>
+						</Property>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-17</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sfx_playerland_001" ID="{0A4C493E-F28C-442B-B261-44870DDDCAC4}" ShortID="823343229">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{CC1FDDD7-D21C-41D7-882D-0D9780D21CF2}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="10"/>
+													<Property Name="Min" Type="Real64" Value="-10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{B2499F67-A466-4C2C-8BFA-E5792D9FBFB0}">
+												<PropertyList>
+													<Property Name="Max" Type="Real64" Value="2"/>
+													<Property Name="Min" Type="Real64" Value="-2"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_playerland_001" ID="{0C4443D5-2209-40A8-A805-A68CBD8E3CDC}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_playerland_001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="823717908"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_playerland_001" ID="{0C4443D5-2209-40A8-A805-A68CBD8E3CDC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Playlist">
+							<PluginInnerObject Name="" ID="{F4273406-6738-4BA6-8446-7CA6DF7C74F4}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+								<ReferenceList>
+									<Reference Name="PlaylistObject">
+										<ObjectRef Name="sfx_playerland_001" ID="{0A4C493E-F28C-442B-B261-44870DDDCAC4}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
 									</Reference>
 								</ReferenceList>
 							</PluginInnerObject>

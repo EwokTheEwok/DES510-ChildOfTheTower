@@ -14,11 +14,13 @@ Event	ID	Name			Wwise Object Path	Notes
 	1579460802	Brick_PlacementError			\SFX Events\Brick Events\Brick_PlacementError	
 	2475923824	BrickMode_Start			\SFX Events\Brick Events\BrickMode_Start	
 	2599784423	Brick_Reverse			\SFX Events\Brick Events\Brick_Reverse	
+	3212186303	Stop_Shadows			\SFX Events\Stop_Shadows	
 	3234418437	Play_Shadows			\SFX Events\Play_Shadows	
 	3689126666	Play_Jump			\SFX Events\Player Events\Play_Jump	
 	3813572857	Play_Amb_Outdoor_Lvl1			\AMB Events\Play_Amb_Outdoor_Lvl1	
 	3854155799	Play_Footsteps			\SFX Events\Player Events\Play_Footsteps	
 	3945088981	Brick_0			\SFX Events\Brick Events\Brick_0	
+	4285282925	Play_Land			\SFX Events\Player Events\Play_Land	
 
 State Group	ID	Name			Wwise Object Path	Notes
 	2782712965	Level			\Default Work Unit\Level	
@@ -82,17 +84,18 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	638969122	sfx_footsteps_003_001	.cache\FD\{FD5DFAA3-E9A3-4E55-C6D9-F8DE9A78C14C}.wem		\Containers\SFX\RMC_PlayerFootsteps\sfx_footsteps_003_001		18822
 	643300300	sfx_brickplace_lvl2_003	.cache\CC\{CC2DAE50-EA09-DC30-BD3E-72D26EE05609}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl2\sfx_brickplace_lvl2_003		384096
 	645220113	sfx_brickplace_lvl1_007	.cache\B3\{B331388A-4339-6CA3-BC56-B8359DC31CDC}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl1\sfx_brickplace_lvl1_007		384096
-	663990711	sfx_shadow_002	.cache\16\{16763776-C9E3-1BDF-71DA-1D3AD1256A3B}.wem		\Containers\SFX\BLC_Shadows\sfx_shadow_002		4101140
+	663990711	sfx_shadow_002	.cache\F5\{F55DF3C2-38D8-F7D9-C89B-92E16259C419}.wem		\Containers\SFX\BLC_Shadows\sfx_shadow_002		4101140
 	665708152	sfx_brickplace_lvl2_005	.cache\F2\{F2DC64DE-46AB-EDFD-0869-59EBD84C7165}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl2\sfx_brickplace_lvl2_005		384096
 	673032471	sfx_brickplace_lvl3_005	.cache\36\{36D1D4B6-DF4D-9F03-B851-A3C2C770FE34}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl3\sfx_brickplace_lvl3_005		384096
 	678363493	sfx_jump_001	.cache\7D\{7DCCC970-81A5-7CB4-FA9A-68B9EAD31640}.wem		\Containers\SFX\Jump\sfx_jump_001		20306
-	701294168	sfx_amb_lvl1_outdoor_001	.cache\D4\{D496BAAB-F86B-153B-736F-B8DF4698670C}.wem		\Containers\Ambiences\BLC_Ambience\sfx_amb_lvl1_outdoor_001		2116697
+	701294168	sfx_amb_lvl1_outdoor_001	.cache\70\{70EF8933-DF58-FAEE-B629-8C7490ADB742}.wem		\Containers\Ambiences\BLC_Ambience\sfx_amb_lvl1_outdoor_001		2116697
 	730654876	sfx_brickreverse_001	.cache\00\{00458767-6806-E832-DDDB-EA16F7E9B501}.wem		\Containers\SFX\RMC_BrickReverse\sfx_brickreverse_001		176744
 	737196812	sfx_brickplace_lvl3_006	.cache\BB\{BB17E388-A61B-7901-82A1-1EC170874630}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl3\sfx_brickplace_lvl3_006		384096
 	740899465	sfx_footsteps_003_005	.cache\E9\{E94DDFCB-C4F0-7052-A8E3-E153797C6EEB}.wem		\Containers\SFX\RMC_PlayerFootsteps\sfx_footsteps_003_005		18822
 	778946377	mx_lvl3loop_85to150bpm_003	.cache\F1\{F12023B4-05D9-B876-0069-6EE469751521}.wem		\Containers\Interactive Music Hierarchy\MSW_Master\Lvl3Loop\mx_lvl3loop_85to150bpm_003\mx_lvl3loop_85to150bpm_003		2591434
 	797308141	mx_lvl1_transition_150bpm_001	.cache\F7\{F7AECFEF-15B9-89A1-F72A-C36405A857CF}.wem		\Containers\Interactive Music Hierarchy\MSW_Master\MSW_Lvl1\mx_lvl1_transition_150bpm_001\mx_lvl1_transition_150bpm_001		22592
 	820372882	sfx_brickplace_lvl2_008	.cache\78\{78BCD022-8458-AB0C-8A95-3BC9A8A35084}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl2\sfx_brickplace_lvl2_008		384096
+	823717908	sfx_playerland_001	.cache\FF\{FF6C8F7C-920B-4DC1-B4ED-C5AF54B72250}.wem		\Containers\SFX\PlayerLand\sfx_playerland_001		63456
 	850230600	sfx_footsteps_003_006	.cache\5F\{5F5BC506-B261-7984-2A7E-DA9E4586627B}.wem		\Containers\SFX\RMC_PlayerFootsteps\sfx_footsteps_003_006		18822
 	857250192	sfx_brickplace_lvl1_002	.cache\95\{956657B1-1A7E-F360-F422-A3F9D86D4430}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl1\sfx_brickplace_lvl1_002		384096
 	888520922	sfx_brickplace_lvl3_007	.cache\11\{112ABB48-0D2D-FD7D-39DE-9D1217457AAA}.wem		\Containers\SFX\SWC_BrickSwitcher\SWC_Brick_lvl3\sfx_brickplace_lvl3_007		384096

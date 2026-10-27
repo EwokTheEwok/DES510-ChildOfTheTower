@@ -1,14 +1,17 @@
 using AK.Wwise;
+using System;
+using Unity.Android.Types;
 using UnityEngine;
 
 public class ShadowAudio : MonoBehaviour
 {
     public AK.Wwise.Event ShadowEvent;
+    public AK.Wwise.Event StopShadows;
 
     private GameObject _player;
 
-    private float _playerDistance = 10;
-    private float _playerDistanceThreshold = 100;
+    private float _playerDistance;
+    private float _playerDistanceThreshold = 13.1f;
 
     private bool _isPlaying = false;
 
@@ -19,17 +22,36 @@ public class ShadowAudio : MonoBehaviour
 
     void Update()
     {
-        AkUnitySoundEngine.SetRTPCValue("RTPC_ShadowDistance", _playerDistance);
+        //AkUnitySoundEngine.SetRTPCValue("RTPC_ShadowDistance", _playerDistance);
 
-        if (_playerDistance < _playerDistanceThreshold && !_isPlaying)
+        //if (_playerDistance < _playerDistanceThreshold && !_isPlaying)
+        //{
+        //    ShadowEvent.Post(gameObject);
+        //    _isPlaying = true;
+        //}
+
+        //else if (_playerDistance > _playerDistanceThreshold)
+        //{
+        //    ShadowEvent.Stop(gameObject);
+        //    _isPlaying = false;
+        //}
+    }
+
+    public void GetShadowDistance(float distance)
+    {
+        AkUnitySoundEngine.SetRTPCValue("RTPC_ShadowDistance", distance);
+
+        Debug.Log(distance);
+
+        if (distance < _playerDistanceThreshold && !_isPlaying)
         {
             ShadowEvent.Post(gameObject);
             _isPlaying = true;
         }
 
-        else if (_playerDistance > _playerDistanceThreshold)
+        else if (distance > _playerDistanceThreshold)
         {
-            ShadowEvent.Stop(gameObject);
+            StopShadows.Post(gameObject);
             _isPlaying = false;
         }
     }
