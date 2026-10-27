@@ -51,7 +51,7 @@ public class Dialogue : MonoBehaviour
             }
 
             /*
-            if (!_IsTalking) {
+            if (!_IsRandomTalking) {
                 StartDialogue();
             }
             else
@@ -102,41 +102,41 @@ public class Dialogue : MonoBehaviour
     /*
     private void StartDialogue()
     {
-        _IsTalking = true;
+        _IsRandomTalking = true;
 
         ControlText.text = "";
         ControlBox.SetActive(true);
 
-        lineIndex = 0;
+        _LineIndex = 0;
     }
 
     private IEnumerator WriteLetters()
     {
         _IsTyping = true;
-        foreach (char c in UIText[lineIndex])
+        foreach (char c in UIText[_LineIndex])
         {
             ControlText.text += c;
             yield return new WaitForSeconds(TypeSpeed);
         }
-        yield return new WaitForSeconds(_LineDelay);
+        yield return new WaitForSeconds(_DisplayDelay);
         _IsTyping = false;
     }
 
     private void WriteLine()
     {
-        if (lineIndex < UIText.Length) 
+        if (_LineIndex < UIText.Length) 
         {
             ControlText.text = "";
 
-            coroutine = WriteLetters();
-            StartCoroutine(coroutine);
-            lineIndex++;
+            _RandomDialogueCoroutine = WriteLetters();
+            StartCoroutine(_RandomDialogueCoroutine);
+            _LineIndex++;
         }
         else
         {
             ControlBox.SetActive (false);
 
-            _IsTalking = false;
+            _IsRandomTalking = false;
         }
     }
     */
