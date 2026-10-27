@@ -27,6 +27,8 @@ public class PlayerMovement : MonoBehaviour
 
     //Animator
     private Animator _Animator;
+    private float _FallDistance;
+    public float _MinFallDistance = 1.0f;
 
 
     private void Awake()
@@ -47,6 +49,24 @@ public class PlayerMovement : MonoBehaviour
         float deltaTime = Time.deltaTime;
 
         _WorldMoveDir = Quaternion.AngleAxis(_Camera.transform.eulerAngles.y, new Vector3(0f, 1f, 0f)) * new Vector3(_MoveDir.x, 0f, _MoveDir.y);
+
+        //Falling
+        if (!_CharControl.isGrounded && _Velocity.y < 0)
+        {
+            _FallDistance += -_Velocity.y * deltaTime;
+
+        } else
+        {
+            float horizontalSpeed = new Vector2(_Velocity.x, _Velocity.z).magnitude;
+
+            if (_FallDistance > _MinFallDistance && horizontalSpeed == 0)
+            {
+                _Animator.SetTrigger("Landed");
+                _Animator.SetFloat("lastInputX", _MoveDir.x);
+                _Animator.SetFloat("lastInputY", _MoveDir.y);
+            }
+            _FallDistance = 0.0f;
+        }
 
         //Vertical movement (jump/gravity)
         if (_CharControl.isGrounded && _Velocity.y < 0)
@@ -94,8 +114,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.started && _CharControl.isGrounded)
         {
+            //_Animator.SetBool("isJumping", true);
             _JumpEvent?.Invoke(gameObject);
             _Velocity.y = _JumpSpeed;
+            _Animator.SetBool("isJumping", false);
         }
+
+        _Animator.SetFloat("inputX", _MoveDir.x);
+        _Animator.SetFloat("inputY", _MoveDir.y);
     }
 }
