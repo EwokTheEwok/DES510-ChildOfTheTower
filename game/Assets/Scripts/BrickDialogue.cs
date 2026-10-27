@@ -11,6 +11,7 @@ public class BrickDialogue : MonoBehaviour
     [SerializeField] private TMP_Text BrickText;
 
     [SerializeField] private string[] BrickLines;
+    [SerializeField] private string[] targetedLines;
     [SerializeField] private float TypeSpeed = 0.05f;
 
     private int lineIndex;
@@ -25,11 +26,12 @@ public class BrickDialogue : MonoBehaviour
     private RectTransform dialogueTransform;
 
     private IEnumerator coroutine;
+    private IEnumerator npcCoroutine;
 
     private void Start()
     {
         dialogueTransform = BrickBox.transform as RectTransform;
-
+        npcCoroutine = npcDia();
     }
 
     private void Update()
@@ -49,8 +51,11 @@ public class BrickDialogue : MonoBehaviour
 
     private IEnumerator StartDia()
     {
+        
         _IsTalking = true;
         lineIndex = Random.Range(0, BrickLines.Length);
+
+        yield return new WaitForSeconds(Mathf.Abs(_LineDelay));
 
         BrickBox.SetActive(true);
         BrickText.text = "";
@@ -65,6 +70,26 @@ public class BrickDialogue : MonoBehaviour
         BrickBox.SetActive(false);
 
         yield return new WaitForSeconds(Mathf.Abs(_EndDelay - _LineDelay));
+        _IsTalking = false;
+    }
+
+    private IEnumerator npcDia()
+    {
+        _IsTalking = true;
+        //lineIndex = Random.Range(0, targetedLines.Length);
+        lineIndex = 0;
+
+        BrickBox.SetActive(true);
+        BrickText.text = "";
+
+        foreach (char c in targetedLines[lineIndex])
+        {
+            BrickText.text += c;
+            yield return new WaitForSeconds(TypeSpeed);
+        }
+
+        yield return new WaitForSeconds(Mathf.Abs(_LineDelay));
+        BrickBox.SetActive(false);
         _IsTalking = false;
     }
 
@@ -83,6 +108,8 @@ public class BrickDialogue : MonoBehaviour
             {
                 StopCoroutine(coroutine);
                 StopTalking();
+
+                StartCoroutine(npcCoroutine);
             }
             _InRange = true;
         }
@@ -92,6 +119,7 @@ public class BrickDialogue : MonoBehaviour
     {
         if (collision.CompareTag("NPC"))
         {
+            StopCoroutine(npcCoroutine);
             _InRange = false;
         }
     }
