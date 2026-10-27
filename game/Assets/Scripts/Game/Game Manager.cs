@@ -1,26 +1,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Checkpoint settings")]
+    [Header("Checkpoint")]
     public string _CheckpointTag = "Checkpoint";
     private List<GameObject> _CheckpointList = new();
     private GameObject _CurrentCheckpoint = null;
 
-    [Header("Shadow Ocean settings")]
-    public float _MinSpeed = 0.01f;
-    public float _MaxSpeed = 0.05f;
+    [Header("Shadow Ocean")]
+    public float _MinSpeed = 0.5f;
+    public float _MaxSpeed = 10f;
     public float _MinDistance = 5f;
     public float _MaxDistance = 30f;
-    public float _ResetDistance = -20f;
-    public float _StartHeight = -10f;
+    public float _ResetDistance = -30f;
+    public float _StartHeight = -30f;
     private bool _Moving = false;
 
     [Header("References")]
     public GameObject _Player = null;
     public GameObject _ShadowOcean = null;
+
+    [Header("Events")]
+    public UnityEvent<float> _ShadowDistanceEvent = new();
 
 
     void Start()
@@ -37,12 +41,14 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+        float distanceFromPlayer = _Player.transform.position.y - _ShadowOcean.transform.position.y;
+        _ShadowDistanceEvent?.Invoke(distanceFromPlayer);
         if (_Moving)
         {
-            float distanceFromMinimum = (_Player.transform.position.y - _MinDistance) - _ShadowOcean.transform.position.y;
+            float distanceFromMinimum = distanceFromPlayer - _MinDistance;
             float distanceScale = Mathf.Clamp(distanceFromMinimum / (_MaxDistance - _MinDistance), 0f, 1f);
             float speed = Mathf.SmoothStep(_MinSpeed, _MaxSpeed, distanceScale);
-            _ShadowOcean.transform.position += new Vector3(0f, speed, 0f);
+            _ShadowOcean.transform.position += new Vector3(0f, speed * Time.fixedDeltaTime, 0f);
         }
     }
 
