@@ -55,17 +55,25 @@ public class PlayerMovement : MonoBehaviour
         {
             _FallDistance += -_Velocity.y * deltaTime;
 
+            if(_Velocity.y < -2)
+            {
+               _Animator.SetTrigger("Falling");
+            }
+            else
+            {
+                _Animator.ResetTrigger("Falling");
+            }
+
         } else
         {
-            float horizontalSpeed = new Vector2(_Velocity.x, _Velocity.z).magnitude;
-
-            if (_FallDistance > _MinFallDistance && horizontalSpeed == 0)
+            if (_FallDistance > _MinFallDistance)
             {
                 _Animator.SetTrigger("Landed");
                 _Animator.SetFloat("lastInputX", _MoveDir.x);
                 _Animator.SetFloat("lastInputY", _MoveDir.y);
             }
             _FallDistance = 0.0f;
+            _Animator.ResetTrigger("Falling");
         }
 
         //Vertical movement (jump/gravity)
