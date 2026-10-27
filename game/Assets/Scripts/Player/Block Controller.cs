@@ -23,7 +23,7 @@ public class BlockController : MonoBehaviour
     public CinemachineCamera _CinemachineCamera;
     //Events
     [Header("Block Events")]
-    public BlockEvent _BlockEvent = new();
+    public UnityEvent<int, GameObject> _BlockEvent = new();
     public UnityEvent<GameObject> _UndoEvent = new();
     public UnityEvent<GameObject> _LimitEvent = new();
 
@@ -322,7 +322,3 @@ public class BlockController : MonoBehaviour
         Debug.DrawRay(_transform.position, _transform.forward * 5.0f, Color.softBlue);
     }
 }
-
-
-[System.Serializable]
-public class BlockEvent : UnityEvent<int, GameObject> { }
