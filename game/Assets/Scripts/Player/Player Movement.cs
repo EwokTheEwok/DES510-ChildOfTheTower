@@ -114,13 +114,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (context.started && _CharControl.isGrounded)
         {
-            //_Animator.SetBool("isJumping", true);
+            _Animator.SetTrigger("Jumping");
             _JumpEvent?.Invoke(gameObject);
             _Velocity.y = _JumpSpeed;
-            _Animator.SetBool("isJumping", false);
+
+            _Animator.SetFloat("inputX", _MoveDir.x);
+            _Animator.SetFloat("inputY", _MoveDir.y);
         }
 
-        _Animator.SetFloat("inputX", _MoveDir.x);
-        _Animator.SetFloat("inputY", _MoveDir.y);
+        _Animator.SetFloat("lastInputX", _MoveDir.x);
+        _Animator.SetFloat("lastInputY", _MoveDir.y);
     }
 }
