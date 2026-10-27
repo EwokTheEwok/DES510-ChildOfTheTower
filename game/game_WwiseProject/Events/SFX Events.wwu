@@ -239,6 +239,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_Land" ID="{A9B495E2-E378-4FC9-BAA4-DC4CF1BBAA53}">
+							<ChildrenList>
+								<Action Name="" ID="{7074388F-CE4C-491F-A716-B64B7058B72B}" ShortID="1054964105">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PlayerLand" ID="{80EAC2AE-9AB5-4455-8C46-6B3E8F59216A}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Event Name="Play_Shadows" ID="{94F97942-AB3A-49D3-9187-72739ACAAE1C}">

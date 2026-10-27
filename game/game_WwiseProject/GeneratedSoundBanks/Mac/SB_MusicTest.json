@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{E0508E00-B134-0577-61D3-211C95C1E0DD}",
+    "Hash": "{E0086606-D70D-05F9-3667-B69F067C3F0E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -358,6 +358,14 @@
       "Location": "Memory",
       "ShortName": "sfx_brickplace_lvl2_008.wav",
       "CachePath": "78/{78BCD022-8458-AB0C-8A95-3BC9A8A35084}.wem"
+     },
+     {
+      "Id": "823717908",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_playerland_001.wav",
+      "CachePath": "FF/{FF6C8F7C-920B-4DC1-B4ED-C5AF54B72250}.wem"
      },
      {
       "Id": "850230600",
@@ -3695,6 +3703,21 @@
       ]
      },
      {
+      "Id": "4285282925",
+      "Name": "Play_Land",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Play_Land",
+      "GUID": "{A9B495E2-E378-4FC9-BAA4-DC4CF1BBAA53}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "0.66",
+      "DurationMax": "0.66",
+      "MediaRefs": [
+       {
+        "Id": "823717908"
+       }
+      ]
+     },
+     {
       "Id": "3234418437",
       "Name": "Play_Shadows",
       "ObjectPath": "\\Events\\SFX Events\\Play_Shadows",
@@ -4010,6 +4033,6 @@
     ]
    }
   ],
-  "FileHash": "{3CF4E525-6AFB-C702-5E71-F2AE3388AA1D}"
+  "FileHash": "{490DCC9E-9BAE-6E32-55A6-D346408779CB}"
  }
 }
