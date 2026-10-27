@@ -9,8 +9,11 @@
 			<ChildrenList>
 				<GameParameter Name="RTPC_ShadowDistance" ID="{F36820F7-C0BF-4C9F-B1D9-16242535787B}">
 					<PropertyList>
-						<Property Name="InitialValue" Type="Real64" Value="100"/>
+						<Property Name="InitialValue" Type="Real64" Value="13"/>
+						<Property Name="Max" Type="Real64" Value="13"/>
 						<Property Name="RTPCRamping" Type="int16" Value="1"/>
+						<Property Name="SlewRateDown" Type="Real64" Value="4"/>
+						<Property Name="SlewRateUp" Type="Real64" Value="0.5"/>
 					</PropertyList>
 				</GameParameter>
 				<GameParameter Name="RTPC_MXDucking" ID="{2F7F2B53-C6EB-4666-9036-92C07213C0F1}">

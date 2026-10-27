@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public GameObject _ShadowOcean = null;
 
     [Header("Events")]
-    public UnityEvent<float> _ShadowDistanceEvent = new ();
+    public UnityEvent<float> _ShadowDistanceEvent = new();
 
 
     void Start()

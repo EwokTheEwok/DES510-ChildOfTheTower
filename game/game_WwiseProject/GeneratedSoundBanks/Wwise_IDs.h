@@ -33,6 +33,7 @@ namespace AK
         static const AkUniqueID PLAY_SHADOWS = 3234418437U;
         static const AkUniqueID PLAY_TITLELOOP = 1355629322U;
         static const AkUniqueID START_MUSIC = 540993415U;
+        static const AkUniqueID STOP_SHADOWS = 3212186303U;
         static const AkUniqueID TRANSITION_MAINLOOP = 282115962U;
     } // namespace EVENTS
 
