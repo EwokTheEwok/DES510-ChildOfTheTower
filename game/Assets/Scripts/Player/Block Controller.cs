@@ -123,6 +123,15 @@ public class BlockController : MonoBehaviour
         }
     }
 
+    public bool IsBlockActive()
+    {
+        if (_BlockList.Count > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
     public void OnPlaceBlock(InputAction.CallbackContext context)
     {
         //place on new surface & remove old placement
