@@ -363,6 +363,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5769029285310065178, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: Lens.FieldOfView
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7990201974574080657, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -3253,8 +3257,8 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 999
-  field of view: 60
-  orthographic: 1
+  field of view: 15
+  orthographic: 0
   orthographic size: 7
   m_Depth: -1
   m_CullingMask:
