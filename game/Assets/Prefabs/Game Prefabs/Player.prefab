@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 5308223972824557961}
   - component: {fileID: 7990201974574080657}
   - component: {fileID: 2989873134638656984}
-  - component: {fileID: 1744924615411652172}
+  - component: {fileID: 1377364740272849210}
   - component: {fileID: 3988335460039247159}
   m_Layer: 0
   m_Name: Player
@@ -183,8 +183,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1744924615411652172}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+      - m_Target: {fileID: 1377364740272849210}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: OnMove
         m_Mode: 0
         m_Arguments:
@@ -199,8 +199,8 @@ MonoBehaviour:
     m_ActionName: 'Player/Move[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1744924615411652172}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+      - m_Target: {fileID: 1377364740272849210}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
         m_MethodName: OnJump
         m_Mode: 0
         m_Arguments:
@@ -282,7 +282,7 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &1744924615411652172
+--- !u!114 &1377364740272849210
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -293,13 +293,13 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 58c0cdd82e2e424448645fa2c6bbb352, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   _Gravity: 30
   _MinSpeed: 1
   _MaxSpeed: 5
   _JumpSpeed: 12
-  _MoveAccel: 20
-  _MoveDeaccel: 50
+  _MoveAccel: 10
+  _MoveDeaccel: 20
   _JumpEvent:
     m_PersistentCalls:
       m_Calls:
@@ -315,6 +315,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _MinFallDistance: 1
 --- !u!114 &3988335460039247159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -511,6 +512,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: af9df9ab6a2d60f45a4fc251d64b3895, type: 2}
+  LandEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   CharControl: {fileID: 7990201974574080657}
 --- !u!1 &1714346313533235322
 GameObject:
@@ -730,6 +735,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 5f8191e31a05a914b8da196408eb4504, type: 2}
+  LimitEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &6501130293988552659
 GameObject:
   m_ObjectHideFlags: 0
