@@ -1293,6 +1293,48 @@
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<RTPC Name="" ID="{161E98A7-89B7-4788-9ABC-447D193AF5A6}" ShortID="415754724">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="Volume"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="RTPC_ShadowDistance" ID="{F36820F7-C0BF-4C9F-B1D9-16242535787B}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{EF88D58E-97CC-4C29-BDD2-7B7E60092546}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>0</YPos>
+														<Flags>5</Flags>
+														<SegmentShape>SCurve</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>2.1</XPos>
+														<YPos>0</YPos>
+														<Flags>0</Flags>
+														<SegmentShape>SCurve</SegmentShape>
+													</Point>
+													<Point>
+														<XPos>13</XPos>
+														<YPos>-8.35822</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+						</ObjectList>
+					</ObjectLists>
 					<BlendTrackList>
 						<BlendTrack Name="Int 1" ID="{346472A0-49A4-4F32-9E91-A5093853A470}" ShortID="759481677">
 							<PropertyList>

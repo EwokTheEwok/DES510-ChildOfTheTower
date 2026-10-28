@@ -126,13 +126,13 @@
 														<SegmentShape>Log1</SegmentShape>
 													</Point>
 													<Point>
-														<XPos>-24.35951</XPos>
+														<XPos>-18</XPos>
 														<YPos>-0.06921</YPos>
 														<Flags>0</Flags>
 														<SegmentShape>Log2</SegmentShape>
 													</Point>
 													<Point>
-														<XPos>-12.10146</XPos>
+														<XPos>-8</XPos>
 														<YPos>-16.4324</YPos>
 														<Flags>0</Flags>
 													</Point>
@@ -174,19 +174,19 @@
 														<SegmentShape>Log1</SegmentShape>
 													</Point>
 													<Point>
-														<XPos>-24.32344</XPos>
-														<YPos>-1</YPos>
+														<XPos>-18</XPos>
+														<YPos>0</YPos>
 														<Flags>0</Flags>
 														<SegmentShape>Log2</SegmentShape>
 													</Point>
 													<Point>
-														<XPos>-11.062</XPos>
+														<XPos>-8</XPos>
 														<YPos>66</YPos>
 														<Flags>0</Flags>
 													</Point>
 													<Point>
 														<XPos>0</XPos>
-														<YPos>67</YPos>
+														<YPos>66</YPos>
 														<Flags>37</Flags>
 													</Point>
 												</PointList>
@@ -324,7 +324,8 @@
 												<Custom>
 													<Effect Name="Meter (Custom)" ID="{BEC757C0-48AD-4A1F-B6D6-6B3F97EB285F}" ShortID="442399366" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
 														<PropertyList>
-															<Property Name="Hold" Type="Real32" Value="0.5"/>
+															<Property Name="AttackTime" Type="Real32" Value="0.3"/>
+															<Property Name="Hold" Type="Real32" Value="0.6"/>
 															<Property Name="ReleaseTime" Type="Real32" Value="0.75"/>
 														</PropertyList>
 														<ReferenceList>
