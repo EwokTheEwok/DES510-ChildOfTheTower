@@ -80,7 +80,7 @@ public class PlayerCamera : MonoBehaviour
         float nearestAngle = Mathf.Round((differenceAngle / 90f) + 0.01f) * 90f;
         float endRotation = nearestAngle + _BlockRotationY;
         _TweenRotation = _CCamera.transform.eulerAngles.y;
-        Debug.Log("(" + _BlockRotationY + " / " + _CCamera.transform.eulerAngles.y + " )/ " + differenceAngle + " / " + nearestAngle + " / " + endRotation);
+        //Debug.Log("(" + _BlockRotationY + " / " + _CCamera.transform.eulerAngles.y + " )/ " + differenceAngle + " / " + nearestAngle + " / " + endRotation);
         DOTween.To(
             () => _TweenRotation,
             lambaRotation => {

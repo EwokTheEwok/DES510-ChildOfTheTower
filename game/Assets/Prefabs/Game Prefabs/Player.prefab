@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 7990201974574080657}
   - component: {fileID: 2989873134638656984}
   - component: {fileID: 1744924615411652172}
-  - component: {fileID: 3988335460039247159}
+  - component: {fileID: 7191902283495994130}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -231,7 +231,7 @@ MonoBehaviour:
     m_ActionName: 'Player/CameraMove[/Keyboard/z,/Keyboard/x]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3988335460039247159}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BlockController, Assembly-CSharp
         m_MethodName: OnPlaceBlock
         m_Mode: 0
@@ -247,7 +247,7 @@ MonoBehaviour:
     m_ActionName: 'Player/PlaceBlock[/Keyboard/c]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3988335460039247159}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BlockController, Assembly-CSharp
         m_MethodName: OnMoveBlock
         m_Mode: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
     m_ActionName: 'Player/MoveBlock[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3988335460039247159}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: BlockController, Assembly-CSharp
         m_MethodName: OnUndoBlock
         m_Mode: 0
@@ -277,6 +277,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 16f66e60-8022-4cb0-8436-43088295fec9
     m_ActionName: 'Player/UndoBlock[/Keyboard/v]'
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fdd4e598-cf7e-479e-8f81-64265a69e1e9
+    m_ActionName: 'Player/SwapAxisBlock[/Keyboard/shift]'
   m_NeverAutoSwitchControlSchemes: 1
   m_DefaultControlScheme: Keyboard
   m_DefaultActionMap: Player
@@ -315,7 +319,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &3988335460039247159
+  _MinFallDistance: 1
+--- !u!114 &7191902283495994130
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -324,24 +329,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 118030202727208779}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 54c8244961e90104e84ee21d3d0faeb4, type: 3}
+  m_Script: {fileID: 11500000, guid: 6573b7a496be7ff4385e74130e034bcb, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BlockController
+  m_EditorClassIdentifier: Assembly-CSharp::BlockController2
+  _CinemachineCamera: {fileID: 5769029285310065178}
   _PlaceRange: 5
-  _MaxDetectableSurfaces: 5
+  _MaxNearbyNodes: 5
+  _BlockNodeLayer:
+    serializedVersion: 2
+    m_Bits: 256
   _BlockLimit: 10
   _BlockSize: 2
   _BlockRayScale: 1.25
   _BlockEasing: 4
   _TweenDuration: 0.25
-  _BlockSurfaceTag: Block Surface
-  _BlockSurfaceLayer:
-    serializedVersion: 2
-    m_Bits: 128
   _GuideBlockPrefab: {fileID: 2741366402790427780, guid: fefcb85cb12b5c940b655160ec18117a, type: 3}
   _BlockUIPrefab: {fileID: 4426684099784562912, guid: 347bd05a054a400458d449c4493cc538, type: 3}
   _BlockPrefab: {fileID: 8990706033399320676, guid: b0929d630b1f8204381e7f2148d7b6c5, type: 3}
-  _CinemachineCamera: {fileID: 5769029285310065178}
+  _AxisPlanePrefab: {fileID: 6094325047987311234, guid: 6a11b9a7a97f72840aadc222ec970750, type: 3}
   _BlockEvent:
     m_PersistentCalls:
       m_Calls:
@@ -374,7 +379,19 @@ MonoBehaviour:
         m_CallState: 2
   _LimitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3707704015188950458}
+        m_TargetAssemblyTypeName: BrickAudioSystem, Assembly-CSharp
+        m_MethodName: BrickLimit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1654051806638906206
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,6 +528,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: af9df9ab6a2d60f45a4fc251d64b3895, type: 2}
+  LandEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 11a3c84e54c66ad44af084423d7e5bdb, type: 2}
   CharControl: {fileID: 7990201974574080657}
 --- !u!1 &1714346313533235322
 GameObject:
@@ -730,6 +751,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 5f8191e31a05a914b8da196408eb4504, type: 2}
+  LimitEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6295a69da4531284e9155046546500f0, type: 2}
 --- !u!1 &6501130293988552659
 GameObject:
   m_ObjectHideFlags: 0
