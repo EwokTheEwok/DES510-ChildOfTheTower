@@ -28,7 +28,7 @@ public class BrickAudioSystem : MonoBehaviour
         RemoveEvent.Post(gameObject);
     }
 
-    public void BrickLimit()
+    public void BrickLimit(GameObject gameobject)
     {
         LimitEvent.Post(gameObject);
     }

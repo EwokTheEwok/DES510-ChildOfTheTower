@@ -23,7 +23,7 @@ public class BlockController2 : MonoBehaviour
     public float _BlockRayScale = 1.25f;
     public Ease _BlockEasing = Ease.InOutSine;
     public float _TweenDuration = 0.25f;
-    readonly List<GameObject> _BlockList = new();
+    List<GameObject> _BlockList = new();
 
     [Header("Prefabs")]
     public GameObject _GuideBlockPrefab;
@@ -42,6 +42,10 @@ public class BlockController2 : MonoBehaviour
     bool _Control = false;
     bool _IsMovingBlock = false;
     bool _SwapAxis = false;
+
+    bool _PlaceHold = false;
+    float _PlaceHoldTimer = 0f;
+
 
     GameObject _GuideBlock;
     GameObject _Block;
@@ -97,6 +101,29 @@ public class BlockController2 : MonoBehaviour
             _GuideBlock.transform.eulerAngles = new Vector3(0f, nearestNode.transform.rotation.eulerAngles.y, 0f);
         }
         else if (_Active) {
+            if (_PlaceHold)
+            {
+                if (_PlaceHoldTimer > 1f)
+                {
+                    foreach (GameObject block in _BlockList)
+                    {
+                        block.GetComponent<Renderer>().material.color = Color.softRed;
+                    }
+                } else if (_PlaceHoldTimer > 0.25f)
+                {
+                    foreach (GameObject block in _BlockList)
+                    {
+                        block.GetComponent<Renderer>().material.color = Color.lightPink;
+                    }
+                }
+                _PlaceHoldTimer += Time.deltaTime;
+            } else
+            {
+                foreach (GameObject block in _BlockList)
+                {
+                    block.GetComponent<Renderer>().material.color = Color.white;
+                }
+            }
             UpdateDirections(_Block.transform);
         }
         else
@@ -146,52 +173,67 @@ public class BlockController2 : MonoBehaviour
 
     public void OnPlaceBlock(InputAction.CallbackContext context)
     {
-        //place on node if block isnt active
-        if (context.started && !_Active && NearNodes())
+        if (context.started)
         {
-            _Active = true;
-            _Control = true;
-            /*
-            if (_BlockList.Count != 0)
+            _PlaceHold = true;
+        }
+        else if (context.canceled)
+        {
+            if (_PlaceHoldTimer > 1f && _BlockList.Count != 0)
             {
                 foreach (var block in _BlockList)
                 {
                     Destroy(block);
                 }
                 _BlockList.Clear();
+                _Active = false;
+                _Control = false;
+                _BlockUI.SetActive(false);
+                _AxisPlane.SetActive(false);
+                _PlayerMovement.SetControl(true);
+                _CinemachineCamera.Target.TrackingTarget = _PlayerTransform;
+                _PlayerCamera.SetOctaMode();
+                _Block = null;
             }
-            */
-            GameObject nearestNode = NearestNode();
-            _Block = Instantiate(_BlockPrefab);
-            _Block.transform.position = nearestNode.transform.position;
-            _Block.transform.eulerAngles = new Vector3(0f, nearestNode.transform.eulerAngles.y, 0f);
-            _BlockList.Add(_Block);
-            _Block.SetActive(true);
-            _BlockUI.SetActive(true);
-            _AxisPlane.SetActive(true);
-            _GuideBlock.SetActive(false);
-            _BlockEvent?.Invoke(0, _Block);
-            _CinemachineCamera.Target.TrackingTarget = _Block.transform;
-            _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
-            _PlayerMovement.SetControl(false);
-        } //re-control
-        else if (context.started && _Active && !_Control)
-        {
-            _Control = true;
-            _CinemachineCamera.Target.TrackingTarget = _Block.transform;
-            _AxisPlane.SetActive(true);
-            _BlockUI.SetActive(true);
-            _PlayerMovement.SetControl(false);
-            _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
-        } //control player
-        else if (context.started && _Control)
-        {
-            _Control = false;
-            _CinemachineCamera.Target.TrackingTarget = _PlayerTransform.transform;
-            _AxisPlane.SetActive(false);
-            _BlockUI.SetActive(false);
-            _PlayerMovement.SetControl(true);
-            _PlayerCamera.SetOctaMode();
+            else if (!_Active && NearNodes())
+            {   //place on node if block isnt active
+                _Active = true;
+                _Control = true;
+                GameObject nearestNode = NearestNode();
+                _Block = Instantiate(_BlockPrefab);
+                _Block.transform.position = nearestNode.transform.position;
+                _Block.transform.eulerAngles = new Vector3(0f, nearestNode.transform.eulerAngles.y, 0f);
+                _BlockList.Add(_Block);
+                _Block.SetActive(true);
+                _BlockUI.SetActive(true);
+                _AxisPlane.SetActive(true);
+                _GuideBlock.SetActive(false);
+                _BlockEvent?.Invoke(0, _Block);
+                _CinemachineCamera.Target.TrackingTarget = _Block.transform;
+                _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
+                _PlayerMovement.SetControl(false);
+            } //re-control
+            else if (_Active && !_Control)
+            {
+                _Control = true;
+                _CinemachineCamera.Target.TrackingTarget = _Block.transform;
+                _AxisPlane.SetActive(true);
+                _BlockUI.SetActive(true);
+                _PlayerMovement.SetControl(false);
+                _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
+            } //control player
+            else if (_Control)
+            {
+                _Control = false;
+                _CinemachineCamera.Target.TrackingTarget = _PlayerTransform.transform;
+                _AxisPlane.SetActive(false);
+                _BlockUI.SetActive(false);
+                _PlayerMovement.SetControl(true);
+                _PlayerCamera.SetOctaMode();
+            }
+
+            _PlaceHold = false;
+            _PlaceHoldTimer = 0f;
         }
     }
 
@@ -199,56 +241,57 @@ public class BlockController2 : MonoBehaviour
     {
         if (context.started && _Control && !_IsMovingBlock)
         {
-            if (_BlockList.Count < _BlockLimit)
-            {
-                _InputDir = context.ReadValue<Vector2>();
-                Transform blockTransform = _Block.transform;
+            _InputDir = context.ReadValue<Vector2>();
+            Transform blockTransform = _Block.transform;
 
-                Vector3 localX = _BlockSize * _InputDir.x * _InputModifierX;
-                Vector3 localY = _BlockSize * _InputDir.y * _InputModifierY;
-                Vector3 localXY = Vector3.zero;
-                localXY = localX + localY;
+            Vector3 localX = _BlockSize * _InputDir.x * _InputModifierX;
+            Vector3 localY = _BlockSize * _InputDir.y * _InputModifierY;
+            Vector3 localXY = Vector3.zero;
+            localXY = localX + localY;
 
-                RaycastHit hitInfo;
-                bool hit = Physics.Raycast(
-                    blockTransform.position, 
-                    blockTransform.TransformDirection(localXY),
-                    out hitInfo,
-                    _BlockSize * _BlockRayScale, 
-                    Physics.DefaultRaycastLayers, 
-                    QueryTriggerInteraction.Ignore);
-                Debug.DrawRay(blockTransform.position, blockTransform.TransformDirection(localXY) * _BlockRayScale, Color.white, 5);
+            bool hit = Physics.Raycast(
+                blockTransform.position,
+                blockTransform.TransformDirection(localXY),
+                out RaycastHit hitInfo,
+                _BlockSize * _BlockRayScale,
+                Physics.DefaultRaycastLayers,
+                QueryTriggerInteraction.Ignore);
+            Debug.DrawRay(blockTransform.position, blockTransform.TransformDirection(localXY) * _BlockRayScale, Color.white, 5);
 
-                if (!hit)
-                {
+            if (!hit && _BlockList.Count < _BlockLimit)
+            {   //can move block
+                _IsMovingBlock = true;
+                _BlockEvent?.Invoke(_BlockList.Count, _Block);
+                Vector3 newBlockPlacement = blockTransform.position + blockTransform.TransformDirection(localXY);
+                _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation);
+                _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => _IsMovingBlock = false);
+                _BlockList.Add(_Block);
+                _Block.SetActive(true);
+                _CinemachineCamera.Target.TrackingTarget = _Block.transform;
+            }
+            else if (hit && hitInfo.transform.gameObject.CompareTag("Block"))
+            {   //hit a block
+                int index = _BlockList.IndexOf(hitInfo.transform.gameObject);
+                if (index == _BlockList.Count - 2)
+                {   //hit previous block -> undo
                     _IsMovingBlock = true;
-                    _BlockEvent?.Invoke(_BlockList.Count, _Block);
-                    Vector3 newBlockPlacement = blockTransform.position + blockTransform.TransformDirection(localXY);
-                    _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation);
-                    _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => _IsMovingBlock = false);
-                    _BlockList.Add(_Block);
-                    _Block.SetActive(true);
-                    _CinemachineCamera.Target.TrackingTarget = _Block.transform;
+                    _UndoEvent?.Invoke(_Block);
+                    Vector3 previousPosition = _BlockList[^2].transform.position;
+                    _Block.transform.DOMove(previousPosition, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => {
+                        _IsMovingBlock = false;
+                        _BlockList.RemoveAt(_BlockList.Count - 1);
+                        Destroy(_Block);
+                        _Block = _BlockList[^1];
+                        _CinemachineCamera.Target.TrackingTarget = _Block.transform;
+                    });
                 }
-                else if (hit && hitInfo.transform.gameObject.CompareTag("Block"))
-                {
-                    int index = _BlockList.IndexOf(hitInfo.transform.gameObject);
-                    Debug.Log("hit block " + index + " " + (_BlockList.Count - 1));
-                    if (index == _BlockList.Count - 2)
-                    {
-                        Vector3 previousPosition = _BlockList[^2].transform.position;
-                        _Block.transform.DOMove(previousPosition, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => {
-                            _IsMovingBlock = false;
-                            _BlockList.RemoveAt(_BlockList.Count - 1);
-                            Destroy(_Block);
-                            _Block = _BlockList[^1];
-                            _CinemachineCamera.Target.TrackingTarget = _Block.transform;
-                        });
-                    }
+                else
+                {   //hit non-block
+                    _LimitEvent?.Invoke(_Block);
                 }
-            } 
+            }
             else
-            {
+            {   //at block limit or hit non-block
                 _LimitEvent?.Invoke(_Block);
             }
         }
@@ -282,6 +325,7 @@ public class BlockController2 : MonoBehaviour
                 _PlayerCamera.SetOctaMode();
                 _BlockList.RemoveAt(0);
                 Destroy(_Block);
+                _Block = null;
             }
         }
     }
