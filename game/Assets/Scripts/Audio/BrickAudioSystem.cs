@@ -8,7 +8,7 @@ public class BrickAudioSystem : MonoBehaviour
     public AK.Wwise.Event BrickReset;
     public AK.Wwise.Event LimitEvent;
 
-    public void PlaceBrick(int count, GameObject gameobject)
+    public void PlaceBrick(int count, GameObject gameObject)
     {
         Debug.Log("sound: " + count);
         if (count == 0)
@@ -23,12 +23,12 @@ public class BrickAudioSystem : MonoBehaviour
         }
     }
 
-    public void RemoveBrick(GameObject gameobject)
+    public void RemoveBrick(GameObject gameObject)
     {
         RemoveEvent.Post(gameObject);
     }
 
-    public void BrickLimit(GameObject gameobject)
+    public void BrickLimit(GameObject gameObject)
     {
         LimitEvent.Post(gameObject);
     }

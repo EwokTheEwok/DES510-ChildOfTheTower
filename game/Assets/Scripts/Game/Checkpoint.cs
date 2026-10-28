@@ -4,7 +4,7 @@ using UnityEngine.Events;
 public class Checkpoint : MonoBehaviour
 {
     public bool _StartStopOcean = true;
-    public ParticleSystem CheckpointVisual;
+    public ParticleSystem _FanfarePrefab;
 
     bool _Activated = false;
     Vector3 _RestartPosition;
@@ -29,8 +29,9 @@ public class Checkpoint : MonoBehaviour
     {
         if (!_Activated && other.CompareTag("Player"))
         {
-            CheckpointVisual.Play();
-            Debug.Log("Played");
+            ParticleSystem fanfare = Instantiate(_FanfarePrefab);
+            fanfare.transform.position = _RestartPosition;
+            fanfare.Play();
             _Activated = true;
             _ActivateEvent?.Invoke(gameObject, _StartStopOcean);
         }
