@@ -6,6 +6,7 @@ using System.Collections;
 
 public class BrickDialogue : MonoBehaviour
 {
+    public BlockController blockController;
 
     [SerializeField] private GameObject BrickBox;
     [SerializeField] private TMP_Text BrickText;
@@ -16,15 +17,17 @@ public class BrickDialogue : MonoBehaviour
 
     private bool _IsRandomTalking = false;
     private bool _IsTargetedTalking = false;
+    public bool _SpriteRendered;
 
     public float _DisplayDelay = 5.0f;
     public float _NewLineDelay = 10.0f;
-    public float height = 2f;
+    public float height = 3f;
 
     private RectTransform dialogueTransform;
 
     private IEnumerator _RandomDialogueCoroutine;
     private IEnumerator _TargetedBrickCoroutine;
+
 
     private void Start()
     {
@@ -32,11 +35,29 @@ public class BrickDialogue : MonoBehaviour
         
         _RandomDialogueCoroutine = RandomDialogue();
         StartCoroutine(_RandomDialogueCoroutine);
+
+        blockController = GetComponent<BlockController>();
     }
 
     private void Update()
     {
         dialogueTransform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, height, 0));
+
+        brickSprite();
+    }
+
+   private void brickSprite()
+    {
+        _SpriteRendered = blockController.IsBlockActive();
+
+        if (_SpriteRendered == true)
+        {
+            GameObject.Find("Block Sprite").GetComponent<SpriteRenderer>().enabled = false;
+        }
+        else if (_SpriteRendered == false)
+        {
+            GameObject.Find("Block Sprite").GetComponent<SpriteRenderer>().enabled = true;
+        }
     }
 
     private IEnumerator RandomDialogue()
