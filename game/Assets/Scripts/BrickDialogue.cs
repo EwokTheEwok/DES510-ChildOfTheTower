@@ -17,7 +17,7 @@ public class BrickDialogue : MonoBehaviour
 
     private bool _IsRandomTalking = false;
     private bool _IsTargetedTalking = false;
-    public bool _SpriteRendered;
+    public bool _BlockActive;
 
     public float _DisplayDelay = 5.0f;
     public float _NewLineDelay = 10.0f;
@@ -32,9 +32,6 @@ public class BrickDialogue : MonoBehaviour
     private void Start()
     {
         dialogueTransform = BrickBox.transform as RectTransform;
-        
-        _RandomDialogueCoroutine = RandomDialogue();
-        StartCoroutine(_RandomDialogueCoroutine);
 
         blockController = GetComponent<BlockController>();
     }
@@ -48,25 +45,29 @@ public class BrickDialogue : MonoBehaviour
 
    private void brickSprite()
     {
-        _SpriteRendered = blockController.IsBlockActive();
+        _BlockActive = blockController.IsBlockActive();
+        GameObject.Find("Block Sprite").GetComponent<SpriteRenderer>().enabled = !_BlockActive;
 
-        if (_SpriteRendered == true)
+        if (_BlockActive == true)
         {
-            GameObject.Find("Block Sprite").GetComponent<SpriteRenderer>().enabled = false;
+            StopTalking();
         }
-        else if (_SpriteRendered == false)
+        else if (_BlockActive == false && !_IsRandomTalking)
         {
-            GameObject.Find("Block Sprite").GetComponent<SpriteRenderer>().enabled = true;
+            _RandomDialogueCoroutine = RandomDialogue();
+            StartCoroutine(_RandomDialogueCoroutine);
         }
     }
 
     private IEnumerator RandomDialogue()
     {
+        _IsRandomTalking = true;
+
         yield return new WaitForSeconds(Mathf.Abs(_DisplayDelay));
 
         while (true)
         {
-            _IsRandomTalking = true;
+            
             BrickBox.SetActive(true);
             BrickText.text = "";
 
@@ -78,8 +79,8 @@ public class BrickDialogue : MonoBehaviour
             }
 
             yield return new WaitForSeconds(Mathf.Abs(_DisplayDelay));
+
             BrickBox.SetActive(false);
-            _IsRandomTalking = false;
             yield return new WaitForSeconds(Mathf.Abs(_NewLineDelay));
         }
     }
