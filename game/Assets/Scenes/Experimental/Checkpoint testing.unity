@@ -307,6 +307,41 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 118030202727208779, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
   m_PrefabInstance: {fileID: 2043937846}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &243356418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243356417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6573b7a496be7ff4385e74130e034bcb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlockController2
+  _CinemachineCamera: {fileID: 2005959069}
+  _PlaceRange: 5
+  _MaxNearbyNodes: 5
+  _BlockNodeLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  _BlockLimit: 5
+  _BlockSize: 2
+  _BlockRayScale: 1.25
+  _BlockEasing: 4
+  _TweenDuration: 0.25
+  _GuideBlockPrefab: {fileID: 2741366402790427780, guid: fefcb85cb12b5c940b655160ec18117a, type: 3}
+  _BlockUIPrefab: {fileID: 4426684099784562912, guid: 347bd05a054a400458d449c4493cc538, type: 3}
+  _BlockPrefab: {fileID: 8990706033399320676, guid: b0929d630b1f8204381e7f2148d7b6c5, type: 3}
+  _BlockEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _UndoEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _LimitEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &271502116
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,7 +407,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -754,7 +789,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1559,7 +1594,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1671,7 +1706,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2202,7 +2237,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -2378,6 +2413,17 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935724741}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2005959069 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5769029285310065178, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+  m_PrefabInstance: {fileID: 2043937846}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineCamera
 --- !u!1001 &2043937846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2389,6 +2435,46 @@ PrefabInstance:
     - target: {fileID: 118030202727208779, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 243356418}
+    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 243356418}
+    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 243356418}
+    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPlaceBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMoveBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnUndoBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BlockController2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_ActionEvents.Array.data[4].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BlockController2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2989873134638656984, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_ActionEvents.Array.data[5].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: BlockController2, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988335460039247159, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5308223972824557961, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2437,7 +2523,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 118030202727208779, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 243356418}
   m_SourcePrefab: {fileID: 100100000, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
 --- !u!1 &2078184725
 GameObject:
@@ -2473,7 +2562,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
