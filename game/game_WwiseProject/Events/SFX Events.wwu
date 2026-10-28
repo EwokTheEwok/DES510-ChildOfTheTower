@@ -277,90 +277,86 @@
 				</Folder>
 				<Folder Name="Shadow Events" ID="{74827103-E860-4E28-A7A3-64CED94E55C1}" ShortID="1050908823">
 					<ChildrenList>
-						<Event Name="Stop_Shadows_LongFade" ID="{0564D83B-BC76-4894-9993-C1EF371BEBCA}">
-							<ChildrenList>
-								<Action Name="" ID="{02DC8EB7-74C7-444B-8424-28D9E5D298CC}" ShortID="611326482">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
-										<Property Name="FadeTime" Type="Real64" Value="1.5"/>
-										<Property Name="Scope" Type="int16" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="BLC_Shadows" ID="{672B4107-335F-42F3-B5D3-265214C71EAE}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{236BFBF0-6752-4BF9-92E3-2A963984072E}" ShortID="140755044">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="39"/>
-										<Property Name="BypassGameParameterInternalTransition" Type="bool" Value="True"/>
-										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
-										<Property Name="Scope" Type="int16" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="RTPC_ShadowDistance" ID="{F36820F7-C0BF-4C9F-B1D9-16242535787B}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_Shadows" ID="{94F97942-AB3A-49D3-9187-72739ACAAE1C}">
-							<ChildrenList>
-								<Action Name="" ID="{DFE4BDB8-AC2C-426C-85F9-0CCF6D5FBC76}" ShortID="851295388">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="39"/>
-										<Property Name="BypassGameParameterInternalTransition" Type="bool" Value="True"/>
-										<Property Name="Scope" Type="int16" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="RTPC_ShadowDistance" ID="{F36820F7-C0BF-4C9F-B1D9-16242535787B}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{0AF10883-4246-4F17-B18A-A3B2CC5FED82}" ShortID="749030621">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="BLC_Shadows" ID="{672B4107-335F-42F3-B5D3-265214C71EAE}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Stop_Shadows" ID="{0DB25F3A-F317-49F4-8A7D-4672DDC6A109}">
-							<ChildrenList>
-								<Action Name="" ID="{5ADC2743-9882-4FFB-934A-9994648E2FEF}" ShortID="566881099">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
-										<Property Name="FadeTime" Type="Real64" Value="0.25"/>
-										<Property Name="Scope" Type="int16" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="BLC_Shadows" ID="{672B4107-335F-42F3-B5D3-265214C71EAE}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{D0F50C4B-1324-4A12-BBC9-4F1B7A6E2750}" ShortID="905750306">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="39"/>
-										<Property Name="BypassGameParameterInternalTransition" Type="bool" Value="True"/>
-										<Property Name="Scope" Type="int16" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="RTPC_ShadowDistance" ID="{F36820F7-C0BF-4C9F-B1D9-16242535787B}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
+						<Action Name="" ID="{DFE4BDB8-AC2C-426C-85F9-0CCF6D5FBC76}" ShortID="851295388">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="39"/>
+								<Property Name="BypassGameParameterInternalTransition" Type="bool" Value="True"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_ShadowDistance" ID="{F36820F7-C0BF-4C9F-B1D9-16242535787B}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{0AF10883-4246-4F17-B18A-A3B2CC5FED82}" ShortID="749030621">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BLC_Shadows" ID="{672B4107-335F-42F3-B5D3-265214C71EAE}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 					</ChildrenList>
-				</Folder>
+				</Event>
+				<Event Name="Stop_Shadows" ID="{0DB25F3A-F317-49F4-8A7D-4672DDC6A109}">
+					<ChildrenList>
+						<Action Name="" ID="{5ADC2743-9882-4FFB-934A-9994648E2FEF}" ShortID="566881099">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.25"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BLC_Shadows" ID="{672B4107-335F-42F3-B5D3-265214C71EAE}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{D0F50C4B-1324-4A12-BBC9-4F1B7A6E2750}" ShortID="905750306">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="39"/>
+								<Property Name="BypassGameParameterInternalTransition" Type="bool" Value="True"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_ShadowDistance" ID="{F36820F7-C0BF-4C9F-B1D9-16242535787B}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Stop_Shadows_LongFade" ID="{0564D83B-BC76-4894-9993-C1EF371BEBCA}">
+					<ChildrenList>
+						<Action Name="" ID="{02DC8EB7-74C7-444B-8424-28D9E5D298CC}" ShortID="611326482">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+								<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BLC_Shadows" ID="{672B4107-335F-42F3-B5D3-265214C71EAE}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{236BFBF0-6752-4BF9-92E3-2A963984072E}" ShortID="140755044">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="39"/>
+								<Property Name="BypassGameParameterInternalTransition" Type="bool" Value="True"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_ShadowDistance" ID="{F36820F7-C0BF-4C9F-B1D9-16242535787B}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
