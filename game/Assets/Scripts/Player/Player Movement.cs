@@ -49,13 +49,14 @@ public class PlayerMovement : MonoBehaviour
         float deltaTime = Time.deltaTime;
 
         _WorldMoveDir = Quaternion.AngleAxis(_Camera.transform.eulerAngles.y, new Vector3(0f, 1f, 0f)) * new Vector3(_MoveDir.x, 0f, _MoveDir.y);
+        _Animator.SetBool("isGrounded", _CharControl.isGrounded);
 
         //Falling
         if (!_CharControl.isGrounded && _Velocity.y < 0)
         {
             _FallDistance += -_Velocity.y * deltaTime;
 
-            if(_Velocity.y < -2)
+            if(_Velocity.y < -5)
             {
                _Animator.SetTrigger("Falling");
             }
@@ -69,8 +70,6 @@ public class PlayerMovement : MonoBehaviour
             if (_FallDistance > _MinFallDistance)
             {
                 _Animator.SetTrigger("Landed");
-                _Animator.SetFloat("lastInputX", _MoveDir.x);
-                _Animator.SetFloat("lastInputY", _MoveDir.y);
             }
             _FallDistance = 0.0f;
             _Animator.ResetTrigger("Falling");
@@ -103,8 +102,6 @@ public class PlayerMovement : MonoBehaviour
         if (context.canceled)
         {
             _Animator.SetBool("isWalking", false);
-            _Animator.SetFloat("lastInputX", _MoveDir.x);
-            _Animator.SetFloat("lastInputY", _MoveDir.y);
         }
 
         _MoveDir = context.ReadValue<Vector2>();
@@ -129,8 +126,5 @@ public class PlayerMovement : MonoBehaviour
             _Animator.SetFloat("inputX", _MoveDir.x);
             _Animator.SetFloat("inputY", _MoveDir.y);
         }
-
-        _Animator.SetFloat("lastInputX", _MoveDir.x);
-        _Animator.SetFloat("lastInputY", _MoveDir.y);
     }
 }
