@@ -26,6 +26,7 @@ namespace AK
         static const AkUniqueID BRICKMODE_START = 2475923824U;
         static const AkUniqueID MUSICAMBTEST = 1200446142U;
         static const AkUniqueID PLAY_AMB_OUTDOOR_LVL1 = 3813572857U;
+        static const AkUniqueID PLAY_FALLING = 913957623U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
         static const AkUniqueID PLAY_INTROLOOP = 528465658U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{F398B1ED-1A1F-5BBC-7C6A-FCAD485EE10F}",
+    "Hash": "{C40D4E83-3A03-430B-5A92-D60EA62389F7}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -70,6 +70,14 @@
       "Location": "Memory",
       "ShortName": "mx_lvl1_introloop_150bpm_001.wav",
       "CachePath": "8F/{8FB4D2FB-5755-9AEC-10CD-60280F3971B2}.wem"
+     },
+     {
+      "Id": "232675444",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_falling_loop_001.wav",
+      "CachePath": "49/{493813F2-0367-A619-DE7D-CD5A0219A66F}.wem"
      },
      {
       "Id": "237216902",
@@ -134,6 +142,14 @@
       "Location": "Memory",
       "ShortName": "sfx_brickplace_lvl2_002.wav",
       "CachePath": "FF/{FFF0340E-5D64-57F9-E85C-42F540BD8BB0}.wem"
+     },
+     {
+      "Id": "434276382",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_falling_start_001.wav",
+      "CachePath": "A8/{A82BD75E-8BE3-5EFB-F6DC-1C0624B15F0F}.wem"
      },
      {
       "Id": "462369481",
@@ -3557,6 +3573,22 @@
       ]
      },
      {
+      "Id": "913957623",
+      "Name": "Play_Falling",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Play_Falling",
+      "GUID": "{5005844D-76C3-4A90-B379-D8C75987E3F7}",
+      "Color": "13",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "232675444"
+       },
+       {
+        "Id": "434276382"
+       }
+      ]
+     },
+     {
       "Id": "3854155799",
       "Name": "Play_Footsteps",
       "ObjectPath": "\\Events\\SFX Events\\Player Events\\Play_Footsteps",
@@ -3720,7 +3752,7 @@
      {
       "Id": "3234418437",
       "Name": "Play_Shadows",
-      "ObjectPath": "\\Events\\SFX Events\\Play_Shadows",
+      "ObjectPath": "\\Events\\SFX Events\\Shadow Events\\Play_Shadows",
       "GUID": "{94F97942-AB3A-49D3-9187-72739ACAAE1C}",
       "Color": "13",
       "DurationType": "Infinite",
@@ -3863,7 +3895,7 @@
      {
       "Id": "3212186303",
       "Name": "Stop_Shadows",
-      "ObjectPath": "\\Events\\SFX Events\\Stop_Shadows",
+      "ObjectPath": "\\Events\\SFX Events\\Shadow Events\\Stop_Shadows",
       "GUID": "{0DB25F3A-F317-49F4-8A7D-4672DDC6A109}",
       "Color": "13",
       "MaxAttenuation": "0",
@@ -3874,7 +3906,7 @@
      {
       "Id": "2454766738",
       "Name": "Stop_Shadows_LongFade",
-      "ObjectPath": "\\Events\\SFX Events\\Stop_Shadows_LongFade",
+      "ObjectPath": "\\Events\\SFX Events\\Shadow Events\\Stop_Shadows_LongFade",
       "GUID": "{0564D83B-BC76-4894-9993-C1EF371BEBCA}",
       "Color": "13",
       "MaxAttenuation": "0",
@@ -4055,6 +4087,6 @@
     ]
    }
   ],
-  "FileHash": "{AE370E39-7359-E81B-7E9E-4422D47C3D94}"
+  "FileHash": "{FA8261A2-4468-44C4-782B-1B9125D4B656}"
  }
 }
