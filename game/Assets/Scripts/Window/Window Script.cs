@@ -1,6 +1,3 @@
-using DG.Tweening;
-using System.Runtime.CompilerServices;
-using Unity.Cinemachine;
 using UnityEngine;
 
 public class WindowScript : MonoBehaviour
