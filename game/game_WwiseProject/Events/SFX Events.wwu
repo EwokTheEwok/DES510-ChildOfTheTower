@@ -230,6 +230,18 @@
 						</Event>
 						<Event Name="Play_Footsteps" ID="{FC84159D-E028-4AD0-A9DC-323CD420D594}">
 							<ChildrenList>
+								<Action Name="" ID="{9C11BDFC-E6DD-4AE5-9824-8036D7314464}" ShortID="599474519">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Falling" ID="{7CCB4439-B8CA-4A39-B4EC-91884114D62E}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{6DF84696-C6CA-4614-A227-A4C5F48F7C20}" ShortID="758655246">
 									<ReferenceList>
 										<Reference Name="Target">
@@ -240,6 +252,18 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_Land" ID="{A9B495E2-E378-4FC9-BAA4-DC4CF1BBAA53}">
+							<PropertyList>
+								<Property Name="CooldownTime" Type="Real32">
+									<ValueList>
+										<Value>0.1</Value>
+									</ValueList>
+								</Property>
+								<Property Name="InstanceLimit" Type="int16">
+									<ValueList>
+										<Value>1</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{00237F15-D17E-415E-BFE5-F106813E9E5D}" ShortID="85449260">
 									<PropertyList>
