@@ -16,6 +16,7 @@ public class PlayerAnimationAudio : MonoBehaviour
         if (CharControl.isGrounded)
         {
             FootstepsEvent.Post(gameObject);
+            isFalling = false;
         }
     }
 
