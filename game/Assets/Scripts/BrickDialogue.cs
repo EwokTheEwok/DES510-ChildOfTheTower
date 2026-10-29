@@ -21,6 +21,7 @@ public class BrickDialogue : MonoBehaviour
 
     public float _DisplayDelay = 5.0f;
     public float _NewLineDelay = 10.0f;
+    public float _BetweenLineDelay;
     public float height = 3f;
 
     private RectTransform dialogueTransform;
@@ -34,6 +35,8 @@ public class BrickDialogue : MonoBehaviour
         dialogueTransform = BrickBox.transform as RectTransform;
 
         blockController = GetComponent<BlockController2>();
+
+        _BetweenLineDelay = Random.Range(10.0f, 17.0f);
     }
 
     private void Update()
@@ -41,6 +44,8 @@ public class BrickDialogue : MonoBehaviour
         dialogueTransform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, height, 0));
 
         brickSprite();
+
+        _BetweenLineDelay = Random.Range(10.0f, 17.0f);
     }
 
    private void brickSprite()
@@ -63,7 +68,7 @@ public class BrickDialogue : MonoBehaviour
     {
         _IsRandomTalking = true;
 
-        yield return new WaitForSeconds(Mathf.Abs(_DisplayDelay));
+        yield return new WaitForSeconds(_BetweenLineDelay);
 
         while (true)
         {
@@ -125,9 +130,21 @@ public class BrickDialogue : MonoBehaviour
             if (!_IsTargetedTalking)
             {
                 StopTalking();
-                _TargetedBrickCoroutine = TargetedDialogue(Random.Range(0, 3));
+                _TargetedBrickCoroutine = TargetedDialogue(0);
                 StartCoroutine(_TargetedBrickCoroutine);
             }
+        }
+        else if (collision.CompareTag("Block Dialogue 1"))
+        {
+            StopTalking();
+            _TargetedBrickCoroutine = TargetedDialogue(Random.Range(1, 3));
+            StartCoroutine(_TargetedBrickCoroutine);
+        }
+        else if (collision.CompareTag("Block Dialogue 2"))
+        {
+            StopTalking();
+            _TargetedBrickCoroutine = TargetedDialogue(Random.Range(3, 5));
+            StartCoroutine(_TargetedBrickCoroutine);
         }
     }
 
@@ -135,6 +152,7 @@ public class BrickDialogue : MonoBehaviour
     {
         if (collision.CompareTag("NPC"))
         {
+            StopTalking();
             _RandomDialogueCoroutine = RandomDialogue();
             StartCoroutine(_RandomDialogueCoroutine);
         }

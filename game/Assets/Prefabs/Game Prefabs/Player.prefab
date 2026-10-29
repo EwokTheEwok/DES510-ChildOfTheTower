@@ -233,8 +233,8 @@ MonoBehaviour:
     m_ActionName: 'Player/CameraMove[/Keyboard/z,/Keyboard/x]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BlockController, Assembly-CSharp
+      - m_Target: {fileID: 7191902283495994130}
+        m_TargetAssemblyTypeName: BlockController2, Assembly-CSharp
         m_MethodName: OnPlaceBlock
         m_Mode: 0
         m_Arguments:
@@ -249,8 +249,8 @@ MonoBehaviour:
     m_ActionName: 'Player/PlaceBlock[/Keyboard/c]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BlockController, Assembly-CSharp
+      - m_Target: {fileID: 7191902283495994130}
+        m_TargetAssemblyTypeName: BlockController2, Assembly-CSharp
         m_MethodName: OnMoveBlock
         m_Mode: 0
         m_Arguments:
@@ -265,8 +265,8 @@ MonoBehaviour:
     m_ActionName: 'Player/MoveBlock[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: BlockController, Assembly-CSharp
+      - m_Target: {fileID: 7191902283495994130}
+        m_TargetAssemblyTypeName: BlockController2, Assembly-CSharp
         m_MethodName: OnUndoBlock
         m_Mode: 0
         m_Arguments:
@@ -423,6 +423,7 @@ MonoBehaviour:
   _BlockActive: 0
   _DisplayDelay: 5
   _NewLineDelay: 10
+  _BetweenLineDelay: 0
   height: 3
 --- !u!1 &1557558053705558150
 GameObject:
