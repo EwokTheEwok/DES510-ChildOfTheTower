@@ -4,6 +4,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class BlockController2 : MonoBehaviour
 {
@@ -14,7 +15,6 @@ public class BlockController2 : MonoBehaviour
     public int _MaxNearbyNodes = 5;
     public LayerMask _BlockNodeLayer = 1 << 8;
     int _NearbyNodeTotal = 0;
-
     private Collider[] _NearbyNodesList;
 
     [Header("Block")]
@@ -24,6 +24,7 @@ public class BlockController2 : MonoBehaviour
     public Ease _BlockEasing = Ease.InOutSine;
     public float _TweenDuration = 0.25f;
     List<GameObject> _BlockList = new();
+    GameObject _Block;
 
     [Header("Prefabs")]
     public GameObject _GuideBlockPrefab;
@@ -46,9 +47,11 @@ public class BlockController2 : MonoBehaviour
     bool _PlaceHold = false;
     float _PlaceHoldTimer = 0f;
 
+    Renderer _AxisPlaneRenderer;
+    Vector3 _AxisPlaneOrigin;
+    float _BlockUIDistance;
 
     GameObject _GuideBlock;
-    GameObject _Block;
     GameObject _BlockUI;
     GameObject _AxisPlane;
     RectTransform _BlockUIUp;
@@ -70,6 +73,7 @@ public class BlockController2 : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _BlockUIDistance = _BlockSize + 1f;
         _NearbyNodesList = new Collider[_MaxNearbyNodes];
         _Camera = Camera.main;
         _PlayerMovement = GetComponent<PlayerMovement>();
@@ -88,6 +92,7 @@ public class BlockController2 : MonoBehaviour
 
         _AxisPlane = Instantiate(_AxisPlanePrefab);
         _AxisPlane.SetActive(false);
+        _AxisPlaneRenderer = _AxisPlane.GetComponent<Renderer>();
     }
 
     // Update is called once per frame
@@ -200,6 +205,7 @@ public class BlockController2 : MonoBehaviour
                 _Active = true;
                 _Control = true;
                 GameObject nearestNode = NearestNode();
+                _AxisPlaneRenderer.material.SetVector("_Origin", new Vector3(nearestNode.transform.position.x, nearestNode.transform.position.y, nearestNode.transform.position.z));
                 _Block = Instantiate(_BlockPrefab);
                 _Block.transform.position = nearestNode.transform.position;
                 _Block.transform.eulerAngles = new Vector3(0f, nearestNode.transform.eulerAngles.y, 0f);
@@ -338,107 +344,143 @@ public class BlockController2 : MonoBehaviour
             _SwapAxis = false;
     }
 
-    private void UpdateDirections(Transform _transform)
+    private void UpdateDirections(Transform blockTransform)
     {
-        Vector3 blockEulerRotation = _transform.eulerAngles;
+        Vector3 blockEulerRotation = blockTransform.eulerAngles;
         Vector3 cameraEulerRotation = _Camera.transform.eulerAngles;
         float angleDifference = cameraEulerRotation.y - blockEulerRotation.y;
         angleDifference = Mathf.Repeat(angleDifference, 360f);
         int relativeCardinalDirection = Mathf.RoundToInt(angleDifference / 90f);
 
-        float blockUIDist = _BlockSize + 1f;
-        Vector3 dir;
-
-        _AxisPlane.transform.position = _Block.transform.position;
+        _AxisPlaneRenderer.material.SetFloat("_Rotation", _Block.transform.eulerAngles.y);
 
         switch (relativeCardinalDirection)
         {
             case 0: case 4:
                 _InputModifierX = new(1f, 0f, 0f);
+                Modify(new(0f, 0f, 1f), blockTransform, blockTransform.forward, blockTransform.right, 1, 1);
+                /*
                 if (_SwapAxis)
                 {
                     _InputModifierY = new(0f, 1f, 0f);
-                    dir = _transform.up;
-                    _AxisPlane.transform.up = _transform.forward;
+                    dir = blockTransform.up;
+                    _AxisPlane.transform.up = blockTransform.forward;
+                    _AxisPlane.transform.position = _Block.transform.position + blockTransform.forward * (_BlockSize/2f - 0.01f);
                 }
                 else
                 {
                     _InputModifierY = new(0f, 0f, 1f);
-                    dir = _transform.forward;
-                    _AxisPlane.transform.up = _transform.up;
-
+                    dir = blockTransform.forward;
+                    _AxisPlane.transform.up = blockTransform.up;
+                    _AxisPlane.transform.position = _Block.transform.position - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
                 }
-                _BlockUIUp.position = _Camera.WorldToScreenPoint(_transform.position + dir * blockUIDist);
-                _BlockUIDown.position = _Camera.WorldToScreenPoint(_transform.position - dir * blockUIDist);
-                _BlockUILeft.position = _Camera.WorldToScreenPoint(_transform.position - _transform.right * blockUIDist);
-                _BlockUIRight.position = _Camera.WorldToScreenPoint(_transform.position + _transform.right * blockUIDist);
-
+                _BlockUIUp.position = _Camera.WorldToScreenPoint(blockTransform.position + dir * _BlockUIDistance);
+                _BlockUIDown.position = _Camera.WorldToScreenPoint(blockTransform.position - dir * _BlockUIDistance);
+                _BlockUILeft.position = _Camera.WorldToScreenPoint(blockTransform.position - blockTransform.right * _BlockUIDistance);
+                _BlockUIRight.position = _Camera.WorldToScreenPoint(blockTransform.position + blockTransform.right * _BlockUIDistance);
+                */
                 break;
             case 1:
                 _InputModifierX = new(0f, 0f, -1f);
+                Modify(new(1f, 0f, 0f), blockTransform, blockTransform.right, blockTransform.forward, 1, -1);
+                /*
                 if (_SwapAxis)
                 {
                     _InputModifierY = new(0f, 1f, 0f);
-                    dir = _transform.up;
-                    _AxisPlane.transform.up = _transform.right;
+                    dir = blockTransform.up;
+                    _AxisPlane.transform.up = blockTransform.right;
+                    _AxisPlane.transform.position = _Block.transform.position + blockTransform.right * (_BlockSize / 2f - 0.01f);
                 }
                 else
                 {
                     _InputModifierY = new(1f, 0f, 0f);
-                    dir = _transform.right;
-                    _AxisPlane.transform.up = _transform.up;
+                    dir = blockTransform.right;
+                    _AxisPlane.transform.up = blockTransform.up;
+                    _AxisPlane.transform.position = _Block.transform.position - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
                 }
-                _BlockUIUp.position = _Camera.WorldToScreenPoint(_transform.position + dir * blockUIDist);
-                _BlockUIDown.position = _Camera.WorldToScreenPoint(_transform.position - dir * blockUIDist);
-                _BlockUIRight.position = _Camera.WorldToScreenPoint(_transform.position - _transform.forward * blockUIDist);
-                _BlockUILeft.position = _Camera.WorldToScreenPoint(_transform.position + _transform.forward * blockUIDist);
-
+                _BlockUIUp.position = _Camera.WorldToScreenPoint(blockTransform.position + dir * _BlockUIDistance);
+                _BlockUIDown.position = _Camera.WorldToScreenPoint(blockTransform.position - dir * _BlockUIDistance);
+                _BlockUILeft.position = _Camera.WorldToScreenPoint(blockTransform.position + blockTransform.forward * _BlockUIDistance);
+                _BlockUIRight.position = _Camera.WorldToScreenPoint(blockTransform.position - blockTransform.forward * _BlockUIDistance);
+                */
                 break;
             case 2:
                 _InputModifierX = new(-1f, 0f, 0f);
+                Modify(new(0f, 0f, -1f), blockTransform, blockTransform.forward, blockTransform.right, -1, -1);
+                /*
                 if (_SwapAxis)
                 {
                     _InputModifierY = new(0f, 1f, 0f);
-                    dir = _transform.up;
-                    _AxisPlane.transform.up = _transform.forward;
+                    dir = blockTransform.up;
+                    _AxisPlane.transform.up = blockTransform.forward;
+                    _AxisPlane.transform.position = _Block.transform.position - blockTransform.forward * (_BlockSize / 2f - 0.01f);
                 }
                 else
                 {
                     _InputModifierY = new(0f, 0f, -1f);
-                    dir = -_transform.forward;
-                    _AxisPlane.transform.up = _transform.up;
+                    dir = -blockTransform.forward;
+                    _AxisPlane.transform.up = blockTransform.up;
+                    _AxisPlane.transform.position = _Block.transform.position - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
                 }
-                _BlockUIUp.position = _Camera.WorldToScreenPoint(_transform.position + dir * blockUIDist);
-                _BlockUIDown.position = _Camera.WorldToScreenPoint(_transform.position - dir * blockUIDist);
-                _BlockUIRight.position = _Camera.WorldToScreenPoint(_transform.position - _transform.right * blockUIDist);
-                _BlockUILeft.position = _Camera.WorldToScreenPoint(_transform.position + _transform.right * blockUIDist);
-
+                _BlockUIUp.position = _Camera.WorldToScreenPoint(blockTransform.position + dir * _BlockUIDistance);
+                _BlockUIDown.position = _Camera.WorldToScreenPoint(blockTransform.position - dir * _BlockUIDistance);
+                _BlockUILeft.position = _Camera.WorldToScreenPoint(blockTransform.position + blockTransform.right * _BlockUIDistance);
+                _BlockUIRight.position = _Camera.WorldToScreenPoint(blockTransform.position - blockTransform.right * _BlockUIDistance);
+                */
                 break;
             case 3:
                 _InputModifierX = new(0f, 0f, 1f);
+                Modify(new(-1f, 0f, 0f), blockTransform, blockTransform.right, blockTransform.forward, -1, 1);
+                /*
                 if (_SwapAxis)
                 {
                     _InputModifierY = new(0f, 1f, 0f);
-                    dir = _transform.up;
-                    _AxisPlane.transform.up = _transform.right;
+                    dir = blockTransform.up;
+                    _AxisPlane.transform.up = blockTransform.right;
+                    _AxisPlane.transform.position = _Block.transform.position - blockTransform.right * (_BlockSize / 2f - 0.01f);
                 }
                 else
                 {
                     _InputModifierY = new(-1f, 0f, 0f);
-                    dir = -_transform.right;
-                    _AxisPlane.transform.up = _transform.up;
+                    dir = -blockTransform.right;
+                    _AxisPlane.transform.up = blockTransform.up;
+                    _AxisPlane.transform.position = _Block.transform.position - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
                 }
-                _BlockUIUp.position = _Camera.WorldToScreenPoint(_transform.position + dir * blockUIDist);
-                _BlockUIDown.position = _Camera.WorldToScreenPoint(_transform.position - dir * blockUIDist);
-                _BlockUILeft.position = _Camera.WorldToScreenPoint(_transform.position - _transform.forward * blockUIDist);
-                _BlockUIRight.position = _Camera.WorldToScreenPoint(_transform.position + _transform.forward * blockUIDist);
+                _BlockUIUp.position = _Camera.WorldToScreenPoint(blockTransform.position + dir * _BlockUIDistance);
+                _BlockUIDown.position = _Camera.WorldToScreenPoint(blockTransform.position - dir * _BlockUIDistance);
+                _BlockUILeft.position = _Camera.WorldToScreenPoint(blockTransform.position - blockTransform.forward * _BlockUIDistance);
+                _BlockUIRight.position = _Camera.WorldToScreenPoint(blockTransform.position + blockTransform.forward * _BlockUIDistance);
+                */
                 break;
             default:
                 break;
         }
 
-        Debug.DrawRay(_transform.position, _transform.right * 5.0f, Color.softRed);
-        Debug.DrawRay(_transform.position, _transform.up * 5.0f, Color.softGreen);
-        Debug.DrawRay(_transform.position, _transform.forward * 5.0f, Color.softBlue);
+        Debug.DrawRay(blockTransform.position, blockTransform.right * 5.0f, Color.softRed);
+        Debug.DrawRay(blockTransform.position, blockTransform.up * 5.0f, Color.softGreen);
+        Debug.DrawRay(blockTransform.position, blockTransform.forward * 5.0f, Color.softBlue);
+    }
+
+    private void Modify(Vector3 inputModY, Transform transform, Vector3 zDir, Vector3 xUI, float sign, float sign2)
+    {
+        Vector3 vUI;
+        if (_SwapAxis)
+        {
+            _InputModifierY = Vector3.up;
+            vUI = transform.up;
+            _AxisPlane.transform.up = zDir;
+            _AxisPlane.transform.position = _Block.transform.position + (_BlockSize / 2f - 0.01f) * sign * zDir;
+        }
+        else
+        {
+            _InputModifierY = inputModY;
+            vUI = sign * zDir;
+            _AxisPlane.transform.up = transform.up;
+            _AxisPlane.transform.position = _Block.transform.position - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
+        }
+        _BlockUIUp.position = _Camera.WorldToScreenPoint(transform.position + vUI * _BlockUIDistance);
+        _BlockUIDown.position = _Camera.WorldToScreenPoint(transform.position - vUI * _BlockUIDistance);
+        _BlockUILeft.position = _Camera.WorldToScreenPoint(transform.position - _BlockUIDistance * sign2 * xUI);
+        _BlockUIRight.position = _Camera.WorldToScreenPoint(transform.position + _BlockUIDistance * sign2 * xUI);
     }
 }
