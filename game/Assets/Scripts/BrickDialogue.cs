@@ -45,7 +45,7 @@ public class BrickDialogue : MonoBehaviour
 
         brickSprite();
 
-        _BetweenLineDelay = Random.Range(10.0f, 17.0f);
+        _BetweenLineDelay = Random.Range(10.0f, 25.0f);
     }
 
    private void brickSprite()
