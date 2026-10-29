@@ -299,9 +299,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 182860728236397972, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.243
+    - target: {fileID: 118030202727208779, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_Enabled
@@ -357,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5308223972824557961, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.98
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5308223972824557961, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_LocalPosition.z
@@ -395,6 +395,14 @@ PrefabInstance:
       propertyPath: Lens.FieldOfView
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7381880107930858835, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -14
+      objectReference: {fileID: 0}
+    - target: {fileID: 7623583972299738441, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 918
+      objectReference: {fileID: 0}
     - target: {fileID: 7791501579481661791, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: height
       value: 2.07
@@ -421,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7791501579481661791, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: 'BrickLines.Array.data[1]'
-      value: Home please. Want to go home
+      value: Home please. Want to go home.
       objectReference: {fileID: 0}
     - target: {fileID: 7791501579481661791, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: 'BrickLines.Array.data[2]'
@@ -433,15 +441,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7791501579481661791, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: 'BrickLines.Array.data[4]'
-      value: Test 5
+      value: "Don\u2019t fall! I would miss friend."
       objectReference: {fileID: 0}
     - target: {fileID: 7791501579481661791, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: 'BrickLines.Array.data[5]'
-      value: Test 6
+      value: Friend is so fast. Friend in the best!
       objectReference: {fileID: 0}
     - target: {fileID: 7791501579481661791, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: targetedLines.Array.size
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7791501579481661791, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: 'targetedLines.Array.data[0]'
@@ -465,10 +473,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7791501579481661791, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: 'targetedLines.Array.data[5]'
-      value: Almost home!
+      value: Oopsies.
       objectReference: {fileID: 0}
     - target: {fileID: 7791501579481661791, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: 'targetedLines.Array.data[6]'
+      value: Almost home!
+      objectReference: {fileID: 0}
+    - target: {fileID: 7791501579481661791, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: 'targetedLines.Array.data[7]'
       value: Friend nice, friend bring me home.
       objectReference: {fileID: 0}
     - target: {fileID: 7990201974574080657, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
@@ -1188,7 +1200,7 @@ GameObject:
   - component: {fileID: 525553096}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Block Dialogue 2
+  m_TagString: Shadow Ocean
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1528,7 +1540,7 @@ Transform:
   m_GameObject: {fileID: 657114736}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.15, y: 5.38, z: 29.4}
+  m_LocalPosition: {x: -30.15, y: 5.38, z: 45.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3445,7 +3457,7 @@ Transform:
   m_GameObject: {fileID: 1833597261}
   serializedVersion: 2
   m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: -25.6, y: 18.081005, z: -47.62346}
+  m_LocalPosition: {x: -25.6, y: 19.101007, z: -47.623463}
   m_LocalScale: {x: 1.6187, y: 1.6187003, z: 1.6187003}
   m_ConstrainProportionsScale: 0
   m_Children: []

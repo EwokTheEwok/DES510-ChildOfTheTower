@@ -140,21 +140,18 @@ public class BrickDialogue : MonoBehaviour
             _TargetedBrickCoroutine = TargetedDialogue(Random.Range(1, 3));
             StartCoroutine(_TargetedBrickCoroutine);
         }
-        else if (collision.CompareTag("Block Dialogue 2"))
+        else if (collision.CompareTag("Shadow Ocean"))
         {
             StopTalking();
-            _TargetedBrickCoroutine = TargetedDialogue(Random.Range(3, 5));
+            _TargetedBrickCoroutine = TargetedDialogue(Random.Range(3, 6));
             StartCoroutine(_TargetedBrickCoroutine);
         }
     }
 
     private void OnTriggerExit(Collider collision)
     {
-        if (collision.CompareTag("NPC"))
-        {
             StopTalking();
             _RandomDialogueCoroutine = RandomDialogue();
             StartCoroutine(_RandomDialogueCoroutine);
-        }
     }
 }

@@ -30,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
     private float _FallDistance;
     public float _MinFallDistance = 1.0f;
 
+    public BlockController2 blockController;
+    public bool _BlockActive;
+
 
     private void Awake()
     {
@@ -42,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
         _CharControl = GetComponent<CharacterController>();
         _PlayerInput = GetComponent<PlayerInput>();
         _PlayerInput.actions.FindActionMap("Player").Enable();
+        blockController = GetComponent<BlockController2>();
     }
 
     private void Update()
@@ -50,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
         _WorldMoveDir = Quaternion.AngleAxis(_Camera.transform.eulerAngles.y, new Vector3(0f, 1f, 0f)) * new Vector3(_MoveDir.x, 0f, _MoveDir.y);
         _Animator.SetBool("isGrounded", _CharControl.isGrounded);
+        _BlockActive = blockController.IsBlockActive();
 
         //Falling
         if (!_CharControl.isGrounded && _Velocity.y < 0)
@@ -126,5 +131,21 @@ public class PlayerMovement : MonoBehaviour
             _Animator.SetFloat("inputX", _MoveDir.x);
             _Animator.SetFloat("inputY", _MoveDir.y);
         }
+    }
+
+    public void brickPlacement()
+    {
+        if (Input.GetKeyUp(KeyCode.C) && _BlockActive == false)
+        {
+            _Animator.SetTrigger("Placing");
+
+            //temp var eventually change to the location pased through brick controller
+            _Animator.SetFloat("brickPlaceX", 0);
+
+            _Animator.ResetTrigger("Placing");
+            _Animator.SetBool("Placed", true);
+        }
+        _Animator.SetBool("Placed", false);
+
     }
 }
