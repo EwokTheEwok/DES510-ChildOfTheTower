@@ -280,7 +280,19 @@ MonoBehaviour:
     m_ActionId: 16f66e60-8022-4cb0-8436-43088295fec9
     m_ActionName: 'Player/UndoBlock[/Keyboard/v]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7191902283495994130}
+        m_TargetAssemblyTypeName: BlockController2, Assembly-CSharp
+        m_MethodName: OnSwapAxisBlock
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: fdd4e598-cf7e-479e-8f81-64265a69e1e9
     m_ActionName: 'Player/SwapAxisBlock[/Keyboard/shift]'
   m_NeverAutoSwitchControlSchemes: 1
@@ -394,6 +406,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _MinFallDistance: 1
+  blockController: {fileID: 7191902283495994130}
+  _BlockActive: 0
 --- !u!114 &7791501579481661791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -702,6 +716,10 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 11a3c84e54c66ad44af084423d7e5bdb, type: 2}
+  FallEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8f0d93e9126b6e94eb38816cce34aec9, type: 2}
   CharControl: {fileID: 7990201974574080657}
 --- !u!1 &1714346313533235322
 GameObject:
