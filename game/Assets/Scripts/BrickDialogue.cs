@@ -6,7 +6,7 @@ using System.Collections;
 
 public class BrickDialogue : MonoBehaviour
 {
-    public BlockController blockController;
+    public BlockController2 blockController;
 
     [SerializeField] private GameObject BrickBox;
     [SerializeField] private TMP_Text BrickText;
@@ -33,7 +33,7 @@ public class BrickDialogue : MonoBehaviour
     {
         dialogueTransform = BrickBox.transform as RectTransform;
 
-        blockController = GetComponent<BlockController>();
+        blockController = GetComponent<BlockController2>();
     }
 
     private void Update()
