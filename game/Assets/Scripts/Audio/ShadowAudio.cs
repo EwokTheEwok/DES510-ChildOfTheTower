@@ -7,6 +7,7 @@ public class ShadowAudio : MonoBehaviour
 {
     public AK.Wwise.Event ShadowEvent;
     public AK.Wwise.Event StopShadows;
+    public AK.Wwise.Event StopShadowsLongFade;
 
     private GameObject _player;
 
@@ -50,6 +51,12 @@ public class ShadowAudio : MonoBehaviour
         }
 
         else if (distance > _playerDistanceThreshold)
+        {
+            StopShadowsLongFade.Post(gameObject);
+            _isPlaying = false;
+        }
+
+        else if (distance < 2)
         {
             StopShadows.Post(gameObject);
             _isPlaying = false;

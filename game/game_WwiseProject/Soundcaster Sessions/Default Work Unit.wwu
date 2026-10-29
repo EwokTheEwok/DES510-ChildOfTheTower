@@ -83,6 +83,18 @@
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>
+				<SoundcasterSession Name="Animation Test" ID="{D62739A0-2A7A-40E5-B0A5-5D7A9F117203}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_Falling" ID="{5005844D-76C3-4A90-B379-D8C75987E3F7}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Land" ID="{A9B495E2-E378-4FC9-BAA4-DC4CF1BBAA53}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>
