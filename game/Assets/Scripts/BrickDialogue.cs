@@ -127,12 +127,9 @@ public class BrickDialogue : MonoBehaviour
         }
         else if (collision.CompareTag("Block Dialogue 0"))
         {
-            if (!_IsTargetedTalking)
-            {
-                StopTalking();
-                _TargetedBrickCoroutine = TargetedDialogue(0);
-                StartCoroutine(_TargetedBrickCoroutine);
-            }
+            StopTalking();
+            _TargetedBrickCoroutine = TargetedDialogue(0);
+            StartCoroutine(_TargetedBrickCoroutine);
         }
         else if (collision.CompareTag("Block Dialogue 1"))
         {
