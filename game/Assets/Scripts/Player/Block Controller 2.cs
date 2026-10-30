@@ -39,12 +39,15 @@ public class BlockController2 : MonoBehaviour
     public UnityEvent<GameObject> _LimitEvent = new();
 
     //Private
+    [Header("States")]
     bool _Active = false;
     bool _Control = false;
     bool _IsMovingBlock = false;
     bool _SwapAxis = false;
-
     bool _PlaceHold = false;
+
+
+    float _MissingBubbleTimer = 5f;
     float _PlaceHoldTimer = 0f;
 
     Renderer _AxisPlaneRenderer;
