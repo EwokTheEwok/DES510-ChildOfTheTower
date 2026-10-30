@@ -4,11 +4,11 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
 public class BlockController2 : MonoBehaviour
 {
     public CinemachineCamera _CinemachineCamera;
+    public GameObject _MissingBlockSprite;
 
     [Header("Node")]
     public float _PlaceRange = 5f;
@@ -48,7 +48,6 @@ public class BlockController2 : MonoBehaviour
     float _PlaceHoldTimer = 0f;
 
     Renderer _AxisPlaneRenderer;
-    Vector3 _AxisPlaneOrigin;
     float _BlockUIDistance;
 
     GameObject _GuideBlock;
@@ -104,36 +103,17 @@ public class BlockController2 : MonoBehaviour
             _GuideBlock.SetActive(true);
             _GuideBlock.transform.position = nearestNode.transform.position;
             _GuideBlock.transform.eulerAngles = new Vector3(0f, nearestNode.transform.rotation.eulerAngles.y, 0f);
+            _MissingBlockSprite.SetActive(false);
         }
         else if (_Active) {
-            if (_PlaceHold)
-            {
-                if (_PlaceHoldTimer > 1f)
-                {
-                    foreach (GameObject block in _BlockList)
-                    {
-                        block.GetComponent<Renderer>().material.color = Color.softRed;
-                    }
-                } else if (_PlaceHoldTimer > 0.25f)
-                {
-                    foreach (GameObject block in _BlockList)
-                    {
-                        block.GetComponent<Renderer>().material.color = Color.lightPink;
-                    }
-                }
-                _PlaceHoldTimer += Time.deltaTime;
-            } else
-            {
-                foreach (GameObject block in _BlockList)
-                {
-                    block.GetComponent<Renderer>().material.color = Color.white;
-                }
-            }
+            MissingBlock();
+            RetrieveVisual();
             UpdateDirections(_Block.transform);
         }
         else
         {
             _GuideBlock.SetActive(false);
+            _MissingBlockSprite.SetActive(false);
         }
     }
 
@@ -482,5 +462,57 @@ public class BlockController2 : MonoBehaviour
         _BlockUIDown.position = _Camera.WorldToScreenPoint(transform.position - vUI * _BlockUIDistance);
         _BlockUILeft.position = _Camera.WorldToScreenPoint(transform.position - _BlockUIDistance * sign2 * xUI);
         _BlockUIRight.position = _Camera.WorldToScreenPoint(transform.position + _BlockUIDistance * sign2 * xUI);
+    }
+
+    public void RetrieveVisual()
+    {
+        if (_PlaceHold)
+        {
+            if (_PlaceHoldTimer > 1f)
+            {
+                foreach (GameObject block in _BlockList)
+                {
+                    block.GetComponent<Renderer>().material.color = Color.softRed;
+                }
+            }
+            else if (_PlaceHoldTimer > 0.25f)
+            {
+                foreach (GameObject block in _BlockList)
+                {
+                    block.GetComponent<Renderer>().material.color = Color.lightPink;
+                }
+            }
+            _PlaceHoldTimer += Time.deltaTime;
+        }
+        else
+        {
+            foreach (GameObject block in _BlockList)
+            {
+                block.GetComponent<Renderer>().material.color = Color.white;
+            }
+        }
+    }
+
+    public void MissingBlock()
+    {
+        float shortestDistance = 999f;
+        foreach (GameObject block in _BlockList)
+        {
+
+            //distance to node
+            float distance = Vector3.Distance(_PlayerTransform.position, block.transform.position);
+            if (distance < shortestDistance)
+            {
+                shortestDistance = distance;
+            }
+        }
+        
+        if (shortestDistance > 5f)
+        {
+            _MissingBlockSprite.SetActive(!_Control);
+        } else
+        {
+            _MissingBlockSprite.SetActive(false);
+        }
     }
 }
