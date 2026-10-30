@@ -1,19 +1,23 @@
-using Unity.Collections;
-using UnityEngine;
-using UnityEngine.InputSystem;
-using TMPro;
 using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
 
-public class Dialogue : MonoBehaviour
+public class NPC : MonoBehaviour
 {
+    public string[] DialogueLines;
+    public string NPCName;
 
+    UnityEvent<GameObject, bool> _ActivateEvent = new();
+
+    //private IEnumerator _DialogueCoroutine;
+
+    /*
     [SerializeField] private GameObject DialogueBox;
     [SerializeField] private GameObject NameBox;
     [SerializeField] private TMP_Text DialogueText;
     [SerializeField] private TMP_Text NameText;
 
-    [SerializeField] private string[] DialogueLines;
-    [SerializeField] private string NPCName;
     [SerializeField] private float TypeSpeed = 0.05f;
 
     private int lineIndex = 0;
@@ -27,8 +31,11 @@ public class Dialogue : MonoBehaviour
     public float height = 100000f;
 
     private RectTransform dialogueTransform;
+    
+    
 
-    private IEnumerator coroutine;
+    
+
 
     private void Start()
     {
@@ -38,19 +45,15 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
-
-
-        if (_InRange)
-        {
             dialogueTransform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, height, 0));
             if (!_IsActive)
 
             {
-                coroutine = StartDia();
-                StartCoroutine(coroutine);
+                _DialogueCoroutine = StartDia();
+                StartCoroutine(_DialogueCoroutine);
             }
 
-            /*
+            
             if (!_IsRandomTalking) {
                 StartDialogue();
             }
@@ -62,8 +65,7 @@ public class Dialogue : MonoBehaviour
                     Debug.Log("a");
                     WriteLine();
                 }
-            }*/
-        }
+            }
     }
 
     private IEnumerator StartDia()
@@ -99,6 +101,8 @@ public class Dialogue : MonoBehaviour
         NameBox.SetActive(false);
         NameText.text = "";
     }
+
+    */
     /*
     private void StartDialogue()
     {
@@ -142,9 +146,9 @@ public class Dialogue : MonoBehaviour
     */
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.CompareTag("Player") && !_IsActive)
+        if (collision.CompareTag("Player"))
         {
-            _InRange = true;
+            _ActivateEvent?.Invoke(gameObject, true);
         }
     }
 
@@ -152,10 +156,17 @@ public class Dialogue : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            StopCoroutine(coroutine);
+            _ActivateEvent?.Invoke(gameObject, false);
+            /*
+            StopCoroutine(_DialogueCoroutine);
             StopTalking();
             _InRange = false;
-
+            */
         }
+    }
+
+    public void AddListener(UnityAction<GameObject, bool> call)
+    {
+        _ActivateEvent.AddListener(call);
     }
 }
