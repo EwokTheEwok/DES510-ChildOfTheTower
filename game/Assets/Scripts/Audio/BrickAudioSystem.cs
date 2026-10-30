@@ -10,16 +10,18 @@ public class BrickAudioSystem : MonoBehaviour
 
     public void PlaceBrick(int count, GameObject gameObject)
     {
-        Debug.Log("sound: " + count);
+        Debug.Log("sound: " + count + " " + gameObject.transform.position);
         if (count == 0)
-           BrickReset.Post(gameObject);
+            BrickReset.Post(gameObject);
 
         if (count < BrickPlaceEvents.Length)
+        {
             BrickPlaceEvents[count].Post(gameObject);
-        
+            Debug.Log("post: " + count);
+        }
         else
         {
-            BrickPlaceEvents[7].Post(gameObject);
+            BrickPlaceEvents[^1].Post(gameObject);
         }
     }
 
