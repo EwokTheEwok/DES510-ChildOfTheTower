@@ -1039,20 +1039,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0115ab550010248ad569d0116cf47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  DialogueBox: {fileID: 851983425}
-  NameBox: {fileID: 1804240662}
-  DialogueText: {fileID: 183528106}
-  NameText: {fileID: 36906199}
   DialogueLines:
   - "It\u2019s cold at night with no blankets to spare."
   - We are so hungry, and with no food available, my family will surely die before
     the season ends.
   - Miss, your warmth is great. This will certainly help my family. Thank you.
   NPCName: Peter
-  TypeSpeed: 0.05
-  _LineDelay: 2
-  _EndDelay: 7
-  height: 2
 --- !u!135 &65156490
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3378,19 +3370,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0115ab550010248ad569d0116cf47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  DialogueBox: {fileID: 851983425}
-  NameBox: {fileID: 1804240662}
-  DialogueText: {fileID: 183528106}
-  NameText: {fileID: 36906199}
   DialogueLines:
   - "Everyone\u2019s dead, everything is dead. What am I supposed to do?"
   - Eleanor?
   - Stay safe, Eleanor. May I see your light again soon.
   NPCName: Thomas
-  TypeSpeed: 0.05
-  _LineDelay: 2
-  _EndDelay: 7
-  height: 2
 --- !u!135 &352215608
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4443,6 +4427,98 @@ Transform:
   m_Children: []
   m_Father: {fileID: 834131028}
   m_LocalEulerAnglesHint: {x: 2.78, y: -62.056, z: 3.29}
+--- !u!1 &475569521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 475569522}
+  - component: {fileID: 475569523}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &475569522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475569521}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.23, y: 2.53, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 848525253}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &475569523
+SpriteRenderer:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475569521}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 21300000, guid: 0a8ccfd60aba05b4392f54c4f69d2030, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.56, y: 2.56}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
+  m_BlendShapeWeights: []
 --- !u!1001 &507371824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6890,6 +6966,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0700bfd6501bad2458508e28a3745c37, type: 3}
+--- !u!4 &848525253 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 241968102112503927, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+  m_PrefabInstance: {fileID: 2134669250}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &851983425
 GameObject:
   m_ObjectHideFlags: 0
@@ -8934,6 +9015,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -8855510044699684048, guid: f466d13e8d5de7245988ac54d588a257, type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f466d13e8d5de7245988ac54d588a257, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -8977,7 +9062,7 @@ PrefabInstance:
     - target: {fileID: -3516303821155736498, guid: f466d13e8d5de7245988ac54d588a257, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 70d56b14ab2817f4b979d42ab84ad7ea, type: 2}
+      objectReference: {fileID: -876546973899608171, guid: 395d9237baa9f8540bb96dc39eb94628, type: 3}
     - target: {fileID: 919132149155446097, guid: f466d13e8d5de7245988ac54d588a257, type: 3}
       propertyPath: m_Name
       value: First Level
@@ -13552,20 +13637,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb0115ab550010248ad569d0116cf47c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  DialogueBox: {fileID: 851983425}
-  NameBox: {fileID: 1804240662}
-  DialogueText: {fileID: 183528106}
-  NameText: {fileID: 36906199}
   DialogueLines:
   - "<i>cough</i> Please, isn\u2019t there anything that can be done? I don\u2019t
     want to die."
   - Haha, <i>cough cough </i> a glowing girl, I must be dreaming.
   - Your light is comforting, little one, I may survive this yet.
   NPCName: Margret
-  TypeSpeed: 0.05
-  _LineDelay: 2
-  _EndDelay: 7
-  height: 2
 --- !u!135 &1646651158
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -17467,14 +17544,42 @@ PrefabInstance:
       propertyPath: CameraDistance
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 7191902283495994130, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _MissingBlockSprite
+      value: 
+      objectReference: {fileID: 475569521}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 241968102112503927, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 475569522}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 118030202727208779, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       insertIndex: -1
       addedObject: {fileID: 292406649}
+    - targetCorrespondingSourceObject: {fileID: 1714346313533235322, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2134669252}
   m_SourcePrefab: {fileID: 100100000, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+--- !u!1 &2134669251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1714346313533235322, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+  m_PrefabInstance: {fileID: 2134669250}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2134669252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134669251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914a56988097320499ec87a6594fbe04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WindowTower
+  _CCamera: {fileID: 2134669251}
 --- !u!1001 &2138687138
 PrefabInstance:
   m_ObjectHideFlags: 0
