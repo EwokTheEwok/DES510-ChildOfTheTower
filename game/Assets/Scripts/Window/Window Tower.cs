@@ -1,14 +1,14 @@
-
 using UnityEngine;
 
 public class WindowTower : MonoBehaviour
 {
-    public GameObject _Tower;
     public GameObject _CCamera;
+    GameObject _Tower;
     Renderer _TowerRenderer;
 
     private void Start()
     {
+        _Tower = GameObject.FindWithTag("Tower");
         _TowerRenderer = _Tower.GetComponent<Renderer>();
     }
 
