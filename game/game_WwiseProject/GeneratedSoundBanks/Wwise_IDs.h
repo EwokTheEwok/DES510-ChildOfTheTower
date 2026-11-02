@@ -21,11 +21,15 @@ namespace AK
         static const AkUniqueID BRICK_05 = 11539578U;
         static const AkUniqueID BRICK_06 = 11539577U;
         static const AkUniqueID BRICK_07 = 11539576U;
+        static const AkUniqueID BRICK_BIGUNDOCANCEL = 739199831U;
+        static const AkUniqueID BRICK_CONTINUEBIGUNDO = 1901158208U;
         static const AkUniqueID BRICK_PLACEMENTERROR = 1579460802U;
         static const AkUniqueID BRICK_REVERSE = 2599784423U;
+        static const AkUniqueID BRICK_STARTBIGUNDO = 1150887483U;
         static const AkUniqueID BRICKMODE_START = 2475923824U;
         static const AkUniqueID MUSICAMBTEST = 1200446142U;
         static const AkUniqueID PLAY_AMB_OUTDOOR_LVL1 = 3813572857U;
+        static const AkUniqueID PLAY_CHECKPOINT = 2962822744U;
         static const AkUniqueID PLAY_FALLING = 913957623U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
         static const AkUniqueID PLAY_INTROLOOP = 528465658U;
@@ -108,6 +112,7 @@ namespace AK
         static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SFX_DUCKING = 3093856314U;
+        static const AkUniqueID SFX_GENERAL = 515334391U;
         static const AkUniqueID SFX_PLAYER = 217780010U;
     } // namespace BUSSES
 

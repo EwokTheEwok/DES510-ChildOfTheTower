@@ -6,6 +6,394 @@
 				<Property Name="Color" Type="int16" Value="2"/>
 				<Property Name="OverrideColor" Type="bool" Value="True"/>
 			</PropertyList>
+			<ChildrenList>
+				<RandomSequenceContainer Name="RMC_Thomas" ID="{D093C8EE-2FF8-4A6B-A683-A50A46DC7B08}" ShortID="705554576">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sfx_vo_thomas_001" ID="{419366D0-A7AE-4391-B430-AE3F7A321F2D}" ShortID="258480677">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_001" ID="{67328128-814C-4925-B340-9236E3DED063}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="333598172"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_001" ID="{67328128-814C-4925-B340-9236E3DED063}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_002" ID="{134B3918-21CF-45CD-8CE5-C58614DC5CF4}" ShortID="744465494">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_002" ID="{D06615AB-DE8C-4229-8E52-E807F45177C8}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_002.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="341226825"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_002" ID="{D06615AB-DE8C-4229-8E52-E807F45177C8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_003" ID="{37EB43CA-DCB4-409F-84D8-9EB10E0CD257}" ShortID="433331845">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_003" ID="{0E3E8066-9B09-41B8-9EE8-1C7962939A55}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_003.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="140990676"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_003" ID="{0E3E8066-9B09-41B8-9EE8-1C7962939A55}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_004" ID="{4CD8055B-B65A-45F3-8747-4B8501FF9F71}" ShortID="403178346">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_004" ID="{52E2EEB5-EBC3-4A98-9D6E-CF372165996C}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_004.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="742357075"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_004" ID="{52E2EEB5-EBC3-4A98-9D6E-CF372165996C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_005" ID="{F038FDFD-CB75-4339-86CA-0EED24182C17}" ShortID="446998268">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_005" ID="{DD3FCA6A-6B1F-4E05-AD4A-69F94B9C35D1}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_005.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="502817040"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_005" ID="{DD3FCA6A-6B1F-4E05-AD4A-69F94B9C35D1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_006" ID="{E93CEA4E-4E5D-4FD2-842E-DDB2F8DF0EE2}" ShortID="919456405">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_006" ID="{16EDC90D-8320-4927-ACC6-D19450812F20}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_006.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="235355313"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_006" ID="{16EDC90D-8320-4927-ACC6-D19450812F20}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_007" ID="{9E9A2071-AB40-4352-8EB1-628E93CFED8F}" ShortID="694768570">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_007" ID="{66F59FD3-05CC-413F-B1BA-03173126E0F5}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_007.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="675566320"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_007" ID="{66F59FD3-05CC-413F-B1BA-03173126E0F5}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_008" ID="{5A89E8A1-F33A-45D4-94CD-5F26D8E2A7C3}" ShortID="695455529">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_008" ID="{89643B5F-B570-4CE1-B9C5-9016B6C56008}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_008.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="504195827"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_008" ID="{89643B5F-B570-4CE1-B9C5-9016B6C56008}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_009" ID="{92E8F54C-6835-4ADC-A8C6-4C86557F3AE0}" ShortID="642567365">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_009" ID="{77AF2528-608D-416F-B339-1B42304FF960}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_009.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="967900060"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_009" ID="{77AF2528-608D-416F-B339-1B42304FF960}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_010" ID="{F0FE83E0-B121-47FA-9420-A6A86A02C628}" ShortID="793368634">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_010" ID="{2AE08013-BFF2-4781-B3B8-89F65F70D892}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_010.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="564219743"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_010" ID="{2AE08013-BFF2-4781-B3B8-89F65F70D892}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_011" ID="{F37AEFC3-C65A-4705-B30A-308C4EBAEF80}" ShortID="447640654">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_011" ID="{315BA839-3505-4B56-9E82-7858563F1A1A}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_011.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="534321425"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_011" ID="{315BA839-3505-4B56-9E82-7858563F1A1A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_012" ID="{9D6A05A9-A74F-4FE8-A66B-B606CD21EC77}" ShortID="256049011">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_012" ID="{9467E6E0-9669-4E6A-A21A-391C3D8E5103}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_012.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="65416496"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_012" ID="{9467E6E0-9669-4E6A-A21A-391C3D8E5103}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_013" ID="{A4593395-7546-45DB-91B3-6FA9EBF5BDA0}" ShortID="707928538">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_013" ID="{009366B3-AC15-45D8-A2A8-8CCB7B132E9A}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_013.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="640513773"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_013" ID="{009366B3-AC15-45D8-A2A8-8CCB7B132E9A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_014" ID="{50259AFE-2EA1-4942-A7AB-1E408B395D03}" ShortID="271850011">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_014" ID="{4A15B42F-04BB-46F3-9429-D23AC25F18F3}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_014.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="666825792"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_014" ID="{4A15B42F-04BB-46F3-9429-D23AC25F18F3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_015" ID="{9FEFF0F6-B235-46C2-BE14-8370687AA437}" ShortID="152663844">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_015" ID="{26657553-783A-499A-B387-2AB7005B8109}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_015.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="58199424"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_015" ID="{26657553-783A-499A-B387-2AB7005B8109}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_016" ID="{6CB2BD3E-70E8-4B6E-BD43-26EA4BDDECDB}" ShortID="160100689">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_016" ID="{28B71B0A-D0E9-4114-AA84-4FD65904F899}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_016.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="562802087"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_016" ID="{28B71B0A-D0E9-4114-AA84-4FD65904F899}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_thomas_017" ID="{2F7DBA12-4AE0-4F01-ADF7-0B240A88FD2B}" ShortID="743605503">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_thomas_017" ID="{EC702F84-D632-4764-9E06-FE306C2B3516}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_thomas_017.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="447239699"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_thomas_017" ID="{EC702F84-D632-4764-9E06-FE306C2B3516}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+			</ChildrenList>
 		</WorkUnit>
 	</Containers>
 </WwiseDocument>

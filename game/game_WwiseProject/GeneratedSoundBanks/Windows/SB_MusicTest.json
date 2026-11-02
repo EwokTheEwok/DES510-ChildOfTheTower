@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{3F60886D-63A8-31A0-6025-B4D4A90E2737}",
+    "Hash": "{2974B5C9-B230-04C4-FC38-2E4447C01C07}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
     "Media": [
+     {
+      "Id": "666304",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_bigbrickreverse3_001.wav",
+      "CachePath": "56/{5653AE05-54C5-3531-5938-C75EA3A78764}.wem"
+     },
      {
       "Id": "45364070",
       "Language": "SFX",
@@ -208,6 +216,14 @@
       "CachePath": "C0/{C033C079-E4CC-B395-7988-9E0C48909B4F}.wem"
      },
      {
+      "Id": "538850202",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_bigbrickreverse1_001.wav",
+      "CachePath": "5C/{5C7D9FEC-39F4-CD41-D029-D8D973BEB1CE}.wem"
+     },
+     {
       "Id": "541945125",
       "Language": "SFX",
       "Streaming": "false",
@@ -326,6 +342,22 @@
       "Location": "Memory",
       "ShortName": "sfx_amb_lvl1_outdoor_001.wav",
       "CachePath": "70/{70EF8933-DF58-FAEE-B629-8C7490ADB742}.wem"
+     },
+     {
+      "Id": "710637432",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_bigbrickreverse_rumble_001.wav",
+      "CachePath": "F7/{F774468C-997A-CCB3-FFFC-9648D8C39907}.wem"
+     },
+     {
+      "Id": "713383606",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_checkpoint_001.wav",
+      "CachePath": "45/{45C4C4A0-D0F1-2BFF-9163-3E2F31224C98}.wem"
      },
      {
       "Id": "730654876",
@@ -480,6 +512,14 @@
       "CachePath": "1B/{1B6537A8-6006-D9ED-FE42-74D40CEC0A0D}.wem"
      },
      {
+      "Id": "1015105809",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_bigbrickreverse2_001.wav",
+      "CachePath": "D8/{D8368D4A-3FDE-0E84-BA36-42609C618495}.wem"
+     },
+     {
       "Id": "1024991192",
       "Language": "SFX",
       "Streaming": "false",
@@ -488,11 +528,23 @@
       "CachePath": "54/{54648848-99AD-E5C6-7AFD-81869ABC93DD}.wem"
      }
     ],
+    "Plugins": {
+     "Custom": [
+      {
+       "Id": "1050995769",
+       "Name": "Parametric EQ (Custom)",
+       "ObjectPath": "\\Containers\\SFX\\Brick SFX\\BigBrickReverseRumble\\[Effect Slot [0]: (Parametric EQ)]\\Parametric EQ (Custom)",
+       "GUID": "{9A7F28E6-669D-4FD4-86CF-318E465E005D}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      }
+     ]
+    },
     "Events": [
      {
       "Id": "3945088981",
       "Name": "Brick_0",
-      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Brick_0",
+      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Place Events\\Brick_0",
       "GUID": "{74B4BEDF-CE76-4E01-8D7C-2F0E1207AC49}",
       "Color": "13",
       "DurationType": "OneShot",
@@ -1084,7 +1136,7 @@
      {
       "Id": "11539582",
       "Name": "Brick_01",
-      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Brick_01",
+      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Place Events\\Brick_01",
       "GUID": "{BE6F6600-CE68-4F9F-84FD-6F3A7ECE0645}",
       "Color": "13",
       "DurationType": "OneShot",
@@ -1676,7 +1728,7 @@
      {
       "Id": "11539581",
       "Name": "Brick_02",
-      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Brick_02",
+      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Place Events\\Brick_02",
       "GUID": "{B6A6A0DB-F576-4F15-B89F-D203A797D8CF}",
       "Color": "13",
       "DurationType": "OneShot",
@@ -2268,7 +2320,7 @@
      {
       "Id": "11539580",
       "Name": "Brick_03",
-      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Brick_03",
+      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Place Events\\Brick_03",
       "GUID": "{1A127CE9-59B1-47F2-BFCB-CC7319649FD8}",
       "Color": "13",
       "DurationType": "OneShot",
@@ -2860,7 +2912,7 @@
      {
       "Id": "11539579",
       "Name": "Brick_04",
-      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Brick_04",
+      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Place Events\\Brick_04",
       "GUID": "{9FFBE545-8E93-467A-93DD-3738E5FD312C}",
       "Color": "13",
       "DurationType": "OneShot",
@@ -3452,7 +3504,7 @@
      {
       "Id": "11539578",
       "Name": "Brick_05",
-      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Brick_05",
+      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Place Events\\Brick_05",
       "GUID": "{B2BDA832-9C90-4CC1-9AC8-E66CF9600EF4}",
       "Color": "13",
       "DurationType": "OneShot",
@@ -4044,7 +4096,7 @@
      {
       "Id": "11539577",
       "Name": "Brick_06",
-      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Brick_06",
+      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Place Events\\Brick_06",
       "GUID": "{9BC08913-D594-4905-BEB6-5A00C4F2B621}",
       "Color": "13",
       "DurationType": "OneShot",
@@ -4636,7 +4688,7 @@
      {
       "Id": "11539576",
       "Name": "Brick_07",
-      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Brick_07",
+      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Place Events\\Brick_07",
       "GUID": "{9A177A7F-E175-4D32-B4E5-38665680B8F6}",
       "Color": "13",
       "DurationType": "OneShot",
@@ -5226,6 +5278,38 @@
       ]
      },
      {
+      "Id": "739199831",
+      "Name": "Brick_BigUndoCancel",
+      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Big Undo\\Brick_BigUndoCancel",
+      "GUID": "{1A02EEF5-6D1A-47E8-924F-0A90870DD8FC}",
+      "Color": "13",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1901158208",
+      "Name": "Brick_ContinueBigUndo",
+      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Big Undo\\Brick_ContinueBigUndo",
+      "GUID": "{FEB90FBB-54FD-4DB1-BC56-89E1B9FDD14A}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "1",
+      "DurationMax": "2.059646",
+      "MediaRefs": [
+       {
+        "Id": "666304"
+       },
+       {
+        "Id": "538850202"
+       },
+       {
+        "Id": "1015105809"
+       }
+      ]
+     },
+     {
       "Id": "1579460802",
       "Name": "Brick_PlacementError",
       "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Brick_PlacementError",
@@ -5266,6 +5350,35 @@
         "Id": "1009954480"
        }
       ]
+     },
+     {
+      "Id": "1150887483",
+      "Name": "Brick_StartBigUndo",
+      "ObjectPath": "\\Events\\SFX Events\\Brick Events\\Big Undo\\Brick_StartBigUndo",
+      "GUID": "{2215FCED-0FFE-4712-B41F-146B96683519}",
+      "Color": "13",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "666304"
+       },
+       {
+        "Id": "538850202"
+       },
+       {
+        "Id": "710637432"
+       },
+       {
+        "Id": "1015105809"
+       }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "1050995769"
+        }
+       ]
+      }
      },
      {
       "Id": "2475923824",
@@ -5401,6 +5514,21 @@
        },
        {
         "Id": "701294168"
+       }
+      ]
+     },
+     {
+      "Id": "2962822744",
+      "Name": "Play_Checkpoint",
+      "ObjectPath": "\\Events\\SFX Events\\Play_Checkpoint",
+      "GUID": "{85A90BB2-0190-45EE-9C3A-E17C769A7C17}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "4.469229",
+      "DurationMax": "4.469229",
+      "MediaRefs": [
+       {
+        "Id": "713383606"
        }
       ]
      },
@@ -5919,6 +6047,6 @@
     ]
    }
   ],
-  "FileHash": "{4B98BE63-F12C-7AAB-60B7-2C6C206AA0F3}"
+  "FileHash": "{4B1CEF06-AFCD-A467-9057-FE3FE9A5DDF1}"
  }
 }
