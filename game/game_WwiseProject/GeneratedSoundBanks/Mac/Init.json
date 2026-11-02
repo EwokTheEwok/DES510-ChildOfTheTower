@@ -10,12 +10,20 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{320CFC79-D545-ACBF-45B3-E278FC894999}",
+    "Hash": "{C3081723-5178-A2BB-A900-60EC657EA62E}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
      "Custom": [
+      {
+       "Id": "87619259",
+       "Name": "Sidechain Send (Custom)",
+       "ObjectPath": "\\Busses\\Default Work Unit\\SFX\\SFX_General\\[Effect Slot [0]: (Sidechain Send)]\\Sidechain Send (Custom)",
+       "GUID": "{4395D7A6-9E6B-4ED7-AC02-5C49105C68CD}",
+       "LibName": "Ak Sidechain Send",
+       "LibId": "12648451"
+      },
       {
        "Id": "442399366",
        "Name": "Meter (Custom)",
@@ -31,6 +39,14 @@
        "GUID": "{7312AF2B-9CC6-49DC-B6FE-309E232A90F6}",
        "LibName": "Ak Sidechain Send",
        "LibId": "12648451"
+      },
+      {
+       "Id": "797955259",
+       "Name": "Parametric EQ (Custom)",
+       "ObjectPath": "\\Busses\\Default Work Unit\\Music\\[Effect Slot [1]: (Parametric EQ)]\\Parametric EQ (Custom)",
+       "GUID": "{C71AB3B6-A559-4ABD-8A6A-CA1AFABAD513}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
       },
       {
        "Id": "1062664613",
@@ -94,6 +110,20 @@
       "Color": "13"
      },
      {
+      "Id": "515334391",
+      "Name": "SFX_General",
+      "ObjectPath": "\\Busses\\Default Work Unit\\SFX\\SFX_General",
+      "GUID": "{811B99C3-3285-45E3-9B9A-FBFBD07813CA}",
+      "Color": "13",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "87619259"
+        }
+       ]
+      }
+     },
+     {
       "Id": "2246998526",
       "Name": "Main Audio Bus",
       "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
@@ -135,6 +165,9 @@
       "Color": "24",
       "PluginRefs": {
        "Custom": [
+        {
+         "Id": "797955259"
+        },
         {
          "Id": "1062664613"
         }
@@ -331,6 +364,6 @@
     ]
    }
   ],
-  "FileHash": "{5259E83B-085A-5005-8098-9B6B68E3107F}"
+  "FileHash": "{725DF5E7-D2CF-38F5-C7DE-6DF98BAB9EEB}"
  }
 }

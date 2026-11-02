@@ -9,69 +9,6 @@
 			<ChildrenList>
 				<Folder Name="Brick Events" ID="{62413097-7257-4912-8C89-039D71724249}" ShortID="195571251">
 					<ChildrenList>
-						<Event Name="Brick_01" ID="{BE6F6600-CE68-4F9F-84FD-6F3A7ECE0645}">
-							<ChildrenList>
-								<Action Name="" ID="{363B4E83-5276-4C09-897F-255206965242}" ShortID="409634462">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="22"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Brick_01" ID="{2E8E7386-933C-4145-8213-D16258FA9929}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{BA7E78AA-7652-4B21-B214-5F4CC3C46BBA}" ShortID="737116191">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Brick_04" ID="{9FFBE545-8E93-467A-93DD-3738E5FD312C}">
-							<ChildrenList>
-								<Action Name="" ID="{A598B7BC-5A7A-4361-BEF2-2D2E78C4F288}" ShortID="388187556">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="22"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Brick_04" ID="{4C233910-7CBA-4724-854B-83BF1BB63B83}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{8358578C-5DFD-459B-8F64-846D2C2E1F06}" ShortID="321221367">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Brick_06" ID="{9BC08913-D594-4905-BEB6-5A00C4F2B621}">
-							<ChildrenList>
-								<Action Name="" ID="{626E7734-133C-4052-8E47-13C9F509923B}" ShortID="474100035">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="22"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Brick_06" ID="{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{8A0EFBC7-A174-495D-983B-75C0D873D3D5}" ShortID="966653213">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="BrickMode_Start" ID="{0623E312-C834-4E74-99DB-6F596933E6B6}">
 							<ChildrenList>
 								<Action Name="" ID="{575A0C1C-A82F-4C26-80B3-3CC7DDEF0064}" ShortID="212422267">
@@ -81,111 +18,6 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Brick_0" ID="{51A68B28-10E1-4C58-A306-2C1FEA1EE999}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Brick_0" ID="{74B4BEDF-CE76-4E01-8D7C-2F0E1207AC49}">
-							<ChildrenList>
-								<Action Name="" ID="{B308833D-FDA6-4DAD-8F4D-C3CC32466498}" ShortID="810157444">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="22"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Brick_0" ID="{51A68B28-10E1-4C58-A306-2C1FEA1EE999}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{3E9A2F4D-7911-4679-9742-5F9A8DF0EF5A}" ShortID="1053696198">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Brick_02" ID="{B6A6A0DB-F576-4F15-B89F-D203A797D8CF}">
-							<ChildrenList>
-								<Action Name="" ID="{932424BE-24FA-447B-9827-63FF5A6D3426}" ShortID="1007629681">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="22"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Brick_02" ID="{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{E9CA49F3-B6F6-4447-A8AB-E4A63628FBAB}" ShortID="459674238">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Brick_03" ID="{1A127CE9-59B1-47F2-BFCB-CC7319649FD8}">
-							<ChildrenList>
-								<Action Name="" ID="{70BCBB60-2A4C-40B1-916E-2CAE6FF5A28B}" ShortID="100664877">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="22"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Brick_03" ID="{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{1064C3DF-C198-4378-B8D7-65E1AA091C66}" ShortID="1003235471">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Brick_05" ID="{B2BDA832-9C90-4CC1-9AC8-E66CF9600EF4}">
-							<ChildrenList>
-								<Action Name="" ID="{916C9D38-87E0-4E2E-AC60-A6B4E1A48005}" ShortID="779301639">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="22"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Brick_05" ID="{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{725CE09D-BB7D-4F17-B748-C735AE64E925}" ShortID="413279552">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Brick_07" ID="{9A177A7F-E175-4D32-B4E5-38665680B8F6}">
-							<ChildrenList>
-								<Action Name="" ID="{E12B6338-3B49-429D-8C56-B2F2B4549A98}" ShortID="319819263">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="22"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Brick_07" ID="{586755CE-F4AA-42ED-9748-DC416AA9F1DA}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{BC709267-95BF-4024-83D6-8A8310C97E43}" ShortID="684790833">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -213,6 +45,284 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Folder Name="Place Events" ID="{F1C6D851-FDA8-4B0D-B964-634DF58496A7}" ShortID="247166536">
+							<ChildrenList>
+								<Event Name="Brick_02" ID="{B6A6A0DB-F576-4F15-B89F-D203A797D8CF}">
+									<ChildrenList>
+										<Action Name="" ID="{932424BE-24FA-447B-9827-63FF5A6D3426}" ShortID="1007629681">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Brick_02" ID="{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{E9CA49F3-B6F6-4447-A8AB-E4A63628FBAB}" ShortID="459674238">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Brick_04" ID="{9FFBE545-8E93-467A-93DD-3738E5FD312C}">
+									<ChildrenList>
+										<Action Name="" ID="{A598B7BC-5A7A-4361-BEF2-2D2E78C4F288}" ShortID="388187556">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Brick_04" ID="{4C233910-7CBA-4724-854B-83BF1BB63B83}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{8358578C-5DFD-459B-8F64-846D2C2E1F06}" ShortID="321221367">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Brick_05" ID="{B2BDA832-9C90-4CC1-9AC8-E66CF9600EF4}">
+									<ChildrenList>
+										<Action Name="" ID="{916C9D38-87E0-4E2E-AC60-A6B4E1A48005}" ShortID="779301639">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Brick_05" ID="{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{725CE09D-BB7D-4F17-B748-C735AE64E925}" ShortID="413279552">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Brick_0" ID="{74B4BEDF-CE76-4E01-8D7C-2F0E1207AC49}">
+									<ChildrenList>
+										<Action Name="" ID="{B308833D-FDA6-4DAD-8F4D-C3CC32466498}" ShortID="810157444">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Brick_0" ID="{51A68B28-10E1-4C58-A306-2C1FEA1EE999}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{3E9A2F4D-7911-4679-9742-5F9A8DF0EF5A}" ShortID="1053696198">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Brick_06" ID="{9BC08913-D594-4905-BEB6-5A00C4F2B621}">
+									<ChildrenList>
+										<Action Name="" ID="{626E7734-133C-4052-8E47-13C9F509923B}" ShortID="474100035">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Brick_06" ID="{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{8A0EFBC7-A174-495D-983B-75C0D873D3D5}" ShortID="966653213">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Brick_01" ID="{BE6F6600-CE68-4F9F-84FD-6F3A7ECE0645}">
+									<ChildrenList>
+										<Action Name="" ID="{363B4E83-5276-4C09-897F-255206965242}" ShortID="409634462">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Brick_01" ID="{2E8E7386-933C-4145-8213-D16258FA9929}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{BA7E78AA-7652-4B21-B214-5F4CC3C46BBA}" ShortID="737116191">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Brick_03" ID="{1A127CE9-59B1-47F2-BFCB-CC7319649FD8}">
+									<ChildrenList>
+										<Action Name="" ID="{70BCBB60-2A4C-40B1-916E-2CAE6FF5A28B}" ShortID="100664877">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Brick_03" ID="{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{1064C3DF-C198-4378-B8D7-65E1AA091C66}" ShortID="1003235471">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Brick_07" ID="{9A177A7F-E175-4D32-B4E5-38665680B8F6}">
+									<ChildrenList>
+										<Action Name="" ID="{E12B6338-3B49-429D-8C56-B2F2B4549A98}" ShortID="319819263">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Brick_07" ID="{586755CE-F4AA-42ED-9748-DC416AA9F1DA}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{BC709267-95BF-4024-83D6-8A8310C97E43}" ShortID="684790833">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Big Undo" ID="{AC2B3E55-75F5-4ED6-A89E-0EA3B9962A3B}" ShortID="481122660">
+							<ChildrenList>
+								<Event Name="Brick_ContinueBigUndo" ID="{FEB90FBB-54FD-4DB1-BC56-89E1B9FDD14A}">
+									<ChildrenList>
+										<Action Name="" ID="{905C5CB5-1C32-4AE4-9A47-380C46CE1BFE}" ShortID="313323868">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BigBrickReverse" ID="{3164E687-A433-4088-A91E-65CC7653AD17}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{CEF65CD2-323B-4D87-B47C-CC03524A9C23}" ShortID="903429669">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="12"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+												<Property Name="Volume" Type="Real64" Value="11"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BigBrickReverseRumble" ID="{FF6138C2-1C40-4077-A606-9AF4B5B172A8}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{CA04CAA4-198B-4F30-BE17-1E7E0434F73E}" ShortID="76223274">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="30"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BigBrickReverseRumble" ID="{FF6138C2-1C40-4077-A606-9AF4B5B172A8}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Brick_StartBigUndo" ID="{2215FCED-0FFE-4712-B41F-146B96683519}">
+									<ChildrenList>
+										<Action Name="" ID="{5444D1A0-2045-4653-83B1-28BC0C3FF9C1}" ShortID="27464501">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="42"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BigBrickReverse" ID="{3164E687-A433-4088-A91E-65CC7653AD17}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{9B1221F5-E38D-4BCA-B750-A2968AD2DDAD}" ShortID="417569019">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BigBrickReverse" ID="{3164E687-A433-4088-A91E-65CC7653AD17}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{CF3E864C-F7F8-4F64-8AA5-1349EECEDC9A}" ShortID="707944438">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="29"/>
+												<Property Name="Highpass" Type="int16" Value="30"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BigBrickReverseRumble" ID="{FF6138C2-1C40-4077-A606-9AF4B5B172A8}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{C097793A-641E-4E04-AF41-C98C83F74A67}" ShortID="8555845">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="16"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BigBrickReverseRumble" ID="{FF6138C2-1C40-4077-A606-9AF4B5B172A8}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{51FDF625-9CA7-4E85-9DF1-DA5BBE627597}" ShortID="242180340">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BigBrickReverseRumble" ID="{FF6138C2-1C40-4077-A606-9AF4B5B172A8}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Brick_BigUndoCancel" ID="{1A02EEF5-6D1A-47E8-924F-0A90870DD8FC}">
+									<ChildrenList>
+										<Action Name="" ID="{1BFC55FE-3876-4DCA-9D39-245979515816}" ShortID="907739061">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BigBrickReverseRumble" ID="{FF6138C2-1C40-4077-A606-9AF4B5B172A8}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Player Events" ID="{7DC762B1-921A-4625-9FB3-E7867BAD1984}" ShortID="803210255">
@@ -385,6 +495,17 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Play_Checkpoint" ID="{85A90BB2-0190-45EE-9C3A-E17C769A7C17}">
+					<ChildrenList>
+						<Action Name="" ID="{EAC2C105-3FBB-4E78-B1B7-5526291F91A6}" ShortID="1038022039">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Checkpoint" ID="{6F9F295B-7D4C-4112-8CD6-EE9487937B11}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
