@@ -107,6 +107,9 @@ public class PlayerMovement : MonoBehaviour
         if (context.canceled)
         {
             _Animator.SetBool("isWalking", false);
+
+            _Animator.SetFloat("lastInputX", _MoveDir.x);
+            _Animator.SetFloat("lastInputY", _MoveDir.y);
         }
 
         _MoveDir = context.ReadValue<Vector2>();
