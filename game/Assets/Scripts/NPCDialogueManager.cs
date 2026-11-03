@@ -35,9 +35,17 @@ public class NPCDialogueManager : MonoBehaviour
     public float TypeSpeed = 0.05f;
     private IEnumerator _DialogueCoroutine;
 
+    [Header("NPC Think Bubble")]
+    private Animator _Animator;
+    private IEnumerator _AnimationCoroutine;
+
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        _Animator = GetComponentInChildren<Animator>();
+
         dialogueTransform = _DialogueBox.transform as RectTransform;
         _NPCList = GameObject.FindGameObjectsWithTag(_NPCTag).ToList();
         foreach (GameObject npcObject in _NPCList)
@@ -64,8 +72,6 @@ public class NPCDialogueManager : MonoBehaviour
         _LocalCanvas.SetActive(true);
         _NameText.text = npc.NPCName;
 
-
-
         foreach (string line in npc.DialogueLines)
         {
             _DialogueText.text = "";
@@ -87,6 +93,17 @@ public class NPCDialogueManager : MonoBehaviour
         StopTalking();
     }
 
+    private IEnumerator StartAnimation()
+    {
+        while (_NPCTalking)
+        {
+            _Animator.SetBool("isActive", true);
+        }
+
+        _Animator.SetBool("isActive", false);
+        yield return null;
+    }
+
     private void StopTalking()
     {
         _NPCActive = false;
@@ -98,6 +115,8 @@ public class NPCDialogueManager : MonoBehaviour
         _ScreenDialogueText.text = "";
         _ScreenCanvas.SetActive(false);
         _ScreenNameText.text = "";
+
+        _Animator.SetBool("isActive", false);
     }
 
     private void NPCActivate(GameObject npcObject, bool enterExit)
@@ -109,12 +128,15 @@ public class NPCDialogueManager : MonoBehaviour
             {
                 _NPCActive = true;
                 _DialogueCoroutine = StartDia();
+                _AnimationCoroutine = StartAnimation();
                 StartCoroutine(_DialogueCoroutine);
+                StartCoroutine(_AnimationCoroutine);
             }
         }
         else
         {
             StopCoroutine(_DialogueCoroutine);
+            StopCoroutine(_AnimationCoroutine);
             StopTalking();
         }
     }
