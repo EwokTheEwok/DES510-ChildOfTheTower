@@ -1,0 +1,49 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "202033071",
+    "Type": "Bus",
+    "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+    "Language": "SFX",
+    "Hash": "{3FF9CFB2-BCEE-CF8E-FDBE-2BCFA3C38EF5}",
+    "ObjectPath": "Reverb_Tower",
+    "ShortName": "Reverb_Tower",
+    "Path": "Bus/Reverb_Tower.bnk",
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "3442768367",
+       "Name": "Hall_Large_Dark",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Halls\\Hall_Large_Dark",
+       "GUID": "{0F6A7D6D-131C-4650-9561-FC05F5C7A37B}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      }
+     ]
+    },
+    "AuxBusses": [
+     {
+      "Id": "202033071",
+      "Name": "Reverb_Tower",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+      "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+      "Color": "7",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "3442768367"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{AD1ADE2D-5F50-8B21-662C-02FA51ADC12C}"
+ }
+}

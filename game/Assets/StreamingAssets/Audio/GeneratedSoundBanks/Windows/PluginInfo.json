@@ -1,0 +1,47 @@
+{
+ "PluginInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "PluginLibs": [
+   {
+    "LibName": "Wwise Parametric EQ",
+    "LibId": "6881283",
+    "Type": "Effect",
+    "DLL": "AkParametricEQ",
+    "StaticLib": "AkParametricEQFX"
+   },
+   {
+    "LibName": "Wwise RoomVerb",
+    "LibId": "7733251",
+    "Type": "Effect",
+    "DLL": "AkRoomVerb",
+    "StaticLib": "AkRoomVerbFX"
+   },
+   {
+    "LibName": "Wwise Meter",
+    "LibId": "8454147",
+    "Type": "Effect",
+    "DLL": "AkMeter",
+    "StaticLib": "AkMeterFX"
+   },
+   {
+    "LibName": "System",
+    "LibId": "11403271",
+    "Type": "AudioDevice"
+   },
+   {
+    "LibName": "No Output",
+    "LibId": "11862023",
+    "Type": "AudioDevice"
+   },
+   {
+    "LibName": "Ak Sidechain Send",
+    "LibId": "12648451",
+    "Type": "Effect",
+    "DLL": "AkSidechain",
+    "StaticLib": "AkSidechainFX"
+   }
+  ],
+  "FileHash": "{5D9423CA-99A7-A5F2-2FF1-0244D8E40A2C}"
+ }
+}
