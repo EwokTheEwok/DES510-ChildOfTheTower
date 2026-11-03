@@ -17,7 +17,6 @@ public class NPCDialogueManager : MonoBehaviour
     [SerializeField] private GameObject _LocalCanvas;
     [SerializeField] private GameObject _DialogueBox;
     [SerializeField] private GameObject _NameBox;
-    [SerializeField] private TMP_Text _DialogueText;
     [SerializeField] private TMP_Text _NameText;
     private RectTransform dialogueTransform;
 
@@ -74,12 +73,10 @@ public class NPCDialogueManager : MonoBehaviour
 
         foreach (string line in npc.DialogueLines)
         {
-            _DialogueText.text = "";
             _ScreenDialogueText.text = "";
 
             foreach (char c in line)
             {
-                _DialogueText.text += c;
                 _ScreenDialogueText.text += c;
                 yield return new WaitForSeconds(TypeSpeed);
             }
@@ -108,7 +105,6 @@ public class NPCDialogueManager : MonoBehaviour
     {
         _NPCActive = false;
         _NPCTalking = false;
-        _DialogueText.text = "";
         _LocalCanvas.SetActive(false);
         _NameText.text = "";
         
