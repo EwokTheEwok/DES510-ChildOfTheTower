@@ -90,16 +90,16 @@ public class NPCDialogueManager : MonoBehaviour
         StopTalking();
     }
 
-    private IEnumerator StartAnimation()
-    {
-        while (_NPCTalking)
-        {
-            _Animator.SetBool("isActive", true);
-        }
+    //private IEnumerator StartAnimation()
+    //{
+    //    while (_NPCTalking)
+    //    {
+    //        //_Animator.SetBool("isActive", true);
+    //    }
 
-        _Animator.SetBool("isActive", false);
-        yield return null;
-    }
+    //    _Animator.SetBool("isActive", false);
+    //    yield return null;
+    //}
 
     private void StopTalking()
     {
@@ -112,7 +112,7 @@ public class NPCDialogueManager : MonoBehaviour
         _ScreenCanvas.SetActive(false);
         _ScreenNameText.text = "";
 
-        _Animator.SetBool("isActive", false);
+        //_Animator.SetBool("isActive", false);
     }
 
     private void NPCActivate(GameObject npcObject, bool enterExit)
@@ -124,15 +124,15 @@ public class NPCDialogueManager : MonoBehaviour
             {
                 _NPCActive = true;
                 _DialogueCoroutine = StartDia();
-                _AnimationCoroutine = StartAnimation();
+                //_AnimationCoroutine = StartAnimation();
                 StartCoroutine(_DialogueCoroutine);
-                StartCoroutine(_AnimationCoroutine);
+                //StartCoroutine(_AnimationCoroutine);
             }
         }
         else
         {
             StopCoroutine(_DialogueCoroutine);
-            StopCoroutine(_AnimationCoroutine);
+            //StopCoroutine(_AnimationCoroutine);
             StopTalking();
         }
     }
