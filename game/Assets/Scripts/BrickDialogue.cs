@@ -15,10 +15,11 @@ public class BrickDialogue : MonoBehaviour
 
     private bool _IsRandomTalking = false;
     private bool _IsTargetedTalking = false;
+    private bool _NearNPC;
     public bool _BlockActive;
 
     public float _DisplayDelay = 5.0f;
-    public float _NewLineDelay = 10.0f;
+    //public float _NewLineDelay = 10.0f;
     public float _BetweenLineDelay;
     public float height = 3f;
 
@@ -43,7 +44,7 @@ public class BrickDialogue : MonoBehaviour
 
         brickSprite();
 
-        _BetweenLineDelay = Random.Range(10.0f, 25.0f);
+       //_BetweenLineDelay = Random.Range(10.0f, 25.0f);
     }
 
    private void brickSprite()
@@ -55,7 +56,7 @@ public class BrickDialogue : MonoBehaviour
         {
             StopTalking();
         }
-        else if (_BlockActive == false && !_IsRandomTalking)
+        else if (_BlockActive == false && !_IsRandomTalking && !_NearNPC)
         {
             _RandomDialogueCoroutine = RandomDialogue();
             StartCoroutine(_RandomDialogueCoroutine);
@@ -65,7 +66,7 @@ public class BrickDialogue : MonoBehaviour
     private IEnumerator RandomDialogue()
     {
         _IsRandomTalking = true;
-
+        _BetweenLineDelay = Random.Range(10.0f, 25.0f);
         yield return new WaitForSeconds(_BetweenLineDelay);
 
         while (true)
@@ -84,7 +85,8 @@ public class BrickDialogue : MonoBehaviour
             yield return new WaitForSeconds(Mathf.Abs(_DisplayDelay));
 
             BrickBox.SetActive(false);
-            yield return new WaitForSeconds(Mathf.Abs(_NewLineDelay));
+            _BetweenLineDelay = Random.Range(10.0f, 25.0f);
+            yield return new WaitForSeconds(Mathf.Abs(_BetweenLineDelay));
         }
     }
 
@@ -121,6 +123,7 @@ public class BrickDialogue : MonoBehaviour
     {
         if (collision.CompareTag("NPC"))
         {
+            _NearNPC = true;
             StopTalking();
         }
         else if (collision.CompareTag("Block Dialogue 0"))
@@ -145,8 +148,12 @@ public class BrickDialogue : MonoBehaviour
 
     private void OnTriggerExit(Collider collision)
     {
-            StopTalking();
-            _RandomDialogueCoroutine = RandomDialogue();
-            StartCoroutine(_RandomDialogueCoroutine);
+        if (collision.CompareTag("NPC"))
+        {
+            _NearNPC = false;
+        }
+        StopTalking();
+        _RandomDialogueCoroutine = RandomDialogue();
+        StartCoroutine(_RandomDialogueCoroutine);
     }
 }

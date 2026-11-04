@@ -43,7 +43,7 @@ public class NPCDialogueManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _Animator = GetComponentInChildren<Animator>();
+        _Animator = GetComponentInChildren<Animator>(true);
 
         dialogueTransform = _DialogueBox.transform as RectTransform;
         _NPCList = GameObject.FindGameObjectsWithTag(_NPCTag).ToList();
@@ -64,30 +64,33 @@ public class NPCDialogueManager : MonoBehaviour
     {
         _NPCTalking = true;
         NPC npc = _CurrentNPC.GetComponent<NPC>();
-
-        _ScreenCanvas.SetActive(true);
         _ScreenNameText.text = npc.NPCName;
-
-        _LocalCanvas.SetActive(true);
         _NameText.text = npc.NPCName;
 
-        foreach (string line in npc.DialogueLines)
+
+        while (true)
         {
-            _ScreenDialogueText.text = "";
+            _LocalCanvas.SetActive(true);
+            _ScreenCanvas.SetActive(true);
+            _Animator.SetBool("isActive", true);
 
-            foreach (char c in line)
+            foreach (string line in npc.DialogueLines)
             {
-                _ScreenDialogueText.text += c;
-                yield return new WaitForSeconds(TypeSpeed);
+                _ScreenDialogueText.text = "";
+
+                foreach (char c in line)
+                {
+                    _ScreenDialogueText.text += c;
+                    yield return new WaitForSeconds(TypeSpeed);
+                }
+                yield return new WaitForSeconds(_LineDelay);
             }
-            yield return new WaitForSeconds(_LineDelay);
+
+            _ScreenCanvas.SetActive(false);
+            _LocalCanvas.SetActive(false);
+            _Animator.SetBool("isActive", false);
+            yield return new WaitForSeconds(Mathf.Abs(_EndDelay - _LineDelay));
         }
-
-        _ScreenCanvas.SetActive(false);
-        _LocalCanvas.SetActive(false);
-        yield return new WaitForSeconds(Mathf.Abs(_EndDelay - _LineDelay));
-
-        StopTalking();
     }
 
     private IEnumerator StartAnimation()
@@ -124,15 +127,15 @@ public class NPCDialogueManager : MonoBehaviour
             {
                 _NPCActive = true;
                 _DialogueCoroutine = StartDia();
-                _AnimationCoroutine = StartAnimation();
+                //_AnimationCoroutine = StartAnimation();
                 StartCoroutine(_DialogueCoroutine);
-                StartCoroutine(_AnimationCoroutine);
+                //StartCoroutine(_AnimationCoroutine);
             }
         }
         else
         {
             StopCoroutine(_DialogueCoroutine);
-            StopCoroutine(_AnimationCoroutine);
+            //StopCoroutine(_AnimationCoroutine);
             StopTalking();
         }
     }
