@@ -124,7 +124,7 @@ public class NPCDialogueManager : MonoBehaviour
         _ScreenCanvas.SetActive(false);
         _ScreenNameText.text = "";
 
-        _Animator.SetBool("isActive", false);
+        //_Animator.SetBool("isActive", false);
     }
 
     private void NPCActivate(GameObject npcObject, bool enterExit)
