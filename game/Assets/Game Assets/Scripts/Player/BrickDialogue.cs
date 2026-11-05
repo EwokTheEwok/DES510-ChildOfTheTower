@@ -16,7 +16,7 @@ public class BrickDialogue : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent<GameObject> _RandomBrickDialogueEvent = new();
-    public UnityEvent<GameObject> _BrickDialogueEvent = new();
+    public UnityEvent<GameObject, int> _BrickDialogueEvent = new();
 
     private bool _IsRandomTalking = false;
     private bool _IsTargetedTalking = false;
@@ -104,7 +104,7 @@ public class BrickDialogue : MonoBehaviour
 
         BrickBox.SetActive(true);
         BrickText.text = "";
-        _BrickDialogueEvent?.Invoke(BrickBox);
+        _BrickDialogueEvent?.Invoke(BrickBox, index);
 
         foreach (char c in targetedLines[index])
         {

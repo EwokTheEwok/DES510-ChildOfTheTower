@@ -10,12 +10,28 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Brick_StartBigUndo" ID="{2215FCED-0FFE-4712-B41F-146B96683519}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_ContinueBigUndo" ID="{FEB90FBB-54FD-4DB1-BC56-89E1B9FDD14A}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_Shadows" ID="{94F97942-AB3A-49D3-9187-72739ACAAE1C}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Brick_BigUndoCancel" ID="{1A02EEF5-6D1A-47E8-924F-0A90870DD8FC}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Stop_Shadows" ID="{0DB25F3A-F317-49F4-8A7D-4672DDC6A109}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
 							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Checkpoint" ID="{85A90BB2-0190-45EE-9C3A-E17C769A7C17}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="4" Y="2"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>
@@ -92,6 +108,30 @@
 						<Module>
 							<ObjectRef Name="Play_Land" ID="{A9B495E2-E378-4FC9-BAA4-DC4CF1BBAA53}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
 							<Position X="1" Y="0"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="VO Test" ID="{A7A4B120-16D8-4B5E-837B-076855194049}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_Margaret" ID="{C1FFFB56-A7A7-4365-98DC-83F0A3B6DFC9}" WorkUnitID="{4C10E9B3-8ACB-4868-99C5-C304CEFB04A9}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Thomas" ID="{CDF2C187-B9FB-40B5-BFDF-835A42013C30}" WorkUnitID="{4C10E9B3-8ACB-4868-99C5-C304CEFB04A9}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_IntroLoop" ID="{5141A12A-7C53-4A7C-8E8D-98DE16D8F73D}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Peter" ID="{4AE30758-788D-494E-AB05-FDC59CFD6716}" WorkUnitID="{4C10E9B3-8ACB-4868-99C5-C304CEFB04A9}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Transition_MainLoop" ID="{27124751-2513-4E35-BAF6-513B2DBDB2AC}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="2" Y="2"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>

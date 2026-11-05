@@ -21,17 +21,24 @@ namespace AK
         static const AkUniqueID BRICK_05 = 11539578U;
         static const AkUniqueID BRICK_06 = 11539577U;
         static const AkUniqueID BRICK_07 = 11539576U;
+        static const AkUniqueID BRICK_BIGUNDOCANCEL = 739199831U;
+        static const AkUniqueID BRICK_CONTINUEBIGUNDO = 1901158208U;
         static const AkUniqueID BRICK_PLACEMENTERROR = 1579460802U;
         static const AkUniqueID BRICK_REVERSE = 2599784423U;
+        static const AkUniqueID BRICK_STARTBIGUNDO = 1150887483U;
         static const AkUniqueID BRICKMODE_START = 2475923824U;
         static const AkUniqueID MUSICAMBTEST = 1200446142U;
         static const AkUniqueID PLAY_AMB_OUTDOOR_LVL1 = 3813572857U;
+        static const AkUniqueID PLAY_CHECKPOINT = 2962822744U;
         static const AkUniqueID PLAY_FALLING = 913957623U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
         static const AkUniqueID PLAY_INTROLOOP = 528465658U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_LAND = 4285282925U;
+        static const AkUniqueID PLAY_MARGARET = 2321812079U;
+        static const AkUniqueID PLAY_PETER = 3201150064U;
         static const AkUniqueID PLAY_SHADOWS = 3234418437U;
+        static const AkUniqueID PLAY_THOMAS = 3273402534U;
         static const AkUniqueID PLAY_TITLELOOP = 1355629322U;
         static const AkUniqueID START_MUSIC = 540993415U;
         static const AkUniqueID STOP_SHADOWS = 3212186303U;
@@ -108,7 +115,9 @@ namespace AK
         static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID SFX_DUCKING = 3093856314U;
+        static const AkUniqueID SFX_GENERAL = 515334391U;
         static const AkUniqueID SFX_PLAYER = 217780010U;
+        static const AkUniqueID VO = 1534528548U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES
