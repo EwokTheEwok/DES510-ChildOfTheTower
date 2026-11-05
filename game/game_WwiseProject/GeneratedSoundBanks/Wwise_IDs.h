@@ -35,7 +35,10 @@ namespace AK
         static const AkUniqueID PLAY_INTROLOOP = 528465658U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_LAND = 4285282925U;
+        static const AkUniqueID PLAY_MARGARET = 2321812079U;
+        static const AkUniqueID PLAY_PETER = 3201150064U;
         static const AkUniqueID PLAY_SHADOWS = 3234418437U;
+        static const AkUniqueID PLAY_THOMAS = 3273402534U;
         static const AkUniqueID PLAY_TITLELOOP = 1355629322U;
         static const AkUniqueID START_MUSIC = 540993415U;
         static const AkUniqueID STOP_SHADOWS = 3212186303U;
@@ -114,6 +117,7 @@ namespace AK
         static const AkUniqueID SFX_DUCKING = 3093856314U;
         static const AkUniqueID SFX_GENERAL = 515334391U;
         static const AkUniqueID SFX_PLAYER = 217780010U;
+        static const AkUniqueID VO = 1534528548U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES

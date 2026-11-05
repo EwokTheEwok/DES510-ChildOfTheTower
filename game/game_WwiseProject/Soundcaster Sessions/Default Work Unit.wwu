@@ -111,6 +111,30 @@
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>
+				<SoundcasterSession Name="VO Test" ID="{A7A4B120-16D8-4B5E-837B-076855194049}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_Margaret" ID="{C1FFFB56-A7A7-4365-98DC-83F0A3B6DFC9}" WorkUnitID="{4C10E9B3-8ACB-4868-99C5-C304CEFB04A9}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Thomas" ID="{CDF2C187-B9FB-40B5-BFDF-835A42013C30}" WorkUnitID="{4C10E9B3-8ACB-4868-99C5-C304CEFB04A9}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_IntroLoop" ID="{5141A12A-7C53-4A7C-8E8D-98DE16D8F73D}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Peter" ID="{4AE30758-788D-494E-AB05-FDC59CFD6716}" WorkUnitID="{4C10E9B3-8ACB-4868-99C5-C304CEFB04A9}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Transition_MainLoop" ID="{27124751-2513-4E35-BAF6-513B2DBDB2AC}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>

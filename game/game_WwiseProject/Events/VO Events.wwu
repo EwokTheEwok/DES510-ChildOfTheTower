@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{4C10E9B3-8ACB-4868-99C5-C304CEFB04A9}" SchemaVersion="133">
+	<Events>
+		<WorkUnit Name="VO Events" ID="{4C10E9B3-8ACB-4868-99C5-C304CEFB04A9}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="2"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="Play_Thomas" ID="{CDF2C187-B9FB-40B5-BFDF-835A42013C30}">
+					<ChildrenList>
+						<Action Name="" ID="{BC00262E-2670-49BD-9EA2-FF49DD86C00C}" ShortID="844821362">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RMC_Thomas" ID="{D093C8EE-2FF8-4A6B-A683-A50A46DC7B08}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Margaret" ID="{C1FFFB56-A7A7-4365-98DC-83F0A3B6DFC9}">
+					<ChildrenList>
+						<Action Name="" ID="{070F474F-7A34-4362-9FEC-66B488EB58E2}" ShortID="532354672">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RMC_Margaret" ID="{051BFC8F-339A-4420-AAC7-1695911F0A45}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Peter" ID="{4AE30758-788D-494E-AB05-FDC59CFD6716}">
+					<ChildrenList>
+						<Action Name="" ID="{A5E7DE1D-0023-44B6-88FD-C3741DDE2A15}" ShortID="842996733">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RMC_Peter" ID="{1998E3CC-A2C3-4D3C-8EAB-B3CA77FD7F9D}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
