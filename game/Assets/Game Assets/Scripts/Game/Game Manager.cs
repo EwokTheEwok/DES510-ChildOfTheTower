@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
     private void Restart()
     {
         CharacterController chara = _Player.GetComponent<CharacterController>();
+        BlockController2 controller2 = _Player.GetComponent<BlockController2>();
+        controller2.Reset();
         Vector3 restartPosition = _CurrentCheckpoint.GetComponent<Checkpoint>().RestartPosition();
         _ShadowOcean.transform.position = restartPosition + new Vector3(0f, _ResetDistance, 0f);
         chara.enabled = false;

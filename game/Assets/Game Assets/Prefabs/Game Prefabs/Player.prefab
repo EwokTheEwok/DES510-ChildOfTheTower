@@ -314,6 +314,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BlockController2
   _CinemachineCamera: {fileID: 5769029285310065178}
   _MissingBlockSprite: {fileID: 7990186544507595983}
+  _MissingBubbleDistance: 15
+  _DistanceWarning: 17.5
+  _DistanceLimit: 20
+  _RetrievalDistance: 7.5
   _PlaceRange: 5
   _MaxNearbyNodes: 5
   _BlockNodeLayer:
@@ -321,7 +325,7 @@ MonoBehaviour:
     m_Bits: 256
   _BlockLimit: 10
   _BlockSize: 2
-  _BlockRayScale: 1.25
+  _BlockRayScale: 0.95
   _BlockEasing: 4
   _TweenDuration: 0.25
   _GuideBlockPrefab: {fileID: 2741366402790427780, guid: fefcb85cb12b5c940b655160ec18117a, type: 3}
