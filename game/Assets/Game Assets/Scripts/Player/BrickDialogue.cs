@@ -1,6 +1,7 @@
-using UnityEngine;
-using TMPro;
 using System.Collections;
+using TMPro;
+using UnityEngine;
+using UnityEngine.Events;
 
 public class BrickDialogue : MonoBehaviour
 {
@@ -13,9 +14,15 @@ public class BrickDialogue : MonoBehaviour
     [SerializeField] private string[] targetedLines;
     [SerializeField] private float TypeSpeed = 0.05f;
 
+    [Header("Events")]
+    public UnityEvent<GameObject> _RandomBrickDialogueEvent = new();
+    public UnityEvent<GameObject> _BrickDialogueEvent = new();
+
     private bool _IsRandomTalking = false;
     private bool _IsTargetedTalking = false;
     private bool _NearNPC;
+
+    [Header("Brick Box Parameters")]
     public bool _BlockActive;
 
     public float _DisplayDelay = 5.0f;
@@ -74,6 +81,7 @@ public class BrickDialogue : MonoBehaviour
             
             BrickBox.SetActive(true);
             BrickText.text = "";
+            _RandomBrickDialogueEvent?.Invoke(BrickBox);
 
             int lineIndex = Random.Range(0, BrickLines.Length);
             foreach (char c in BrickLines[lineIndex])
@@ -96,6 +104,7 @@ public class BrickDialogue : MonoBehaviour
 
         BrickBox.SetActive(true);
         BrickText.text = "";
+        _BrickDialogueEvent?.Invoke(BrickBox);
 
         foreach (char c in targetedLines[index])
         {

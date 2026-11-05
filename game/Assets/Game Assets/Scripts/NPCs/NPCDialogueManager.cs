@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NPCDialogueManager : MonoBehaviour
 {
@@ -36,7 +37,11 @@ public class NPCDialogueManager : MonoBehaviour
 
     [Header("NPC Think Bubble")]
     private Animator _Animator;
-    private IEnumerator _AnimationCoroutine;
+
+    [Header("Events")]
+    public UnityEvent<GameObject> _PeterEvent = new();
+    public UnityEvent<GameObject> _MargaretEvent = new();
+    public UnityEvent<GameObject> _ThomasEvent = new();
 
 
 
@@ -78,11 +83,26 @@ public class NPCDialogueManager : MonoBehaviour
             {
                 _ScreenDialogueText.text = "";
 
-                foreach (char c in line)
+                if (_NameText.text == "Peter")
                 {
-                    _ScreenDialogueText.text += c;
-                    yield return new WaitForSeconds(TypeSpeed);
+                    _PeterEvent?.Invoke(_CurrentNPC);
+
+                } else if (_NameText.text == "Margaret")
+                {
+                    _MargaretEvent?.Invoke(_CurrentNPC);
+
                 }
+                else if (_NameText.text == "Thomas")
+                {
+                    _ThomasEvent?.Invoke(_CurrentNPC);
+
+                }
+
+                foreach (char c in line)
+                    {
+                        _ScreenDialogueText.text += c;
+                        yield return new WaitForSeconds(TypeSpeed);
+                    }
                 yield return new WaitForSeconds(_LineDelay);
             }
 
@@ -91,17 +111,6 @@ public class NPCDialogueManager : MonoBehaviour
             _Animator.SetBool("isActive", false);
             yield return new WaitForSeconds(Mathf.Abs(_EndDelay - _LineDelay));
         }
-    }
-
-    private IEnumerator StartAnimation()
-    {
-        while (_NPCTalking)
-        {
-            _Animator.SetBool("isActive", true);
-        }
-
-        _Animator.SetBool("isActive", false);
-        yield return null;
     }
 
     private void StopTalking()
