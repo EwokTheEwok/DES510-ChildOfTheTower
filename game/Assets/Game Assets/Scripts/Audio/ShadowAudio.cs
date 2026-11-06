@@ -42,7 +42,7 @@ public class ShadowAudio : MonoBehaviour
     {
         AkUnitySoundEngine.SetRTPCValue("RTPC_ShadowDistance", distance);
 
-        Debug.Log(distance);
+        //Debug.Log(distance);
 
         if (distance < _playerDistanceThreshold && !_isPlaying)
         {
