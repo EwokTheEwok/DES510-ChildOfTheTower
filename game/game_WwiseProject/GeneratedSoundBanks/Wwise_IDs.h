@@ -29,6 +29,18 @@ namespace AK
         static const AkUniqueID BRICKMODE_START = 2475923824U;
         static const AkUniqueID MUSICAMBTEST = 1200446142U;
         static const AkUniqueID PLAY_AMB_OUTDOOR_LVL1 = 3813572857U;
+        static const AkUniqueID PLAY_BRICKVO_RANDOM_01 = 2497241616U;
+        static const AkUniqueID PLAY_BRICKVO_RANDOM_02 = 2497241619U;
+        static const AkUniqueID PLAY_BRICKVO_RANDOM_03 = 2497241618U;
+        static const AkUniqueID PLAY_BRICKVO_RANDOM_04 = 2497241621U;
+        static const AkUniqueID PLAY_BRICKVO_RANDOM_05 = 2497241620U;
+        static const AkUniqueID PLAY_BRICKVO_RANDOM_06 = 2497241623U;
+        static const AkUniqueID PLAY_BRICKVO_TARGETED_01 = 3764927779U;
+        static const AkUniqueID PLAY_BRICKVO_TARGETED_02 = 3764927776U;
+        static const AkUniqueID PLAY_BRICKVO_TARGETED_03 = 3764927777U;
+        static const AkUniqueID PLAY_BRICKVO_TARGETED_04 = 3764927782U;
+        static const AkUniqueID PLAY_BRICKVO_TARGETED_05 = 3764927783U;
+        static const AkUniqueID PLAY_BRICKVO_TARGETED_06 = 3764927780U;
         static const AkUniqueID PLAY_CHECKPOINT = 2962822744U;
         static const AkUniqueID PLAY_FALLING = 913957623U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
@@ -65,6 +77,22 @@ namespace AK
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace BRICKBUILDING
+
+        namespace BRICKDIALOGUE
+        {
+            static const AkUniqueID GROUP = 3262895538U;
+
+            namespace STATE
+            {
+                static const AkUniqueID LINE01 = 144016646U;
+                static const AkUniqueID LINE02 = 144016645U;
+                static const AkUniqueID LINE03 = 144016644U;
+                static const AkUniqueID LINE04 = 144016643U;
+                static const AkUniqueID LINE05 = 144016642U;
+                static const AkUniqueID LINE06 = 144016641U;
+                static const AkUniqueID NONE = 748895195U;
+            } // namespace STATE
+        } // namespace BRICKDIALOGUE
 
         namespace LEVEL
         {
