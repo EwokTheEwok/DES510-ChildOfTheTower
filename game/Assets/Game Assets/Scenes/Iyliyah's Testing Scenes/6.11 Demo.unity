@@ -6254,6 +6254,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 56089ff3650e8ed49a2b4dbe1fd64c73, type: 3}
   m_PrefabInstance: {fileID: 641081731}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &648104147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 648104148}
+  - component: {fileID: 648104150}
+  - component: {fileID: 648104149}
+  m_Layer: 0
+  m_Name: MusicSwitchCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &648104148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648104147}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 92.51, y: 2.89, z: -15.89}
+  m_LocalScale: {x: 3.7911, y: 10.7446785, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1507188312}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &648104149
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648104147}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &648104150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 648104147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14ee48f0e3ffc934e8f284f88d5cac22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TriggerMusicLoop
+  TriggerLevelMusicLoop:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 20b9165b41849a64a866be5f4b9effe1, type: 2}
 --- !u!1 &652560481
 GameObject:
   m_ObjectHideFlags: 0
@@ -6754,7 +6824,6 @@ GameObject:
   - component: {fileID: 732420548}
   - component: {fileID: 732420547}
   - component: {fileID: 732420546}
-  - component: {fileID: 732420549}
   m_Layer: 0
   m_Name: Camera Swap
   m_TagString: CameraZones
@@ -6814,22 +6883,6 @@ Transform:
   - {fileID: 545180965}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &732420549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 732420545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14ee48f0e3ffc934e8f284f88d5cac22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TriggerMusicLoop
-  TriggerLevelMusicLoop:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 20b9165b41849a64a866be5f4b9effe1, type: 2}
 --- !u!1 &733051969
 GameObject:
   m_ObjectHideFlags: 0
@@ -8033,7 +8086,7 @@ MonoBehaviour:
     want to die."
   - Haha, <i>cough cough </i> a glowing girl, I must be dreaming.
   - Your light is comforting, little one, I may survive this yet.
-  NPCName: Margret
+  NPCName: Margaret
 --- !u!54 &826911215
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11361,6 +11414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1157644980}
   - component: {fileID: 1157644979}
+  - component: {fileID: 1157644981}
   m_Layer: 0
   m_Name: NPCDialogueManager
   m_TagString: Untagged
@@ -11396,13 +11450,49 @@ MonoBehaviour:
   TypeSpeed: 0.05
   _PeterEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1157644981}
+        m_TargetAssemblyTypeName: NPCDialogue, Assembly-CSharp
+        m_MethodName: PlayPeterAudio
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _MargaretEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1157644981}
+        m_TargetAssemblyTypeName: NPCDialogue, Assembly-CSharp
+        m_MethodName: PlayMargAudio
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _ThomasEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1157644981}
+        m_TargetAssemblyTypeName: NPCDialogue, Assembly-CSharp
+        m_MethodName: PlayThomasAudio
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &1157644980
 Transform:
   m_ObjectHideFlags: 0
@@ -11420,6 +11510,30 @@ Transform:
   - {fileID: 1335566452}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1157644981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157644978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfc72469bf1734468322fe4ccf1a88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  PeterDialogueAudio:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c204af37674f2304797608296b2f379f, type: 2}
+  MargDialogueAudio:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8d2a30645733f2d4db67ac9338e19518, type: 2}
+  ThomasDialogueAudio:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ee249daf299c4984eafd33d4347f16cd, type: 2}
 --- !u!1 &1165300713
 GameObject:
   m_ObjectHideFlags: 0
@@ -16171,6 +16285,7 @@ Transform:
   - {fileID: 2096485159}
   - {fileID: 135824724}
   - {fileID: 135232387}
+  - {fileID: 648104148}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1513726018
