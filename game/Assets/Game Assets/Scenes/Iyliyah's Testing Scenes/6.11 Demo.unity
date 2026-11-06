@@ -7356,7 +7356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -830, y: -440}
+  m_AnchoredPosition: {x: -830, y: -140}
   m_SizeDelta: {x: 1200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &787005235
@@ -13624,7 +13624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 1
+  m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -20953,18 +20953,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 1377364740272849210, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: _MaxSpeed
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1377364740272849210, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: _MoveAccel
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1377364740272849210, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: _MoveDeaccel
-      value: 50
-      objectReference: {fileID: 0}
     - target: {fileID: 2528598960761816714, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.2258615
@@ -21020,10 +21008,6 @@ PrefabInstance:
     - target: {fileID: 6426290106275089524, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: CameraDistance
       value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7191902283495994130, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      propertyPath: _MissingBlockSprite
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7623583972299738441, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_SizeDelta.x
