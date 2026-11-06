@@ -49,8 +49,7 @@ public class PlayerBlockUI : MonoBehaviour {
     [HideInInspector] public RectTransform blockUILeft;
     [HideInInspector] public RectTransform blockUIRight;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void Awake()
     {
         _UIObject = Instantiate(_BlockUIPrefab);
         Transform uiTransform = _UIObject.transform;
@@ -61,10 +60,15 @@ public class PlayerBlockUI : MonoBehaviour {
         recoverPanel = uiTransform.Find("Recover").gameObject;
         _BlockTilePanel = uiTransform.Find("Player Panel/Block Tile Panel").gameObject;
 
+        blockUIUp = uiTransform.Find("Arrow Panel/Up").gameObject.transform as RectTransform;
+        blockUIDown = uiTransform.Find("Arrow Panel/Down").gameObject.transform as RectTransform;
+        blockUILeft = uiTransform.Find("Arrow Panel/Left").gameObject.transform as RectTransform;
+        blockUIRight = uiTransform.Find("Arrow Panel/Right").gameObject.transform as RectTransform;
+
         _BlockTileList = new BlockTile[_MaxBlockTiles];
         for (int i = 0; i < _BlockTileList.Length; i++)
         {
-            BlockTile tile = new ();
+            BlockTile tile = new();
             _BlockTileList[i] = tile;
             tile.empty = Instantiate(_EmptyBlockTilePrefab, _BlockTilePanel.transform);
             tile.full = Instantiate(_FullBlockTilePrefab, _BlockTilePanel.transform);
@@ -75,13 +79,12 @@ public class PlayerBlockUI : MonoBehaviour {
             if (i < _ActiveTileCount)
                 _BlockTileList[i].SetActive(true);
         }
+    }
+
+    void Start()
+    {
         Vector3 localPos = _BlockTilePanel.transform.localPosition;
         _BlockTilePanel.transform.localPosition = new Vector3(-((_ActiveTileCount - 1f) * _TileSize * 0.5f) - (_PixelSpacing * 0.5f * (_ActiveTileCount - 1f)), localPos.y, localPos.z);
-
-        blockUIUp = uiTransform.Find("Arrow Panel/Up").gameObject.transform as RectTransform;
-        blockUIDown = uiTransform.Find("Arrow Panel/Down").gameObject.transform as RectTransform;
-        blockUILeft = uiTransform.Find("Arrow Panel/Left").gameObject.transform as RectTransform;
-        blockUIRight = uiTransform.Find("Arrow Panel/Right").gameObject.transform as RectTransform;
     }
 
     // Update is called once per frame
