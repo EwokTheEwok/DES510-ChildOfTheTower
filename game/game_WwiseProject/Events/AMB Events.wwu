@@ -12,6 +12,8 @@
 						<Action Name="" ID="{E9E05823-BADE-45B6-AE0F-102E3065F2EA}" ShortID="649043755">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="BypassGameParameterInternalTransition" Type="bool" Value="True"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
@@ -20,6 +22,10 @@
 							</ReferenceList>
 						</Action>
 						<Action Name="" ID="{293DBF25-1BFF-4842-9918-43355F832E98}" ShortID="512921754">
+							<PropertyList>
+								<Property Name="FadeInCurve" Type="int16" Value="5"/>
+								<Property Name="FadeTime" Type="Real64" Value="3"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="BLC_Ambience" ID="{0CDB9107-013F-4B82-8225-9ED01BD38F66}" WorkUnitID="{62A7DCA5-8F9D-473B-BD55-46E25E3FE3D1}"/>

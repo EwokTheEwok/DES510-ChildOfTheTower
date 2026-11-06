@@ -9,10 +9,20 @@
 			<ChildrenList>
 				<Event Name="Play_TitleLoop" ID="{55A2DF37-CDAD-4E14-9553-F710D0374D35}">
 					<ChildrenList>
+						<Action Name="" ID="{95D259D2-8F46-4458-9FD0-7F8F528E310F}" ShortID="1030736926">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Title" ID="{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{661C324E-8F74-4246-BC65-2E42633E0A83}" ShortID="429082348">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="Titleloop" ID="{E6090C6A-45F9-4672-BEE7-DAD7501CED16}" WorkUnitID="{6C3C909C-86D2-4B3E-93D4-FD4C2DADD8D7}"/>
+									<ObjectRef Name="MSW_Master" ID="{BA9BC550-36F4-480B-8895-4D0BD3267772}" WorkUnitID="{6C3C909C-86D2-4B3E-93D4-FD4C2DADD8D7}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -39,13 +49,6 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Intro" ID="{9505323B-7767-41A2-A7C4-50A4C81FBE95}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{2FCB56FD-BCE9-468D-935B-77D2A4B85D04}" ShortID="805614185">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MSW_Lvl1" ID="{E1995D58-DB3D-480F-9D26-A7ED221ECA7C}" WorkUnitID="{6C3C909C-86D2-4B3E-93D4-FD4C2DADD8D7}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

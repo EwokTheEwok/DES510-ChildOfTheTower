@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{BDE04A16-7DA5-9ABC-8259-66112FDD0E01}",
+    "Hash": "{0C4581AF-9213-12DE-B8FA-359CA8BC809C}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -6172,40 +6172,10 @@
       "ObjectPath": "\\Events\\Music Events\\Lvl1 Events\\Play_IntroLoop",
       "GUID": "{5141A12A-7C53-4A7C-8E8D-98DE16D8F73D}",
       "Color": "24",
-      "DurationType": "Infinite",
-      "MediaRefs": [
-       {
-        "Id": "797308141"
-       }
-      ],
-      "SwitchContainers": [
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "4257138351",
-         "Id": "1125500713",
-         "GUID": "{9505323B-7767-41A2-A7C4-50A4C81FBE95}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "220746774"
-         }
-        ]
-       },
-       {
-        "SwitchValue": {
-         "GroupType": "State",
-         "GroupId": "4257138351",
-         "Id": "1257464028",
-         "GUID": "{44EEFD56-F979-4D14-B3FC-6410C4CA368A}"
-        },
-        "MediaRefs": [
-         {
-          "Id": "51018325"
-         }
-        ]
-       }
-      ],
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
       "ActionSetState": [
        {
         "GroupId": "2782712965",
@@ -6550,9 +6520,98 @@
       "GUID": "{55A2DF37-CDAD-4E14-9553-F710D0374D35}",
       "Color": "24",
       "DurationType": "Infinite",
-      "MediaRefs": [
+      "SwitchContainers": [
        {
-        "Id": "999715590"
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "141331490",
+         "GUID": "{863C7175-F5DA-4DC0-B5C4-53BC5F074DDB}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "797308141"
+         }
+        ],
+        "Children": [
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "4257138351",
+           "Id": "1125500713",
+           "GUID": "{9505323B-7767-41A2-A7C4-50A4C81FBE95}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "220746774"
+           }
+          ]
+         },
+         {
+          "SwitchValue": {
+           "GroupType": "State",
+           "GroupId": "4257138351",
+           "Id": "1257464028",
+           "GUID": "{44EEFD56-F979-4D14-B3FC-6410C4CA368A}"
+          },
+          "MediaRefs": [
+           {
+            "Id": "51018325"
+           }
+          ]
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "141331489",
+         "GUID": "{9FC27A63-68FE-47C0-BA0E-77310CA275B5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "554800566"
+         },
+         {
+          "Id": "892562092"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "3705726509",
+         "GUID": "{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "999715590"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "141331488",
+         "GUID": "{E3F8CBF0-7A13-49BF-B957-A8DDC7832151}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "778946377"
+         }
+        ]
+       }
+      ],
+      "ActionSetState": [
+       {
+        "GroupId": "2782712965",
+        "Id": "3705726509",
+        "Name": "Title",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\Title",
+        "GUID": "{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}"
        }
       ]
      },
@@ -6853,6 +6912,6 @@
     ]
    }
   ],
-  "FileHash": "{B9D450EE-4419-D0EE-C58F-D63E8A0FE643}"
+  "FileHash": "{1D18AF06-412C-C1AA-06B7-579EC2C86480}"
  }
 }
