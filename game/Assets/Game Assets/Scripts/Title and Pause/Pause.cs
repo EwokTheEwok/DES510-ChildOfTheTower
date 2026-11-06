@@ -9,16 +9,14 @@ public class Pause : MonoBehaviour
 
     public GameObject PauseMenu;
     public GameObject ControlsMenu;
-    public GameObject resumeButton;
-    public GameObject quitButton;
-    public GameObject controlsButton;
+    public GameObject resumeButton; //button in slot zero
 
     EventSystem eventSystemScript;
+
 
     private void Start()
     {
         eventSystemScript = GameObject.Find("EventSystem").GetComponent<EventSystem>();
-        eventSystemScript.SetSelectedGameObject(resumeButton); 
     }
 
     // Update is called once per frame
@@ -48,14 +46,13 @@ public class Pause : MonoBehaviour
             //if the game is not paused and the pause menu isnt up the display the control screen
             if (!isPaused && !pauseUp)
             {
-
+                
                 ControlScreen();
 
                 //if the game is paused and the pause menu is up the display the control screen and turn off the pause screen
             }
             else if (isPaused && pauseUp)
             {
-
                 ControlScreen();
 
             // resume game
@@ -68,35 +65,11 @@ public class Pause : MonoBehaviour
             }
 
         }
-        else if (Input.GetKeyDown(KeyCode.KeypadEnter))
-        {
-
-            //if the game is not paused and the pause menu isnt up the display the control screen
-            if (!isPaused && !pauseUp)
-            {
-
-                ControlScreen();
-
-                //if the game is paused and the pause menu is up the display the control screen and turn off the pause screen
-            }
-            else if (isPaused && pauseUp)
-            {
-
-                ControlScreen();
-
-                // resume game
-            }
-            else
-            {
-
-                ResumeGame();
-
-            }
-
-        }
+        
     }
 
-    void PauseGame()
+
+    public void PauseGame()
     {
         ControlsMenu.SetActive(false);
         PauseMenu.SetActive(true);
@@ -105,14 +78,7 @@ public class Pause : MonoBehaviour
         controlsUp = false;
     }
 
-    public void TitleScreenFirstButton()
-    {
-        //This highlight the first button of the TitleScreen, to make it possible to use the keyboard and gamepad
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(resumeButton);
-    }
-
-    void ResumeGame()
+    public void ResumeGame()
     {
         PauseMenu.SetActive(false);
         ControlsMenu.SetActive(false);
@@ -121,13 +87,15 @@ public class Pause : MonoBehaviour
         controlsUp = false;
     }
 
-    void ControlScreen()
+    public void ControlScreen()
     {
         PauseMenu.SetActive(false);
         ControlsMenu.SetActive(true);
         isPaused = true;
         pauseUp = false;
         controlsUp = true;
+        EventSystem.current.SetSelectedGameObject(resumeButton);
+        Debug.Log(EventSystem.current.currentSelectedGameObject);
     }
 
     public void Quit()
