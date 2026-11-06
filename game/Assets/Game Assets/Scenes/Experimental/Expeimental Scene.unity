@@ -273,35 +273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6573b7a496be7ff4385e74130e034bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlockController2
---- !u!114 &243356424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243356417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4964f75feaea3e45b3c40768e5d1085, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerBlockUI
-  _FullBlockTilePrefab: {fileID: 2314352381051752257, guid: 06eb67ee8187cb448a6daaccbab75c86, type: 3}
-  _EmptyBlockTilePrefab: {fileID: 343124191256748773, guid: 8a355bbab46b3ad409d70734ca50ab14, type: 3}
-  _BlockUIPrefab: {fileID: 4426684099784562912, guid: 347bd05a054a400458d449c4493cc538, type: 3}
-  _MaxBlockTiles: 20
-  _PixelSpacing: 5
-  _TileSize: 32
-  _ActiveTileCount: 1
-  _RecoverFadeTime: 2
-  playerPanel: {fileID: 0}
-  crossPanel: {fileID: 0}
-  arrowPanel: {fileID: 0}
-  placePanel: {fileID: 0}
-  recoverPanel: {fileID: 0}
-  blockUIUp: {fileID: 0}
-  blockUIDown: {fileID: 0}
-  blockUILeft: {fileID: 0}
-  blockUIRight: {fileID: 0}
 --- !u!1 &436758139
 GameObject:
   m_ObjectHideFlags: 0
@@ -2211,10 +2182,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 118030202727208779, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 243356424}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
 --- !u!1 &2091302952
 GameObject:

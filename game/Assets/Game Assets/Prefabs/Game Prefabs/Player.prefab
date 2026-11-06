@@ -104,8 +104,8 @@ GameObject:
   - component: {fileID: 7990201974574080657}
   - component: {fileID: 2989873134638656984}
   - component: {fileID: 1377364740272849210}
-  - component: {fileID: 2616679917670658456}
   - component: {fileID: 7191902283495994130}
+  - component: {fileID: 2616679917670658456}
   - component: {fileID: 7791501579481661791}
   m_Layer: 0
   m_Name: Player
@@ -337,35 +337,6 @@ MonoBehaviour:
   _MinFallDistance: 1
   blockController: {fileID: 7191902283495994130}
   _BlockActive: 0
---- !u!114 &2616679917670658456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 118030202727208779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4964f75feaea3e45b3c40768e5d1085, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerBlockUI
-  _FullBlockTilePrefab: {fileID: 2314352381051752257, guid: 06eb67ee8187cb448a6daaccbab75c86, type: 3}
-  _EmptyBlockTilePrefab: {fileID: 343124191256748773, guid: 8a355bbab46b3ad409d70734ca50ab14, type: 3}
-  _BlockUIPrefab: {fileID: 4426684099784562912, guid: 347bd05a054a400458d449c4493cc538, type: 3}
-  _MaxBlockTiles: 20
-  _PixelSpacing: 5
-  _TileSize: 32
-  _ActiveTileCount: 1
-  _RecoverFadeTime: 2
-  playerPanel: {fileID: 0}
-  crossPanel: {fileID: 0}
-  arrowPanel: {fileID: 0}
-  placePanel: {fileID: 0}
-  recoverPanel: {fileID: 0}
-  blockUIUp: {fileID: 0}
-  blockUIDown: {fileID: 0}
-  blockUILeft: {fileID: 0}
-  blockUIRight: {fileID: 0}
 --- !u!114 &7191902283495994130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,6 +412,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2616679917670658456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118030202727208779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4964f75feaea3e45b3c40768e5d1085, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBlockUI
+  _FullBlockTilePrefab: {fileID: 2314352381051752257, guid: 06eb67ee8187cb448a6daaccbab75c86, type: 3}
+  _EmptyBlockTilePrefab: {fileID: 343124191256748773, guid: 8a355bbab46b3ad409d70734ca50ab14, type: 3}
+  _BlockUIPrefab: {fileID: 4426684099784562912, guid: 347bd05a054a400458d449c4493cc538, type: 3}
+  _MaxBlockTiles: 20
+  _PixelSpacing: 5
+  _TileSize: 32
+  _ActiveTileCount: 1
+  _RecoverFadeTime: 2
+  playerPanel: {fileID: 0}
+  crossPanel: {fileID: 0}
+  arrowPanel: {fileID: 0}
+  placePanel: {fileID: 0}
+  recoverPanel: {fileID: 0}
+  blockUIUp: {fileID: 0}
+  blockUIDown: {fileID: 0}
+  blockUILeft: {fileID: 0}
+  blockUIRight: {fileID: 0}
 --- !u!114 &7791501579481661791
 MonoBehaviour:
   m_ObjectHideFlags: 0

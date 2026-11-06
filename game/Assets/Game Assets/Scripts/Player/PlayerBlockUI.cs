@@ -38,7 +38,8 @@ public class PlayerBlockUI : MonoBehaviour {
     BlockTile[] _BlockTileList;
 
     GameObject _UIObject;
-    GameObject _BlockTilePanel;
+
+    [HideInInspector] public GameObject _BlockTilePanel;
     [HideInInspector] public GameObject playerPanel;
     [HideInInspector] public GameObject crossPanel;
     [HideInInspector] public GameObject arrowPanel;
@@ -55,9 +56,9 @@ public class PlayerBlockUI : MonoBehaviour {
         Transform uiTransform = _UIObject.transform;
         arrowPanel = uiTransform.Find("Arrow Panel").gameObject;
         crossPanel = uiTransform.Find("Cross").gameObject;
-        playerPanel = uiTransform.Find("Player Panel").gameObject;
         placePanel = uiTransform.Find("Place").gameObject;
-        recoverPanel = uiTransform.Find("Recover").gameObject;
+        playerPanel = uiTransform.Find("Player Panel").gameObject;
+        recoverPanel = uiTransform.Find("Player Panel/Recover").gameObject;
         _BlockTilePanel = uiTransform.Find("Player Panel/Block Tile Panel").gameObject;
 
         blockUIUp = uiTransform.Find("Arrow Panel/Up").gameObject.transform as RectTransform;
