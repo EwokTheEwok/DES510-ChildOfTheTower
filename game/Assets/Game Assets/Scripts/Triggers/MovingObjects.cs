@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.Events;
 
 public class MovingObjects : MonoBehaviour
 {
     public Transform targetPosition;
     public float moveSpeed = 5f;
+    public float rotateSpeed = 90f;
     private bool isMoving;
 
     public void MoveBrick()
@@ -13,14 +13,13 @@ public class MovingObjects : MonoBehaviour
     }
 
     void Update()
-        //Moves the object from its original place to the new one witha  public speed variable
     {
         if (!isMoving) return;
 
-        transform.position = Vector3.MoveTowards
-            (transform.position, targetPosition.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition.position, moveSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation, targetPosition.rotation, rotateSpeed * Time.deltaTime);
 
-        if (transform.position == targetPosition.position)
+        if (transform.position == targetPosition.position && transform.rotation == targetPosition.rotation)
             isMoving = false;
     }
 }
