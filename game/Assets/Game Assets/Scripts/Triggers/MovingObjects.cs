@@ -13,6 +13,7 @@ public class MovingObjects : MonoBehaviour
     }
 
     void Update()
+        //Moves the object from its original place to the new one witha  public speed variable
     {
         if (!isMoving) return;
 
