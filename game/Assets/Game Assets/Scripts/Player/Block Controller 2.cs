@@ -602,17 +602,20 @@ public class BlockController2 : MonoBehaviour
 
     private void DisplayBubble()
     {
-        if (!_MissingBubbleActive && !IsClose(_MissingBubbleDistance))
-        {
-            _BubbleEvent?.Invoke(gameObject, true);
-            _MissingBubbleActive = true;
-            _MissingBlockSprite.SetActive(_MissingBubbleActive);
-        }
-        else
+        if (IsClose(_MissingBubbleDistance))
         {
             _BubbleEvent?.Invoke(gameObject, false);
             _MissingBubbleActive = false;
             _MissingBlockSprite.SetActive(_MissingBubbleActive);
+        } 
+        else
+        {
+            if (!_MissingBubbleActive)
+            {
+                _BubbleEvent?.Invoke(gameObject, true);
+                _MissingBubbleActive = true;
+                _MissingBlockSprite.SetActive(_MissingBubbleActive);
+            }
         }
     }
 }
