@@ -5,6 +5,25 @@ using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
+    private static GameManager _Instance;
+    public static GameManager Instance
+    {
+        get => _Instance;
+    }
+
+    [Header("Events")]
+    public UnityEvent<bool> _PauseEvent = new();
+    private bool _Paused = false;
+    public bool Paused
+    {
+        get => _Paused;
+        set
+        {
+            _Paused = value;
+            _PauseEvent?.Invoke(value);
+        }
+    }
+
     [Header("Checkpoint")]
     public string _CheckpointTag = "Checkpoint";
     private List<GameObject> _CheckpointList = new();
@@ -28,7 +47,18 @@ public class GameManager : MonoBehaviour
     public UnityEvent<GameObject> _CheckpointEvent = new();
     public UnityEvent _FallInShadowEvent = new();
 
-
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            _Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     void Start()
     {
         _CheckpointList = GameObject.FindGameObjectsWithTag(_CheckpointTag).ToList();
@@ -73,5 +103,10 @@ public class GameManager : MonoBehaviour
         _CurrentCheckpoint = checkpointObject;
         _CheckpointEvent?.Invoke(checkpointObject);
         Debug.Log("Checkpoint: " + _CheckpointList.IndexOf(_CurrentCheckpoint) + " Activated");
+    }
+
+    public void AddPauseListener(UnityAction<bool> call)
+    {
+        _PauseEvent.AddListener(call);
     }
 }
