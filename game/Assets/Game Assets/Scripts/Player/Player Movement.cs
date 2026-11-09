@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
     public float _JumpSpeed = 12.0f;
     public float _MoveAccel = 10.0f;
     public float _MoveDeaccel = 20.0f;
+    public float _FallingJumpTime = 0.25f;
+    float _FallingTimer = 0f;
+    bool _HasJumped = false;
+
     //Events
     [Header("Player Events")]
     public UnityEvent<GameObject> _JumpEvent;
@@ -56,31 +60,7 @@ public class PlayerMovement : MonoBehaviour
         _Animator.SetBool("isGrounded", _CharControl.isGrounded);
         _BlockActive = blockController.IsBlockActive();
 
-        //Falling
-        if (!_CharControl.isGrounded && _Velocity.y < 0)
-        {
-            _FallDistance += -_Velocity.y * deltaTime;
-
-            if(_Velocity.y < -5)
-            {
-               _Animator.SetTrigger("Falling");
-            }
-            else
-            {
-                _Animator.ResetTrigger("Falling");
-            }
-
-        } else
-        {
-            if (_FallDistance > _MinFallDistance)
-            {
-                _Animator.SetTrigger("Landed");
-            }
-            _FallDistance = 0.0f;
-            _Animator.ResetTrigger("Falling");
-        }
-
-        //Vertical movement (jump/gravity)
+        //Vertical movement (gravity)
         if (_CharControl.isGrounded && _Velocity.y < 0)
             _Velocity.y = -1.0f;
         else
@@ -93,6 +73,31 @@ public class PlayerMovement : MonoBehaviour
             _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(0f, _Velocity.y, 0f), _MoveDeaccel * deltaTime);
 
         _CharControl.Move(_Velocity * deltaTime);
+
+        if (!_CharControl.isGrounded)
+        {
+            _FallingTimer += deltaTime;
+
+            if (_Velocity.y < 0)
+                _FallDistance += -_Velocity.y * deltaTime;
+
+            if (_Velocity.y < -5)
+            {
+                _Animator.SetTrigger("Falling");
+            }
+        }
+        else
+        {
+            _HasJumped = false;
+            _FallingTimer = 0f;
+
+            if (_FallDistance > _MinFallDistance)
+            {
+                _Animator.SetTrigger("Landed");
+            }
+            _FallDistance = 0.0f;
+            _Animator.ResetTrigger("Falling");
+        }
     }
 
     public void SetControl(bool _value)
@@ -125,8 +130,9 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && _CharControl.isGrounded)
+        if (context.started && (_CharControl.isGrounded || _FallingTimer <= _FallingJumpTime) && !_HasJumped)
         {
+            _HasJumped = true;
             _Animator.SetTrigger("Jumping");
             _JumpEvent?.Invoke(gameObject);
             _Velocity.y = _JumpSpeed;
