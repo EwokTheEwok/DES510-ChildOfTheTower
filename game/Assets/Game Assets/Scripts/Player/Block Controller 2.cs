@@ -59,7 +59,7 @@ public class BlockController2 : MonoBehaviour
     bool _InputMove = false;
     bool _InputUndo = false;
     bool _FastRecover = false;
-    const float _FastRecoverDistance = 5f;
+    const float _FastRecoverDistance = 7f;
     const float _FastRecoverTime = 0.1f;
     const float _SlowRecoverTime = 0.25f;
     const float _FarThreshold = 20f;
@@ -606,14 +606,14 @@ public class BlockController2 : MonoBehaviour
     {
         if (IsClose(_MissingBubbleDistance))
         {
-            _BubbleEvent?.Invoke(gameObject, false);
             _MissingBubbleActive = false;
             _MissingBlockSprite.SetActive(_MissingBubbleActive);
         } 
         else
         {
-            if (!_MissingBubbleActive)
+            if (!_MissingBubbleActive && !_InputUndo)
             {
+                Debug.Log("bubble");
                 _BubbleEvent?.Invoke(gameObject, true);
                 _MissingBubbleActive = true;
                 _MissingBlockSprite.SetActive(_MissingBubbleActive);
