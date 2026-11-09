@@ -1,13 +1,9 @@
 using DG.Tweening;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using Unity.Cinemachine;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 
 public class BlockController2 : MonoBehaviour
 {
@@ -17,7 +13,7 @@ public class BlockController2 : MonoBehaviour
 
     [Header("Bubbles")]
     public float _MissingBubbleDistance = 15f;
-    public float _RetrievalDistance = 5f;
+    bool _MissingBubbleActive = false;
 
     [Header("Node")]
     public float _PlaceRange = 5f;
@@ -52,25 +48,20 @@ public class BlockController2 : MonoBehaviour
     public UnityEvent<int, GameObject> _BlockEvent = new();
     public UnityEvent<GameObject> _UndoEvent = new();
     public UnityEvent<GameObject> _LimitEvent = new();
+    public UnityEvent<GameObject, bool> _BubbleEvent = new();
 
     //Private
     [Header("States")]
     bool _Active = false;
     bool _IsMovingBlock = false;
-    bool _InputPlaceHold = false;
     bool _InputSwapAxis = false;
     bool _InputMove = false;
     bool _InputUndo = false;
     bool _FastRecover = false;
-    float _FastRecoverDistance = 5f;
-    float _FastRecoverTime = 0.1f;
-    float _SlowRecoverTime = 0.25f;
-
-    float _BlockHoldTimer = 0f;
-    float _BlockHoldThreshold = 0.5f;
-    readonly float _BlockHoldThresholdFast = 0.5f;
-    readonly float _BlockHoldThresholdSlow = 1.5f;
-    readonly float _FarThreshold = 20f;
+    const float _FastRecoverDistance = 5f;
+    const float _FastRecoverTime = 0.1f;
+    const float _SlowRecoverTime = 0.25f;
+    const float _FarThreshold = 20f;
 
     Vector2 _InputDir;
     Vector3 _InputModifierX;
@@ -117,8 +108,8 @@ public class BlockController2 : MonoBehaviour
             _PlayerBlockUI.arrowPanel.SetActive(canControl);
             _PlayerBlockUI.crossPanel.SetActive(!canControl);
             _PlayerBlockUI.crossPanel.transform.position = _Camera.WorldToScreenPoint(_Block.transform.position);
-            _MissingBlockSprite.SetActive(!IsClose(_MissingBubbleDistance));
 
+            DisplayBubble();
             UpdateControls(_Block.transform);
 
             if (MinDistance() > _FarThreshold)
@@ -159,44 +150,6 @@ public class BlockController2 : MonoBehaviour
                 _PlayerBlockUI.placePanel.SetActive(false);
             }
         }
-
-        /*
-        if (NearNodes() && !_Active)
-        {
-            GameObject nearestNode = NearestNode();
-            _GuideBlock.SetActive(true);
-            _GuideBlock.transform.position = nearestNode.transform.position;
-            _GuideBlock.transform.eulerAngles = new Vector3(0f, nearestNode.transform.rotation.eulerAngles.y, 0f);
-            _MissingBlockSprite.SetActive(false);
-            _PlayerBlockUI.placePanel.SetActive(true);
-            _PlayerBlockUI.placePanel.transform.position = _Camera.WorldToScreenPoint(_GuideBlock.transform.position);
-        }
-        else if (_Active)
-        {
-            bool canControl = CanControl();
-            _PlayerBlockUI.arrowPanel.SetActive(canControl);
-            _PlayerBlockUI.crossPanel.SetActive(!canControl);
-            _PlayerBlockUI.playerPanel.SetActive(true);
-
-            MissingBlock(out float distance);
-            if (distance > _FarThreshold)
-                _TrackingTarget.position = transform.position;
-            else
-                _TrackingTarget.position = Vector3.Lerp(transform.position, _Block.transform.position, 0.5f);
-
-            _CinemachineCamera.Target.TrackingTarget = _TrackingTarget;
-            _PlayerBlockUI.crossPanel.transform.position = _Camera.WorldToScreenPoint(_Block.transform.position);
-
-            UpdateControls(_Block.transform);
-            RetrieveVisual();
-        }
-        else
-        {
-            _PlayerBlockUI.placePanel.SetActive(false);
-            _GuideBlock.SetActive(false);
-            _MissingBlockSprite.SetActive(false);
-        }
-        */
     }
 
     private bool CanControl()
@@ -285,65 +238,6 @@ public class BlockController2 : MonoBehaviour
             _InputMove = true;
         else if (context.canceled)
             _InputMove = false;
-        /*
-        if (context.started && _Active && !_IsMovingBlock && CanControl())
-        {
-            _InputDir = context.ReadValue<Vector2>();
-            Transform blockTransform = _Block.transform;
-
-            Vector3 localX = _BlockSize * _InputDir.x * _InputModifierX;
-            Vector3 localY = _BlockSize * _InputDir.y * _InputModifierY;
-            Vector3 localXY = Vector3.zero;
-            localXY = localX + localY;
-
-            bool hit = Physics.BoxCast(
-                blockTransform.position,
-                blockTransform.localScale * 0.45f,
-                blockTransform.TransformDirection(localXY),
-                out RaycastHit hitInfo,
-                blockTransform.rotation,
-                _BlockSize * _BlockRayScale,
-                Physics.DefaultRaycastLayers,
-                QueryTriggerInteraction.Ignore);
-            Debug.DrawRay(blockTransform.position, blockTransform.TransformDirection(localXY) * _BlockRayScale, Color.white, 5);
-
-            if (!hit && _BlockList.Count < _BlockLimit)
-            {   //can move block
-                _IsMovingBlock = true;
-                _BlockEvent?.Invoke(_BlockList.Count, _Block);
-                Vector3 newBlockPlacement = blockTransform.position + blockTransform.TransformDirection(localXY);
-                _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation);
-                _TweenObject = _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => _IsMovingBlock = false);
-                _BlockList.Add(_Block);
-                _Block.SetActive(true);
-                _PlayerBlockUI.SetTile(_BlockList.Count - 1, true);
-            }
-            else if (hit && hitInfo.transform.gameObject.CompareTag("Block"))
-            {   //hit a block
-                int index = _BlockList.IndexOf(hitInfo.transform.gameObject);
-                if (index == _BlockList.Count - 2)
-                {   //hit previous block -> undo
-                    _IsMovingBlock = true;
-                    _UndoEvent?.Invoke(_Block);
-                    Vector3 previousPosition = _BlockList[^2].transform.position;
-                    _TweenObject = _Block.transform.DOMove(previousPosition, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => {
-                        _IsMovingBlock = false;
-                        _BlockList.RemoveAt(_BlockList.Count - 1);
-                        Destroy(_Block);
-                        _Block = _BlockList[^1];
-                    });
-                    _PlayerBlockUI.SetTile(_BlockList.Count - 1, false);
-                }
-                else
-                {   //hit non-block
-                    _LimitEvent?.Invoke(_Block);
-                }
-            }
-            else
-            {   //at block limit or hit non-block
-                _LimitEvent?.Invoke(_Block);
-            }
-        }*/
     }
 
     public void MoveBlock()
@@ -435,51 +329,6 @@ public class BlockController2 : MonoBehaviour
         }
         else if (context.canceled)
             _InputUndo = false;
-
-        /*
-        if (context.canceled && _Active && !_IsMovingBlock)
-        {
-            if (_BlockList.Count > 1)
-            {
-                _UndoEvent?.Invoke(_Block);
-                _IsMovingBlock = true;
-                Vector3 previousPosition = _BlockList[^2].transform.position;
-                _TweenObject = _Block.transform.DOMove(previousPosition, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => { 
-                    _IsMovingBlock = false;
-                    _BlockList.RemoveAt(_BlockList.Count - 1);
-                    Destroy(_Block);
-                    _Block = _BlockList[^1];
-                });
-                _PlayerBlockUI.SetTile(_BlockList.Count - 1, false);
-            }
-            else
-            {
-                _UndoEvent?.Invoke(_Block);
-                _Active = false;
-                _PlayerBlockUI.SetPanelsActive(false);
-                _AxisPlane.SetActive(false);
-                _PlayerMovement.SetControl(true);
-                _PlayerCamera.SetOctaMode();
-                _BlockList.RemoveAt(0);
-                Destroy(_Block);
-                _Block = null;
-                _CinemachineCamera.Target.TrackingTarget = transform;
-            }
-        }
-
-        if (context.started)
-            _InputPlaceHold = true;
-        if (context.canceled)
-        {   //Retrieve block after holding key
-            if (_BlockHoldTimer > _BlockHoldThreshold && _BlockList.Count != 0)
-            {
-                RetrieveBlock();
-            }
-
-            _InputPlaceHold = false;
-            _BlockHoldTimer = 0f;
-        }
-        */
     }
 
     public void UndoBlock()
@@ -667,30 +516,6 @@ public class BlockController2 : MonoBehaviour
         _PlayerBlockUI.blockUIRight.position = _Camera.WorldToScreenPoint(transform.position + _ArrowUIDistance * sign2 * xUI);
     }
 
-    private void RetrieveVisual()
-    {
-        if (_InputPlaceHold)
-        {
-            if (_BlockHoldTimer > _BlockHoldThreshold)
-            {
-                foreach (GameObject block in _BlockList)
-                {
-                    _PlayerBlockUI.SetColour(Color.softRed);
-                    block.GetComponent<Renderer>().material.color = Color.softRed;
-                }
-            }
-            else if (_BlockHoldTimer > 0.1f)
-            {
-                foreach (GameObject block in _BlockList)
-                {
-                    _PlayerBlockUI.SetColour(Color.lightPink);
-                    block.GetComponent<Renderer>().material.color = Color.lightPink;
-                }
-            }
-            _BlockHoldTimer += Time.deltaTime;
-        }
-    }
-
     private void BlockColor()
     {
         
@@ -713,29 +538,6 @@ public class BlockController2 : MonoBehaviour
                 block.GetComponent<Renderer>().material.color = Color.lightGray;
             }
         }
-        /*
-        _MissingBlockSprite.SetActive(displayBubble);
-
-        if (shortestDistance < _RetrievalDistance)
-        {
-            _BlockHoldThreshold = _BlockHoldThresholdFast;
-            foreach (GameObject block in _BlockList)
-            {
-                _PlayerBlockUI.SetColour(Color.white);
-                block.GetComponent<Renderer>().material.color = Color.white;
-            }
-        }
-        else
-        {
-            _BlockHoldThreshold = _BlockHoldThresholdSlow;
-            foreach (GameObject block in _BlockList)
-            {
-                _PlayerBlockUI.SetColour(Color.lightGray);
-                block.GetComponent<Renderer>().material.color = Color.lightGray;
-            }
-        }
-        distanceFromBlock = shortestDistance;
-        */
     }
 
     private bool IsClose(float threshold)
@@ -787,5 +589,21 @@ public class BlockController2 : MonoBehaviour
     public void Reset()
     {
         RetrieveBlock();
+    }
+
+    private void DisplayBubble()
+    {
+        if (!_MissingBubbleActive && !IsClose(_MissingBubbleDistance))
+        {
+            _BubbleEvent?.Invoke(gameObject, true);
+            _MissingBubbleActive = true;
+            _MissingBlockSprite.SetActive(_MissingBubbleActive);
+        }
+        else
+        {
+            _BubbleEvent?.Invoke(gameObject, false);
+            _MissingBubbleActive = false;
+            _MissingBlockSprite.SetActive(_MissingBubbleActive);
+        }
     }
 }
