@@ -10,11 +10,6 @@ public class Pause : MonoBehaviour
     public GameObject resumeButton;
     public GameObject controlResumeButton;
 
-    private void OnEnable()
-    {
-        TitleScreenFirstButton();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -26,36 +21,17 @@ public class Pause : MonoBehaviour
         {
             TitleScreenFirstButton();
 
-            if (isPaused)
+            if (!isPaused)
             {
-                ResumeGame();
-
-            }
-
-        } else if (Input.GetKeyDown(KeyCode.Tab)){
-
-            //if the game is not paused and the pause menu isnt up the display the control screen
-            if (!isPaused && !pauseUp)
-            {
-                
-                ControlScreen();
-
-                //if the game is paused and the pause menu is up the display the control screen and turn off the pause screen
-            }
-            else if (isPaused && pauseUp)
-            {
-                ControlScreen();
-
-            // resume game
+                PauseGame();
             }
             else
             {
-
                 ResumeGame();
-
             }
 
-        }
+
+        } 
         
     }
 
@@ -70,8 +46,6 @@ public class Pause : MonoBehaviour
     {
         PauseMenu.SetActive(true);
         isPaused = true;
-        pauseUp = true;
-        controlsUp = false;
     }
 
     public void Controls()
@@ -79,10 +53,7 @@ public class Pause : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(controlResumeButton);
         ControlsMenu.SetActive(true);
         PauseMenu.SetActive(false);
-        ControlsMenu.SetActive(false);
         isPaused = false;
-        pauseUp = false;
-        controlsUp = false;
     }
     public void ResumeGame()
     {
