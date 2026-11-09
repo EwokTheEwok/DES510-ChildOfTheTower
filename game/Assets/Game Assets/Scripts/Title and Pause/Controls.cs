@@ -8,6 +8,14 @@ public class Controls : MonoBehaviour
     public GameObject ControlsMenu;
     public GameObject resumeButton;
 
+    EventSystem eventSystemScript;
+
+    private void Start()
+    {
+        eventSystemScript = GameObject.Find("EventSystem").GetComponent<EventSystem>();
+        eventSystemScript.SetSelectedGameObject(resumeButton);
+    }
+
     // Update is called once per frame
     void Update()
     {
