@@ -114,15 +114,16 @@
 													<Property Name="FrequencyBand2" Type="Real32" Value="732.588"/>
 													<Property Name="FrequencyBand3" Type="Real32" Value="3582.791"/>
 													<Property Name="OnOffBand3" Type="bool" Value="True"/>
-													<Property Name="RangeBand2" Type="Real32" Value="-15"/>
+													<Property Name="RangeBand2" Type="Real32" Value="-18.4"/>
 													<Property Name="RangeBand3" Type="Real32" Value="-30"/>
-													<Property Name="ReleaseTimeBand2" Type="Real32" Value="0.03"/>
-													<Property Name="ThresholdBand2" Type="Real32" Value="-48.7"/>
-													<Property Name="ThresholdBand3" Type="Real32" Value="-48.5"/>
+													<Property Name="ReleaseTimeBand2" Type="Real32" Value="0.3"/>
+													<Property Name="ReleaseTimeBand3" Type="Real32" Value="0.3"/>
+													<Property Name="ThresholdBand2" Type="Real32" Value="-40"/>
+													<Property Name="ThresholdBand3" Type="Real32" Value="-51"/>
 												</PropertyList>
 												<ReferenceList>
 													<Reference Name="DynamicsSidechainRef">
-														<ObjectRef Name="Sidechain_Chkpnt" ID="{85564489-5015-4EAB-9BD4-60E35B8A1FBA}" WorkUnitID="{C62D698E-3D1B-450E-A789-AA66E9110234}"/>
+														<ObjectRef Name="Sidechain_UI" ID="{85564489-5015-4EAB-9BD4-60E35B8A1FBA}" WorkUnitID="{C62D698E-3D1B-450E-A789-AA66E9110234}"/>
 													</Reference>
 												</ReferenceList>
 											</Effect>
@@ -154,12 +155,12 @@
 													<Property Name="QFactorBand2" Type="Real32" Value="0.7"/>
 													<Property Name="QFactorBand3" Type="Real32" Value="1.2"/>
 													<Property Name="RangeBand1" Type="Real32" Value="-9.4"/>
-													<Property Name="RangeBand2" Type="Real32" Value="-11.3"/>
-													<Property Name="RangeBand3" Type="Real32" Value="-13.7"/>
+													<Property Name="RangeBand2" Type="Real32" Value="-15.7"/>
+													<Property Name="RangeBand3" Type="Real32" Value="-17.1"/>
 													<Property Name="RangeBand4" Type="Real32" Value="-13.2"/>
-													<Property Name="ReleaseTimeBand1" Type="Real32" Value="0.03"/>
-													<Property Name="ReleaseTimeBand2" Type="Real32" Value="0.03"/>
-													<Property Name="ReleaseTimeBand3" Type="Real32" Value="0.03"/>
+													<Property Name="ReleaseTimeBand1" Type="Real32" Value="0.5"/>
+													<Property Name="ReleaseTimeBand2" Type="Real32" Value="0.5"/>
+													<Property Name="ReleaseTimeBand3" Type="Real32" Value="0.5"/>
 													<Property Name="ReleaseTimeBand4" Type="Real32" Value="0.03"/>
 													<Property Name="ThresholdBand1" Type="Real32" Value="-20"/>
 													<Property Name="ThresholdBand2" Type="Real32" Value="-51"/>
@@ -169,6 +170,37 @@
 												<ReferenceList>
 													<Reference Name="DynamicsSidechainRef">
 														<ObjectRef Name="Sidechain_VO" ID="{A38CB986-486F-4AD1-8CF8-E3DE6835F74E}" WorkUnitID="{C62D698E-3D1B-450E-A789-AA66E9110234}"/>
+													</Reference>
+												</ReferenceList>
+											</Effect>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</EffectSlot>
+							<EffectSlot Name="" ID="{A87B5BFA-F42A-4BF3-92CE-0084FEF363B5}" ShortID="404315517">
+								<ReferenceList>
+									<Reference Name="Effect">
+										<Custom>
+											<Effect Name="Parametric EQ (Custom)" ID="{276F66FF-DFB8-48B8-A819-FD48DBC4564A}" ShortID="476441264" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+												<PropertyList>
+													<Property Name="AttackTimeBand2" Type="Real32" Value="0.05"/>
+													<Property Name="AttackTimeBand3" Type="Real32" Value="0.05"/>
+													<Property Name="DynamicsEnableBand2" Type="bool" Value="True"/>
+													<Property Name="DynamicsEnableBand3" Type="bool" Value="True"/>
+													<Property Name="FrequencyBand2" Type="Real32" Value="395.1616"/>
+													<Property Name="FrequencyBand3" Type="Real32" Value="2444.917"/>
+													<Property Name="OnOffBand1" Type="bool" Value="False"/>
+													<Property Name="OnOffBand3" Type="bool" Value="True"/>
+													<Property Name="RangeBand2" Type="Real32" Value="-30"/>
+													<Property Name="RangeBand3" Type="Real32" Value="-20"/>
+													<Property Name="ReleaseTimeBand2" Type="Real32" Value="0.3"/>
+													<Property Name="ReleaseTimeBand3" Type="Real32" Value="0.3"/>
+													<Property Name="ThresholdBand2" Type="Real32" Value="-40"/>
+													<Property Name="ThresholdBand3" Type="Real32" Value="-58.1"/>
+												</PropertyList>
+												<ReferenceList>
+													<Reference Name="DynamicsSidechainRef">
+														<ObjectRef Name="Sidechain_Chkpnt" ID="{43BE1211-151C-420A-ACD8-C20C31A59B28}" WorkUnitID="{C62D698E-3D1B-450E-A789-AA66E9110234}"/>
 													</Reference>
 												</ReferenceList>
 											</Effect>
@@ -438,14 +470,44 @@
 							</ReferenceList>
 							<ObjectLists>
 								<ObjectList Name="Effects">
-									<EffectSlot Name="" ID="{C0C46EC6-C645-4647-895D-B2E7F28C2592}" ShortID="230090223">
+									<EffectSlot Name="" ID="{5404009E-0711-416F-8610-856D5653E2B8}" ShortID="276013949">
 										<ReferenceList>
 											<Reference Name="Effect">
 												<Custom>
-													<Effect Name="Sidechain Send (Custom)" ID="{4395D7A6-9E6B-4ED7-AC02-5C49105C68CD}" ShortID="87619259" PluginName="Ak Sidechain Send" CompanyID="0" PluginID="193" PluginType="3">
+													<Effect Name="Sidechain Send (Custom)" ID="{56F8DD40-7E2C-4937-8CD8-9D5E3BAA3D9A}" ShortID="212568950" PluginName="Ak Sidechain Send" CompanyID="0" PluginID="193" PluginType="3">
 														<ReferenceList>
 															<Reference Name="SidechainRef">
-																<ObjectRef Name="Sidechain_Chkpnt" ID="{85564489-5015-4EAB-9BD4-60E35B8A1FBA}" WorkUnitID="{C62D698E-3D1B-450E-A789-AA66E9110234}"/>
+																<ObjectRef Name="Sidechain_Chkpnt" ID="{43BE1211-151C-420A-ACD8-C20C31A59B28}" WorkUnitID="{C62D698E-3D1B-450E-A789-AA66E9110234}"/>
+															</Reference>
+														</ReferenceList>
+													</Effect>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</EffectSlot>
+								</ObjectList>
+							</ObjectLists>
+						</Bus>
+						<Bus Name="SFX_UI" ID="{07F98257-9797-4624-8BB8-D0B54D9459D3}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="13"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+									<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
+								</Reference>
+							</ReferenceList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<EffectSlot Name="" ID="{A0C8A7F6-5EF6-48DB-AEA7-C987D4272D65}" ShortID="45118007">
+										<ReferenceList>
+											<Reference Name="Effect">
+												<Custom>
+													<Effect Name="Sidechain Send (Custom)" ID="{42ED2CAE-713C-40FD-AB14-4FFA1A04F17F}" ShortID="562807349" PluginName="Ak Sidechain Send" CompanyID="0" PluginID="193" PluginType="3">
+														<ReferenceList>
+															<Reference Name="SidechainRef">
+																<ObjectRef Name="Sidechain_UI" ID="{85564489-5015-4EAB-9BD4-60E35B8A1FBA}" WorkUnitID="{C62D698E-3D1B-450E-A789-AA66E9110234}"/>
 															</Reference>
 														</ReferenceList>
 													</Effect>

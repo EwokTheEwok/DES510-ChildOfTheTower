@@ -15,8 +15,8 @@ public class BrickDialogue : MonoBehaviour
     [SerializeField] private float TypeSpeed = 0.05f;
 
     [Header("Events")]
-    public UnityEvent<GameObject> _RandomBrickDialogueEvent = new();
-    public UnityEvent<GameObject, int> _BrickDialogueEvent = new();
+    public UnityEvent<int, GameObject> _RandomBrickDialogueEvent = new();
+    public UnityEvent<int, GameObject> _BrickDialogueEvent = new();
 
     private bool _IsRandomTalking = false;
     private bool _IsTargetedTalking = false;
@@ -81,9 +81,10 @@ public class BrickDialogue : MonoBehaviour
             
             BrickBox.SetActive(true);
             BrickText.text = "";
-            _RandomBrickDialogueEvent?.Invoke(BrickBox);
 
             int lineIndex = Random.Range(0, BrickLines.Length);
+            _RandomBrickDialogueEvent?.Invoke(lineIndex, BrickBox);
+
             foreach (char c in BrickLines[lineIndex])
             {
                 BrickText.text += c;
@@ -104,7 +105,7 @@ public class BrickDialogue : MonoBehaviour
 
         BrickBox.SetActive(true);
         BrickText.text = "";
-        _BrickDialogueEvent?.Invoke(BrickBox, index);
+        _BrickDialogueEvent?.Invoke(index, BrickBox);
 
         foreach (char c in targetedLines[index])
         {

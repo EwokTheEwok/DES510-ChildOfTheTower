@@ -506,6 +506,21 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="UI Events" ID="{F6ED4BF5-DAD8-4FC4-ACB3-9D021686707C}" ShortID="200528738">
+					<ChildrenList>
+						<Event Name="Play_UI_Standard" ID="{D70F1B7C-0298-4F92-AF09-AF9B6B36B9CC}">
+							<ChildrenList>
+								<Action Name="" ID="{ABD68D9B-C30A-4D0C-9641-AA0A28F7BEBE}" ShortID="139501466">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="RMC_UI_Standard" ID="{17B88AD7-8677-46CC-862D-DF62A7D3DB38}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
