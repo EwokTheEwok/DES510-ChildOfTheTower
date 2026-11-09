@@ -2,26 +2,16 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using EasyButtons;
+using EasyButtons.Editor;
+using System;
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _Instance;
     public static GameManager Instance
     {
-        get => _Instance;
-    }
-
-    [Header("Events")]
-    public UnityEvent<bool> _PauseEvent = new();
-    private bool _Paused = false;
-    public bool Paused
-    {
-        get => _Paused;
-        set
-        {
-            _Paused = value;
-            _PauseEvent?.Invoke(value);
-        }
+        get { return _Instance; }
     }
 
     [Header("Checkpoint")]
@@ -46,6 +36,19 @@ public class GameManager : MonoBehaviour
     public UnityEvent<float> _ShadowDistanceEvent = new();
     public UnityEvent<GameObject> _CheckpointEvent = new();
     public UnityEvent _FallInShadowEvent = new();
+    public UnityEvent<bool> _PauseEvent = new();
+
+    private bool _Paused = false;
+    public bool Paused
+    {
+        get => _Paused;
+        set
+        {
+            Debug.Log("Game Manager: Pause (" + value + ")");
+            _Paused = value;
+            _PauseEvent?.Invoke(value);
+        }
+    }
 
     void Awake()
     {
@@ -75,7 +78,7 @@ public class GameManager : MonoBehaviour
     {
         float distanceFromPlayer = _Player.transform.position.y - _ShadowOcean.transform.position.y;
         _ShadowDistanceEvent?.Invoke(distanceFromPlayer);
-        if (_Moving)
+        if (_Moving && _Paused)
         {
             float distanceFromMinimum = distanceFromPlayer - _MinDistance;
             float distanceScale = Mathf.Clamp(distanceFromMinimum / (_MaxDistance - _MinDistance), 0f, 1f);
@@ -108,5 +111,11 @@ public class GameManager : MonoBehaviour
     public void AddPauseListener(UnityAction<bool> call)
     {
         _PauseEvent.AddListener(call);
+    }
+
+    [Button(Mode = ButtonMode.EnabledInPlayMode)]
+    private void PausePlayGame()
+    {
+        Paused = !Paused;
     }
 }

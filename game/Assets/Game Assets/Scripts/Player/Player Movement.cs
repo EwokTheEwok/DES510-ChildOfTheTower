@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     Vector3 _Velocity;
     bool _MoveInput = false;
     Vector3 _WorldMoveDir;
-    bool _CanControl = true;
+    bool _Playing = true;
 
     //Animator
     private Animator _Animator;
@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.AddPauseListener(OnPause);
         _Camera = Camera.main;
         _CharControl = GetComponent<CharacterController>();
         _PlayerInput = GetComponent<PlayerInput>();
@@ -60,19 +61,22 @@ public class PlayerMovement : MonoBehaviour
         _Animator.SetBool("isGrounded", _CharControl.isGrounded);
         _BlockActive = blockController.IsBlockActive();
 
-        //Vertical movement (gravity)
-        if (_CharControl.isGrounded && _Velocity.y < 0)
-            _Velocity.y = -1.0f;
-        else
-            _Velocity.y -= _Gravity * deltaTime;
+        if (_Playing)
+        {
+            //Vertical movement (gravity)
+            if (_CharControl.isGrounded && _Velocity.y < 0)
+                _Velocity.y = -1.0f;
+            else
+                _Velocity.y -= _Gravity * deltaTime;
 
-        //Horizontral movement
-        if (_MoveInput && _CanControl)
-            _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(_WorldMoveDir.x * _MaxSpeed, _Velocity.y, _WorldMoveDir.z * _MaxSpeed), _MoveAccel * deltaTime);
-        else
-            _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(0f, _Velocity.y, 0f), _MoveDeaccel * deltaTime);
+            //Horizontral movement
+            if (_MoveInput)
+                _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(_WorldMoveDir.x * _MaxSpeed, _Velocity.y, _WorldMoveDir.z * _MaxSpeed), _MoveAccel * deltaTime);
+            else
+                _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(0f, _Velocity.y, 0f), _MoveDeaccel * deltaTime);
 
-        _CharControl.Move(_Velocity * deltaTime);
+            _CharControl.Move(_Velocity * deltaTime);
+        }
 
         if (!_CharControl.isGrounded)
         {
@@ -100,37 +104,35 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void SetControl(bool _value)
-    {
-        _CanControl = _value;
-    }
-
     public void OnMove(InputAction.CallbackContext context)
     {
-        _Animator.SetBool("isWalking", true);
-
-        if (context.canceled)
+        if (_Playing)
         {
-            _Animator.SetBool("isWalking", false);
+            _Animator.SetBool("isWalking", true);
 
-            _Animator.SetFloat("lastInputX", _MoveDir.x);
-            _Animator.SetFloat("lastInputY", _MoveDir.y);
+            if (context.canceled)
+            {
+                _Animator.SetBool("isWalking", false);
+
+                _Animator.SetFloat("lastInputX", _MoveDir.x);
+                _Animator.SetFloat("lastInputY", _MoveDir.y);
+            }
+
+            _MoveDir = context.ReadValue<Vector2>();
+
+            _Animator.SetFloat("inputX", _MoveDir.x);
+            _Animator.SetFloat("inputY", _MoveDir.y);
+
+            if (_MoveDir.magnitude > 0.0f)
+                _MoveInput = true;
+            else
+                _MoveInput = false;
         }
-
-        _MoveDir = context.ReadValue<Vector2>();
-
-        _Animator.SetFloat("inputX", _MoveDir.x);
-        _Animator.SetFloat("inputY", _MoveDir.y);
-
-        if (_MoveDir.magnitude > 0.0f)
-            _MoveInput = true;
-        else
-            _MoveInput = false;
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && (_CharControl.isGrounded || _FallingTimer <= _FallingJumpTime) && !_HasJumped)
+        if (context.started && (_CharControl.isGrounded || _FallingTimer <= _FallingJumpTime) && !_HasJumped && _Playing)
         {
             _HasJumped = true;
             _Animator.SetTrigger("Jumping");
@@ -142,11 +144,16 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void brickPlacement(int direction)
+    public void OnPlaceBrick(int direction)
     {
         Debug.Log("function fires");
         _Animator.SetFloat("brickPlaceX", direction);
         _Animator.SetTrigger("Placing");
 
+    }
+
+    public void OnPause(bool value)
+    {
+        _Playing = !value;
     }
 }

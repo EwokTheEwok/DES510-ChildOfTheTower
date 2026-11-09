@@ -149,7 +149,7 @@ public class BlockController : MonoBehaviour
             _ActiveSurface = true;
             _IsPlacing = true;
             _ActiveSurfaceID = _ClosestSurface.GetEntityId();
-            _PlayerMovement.SetControl(false);
+            //_PlayerMovement.SetControl(false);
             _Block = Instantiate(_BlockPrefab, _GuideBlock.transform.position, _GuideBlock.transform.rotation);
             _BlockList.Add(_Block);
 
@@ -166,7 +166,7 @@ public class BlockController : MonoBehaviour
             _CinemachineCamera.Target.TrackingTarget = _Block.transform;
 
             _IsPlacing = true;
-            _PlayerMovement.SetControl(false);
+            //_PlayerMovement.SetControl(false);
             _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
         } //control player
         else if (context.started && _IsPlacing)
@@ -175,7 +175,7 @@ public class BlockController : MonoBehaviour
 
             _BlockUI.SetActive(false);
             _IsPlacing = false;
-            _PlayerMovement.SetControl(true);
+            //_PlayerMovement.SetControl(true);
             _PlayerCamera.SetOctaMode();
         }
     }
@@ -239,7 +239,7 @@ public class BlockController : MonoBehaviour
                 Destroy(_Block);
                 _IsPlacing = false;
                 _ActiveSurface = false;
-                _PlayerMovement.SetControl(true);
+                //_PlayerMovement.SetControl(true);
                 _CinemachineCamera.Target.TrackingTarget = _PlayerTransform;
                 _PlayerCamera.SetOctaMode();
                 _BlockUI.SetActive(false);
