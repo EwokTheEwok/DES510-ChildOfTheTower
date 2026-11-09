@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{C4BE1484-CD91-3157-8784-A01804BC6507}",
+    "Hash": "{57A73ED6-5584-812F-2B34-9B695C7CEB5A}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -544,6 +544,14 @@
       "CachePath": "77/{77446F9D-E535-3623-1744-95ECA4C1A1A0}.wem"
      },
      {
+      "Id": "508304624",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickplaceanim_D_001.wav",
+      "CachePath": "41/{41CBFEA4-0EAF-89F7-F4B3-6481ADB5FD4B}.wem"
+     },
+     {
       "Id": "509693614",
       "Language": "SFX",
       "Streaming": "false",
@@ -944,6 +952,14 @@
       "CachePath": "FF/{FF6C8F7C-920B-4DC1-B4ED-C5AF54B72250}.wem"
      },
      {
+      "Id": "840410791",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickplaceanim_F#_001.wav",
+      "CachePath": "2E/{2E6F1BA4-31B4-59D2-C3E0-AFCD79BEE861}.wem"
+     },
+     {
       "Id": "840650511",
       "Language": "SFX",
       "Streaming": "false",
@@ -1144,6 +1160,14 @@
       "CachePath": "F3/{F34B5D0C-A9AA-8864-D1A8-E08BB6C7CB25}.wem"
      },
      {
+      "Id": "1009637837",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickplaceanim_G_001.wav",
+      "CachePath": "F8/{F818BE33-F6E5-A948-3576-37D5AF0540CB}.wem"
+     },
+     {
       "Id": "1009954480",
       "Language": "SFX",
       "Streaming": "false",
@@ -1174,6 +1198,14 @@
       "Location": "Memory",
       "ShortName": "sfx_uipopup_4_001.wav",
       "CachePath": "05/{056812C4-DF19-AE3D-AC8F-53645F6D4A74}.wem"
+     },
+     {
+      "Id": "1032581140",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_brickplaceanim_E_001.wav",
+      "CachePath": "63/{6324843E-10D5-2076-1E8D-C7875147C513}.wem"
      },
      {
       "Id": "1034894193",
@@ -6214,6 +6246,97 @@
       ]
      },
      {
+      "Id": "3876385978",
+      "Name": "Play_BrickPlace",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Play_BrickPlace",
+      "GUID": "{0C6A8132-0B43-4BCB-BF81-3ADDFB6E06E0}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "SwitchContainers": [
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "141331489",
+         "GUID": "{9FC27A63-68FE-47C0-BA0E-77310CA275B5}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "508304624"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "141331495",
+         "GUID": "{616BC274-61E1-4F64-8776-A9C822D71FF7}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "840410791"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "141331490",
+         "GUID": "{863C7175-F5DA-4DC0-B5C4-53BC5F074DDB}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1032581140"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "748895195",
+         "GUID": "{D7D2ED78-A347-4B9A-BCD8-D19CFA466400}",
+         "Default": "true"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1032581140"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "3705726509",
+         "GUID": "{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1032581140"
+         }
+        ]
+       },
+       {
+        "SwitchValue": {
+         "GroupType": "State",
+         "GroupId": "2782712965",
+         "Id": "141331488",
+         "GUID": "{E3F8CBF0-7A13-49BF-B957-A8DDC7832151}"
+        },
+        "MediaRefs": [
+         {
+          "Id": "1009637837"
+         }
+        ]
+       }
+      ]
+     },
+     {
       "Id": "2497241616",
       "Name": "Play_BrickVO_Random_01",
       "ObjectPath": "\\Events\\VO Events\\BrickDialogue\\Random Events\\Play_BrickVO_Random_01",
@@ -8481,6 +8604,6 @@
     ]
    }
   ],
-  "FileHash": "{D239AA03-EABE-338C-8AC9-1BDAF07B7806}"
+  "FileHash": "{32F09700-3A1F-479F-1098-661904388EA5}"
  }
 }
