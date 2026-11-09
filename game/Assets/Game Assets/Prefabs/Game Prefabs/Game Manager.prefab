@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4145705096927853203}
   - component: {fileID: 3783110859233431772}
+  - component: {fileID: 4077451109459590933}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -57,6 +58,28 @@ MonoBehaviour:
   _ShadowDistanceEvent:
     m_PersistentCalls:
       m_Calls: []
+  _CheckpointEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _FallInShadowEvent:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4077451109459590933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391773044381303615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e10b07720f70de429ed53fe559e911a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CheckpointAudio
+  CheckpointEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 14958b6fdbf71db42b01632976701d5a, type: 2}
 --- !u!1 &6036245783953171614
 GameObject:
   m_ObjectHideFlags: 0

@@ -122,11 +122,23 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Start_Music" ID="{9A97C6C1-0CEB-4330-A3F7-CD55E362B206}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_BrickVO_Random_01" ID="{F6649807-2DA8-470C-94A5-FEA029343D86}" WorkUnitID="{4C10E9B3-8ACB-4868-99C5-C304CEFB04A9}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_Thomas" ID="{CDF2C187-B9FB-40B5-BFDF-835A42013C30}" WorkUnitID="{4C10E9B3-8ACB-4868-99C5-C304CEFB04A9}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_IntroLoop" ID="{5141A12A-7C53-4A7C-8E8D-98DE16D8F73D}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_BrickVO_Targeted_01" ID="{579EBD46-97FC-410C-84F7-29277C505BF7}" WorkUnitID="{4C10E9B3-8ACB-4868-99C5-C304CEFB04A9}"/>
 							<Position X="1" Y="2"/>
 						</Module>
 						<Module>
@@ -135,7 +147,39 @@
 						</Module>
 						<Module>
 							<ObjectRef Name="Transition_MainLoop" ID="{27124751-2513-4E35-BAF6-513B2DBDB2AC}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_BrickVO_Targeted_06" ID="{7140695F-D5E7-4A00-B3AE-29EE3728C07D}" WorkUnitID="{4C10E9B3-8ACB-4868-99C5-C304CEFB04A9}"/>
 							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_UI_Standard" ID="{D70F1B7C-0298-4F92-AF09-AF9B6B36B9CC}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Checkpoint" ID="{85A90BB2-0190-45EE-9C3A-E17C769A7C17}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="4" Y="2"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
+				<SoundcasterSession Name="PlayPause Test" ID="{BFEDED63-A429-4A74-9C64-AD805E04500F}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="State_Play" ID="{11AE3E26-611F-4F40-9D44-C9A8F5480A62}" WorkUnitID="{3EB4204A-2BA8-4E8F-9C87-52AE27C69E25}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Amb_Outdoor_Lvl1" ID="{6E86CEA4-1E4C-4875-8530-3E74C1D5E6BA}" WorkUnitID="{8125A5EA-BE73-4683-A280-F78FA24B2ACE}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="State_Pause" ID="{9E9D4539-175A-4288-802A-5555F3E84A75}" WorkUnitID="{3EB4204A-2BA8-4E8F-9C87-52AE27C69E25}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Start_Music" ID="{9A97C6C1-0CEB-4330-A3F7-CD55E362B206}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="1" Y="2"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>

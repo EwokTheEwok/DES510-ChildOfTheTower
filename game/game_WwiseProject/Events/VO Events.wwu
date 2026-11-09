@@ -40,6 +40,270 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="BrickDialogue" ID="{E94A2869-F414-47A1-88AC-262638E6C5BB}" ShortID="314352114">
+					<ChildrenList>
+						<Folder Name="Random Events" ID="{C4374582-42B9-4A68-B341-C436C47B98FA}" ShortID="973144962">
+							<ChildrenList>
+								<Event Name="Play_BrickVO_Random_06" ID="{09275B58-513E-4786-AC1A-71ED630A5228}">
+									<ChildrenList>
+										<Action Name="" ID="{DDA0B8DC-E839-43F3-BC22-8D9FE553910F}" ShortID="958496956">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Line06" ID="{F2F35260-66FB-4949-B310-037B4DE24C9C}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{8FE8C19B-687C-4101-B3D5-A30EAE663449}" ShortID="834299421">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_Brick_Random" ID="{E410FF6A-5D4A-48CE-988E-AF38B8E28D84}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_BrickVO_Random_03" ID="{2B7AF368-1DED-46EB-AD7A-CB313D28AD46}">
+									<ChildrenList>
+										<Action Name="" ID="{45C5A833-D535-4CF3-AD35-E7567E667DB8}" ShortID="342612549">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Line03" ID="{52DCF6FD-7341-4029-B332-C1991D990295}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{89879F65-D5B1-471C-9E1A-34791268E863}" ShortID="389279889">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_Brick_Random" ID="{E410FF6A-5D4A-48CE-988E-AF38B8E28D84}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_BrickVO_Random_01" ID="{F6649807-2DA8-470C-94A5-FEA029343D86}">
+									<ChildrenList>
+										<Action Name="" ID="{EC5B7376-8B4A-40B4-87B0-3B8E750C56A1}" ShortID="773301427">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Line01" ID="{3C9CE16E-1919-45B1-8D1A-5DA4835C963A}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{274DEA2C-3C3A-4C4D-A257-6AB424BBFF6E}" ShortID="456106237">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_Brick_Random" ID="{E410FF6A-5D4A-48CE-988E-AF38B8E28D84}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_BrickVO_Random_05" ID="{CC98A6F0-4E83-4E3A-A2E0-9808CC5C3579}">
+									<ChildrenList>
+										<Action Name="" ID="{43354315-1DBE-4FB0-B050-DB8EF19609F4}" ShortID="427000258">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Line05" ID="{3CBF7EF3-5BBA-4692-8D21-600273E64384}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{7DDDA7FB-69BD-4A49-9312-A091AEC97A0E}" ShortID="167129194">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_Brick_Random" ID="{E410FF6A-5D4A-48CE-988E-AF38B8E28D84}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_BrickVO_Random_04" ID="{D8E3626E-8383-44BC-AFEC-465D3396394A}">
+									<ChildrenList>
+										<Action Name="" ID="{D2B67F83-92E9-4D17-ABE5-ECBDC381E618}" ShortID="516038392">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Line04" ID="{AA533DC0-430E-4BFA-96E2-52FE40F73CF1}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{20BEA07F-D3EE-4573-B609-5D1A1D456E62}" ShortID="639979882">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_Brick_Random" ID="{E410FF6A-5D4A-48CE-988E-AF38B8E28D84}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_BrickVO_Random_02" ID="{13942663-ED19-4388-947C-B1A5E2B9C41A}">
+									<ChildrenList>
+										<Action Name="" ID="{C75AF5BD-7773-4EFA-88D5-AC595DE61484}" ShortID="964876638">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Line02" ID="{AA767DBE-0E94-4479-94B4-98DC2D85A788}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{B9F97103-8F81-41E7-B001-3C88BA3331FF}" ShortID="320292323">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_Brick_Random" ID="{E410FF6A-5D4A-48CE-988E-AF38B8E28D84}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="Targeted Events" ID="{38CB68AE-A2C9-4DFC-AC08-2C275292ACB8}" ShortID="16802009">
+							<ChildrenList>
+								<Event Name="Play_BrickVO_Targeted_04" ID="{03AE9E43-3FA7-41A9-B704-1A35FF7407C2}">
+									<ChildrenList>
+										<Action Name="" ID="{FBA5937C-AB13-40A0-B07F-9447BDD05577}" ShortID="286904868">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Line04" ID="{AA533DC0-430E-4BFA-96E2-52FE40F73CF1}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{7A836872-2F55-49C0-95B3-C14BF34E9013}" ShortID="258978811">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_Brick_Targeted" ID="{9FA42DE8-2BDB-4B8C-84D0-2AC563FF13ED}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_BrickVO_Targeted_01" ID="{579EBD46-97FC-410C-84F7-29277C505BF7}">
+									<ChildrenList>
+										<Action Name="" ID="{E6A4B783-9561-485E-A5B1-5F841F052BC5}" ShortID="776158829">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Line01" ID="{3C9CE16E-1919-45B1-8D1A-5DA4835C963A}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{B0714FB1-4EC5-4904-A1B7-83D2C4746467}" ShortID="215424302">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_Brick_Targeted" ID="{9FA42DE8-2BDB-4B8C-84D0-2AC563FF13ED}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_BrickVO_Targeted_02" ID="{CCAE727A-CC6B-4695-8E20-FC05C8519269}">
+									<ChildrenList>
+										<Action Name="" ID="{67F30391-C2D1-4149-B8D2-3B03753D183A}" ShortID="774947996">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Line02" ID="{AA767DBE-0E94-4479-94B4-98DC2D85A788}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{EEEE48D7-75F2-4509-8D6C-B52FC57A4756}" ShortID="748580252">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_Brick_Targeted" ID="{9FA42DE8-2BDB-4B8C-84D0-2AC563FF13ED}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_BrickVO_Targeted_06" ID="{7140695F-D5E7-4A00-B3AE-29EE3728C07D}">
+									<ChildrenList>
+										<Action Name="" ID="{F30166D9-A32E-4C0B-B7C6-C7947740880F}" ShortID="929145162">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Line06" ID="{F2F35260-66FB-4949-B310-037B4DE24C9C}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{7BF50D76-E1A9-4F52-9AD8-347639879DB4}" ShortID="965210117">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_Brick_Targeted" ID="{9FA42DE8-2BDB-4B8C-84D0-2AC563FF13ED}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_BrickVO_Targeted_05" ID="{1158A48B-1F2D-46E9-9625-89BBB05023B1}">
+									<ChildrenList>
+										<Action Name="" ID="{8762DABB-FAAE-4B5B-94C2-B2F3B6462F90}" ShortID="1035261159">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Line05" ID="{3CBF7EF3-5BBA-4692-8D21-600273E64384}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{4FFE9D9C-F1F1-4CC2-B18E-EC1F43EB245E}" ShortID="114641534">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_Brick_Targeted" ID="{9FA42DE8-2BDB-4B8C-84D0-2AC563FF13ED}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_BrickVO_Targeted_03" ID="{8A1672AF-F405-4AE0-A3FF-666D64B687B8}">
+									<ChildrenList>
+										<Action Name="" ID="{8C46D5DD-F431-4166-8426-30BE603B8677}" ShortID="738464569">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Line03" ID="{52DCF6FD-7341-4029-B332-C1991D990295}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{33CE354F-F68D-4026-90E7-B09F3429B9E2}" ShortID="608960813">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SWC_Brick_Targeted" ID="{9FA42DE8-2BDB-4B8C-84D0-2AC563FF13ED}" WorkUnitID="{D9F3E89C-8689-4CA2-A9DD-67796BC67E98}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

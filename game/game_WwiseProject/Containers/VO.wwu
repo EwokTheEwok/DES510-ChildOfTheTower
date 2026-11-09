@@ -1597,6 +1597,452 @@
 						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
+				<SwitchContainer Name="SWC_Brick_Targeted" ID="{9FA42DE8-2BDB-4B8C-84D0-2AC563FF13ED}" ShortID="312332608">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="None" ID="{A553DD4C-84A9-4E5B-A2E0-C246EA03E8CD}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="VO" ID="{63292908-085F-413A-AEB3-58050BE3C50A}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="BrickDialogue" ID="{A0232FB6-6FC1-412B-A6CC-C60B88A990BD}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sfx_vo_brick_targeted_001" ID="{00BE20EC-6B35-4306-80DA-98FB0072826C}" ShortID="955131537">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_brick_targeted_001" ID="{E7C80BAD-9F0E-422C-898B-47556B430BA9}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_brick_targeted_001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="820083313"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_brick_targeted_001" ID="{E7C80BAD-9F0E-422C-898B-47556B430BA9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_brick_targeted_002" ID="{72A5B38A-6ECF-4E67-8193-4E1B06561FD0}" ShortID="743372421">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_brick_targeted_002" ID="{D285DB1C-8140-4FBF-A8AA-E9EF88D2CA47}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_brick_targeted_002.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="846150039"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_brick_targeted_002" ID="{D285DB1C-8140-4FBF-A8AA-E9EF88D2CA47}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_brick_targeted_003" ID="{E62DDF44-24AD-4A55-9864-AD3C4D90B009}" ShortID="862593060">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_brick_targeted_003" ID="{1AED1820-195A-427D-BD45-484447FDA1EE}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_brick_targeted_003.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="57066313"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_brick_targeted_003" ID="{1AED1820-195A-427D-BD45-484447FDA1EE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_brick_targeted_004" ID="{3F21EDB0-3C27-448F-9813-6A41CE40B6D5}" ShortID="489346665">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_brick_targeted_004" ID="{800B5F1C-0612-472D-B059-DAD910C3EE01}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_brick_targeted_004.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="719726752"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_brick_targeted_004" ID="{800B5F1C-0612-472D-B059-DAD910C3EE01}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_brick_targeted_005" ID="{8618CEE5-7CD4-4C76-ABE4-EE462B9D6576}" ShortID="963657766">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_brick_targeted_005" ID="{B201EEA1-6F7E-42B4-8F4E-D571072A7CA9}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_brick_targeted_005.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="723995400"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_brick_targeted_005" ID="{B201EEA1-6F7E-42B4-8F4E-D571072A7CA9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_brick_targeted_006" ID="{D47BFE23-2616-41C3-B1FD-77F4A424650D}" ShortID="16787195">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_brick_targeted_006" ID="{68738EB0-20DA-4DAB-BAA4-850655267CCE}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_brick_targeted_006.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="643466689"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_brick_targeted_006" ID="{68738EB0-20DA-4DAB-BAA4-850655267CCE}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_vo_brick_targeted_006" ID="{D47BFE23-2616-41C3-B1FD-77F4A424650D}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_vo_brick_targeted_003" ID="{E62DDF44-24AD-4A55-9864-AD3C4D90B009}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_vo_brick_targeted_002" ID="{72A5B38A-6ECF-4E67-8193-4E1B06561FD0}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_vo_brick_targeted_004" ID="{3F21EDB0-3C27-448F-9813-6A41CE40B6D5}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_vo_brick_targeted_005" ID="{8618CEE5-7CD4-4C76-ABE4-EE462B9D6576}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_vo_brick_targeted_001" ID="{00BE20EC-6B35-4306-80DA-98FB0072826C}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="None" ID="{A553DD4C-84A9-4E5B-A2E0-C246EA03E8CD}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_targeted_001" ID="{00BE20EC-6B35-4306-80DA-98FB0072826C}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Line06" ID="{F2F35260-66FB-4949-B310-037B4DE24C9C}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_targeted_006" ID="{D47BFE23-2616-41C3-B1FD-77F4A424650D}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Line01" ID="{3C9CE16E-1919-45B1-8D1A-5DA4835C963A}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_targeted_001" ID="{00BE20EC-6B35-4306-80DA-98FB0072826C}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Line02" ID="{AA767DBE-0E94-4479-94B4-98DC2D85A788}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_targeted_002" ID="{72A5B38A-6ECF-4E67-8193-4E1B06561FD0}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Line04" ID="{AA533DC0-430E-4BFA-96E2-52FE40F73CF1}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_targeted_004" ID="{3F21EDB0-3C27-448F-9813-6A41CE40B6D5}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Line05" ID="{3CBF7EF3-5BBA-4692-8D21-600273E64384}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_targeted_005" ID="{8618CEE5-7CD4-4C76-ABE4-EE462B9D6576}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Line03" ID="{52DCF6FD-7341-4029-B332-C1991D990295}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_targeted_003" ID="{E62DDF44-24AD-4A55-9864-AD3C4D90B009}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
+				<SwitchContainer Name="SWC_Brick_Random" ID="{E410FF6A-5D4A-48CE-988E-AF38B8E28D84}" ShortID="738853620">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+						</Reference>
+						<Reference Name="DefaultSwitchOrState">
+							<ObjectRef Name="None" ID="{A553DD4C-84A9-4E5B-A2E0-C246EA03E8CD}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="VO" ID="{63292908-085F-413A-AEB3-58050BE3C50A}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+						</Reference>
+						<Reference Name="SwitchGroupOrStateGroup">
+							<ObjectRef Name="BrickDialogue" ID="{A0232FB6-6FC1-412B-A6CC-C60B88A990BD}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sfx_vo_brick_random_001" ID="{F5E2EB58-6F4B-4B03-9082-B7CBA34B1EFF}" ShortID="1040272318">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_brick_random_001" ID="{1042C710-66CF-4082-A2D2-37E8C3241138}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_brick_random_001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="455860672"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_brick_random_001" ID="{1042C710-66CF-4082-A2D2-37E8C3241138}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_brick_random_002" ID="{29B9CFF8-D7F2-4EE3-B2C6-A065C4C7EE42}" ShortID="917015780">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_brick_random_002" ID="{8F77C3C3-464C-46C4-9CF1-60C3850F2BDD}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_brick_random_002.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="916348438"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_brick_random_002" ID="{8F77C3C3-464C-46C4-9CF1-60C3850F2BDD}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_brick_random_003" ID="{463BF072-DA1F-4E3C-B6A1-CD7A88DF941C}" ShortID="390965082">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_brick_random_003" ID="{FE44F99B-13FF-4390-8E6D-19347F2F1220}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_brick_random_003.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="116836115"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_brick_random_003" ID="{FE44F99B-13FF-4390-8E6D-19347F2F1220}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_brick_random_004" ID="{5586C06D-A833-47A6-A32D-3F5556A30DD1}" ShortID="190772019">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_brick_random_004" ID="{673997B6-7DFE-42F9-8EA9-57537063FD46}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_brick_random_004.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="65830105"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_brick_random_004" ID="{673997B6-7DFE-42F9-8EA9-57537063FD46}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_brick_random_005" ID="{FF49EBA8-A217-46D7-846F-EA63C20F79F4}" ShortID="203915302">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_brick_random_005" ID="{6B05EFA5-2D0A-4766-8B73-5471B26BA5B8}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_brick_random_005.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="236908620"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_brick_random_005" ID="{6B05EFA5-2D0A-4766-8B73-5471B26BA5B8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_vo_brick_random_006" ID="{AF730154-6E63-48FD-93A1-599CF1353D69}" ShortID="251724086">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_vo_brick_random_006" ID="{7CC65E03-4C8F-4416-B004-9DC9F3B3DFA9}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_vo_brick_random_006.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="196967591"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_vo_brick_random_006" ID="{7CC65E03-4C8F-4416-B004-9DC9F3B3DFA9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<GroupingInfo>
+						<GroupingBehaviorList>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_vo_brick_random_006" ID="{AF730154-6E63-48FD-93A1-599CF1353D69}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_vo_brick_random_001" ID="{F5E2EB58-6F4B-4B03-9082-B7CBA34B1EFF}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_vo_brick_random_004" ID="{5586C06D-A833-47A6-A32D-3F5556A30DD1}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_vo_brick_random_003" ID="{463BF072-DA1F-4E3C-B6A1-CD7A88DF941C}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_vo_brick_random_005" ID="{FF49EBA8-A217-46D7-846F-EA63C20F79F4}"/>
+							</GroupingBehavior>
+							<GroupingBehavior>
+								<ItemRef Name="sfx_vo_brick_random_002" ID="{29B9CFF8-D7F2-4EE3-B2C6-A065C4C7EE42}"/>
+							</GroupingBehavior>
+						</GroupingBehaviorList>
+						<GroupingList>
+							<Grouping>
+								<SwitchRef Name="None" ID="{A553DD4C-84A9-4E5B-A2E0-C246EA03E8CD}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_random_001" ID="{F5E2EB58-6F4B-4B03-9082-B7CBA34B1EFF}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Line06" ID="{F2F35260-66FB-4949-B310-037B4DE24C9C}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_random_006" ID="{AF730154-6E63-48FD-93A1-599CF1353D69}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Line01" ID="{3C9CE16E-1919-45B1-8D1A-5DA4835C963A}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_random_001" ID="{F5E2EB58-6F4B-4B03-9082-B7CBA34B1EFF}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Line02" ID="{AA767DBE-0E94-4479-94B4-98DC2D85A788}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_random_002" ID="{29B9CFF8-D7F2-4EE3-B2C6-A065C4C7EE42}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Line04" ID="{AA533DC0-430E-4BFA-96E2-52FE40F73CF1}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_random_004" ID="{5586C06D-A833-47A6-A32D-3F5556A30DD1}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Line05" ID="{3CBF7EF3-5BBA-4692-8D21-600273E64384}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_random_005" ID="{FF49EBA8-A217-46D7-846F-EA63C20F79F4}"/>
+								</ItemList>
+							</Grouping>
+							<Grouping>
+								<SwitchRef Name="Line03" ID="{52DCF6FD-7341-4029-B332-C1991D990295}"/>
+								<ItemList>
+									<ItemRef Name="sfx_vo_brick_random_003" ID="{463BF072-DA1F-4E3C-B6A1-CD7A88DF941C}"/>
+								</ItemList>
+							</Grouping>
+						</GroupingList>
+					</GroupingInfo>
+				</SwitchContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>

@@ -1,5 +1,6 @@
 State Group	ID	Name			Wwise Object Path	Notes
 	2782712965	Level			\Default Work Unit\Level	
+	3262895538	BrickDialogue			\Default Work Unit\BrickDialogue	
 	4138857472	BrickBuilding			\Default Work Unit\BrickBuilding	
 	4257138351	MusicState_Level1			\Default Work Unit\MusicState_Level1	
 
@@ -10,6 +11,13 @@ State	ID	Name	State Group			Notes
 	141331495	Lvl4	Level			
 	748895195	None	Level			
 	3705726509	Title	Level			
+	144016641	Line06	BrickDialogue			
+	144016642	Line05	BrickDialogue			
+	144016643	Line04	BrickDialogue			
+	144016644	Line03	BrickDialogue			
+	144016645	Line02	BrickDialogue			
+	144016646	Line01	BrickDialogue			
+	748895195	None	BrickDialogue			
 	11539576	Brick_07	BrickBuilding			
 	11539577	Brick_06	BrickBuilding			
 	11539578	Brick_05	BrickBuilding			
@@ -34,6 +42,7 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
 	2519613073	AudioObjects_Brick			\Default Work Unit\AudioObjects\AudioObjects_Brick	
 	3093856314	SFX_Ducking			\Default Work Unit\SFX\SFX_Ducking	
+	3862737079	SFX_UI			\Default Work Unit\SFX\SFX_UI	
 	3991942870	Music			\Default Work Unit\Music	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
@@ -42,9 +51,11 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 
 Effect plug-ins	ID	Name	Type				Notes
 	48620415	Have_U_Ever_Been_Outside	Wwise RoomVerb			
-	87619259	Sidechain Send (Custom)	Ak Sidechain Send			
+	212568950	Sidechain Send (Custom)	Ak Sidechain Send			
 	442399366	Meter (Custom)	Wwise Meter			
 	465678910	Sidechain Send (Custom)	Ak Sidechain Send			
+	476441264	Parametric EQ (Custom)	Wwise Parametric EQ			
+	562807349	Sidechain Send (Custom)	Ak Sidechain Send			
 	797955259	Parametric EQ (Custom)	Wwise Parametric EQ			
 	931972272	Sidechain Send (Custom)	Ak Sidechain Send			
 	959205634	Parametric EQ (Custom)	Wwise Parametric EQ			
