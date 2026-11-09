@@ -142,19 +142,11 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void brickPlacement()
+    public void brickPlacement(int direction)
     {
-        if (Input.GetKeyUp(KeyCode.C) && _BlockActive == false)
-        {
-            _Animator.SetTrigger("Placing");
-
-            //temp var eventually change to the location pased through brick controller
-            _Animator.SetFloat("brickPlaceX", 0);
-
-            _Animator.ResetTrigger("Placing");
-            _Animator.SetBool("Placed", true);
-        }
-        _Animator.SetBool("Placed", false);
+        Debug.Log("function fires");
+        _Animator.SetFloat("brickPlaceX", direction);
+        _Animator.SetTrigger("Placing");
 
     }
 }

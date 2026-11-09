@@ -211,6 +211,8 @@ public class BlockController2 : MonoBehaviour
 
                 Vector3 nodeViewPos = _Camera.WorldToViewportPoint(nearestNode.transform.position);
                 Vector3 playerViewPos = _Camera.WorldToViewportPoint(transform.position);
+                Debug.Log(nodeViewPos.x + " " + playerViewPos.x);
+
                 if (nodeViewPos.x < playerViewPos.x)
                     _PlaceEvent?.Invoke(0);
                 else
