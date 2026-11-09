@@ -17,7 +17,7 @@ public class BlockController2 : MonoBehaviour
 
     [Header("Node")]
     public float _PlaceRange = 5f;
-    public int _MaxNearbyNodes = 5;
+    public int _MaxNearbyNodes = 10;
     public LayerMask _BlockNodeLayer = 1 << 8;
     int _NearbyNodeTotal = 0;
     Collider[] _NearbyNodesList;
@@ -49,6 +49,7 @@ public class BlockController2 : MonoBehaviour
     public UnityEvent<GameObject> _UndoEvent = new();
     public UnityEvent<GameObject> _LimitEvent = new();
     public UnityEvent<GameObject, bool> _BubbleEvent = new();
+    public UnityEvent<int> _PlaceEvent = new();
 
     //Private
     [Header("States")]
@@ -207,10 +208,18 @@ public class BlockController2 : MonoBehaviour
             {   //place on node if block isnt active
                 _Active = true;
                 GameObject nearestNode = NearestNode();
+
+                Vector3 nodeViewPos = _Camera.WorldToViewportPoint(nearestNode.transform.position);
+                Vector3 playerViewPos = _Camera.WorldToViewportPoint(transform.position);
+                if (nodeViewPos.x < playerViewPos.x)
+                    _PlaceEvent?.Invoke(0);
+                else
+                    _PlaceEvent?.Invoke(1);
+
                 _AxisPlaneRenderer.material.SetVector("_Origin", new Vector3(
-                        nearestNode.transform.position.x,
-                        nearestNode.transform.position.y,
-                        nearestNode.transform.position.z));
+                            nearestNode.transform.position.x,
+                            nearestNode.transform.position.y,
+                            nearestNode.transform.position.z));
                 _Block = Instantiate(_BlockPrefab);
                 _Block.transform.position = nearestNode.transform.position;
                 _Block.transform.eulerAngles = new Vector3(0f, nearestNode.transform.eulerAngles.y, 0f);
