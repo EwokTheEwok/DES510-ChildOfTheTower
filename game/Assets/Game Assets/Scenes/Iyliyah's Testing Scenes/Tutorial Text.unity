@@ -1026,7 +1026,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1733737304}
         m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: ControlScreen
+        m_MethodName: Controls
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1237,7 +1237,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1907406627}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_TargetAssemblyTypeName: Controls, Assembly-CSharp
         m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
@@ -2674,7 +2674,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1907406627}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
+        m_TargetAssemblyTypeName: Controls, Assembly-CSharp
         m_MethodName: ResumeGame
         m_Mode: 1
         m_Arguments:
@@ -6296,6 +6296,7 @@ MonoBehaviour:
   PauseMenu: {fileID: 34232406}
   ControlsMenu: {fileID: 1426518810}
   resumeButton: {fileID: 432455093}
+  controlResumeButton: {fileID: 657486935}
 --- !u!1 &1761646885
 GameObject:
   m_ObjectHideFlags: 0
@@ -7643,10 +7644,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1907406625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 477431a5799d9264da22ceb9c5026b64, type: 3}
+  m_Script: {fileID: 11500000, guid: 7564fc0a83b1a8b4295aa0f60695b62d, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pause
-  PauseMenu: {fileID: 34232406}
+  m_EditorClassIdentifier: Assembly-CSharp::Controls
   ControlsMenu: {fileID: 1426518810}
   resumeButton: {fileID: 657486935}
 --- !u!1 &1931432718
