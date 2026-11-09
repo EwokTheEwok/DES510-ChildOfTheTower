@@ -54,6 +54,7 @@ public class BlockController2 : MonoBehaviour
     //Private
     [Header("States")]
     bool _Active = false;
+    bool _Playing = false;
     bool _IsMovingBlock = false;
     bool _InputSwapAxis = false;
     bool _InputMove = false;
@@ -76,7 +77,6 @@ public class BlockController2 : MonoBehaviour
     PlayerCamera _PlayerCamera;
     Transform _TrackingTarget;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         _CharacterController = GetComponent<CharacterController>();
@@ -103,52 +103,55 @@ public class BlockController2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_Active)
+        if (_Playing)
         {
-            bool canControl = CanControl();
-            _PlayerBlockUI.arrowPanel.SetActive(canControl);
-            _PlayerBlockUI.crossPanel.SetActive(!canControl);
-            _PlayerBlockUI.crossPanel.transform.position = _Camera.WorldToScreenPoint(_Block.transform.position);
-
-            DisplayBubble();
-            UpdateControls(_Block.transform);
-
-            if (MinDistance() > _FarThreshold)
-                _TrackingTarget.position = transform.position;
-            else
-                _TrackingTarget.position = Vector3.Lerp(transform.position, _Block.transform.position, 0.5f);
-            _CinemachineCamera.Target.TrackingTarget = _TrackingTarget;
-
-            if (!_IsMovingBlock)
+            if (_Active)
             {
-                if (_InputMove && canControl)
-                    MoveBlock();
-                else if (_InputUndo)
-                    UndoBlock();
-            }
+                bool canControl = CanControl();
+                _PlayerBlockUI.arrowPanel.SetActive(canControl);
+                _PlayerBlockUI.crossPanel.SetActive(!canControl);
+                _PlayerBlockUI.crossPanel.transform.position = _Camera.WorldToScreenPoint(_Block.transform.position);
 
-            BlockColor();
-        }
-        else
-        {
-            _MissingBlockSprite.SetActive(false);
+                DisplayBubble();
+                UpdateControls(_Block.transform);
 
-            //Near a placement node
-            if (NearNodes())
-            {
-                GameObject nearestNode = NearestNode();
-                //Guide block
-                _GuideBlock.SetActive(true);
-                _GuideBlock.transform.position = nearestNode.transform.position;
-                _GuideBlock.transform.eulerAngles = new Vector3(0f, nearestNode.transform.rotation.eulerAngles.y, 0f);
-                //Placement button
-                _PlayerBlockUI.placePanel.SetActive(true);
-                _PlayerBlockUI.placePanel.transform.position = _Camera.WorldToScreenPoint(_GuideBlock.transform.position);
+                if (MinDistance() > _FarThreshold)
+                    _TrackingTarget.position = transform.position;
+                else
+                    _TrackingTarget.position = Vector3.Lerp(transform.position, _Block.transform.position, 0.5f);
+                _CinemachineCamera.Target.TrackingTarget = _TrackingTarget;
+
+                if (!_IsMovingBlock)
+                {
+                    if (_InputMove && canControl)
+                        MoveBlock();
+                    else if (_InputUndo)
+                        UndoBlock();
+                }
+
+                RecoverColor();
             }
             else
             {
-                _GuideBlock.SetActive(false);
-                _PlayerBlockUI.placePanel.SetActive(false);
+                _MissingBlockSprite.SetActive(false);
+
+                //Near a placement node
+                if (NearNodes())
+                {
+                    GameObject nearestNode = NearestNode();
+                    //Guide block
+                    _GuideBlock.SetActive(true);
+                    _GuideBlock.transform.position = nearestNode.transform.position;
+                    _GuideBlock.transform.eulerAngles = new Vector3(0f, nearestNode.transform.rotation.eulerAngles.y, 0f);
+                    //Placement button
+                    _PlayerBlockUI.placePanel.SetActive(true);
+                    _PlayerBlockUI.placePanel.transform.position = _Camera.WorldToScreenPoint(_GuideBlock.transform.position);
+                }
+                else
+                {
+                    _GuideBlock.SetActive(false);
+                    _PlayerBlockUI.placePanel.SetActive(false);
+                }
             }
         }
     }
@@ -370,7 +373,6 @@ public class BlockController2 : MonoBehaviour
             _Active = false;
             _PlayerBlockUI.SetPanelsActive(false);
             _AxisPlane.SetActive(false);
-            _PlayerMovement.SetControl(true);
             _PlayerCamera.SetOctaMode();
             _BlockList.RemoveAt(0);
             Destroy(_Block);
@@ -402,98 +404,18 @@ public class BlockController2 : MonoBehaviour
             case 0: case 4:
                 _InputModifierX = new(1f, 0f, 0f);
                 Modify(new(0f, 0f, 1f), blockTransform, blockTransform.forward, blockTransform.right, 1, 1);
-                /*
-                if (_SwapAxis)
-                {
-                    _InputModifierY = new(0f, 1f, 0f);
-                    dir = blockTransform.up;
-                    _AxisPlane.transform.up = blockTransform.forward;
-                    _AxisPlane.transform.position = _Block.transform.position + blockTransform.forward * (_BlockSize/2f - 0.01f);
-                }
-                else
-                {
-                    _InputModifierY = new(0f, 0f, 1f);
-                    dir = blockTransform.forward;
-                    _AxisPlane.transform.up = blockTransform.up;
-                    _AxisPlane.transform.position = _Block.transform.position - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
-                }
-                _BlockUIUp.position = _Camera.WorldToScreenPoint(blockTransform.position + dir * _BlockUIDistance);
-                _BlockUIDown.position = _Camera.WorldToScreenPoint(blockTransform.position - dir * _BlockUIDistance);
-                _BlockUILeft.position = _Camera.WorldToScreenPoint(blockTransform.position - blockTransform.right * _BlockUIDistance);
-                _BlockUIRight.position = _Camera.WorldToScreenPoint(blockTransform.position + blockTransform.right * _BlockUIDistance);
-                */
                 break;
             case 1:
                 _InputModifierX = new(0f, 0f, -1f);
                 Modify(new(1f, 0f, 0f), blockTransform, blockTransform.right, blockTransform.forward, 1, -1);
-                /*
-                if (_SwapAxis)
-                {
-                    _InputModifierY = new(0f, 1f, 0f);
-                    dir = blockTransform.up;
-                    _AxisPlane.transform.up = blockTransform.right;
-                    _AxisPlane.transform.position = _Block.transform.position + blockTransform.right * (_BlockSize / 2f - 0.01f);
-                }
-                else
-                {
-                    _InputModifierY = new(1f, 0f, 0f);
-                    dir = blockTransform.right;
-                    _AxisPlane.transform.up = blockTransform.up;
-                    _AxisPlane.transform.position = _Block.transform.position - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
-                }
-                _BlockUIUp.position = _Camera.WorldToScreenPoint(blockTransform.position + dir * _BlockUIDistance);
-                _BlockUIDown.position = _Camera.WorldToScreenPoint(blockTransform.position - dir * _BlockUIDistance);
-                _BlockUILeft.position = _Camera.WorldToScreenPoint(blockTransform.position + blockTransform.forward * _BlockUIDistance);
-                _BlockUIRight.position = _Camera.WorldToScreenPoint(blockTransform.position - blockTransform.forward * _BlockUIDistance);
-                */
                 break;
             case 2:
                 _InputModifierX = new(-1f, 0f, 0f);
                 Modify(new(0f, 0f, -1f), blockTransform, blockTransform.forward, blockTransform.right, -1, -1);
-                /*
-                if (_SwapAxis)
-                {
-                    _InputModifierY = new(0f, 1f, 0f);
-                    dir = blockTransform.up;
-                    _AxisPlane.transform.up = blockTransform.forward;
-                    _AxisPlane.transform.position = _Block.transform.position - blockTransform.forward * (_BlockSize / 2f - 0.01f);
-                }
-                else
-                {
-                    _InputModifierY = new(0f, 0f, -1f);
-                    dir = -blockTransform.forward;
-                    _AxisPlane.transform.up = blockTransform.up;
-                    _AxisPlane.transform.position = _Block.transform.position - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
-                }
-                _BlockUIUp.position = _Camera.WorldToScreenPoint(blockTransform.position + dir * _BlockUIDistance);
-                _BlockUIDown.position = _Camera.WorldToScreenPoint(blockTransform.position - dir * _BlockUIDistance);
-                _BlockUILeft.position = _Camera.WorldToScreenPoint(blockTransform.position + blockTransform.right * _BlockUIDistance);
-                _BlockUIRight.position = _Camera.WorldToScreenPoint(blockTransform.position - blockTransform.right * _BlockUIDistance);
-                */
                 break;
             case 3:
                 _InputModifierX = new(0f, 0f, 1f);
                 Modify(new(-1f, 0f, 0f), blockTransform, blockTransform.right, blockTransform.forward, -1, 1);
-                /*
-                if (_SwapAxis)
-                {
-                    _InputModifierY = new(0f, 1f, 0f);
-                    dir = blockTransform.up;
-                    _AxisPlane.transform.up = blockTransform.right;
-                    _AxisPlane.transform.position = _Block.transform.position - blockTransform.right * (_BlockSize / 2f - 0.01f);
-                }
-                else
-                {
-                    _InputModifierY = new(-1f, 0f, 0f);
-                    dir = -blockTransform.right;
-                    _AxisPlane.transform.up = blockTransform.up;
-                    _AxisPlane.transform.position = _Block.transform.position - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
-                }
-                _BlockUIUp.position = _Camera.WorldToScreenPoint(blockTransform.position + dir * _BlockUIDistance);
-                _BlockUIDown.position = _Camera.WorldToScreenPoint(blockTransform.position - dir * _BlockUIDistance);
-                _BlockUILeft.position = _Camera.WorldToScreenPoint(blockTransform.position - blockTransform.forward * _BlockUIDistance);
-                _BlockUIRight.position = _Camera.WorldToScreenPoint(blockTransform.position + blockTransform.forward * _BlockUIDistance);
-                */
                 break;
             default:
                 break;
@@ -527,10 +449,8 @@ public class BlockController2 : MonoBehaviour
         _PlayerBlockUI.blockUIRight.position = _Camera.WorldToScreenPoint(transform.position + _ArrowUIDistance * sign2 * xUI);
     }
 
-    private void BlockColor()
+    private void RecoverColor()
     {
-        
-
         bool displayRecover = IsClose(_FastRecoverDistance);
         if (displayRecover)
         {
@@ -590,7 +510,6 @@ public class BlockController2 : MonoBehaviour
         _Active = false;
         _PlayerBlockUI.SetPanelsActive(false);
         _AxisPlane.SetActive(false);
-        _PlayerMovement.SetControl(true);
         _PlayerCamera.SetOctaMode();
         _Block = null;
         _CinemachineCamera.Target.TrackingTarget = transform;
@@ -613,7 +532,6 @@ public class BlockController2 : MonoBehaviour
         {
             if (!_MissingBubbleActive && !_InputUndo)
             {
-                Debug.Log("bubble");
                 _BubbleEvent?.Invoke(gameObject, true);
                 _MissingBubbleActive = true;
                 _MissingBlockSprite.SetActive(_MissingBubbleActive);

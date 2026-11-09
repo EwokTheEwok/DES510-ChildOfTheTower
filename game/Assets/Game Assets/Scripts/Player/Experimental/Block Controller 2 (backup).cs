@@ -181,7 +181,7 @@ public class BlockController2backup : MonoBehaviour
                 _Control = false;
                 _BlockUI.SetActive(false);
                 _AxisPlane.SetActive(false);
-                _PlayerMovement.SetControl(true);
+                //_PlayerMovement.SetControl(true);
                 _CinemachineCamera.Target.TrackingTarget = _PlayerTransform;
                 _PlayerCamera.SetOctaMode();
                 _Block = null;
@@ -206,7 +206,7 @@ public class BlockController2backup : MonoBehaviour
                 _BlockEvent?.Invoke(0, _Block);
                 _CinemachineCamera.Target.TrackingTarget = _Block.transform;
                 _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
-                _PlayerMovement.SetControl(false);
+                //_PlayerMovement.SetControl(false);
             } //re-control
             else if (_Active && !_Control)
             {
@@ -214,7 +214,7 @@ public class BlockController2backup : MonoBehaviour
                 _CinemachineCamera.Target.TrackingTarget = _Block.transform;
                 _AxisPlane.SetActive(true);
                 _BlockUI.SetActive(true);
-                _PlayerMovement.SetControl(false);
+                //_PlayerMovement.SetControl(false);
                 _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
             } //control player
             else if (_Control)
@@ -223,7 +223,7 @@ public class BlockController2backup : MonoBehaviour
                 _CinemachineCamera.Target.TrackingTarget = _PlayerTransform.transform;
                 _AxisPlane.SetActive(false);
                 _BlockUI.SetActive(false);
-                _PlayerMovement.SetControl(true);
+                //_PlayerMovement.SetControl(true);
                 _PlayerCamera.SetOctaMode();
             }
 
@@ -315,7 +315,7 @@ public class BlockController2backup : MonoBehaviour
                 _Control = false;
                 _BlockUI.SetActive(false);
                 _AxisPlane.SetActive(false);
-                _PlayerMovement.SetControl(true);
+                //_PlayerMovement.SetControl(true);
                 _CinemachineCamera.Target.TrackingTarget = _PlayerTransform;
                 _PlayerCamera.SetOctaMode();
                 _BlockList.RemoveAt(0);
