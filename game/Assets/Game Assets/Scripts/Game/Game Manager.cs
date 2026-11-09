@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
 
     [Header("Events")]
     public UnityEvent<float> _ShadowDistanceEvent = new();
+    public UnityEvent<GameObject> _CheckpointEvent = new();
+    public UnityEvent _FallInShadowEvent = new();
 
 
     void Start()
@@ -54,6 +56,7 @@ public class GameManager : MonoBehaviour
 
     private void Restart()
     {
+        _FallInShadowEvent?.Invoke();
         CharacterController chara = _Player.GetComponent<CharacterController>();
         BlockController2 controller2 = _Player.GetComponent<BlockController2>();
         controller2.Reset();
@@ -68,6 +71,7 @@ public class GameManager : MonoBehaviour
     {
         _Moving = startStop;
         _CurrentCheckpoint = checkpointObject;
+        _CheckpointEvent?.Invoke(checkpointObject);
         Debug.Log("Checkpoint: " + _CheckpointList.IndexOf(_CurrentCheckpoint) + " Activated");
     }
 }
