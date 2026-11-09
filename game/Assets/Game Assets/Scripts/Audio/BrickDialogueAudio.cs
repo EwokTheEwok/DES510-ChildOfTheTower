@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class BrickDialogueAudio : MonoBehaviour
 {
-    public AK.Wwise.Event RandomBrickDialogueAudio;
+    public AK.Wwise.Event[] RandomBrickDialogueAudio;
     public AK.Wwise.Event[] TargetedBrickDialogueAudio;
 
-    public void PlayRandomBrickDialogue(GameObject gameObject)
+    public void PlayRandomBrickDialogue(int index, GameObject gameObject)
     {
-        RandomBrickDialogueAudio.Post(gameObject);
+        RandomBrickDialogueAudio[index].Post(gameObject);
     }
     public void PlayTargetedBrickDialogue(int index, GameObject gameObject)
     {

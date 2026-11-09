@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{2570134A-43E9-2047-05DA-455A5E5A8CA6}",
+    "Hash": "{C4BE1484-CD91-3157-8784-A01804BC6507}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -302,6 +302,14 @@
       "Location": "Memory",
       "ShortName": "sfx_vo_peter_024.wav",
       "CachePath": "38/{3896180E-A609-FB12-91D3-89A60BD1ECD4}.wem"
+     },
+     {
+      "Id": "289738351",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_uipopup_1_001.wav",
+      "CachePath": "F7/{F71BC5F2-BBFE-13C0-9BBE-034AFA023AD5}.wem"
      },
      {
       "Id": "291212988",
@@ -680,6 +688,14 @@
       "CachePath": "44/{44D632A4-677E-5B4D-8E92-AF4B9F4C4B98}.wem"
      },
      {
+      "Id": "632698643",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_uipopup_5_001.wav",
+      "CachePath": "07/{07A0B4B7-4717-567E-7956-4E7951570327}.wem"
+     },
+     {
       "Id": "638969122",
       "Language": "SFX",
       "Streaming": "false",
@@ -784,6 +800,14 @@
       "CachePath": "EF/{EFED9F68-9B61-959E-F7F0-BD30C9F339E2}.wem"
      },
      {
+      "Id": "698813256",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_uipopup_2_001.wav",
+      "CachePath": "49/{4921D6AE-7844-F888-4088-EBE47719C20E}.wem"
+     },
+     {
       "Id": "701294168",
       "Language": "SFX",
       "Streaming": "false",
@@ -870,6 +894,14 @@
       "Location": "Memory",
       "ShortName": "mx_lvl3loop_85to150bpm_003.wav",
       "CachePath": "F1/{F12023B4-05D9-B876-0069-6EE469751521}.wem"
+     },
+     {
+      "Id": "794785206",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_uipopup_3_001.wav",
+      "CachePath": "54/{54A33A82-933C-83FE-ADDA-0CF5835BD441}.wem"
      },
      {
       "Id": "797308141",
@@ -1134,6 +1166,14 @@
       "Location": "Memory",
       "ShortName": "sfx_brickplace_lvl3_008.wav",
       "CachePath": "54/{54648848-99AD-E5C6-7AFD-81869ABC93DD}.wem"
+     },
+     {
+      "Id": "1030108274",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_uipopup_4_001.wav",
+      "CachePath": "05/{056812C4-DF19-AE3D-AC8F-53645F6D4A74}.wem"
      },
      {
       "Id": "1034894193",
@@ -8068,6 +8108,33 @@
       ]
      },
      {
+      "Id": "123178096",
+      "Name": "Play_UI_Standard",
+      "ObjectPath": "\\Events\\SFX Events\\UI Events\\Play_UI_Standard",
+      "GUID": "{D70F1B7C-0298-4F92-AF09-AF9B6B36B9CC}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "289738351"
+       },
+       {
+        "Id": "632698643"
+       },
+       {
+        "Id": "698813256"
+       },
+       {
+        "Id": "794785206"
+       },
+       {
+        "Id": "1030108274"
+       }
+      ]
+     },
+     {
       "Id": "540993415",
       "Name": "Start_Music",
       "ObjectPath": "\\Events\\Music Events\\Start_Music",
@@ -8414,6 +8481,6 @@
     ]
    }
   ],
-  "FileHash": "{7A4CCFEA-CCBA-B46A-BAE4-575348A15155}"
+  "FileHash": "{D239AA03-EABE-338C-8AC9-1BDAF07B7806}"
  }
 }

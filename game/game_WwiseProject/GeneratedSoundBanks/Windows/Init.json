@@ -10,17 +10,17 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{8D8A89A1-1305-4981-4BDF-92D3B55AB18B}",
+    "Hash": "{69D460DB-C0A3-9FAB-3A74-002D85C4B7BC}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
      "Custom": [
       {
-       "Id": "87619259",
+       "Id": "212568950",
        "Name": "Sidechain Send (Custom)",
        "ObjectPath": "\\Busses\\Default Work Unit\\SFX\\SFX_General\\[Effect Slot [0]: (Sidechain Send)]\\Sidechain Send (Custom)",
-       "GUID": "{4395D7A6-9E6B-4ED7-AC02-5C49105C68CD}",
+       "GUID": "{56F8DD40-7E2C-4937-8CD8-9D5E3BAA3D9A}",
        "LibName": "Ak Sidechain Send",
        "LibId": "12648451"
       },
@@ -37,6 +37,22 @@
        "Name": "Sidechain Send (Custom)",
        "ObjectPath": "\\Busses\\Default Work Unit\\AudioObjects\\AudioObjects_Brick\\[Effect Slot [0]: (Sidechain Send)]\\Sidechain Send (Custom)",
        "GUID": "{7312AF2B-9CC6-49DC-B6FE-309E232A90F6}",
+       "LibName": "Ak Sidechain Send",
+       "LibId": "12648451"
+      },
+      {
+       "Id": "476441264",
+       "Name": "Parametric EQ (Custom)",
+       "ObjectPath": "\\Busses\\Default Work Unit\\Music\\[Effect Slot [3]: (Parametric EQ)]\\Parametric EQ (Custom)",
+       "GUID": "{276F66FF-DFB8-48B8-A819-FD48DBC4564A}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
+       "Id": "562807349",
+       "Name": "Sidechain Send (Custom)",
+       "ObjectPath": "\\Busses\\Default Work Unit\\SFX\\SFX_UI\\[Effect Slot [0]: (Sidechain Send)]\\Sidechain Send (Custom)",
+       "GUID": "{42ED2CAE-713C-40FD-AB14-4FFA1A04F17F}",
        "LibName": "Ak Sidechain Send",
        "LibId": "12648451"
       },
@@ -134,7 +150,7 @@
       "PluginRefs": {
        "Custom": [
         {
-         "Id": "87619259"
+         "Id": "212568950"
         }
        ]
       }
@@ -188,6 +204,20 @@
       }
      },
      {
+      "Id": "3862737079",
+      "Name": "SFX_UI",
+      "ObjectPath": "\\Busses\\Default Work Unit\\SFX\\SFX_UI",
+      "GUID": "{07F98257-9797-4624-8BB8-D0B54D9459D3}",
+      "Color": "13",
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "562807349"
+        }
+       ]
+      }
+     },
+     {
       "Id": "3991942870",
       "Name": "Music",
       "ObjectPath": "\\Busses\\Default Work Unit\\Music",
@@ -195,6 +225,9 @@
       "Color": "24",
       "PluginRefs": {
        "Custom": [
+        {
+         "Id": "476441264"
+        },
         {
          "Id": "797955259"
         },
@@ -447,6 +480,6 @@
     ]
    }
   ],
-  "FileHash": "{756A7F24-4401-E79F-EFD1-75FE97006C1B}"
+  "FileHash": "{BB59FEF9-5D60-2B8C-B9ED-A5558F41B6CC}"
  }
 }
