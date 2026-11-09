@@ -8,19 +8,14 @@ public class Controls : MonoBehaviour
     public GameObject ControlsMenu;
     public GameObject resumeButton;
 
-    EventSystem eventSystemScript;
-
-    private void Start()
-    {
-        eventSystemScript = GameObject.Find("EventSystem").GetComponent<EventSystem>();
-        eventSystemScript.SetSelectedGameObject(resumeButton);
-    }
-
     // Update is called once per frame
     void Update()
     {
+   
         if (Input.GetKeyDown(KeyCode.Tab))
         {
+            TitleScreenFirstButton();
+
             if (isPaused)
             {
                 ResumeGame();
@@ -32,12 +27,6 @@ public class Controls : MonoBehaviour
         }
     }
 
-    void PauseGame()
-    {
-        ControlsMenu.SetActive(true);
-        isPaused = true;
-    }
-
     public void TitleScreenFirstButton()
     {
         //This highlight the first button of the TitleScreen, to make it possible to use the keyboard and gamepad
@@ -45,7 +34,13 @@ public class Controls : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(resumeButton);
     }
 
-    void ResumeGame()
+    public void PauseGame()
+    {
+        ControlsMenu.SetActive(true);
+        isPaused = true;
+    }
+
+    public void ResumeGame()
     {
         ControlsMenu.SetActive(false);
         isPaused = false;
