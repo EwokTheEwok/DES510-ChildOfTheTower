@@ -163,6 +163,26 @@
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>
+				<SoundcasterSession Name="PlayPause Test" ID="{BFEDED63-A429-4A74-9C64-AD805E04500F}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="State_Play" ID="{11AE3E26-611F-4F40-9D44-C9A8F5480A62}" WorkUnitID="{3EB4204A-2BA8-4E8F-9C87-52AE27C69E25}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Amb_Outdoor_Lvl1" ID="{6E86CEA4-1E4C-4875-8530-3E74C1D5E6BA}" WorkUnitID="{8125A5EA-BE73-4683-A280-F78FA24B2ACE}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="State_Pause" ID="{9E9D4539-175A-4288-802A-5555F3E84A75}" WorkUnitID="{3EB4204A-2BA8-4E8F-9C87-52AE27C69E25}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Start_Music" ID="{9A97C6C1-0CEB-4330-A3F7-CD55E362B206}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>
