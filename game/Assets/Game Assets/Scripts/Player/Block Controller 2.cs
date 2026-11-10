@@ -32,6 +32,7 @@ public class BlockController2 : MonoBehaviour
     readonly List<GameObject> _BlockList = new();
     GameObject _Block;
     GameObject _GuideBlock;
+    Vector3 _AxisBlockPosition;
 
     [Header("Prefabs")]
     public GameObject _GuideBlockPrefab;
@@ -109,8 +110,19 @@ public class BlockController2 : MonoBehaviour
             if (_Active)
             {
                 bool canControl = CanControl();
-                _PlayerBlockUI.arrowPanel.SetActive(canControl);
-                _PlayerBlockUI.crossPanel.SetActive(!canControl);
+                if (!_InputUndo)
+                {
+                    _PlayerBlockUI.arrowPanel.SetActive(canControl);
+                    _PlayerBlockUI.crossPanel.SetActive(!canControl);
+                    
+                }
+                else
+                {
+                    _PlayerBlockUI.arrowPanel.SetActive(false);
+                    _PlayerBlockUI.crossPanel.SetActive(true);
+                    
+                }
+                _AxisPlane.SetActive(!_InputUndo && canControl);
                 _PlayerBlockUI.crossPanel.transform.position = _Camera.WorldToScreenPoint(_Block.transform.position);
 
                 DisplayBubble();
@@ -120,7 +132,7 @@ public class BlockController2 : MonoBehaviour
                     _TrackingTarget.position = transform.position;
                 else
                     _TrackingTarget.position = Vector3.Lerp(transform.position, _Block.transform.position, 0.5f);
-                _CinemachineCamera.Target.TrackingTarget = _TrackingTarget;
+                
 
                 if (!_IsMovingBlock)
                 {
@@ -210,6 +222,7 @@ public class BlockController2 : MonoBehaviour
         {
             if (!_Active && NearNodes())
             {   //place on node if block isnt active
+                _CinemachineCamera.Target.TrackingTarget = _TrackingTarget;
                 _Active = true;
                 GameObject nearestNode = NearestNode();
 
@@ -238,6 +251,7 @@ public class BlockController2 : MonoBehaviour
                 _BlockEvent?.Invoke(0, _Block);
                 _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
                 _PlayerBlockUI.SetTile(_BlockList.Count - 1, true);
+                _AxisBlockPosition = _Block.transform.position;
             }
             else if (_Active)
             {
@@ -283,7 +297,10 @@ public class BlockController2 : MonoBehaviour
             _BlockEvent?.Invoke(_BlockList.Count, _Block);
             Vector3 newBlockPlacement = blockTransform.position + blockTransform.TransformDirection(localXY);
             _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation);
-            _TweenObject = _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => _IsMovingBlock = false);
+            _TweenObject = _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => {
+                _IsMovingBlock = false;
+                _AxisBlockPosition = _Block.transform.position;
+            });
             _BlockList.Add(_Block);
             _Block.SetActive(true);
             _PlayerBlockUI.SetTile(_BlockList.Count - 1, true);
@@ -303,6 +320,7 @@ public class BlockController2 : MonoBehaviour
                     _BlockList.RemoveAt(_BlockList.Count - 1);
                     Destroy(_Block);
                     _Block = _BlockList[^1];
+                    _AxisBlockPosition = _Block.transform.position;
                 });
                 _PlayerBlockUI.SetTile(_BlockList.Count - 1, false);
             }
@@ -365,6 +383,7 @@ public class BlockController2 : MonoBehaviour
                 _BlockList.RemoveAt(_BlockList.Count - 1);
                 Destroy(_Block);
                 _Block = _BlockList[^1];
+                _AxisBlockPosition = _Block.transform.position;
             });
             _PlayerBlockUI.SetTile(_BlockList.Count - 1, false);
         }
@@ -435,14 +454,14 @@ public class BlockController2 : MonoBehaviour
             _InputModifierY = Vector3.up;
             vUI = transform.up;
             _AxisPlane.transform.up = zDir;
-            _AxisPlane.transform.position = _Block.transform.position + (_BlockSize / 2f - 0.01f) * sign * zDir;
+            _AxisPlane.transform.position = _AxisBlockPosition + (_BlockSize / 2f - 0.01f) * sign * zDir;
         }
         else
         {
             _InputModifierY = inputModY;
             vUI = sign * zDir;
             _AxisPlane.transform.up = transform.up;
-            _AxisPlane.transform.position = _Block.transform.position - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
+            _AxisPlane.transform.position = _AxisBlockPosition - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
         }
         _PlayerBlockUI.blockUIUp.position = _Camera.WorldToScreenPoint(transform.position + vUI * _ArrowUIDistance);
         _PlayerBlockUI.blockUIDown.position = _Camera.WorldToScreenPoint(transform.position - vUI * _ArrowUIDistance);
@@ -520,6 +539,11 @@ public class BlockController2 : MonoBehaviour
     public void Reset()
     {
         RetrieveBlock();
+    }
+
+    public void ResetCamera()
+    {
+        _CinemachineCamera.Target.TrackingTarget = transform;
     }
 
     private void DisplayBubble()

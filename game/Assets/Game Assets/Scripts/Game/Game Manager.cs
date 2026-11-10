@@ -1,8 +1,12 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class GameManager : MonoBehaviour
 {
@@ -29,12 +33,20 @@ public class GameManager : MonoBehaviour
     [Header("References")]
     public GameObject _Player = null;
     public GameObject _ShadowOcean = null;
+    GameObject _DeathTrackingTarget;
+    CharacterController _CharaController;
+    BlockController2 _BlockController;
+    InputActionMap _PlayerActionMap;
+    CinemachineCamera _PlayerCCamera;
 
     [Header("Events")]
     public UnityEvent<float> _ShadowDistanceEvent = new();
     public UnityEvent<GameObject> _CheckpointEvent = new();
     public UnityEvent _FallInShadowEvent = new();
+    public UnityEvent _RestartEvent = new();
     public UnityEvent<bool> _PauseEvent = new();
+
+    IEnumerator _RestartCoroutine;
 
     private bool _Paused = false;
     public bool Paused
@@ -68,15 +80,23 @@ public class GameManager : MonoBehaviour
             checkpointObject.GetComponent<Checkpoint>().OnActivate(CheckpointActivate);
         }
 
-        _ShadowOcean.GetComponent<ShadowOcean>().OnActivate(Restart);
+        _ShadowOcean.GetComponent<ShadowOcean>().OnActivate(FellInShadow);
         _ShadowOcean.transform.position = new(0f, _StartHeight, 0f);
+
+        _CharaController = _Player.GetComponent<CharacterController>();
+        _BlockController = _Player.GetComponent<BlockController2>();
+        _PlayerActionMap = _Player.GetComponent<PlayerInput>().actions.FindActionMap("Player");
+        _PlayerCCamera = _Player.transform.Find("CCamera").GetComponent<CinemachineCamera>();
+        _DeathTrackingTarget = new GameObject("Death Tracking Target");
+
+        _CurrentCheckpoint = _CheckpointList[0];
     }
 
     private void FixedUpdate()
     {
         float distanceFromPlayer = _Player.transform.position.y - _ShadowOcean.transform.position.y;
         _ShadowDistanceEvent?.Invoke(distanceFromPlayer);
-        if (_Moving && _Paused)
+        if (_Moving && !_Paused)
         {
             float distanceFromMinimum = distanceFromPlayer - _MinDistance;
             float distanceScale = Mathf.Clamp(distanceFromMinimum / (_MaxDistance - _MinDistance), 0f, 1f);
@@ -85,17 +105,37 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Restart()
+    private void FellInShadow()
     {
         _FallInShadowEvent?.Invoke();
-        CharacterController chara = _Player.GetComponent<CharacterController>();
-        BlockController2 controller2 = _Player.GetComponent<BlockController2>();
-        controller2.Reset();
+        _BlockController.Reset();
+        _CharaController.excludeLayers = ~0;
+        _Moving = false;
+        _PlayerActionMap.Disable();
+        _DeathTrackingTarget.transform.position = _Player.transform.position;
+        _PlayerCCamera.Target.TrackingTarget = _DeathTrackingTarget.transform;
+
+        _RestartCoroutine = Restart();
+        StartCoroutine(_RestartCoroutine);  
+    }
+
+    private IEnumerator Restart()
+    {
+        yield return new WaitForSeconds(2f);
+
         Vector3 restartPosition = _CurrentCheckpoint.GetComponent<Checkpoint>().RestartPosition();
         _ShadowOcean.transform.position = restartPosition + new Vector3(0f, _ResetDistance, 0f);
-        chara.enabled = false;
+        _CharaController.excludeLayers = 0;
+        _CharaController.enabled = false;
         _Player.transform.position = restartPosition;
-        chara.enabled = true;
+        _CharaController.enabled = true;
+        _CharaController.detectCollisions = true;
+        _Moving = true;
+        _PlayerActionMap.Enable();
+        _BlockController.ResetCamera();
+        _RestartEvent?.Invoke();
+
+        yield return null;
     }
 
     private void CheckpointActivate(GameObject checkpointObject, bool startStop)
