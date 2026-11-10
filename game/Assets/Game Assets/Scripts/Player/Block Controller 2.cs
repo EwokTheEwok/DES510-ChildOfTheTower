@@ -4,6 +4,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class BlockController2 : MonoBehaviour
 {
@@ -107,8 +108,14 @@ public class BlockController2 : MonoBehaviour
     {
         if (_Playing)
         {
+            
             if (_Active)
             {
+                Vector3 cameraBlockRotation = Quaternion.LookRotation(_Block.transform.position - _Camera.transform.position, Vector3.up).eulerAngles;
+                Shader.SetGlobalInt("_Active_Block", 1);
+                Shader.SetGlobalVector("_Block_World_Position", _Block.transform.position);
+                Shader.SetGlobalVector("_Camera_Block_Rotation", cameraBlockRotation);
+
                 bool canControl = CanControl();
                 if (!_InputUndo)
                 {
@@ -146,6 +153,7 @@ public class BlockController2 : MonoBehaviour
             }
             else
             {
+                Shader.SetGlobalInt("_Active_Block", 0);
                 _MissingBlockSprite.SetActive(false);
 
                 //Near a placement node
