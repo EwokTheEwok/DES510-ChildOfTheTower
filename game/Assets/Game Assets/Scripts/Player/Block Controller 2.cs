@@ -33,7 +33,6 @@ public class BlockController2 : MonoBehaviour
     readonly List<GameObject> _BlockList = new();
     GameObject _Block;
     GameObject _GuideBlock;
-    Vector3 _AxisBlockPosition;
 
     [Header("Prefabs")]
     public GameObject _GuideBlockPrefab;
@@ -44,6 +43,7 @@ public class BlockController2 : MonoBehaviour
     GameObject _AxisPlane;
     PlayerBlockUI _PlayerBlockUI;
     Renderer _AxisPlaneRenderer;
+    Vector3 _AxisBlockPosition;
     float _ArrowUIDistance;
 
     [Header("Events")]
@@ -424,7 +424,7 @@ public class BlockController2 : MonoBehaviour
         float angleDifference = cameraEulerRotation.y - blockEulerRotation.y;
         angleDifference = Mathf.Repeat(angleDifference, 360f);
         int relativeCardinalDirection = Mathf.RoundToInt(angleDifference / 90f);
-
+        Debug.Log(relativeCardinalDirection);
         _AxisPlaneRenderer.material.SetFloat("_Rotation", _Block.transform.eulerAngles.y);
 
         switch (relativeCardinalDirection)
@@ -468,9 +468,11 @@ public class BlockController2 : MonoBehaviour
         {
             _InputModifierY = inputModY;
             vUI = sign * zDir;
-            _AxisPlane.transform.up = transform.up;
+            _AxisPlane.transform.eulerAngles = transform.eulerAngles;
             _AxisPlane.transform.position = _AxisBlockPosition - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
         }
+        
+        
         _PlayerBlockUI.blockUIUp.position = _Camera.WorldToScreenPoint(transform.position + vUI * _ArrowUIDistance);
         _PlayerBlockUI.blockUIDown.position = _Camera.WorldToScreenPoint(transform.position - vUI * _ArrowUIDistance);
         _PlayerBlockUI.blockUILeft.position = _Camera.WorldToScreenPoint(transform.position - _ArrowUIDistance * sign2 * xUI);
