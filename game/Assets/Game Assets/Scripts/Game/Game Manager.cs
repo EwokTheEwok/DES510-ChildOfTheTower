@@ -2,8 +2,6 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
-using EasyButtons;
-using EasyButtons.Editor;
 using System;
 
 public class GameManager : MonoBehaviour
@@ -111,11 +109,5 @@ public class GameManager : MonoBehaviour
     public void AddPauseListener(UnityAction<bool> call)
     {
         _PauseEvent.AddListener(call);
-    }
-
-    [Button(Mode = ButtonMode.EnabledInPlayMode)]
-    private void PausePlayGame()
-    {
-        Paused = !Paused;
     }
 }
