@@ -65,6 +65,7 @@ namespace AK
         static const AkUniqueID PLAY_SHADOWS = 3234418437U;
         static const AkUniqueID PLAY_THOMAS = 3273402534U;
         static const AkUniqueID PLAY_TITLELOOP = 1355629322U;
+        static const AkUniqueID PLAY_UI_BUTTON = 43599987U;
         static const AkUniqueID PLAY_UI_STANDARD = 123178096U;
         static const AkUniqueID START_MUSIC = 540993415U;
         static const AkUniqueID STATE_PAUSE = 106931287U;

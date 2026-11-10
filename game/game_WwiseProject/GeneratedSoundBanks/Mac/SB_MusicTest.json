@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{09F6C615-A4AC-A968-B532-4AB3436EE736}",
+    "Hash": "{D758DEB2-44F9-2051-3589-C1BC789A708C}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -646,6 +646,14 @@
       "Location": "Memory",
       "ShortName": "sfx_vo_thomas_010.wav",
       "CachePath": "F6/{F69D8F42-729A-97E3-30EF-94D00F5087C3}.wem"
+     },
+     {
+      "Id": "567190201",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_uibutton_001.wav",
+      "CachePath": "25/{25B7520A-56E4-D0E6-EA7F-19CF3EA2EEDC}.wem"
      },
      {
       "Id": "579400097",
@@ -9263,6 +9271,21 @@
       ]
      },
      {
+      "Id": "43599987",
+      "Name": "Play_UI_Button",
+      "ObjectPath": "\\Events\\SFX Events\\UI Events\\Play_UI_Button",
+      "GUID": "{6641B730-98DB-4EA8-990E-46CCF906D289}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "0.4971202",
+      "DurationMax": "0.5028965",
+      "MediaRefs": [
+       {
+        "Id": "567190201"
+       }
+      ]
+     },
+     {
       "Id": "123178096",
       "Name": "Play_UI_Standard",
       "ObjectPath": "\\Events\\SFX Events\\UI Events\\Play_UI_Standard",
@@ -9708,6 +9731,6 @@
     ]
    }
   ],
-  "FileHash": "{761ACD55-6CD9-000F-CE5F-458141ED52BA}"
+  "FileHash": "{44071A6B-92AB-3806-580C-BBD5887D6617}"
  }
 }
