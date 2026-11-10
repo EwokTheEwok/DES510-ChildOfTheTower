@@ -54,7 +54,7 @@ public class BlockController2 : MonoBehaviour
     //Private
     [Header("States")]
     bool _Active = false;
-    bool _Playing = false;
+    bool _Playing = true;
     bool _IsMovingBlock = false;
     bool _InputSwapAxis = false;
     bool _InputMove = false;
@@ -79,6 +79,7 @@ public class BlockController2 : MonoBehaviour
 
     void Start()
     {
+        GameManager.Instance.AddPauseListener(OnPause);
         _CharacterController = GetComponent<CharacterController>();
 
         _ArrowUIDistance = _BlockSize + 1f;
@@ -537,5 +538,10 @@ public class BlockController2 : MonoBehaviour
                 _MissingBlockSprite.SetActive(_MissingBubbleActive);
             }
         }
+    }
+
+    public void OnPause(bool value)
+    {
+        _Playing = !value;
     }
 }

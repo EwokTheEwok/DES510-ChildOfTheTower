@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     Camera _Camera;
     CharacterController _CharControl;
     PlayerInput _PlayerInput;
+    InputActionMap _PlayerActionMap;
     Vector2 _MoveDir;
     Vector3 _Velocity;
     bool _MoveInput = false;
@@ -49,7 +50,8 @@ public class PlayerMovement : MonoBehaviour
         _Camera = Camera.main;
         _CharControl = GetComponent<CharacterController>();
         _PlayerInput = GetComponent<PlayerInput>();
-        _PlayerInput.actions.FindActionMap("Player").Enable();
+        _PlayerActionMap = _PlayerInput.actions.FindActionMap("Player");
+        _PlayerActionMap.Enable();
         blockController = GetComponent<BlockController2>();
     }
 
@@ -155,5 +157,7 @@ public class PlayerMovement : MonoBehaviour
     public void OnPause(bool value)
     {
         _Playing = !value;
+        if (value) _PlayerActionMap.Enable();
+        else _PlayerActionMap.Disable();
     }
 }
