@@ -21,6 +21,18 @@ namespace AK
         static const AkUniqueID BRICK_05 = 11539578U;
         static const AkUniqueID BRICK_06 = 11539577U;
         static const AkUniqueID BRICK_07 = 11539576U;
+        static const AkUniqueID BRICK_08 = 11539575U;
+        static const AkUniqueID BRICK_09 = 11539574U;
+        static const AkUniqueID BRICK_10 = 4289729164U;
+        static const AkUniqueID BRICK_11 = 4289729165U;
+        static const AkUniqueID BRICK_12 = 4289729166U;
+        static const AkUniqueID BRICK_13 = 4289729167U;
+        static const AkUniqueID BRICK_14 = 4289729160U;
+        static const AkUniqueID BRICK_15 = 4289729161U;
+        static const AkUniqueID BRICK_16 = 4289729162U;
+        static const AkUniqueID BRICK_17 = 4289729163U;
+        static const AkUniqueID BRICK_18 = 4289729156U;
+        static const AkUniqueID BRICK_19 = 4289729157U;
         static const AkUniqueID BRICK_BIGUNDOCANCEL = 739199831U;
         static const AkUniqueID BRICK_CONTINUEBIGUNDO = 1901158208U;
         static const AkUniqueID BRICK_PLACEMENTERROR = 1579460802U;
@@ -78,6 +90,18 @@ namespace AK
                 static const AkUniqueID BRICK_05 = 11539578U;
                 static const AkUniqueID BRICK_06 = 11539577U;
                 static const AkUniqueID BRICK_07 = 11539576U;
+                static const AkUniqueID BRICK_08 = 11539575U;
+                static const AkUniqueID BRICK_09 = 11539574U;
+                static const AkUniqueID BRICK_10 = 4289729164U;
+                static const AkUniqueID BRICK_11 = 4289729165U;
+                static const AkUniqueID BRICK_12 = 4289729166U;
+                static const AkUniqueID BRICK_13 = 4289729167U;
+                static const AkUniqueID BRICK_14 = 4289729160U;
+                static const AkUniqueID BRICK_15 = 4289729161U;
+                static const AkUniqueID BRICK_16 = 4289729162U;
+                static const AkUniqueID BRICK_17 = 4289729163U;
+                static const AkUniqueID BRICK_18 = 4289729156U;
+                static const AkUniqueID BRICK_19 = 4289729157U;
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace BRICKBUILDING

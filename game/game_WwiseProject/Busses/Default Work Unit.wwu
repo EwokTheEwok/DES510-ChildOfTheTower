@@ -76,21 +76,20 @@
 													<Property Name="FrequencyBand2" Type="Real32" Value="1012.244"/>
 													<Property Name="FrequencyBand3" Type="Real32" Value="134.657"/>
 													<Property Name="FrequencyBand4" Type="Real32" Value="1730.748"/>
-													<Property Name="GainBand3" Type="Real32" Value="0.09102402"/>
 													<Property Name="GainBand4" Type="Real32" Value="0.03034134"/>
 													<Property Name="NumBands" Type="int32" Value="4"/>
 													<Property Name="OnOffBand1" Type="bool" Value="False"/>
 													<Property Name="OnOffBand3" Type="bool" Value="True"/>
 													<Property Name="OnOffBand4" Type="bool" Value="True"/>
-													<Property Name="RangeBand2" Type="Real32" Value="-13.1"/>
-													<Property Name="RangeBand3" Type="Real32" Value="-18.1"/>
-													<Property Name="RangeBand4" Type="Real32" Value="-17.5"/>
+													<Property Name="RangeBand2" Type="Real32" Value="-18.7"/>
+													<Property Name="RangeBand3" Type="Real32" Value="-20.3"/>
+													<Property Name="RangeBand4" Type="Real32" Value="-19.7"/>
 													<Property Name="ReleaseTimeBand2" Type="Real32" Value="0.03"/>
 													<Property Name="ReleaseTimeBand3" Type="Real32" Value="0.03"/>
 													<Property Name="ReleaseTimeBand4" Type="Real32" Value="0.03"/>
-													<Property Name="ThresholdBand2" Type="Real32" Value="-45"/>
-													<Property Name="ThresholdBand3" Type="Real32" Value="-32.5"/>
-													<Property Name="ThresholdBand4" Type="Real32" Value="-40.6"/>
+													<Property Name="ThresholdBand2" Type="Real32" Value="-49.4"/>
+													<Property Name="ThresholdBand3" Type="Real32" Value="-45"/>
+													<Property Name="ThresholdBand4" Type="Real32" Value="-45"/>
 												</PropertyList>
 												<ReferenceList>
 													<Reference Name="DynamicsSidechainRef">
@@ -185,18 +184,26 @@
 												<PropertyList>
 													<Property Name="AttackTimeBand2" Type="Real32" Value="0.05"/>
 													<Property Name="AttackTimeBand3" Type="Real32" Value="0.05"/>
+													<Property Name="AttackTimeBand4" Type="Real32" Value="0.03"/>
 													<Property Name="DynamicsEnableBand2" Type="bool" Value="True"/>
 													<Property Name="DynamicsEnableBand3" Type="bool" Value="True"/>
+													<Property Name="DynamicsEnableBand4" Type="bool" Value="True"/>
 													<Property Name="FrequencyBand2" Type="Real32" Value="395.1616"/>
 													<Property Name="FrequencyBand3" Type="Real32" Value="2444.917"/>
+													<Property Name="FrequencyBand4" Type="Real32" Value="1057.875"/>
+													<Property Name="NumBands" Type="int32" Value="4"/>
 													<Property Name="OnOffBand1" Type="bool" Value="False"/>
 													<Property Name="OnOffBand3" Type="bool" Value="True"/>
-													<Property Name="RangeBand2" Type="Real32" Value="-30"/>
-													<Property Name="RangeBand3" Type="Real32" Value="-20"/>
+													<Property Name="OnOffBand4" Type="bool" Value="True"/>
+													<Property Name="RangeBand2" Type="Real32" Value="-15.3"/>
+													<Property Name="RangeBand3" Type="Real32" Value="-18.1"/>
+													<Property Name="RangeBand4" Type="Real32" Value="-19.7"/>
 													<Property Name="ReleaseTimeBand2" Type="Real32" Value="0.3"/>
 													<Property Name="ReleaseTimeBand3" Type="Real32" Value="0.3"/>
-													<Property Name="ThresholdBand2" Type="Real32" Value="-40"/>
-													<Property Name="ThresholdBand3" Type="Real32" Value="-58.1"/>
+													<Property Name="ReleaseTimeBand4" Type="Real32" Value="0.3"/>
+													<Property Name="ThresholdBand2" Type="Real32" Value="-41.8"/>
+													<Property Name="ThresholdBand3" Type="Real32" Value="-51.2"/>
+													<Property Name="ThresholdBand4" Type="Real32" Value="-50.4"/>
 												</PropertyList>
 												<ReferenceList>
 													<Reference Name="DynamicsSidechainRef">
