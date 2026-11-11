@@ -461,8 +461,7 @@ public class BlockController2 : MonoBehaviour
         {
             _InputModifierY = Vector3.up;
             vUI = transform.up;
-            _AxisPlane.transform.up = zDir;
-            _AxisPlane.transform.position = _AxisBlockPosition + (_BlockSize / 2f - 0.01f) * sign * zDir;
+            _AxisPlane.transform.SetPositionAndRotation(_AxisBlockPosition + (_BlockSize / 2f - 0.01f) * sign * zDir, Quaternion.LookRotation(Vector3.up, zDir));
         }
         else
         {
@@ -471,7 +470,6 @@ public class BlockController2 : MonoBehaviour
             _AxisPlane.transform.eulerAngles = transform.eulerAngles;
             _AxisPlane.transform.position = _AxisBlockPosition - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
         }
-        
         
         _PlayerBlockUI.blockUIUp.position = _Camera.WorldToScreenPoint(transform.position + vUI * _ArrowUIDistance);
         _PlayerBlockUI.blockUIDown.position = _Camera.WorldToScreenPoint(transform.position - vUI * _ArrowUIDistance);
