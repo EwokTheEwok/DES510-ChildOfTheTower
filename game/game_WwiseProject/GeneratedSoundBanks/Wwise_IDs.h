@@ -40,7 +40,8 @@ namespace AK
         static const AkUniqueID BRICK_STARTBIGUNDO = 1150887483U;
         static const AkUniqueID BRICKMODE_START = 2475923824U;
         static const AkUniqueID MUSICAMBTEST = 1200446142U;
-        static const AkUniqueID PLAY_AMB_OUTDOOR_LVL1 = 3813572857U;
+        static const AkUniqueID PLAY_AMB_LVL1 = 3774444326U;
+        static const AkUniqueID PLAY_AMB_LVL2 = 3774444325U;
         static const AkUniqueID PLAY_BRICKPLACE = 3876385978U;
         static const AkUniqueID PLAY_BRICKVO_RANDOM_01 = 2497241616U;
         static const AkUniqueID PLAY_BRICKVO_RANDOM_02 = 2497241619U;
@@ -66,6 +67,7 @@ namespace AK
         static const AkUniqueID PLAY_THOMAS = 3273402534U;
         static const AkUniqueID PLAY_TITLELOOP = 1355629322U;
         static const AkUniqueID PLAY_UI_BUTTON = 43599987U;
+        static const AkUniqueID PLAY_UI_BUTTON_SCROLL = 1154567065U;
         static const AkUniqueID PLAY_UI_STANDARD = 123178096U;
         static const AkUniqueID START_MUSIC = 540993415U;
         static const AkUniqueID STATE_PAUSE = 106931287U;

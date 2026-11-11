@@ -9,6 +9,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	11539581	Brick_02			\SFX Events\Brick Events\Place Events\Brick_02	
 	11539582	Brick_01			\SFX Events\Brick Events\Place Events\Brick_01	
 	43599987	Play_UI_Button			\SFX Events\UI Events\Play_UI_Button	
+	106931287	State_Pause			\Default Work Unit\Global Events\State_Pause	
 	123178096	Play_UI_Standard			\SFX Events\UI Events\Play_UI_Standard	
 	282115962	Transition_MainLoop			\Music Events\Lvl1 Events\Transition_MainLoop	
 	528465658	Play_IntroLoop			\Music Events\Lvl1 Events\Play_IntroLoop	
@@ -16,6 +17,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	739199831	Brick_BigUndoCancel			\SFX Events\Brick Events\Big Undo\Brick_BigUndoCancel	
 	913957623	Play_Falling			\SFX Events\Player Events\Play_Falling	
 	1150887483	Brick_StartBigUndo			\SFX Events\Brick Events\Big Undo\Brick_StartBigUndo	
+	1154567065	Play_UI_Button_Scroll			\SFX Events\UI Events\Play_UI_Button_Scroll	
 	1200446142	MusicAmbTest			\Music Events\MusicAmbTest	
 	1355629322	Play_TitleLoop			\Music Events\Play_TitleLoop	
 	1579460802	Brick_PlacementError			\SFX Events\Brick Events\Brick_PlacementError	
@@ -23,6 +25,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2321812079	Play_Margaret			\VO Events\Play_Margaret	
 	2454766738	Stop_Shadows_LongFade			\SFX Events\Shadow Events\Stop_Shadows_LongFade	
 	2475923824	BrickMode_Start			\SFX Events\Brick Events\BrickMode_Start	
+	2483705881	State_Play			\Default Work Unit\Global Events\State_Play	
 	2497241616	Play_BrickVO_Random_01			\VO Events\BrickDialogue\Random Events\Play_BrickVO_Random_01	
 	2497241618	Play_BrickVO_Random_03			\VO Events\BrickDialogue\Random Events\Play_BrickVO_Random_03	
 	2497241619	Play_BrickVO_Random_02			\VO Events\BrickDialogue\Random Events\Play_BrickVO_Random_02	
@@ -42,7 +45,8 @@ Event	ID	Name			Wwise Object Path	Notes
 	3764927780	Play_BrickVO_Targeted_06			\VO Events\BrickDialogue\Targeted Events\Play_BrickVO_Targeted_06	
 	3764927782	Play_BrickVO_Targeted_04			\VO Events\BrickDialogue\Targeted Events\Play_BrickVO_Targeted_04	
 	3764927783	Play_BrickVO_Targeted_05			\VO Events\BrickDialogue\Targeted Events\Play_BrickVO_Targeted_05	
-	3813572857	Play_Amb_Outdoor_Lvl1			\AMB Events\Play_Amb_Outdoor_Lvl1	
+	3774444325	Play_Amb_Lvl2			\AMB Events\Play_Amb_Lvl2	
+	3774444326	Play_Amb_Lvl1			\AMB Events\Play_Amb_Lvl1	
 	3854155799	Play_Footsteps			\SFX Events\Player Events\Play_Footsteps	
 	3876385978	Play_BrickPlace			\SFX Events\Player Events\Play_BrickPlace	
 	3945088981	Brick_0			\SFX Events\Brick Events\Place Events\Brick_0	
@@ -129,7 +133,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	128661210	sfx_brickplace_019_002	.cache\8F\{8FD4D316-7635-0546-0139-7272A4A570D0}.wem		\Containers\SFX\Brick SFX\SWC_BrickSwitcher\sfx_brickplace_019_002		192096
 	139465662	sfx_vo_marg_026	.cache\1C\{1CB03CCF-5AB8-701D-1128-B90FB3E98648}.wem		\Containers\VO\RMC_Margaret\sfx_vo_marg_026		558688
 	140990676	sfx_vo_thomas_003	.cache\45\{450C5F9D-3874-FFBA-5538-E44D4DB8E7D1}.wem		\Containers\VO\RMC_Thomas\sfx_vo_thomas_003		399632
-	143126068	sfx_amb_lvl1_indoor_002	.cache\8B\{8B255934-62BA-9566-3C0F-38EFF698F938}.wem		\Containers\Ambiences\BLC_Ambience\sfx_amb_lvl1_indoor_002		2911899
+	143126068	sfx_amb_lvl1_indoor_002	.cache\8B\{8B255934-62BA-9566-3C0F-38EFF698F938}.wem		\Containers\Ambiences\BLC_Ambience_Lvl1\sfx_amb_lvl1_indoor_002		2911899
 	151722554	sfx_vo_peter_018	.cache\28\{28539AF5-01EC-CCD6-AAAF-2AB5EBDDF821}.wem		\Containers\VO\RMC_Peter\sfx_vo_peter_018		439632
 	152494169	sfx_vo_peter_005	.cache\4F\{4F40E90C-FAA0-EB94-A0E1-5E077A349AA5}.wem		\Containers\VO\RMC_Peter\sfx_vo_peter_005		454612
 	179492109	sfx_footsteps_003_003	.cache\DF\{DF80FE6B-DB94-4F10-1BE3-932AF5F38BFB}.wem		\Containers\SFX\Player SFX\RMC_PlayerFootsteps\sfx_footsteps_003_003		18822
@@ -167,6 +171,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	391992555	sfx_vo_marg_025	.cache\28\{2893E6A3-52AC-9233-E95A-FB77D1A1D68A}.wem		\Containers\VO\RMC_Margaret\sfx_vo_marg_025		618776
 	423020785	sfx_vo_marg_019	.cache\FB\{FB685620-2D9F-2DB8-723E-A6C9E8D962FD}.wem		\Containers\VO\RMC_Margaret\sfx_vo_marg_019		368888
 	434276382	sfx_falling_start_001	.cache\A8\{A82BD75E-8BE3-5EFB-F6DC-1C0624B15F0F}.wem		\Containers\SFX\Player SFX\Falling\sfx_falling_start_001		31926
+	444589137	sfx_amb_lvl1_outdoor_002	.cache\5F\{5FE40D31-E961-B6EE-704C-B5211B3DC9D7}.wem		\Containers\Ambiences\BLC_Ambience_Lvl1\sfx_amb_lvl1_outdoor_002		883530
 	447239699	sfx_vo_thomas_017	.cache\E1\{E144CD6F-2E8A-E1E2-50C0-466C4C33F32B}.wem		\Containers\VO\RMC_Thomas\sfx_vo_thomas_017		684924
 	455860672	sfx_vo_brick_random_001	.cache\DC\{DCF3CB09-C52A-3A8A-6A06-AE7602B881D0}.wem		\Containers\VO\SWC_Brick_Random\sfx_vo_brick_random_001		231668
 	459018154	sfx_brickplace_010_002	.cache\25\{258A0BDD-9197-EA57-9E2D-4740F7E7C91B}.wem		\Containers\SFX\Brick SFX\SWC_BrickSwitcher\sfx_brickplace_010_002		192096
@@ -183,6 +188,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	520969401	sfx_vo_marg_008	.cache\00\{005C613A-47E4-368D-ECA8-C7A2901E78BE}.wem		\Containers\VO\RMC_Margaret\sfx_vo_marg_008		375004
 	526897721	sfx_brickplace_004_002	.cache\14\{14504A5C-71B1-1C6B-99E4-A9D1F3285AE4}.wem		\Containers\SFX\Brick SFX\SWC_BrickSwitcher\sfx_brickplace_004_002		192096
 	534321425	sfx_vo_thomas_011	.cache\6C\{6CD1C9BD-7D23-9F2C-C46E-262E08A6AE12}.wem		\Containers\VO\RMC_Thomas\sfx_vo_thomas_011		372796
+	534910962	sfx_amb_lvl2_indoor_001	.cache\B7\{B74FF311-B43C-94C7-E367-9DEB77590B7A}.wem		\Containers\Ambiences\BLC_Ambience_Lvl2\sfx_amb_lvl2_indoor_001		551256
 	538172765	sfx_vo_peter_009	.cache\4A\{4A3328B8-556E-FF61-5E03-1A576D51BE9C}.wem		\Containers\VO\RMC_Peter\sfx_vo_peter_009		436308
 	538850202	sfx_bigbrickreverse1_001	.cache\5C\{5C7D9FEC-39F4-CD41-D029-D8D973BEB1CE}.wem		\Containers\SFX\Brick SFX\BigBrickReverse\sfx_bigbrickreverse1_001		192096
 	541945125	sfx_brickreverse_005	.cache\19\{1966865C-4D28-D1C1-A7A1-13C4F9F04D46}.wem		\Containers\SFX\Brick SFX\RMC_BrickReverse\sfx_brickreverse_005		176744
@@ -208,7 +214,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	687064720	sfx_vo_peter_025	.cache\B3\{B3722B6B-658E-E093-0BA9-25DAE7A9D4BB}.wem		\Containers\VO\RMC_Peter\sfx_vo_peter_025		506520
 	693517854	sfx_vo_peter_021	.cache\EF\{EFED9F68-9B61-959E-F7F0-BD30C9F339E2}.wem		\Containers\VO\RMC_Peter\sfx_vo_peter_021		702400
 	698813256	sfx_uipopup_2_001	.cache\49\{4921D6AE-7844-F888-4088-EBE47719C20E}.wem		\Containers\SFX\UI SFX\RMC_UI_Standard\sfx_uipopup_2_001		384096
-	701294168	sfx_amb_lvl1_outdoor_001	.cache\70\{70EF8933-DF58-FAEE-B629-8C7490ADB742}.wem		\Containers\Ambiences\BLC_Ambience\sfx_amb_lvl1_outdoor_001		2116697
 	707663772	sfx_brickplace_009_002	.cache\90\{90E71F92-68E7-1954-CB19-F54810B45731}.wem		\Containers\SFX\Brick SFX\SWC_BrickSwitcher\sfx_brickplace_009_002		192096
 	710637432	sfx_bigbrickreverse_rumble_001	.cache\F7\{F774468C-997A-CCB3-FFFC-9648D8C39907}.wem		\Containers\SFX\Brick SFX\BigBrickReverseRumble\sfx_bigbrickreverse_rumble_001		480096
 	713383606	sfx_checkpoint_001	.cache\45\{45C4C4A0-D0F1-2BFF-9163-3E2F31224C98}.wem		\Containers\SFX\Checkpoint\sfx_checkpoint_001		858188

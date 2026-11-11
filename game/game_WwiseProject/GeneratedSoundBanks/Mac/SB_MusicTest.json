@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{D758DEB2-44F9-2051-3589-C1BC789A708C}",
+    "Hash": "{8ABB00E2-3126-60A4-49F2-B73BEBF281C5}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -464,6 +464,14 @@
       "CachePath": "A8/{A82BD75E-8BE3-5EFB-F6DC-1C0624B15F0F}.wem"
      },
      {
+      "Id": "444589137",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_amb_lvl1_outdoor_002.wav",
+      "CachePath": "5F/{5FE40D31-E961-B6EE-704C-B5211B3DC9D7}.wem"
+     },
+     {
       "Id": "447239699",
       "Language": "SFX",
       "Streaming": "false",
@@ -590,6 +598,14 @@
       "Location": "Memory",
       "ShortName": "sfx_vo_thomas_011.wav",
       "CachePath": "6C/{6CD1C9BD-7D23-9F2C-C46E-262E08A6AE12}.wem"
+     },
+     {
+      "Id": "534910962",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_amb_lvl2_indoor_001.wav",
+      "CachePath": "B7/{B74FF311-B43C-94C7-E367-9DEB77590B7A}.wem"
      },
      {
       "Id": "538172765",
@@ -790,14 +806,6 @@
       "Location": "Memory",
       "ShortName": "sfx_uipopup_2_001.wav",
       "CachePath": "49/{4921D6AE-7844-F888-4088-EBE47719C20E}.wem"
-     },
-     {
-      "Id": "701294168",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "sfx_amb_lvl1_outdoor_001.wav",
-      "CachePath": "70/{70EF8933-DF58-FAEE-B629-8C7490ADB742}.wem"
      },
      {
       "Id": "707663772",
@@ -7256,7 +7264,7 @@
         "Id": "143126068"
        },
        {
-        "Id": "701294168"
+        "Id": "444589137"
        }
       ],
       "SwitchContainers": [
@@ -7346,9 +7354,9 @@
       ]
      },
      {
-      "Id": "3813572857",
-      "Name": "Play_Amb_Outdoor_Lvl1",
-      "ObjectPath": "\\Events\\AMB Events\\Play_Amb_Outdoor_Lvl1",
+      "Id": "3774444326",
+      "Name": "Play_Amb_Lvl1",
+      "ObjectPath": "\\Events\\AMB Events\\Play_Amb_Lvl1",
       "GUID": "{6E86CEA4-1E4C-4875-8530-3E74C1D5E6BA}",
       "Color": "4",
       "DurationType": "Infinite",
@@ -7357,7 +7365,22 @@
         "Id": "143126068"
        },
        {
-        "Id": "701294168"
+        "Id": "444589137"
+       }
+      ]
+     },
+     {
+      "Id": "3774444325",
+      "Name": "Play_Amb_Lvl2",
+      "ObjectPath": "\\Events\\AMB Events\\Play_Amb_Lvl2",
+      "GUID": "{D64E45A6-54F7-4786-9757-FA35420359BF}",
+      "Color": "4",
+      "DurationType": "OneShot",
+      "DurationMin": "152.9796",
+      "DurationMax": "152.9796",
+      "MediaRefs": [
+       {
+        "Id": "534910962"
        }
       ]
      },
@@ -9286,6 +9309,21 @@
       ]
      },
      {
+      "Id": "1154567065",
+      "Name": "Play_UI_Button_Scroll",
+      "ObjectPath": "\\Events\\SFX Events\\UI Events\\Play_UI_Button_Scroll",
+      "GUID": "{BC1FEFA2-9137-4D3D-A20D-42C62BA674B8}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "0.4971202",
+      "DurationMax": "0.5028965",
+      "MediaRefs": [
+       {
+        "Id": "567190201"
+       }
+      ]
+     },
+     {
       "Id": "123178096",
       "Name": "Play_UI_Standard",
       "ObjectPath": "\\Events\\SFX Events\\UI Events\\Play_UI_Standard",
@@ -9413,6 +9451,26 @@
         "GUID": "{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}"
        }
       ]
+     },
+     {
+      "Id": "106931287",
+      "Name": "State_Pause",
+      "ObjectPath": "\\Events\\Default Work Unit\\Global Events\\State_Pause",
+      "GUID": "{9E9D4539-175A-4288-802A-5555F3E84A75}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2483705881",
+      "Name": "State_Play",
+      "ObjectPath": "\\Events\\Default Work Unit\\Global Events\\State_Play",
+      "GUID": "{11AE3E26-611F-4F40-9D44-C9A8F5480A62}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      },
      {
       "Id": "3212186303",
@@ -9731,6 +9789,6 @@
     ]
    }
   ],
-  "FileHash": "{44071A6B-92AB-3806-580C-BBD5887D6617}"
+  "FileHash": "{B297AE8E-755D-E0FF-496B-A9317F1D9E97}"
  }
 }

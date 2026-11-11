@@ -784,7 +784,64 @@
 						</Event>
 						<Event Name="Play_UI_Button" ID="{6641B730-98DB-4EA8-990E-46CCF906D289}">
 							<ChildrenList>
+								<Action Name="" ID="{146AF1AE-21A9-40B1-822E-6FDD9F7183B6}" ShortID="1019359673">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="27"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Button" ID="{321234F2-0299-457B-81C4-1C7F23F44187}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{AD0A8C0D-12A4-4443-9BC5-88F59536B8C4}" ShortID="552807437">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="29"/>
+										<Property Name="Highpass" Type="int16" Value="55"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Button" ID="{321234F2-0299-457B-81C4-1C7F23F44187}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{E3B733FA-E3FB-4474-997D-790FA0EF4F41}" ShortID="341330760">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Button" ID="{321234F2-0299-457B-81C4-1C7F23F44187}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_UI_Button_Scroll" ID="{BC1FEFA2-9137-4D3D-A20D-42C62BA674B8}">
+							<ChildrenList>
+								<Action Name="" ID="{8E44BD43-C5D3-49F1-8B90-39568AD20E43}" ShortID="384537890">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="30"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Button" ID="{321234F2-0299-457B-81C4-1C7F23F44187}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{3D6EFE8D-DC23-4B62-8363-F2844F481CEB}" ShortID="727191405">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="26"/>
+										<Property Name="Lowpass" Type="int16" Value="60"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Button" ID="{321234F2-0299-457B-81C4-1C7F23F44187}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{3DEA6A1A-B86F-42B7-8BB6-D77B2957FF7F}" ShortID="72807662">
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="UI_Button" ID="{321234F2-0299-457B-81C4-1C7F23F44187}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
