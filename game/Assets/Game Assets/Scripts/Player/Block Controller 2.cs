@@ -4,7 +4,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.InputSystem.Controls;
 
 public class BlockController2 : MonoBehaviour
 {
@@ -59,7 +59,8 @@ public class BlockController2 : MonoBehaviour
     bool _Playing = true;
     bool _IsMovingBlock = false;
     bool _InputSwapAxis = false;
-    bool _InputMove = false;
+    bool _InputMoveVertical = false;
+    bool _InputMoveHorizontal = false;
     bool _InputUndo = false;
     bool _FastRecover = false;
     const float _FastRecoverDistance = 7f;
@@ -68,6 +69,7 @@ public class BlockController2 : MonoBehaviour
     const float _FarThreshold = 20f;
 
     Vector2 _InputDir;
+    Vector2 _InputDirCombined;
     Vector3 _InputModifierX;
     Vector3 _InputModifierY;
 
@@ -143,7 +145,7 @@ public class BlockController2 : MonoBehaviour
 
                 if (!_IsMovingBlock)
                 {
-                    if (_InputMove && canControl)
+                    if ((_InputMoveVertical || _InputMoveHorizontal) && canControl)
                         MoveBlock();
                     else if (_InputUndo)
                         UndoBlock();
@@ -268,13 +270,34 @@ public class BlockController2 : MonoBehaviour
         }
     }
 
-    public void OnMoveBlock(InputAction.CallbackContext context)
+    public void OnMoveBlockVertical(InputAction.CallbackContext context)
     {
-        _InputDir = context.ReadValue<Vector2>();
         if (context.started)
-            _InputMove = true;
+        {
+            _InputMoveVertical = true;
+            _InputDir = new Vector2(0f, context.ReadValue<float>());
+            _InputDirCombined = new Vector2(_InputDirCombined.x, context.ReadValue<float>());
+        }
         else if (context.canceled)
-            _InputMove = false;
+        {
+            _InputMoveVertical = false;
+            _InputDir = new Vector2(_InputDirCombined.x, 0f);
+        }
+    }
+
+    public void OnMoveBlockHorizontal(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            _InputMoveHorizontal = true;
+            _InputDir = new Vector2(context.ReadValue<float>(), 0f);
+            _InputDirCombined = new Vector2(context.ReadValue<float>(), _InputDirCombined.y);
+        }
+        else if (context.canceled)
+        {
+            _InputMoveHorizontal = false;
+            _InputDir = new Vector2(0f, _InputDirCombined.y);
+        }
     }
 
     public void MoveBlock()
@@ -424,7 +447,6 @@ public class BlockController2 : MonoBehaviour
         float angleDifference = cameraEulerRotation.y - blockEulerRotation.y;
         angleDifference = Mathf.Repeat(angleDifference, 360f);
         int relativeCardinalDirection = Mathf.RoundToInt(angleDifference / 90f);
-        Debug.Log(relativeCardinalDirection);
         _AxisPlaneRenderer.material.SetFloat("_Rotation", _Block.transform.eulerAngles.y);
 
         switch (relativeCardinalDirection)
