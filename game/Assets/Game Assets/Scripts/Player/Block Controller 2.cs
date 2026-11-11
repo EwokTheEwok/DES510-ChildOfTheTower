@@ -4,7 +4,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using static UnityEditor.Experimental.GraphView.GraphView;
+using UnityEngine.InputSystem.Controls;
 
 public class BlockController2 : MonoBehaviour
 {
@@ -33,7 +33,6 @@ public class BlockController2 : MonoBehaviour
     readonly List<GameObject> _BlockList = new();
     GameObject _Block;
     GameObject _GuideBlock;
-    Vector3 _AxisBlockPosition;
 
     [Header("Prefabs")]
     public GameObject _GuideBlockPrefab;
@@ -44,6 +43,7 @@ public class BlockController2 : MonoBehaviour
     GameObject _AxisPlane;
     PlayerBlockUI _PlayerBlockUI;
     Renderer _AxisPlaneRenderer;
+    Vector3 _AxisBlockPosition;
     float _ArrowUIDistance;
 
     [Header("Events")]
@@ -59,7 +59,8 @@ public class BlockController2 : MonoBehaviour
     bool _Playing = true;
     bool _IsMovingBlock = false;
     bool _InputSwapAxis = false;
-    bool _InputMove = false;
+    bool _InputMoveVertical = false;
+    bool _InputMoveHorizontal = false;
     bool _InputUndo = false;
     bool _FastRecover = false;
     const float _FastRecoverDistance = 7f;
@@ -68,6 +69,7 @@ public class BlockController2 : MonoBehaviour
     const float _FarThreshold = 20f;
 
     Vector2 _InputDir;
+    Vector2 _InputDirCombined;
     Vector3 _InputModifierX;
     Vector3 _InputModifierY;
 
@@ -143,7 +145,7 @@ public class BlockController2 : MonoBehaviour
 
                 if (!_IsMovingBlock)
                 {
-                    if (_InputMove && canControl)
+                    if ((_InputMoveVertical || _InputMoveHorizontal) && canControl)
                         MoveBlock();
                     else if (_InputUndo)
                         UndoBlock();
@@ -268,13 +270,34 @@ public class BlockController2 : MonoBehaviour
         }
     }
 
-    public void OnMoveBlock(InputAction.CallbackContext context)
+    public void OnMoveBlockVertical(InputAction.CallbackContext context)
     {
-        _InputDir = context.ReadValue<Vector2>();
         if (context.started)
-            _InputMove = true;
+        {
+            _InputMoveVertical = true;
+            _InputDir = new Vector2(0f, context.ReadValue<float>());
+            _InputDirCombined = new Vector2(_InputDirCombined.x, context.ReadValue<float>());
+        }
         else if (context.canceled)
-            _InputMove = false;
+        {
+            _InputMoveVertical = false;
+            _InputDir = new Vector2(_InputDirCombined.x, 0f);
+        }
+    }
+
+    public void OnMoveBlockHorizontal(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            _InputMoveHorizontal = true;
+            _InputDir = new Vector2(context.ReadValue<float>(), 0f);
+            _InputDirCombined = new Vector2(context.ReadValue<float>(), _InputDirCombined.y);
+        }
+        else if (context.canceled)
+        {
+            _InputMoveHorizontal = false;
+            _InputDir = new Vector2(0f, _InputDirCombined.y);
+        }
     }
 
     public void MoveBlock()
@@ -424,7 +447,6 @@ public class BlockController2 : MonoBehaviour
         float angleDifference = cameraEulerRotation.y - blockEulerRotation.y;
         angleDifference = Mathf.Repeat(angleDifference, 360f);
         int relativeCardinalDirection = Mathf.RoundToInt(angleDifference / 90f);
-
         _AxisPlaneRenderer.material.SetFloat("_Rotation", _Block.transform.eulerAngles.y);
 
         switch (relativeCardinalDirection)
@@ -461,16 +483,16 @@ public class BlockController2 : MonoBehaviour
         {
             _InputModifierY = Vector3.up;
             vUI = transform.up;
-            _AxisPlane.transform.up = zDir;
-            _AxisPlane.transform.position = _AxisBlockPosition + (_BlockSize / 2f - 0.01f) * sign * zDir;
+            _AxisPlane.transform.SetPositionAndRotation(_AxisBlockPosition + (_BlockSize / 2f - 0.01f) * sign * zDir, Quaternion.LookRotation(Vector3.up, zDir));
         }
         else
         {
             _InputModifierY = inputModY;
             vUI = sign * zDir;
-            _AxisPlane.transform.up = transform.up;
+            _AxisPlane.transform.eulerAngles = transform.eulerAngles;
             _AxisPlane.transform.position = _AxisBlockPosition - new Vector3(0f, _BlockSize / 2f - 0.01f, 0f);
         }
+        
         _PlayerBlockUI.blockUIUp.position = _Camera.WorldToScreenPoint(transform.position + vUI * _ArrowUIDistance);
         _PlayerBlockUI.blockUIDown.position = _Camera.WorldToScreenPoint(transform.position - vUI * _ArrowUIDistance);
         _PlayerBlockUI.blockUILeft.position = _Camera.WorldToScreenPoint(transform.position - _ArrowUIDistance * sign2 * xUI);
