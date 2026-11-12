@@ -12,6 +12,11 @@
 					<ChildrenList>
 						<AuxBus Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}">
 							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Color" Type="int16" Value="7"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
@@ -29,6 +34,11 @@
 						</AuxBus>
 						<AuxBus Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}">
 							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Color" Type="int16" Value="7"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
@@ -453,6 +463,11 @@
 						</Bus>
 						<Bus Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}">
 							<PropertyList>
+								<Property Name="BusVolume" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Color" Type="int16" Value="13"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
 							</PropertyList>
@@ -560,6 +575,11 @@
 				</Folder>
 				<Bus Name="VO" ID="{63292908-085F-413A-AEB3-58050BE3C50A}">
 					<PropertyList>
+						<Property Name="BusVolume" Type="Real64">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Color" Type="int16" Value="2"/>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
