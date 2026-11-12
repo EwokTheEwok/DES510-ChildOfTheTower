@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{8ABB00E2-3126-60A4-49F2-B73BEBF281C5}",
+    "Hash": "{35E17E30-33DF-6FB3-6DC1-1979F0659157}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -1229,6 +1229,28 @@
      ]
     },
     "Events": [
+     {
+      "Id": "2809561105",
+      "Name": "Amb_Switch_Inside",
+      "ObjectPath": "\\Events\\AMB Events\\Amb_Switch_Inside",
+      "GUID": "{821EEC11-A94A-4027-B116-A9C7F3F2C483}",
+      "Color": "4",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "3943071186",
+      "Name": "Amb_Switch_Outside",
+      "ObjectPath": "\\Events\\AMB Events\\Amb_Switch_Outside",
+      "GUID": "{D298311D-8148-4152-BD1D-36F7908C4E74}",
+      "Color": "4",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
      {
       "Id": "3945088981",
       "Name": "Brick_0",
@@ -7397,6 +7419,22 @@
        {
         "Id": "260259142"
        }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
       ]
      },
      {
@@ -7408,6 +7446,22 @@
       "DurationType": "OneShot",
       "DurationMin": "1.2061042",
       "DurationMax": "4.3163543",
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -7521,6 +7575,22 @@
       "DurationType": "OneShot",
       "DurationMin": "1.2061042",
       "DurationMax": "4.3163543",
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -7634,6 +7704,22 @@
       "DurationType": "OneShot",
       "DurationMin": "1.2061042",
       "DurationMax": "4.3163543",
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -7747,6 +7833,22 @@
       "DurationType": "OneShot",
       "DurationMin": "1.2061042",
       "DurationMax": "4.3163543",
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -7860,6 +7962,22 @@
       "DurationType": "OneShot",
       "DurationMin": "1.2061042",
       "DurationMax": "4.3163543",
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -7973,6 +8091,22 @@
       "DurationType": "OneShot",
       "DurationMin": "1.2061042",
       "DurationMax": "4.3163543",
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -8086,6 +8220,22 @@
       "DurationType": "OneShot",
       "DurationMin": "1.5103126",
       "DurationMax": "4.213042",
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -8199,6 +8349,22 @@
       "DurationType": "OneShot",
       "DurationMin": "1.5103126",
       "DurationMax": "4.213042",
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -8312,6 +8478,22 @@
       "DurationType": "OneShot",
       "DurationMin": "1.5103126",
       "DurationMax": "4.213042",
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -8425,6 +8607,22 @@
       "DurationType": "OneShot",
       "DurationMin": "1.5103126",
       "DurationMax": "4.213042",
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -8538,6 +8736,22 @@
       "DurationType": "OneShot",
       "DurationMin": "1.5103126",
       "DurationMax": "4.213042",
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -8651,6 +8865,22 @@
       "DurationType": "OneShot",
       "DurationMin": "1.5103126",
       "DurationMax": "4.213042",
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ],
       "SwitchContainers": [
        {
         "SwitchValue": {
@@ -8784,6 +9014,22 @@
        {
         "Id": "434276382"
        }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
       ]
      },
      {
@@ -8915,6 +9161,22 @@
        {
         "Id": "823717908"
        }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
       ]
      },
      {
@@ -9004,6 +9266,22 @@
        },
        {
         "Id": "1060433466"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
        }
       ]
      },
@@ -9098,6 +9376,22 @@
        {
         "Id": "1055200616"
        }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
       ]
      },
      {
@@ -9188,6 +9482,22 @@
        },
        {
         "Id": "967900060"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
        }
       ]
      },
@@ -9789,6 +10099,6 @@
     ]
    }
   ],
-  "FileHash": "{FE3272AD-CADC-433F-002D-4734371AABF1}"
+  "FileHash": "{95017B56-164D-F451-D499-CC190AAC9DD2}"
  }
 }
