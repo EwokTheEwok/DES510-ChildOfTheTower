@@ -601,6 +601,11 @@
 									</ModifierList>
 								</Property>
 								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-7</Value>
@@ -685,6 +690,11 @@
 									</ModifierList>
 								</Property>
 								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-6</Value>
@@ -697,6 +707,12 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+								<Reference Name="UserAuxSend1">
+									<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
@@ -787,9 +803,19 @@
 										<Value>True</Value>
 									</ValueList>
 								</Property>
+								<Property Name="UserAuxSendVolume0" Type="Real64">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+								<Property Name="UserAuxSendVolume1" Type="Real64">
+									<ValueList>
+										<Value>8</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-17</Value>
+										<Value>-18</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -1074,6 +1100,12 @@
 								<Reference Name="OutputBus">
 									<ObjectRef Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+								<Reference Name="UserAuxSend1">
+									<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
 							</ReferenceList>
 							<ChildrenList>
 								<Sound Name="sfx_falling_loop_001" ID="{AABE4BD2-0CFD-45D5-8314-1BBBA9C4DCEC}" ShortID="855413802">
@@ -1160,6 +1192,12 @@
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+								<Reference Name="UserAuxSend1">
+									<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
