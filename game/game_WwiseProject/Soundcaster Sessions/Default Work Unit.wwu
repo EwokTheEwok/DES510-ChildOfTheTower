@@ -43,15 +43,15 @@
 					<ModuleList>
 						<Module>
 							<ObjectRef Name="BrickMode_Start" ID="{0623E312-C834-4E74-99DB-6F596933E6B6}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
-							<Position X="0" Y="0"/>
-						</Module>
-						<Module>
-							<ObjectRef Name="Brick_Reverse" ID="{CCC78528-A90C-4007-92EE-6BAF0DC9F041}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
 							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Brick_PlacementError" ID="{3CF23999-84A1-4513-82C1-3788A7A6F51C}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<ObjectRef Name="Brick_Reverse" ID="{CCC78528-A90C-4007-92EE-6BAF0DC9F041}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
 							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_PlacementError" ID="{3CF23999-84A1-4513-82C1-3788A7A6F51C}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="0" Y="3"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Start_Music" ID="{9A97C6C1-0CEB-4330-A3F7-CD55E362B206}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
@@ -62,8 +62,16 @@
 							<Position X="1" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Brick_04" ID="{9FFBE545-8E93-467A-93DD-3738E5FD312C}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<ObjectRef Name="Brick_06" ID="{9BC08913-D594-4905-BEB6-5A00C4F2B621}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
 							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_12" ID="{8F445D87-9E52-4122-87BA-4C29AE2A5BEF}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="1" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_18" ID="{32CB8878-C4F6-4EA1-AFC5-09B610127ECA}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="1" Y="4"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="MusicAmbTest" ID="{B24AE495-86AA-4865-9672-CAC9A6FB826D}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
@@ -74,8 +82,16 @@
 							<Position X="2" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Brick_05" ID="{B2BDA832-9C90-4CC1-9AC8-E66CF9600EF4}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<ObjectRef Name="Brick_07" ID="{9A177A7F-E175-4D32-B4E5-38665680B8F6}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
 							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_13" ID="{63FB0310-922C-4DD9-9906-5B9BA3641382}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="2" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_19" ID="{E9B8FF98-09C3-4977-8D35-9EB4C200ACFD}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="2" Y="4"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_IntroLoop" ID="{5141A12A-7C53-4A7C-8E8D-98DE16D8F73D}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
@@ -86,11 +102,15 @@
 							<Position X="3" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Brick_06" ID="{9BC08913-D594-4905-BEB6-5A00C4F2B621}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<ObjectRef Name="Brick_08" ID="{3E914B36-721E-47BC-A334-795A1BC16AE3}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
 							<Position X="3" Y="2"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_Amb_Outdoor_Lvl1" ID="{6E86CEA4-1E4C-4875-8530-3E74C1D5E6BA}" WorkUnitID="{8125A5EA-BE73-4683-A280-F78FA24B2ACE}"/>
+							<ObjectRef Name="Brick_14" ID="{47F2F2D7-E022-4DCE-BF1B-26F0513F264D}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="3" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Amb_Lvl1" ID="{6E86CEA4-1E4C-4875-8530-3E74C1D5E6BA}" WorkUnitID="{8125A5EA-BE73-4683-A280-F78FA24B2ACE}"/>
 							<Position X="4" Y="0"/>
 						</Module>
 						<Module>
@@ -98,8 +118,36 @@
 							<Position X="4" Y="1"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Brick_07" ID="{9A177A7F-E175-4D32-B4E5-38665680B8F6}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<ObjectRef Name="Brick_09" ID="{E22F0A76-5EC8-4608-9216-FDFCC90F1D47}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
 							<Position X="4" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_15" ID="{23CC9F8F-32B2-42F7-9304-5E8F31D4183C}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="4" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_04" ID="{9FFBE545-8E93-467A-93DD-3738E5FD312C}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="5" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_10" ID="{D3275C6D-EA74-40E6-A40B-4F0D8F07CC1B}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="5" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_16" ID="{978E8D0B-EF27-4960-A3E1-BDCB46EBC08E}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="5" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_05" ID="{B2BDA832-9C90-4CC1-9AC8-E66CF9600EF4}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="6" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_11" ID="{6794C1F3-D5C3-4C82-9FD6-4598EF59C4CF}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="6" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Brick_17" ID="{4ABA355A-27B4-4F75-A98C-20677B478EBD}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="6" Y="3"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>
@@ -170,7 +218,7 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_Amb_Outdoor_Lvl1" ID="{6E86CEA4-1E4C-4875-8530-3E74C1D5E6BA}" WorkUnitID="{8125A5EA-BE73-4683-A280-F78FA24B2ACE}"/>
+							<ObjectRef Name="Play_Amb_Lvl1" ID="{6E86CEA4-1E4C-4875-8530-3E74C1D5E6BA}" WorkUnitID="{8125A5EA-BE73-4683-A280-F78FA24B2ACE}"/>
 							<Position X="0" Y="2"/>
 						</Module>
 						<Module>
@@ -180,6 +228,14 @@
 						<Module>
 							<ObjectRef Name="Start_Music" ID="{9A97C6C1-0CEB-4330-A3F7-CD55E362B206}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
 							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_UI_Button" ID="{6641B730-98DB-4EA8-990E-46CCF906D289}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_UI_Button_Scroll" ID="{BC1FEFA2-9137-4D3D-A20D-42C62BA674B8}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="3" Y="1"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>

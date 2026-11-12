@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4145705096927853203}
   - component: {fileID: 3783110859233431772}
   - component: {fileID: 4077451109459590933}
+  - component: {fileID: -7705706532379484958}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -64,6 +65,12 @@ MonoBehaviour:
   _FallInShadowEvent:
     m_PersistentCalls:
       m_Calls: []
+  _RestartEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _PauseEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &4077451109459590933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +87,26 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 14958b6fdbf71db42b01632976701d5a, type: 2}
+--- !u!114 &-7705706532379484958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4391773044381303615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ae37cb337fb784f99d34c96db20688, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioStateManager
+  PauseEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2f8ef3ba1ef95eb4ab8e91c849d77ac2, type: 2}
+  ResumeEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7861dce6d474d8c47a105f1e1a56fed3, type: 2}
 --- !u!1 &6036245783953171614
 GameObject:
   m_ObjectHideFlags: 0

@@ -1043,6 +1043,7 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Falling" ID="{7CCB4439-B8CA-4A39-B4EC-91884114D62E}" ShortID="16855818">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="Pitch" Type="int32">
 									<ModifierList>
 										<ModifierInfo>
@@ -1148,23 +1149,21 @@
 								</ObjectList>
 							</ObjectLists>
 						</RandomSequenceContainer>
-						<SwitchContainer Name="SWC_BrickPlaceAnim" ID="{ADAB16C2-9DEC-4DD2-897D-F38E45D9588D}" ShortID="238683898">
+						<RandomSequenceContainer Name="BrickPlace" ID="{52E22517-AAC8-4D48-A92F-5395F40EFAAA}" ShortID="155311486">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
 								</Reference>
-								<Reference Name="DefaultSwitchOrState">
-									<ObjectRef Name="None" ID="{D7D2ED78-A347-4B9A-BCD8-D19CFA466400}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 								</Reference>
-								<Reference Name="SwitchGroupOrStateGroup">
-									<ObjectRef Name="Level" ID="{8C02021C-5ABD-45E2-AD8D-08C504A3BA7D}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="sfx_brickplaceanim_C_001" ID="{81305423-E75F-4F57-A57E-A8EF4947D082}" ShortID="793703352">
+								<Sound Name="sfx_brickplaceanim_002" ID="{07229833-F3DD-4811-9052-9AD972B5E5DE}" ShortID="911340497">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
@@ -1174,165 +1173,31 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="sfx_brickplaceanim_C_001" ID="{DCC3226A-174E-4204-B818-32E842711A4E}">
+										<AudioFileSource Name="sfx_brickplaceanim_002" ID="{C567E856-A557-4E11-9CA0-1954589C4D70}">
 											<Language>SFX</Language>
-											<AudioFile>sfx_brickplaceanim_C_001.wav</AudioFile>
+											<AudioFile>sfx_brickplaceanim_002.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="373930944"/>
+												<MediaID ID="260259142"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="sfx_brickplaceanim_C_001" ID="{DCC3226A-174E-4204-B818-32E842711A4E}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_brickplaceanim_D_001" ID="{2DC42F70-33CD-4361-97F5-438FAC8BCF8B}" ShortID="732473014">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_brickplaceanim_D_001" ID="{BD00B315-40E7-4DB2-AC0B-A831A0FC2CDC}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_brickplaceanim_D_001.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="508304624"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_brickplaceanim_D_001" ID="{BD00B315-40E7-4DB2-AC0B-A831A0FC2CDC}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_brickplaceanim_E_001" ID="{F34CA0E3-5349-4DEE-86DE-5F9739FE9C9D}" ShortID="285885557">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_brickplaceanim_E_001" ID="{C09EF1D4-70BC-436C-88EB-7C5EFB14B089}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_brickplaceanim_E_001.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="1032581140"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_brickplaceanim_E_001" ID="{C09EF1D4-70BC-436C-88EB-7C5EFB14B089}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_brickplaceanim_F#_001" ID="{765AC368-AC3D-4EF7-BD86-047B0B5F7543}" ShortID="20822863">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_brickplaceanim_F#_001" ID="{4D2B7AA3-E172-4E26-A0D5-B62E8E8350A7}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_brickplaceanim_F#_001.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="840410791"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_brickplaceanim_F#_001" ID="{4D2B7AA3-E172-4E26-A0D5-B62E8E8350A7}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_brickplaceanim_G_001" ID="{CA55840B-528F-44EE-BFF2-DD796945F052}" ShortID="1003661653">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_brickplaceanim_G_001" ID="{88928A92-A964-4C3F-9FD6-47B44D4A0D69}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_brickplaceanim_G_001.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="1009637837"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_brickplaceanim_G_001" ID="{88928A92-A964-4C3F-9FD6-47B44D4A0D69}" Platform="Linked"/>
+										<ActiveSource Name="sfx_brickplaceanim_002" ID="{C567E856-A557-4E11-9CA0-1954589C4D70}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
-							<GroupingInfo>
-								<GroupingBehaviorList>
-									<GroupingBehavior>
-										<ItemRef Name="sfx_brickplaceanim_G_001" ID="{CA55840B-528F-44EE-BFF2-DD796945F052}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="sfx_brickplaceanim_C_001" ID="{81305423-E75F-4F57-A57E-A8EF4947D082}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="sfx_brickplaceanim_F#_001" ID="{765AC368-AC3D-4EF7-BD86-047B0B5F7543}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="sfx_brickplaceanim_D_001" ID="{2DC42F70-33CD-4361-97F5-438FAC8BCF8B}"/>
-									</GroupingBehavior>
-									<GroupingBehavior>
-										<ItemRef Name="sfx_brickplaceanim_E_001" ID="{F34CA0E3-5349-4DEE-86DE-5F9739FE9C9D}"/>
-									</GroupingBehavior>
-								</GroupingBehaviorList>
-								<GroupingList>
-									<Grouping>
-										<SwitchRef Name="Lvl2" ID="{9FC27A63-68FE-47C0-BA0E-77310CA275B5}"/>
-										<ItemList>
-											<ItemRef Name="sfx_brickplaceanim_D_001" ID="{2DC42F70-33CD-4361-97F5-438FAC8BCF8B}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Lvl4" ID="{616BC274-61E1-4F64-8776-A9C822D71FF7}"/>
-										<ItemList>
-											<ItemRef Name="sfx_brickplaceanim_F#_001" ID="{765AC368-AC3D-4EF7-BD86-047B0B5F7543}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Lvl1" ID="{863C7175-F5DA-4DC0-B5C4-53BC5F074DDB}"/>
-										<ItemList>
-											<ItemRef Name="sfx_brickplaceanim_E_001" ID="{F34CA0E3-5349-4DEE-86DE-5F9739FE9C9D}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="None" ID="{D7D2ED78-A347-4B9A-BCD8-D19CFA466400}"/>
-										<ItemList>
-											<ItemRef Name="sfx_brickplaceanim_E_001" ID="{F34CA0E3-5349-4DEE-86DE-5F9739FE9C9D}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Title" ID="{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}"/>
-										<ItemList>
-											<ItemRef Name="sfx_brickplaceanim_E_001" ID="{F34CA0E3-5349-4DEE-86DE-5F9739FE9C9D}"/>
-										</ItemList>
-									</Grouping>
-									<Grouping>
-										<SwitchRef Name="Lvl3" ID="{E3F8CBF0-7A13-49BF-B957-A8DDC7832151}"/>
-										<ItemList>
-											<ItemRef Name="sfx_brickplaceanim_G_001" ID="{CA55840B-528F-44EE-BFF2-DD796945F052}"/>
-										</ItemList>
-									</Grouping>
-								</GroupingList>
-							</GroupingInfo>
-						</SwitchContainer>
+							<ObjectLists>
+								<ObjectList Name="Playlist">
+									<PluginInnerObject Name="" ID="{2A4A779A-FF63-4A19-A12C-08BE0902CD90}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+										<ReferenceList>
+											<Reference Name="PlaylistObject">
+												<ObjectRef Name="sfx_brickplaceanim_002" ID="{07229833-F3DD-4811-9052-9AD972B5E5DE}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+											</Reference>
+										</ReferenceList>
+									</PluginInnerObject>
+								</ObjectList>
+							</ObjectLists>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Brick SFX" ID="{18828119-4F4C-419E-A148-88FA670E45F8}" ShortID="212856489">
@@ -1347,7 +1212,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-8</Value>
+										<Value>-9</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1474,15 +1339,21 @@
 						</RandomSequenceContainer>
 						<SwitchContainer Name="SWC_BrickSwitcher" ID="{C7D2C880-AD61-47B5-BBEC-343CDB4BB253}" ShortID="1018473959">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="IsGlobalLimit" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
-										<Value>1</Value>
+										<Value>2</Value>
 									</ValueList>
 								</Property>
 								<Property Name="UseMaxSoundPerInstance" Type="bool">
 									<ValueList>
 										<Value>True</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>1</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1491,984 +1362,687 @@
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
 								</Reference>
 								<Reference Name="DefaultSwitchOrState">
-									<ObjectRef Name="None" ID="{D7D2ED78-A347-4B9A-BCD8-D19CFA466400}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+									<ObjectRef Name="None" ID="{1AD2C52F-4514-4778-8334-F3447D8E7CB4}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
 								</Reference>
 								<Reference Name="OutputBus">
 									<ObjectRef Name="AudioObjects_Brick" ID="{A1065881-998C-4B5A-B989-73098B9FF0BB}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 								</Reference>
 								<Reference Name="SwitchGroupOrStateGroup">
-									<ObjectRef Name="Level" ID="{8C02021C-5ABD-45E2-AD8D-08C504A3BA7D}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+									<ObjectRef Name="BrickBuilding" ID="{01F874EC-5CAC-4066-85A4-74EEDEC7A799}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<SwitchContainer Name="SWC_Brick_lvl1" ID="{AB92C583-17EA-4BD9-83F7-928E89060F55}" ShortID="1003748421">
+								<Sound Name="sfx_brickplace_001_002" ID="{86997DC1-DEF1-4F43-A0D9-FBD1146EAD72}" ShortID="481793882">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
 										</Reference>
-										<Reference Name="DefaultSwitchOrState">
-											<ObjectRef Name="None" ID="{1AD2C52F-4514-4778-8334-F3447D8E7CB4}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-										<Reference Name="SwitchGroupOrStateGroup">
-											<ObjectRef Name="BrickBuilding" ID="{01F874EC-5CAC-4066-85A4-74EEDEC7A799}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="sfx_brickplace_lvl1_001" ID="{3822414F-9DCA-4D78-9D52-57AD2E65720B}" ShortID="589602653">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-10</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl1_001" ID="{8F765CF9-E52D-481E-8FC8-9FBD58040C9F}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl1_001.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="944157133"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl1_001" ID="{8F765CF9-E52D-481E-8FC8-9FBD58040C9F}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl1_002" ID="{2689917D-375A-45E6-91B9-B81BAC5514BB}" ShortID="425730317">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl1_002" ID="{13CB5287-2F13-4E78-BA85-4BCE4AF6313E}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl1_002.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="857250192"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl1_002" ID="{13CB5287-2F13-4E78-BA85-4BCE4AF6313E}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl1_003" ID="{777E19EA-AEBE-43B6-978C-E20C9F693F64}" ShortID="726378368">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-10</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl1_003" ID="{CDD8D81B-956C-4676-B2B4-2D97F9B318E5}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl1_003.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="284184025"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl1_003" ID="{CDD8D81B-956C-4676-B2B4-2D97F9B318E5}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl1_004" ID="{5855CFEB-6529-4BD2-9E82-9B7F97EF11E9}" ShortID="465482793">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl1_004" ID="{0FDAF48B-0637-48D0-8F12-AFE2882EB5AA}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl1_004.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="267954486"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl1_004" ID="{0FDAF48B-0637-48D0-8F12-AFE2882EB5AA}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl1_005" ID="{6F0AE362-F302-4487-B23B-FF237CB81EF4}" ShortID="217781737">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl1_005" ID="{22EE6F17-2139-463E-9EE8-F8680BAEA038}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl1_005.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="912748975"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl1_005" ID="{22EE6F17-2139-463E-9EE8-F8680BAEA038}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl1_006" ID="{1CBA9048-6F19-4F0D-866D-D3531CA41DFF}" ShortID="789345914">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-10</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl1_006" ID="{4F3B5310-C069-4D0D-A120-C26E432FE4BF}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl1_006.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="390747018"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl1_006" ID="{4F3B5310-C069-4D0D-A120-C26E432FE4BF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl1_007" ID="{A722AFDE-D4B7-4362-B925-FE9F0D3F05C1}" ShortID="231813855">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl1_007" ID="{3C18F74A-1C33-43FC-A682-CEF88B088A84}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl1_007.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="645220113"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl1_007" ID="{3C18F74A-1C33-43FC-A682-CEF88B088A84}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl1_008" ID="{FCBB8803-FED7-4E30-A05D-08941A2F2B22}" ShortID="338731024">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl1_008" ID="{CA24B628-8FAB-4354-9CCC-D8DC0DF6E1D0}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl1_008.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="45364070"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl1_008" ID="{CA24B628-8FAB-4354-9CCC-D8DC0DF6E1D0}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
+										<AudioFileSource Name="sfx_brickplace_001_002" ID="{1F4D4C97-7545-4245-B8F8-3ABF78818198}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_001_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="817585313"/>
+											</MediaIDList>
+										</AudioFileSource>
 									</ChildrenList>
-									<GroupingInfo>
-										<GroupingBehaviorList>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl1_008" ID="{FCBB8803-FED7-4E30-A05D-08941A2F2B22}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl1_006" ID="{1CBA9048-6F19-4F0D-866D-D3531CA41DFF}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl1_001" ID="{3822414F-9DCA-4D78-9D52-57AD2E65720B}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl1_005" ID="{6F0AE362-F302-4487-B23B-FF237CB81EF4}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl1_002" ID="{2689917D-375A-45E6-91B9-B81BAC5514BB}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl1_007" ID="{A722AFDE-D4B7-4362-B925-FE9F0D3F05C1}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl1_003" ID="{777E19EA-AEBE-43B6-978C-E20C9F693F64}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl1_004" ID="{5855CFEB-6529-4BD2-9E82-9B7F97EF11E9}"/>
-											</GroupingBehavior>
-										</GroupingBehaviorList>
-										<GroupingList>
-											<Grouping>
-												<SwitchRef Name="Brick_04" ID="{4C233910-7CBA-4724-854B-83BF1BB63B83}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl1_005" ID="{6F0AE362-F302-4487-B23B-FF237CB81EF4}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_0" ID="{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl1_001" ID="{3822414F-9DCA-4D78-9D52-57AD2E65720B}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_06" ID="{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl1_007" ID="{A722AFDE-D4B7-4362-B925-FE9F0D3F05C1}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_02" ID="{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl1_003" ID="{777E19EA-AEBE-43B6-978C-E20C9F693F64}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_05" ID="{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl1_006" ID="{1CBA9048-6F19-4F0D-866D-D3531CA41DFF}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_01" ID="{2E8E7386-933C-4145-8213-D16258FA9929}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl1_002" ID="{2689917D-375A-45E6-91B9-B81BAC5514BB}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_07" ID="{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl1_008" ID="{FCBB8803-FED7-4E30-A05D-08941A2F2B22}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_03" ID="{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl1_004" ID="{5855CFEB-6529-4BD2-9E82-9B7F97EF11E9}"/>
-												</ItemList>
-											</Grouping>
-										</GroupingList>
-									</GroupingInfo>
-								</SwitchContainer>
-								<SwitchContainer Name="SWC_Brick_lvl2" ID="{C6693E59-1ADF-48D4-ACC7-2D0217A6CD81}" ShortID="702222973">
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_001_002" ID="{1F4D4C97-7545-4245-B8F8-3ABF78818198}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_002_002" ID="{E5B59382-5B73-4009-AF29-FCBAA3D1C0E4}" ShortID="43137819">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
 										</Reference>
-										<Reference Name="DefaultSwitchOrState">
-											<ObjectRef Name="None" ID="{1AD2C52F-4514-4778-8334-F3447D8E7CB4}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-										<Reference Name="SwitchGroupOrStateGroup">
-											<ObjectRef Name="BrickBuilding" ID="{01F874EC-5CAC-4066-85A4-74EEDEC7A799}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="sfx_brickplace_lvl2_001" ID="{F2827661-204C-4009-B240-D5035DEE01C4}" ShortID="447514047">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-15</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl2_001" ID="{7C0D586D-4F83-478E-933F-231212410A8F}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl2_001.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="509693614"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl2_001" ID="{7C0D586D-4F83-478E-933F-231212410A8F}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl2_002" ID="{961DFC98-D942-4275-911F-65507A81B489}" ShortID="264418225">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-15</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl2_002" ID="{56DA274B-ADFE-444C-B5B8-360B9DC372DC}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl2_002.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="429895228"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl2_002" ID="{56DA274B-ADFE-444C-B5B8-360B9DC372DC}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl2_003" ID="{7703E522-60B2-4750-81BF-960AC6415B11}" ShortID="265010815">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-15</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl2_003" ID="{48122961-60A4-4C55-878F-2EA82678A787}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl2_003.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="643300300"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl2_003" ID="{48122961-60A4-4C55-878F-2EA82678A787}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl2_004" ID="{2A833A46-F511-425C-858F-9FD2644B8AAD}" ShortID="784848151">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl2_004" ID="{F7286FE6-6AFA-4B76-84D9-59DB48A68A15}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl2_004.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="981137394"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl2_004" ID="{F7286FE6-6AFA-4B76-84D9-59DB48A68A15}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl2_005" ID="{CF5DC400-95DE-4C4D-90D6-E2BE5286F789}" ShortID="494879735">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl2_005" ID="{0C01EC72-3AE4-4433-BBFF-E204FF243709}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl2_005.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="665708152"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl2_005" ID="{0C01EC72-3AE4-4433-BBFF-E204FF243709}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl2_006" ID="{9AE18617-DCE9-4E62-877C-E6EE8C44D83A}" ShortID="1032683613">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl2_006" ID="{DBA0F8D1-0DFC-4A8F-959F-48ECAD1F38B4}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl2_006.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="911890141"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl2_006" ID="{DBA0F8D1-0DFC-4A8F-959F-48ECAD1F38B4}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl2_007" ID="{B9659A63-F840-4869-B96E-7BD337FC0A32}" ShortID="300100436">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl2_007" ID="{FC0D90DE-F804-48D4-957E-5A1EA74A60DC}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl2_007.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="478934652"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl2_007" ID="{FC0D90DE-F804-48D4-957E-5A1EA74A60DC}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl2_008" ID="{01E1333C-22B3-454C-A21D-347DB4FC85E0}" ShortID="104574497">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-20</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl2_008" ID="{61032ED5-94F7-46FF-8E1B-3D23D8227ED1}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl2_008.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="820372882"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl2_008" ID="{61032ED5-94F7-46FF-8E1B-3D23D8227ED1}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
+										<AudioFileSource Name="sfx_brickplace_002_002" ID="{212B9C46-E367-4EBD-B029-49E5CFCB6A36}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_002_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="470139905"/>
+											</MediaIDList>
+										</AudioFileSource>
 									</ChildrenList>
-									<GroupingInfo>
-										<GroupingBehaviorList>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl2_005" ID="{CF5DC400-95DE-4C4D-90D6-E2BE5286F789}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl2_006" ID="{9AE18617-DCE9-4E62-877C-E6EE8C44D83A}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl2_003" ID="{7703E522-60B2-4750-81BF-960AC6415B11}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl2_008" ID="{01E1333C-22B3-454C-A21D-347DB4FC85E0}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl2_004" ID="{2A833A46-F511-425C-858F-9FD2644B8AAD}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl2_001" ID="{F2827661-204C-4009-B240-D5035DEE01C4}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl2_007" ID="{B9659A63-F840-4869-B96E-7BD337FC0A32}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl2_002" ID="{961DFC98-D942-4275-911F-65507A81B489}"/>
-											</GroupingBehavior>
-										</GroupingBehaviorList>
-										<GroupingList>
-											<Grouping>
-												<SwitchRef Name="Brick_04" ID="{4C233910-7CBA-4724-854B-83BF1BB63B83}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl2_005" ID="{CF5DC400-95DE-4C4D-90D6-E2BE5286F789}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_0" ID="{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl2_001" ID="{F2827661-204C-4009-B240-D5035DEE01C4}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_06" ID="{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl2_007" ID="{B9659A63-F840-4869-B96E-7BD337FC0A32}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_02" ID="{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl2_003" ID="{7703E522-60B2-4750-81BF-960AC6415B11}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_05" ID="{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl2_006" ID="{9AE18617-DCE9-4E62-877C-E6EE8C44D83A}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_01" ID="{2E8E7386-933C-4145-8213-D16258FA9929}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl2_002" ID="{961DFC98-D942-4275-911F-65507A81B489}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_07" ID="{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl2_008" ID="{01E1333C-22B3-454C-A21D-347DB4FC85E0}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_03" ID="{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl2_004" ID="{2A833A46-F511-425C-858F-9FD2644B8AAD}"/>
-												</ItemList>
-											</Grouping>
-										</GroupingList>
-									</GroupingInfo>
-								</SwitchContainer>
-								<SwitchContainer Name="SWC_Brick_lvl3" ID="{6D49DE71-4789-46D7-BAF8-769625BAB50A}" ShortID="144610648">
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_002_002" ID="{212B9C46-E367-4EBD-B029-49E5CFCB6A36}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_003_002" ID="{F2DFA618-C324-4620-95B6-C9530F912555}" ShortID="134200425">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
 										</Reference>
-										<Reference Name="DefaultSwitchOrState">
-											<ObjectRef Name="None" ID="{1AD2C52F-4514-4778-8334-F3447D8E7CB4}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
-										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-										<Reference Name="SwitchGroupOrStateGroup">
-											<ObjectRef Name="BrickBuilding" ID="{01F874EC-5CAC-4066-85A4-74EEDEC7A799}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="sfx_brickplace_lvl3_001" ID="{10CC6399-0AA5-47A7-8CA5-3D82BEC69CFA}" ShortID="838537090">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-15</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl3_001" ID="{05F46323-9ACD-448D-ABAD-30895538D5D4}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl3_001.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="486694317"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl3_001" ID="{05F46323-9ACD-448D-ABAD-30895538D5D4}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl3_002" ID="{B0E14F2A-7E14-47BB-92D4-298DA5BCBE34}" ShortID="276034869">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl3_002" ID="{6EF6A40C-8E1D-42E2-96E1-01251E973902}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl3_002.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="462369481"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl3_002" ID="{6EF6A40C-8E1D-42E2-96E1-01251E973902}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl3_003" ID="{65B7B9DB-BF2F-4532-A68C-2C49B498D1BE}" ShortID="139118848">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>5</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl3_003" ID="{12CC916B-5149-4D27-A798-0CF775A33BCF}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl3_003.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="511643272"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl3_003" ID="{12CC916B-5149-4D27-A798-0CF775A33BCF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl3_004" ID="{D97ABD87-9CF4-4035-AD48-4228A11441F2}" ShortID="601656070">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>10</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl3_004" ID="{86E064D6-45EF-419B-9EB7-55886A5867F4}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl3_004.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="254218949"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl3_004" ID="{86E064D6-45EF-419B-9EB7-55886A5867F4}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl3_005" ID="{8E903E3D-22C1-40E6-BA88-A40B3B4F7802}" ShortID="591539839">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl3_005" ID="{BBCED913-EDC1-482A-804E-CF55B29EA421}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl3_005.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="673032471"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl3_005" ID="{BBCED913-EDC1-482A-804E-CF55B29EA421}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl3_006" ID="{D8DD9E8A-974A-4495-9423-922C995F4DAD}" ShortID="616858980">
-											<PropertyList>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-15</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl3_006" ID="{1C9293B5-4B52-4C55-8EA3-81E419FF9342}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl3_006.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="737196812"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl3_006" ID="{1C9293B5-4B52-4C55-8EA3-81E419FF9342}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl3_007" ID="{50CF3EAC-8FBD-4603-893F-C2296A1CA557}" ShortID="364921497">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl3_007" ID="{4EC47592-9FC6-4EE9-A039-1AFBAEA59E8C}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl3_007.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="888520922"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl3_007" ID="{4EC47592-9FC6-4EE9-A039-1AFBAEA59E8C}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="sfx_brickplace_lvl3_008" ID="{F93F98DE-FC58-46E5-8E06-E31B46001CFE}" ShortID="939592852">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="sfx_brickplace_lvl3_008" ID="{39D0BE6D-C413-49F2-87B8-43BEC6287CD1}">
-													<Language>SFX</Language>
-													<AudioFile>sfx_brickplace_lvl3_008.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="1024991192"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="sfx_brickplace_lvl3_008" ID="{39D0BE6D-C413-49F2-87B8-43BEC6287CD1}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
+										<AudioFileSource Name="sfx_brickplace_003_002" ID="{D1F13252-B539-4F92-9C39-D5A860BAE29D}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_003_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="937476692"/>
+											</MediaIDList>
+										</AudioFileSource>
 									</ChildrenList>
-									<GroupingInfo>
-										<GroupingBehaviorList>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl3_002" ID="{B0E14F2A-7E14-47BB-92D4-298DA5BCBE34}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl3_005" ID="{8E903E3D-22C1-40E6-BA88-A40B3B4F7802}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl3_004" ID="{D97ABD87-9CF4-4035-AD48-4228A11441F2}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl3_006" ID="{D8DD9E8A-974A-4495-9423-922C995F4DAD}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl3_001" ID="{10CC6399-0AA5-47A7-8CA5-3D82BEC69CFA}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl3_007" ID="{50CF3EAC-8FBD-4603-893F-C2296A1CA557}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl3_003" ID="{65B7B9DB-BF2F-4532-A68C-2C49B498D1BE}"/>
-											</GroupingBehavior>
-											<GroupingBehavior>
-												<ItemRef Name="sfx_brickplace_lvl3_008" ID="{F93F98DE-FC58-46E5-8E06-E31B46001CFE}"/>
-											</GroupingBehavior>
-										</GroupingBehaviorList>
-										<GroupingList>
-											<Grouping>
-												<SwitchRef Name="Brick_04" ID="{4C233910-7CBA-4724-854B-83BF1BB63B83}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl3_005" ID="{8E903E3D-22C1-40E6-BA88-A40B3B4F7802}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_0" ID="{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl3_001" ID="{10CC6399-0AA5-47A7-8CA5-3D82BEC69CFA}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_06" ID="{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl3_007" ID="{50CF3EAC-8FBD-4603-893F-C2296A1CA557}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_02" ID="{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl3_003" ID="{65B7B9DB-BF2F-4532-A68C-2C49B498D1BE}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_05" ID="{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl3_006" ID="{D8DD9E8A-974A-4495-9423-922C995F4DAD}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_01" ID="{2E8E7386-933C-4145-8213-D16258FA9929}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl3_002" ID="{B0E14F2A-7E14-47BB-92D4-298DA5BCBE34}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_07" ID="{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl3_008" ID="{F93F98DE-FC58-46E5-8E06-E31B46001CFE}"/>
-												</ItemList>
-											</Grouping>
-											<Grouping>
-												<SwitchRef Name="Brick_03" ID="{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"/>
-												<ItemList>
-													<ItemRef Name="sfx_brickplace_lvl3_004" ID="{D97ABD87-9CF4-4035-AD48-4228A11441F2}"/>
-												</ItemList>
-											</Grouping>
-										</GroupingList>
-									</GroupingInfo>
-								</SwitchContainer>
-								<SwitchContainer Name="SWC_Brick_lvl4" ID="{68DBAFC7-4FCE-41B9-928F-65EC968B4D27}" ShortID="915770400">
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_003_002" ID="{D1F13252-B539-4F92-9C39-D5A860BAE29D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_004_002" ID="{5DD0104C-DA32-4C86-8182-CF707266FE3B}" ShortID="509031730">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
 										</Reference>
-										<Reference Name="DefaultSwitchOrState">
-											<ObjectRef Name="None" ID="{1AD2C52F-4514-4778-8334-F3447D8E7CB4}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_004_002" ID="{3D5AA6C5-4D8E-4C72-AFDA-B3143628FF04}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_004_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="526897721"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_004_002" ID="{3D5AA6C5-4D8E-4C72-AFDA-B3143628FF04}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_005_002" ID="{813CB160-4089-45B0-A94F-40DC694B43BC}" ShortID="347313344">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
 										</Reference>
 										<Reference Name="OutputBus">
 											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 										</Reference>
-										<Reference Name="SwitchGroupOrStateGroup">
-											<ObjectRef Name="BrickBuilding" ID="{01F874EC-5CAC-4066-85A4-74EEDEC7A799}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_005_002" ID="{76318DDE-E3C6-410E-BE88-0A2FEE0E6032}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_005_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="42251999"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_005_002" ID="{76318DDE-E3C6-410E-BE88-0A2FEE0E6032}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_006_002" ID="{722A542A-B45F-4B55-A590-0F8E2AD189EF}" ShortID="866180376">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 										</Reference>
 									</ReferenceList>
-									<GroupingInfo/>
-								</SwitchContainer>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_006_002" ID="{D097991A-5267-43D9-8BDC-ABD3D5CD77C1}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_006_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="56928485"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_006_002" ID="{D097991A-5267-43D9-8BDC-ABD3D5CD77C1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_007_002" ID="{51FE3D49-5E53-4923-83DF-F757E6AEC28C}" ShortID="1002796980">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_007_002" ID="{993F3CB5-95B4-4B1B-882A-B8D00D76F851}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_007_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="244273622"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_007_002" ID="{993F3CB5-95B4-4B1B-882A-B8D00D76F851}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_008_002" ID="{AACF050F-ED7D-4F9B-B55A-0314575E7CCA}" ShortID="1018531082">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_008_002" ID="{285592BD-F77E-42AB-B192-FEF0C95EC87B}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_008_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="903094346"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_008_002" ID="{285592BD-F77E-42AB-B192-FEF0C95EC87B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_009_002" ID="{93FB5B3D-8495-4815-B7C9-0D5930D3830B}" ShortID="1026050915">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_009_002" ID="{D1F7A071-B43B-4A4A-8DE0-0B9D0A45A6B2}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_009_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="707663772"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_009_002" ID="{D1F7A071-B43B-4A4A-8DE0-0B9D0A45A6B2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_010_002" ID="{B152CFB7-0C09-4529-A305-EA2B58CED730}" ShortID="239631902">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_010_002" ID="{412FFE6E-D2D3-49E0-9F53-35B3703A1D54}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_010_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="459018154"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_010_002" ID="{412FFE6E-D2D3-49E0-9F53-35B3703A1D54}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_011_002" ID="{F727BDBA-9894-4F36-9700-6075C6931DA7}" ShortID="233806970">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_011_002" ID="{27922BD1-D551-494D-8431-F56687498359}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_011_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="869375109"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_011_002" ID="{27922BD1-D551-494D-8431-F56687498359}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_012_002" ID="{56D64653-5485-4493-A458-5264A988C6F8}" ShortID="62550752">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_012_002" ID="{2482DC0A-40C0-4AFA-A268-A17C679A3D1A}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_012_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="892693275"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_012_002" ID="{2482DC0A-40C0-4AFA-A268-A17C679A3D1A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_013_002" ID="{159C19F3-FD8D-4239-84A8-763BB7B88A95}" ShortID="225115783">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_013_002" ID="{BD386F8E-7E38-407C-B489-CE0D1723101E}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_013_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="895527075"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_013_002" ID="{BD386F8E-7E38-407C-B489-CE0D1723101E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_014_002" ID="{2BC7C813-B94D-4A1F-8740-6572F1EC0258}" ShortID="182321893">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_014_002" ID="{1014A638-8FAD-4DD2-B0BF-139C30F6DE25}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_014_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="903953205"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_014_002" ID="{1014A638-8FAD-4DD2-B0BF-139C30F6DE25}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_015_002" ID="{D54A633B-4515-43CD-B9BB-AEE1482D6B0C}" ShortID="381039054">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_015_002" ID="{9B0BE2EC-8248-4FFB-818F-8AD589225317}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_015_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="239067317"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_015_002" ID="{9B0BE2EC-8248-4FFB-818F-8AD589225317}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_016_002" ID="{DC34BA1A-4E79-4765-9E8E-B27CADC9A299}" ShortID="843029375">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_016_002" ID="{91303E21-E21D-4A07-852A-984A8BE8CD76}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_016_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="602296618"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_016_002" ID="{91303E21-E21D-4A07-852A-984A8BE8CD76}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_017_002" ID="{CB3DF59F-B83E-4217-A1A0-32A650F0BDDE}" ShortID="920973974">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_017_002" ID="{B1B7EBE5-C9C0-4918-BA08-704BB4BA88F3}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_017_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1043149765"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_017_002" ID="{B1B7EBE5-C9C0-4918-BA08-704BB4BA88F3}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_018_002" ID="{71EFD6C0-30A0-418E-9751-7A121DBE64A4}" ShortID="942652662">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_018_002" ID="{AF3845CB-DA16-488D-ADCF-961762D437AE}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_018_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="6064446"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_018_002" ID="{AF3845CB-DA16-488D-ADCF-961762D437AE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_019_002" ID="{208E3AFB-AE22-4D42-B0BF-1C8952067538}" ShortID="702397264">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_019_002" ID="{1652C758-FB79-4280-B9DC-E61A6AE9826B}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_019_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="128661210"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_019_002" ID="{1652C758-FB79-4280-B9DC-E61A6AE9826B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="sfx_brickplace_020_002" ID="{9AC8AE7D-C4FA-42AC-9FCB-B23E250130CE}" ShortID="909481975">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_brickplace_020_002" ID="{13CC0A40-0F90-462B-B286-2306166E50D9}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_brickplace_020_002.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="353863067"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_brickplace_020_002" ID="{13CC0A40-0F90-462B-B286-2306166E50D9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 							<GroupingInfo>
 								<GroupingBehaviorList>
 									<GroupingBehavior>
-										<ItemRef Name="SWC_Brick_lvl2" ID="{C6693E59-1ADF-48D4-ACC7-2D0217A6CD81}"/>
+										<ItemRef Name="sfx_brickplace_008_002" ID="{AACF050F-ED7D-4F9B-B55A-0314575E7CCA}"/>
 									</GroupingBehavior>
 									<GroupingBehavior>
-										<ItemRef Name="SWC_Brick_lvl3" ID="{6D49DE71-4789-46D7-BAF8-769625BAB50A}"/>
+										<ItemRef Name="sfx_brickplace_014_002" ID="{2BC7C813-B94D-4A1F-8740-6572F1EC0258}"/>
 									</GroupingBehavior>
 									<GroupingBehavior>
-										<ItemRef Name="SWC_Brick_lvl1" ID="{AB92C583-17EA-4BD9-83F7-928E89060F55}"/>
+										<ItemRef Name="sfx_brickplace_003_002" ID="{F2DFA618-C324-4620-95B6-C9530F912555}"/>
 									</GroupingBehavior>
 									<GroupingBehavior>
-										<ItemRef Name="SWC_Brick_lvl4" ID="{68DBAFC7-4FCE-41B9-928F-65EC968B4D27}"/>
+										<ItemRef Name="sfx_brickplace_016_002" ID="{DC34BA1A-4E79-4765-9E8E-B27CADC9A299}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_006_002" ID="{722A542A-B45F-4B55-A590-0F8E2AD189EF}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_015_002" ID="{D54A633B-4515-43CD-B9BB-AEE1482D6B0C}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_009_002" ID="{93FB5B3D-8495-4815-B7C9-0D5930D3830B}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_007_002" ID="{51FE3D49-5E53-4923-83DF-F757E6AEC28C}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_004_002" ID="{5DD0104C-DA32-4C86-8182-CF707266FE3B}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_012_002" ID="{56D64653-5485-4493-A458-5264A988C6F8}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_005_002" ID="{813CB160-4089-45B0-A94F-40DC694B43BC}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_020_002" ID="{9AC8AE7D-C4FA-42AC-9FCB-B23E250130CE}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_002_002" ID="{E5B59382-5B73-4009-AF29-FCBAA3D1C0E4}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_017_002" ID="{CB3DF59F-B83E-4217-A1A0-32A650F0BDDE}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_010_002" ID="{B152CFB7-0C09-4529-A305-EA2B58CED730}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_011_002" ID="{F727BDBA-9894-4F36-9700-6075C6931DA7}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_018_002" ID="{71EFD6C0-30A0-418E-9751-7A121DBE64A4}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_001_002" ID="{86997DC1-DEF1-4F43-A0D9-FBD1146EAD72}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_013_002" ID="{159C19F3-FD8D-4239-84A8-763BB7B88A95}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="sfx_brickplace_019_002" ID="{208E3AFB-AE22-4D42-B0BF-1C8952067538}"/>
 									</GroupingBehavior>
 								</GroupingBehaviorList>
 								<GroupingList>
 									<Grouping>
-										<SwitchRef Name="Lvl2" ID="{9FC27A63-68FE-47C0-BA0E-77310CA275B5}"/>
+										<SwitchRef Name="Brick_19" ID="{E4B40C06-AED9-417C-9187-0AD76725D9E2}"/>
 										<ItemList>
-											<ItemRef Name="SWC_Brick_lvl2" ID="{C6693E59-1ADF-48D4-ACC7-2D0217A6CD81}"/>
+											<ItemRef Name="sfx_brickplace_020_002" ID="{9AC8AE7D-C4FA-42AC-9FCB-B23E250130CE}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
-										<SwitchRef Name="Lvl4" ID="{616BC274-61E1-4F64-8776-A9C822D71FF7}"/>
+										<SwitchRef Name="Brick_04" ID="{4C233910-7CBA-4724-854B-83BF1BB63B83}"/>
 										<ItemList>
-											<ItemRef Name="SWC_Brick_lvl4" ID="{68DBAFC7-4FCE-41B9-928F-65EC968B4D27}"/>
+											<ItemRef Name="sfx_brickplace_005_002" ID="{813CB160-4089-45B0-A94F-40DC694B43BC}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
-										<SwitchRef Name="Lvl1" ID="{863C7175-F5DA-4DC0-B5C4-53BC5F074DDB}"/>
+										<SwitchRef Name="Brick_15" ID="{F854C612-09E7-457D-BE60-9DFEFCA0984E}"/>
 										<ItemList>
-											<ItemRef Name="SWC_Brick_lvl1" ID="{AB92C583-17EA-4BD9-83F7-928E89060F55}"/>
+											<ItemRef Name="sfx_brickplace_016_002" ID="{DC34BA1A-4E79-4765-9E8E-B27CADC9A299}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
-										<SwitchRef Name="None" ID="{D7D2ED78-A347-4B9A-BCD8-D19CFA466400}"/>
+										<SwitchRef Name="Brick_16" ID="{25CA8213-38C5-4F49-B0CE-5327ED9FDBD3}"/>
 										<ItemList>
-											<ItemRef Name="SWC_Brick_lvl1" ID="{AB92C583-17EA-4BD9-83F7-928E89060F55}"/>
+											<ItemRef Name="sfx_brickplace_017_002" ID="{CB3DF59F-B83E-4217-A1A0-32A650F0BDDE}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
-										<SwitchRef Name="Title" ID="{A01550EB-2FD7-4CEB-A4B2-319EECF206DA}"/>
+										<SwitchRef Name="Brick_17" ID="{E9350D18-2294-4D62-9BDA-55B9C5278ACC}"/>
 										<ItemList>
-											<ItemRef Name="SWC_Brick_lvl1" ID="{AB92C583-17EA-4BD9-83F7-928E89060F55}"/>
+											<ItemRef Name="sfx_brickplace_018_002" ID="{71EFD6C0-30A0-418E-9751-7A121DBE64A4}"/>
 										</ItemList>
 									</Grouping>
 									<Grouping>
-										<SwitchRef Name="Lvl3" ID="{E3F8CBF0-7A13-49BF-B957-A8DDC7832151}"/>
+										<SwitchRef Name="Brick_11" ID="{907B8C1B-10F9-4C60-89D5-776A8B833664}"/>
 										<ItemList>
-											<ItemRef Name="SWC_Brick_lvl3" ID="{6D49DE71-4789-46D7-BAF8-769625BAB50A}"/>
+											<ItemRef Name="sfx_brickplace_012_002" ID="{56D64653-5485-4493-A458-5264A988C6F8}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_18" ID="{29337A25-535F-4FCC-AE9D-246D875D2F11}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_019_002" ID="{208E3AFB-AE22-4D42-B0BF-1C8952067538}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_0" ID="{51A68B28-10E1-4C58-A306-2C1FEA1EE999}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_001_002" ID="{86997DC1-DEF1-4F43-A0D9-FBD1146EAD72}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_06" ID="{5480AC2C-A955-4479-99A9-C8FC1ED84BC5}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_007_002" ID="{51FE3D49-5E53-4923-83DF-F757E6AEC28C}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="None" ID="{1AD2C52F-4514-4778-8334-F3447D8E7CB4}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_001_002" ID="{86997DC1-DEF1-4F43-A0D9-FBD1146EAD72}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_02" ID="{3AE15A4A-36D9-470C-8B3A-58A01E687EDA}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_003_002" ID="{F2DFA618-C324-4620-95B6-C9530F912555}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_05" ID="{C3BC266E-B86F-40D9-B974-31D9E73A9B2A}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_006_002" ID="{722A542A-B45F-4B55-A590-0F8E2AD189EF}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_08" ID="{527CA36F-8290-486E-9FC2-EF5E92C525EE}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_009_002" ID="{93FB5B3D-8495-4815-B7C9-0D5930D3830B}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_01" ID="{2E8E7386-933C-4145-8213-D16258FA9929}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_002_002" ID="{E5B59382-5B73-4009-AF29-FCBAA3D1C0E4}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_09" ID="{8A25569F-F8E5-40BF-B094-71D52F44FB5C}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_010_002" ID="{B152CFB7-0C09-4529-A305-EA2B58CED730}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_13" ID="{71FC19A9-A7B5-4AA5-94CD-87125B508875}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_014_002" ID="{2BC7C813-B94D-4A1F-8740-6572F1EC0258}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_10" ID="{718892BB-3E95-479A-BDD9-455B321F22A1}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_011_002" ID="{F727BDBA-9894-4F36-9700-6075C6931DA7}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_12" ID="{40F469CC-980B-476D-BD67-3268A546AC18}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_013_002" ID="{159C19F3-FD8D-4239-84A8-763BB7B88A95}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_07" ID="{586755CE-F4AA-42ED-9748-DC416AA9F1DA}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_008_002" ID="{AACF050F-ED7D-4F9B-B55A-0314575E7CCA}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_14" ID="{6D01D7D3-3E24-4E47-8A8C-3B620D2E305B}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_015_002" ID="{D54A633B-4515-43CD-B9BB-AEE1482D6B0C}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Brick_03" ID="{0A5F9AF3-FB8E-4B9E-BBA7-1410AA697EE3}"/>
+										<ItemList>
+											<ItemRef Name="sfx_brickplace_004_002" ID="{5DD0104C-DA32-4C86-8182-CF707266FE3B}"/>
 										</ItemList>
 									</Grouping>
 								</GroupingList>
@@ -2975,6 +2549,72 @@
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="UI_Button" ID="{321234F2-0299-457B-81C4-1C7F23F44187}" ShortID="851059638">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{76EB61D3-A611-4C44-B3D3-5E41BB242B83}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="10"/>
+													<Property Name="Min" Type="Real64" Value="-10"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX_UI" ID="{07F98257-9797-4624-8BB8-D0B54D9459D3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sfx_uibutton_001" ID="{C39D4D0F-B8FA-4045-8C80-3DB90975E7D2}" ShortID="825920300">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_uibutton_001" ID="{DCB72339-4B5F-4EB7-9C5D-D77BF377798E}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_uibutton_001.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="567190201"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_uibutton_001" ID="{DCB72339-4B5F-4EB7-9C5D-D77BF377798E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Playlist">
+									<PluginInnerObject Name="" ID="{005AC930-B6EC-4BC9-B77B-0D8B77A00909}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+										<ReferenceList>
+											<Reference Name="PlaylistObject">
+												<ObjectRef Name="sfx_uibutton_001" ID="{C39D4D0F-B8FA-4045-8C80-3DB90975E7D2}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+											</Reference>
+										</ReferenceList>
+									</PluginInnerObject>
+								</ObjectList>
+							</ObjectLists>
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>

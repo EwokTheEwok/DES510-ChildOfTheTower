@@ -1,14 +1,22 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class Controls : MonoBehaviour
 {
     bool isPaused = false;
+    bool controlMenuActive = false;
 
     public GameObject ControlsMenu;
     public GameObject resumeButton;
 
     EventSystem eventSystemScript;
+
+    [Header("Audio Events")]
+    public UnityEvent<GameObject> _pauseFilterEvent;
+    public UnityEvent<GameObject> _stopPauseFilterEvent;
+    public UnityEvent<GameObject> _uiButtonEvent;
+    public UnityEvent<GameObject> _uiScrollEvent;
 
     private void Start()
     {
@@ -33,6 +41,8 @@ public class Controls : MonoBehaviour
                 PauseGame();
             }
         }
+
+        TriggerScrollSound();
     }
 
     public void TitleScreenFirstButton()
@@ -46,16 +56,34 @@ public class Controls : MonoBehaviour
     {
         ControlsMenu.SetActive(true);
         isPaused = true;
+        controlMenuActive = true;
+        _pauseFilterEvent?.Invoke(gameObject);
     }
 
     public void ResumeGame()
     {
         ControlsMenu.SetActive(false);
         isPaused = false;
+        controlMenuActive = false;
+        _uiButtonEvent?.Invoke(gameObject);
+        _stopPauseFilterEvent?.Invoke(gameObject);
     }
 
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void TriggerScrollSound()
+    {
+        if (controlMenuActive && Input.GetKeyDown(KeyCode.LeftArrow))
+        {
+            _uiScrollEvent?.Invoke(gameObject);
+        }
+
+        else if (controlMenuActive && Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            _uiScrollEvent?.Invoke(gameObject);
+        }
     }
 }
