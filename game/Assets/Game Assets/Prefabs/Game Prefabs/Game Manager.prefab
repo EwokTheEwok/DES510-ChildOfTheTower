@@ -48,14 +48,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckpointManager
   _CheckpointTag: Checkpoint
+  _ShadowOcean: {fileID: 6036245783953171614}
   _MinSpeed: 0.25
   _MaxSpeed: 3
   _MinDistance: 15
   _MaxDistance: 50
   _ResetDistance: -100
-  _StartHeight: -30
-  _Player: {fileID: 0}
-  _ShadowOcean: {fileID: 6036245783953171614}
   _ShadowDistanceEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -107,6 +105,14 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 7861dce6d474d8c47a105f1e1a56fed3, type: 2}
+  UIClickButtonEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  UIScrollEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &6036245783953171614
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +181,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1070ff2e8af12f04885e4aafcfa5a108, type: 2}
+  - {fileID: 2100000, guid: b42830ba3ecae0d4e95ab7c6a1e794e8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

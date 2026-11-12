@@ -22,17 +22,15 @@ public class GameManager : MonoBehaviour
     private GameObject _CurrentCheckpoint = null;
 
     [Header("Shadow Ocean")]
+    public GameObject _ShadowOcean = null;
     public float _MinSpeed = 0.5f;
     public float _MaxSpeed = 10f;
     public float _MinDistance = 5f;
     public float _MaxDistance = 30f;
     public float _ResetDistance = -30f;
-    public float _StartHeight = -30f;
     private bool _Moving = false;
 
-    [Header("References")]
-    public GameObject _Player = null;
-    public GameObject _ShadowOcean = null;
+    GameObject _Player = null;
     GameObject _DeathTrackingTarget;
     CharacterController _CharaController;
     BlockController2 _BlockController;
@@ -81,8 +79,9 @@ public class GameManager : MonoBehaviour
         }
 
         _ShadowOcean.GetComponent<ShadowOcean>().OnActivate(FellInShadow);
-        _ShadowOcean.transform.position = new(0f, _StartHeight, 0f);
+        _ShadowOcean.transform.position = new(0f, _ShadowOcean.transform.position.y, 0f);
 
+        _Player = GameObject.FindGameObjectWithTag("PLayer");
         _CharaController = _Player.GetComponent<CharacterController>();
         _BlockController = _Player.GetComponent<BlockController2>();
         _PlayerActionMap = _Player.GetComponent<PlayerInput>().actions.FindActionMap("Player");
