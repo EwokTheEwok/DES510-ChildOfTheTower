@@ -75,6 +75,7 @@ public class BlockController2 : MonoBehaviour
 
     //Player
     PlayerMovement _PlayerMovement;
+    Color _BlockColor;
 
     //Camera
     Camera _Camera;
@@ -506,17 +507,18 @@ public class BlockController2 : MonoBehaviour
         {
             foreach (GameObject block in _BlockList)
             {
-                _PlayerBlockUI.SetColour(Color.white);
-                block.GetComponent<Renderer>().material.color = Color.white;
+                //_PlayerBlockUI.SetColour(Color.white);
+                //block.GetComponent<Renderer>().material.color = _BlockColor;
             }
 
         }
         else
         {
+            _BlockColor = _Block.GetComponent<Renderer>().material.color;
             foreach (GameObject block in _BlockList)
             {
-                _PlayerBlockUI.SetColour(Color.white);
-                block.GetComponent<Renderer>().material.color = Color.lightGray;
+                //_PlayerBlockUI.SetColour(Color.white);
+                //block.GetComponent<Renderer>().material.color = Color.softBlue;
             }
         }
     }
