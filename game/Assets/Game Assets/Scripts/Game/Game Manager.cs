@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     private List<GameObject> _CheckpointList = new();
     private GameObject _CurrentCheckpoint = null;
 
+    [Header("Spawn")]
+    public GameObject _Spawn;
+
     [Header("Shadow Ocean")]
     public GameObject _ShadowOcean = null;
     public float _MinSpeed = 0.5f;
@@ -81,14 +84,12 @@ public class GameManager : MonoBehaviour
         _ShadowOcean.GetComponent<ShadowOcean>().OnActivate(FellInShadow);
         _ShadowOcean.transform.position = new(0f, _ShadowOcean.transform.position.y, 0f);
 
-        _Player = GameObject.FindGameObjectWithTag("PLayer");
+        _Player = GameObject.FindGameObjectWithTag("Player");
         _CharaController = _Player.GetComponent<CharacterController>();
         _BlockController = _Player.GetComponent<BlockController2>();
         _PlayerActionMap = _Player.GetComponent<PlayerInput>().actions.FindActionMap("Player");
         _PlayerCCamera = _Player.transform.Find("CCamera").GetComponent<CinemachineCamera>();
         _DeathTrackingTarget = new GameObject("Death Tracking Target");
-
-        _CurrentCheckpoint = _CheckpointList[0];
     }
 
     private void FixedUpdate()
@@ -122,7 +123,12 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        Vector3 restartPosition = _CurrentCheckpoint.GetComponent<Checkpoint>().RestartPosition();
+        Vector3 restartPosition;
+        if (_CurrentCheckpoint != null)
+            restartPosition = _CurrentCheckpoint.GetComponent<Checkpoint>().RestartPosition();
+        else
+            restartPosition = _Spawn.transform.position;
+
         _ShadowOcean.transform.position = restartPosition + new Vector3(0f, _ResetDistance, 0f);
         _CharaController.excludeLayers = 0;
         _CharaController.enabled = false;
