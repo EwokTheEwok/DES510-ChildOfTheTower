@@ -54,6 +54,7 @@ public class Controls : MonoBehaviour
 
     public void PauseGame()
     {
+        GameManager.Instance.Paused = true;
         ControlsMenu.SetActive(true);
         isPaused = true;
         controlMenuActive = true;
@@ -62,6 +63,9 @@ public class Controls : MonoBehaviour
 
     public void ResumeGame()
     {
+        Debug.Log("is she free");
+        GameManager.Instance.Paused = false;
+        Debug.Log("shes free");
         ControlsMenu.SetActive(false);
         isPaused = false;
         controlMenuActive = false;

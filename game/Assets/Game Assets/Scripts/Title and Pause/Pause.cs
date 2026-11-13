@@ -55,6 +55,7 @@ public class Pause : MonoBehaviour
 
     public void PauseGame()
     {
+        GameManager.Instance.Paused = true;
         PauseMenu.SetActive(true);
         isPaused = true;
         _pauseFilterEvent?.Invoke(gameObject);
@@ -71,6 +72,7 @@ public class Pause : MonoBehaviour
     }
     public void ResumeGame()
     {
+        GameManager.Instance.Paused = false;
         PauseMenu.SetActive(false);
         isPaused = false;
         _uiButtonEvent?.Invoke(gameObject);

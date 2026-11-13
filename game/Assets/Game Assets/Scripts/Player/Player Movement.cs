@@ -157,7 +157,8 @@ public class PlayerMovement : MonoBehaviour
     public void OnPause(bool value)
     {
         _Playing = !value;
-        if (value) _PlayerActionMap.Enable();
+        if (!value) _PlayerActionMap.Enable();
         else _PlayerActionMap.Disable();
+        Debug.Log(_PlayerActionMap.enabled);
     }
 }

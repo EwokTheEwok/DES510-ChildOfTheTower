@@ -345,7 +345,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 036c7aa9ee786af469adcb316ec874b2, type: 2}
     - target: {fileID: 5308223972824557961, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -25.6
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 5308223972824557961, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_LocalPosition.y
@@ -353,7 +353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5308223972824557961, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 5308223972824557961, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2345,6 +2345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 564471312}
   - component: {fileID: 564471313}
+  - component: {fileID: 564471314}
   m_Layer: 0
   m_Name: NPCDialogueManager
   m_TagString: Untagged
@@ -2378,9 +2379,92 @@ MonoBehaviour:
   m_GameObject: {fileID: 564471310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b0e22066120b9c4299af7e6bf2a47bd, type: 3}
+  m_Script: {fileID: 11500000, guid: e800806254a52ec4f8942d3972816828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueManager
+  _NPCTag: NPC
+  _LocalCanvas: {fileID: 687638140}
+  _DialogueBox: {fileID: 1315331578}
+  _NameBox: {fileID: 1666416504}
+  _NameText: {fileID: 2061986584}
+  _ScreenCanvas: {fileID: 1793037627}
+  _ScreenDialogueBox: {fileID: 679836606}
+  _ScreenNameBox: {fileID: 2099979600}
+  _ScreenDialogueText: {fileID: 1715449796}
+  _ScreenNameText: {fileID: 1807186092}
+  _LineDelay: 2
+  _EndDelay: 7
+  height: 10
+  TypeSpeed: 0.05
+  _PeterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 564471314}
+        m_TargetAssemblyTypeName: NPCDialogue, Assembly-CSharp
+        m_MethodName: PlayPeterAudio
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _MargaretEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 564471314}
+        m_TargetAssemblyTypeName: NPCDialogue, Assembly-CSharp
+        m_MethodName: PlayMargAudio
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _ThomasEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 564471314}
+        m_TargetAssemblyTypeName: NPCDialogue, Assembly-CSharp
+        m_MethodName: PlayThomasAudio
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &564471314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564471310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1cfc72469bf1734468322fe4ccf1a88a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
+  PeterDialogueAudio:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c204af37674f2304797608296b2f379f, type: 2}
+  MargDialogueAudio:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8d2a30645733f2d4db67ac9338e19518, type: 2}
+  ThomasDialogueAudio:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ee249daf299c4984eafd33d4347f16cd, type: 2}
 --- !u!1 &597678909
 GameObject:
   m_ObjectHideFlags: 0
@@ -6672,7 +6756,7 @@ Transform:
   m_GameObject: {fileID: 1833597261}
   serializedVersion: 2
   m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: -25.6, y: 19.101007, z: -57.984634}
+  m_LocalPosition: {x: -12, y: 19.101006, z: -51.98463}
   m_LocalScale: {x: 1.6187, y: 1.6187003, z: 1.6187003}
   m_ConstrainProportionsScale: 0
   m_Children: []
