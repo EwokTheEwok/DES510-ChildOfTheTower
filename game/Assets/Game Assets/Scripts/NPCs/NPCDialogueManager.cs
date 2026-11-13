@@ -31,7 +31,7 @@ public class NPCDialogueManager : MonoBehaviour
     [Header("NPC Vars")]
     public float _LineDelay = 2f;
     public float _EndDelay = 7f;
-    public float height = 10f;
+    public float height = 3.5f;
     public float TypeSpeed = 0.05f;
     private IEnumerator _DialogueCoroutine;
 
