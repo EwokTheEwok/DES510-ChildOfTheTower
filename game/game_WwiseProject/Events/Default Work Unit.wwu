@@ -11,7 +11,7 @@
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="29"/>
 										<Property Name="FadeInCurve" Type="int16" Value="2"/>
-										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
 										<Property Name="Highpass" Type="int16" Value="55"/>
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
@@ -25,7 +25,7 @@
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="29"/>
 										<Property Name="FadeInCurve" Type="int16" Value="2"/>
-										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
 										<Property Name="Highpass" Type="int16" Value="55"/>
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
@@ -39,7 +39,7 @@
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="29"/>
 										<Property Name="FadeInCurve" Type="int16" Value="2"/>
-										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
 										<Property Name="Highpass" Type="int16" Value="55"/>
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
@@ -53,13 +53,27 @@
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="29"/>
 										<Property Name="FadeInCurve" Type="int16" Value="2"/>
-										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
 										<Property Name="Highpass" Type="int16" Value="55"/>
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{FCDE095C-1259-4F6D-9FC6-72C53962F0F0}" ShortID="292400767">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="29"/>
+										<Property Name="FadeInCurve" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+										<Property Name="Highpass" Type="int16" Value="55"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Ducking" ID="{1B9EC4CE-05CF-4AD6-A9B0-57ABC853B9ED}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -95,7 +109,7 @@
 								</Action>
 								<Action Name="" ID="{95B3005A-CB48-4063-AEDB-8AC5F19123A7}" ShortID="647280741">
 									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="29"/>
+										<Property Name="ActionType" Type="int16" Value="30"/>
 										<Property Name="FadeInCurve" Type="int16" Value="2"/>
 										<Property Name="FadeTime" Type="Real64" Value="1"/>
 										<Property Name="Highpass" Type="int16" Value="50"/>
@@ -109,7 +123,7 @@
 								</Action>
 								<Action Name="" ID="{393D6036-0349-4800-A545-F6C668E80C8D}" ShortID="576423262">
 									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="29"/>
+										<Property Name="ActionType" Type="int16" Value="30"/>
 										<Property Name="FadeInCurve" Type="int16" Value="2"/>
 										<Property Name="FadeTime" Type="Real64" Value="1"/>
 										<Property Name="Highpass" Type="int16" Value="50"/>
@@ -118,6 +132,20 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="VO" ID="{63292908-085F-413A-AEB3-58050BE3C50A}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{BC7B0476-060B-497A-8A19-164E9B14F5AE}" ShortID="161975245">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="30"/>
+										<Property Name="FadeInCurve" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+										<Property Name="Highpass" Type="int16" Value="55"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_Ducking" ID="{1B9EC4CE-05CF-4AD6-A9B0-57ABC853B9ED}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

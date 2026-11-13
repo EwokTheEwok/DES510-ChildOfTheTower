@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8896235496747120438}
   - component: {fileID: 4634102010910077544}
-  - component: {fileID: 2319079367271512529}
   m_Layer: 0
   m_Name: AmbSwitchCollider
   m_TagString: Untagged
@@ -54,27 +53,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2319079367271512529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4181277999484368076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe1ace116023bbf4a8a5fbc9ec12a41c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AmbSwitcher
-  AmbSwitchInside:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 21d7d96b85d95784f84e9d4bc1e13fed, type: 2}
-  AmbSwitchOutside:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 68c8aa04ebae0454ba4162b180355dbc, type: 2}
-  AmbSwitchRTPC:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 7e5c68d7b405a3a4f980ca52628b7fc6, type: 2}

@@ -6,21 +6,16 @@ public class AmbSwitcher : MonoBehaviour
     public AK.Wwise.Event AmbSwitchOutside;
     public AK.Wwise.RTPC AmbSwitchRTPC;
 
-    private void OnTriggerEnter(Collider other)
+    public void AmbSwitch(bool inside)
     {
-        AmbSwitch();
-    }
+        //float RTPCValue = AmbSwitchRTPC.GetGlobalValue();
 
-    public void AmbSwitch()
-    {
-        float RTPCValue = AmbSwitchRTPC.GetGlobalValue();
-
-        if (RTPCValue == 0)
+        if (inside)
         {
             AmbSwitchInside.Post(gameObject);
         }
 
-        else if (RTPCValue == 1)
+        else
         {
             AmbSwitchOutside.Post(gameObject);
         }
