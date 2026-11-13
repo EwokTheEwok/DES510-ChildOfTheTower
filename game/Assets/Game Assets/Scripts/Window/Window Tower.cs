@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class WindowTower : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class WindowTower : MonoBehaviour
     GameObject _Tower;
 
     bool _Active = false;
+
+    [Header("Events")]
+    public UnityEvent<bool> _EnterEvent = new();
 
     private void Start()
     {
@@ -34,12 +38,18 @@ public class WindowTower : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             _Active = true;
+            _EnterEvent?.Invoke(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
+        {
             _Active = false;
+            _EnterEvent?.Invoke(false);
+        }
     }
 } 
