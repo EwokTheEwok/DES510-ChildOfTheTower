@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -35,6 +36,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator _Animator;
     private float _AirDistance;
     public float _MinFalldistance = 1.25f;
+    public float _AnimDelay;
+    private IEnumerator _NewIdleCoroutine;
 
     public BlockController2 blockController;
     public bool _BlockActive;
@@ -54,6 +57,9 @@ public class PlayerMovement : MonoBehaviour
         _PlayerActionMap = _PlayerInput.actions.FindActionMap("Player");
         _PlayerActionMap.Enable();
         blockController = GetComponent<BlockController2>();
+
+        _NewIdleCoroutine = NewIdle();
+        StartCoroutine(_NewIdleCoroutine);
     }
 
     private void Update()
@@ -114,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_Playing)
         {
+            StopCoroutine(_NewIdleCoroutine);
             _Animator.SetBool("isWalking", true);
 
             if (context.canceled)
@@ -122,6 +129,8 @@ public class PlayerMovement : MonoBehaviour
 
                 _Animator.SetFloat("lastInputX", _MoveDir.x);
                 _Animator.SetFloat("lastInputY", _MoveDir.y);
+
+                StartCoroutine(_NewIdleCoroutine);
             }
 
             _MoveDir = context.ReadValue<Vector2>();
@@ -156,6 +165,25 @@ public class PlayerMovement : MonoBehaviour
         _Animator.SetFloat("brickPlaceX", direction);
         _Animator.SetTrigger("Placing");
 
+    }
+
+    public void UndoBlock(int direction)
+    {
+        Debug.Log("function fires brick retrive");
+        _Animator.SetFloat("brickPlaceX", direction);
+        _Animator.SetTrigger("Retrive");
+
+    }
+
+    private IEnumerator NewIdle()
+    {
+        _AnimDelay = Random.Range(10.0f, 15.0f);
+        yield return new WaitForSeconds(_AnimDelay);
+
+        _Animator.SetTrigger("Anim2");
+
+
+        //_Animator.ResetTrigger("Anim2");
     }
 
     public void OnPause(bool value)
