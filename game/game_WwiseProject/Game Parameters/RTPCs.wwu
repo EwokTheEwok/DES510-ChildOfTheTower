@@ -32,6 +32,30 @@
 						<Property Name="SlewRateUp" Type="Real64" Value="0.5"/>
 					</PropertyList>
 				</GameParameter>
+				<Folder Name="Audio Settings" ID="{A90AC71D-9D85-4B1B-9882-ECC746B24321}" ShortID="429510599">
+					<ChildrenList>
+						<GameParameter Name="RTPC_MusicVolume" ID="{40FF3A73-05DD-43DE-A1ED-F1314EE657FD}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="100"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="RTPC_SFXVolume" ID="{4D458D68-15F6-4EBC-BB89-CA95811E7B14}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="100"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="RTPC_AmbVolume" ID="{64A176C8-A3CB-4001-B360-18CAAC2051EF}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="100"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="RTPC_MasterVolume" ID="{93399D90-6A27-46BB-8BCB-98285DE5857E}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="100"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>
