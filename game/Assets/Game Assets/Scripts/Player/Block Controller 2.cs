@@ -516,7 +516,6 @@ public class BlockController2 : MonoBehaviour
         }
         else
         {
-            _BlockColor = _Block.GetComponent<Renderer>().material.color;
             foreach (GameObject block in _BlockList)
             {
                 block.GetComponent<Renderer>().material = _BlockSlowMaterial;
