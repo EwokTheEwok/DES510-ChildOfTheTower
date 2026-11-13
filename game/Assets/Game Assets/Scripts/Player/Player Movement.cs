@@ -31,9 +31,10 @@ public class PlayerMovement : MonoBehaviour
     bool _Playing = true;
 
     //Animator
+    [Header("Animation Settings")]
     private Animator _Animator;
-    private float _FallDistance;
-    public float _MinFallDistance = 1.0f;
+    private float _AirDistance;
+    public float _MinFalldistance = 1.25f;
 
     public BlockController2 blockController;
     public bool _BlockActive;
@@ -83,26 +84,29 @@ public class PlayerMovement : MonoBehaviour
         if (!_CharControl.isGrounded)
         {
             _FallingTimer += deltaTime;
+            _AirDistance += Mathf.Abs(_Velocity.y) * deltaTime;
 
-            if (_Velocity.y < 0)
-                _FallDistance += -_Velocity.y * deltaTime;
-
-            if (_Velocity.y < -5)
+            if (_AirDistance > _MinFalldistance && _Velocity.y < 0f)
             {
-                _Animator.SetTrigger("Falling");
+                _Animator.SetBool("Falling", true);
             }
         }
-        else
+        else if (_CharControl.isGrounded)
         {
-            _HasJumped = false;
-            _FallingTimer = 0f;
 
-            if (_FallDistance > _MinFallDistance)
+            _Animator.SetBool("Falling", false);
+            if (_AirDistance > _MinFalldistance)
             {
                 _Animator.SetTrigger("Landed");
             }
-            _FallDistance = 0.0f;
-            _Animator.ResetTrigger("Falling");
+
+            _HasJumped = false;
+            _FallingTimer = 0f;
+            _AirDistance = 0.0f;
+        }
+        else
+        {
+
         }
     }
 
