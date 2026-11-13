@@ -33,6 +33,8 @@ public class BlockController2 : MonoBehaviour
     readonly List<GameObject> _BlockList = new();
     GameObject _Block;
     GameObject _GuideBlock;
+    public Material _BlockMaterial;
+    public Material _BlockSlowMaterial;
 
     [Header("Prefabs")]
     public GameObject _GuideBlockPrefab;
@@ -502,13 +504,13 @@ public class BlockController2 : MonoBehaviour
 
     private void RecoverColor()
     {
+        
         bool displayRecover = IsClose(_FastRecoverDistance);
         if (displayRecover)
         {
             foreach (GameObject block in _BlockList)
             {
-                //_PlayerBlockUI.SetColour(Color.white);
-                //block.GetComponent<Renderer>().material.color = _BlockColor;
+                block.GetComponent<Renderer>().material = _BlockMaterial;
             }
 
         }
@@ -517,8 +519,7 @@ public class BlockController2 : MonoBehaviour
             _BlockColor = _Block.GetComponent<Renderer>().material.color;
             foreach (GameObject block in _BlockList)
             {
-                //_PlayerBlockUI.SetColour(Color.white);
-                //block.GetComponent<Renderer>().material.color = Color.softBlue;
+                block.GetComponent<Renderer>().material = _BlockSlowMaterial;
             }
         }
     }
