@@ -11,7 +11,7 @@ public class NPCAnimAudio : MonoBehaviour
 
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
+        _player = GameManager.Instance.Player;
     }
 
     public void PlayMargIdle()
@@ -21,6 +21,8 @@ public class NPCAnimAudio : MonoBehaviour
 
     public void CalculateNPCDistance()
     {
+        if (_player == null) { return; }
+
         Vector2 player = (_player.transform.position);
 
         Vector2 NPC = (gameObject.transform.position);
