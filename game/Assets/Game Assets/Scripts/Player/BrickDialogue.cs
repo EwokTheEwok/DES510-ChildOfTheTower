@@ -5,8 +5,9 @@ using UnityEngine.Events;
 
 public class BrickDialogue : MonoBehaviour
 {
-    public BlockController2 blockController;
+    private BlockController2 blockController;
 
+    private GameObject _BrickCanvas;
     [SerializeField] private GameObject BrickBox;
     [SerializeField] private TMP_Text BrickText;
 
@@ -38,10 +39,10 @@ public class BrickDialogue : MonoBehaviour
 
     private void Start()
     {
+        _BrickCanvas = GameManager.Instance.UI.transform.Find("Block Canvas").gameObject;
+        blockController = GameManager.Instance.Player.GetComponent<BlockController2>();
+
         dialogueTransform = BrickBox.transform as RectTransform;
-
-        blockController = GetComponent<BlockController2>();
-
         _BetweenLineDelay = Random.Range(10.0f, 17.0f);
     }
 
@@ -49,12 +50,12 @@ public class BrickDialogue : MonoBehaviour
     {
         dialogueTransform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, height, 0));
 
-        brickSprite();
+        DisplayBrickSprite();
 
        //_BetweenLineDelay = Random.Range(10.0f, 25.0f);
     }
 
-   private void brickSprite()
+   private void DisplayBrickSprite()
     {
         _BlockActive = blockController.IsBlockActive();
         GameObject.Find("Block Sprite").GetComponent<SpriteRenderer>().enabled = !_BlockActive;
