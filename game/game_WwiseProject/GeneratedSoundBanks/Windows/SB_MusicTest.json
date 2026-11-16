@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{9C7173FB-7844-5D7E-F878-40316A77766C}",
+    "Hash": "{4A0645FE-123E-04E1-FBEE-C17FC354445A}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -230,6 +230,14 @@
       "Location": "Memory",
       "ShortName": "mx_lvl1_introloop_150bpm_001.wav",
       "CachePath": "8F/{8FB4D2FB-5755-9AEC-10CD-60280F3971B2}.wem"
+     },
+     {
+      "Id": "230564223",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_amb_rain_001.wav",
+      "CachePath": "02/{027D7BDE-B400-80E0-3B1E-FA6161E4D007}.wem"
      },
      {
       "Id": "232675444",
@@ -7310,6 +7318,9 @@
         "Id": "143126068"
        },
        {
+        "Id": "230564223"
+       },
+       {
         "Id": "444589137"
        }
       ],
@@ -7409,6 +7420,9 @@
       "MediaRefs": [
        {
         "Id": "143126068"
+       },
+       {
+        "Id": "230564223"
        },
        {
         "Id": "444589137"
@@ -9984,6 +9998,13 @@
     ],
     "GameParameters": [
      {
+      "Id": "803269845",
+      "Name": "RTPC_RainAmbience",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\RTPC_RainAmbience",
+      "GUID": "{CD1AD836-EE6A-4436-B9AA-5A847EA8F06F}",
+      "Color": "10"
+     },
+     {
       "Id": "1038293638",
       "Name": "RTPC_AmbienceSwitcher",
       "ObjectPath": "\\Game Parameters\\RTPCs\\RTPC_AmbienceSwitcher",
@@ -10263,6 +10284,6 @@
     ]
    }
   ],
-  "FileHash": "{C18033E3-99E7-7C40-07BF-FB5CBB53EA6A}"
+  "FileHash": "{124A365C-D8A4-F75F-323C-6413341D5837}"
  }
 }

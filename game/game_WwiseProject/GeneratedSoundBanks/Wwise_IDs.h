@@ -166,6 +166,7 @@ namespace AK
         static const AkUniqueID RTPC_MUSICVOLUME = 2378823330U;
         static const AkUniqueID RTPC_MXDUCKING = 4238634557U;
         static const AkUniqueID RTPC_NPCDISTANCE = 1264247529U;
+        static const AkUniqueID RTPC_RAINAMBIENCE = 803269845U;
         static const AkUniqueID RTPC_SFXVOLUME = 2644490154U;
         static const AkUniqueID RTPC_SHADOWDISTANCE = 3739513706U;
     } // namespace GAME_PARAMETERS
