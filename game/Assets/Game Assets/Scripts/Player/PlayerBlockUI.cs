@@ -49,11 +49,6 @@ public class PlayerBlockUI : MonoBehaviour {
     [HideInInspector] public RectTransform blockUILeft;
     [HideInInspector] public RectTransform blockUIRight;
 
-    private void Awake()
-    {
-
-    }
-
     void Start()
     {
         _UIObject = Instantiate(_BlockUIPrefab, GameManager.Instance.UI.transform);

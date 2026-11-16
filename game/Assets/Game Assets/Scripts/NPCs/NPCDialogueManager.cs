@@ -47,8 +47,6 @@ public class NPCDialogueManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _Animator = GetComponentInChildren<Animator>(true);
-
         dialogueTransform = _DialogueBox.transform as RectTransform;
         _NPCList = GameObject.FindGameObjectsWithTag(_NPCTag).ToList();
         foreach (GameObject npcObject in _NPCList)
@@ -67,6 +65,7 @@ public class NPCDialogueManager : MonoBehaviour
     private IEnumerator StartDia()
     {
         NPC npc = _CurrentNPC.GetComponent<NPC>();
+        _Animator = _CurrentNPC.GetComponent<Animator>();
         _ScreenNameText.text = npc.NPCName;
         _NameText.text = npc.NPCName;
 

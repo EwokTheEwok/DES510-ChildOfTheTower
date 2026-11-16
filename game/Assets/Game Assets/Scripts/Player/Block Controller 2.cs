@@ -24,7 +24,7 @@ public class BlockController2 : MonoBehaviour
     Collider[] _NearbyNodesList;
 
     [Header("Block")]
-    [SerializeField] GameObject _BlockContainer;
+    GameObject _BlockContainer;
     public int _BlockLimit = 5;
     public float _BlockSize = 2f;
     public float _BlockRayScale = 0.95f;
@@ -98,6 +98,7 @@ public class BlockController2 : MonoBehaviour
 
         _TrackingTarget = new GameObject("TrackingTarget").transform;
 
+        _BlockContainer = GameManager.Instance.Blocks;
         _GuideBlock = Instantiate(_GuideBlockPrefab, _BlockContainer.transform);
 
         _PlayerBlockUI = GetComponent<PlayerBlockUI>();

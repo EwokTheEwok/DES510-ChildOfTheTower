@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     BlockController2 _BlockController;
     InputActionMap _PlayerActionMap;
     CinemachineCamera _PlayerCCamera;
+    [SerializeField] GameObject _Blocks = null;
+    public GameObject Blocks { get => _Blocks; }
 
     [Header("UI")]
     [SerializeField] GameObject _UI;
@@ -173,4 +175,16 @@ public class GameManager : MonoBehaviour
     {
         _PauseEvent.AddListener(call);
     }
+}
+
+[Serializable] // Makes the class serializable for Inspector
+public class Event
+{
+    public Event(string _name, UnityEvent _uevent)
+    {
+        name = _name;
+        onEvent = _uevent;
+    }
+    public string name; // Optional label for clarity
+    public UnityEvent onEvent; // UnityEvent visible in Inspector
 }
