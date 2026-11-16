@@ -279,7 +279,6 @@ Transform:
   - {fileID: 4126099233337113801}
   - {fileID: 4938834304659548170}
   - {fileID: 8345844457809112781}
-  - {fileID: 5851959514413552378}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
 --- !u!143 &4300094999985306154
@@ -531,7 +530,7 @@ MonoBehaviour:
   _BlockNodeLayer:
     serializedVersion: 2
     m_Bits: 256
-  _BlockContainer: {fileID: 8171812186852365957}
+  _BlockContainer: {fileID: 0}
   _BlockLimit: 10
   _BlockSize: 2
   _BlockRayScale: 0.95
@@ -723,7 +722,7 @@ Transform:
   m_GameObject: {fileID: 5395639839962170917}
   serializedVersion: 2
   m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: 0, y: 10.564653, z: -29.02615}
+  m_LocalPosition: {x: -0.0000019073486, y: 17.101004, z: -46.984627}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1135,34 +1134,3 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: d54a9f4970e66cc469d2d44b34ae269d, type: 2}
---- !u!1 &8171812186852365957
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5851959514413552378}
-  m_Layer: 0
-  m_Name: Blocks
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5851959514413552378
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8171812186852365957}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2578158340134977601}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
