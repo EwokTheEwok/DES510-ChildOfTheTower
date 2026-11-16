@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{D2AF7472-165E-1291-713F-DF9F4AF83BCE}",
+    "Hash": "{549FC2AD-C656-6C04-DDBA-3FC343BF50BA}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -142,6 +142,13 @@
       "Color": "13"
      },
      {
+      "Id": "433831820",
+      "Name": "Reverb Aux Busses",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}",
+      "Color": "7"
+     },
+     {
       "Id": "515334391",
       "Name": "SFX_General",
       "ObjectPath": "\\Busses\\Default Work Unit\\SFX\\SFX_General",
@@ -168,12 +175,6 @@
         }
        ]
       }
-     },
-     {
-      "Id": "2246998526",
-      "Name": "Main Audio Bus",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
-      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      },
      {
       "Id": "2519613073",
@@ -245,7 +246,7 @@
      {
       "Id": "202033071",
       "Name": "Reverb_Tower",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Tower",
       "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
       "Color": "7",
       "PluginRefs": {
@@ -259,7 +260,7 @@
      {
       "Id": "1578973140",
       "Name": "Reverb_Outdoor",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Outdoor",
       "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
       "Color": "7",
       "PluginRefs": {
@@ -277,6 +278,34 @@
       "Name": "RTPC_AmbienceSwitcher",
       "ObjectPath": "\\Game Parameters\\RTPCs\\RTPC_AmbienceSwitcher",
       "GUID": "{7DFAED41-25C6-48C0-A9B5-85A8591CD539}",
+      "Color": "10"
+     },
+     {
+      "Id": "1226769967",
+      "Name": "RTPC_AmbVolume",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\Audio Settings\\RTPC_AmbVolume",
+      "GUID": "{64A176C8-A3CB-4001-B360-18CAAC2051EF}",
+      "Color": "10"
+     },
+     {
+      "Id": "2378823330",
+      "Name": "RTPC_MusicVolume",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\Audio Settings\\RTPC_MusicVolume",
+      "GUID": "{40FF3A73-05DD-43DE-A1ED-F1314EE657FD}",
+      "Color": "10"
+     },
+     {
+      "Id": "2582501215",
+      "Name": "RTPC_MasterVolume",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\Audio Settings\\RTPC_MasterVolume",
+      "GUID": "{93399D90-6A27-46BB-8BCB-98285DE5857E}",
+      "Color": "10"
+     },
+     {
+      "Id": "2644490154",
+      "Name": "RTPC_SFXVolume",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\Audio Settings\\RTPC_SFXVolume",
+      "GUID": "{4D458D68-15F6-4EBC-BB89-CA95811E7B14}",
       "Color": "10"
      },
      {
@@ -552,6 +581,6 @@
     ]
    }
   ],
-  "FileHash": "{93B9077E-096D-B927-8F39-72FA7FAF8319}"
+  "FileHash": "{E0C066C3-A442-1E2C-7CBC-385B00EA7815}"
  }
 }
