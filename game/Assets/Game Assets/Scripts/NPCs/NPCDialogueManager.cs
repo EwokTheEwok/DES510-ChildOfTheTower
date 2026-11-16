@@ -7,22 +7,21 @@ using UnityEngine.Events;
 
 public class NPCDialogueManager : MonoBehaviour
 {
+    
     [Header("NPC")]
-    public string _NPCTag = "NPC";
+    [SerializeField] string _NPCTag = "NPC";
     private List<GameObject> _NPCList = new();
     private bool _NPCActive;
     private GameObject _CurrentNPC;
-    private bool _NPCTalking;
+    [SerializeField] private GameObject _Canvas;
 
     [Header("NPC Local Canvas")]
-    [SerializeField] private GameObject _LocalCanvas;
     [SerializeField] private GameObject _DialogueBox;
     [SerializeField] private GameObject _NameBox;
     [SerializeField] private TMP_Text _NameText;
     private RectTransform dialogueTransform;
 
     [Header("NPC Screen Canvas")]
-    [SerializeField] private GameObject _ScreenCanvas;
     [SerializeField] private GameObject _ScreenDialogueBox;
     [SerializeField] private GameObject _ScreenNameBox;
     [SerializeField] private TMP_Text _ScreenDialogueText;
@@ -67,7 +66,6 @@ public class NPCDialogueManager : MonoBehaviour
 
     private IEnumerator StartDia()
     {
-        _NPCTalking = true;
         NPC npc = _CurrentNPC.GetComponent<NPC>();
         _ScreenNameText.text = npc.NPCName;
         _NameText.text = npc.NPCName;
@@ -75,8 +73,7 @@ public class NPCDialogueManager : MonoBehaviour
 
         while (true)
         {
-            _LocalCanvas.SetActive(true);
-            _ScreenCanvas.SetActive(true);
+            _Canvas.SetActive(true);
             _Animator.SetBool("isActive", true);
 
             foreach (string line in npc.DialogueLines)
@@ -107,8 +104,7 @@ public class NPCDialogueManager : MonoBehaviour
                 yield return new WaitForSeconds(_LineDelay);
             }
 
-            _ScreenCanvas.SetActive(false);
-            _LocalCanvas.SetActive(false);
+            _Canvas.SetActive(false);
             _Animator.SetBool("isActive", false);
             yield return new WaitForSeconds(Mathf.Abs(_EndDelay - _LineDelay));
         }
@@ -117,12 +113,9 @@ public class NPCDialogueManager : MonoBehaviour
     private void StopTalking()
     {
         _NPCActive = false;
-        _NPCTalking = false;
-        _LocalCanvas.SetActive(false);
+        _Canvas.SetActive(false);
         _NameText.text = "";
-
         _ScreenDialogueText.text = "";
-        _ScreenCanvas.SetActive(false);
         _ScreenNameText.text = "";
 
         _Animator.SetBool("isActive", false);
@@ -137,15 +130,12 @@ public class NPCDialogueManager : MonoBehaviour
             {
                 _NPCActive = true;
                 _DialogueCoroutine = StartDia();
-                //_AnimationCoroutine = StartAnimation();
                 StartCoroutine(_DialogueCoroutine);
-                //StartCoroutine(_AnimationCoroutine);
             }
         }
         else
         {
             StopCoroutine(_DialogueCoroutine);
-            //StopCoroutine(_AnimationCoroutine);
             StopTalking();
         }
     }

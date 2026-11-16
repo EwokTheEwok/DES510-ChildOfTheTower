@@ -10,34 +10,39 @@ using UnityEngine.InputSystem;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _Instance;
-    public static GameManager Instance
-    {
-        get { return _Instance; }
-    }
+    public static GameManager Instance { get => _Instance; }
 
     [Header("Checkpoint")]
-    public string _CheckpointTag = "Checkpoint";
+    [SerializeField] string _CheckpointTag = "Checkpoint";
     private List<GameObject> _CheckpointList = new();
     private GameObject _CurrentCheckpoint = null;
 
     [Header("Spawn")]
-    public GameObject _Spawn;
+    [SerializeField] GameObject _Spawn;
 
     [Header("Shadow Ocean")]
-    public GameObject _ShadowOcean = null;
-    public float _MinSpeed = 0.5f;
-    public float _MaxSpeed = 10f;
-    public float _MinDistance = 5f;
-    public float _MaxDistance = 30f;
-    public float _ResetDistance = -30f;
-    private bool _Moving = false;
+    [SerializeField] GameObject _ShadowOcean = null;
+    [SerializeField] float _MinSpeed = 0.5f;
+    [SerializeField] float _MaxSpeed = 10f;
+    [SerializeField] float _MinDistance = 5f;
+    [SerializeField] float _MaxDistance = 30f;
+    [SerializeField] float _ResetDistance = -30f;
+    bool _Moving = false;
+    Vector3 _ShadowInitialPosition;
 
+    [Header("Player")]
+    [SerializeField] GameObject _PlayerPrefab;
     GameObject _Player = null;
+    public GameObject Player { get => _Player; }
     GameObject _DeathTrackingTarget;
     CharacterController _CharaController;
     BlockController2 _BlockController;
     InputActionMap _PlayerActionMap;
     CinemachineCamera _PlayerCCamera;
+
+    [Header("UI")]
+    [SerializeField] GameObject _UI;
+    public GameObject UI { get => _UI; }
 
     [Header("Events")]
     public UnityEvent<float> _ShadowDistanceEvent = new();
@@ -71,6 +76,14 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        List<GameObject> playerList = GameObject.FindGameObjectsWithTag("Player").ToList();
+        foreach (GameObject player in playerList)
+        {
+            Destroy(player);
+        }
+
+        _Player = Instantiate(_PlayerPrefab);
     }
     void Start()
     {
@@ -82,8 +95,9 @@ public class GameManager : MonoBehaviour
 
         _ShadowOcean.GetComponent<ShadowOcean>().OnActivate(FellInShadow);
         _ShadowOcean.transform.position = new(0f, _ShadowOcean.transform.position.y, 0f);
+        _ShadowInitialPosition = _ShadowOcean.transform.position;
 
-        _Player = GameObject.FindGameObjectWithTag("Player");
+        _Player.transform.position = _Spawn.transform.position;
         _CharaController = _Player.GetComponent<CharacterController>();
         _BlockController = _Player.GetComponent<BlockController2>();
         _PlayerActionMap = _Player.GetComponent<PlayerInput>().actions.FindActionMap("Player");
@@ -128,7 +142,12 @@ public class GameManager : MonoBehaviour
         else
             restartPosition = _Spawn.transform.position;
 
-        _ShadowOcean.transform.position = restartPosition + new Vector3(0f, _ResetDistance, 0f);
+        Vector3 shadowRestartPosition = new (0.0f, restartPosition.y + _ResetDistance, 0.0f);
+        if (_ShadowInitialPosition.y > shadowRestartPosition.y)
+            _ShadowOcean.transform.position = shadowRestartPosition;
+        else
+            _ShadowOcean.transform.position = restartPosition + new Vector3(0f, _ResetDistance, 0f);
+
         _CharaController.excludeLayers = 0;
         _CharaController.enabled = false;
         _Player.transform.position = restartPosition;

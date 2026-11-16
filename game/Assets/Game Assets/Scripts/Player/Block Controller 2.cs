@@ -24,6 +24,7 @@ public class BlockController2 : MonoBehaviour
     Collider[] _NearbyNodesList;
 
     [Header("Block")]
+    [SerializeField] GameObject _BlockContainer;
     public int _BlockLimit = 5;
     public float _BlockSize = 2f;
     public float _BlockRayScale = 0.95f;
@@ -97,13 +98,12 @@ public class BlockController2 : MonoBehaviour
 
         _TrackingTarget = new GameObject("TrackingTarget").transform;
 
-        _GuideBlock = Instantiate(_GuideBlockPrefab);
-        _GuideBlock.transform.localScale = new Vector3(_BlockSize, _BlockSize, _BlockSize);
+        _GuideBlock = Instantiate(_GuideBlockPrefab, _BlockContainer.transform);
 
         _PlayerBlockUI = GetComponent<PlayerBlockUI>();
         _PlayerBlockUI.SetLimit(_BlockLimit);
 
-        _AxisPlane = Instantiate(_AxisPlanePrefab);
+        _AxisPlane = Instantiate(_AxisPlanePrefab, _BlockContainer.transform);
         _AxisPlane.SetActive(false);
         _AxisPlaneRenderer = _AxisPlane.GetComponent<Renderer>();
     }
@@ -252,7 +252,7 @@ public class BlockController2 : MonoBehaviour
                             nearestNode.transform.position.x,
                             nearestNode.transform.position.y,
                             nearestNode.transform.position.z));
-                _Block = Instantiate(_BlockPrefab);
+                _Block = Instantiate(_BlockPrefab, _BlockContainer.transform);
                 _Block.transform.position = nearestNode.transform.position;
                 _Block.transform.eulerAngles = new Vector3(0f, nearestNode.transform.eulerAngles.y, 0f);
                 _BlockList.Add(_Block);
@@ -330,7 +330,7 @@ public class BlockController2 : MonoBehaviour
             _IsMovingBlock = true;
             _BlockEvent?.Invoke(_BlockList.Count, _Block);
             Vector3 newBlockPlacement = blockTransform.position + blockTransform.TransformDirection(localXY);
-            _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation);
+            _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation, _BlockContainer.transform);
             _TweenObject = _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => {
                 _IsMovingBlock = false;
                 _AxisBlockPosition = _Block.transform.position;

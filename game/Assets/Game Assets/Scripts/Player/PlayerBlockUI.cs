@@ -33,7 +33,6 @@ public class PlayerBlockUI : MonoBehaviour {
     public int _TileSize = 32;
     public int _ActiveTileCount = 1;
     public float _RecoverFadeTime = 2f;
-    bool _RestartFade = false;
     IEnumerator _FadeCoroutine;
     BlockTile[] _BlockTileList;
 
@@ -52,7 +51,12 @@ public class PlayerBlockUI : MonoBehaviour {
 
     private void Awake()
     {
-        _UIObject = Instantiate(_BlockUIPrefab);
+
+    }
+
+    void Start()
+    {
+        _UIObject = Instantiate(_BlockUIPrefab, GameManager.Instance.UI.transform);
         Transform uiTransform = _UIObject.transform;
         arrowPanel = uiTransform.Find("Arrow Panel").gameObject;
         crossPanel = uiTransform.Find("Cross").gameObject;
@@ -80,10 +84,7 @@ public class PlayerBlockUI : MonoBehaviour {
             if (i < _ActiveTileCount)
                 _BlockTileList[i].SetActive(true);
         }
-    }
 
-    void Start()
-    {
         Vector3 localPos = _BlockTilePanel.transform.localPosition;
         _BlockTilePanel.transform.localPosition = new Vector3(-((_ActiveTileCount - 1f) * _TileSize * 0.5f) - (_PixelSpacing * 0.5f * (_ActiveTileCount - 1f)), localPos.y, localPos.z);
     }
@@ -112,15 +113,18 @@ public class PlayerBlockUI : MonoBehaviour {
     {
         _ActiveTileCount = count;
 
-        for (int i = 0; i < _BlockTileList.Length; i++)
+        if (_BlockTileList != null)
         {
-            if (i < _ActiveTileCount)
-                _BlockTileList[i].SetActive(true);
-            else
-                _BlockTileList[i].SetActive(false);
+            for (int i = 0; i < _BlockTileList.Length; i++)
+            {
+                if (i < _ActiveTileCount)
+                    _BlockTileList[i].SetActive(true);
+                else
+                    _BlockTileList[i].SetActive(false);
+            }
+            Vector3 localPos = _BlockTilePanel.transform.localPosition;
+            _BlockTilePanel.transform.localPosition = new Vector3(-((_ActiveTileCount - 1f) * _TileSize * 0.5f) - (_PixelSpacing * 0.5f * (_ActiveTileCount - 1f)), localPos.y, localPos.z);
         }
-        Vector3 localPos = _BlockTilePanel.transform.localPosition;
-        _BlockTilePanel.transform.localPosition = new Vector3(-((_ActiveTileCount - 1f) * _TileSize * 0.5f) - (_PixelSpacing * 0.5f * (_ActiveTileCount - 1f)), localPos.y, localPos.z);
     }
 
     public void SetPanelsActive(bool active)
