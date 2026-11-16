@@ -32,13 +32,17 @@ public class PlayerMovement : MonoBehaviour
     bool _Playing = true;
 
     //Animator
-    [Header("Animation Settings")]
+    [Header("Animations Settings")]
+    [SerializeField] private float _MinTimeWait = 5.0f;
+    [SerializeField] private float _MaxTimeWait = 15.0f;
     private Animator _Animator;
     private float _AirDistance;
-    public float _MinFalldistance = 1.25f;
-    public float _AnimDelay;
-    private IEnumerator _NewIdleCoroutine;
+    private readonly float _MinFalldistance = 1.25f;
+    private float _RandomMulti;
+    private float _TotalWaitTime;
+    private float _GoalWaitTime;
 
+    [Header("Block Settings")]
     public BlockController2 blockController;
     public bool _BlockActive;
 
@@ -50,6 +54,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+        UpdateIdleWaitTime();
         GameManager.Instance.AddPauseListener(OnPause);
         _Camera = Camera.main;
         _CharControl = GetComponent<CharacterController>();
@@ -57,9 +62,6 @@ public class PlayerMovement : MonoBehaviour
         _PlayerActionMap = _PlayerInput.actions.FindActionMap("Player");
         _PlayerActionMap.Enable();
         blockController = GetComponent<BlockController2>();
-
-        _NewIdleCoroutine = NewIdle();
-        StartCoroutine(_NewIdleCoroutine);
     }
 
     private void Update()
@@ -69,6 +71,8 @@ public class PlayerMovement : MonoBehaviour
         _WorldMoveDir = Quaternion.AngleAxis(_Camera.transform.eulerAngles.y, new Vector3(0f, 1f, 0f)) * new Vector3(_MoveDir.x, 0f, _MoveDir.y);
         _Animator.SetBool("isGrounded", _CharControl.isGrounded);
         _BlockActive = blockController.IsBlockActive();
+
+        PlayIdle2();
 
         if (_Playing)
         {
@@ -110,17 +114,12 @@ public class PlayerMovement : MonoBehaviour
             _FallingTimer = 0f;
             _AirDistance = 0.0f;
         }
-        else
-        {
-
-        }
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         if (_Playing)
         {
-            StopCoroutine(_NewIdleCoroutine);
             _Animator.SetBool("isWalking", true);
 
             if (context.canceled)
@@ -130,7 +129,6 @@ public class PlayerMovement : MonoBehaviour
                 _Animator.SetFloat("lastInputX", _MoveDir.x);
                 _Animator.SetFloat("lastInputY", _MoveDir.y);
 
-                StartCoroutine(_NewIdleCoroutine);
             }
 
             _MoveDir = context.ReadValue<Vector2>();
@@ -175,15 +173,26 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    private IEnumerator NewIdle()
+    void PlayIdle2()
     {
-        _AnimDelay = Random.Range(10.0f, 15.0f);
-        yield return new WaitForSeconds(_AnimDelay);
+ 
+        if (_CharControl.velocity.magnitude == 0f)
+        {
+            _TotalWaitTime += Time.deltaTime;
 
-        _Animator.SetTrigger("Anim2");
+            if (_TotalWaitTime > _GoalWaitTime)
+            {
+                _Animator.SetTrigger("Play Idle 2");
+                _TotalWaitTime = 0f;
+                UpdateIdleWaitTime();
+            } 
+        }
+    }
 
-
-        //_Animator.ResetTrigger("Anim2");
+    void UpdateIdleWaitTime()
+    {
+        _RandomMulti = Random.Range(0.0f, 1.0f);
+        _GoalWaitTime = _MinTimeWait + ((_MaxTimeWait - _MinTimeWait) * _RandomMulti);
     }
 
     public void OnPause(bool value)
