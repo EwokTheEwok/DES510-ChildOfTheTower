@@ -26,6 +26,7 @@ public class PlayerCamera : MonoBehaviour
 
     void Start()
     {
+        _TweenRotation = transform.eulerAngles.y;
         _CCamera = GetComponent<CinemachineCamera>();
         if (_RotationSidesOcta != 0)
             _RotationDegreesOcta = 360f / (float)_RotationSidesOcta;

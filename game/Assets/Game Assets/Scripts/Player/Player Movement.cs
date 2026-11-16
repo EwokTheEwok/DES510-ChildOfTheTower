@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -31,9 +32,12 @@ public class PlayerMovement : MonoBehaviour
     bool _Playing = true;
 
     //Animator
+    [Header("Animation Settings")]
     private Animator _Animator;
-    private float _FallDistance;
-    public float _MinFallDistance = 1.0f;
+    private float _AirDistance;
+    public float _MinFalldistance = 1.25f;
+    public float _AnimDelay;
+    private IEnumerator _NewIdleCoroutine;
 
     public BlockController2 blockController;
     public bool _BlockActive;
@@ -53,6 +57,9 @@ public class PlayerMovement : MonoBehaviour
         _PlayerActionMap = _PlayerInput.actions.FindActionMap("Player");
         _PlayerActionMap.Enable();
         blockController = GetComponent<BlockController2>();
+
+        _NewIdleCoroutine = NewIdle();
+        StartCoroutine(_NewIdleCoroutine);
     }
 
     private void Update()
@@ -83,26 +90,29 @@ public class PlayerMovement : MonoBehaviour
         if (!_CharControl.isGrounded)
         {
             _FallingTimer += deltaTime;
+            _AirDistance += Mathf.Abs(_Velocity.y) * deltaTime;
 
-            if (_Velocity.y < 0)
-                _FallDistance += -_Velocity.y * deltaTime;
-
-            if (_Velocity.y < -5)
+            if (_AirDistance > _MinFalldistance && _Velocity.y < 0f)
             {
-                _Animator.SetTrigger("Falling");
+                _Animator.SetBool("Falling", true);
             }
         }
-        else
+        else if (_CharControl.isGrounded)
         {
-            _HasJumped = false;
-            _FallingTimer = 0f;
 
-            if (_FallDistance > _MinFallDistance)
+            _Animator.SetBool("Falling", false);
+            if (_AirDistance > _MinFalldistance)
             {
                 _Animator.SetTrigger("Landed");
             }
-            _FallDistance = 0.0f;
-            _Animator.ResetTrigger("Falling");
+
+            _HasJumped = false;
+            _FallingTimer = 0f;
+            _AirDistance = 0.0f;
+        }
+        else
+        {
+
         }
     }
 
@@ -110,6 +120,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_Playing)
         {
+            StopCoroutine(_NewIdleCoroutine);
             _Animator.SetBool("isWalking", true);
 
             if (context.canceled)
@@ -118,6 +129,8 @@ public class PlayerMovement : MonoBehaviour
 
                 _Animator.SetFloat("lastInputX", _MoveDir.x);
                 _Animator.SetFloat("lastInputY", _MoveDir.y);
+
+                StartCoroutine(_NewIdleCoroutine);
             }
 
             _MoveDir = context.ReadValue<Vector2>();
@@ -154,10 +167,30 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
+    public void UndoBlock(int direction)
+    {
+        Debug.Log("function fires brick retrive");
+        _Animator.SetFloat("brickPlaceX", direction);
+        _Animator.SetTrigger("Retrive");
+
+    }
+
+    private IEnumerator NewIdle()
+    {
+        _AnimDelay = Random.Range(10.0f, 15.0f);
+        yield return new WaitForSeconds(_AnimDelay);
+
+        _Animator.SetTrigger("Anim2");
+
+
+        //_Animator.ResetTrigger("Anim2");
+    }
+
     public void OnPause(bool value)
     {
         _Playing = !value;
-        if (value) _PlayerActionMap.Enable();
+        if (!value) _PlayerActionMap.Enable();
         else _PlayerActionMap.Disable();
+        Debug.Log(_PlayerActionMap.enabled);
     }
 }

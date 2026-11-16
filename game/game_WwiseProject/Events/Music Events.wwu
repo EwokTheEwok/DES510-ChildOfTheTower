@@ -52,6 +52,13 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{2AC17988-B9FE-4421-941C-A717A68F8EDE}" ShortID="496532285">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MSW_Master" ID="{BA9BC550-36F4-480B-8895-4D0BD3267772}" WorkUnitID="{6C3C909C-86D2-4B3E-93D4-FD4C2DADD8D7}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 							</ChildrenList>
 						</Event>
 						<Event Name="Transition_MainLoop" ID="{27124751-2513-4E35-BAF6-513B2DBDB2AC}">
@@ -59,6 +66,7 @@
 								<Action Name="" ID="{8C2F03AC-15A4-4212-ADA4-7DADBC8DFFDD}" ShortID="335297764">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="22"/>
+										<Property Name="Delay" Type="Real64" Value="0.5"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -110,7 +118,7 @@
 						<Action Name="" ID="{988BF7DA-9628-4F24-8714-1304A2056908}" ShortID="634346771">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="BLC_Ambience" ID="{0CDB9107-013F-4B82-8225-9ED01BD38F66}" WorkUnitID="{62A7DCA5-8F9D-473B-BD55-46E25E3FE3D1}"/>
+									<ObjectRef Name="BLC_Ambience_Lvl1" ID="{0CDB9107-013F-4B82-8225-9ED01BD38F66}" WorkUnitID="{62A7DCA5-8F9D-473B-BD55-46E25E3FE3D1}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
