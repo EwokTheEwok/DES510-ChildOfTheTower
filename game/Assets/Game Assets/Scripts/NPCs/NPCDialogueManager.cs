@@ -73,6 +73,7 @@ public class NPCDialogueManager : MonoBehaviour
         {
             _Canvas.SetActive(true);
             _Animator.SetBool("isActive", true);
+            //GameObject.Find(_NameText.text).GetComponent<SpriteRenderer>().enabled = true;
 
             foreach (string line in npc.DialogueLines)
             {
