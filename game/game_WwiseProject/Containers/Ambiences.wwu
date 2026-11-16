@@ -79,6 +79,31 @@
 								<ActiveSource Name="sfx_amb_lvl1_outdoor_002" ID="{67EE0895-06B8-4C95-9F28-AFB3D84D66A5}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="sfx_amb_rain_001" ID="{7C0FBE8D-58F0-4FEC-BBAF-C9B9993F621B}" ShortID="973094900">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_amb_rain_001" ID="{BF248FB9-1392-441F-8F6C-04402D28E8FF}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_amb_rain_001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="230564223"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_amb_rain_001" ID="{BF248FB9-1392-441F-8F6C-04402D28E8FF}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 					<BlendTrackList>
 						<BlendTrack Name="Lvl 1 Indoor" ID="{B0AA0AB2-4EDF-43F6-AED9-4CF0C8FE1BE1}" ShortID="826477271">
@@ -153,6 +178,12 @@
 							<BlendTrackAssocList>
 								<BlendTrackAssoc>
 									<ItemRef Name="sfx_amb_lvl1_indoor_002" ID="{16ADBBE7-51D2-4EF9-A05B-EDBD8DA7754B}"/>
+									<CrossfadingInfo>
+										<LeftEdgePos>0</LeftEdgePos>
+										<LeftFadingMode>Automatic</LeftFadingMode>
+										<RightEdgePos>0</RightEdgePos>
+										<RightFadingMode>Automatic</RightFadingMode>
+									</CrossfadingInfo>
 								</BlendTrackAssoc>
 							</BlendTrackAssocList>
 						</BlendTrack>
@@ -223,11 +254,155 @@
 											</Reference>
 										</ReferenceList>
 									</RTPC>
+									<RTPC Name="" ID="{44BA7B24-7E51-4A9A-9FA7-77D93E2BA7C7}" ShortID="131652631">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="RTPC_RainAmbience" ID="{CD1AD836-EE6A-4436-B9AA-5A847EA8F06F}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{86036911-9CDF-42CB-8332-9048AD376548}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+																<SegmentShape>SCurve</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>-200</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+									<RTPC Name="" ID="{21705638-0E6C-4C36-80FD-7671AF400784}" ShortID="811188770">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Lowpass"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="RTPC_RainAmbience" ID="{CD1AD836-EE6A-4436-B9AA-5A847EA8F06F}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{E7F81F7E-D7F7-48CC-9DFC-F400022B0EAF}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+																<SegmentShape>SCurve</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>100</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
 								</ObjectList>
 							</ObjectLists>
 							<BlendTrackAssocList>
 								<BlendTrackAssoc>
 									<ItemRef Name="sfx_amb_lvl1_outdoor_002" ID="{2A18B3AD-8B86-48A4-B6BD-3C6B4CF864FF}"/>
+									<CrossfadingInfo>
+										<LeftEdgePos>0</LeftEdgePos>
+										<LeftFadingMode>Automatic</LeftFadingMode>
+										<RightEdgePos>0</RightEdgePos>
+										<RightFadingMode>Automatic</RightFadingMode>
+									</CrossfadingInfo>
+								</BlendTrackAssoc>
+							</BlendTrackAssocList>
+						</BlendTrack>
+						<BlendTrack Name="Rain" ID="{432F8F69-B3CD-407B-8C6B-89FA1502B2B0}" ShortID="837002765">
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{23BCCA4D-6D5A-4E9B-A84D-977892C2885D}" ShortID="487929232">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="RTPC_RainAmbience" ID="{CD1AD836-EE6A-4436-B9AA-5A847EA8F06F}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{C16378BF-D5B0-475C-93C3-D61C3E1806E1}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+																<SegmentShape>SCurve</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+									<RTPC Name="" ID="{6C4C34BC-EDAE-429A-A148-0363C9CA4DB4}" ShortID="348199873">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Lowpass"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="RTPC_AmbienceSwitcher" ID="{7DFAED41-25C6-48C0-A9B5-85A8591CD539}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{DD1F0872-6A05-45A3-9531-7DD83568F945}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>45</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<BlendTrackAssocList>
+								<BlendTrackAssoc>
+									<ItemRef Name="sfx_amb_rain_001" ID="{7C0FBE8D-58F0-4FEC-BBAF-C9B9993F621B}"/>
 								</BlendTrackAssoc>
 							</BlendTrackAssocList>
 						</BlendTrack>
