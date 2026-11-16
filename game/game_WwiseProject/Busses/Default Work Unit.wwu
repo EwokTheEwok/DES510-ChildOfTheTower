@@ -1051,6 +1051,17 @@
 								</ObjectList>
 							</ObjectLists>
 						</Bus>
+						<Bus Name="SFX_NPC" ID="{90830356-FDC1-4616-9636-AD65E24CB37C}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="13"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
+									<ObjectRef Name="System" ID="{577B92B0-7A79-4BE4-9197-297A20F1905C}" WorkUnitID="{6DD444D4-1738-4A69-A5F0-6D39E5DAE9AB}"/>
+								</Reference>
+							</ReferenceList>
+						</Bus>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="AudioObjects" ID="{2D6141D4-B9BC-44CD-A03E-3C2A8D1D8124}" ShortID="146514147">

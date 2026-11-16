@@ -4168,6 +4168,7 @@ GameObject:
   - component: {fileID: 828217158}
   - component: {fileID: 828217157}
   - component: {fileID: 828217156}
+  - component: {fileID: 828217163}
   m_Layer: 0
   m_Name: Margaret
   m_TagString: NPC
@@ -4350,6 +4351,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &828217163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 828217155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73107322df6a4c94b9cef2d7dce2bf55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCAnimAudio
+  MargIdleAnim:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 5695c7c49f2eb284792235801182b49d, type: 2}
+  NPCDistance:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7552104c8835d4a4badd687d187cfb6a, type: 2}
 --- !u!1 &841583123
 GameObject:
   m_ObjectHideFlags: 0

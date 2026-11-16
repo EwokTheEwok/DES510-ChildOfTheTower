@@ -6,6 +6,8 @@ public class NPCDialogue : MonoBehaviour
     public AK.Wwise.Event MargDialogueAudio;
     public AK.Wwise.Event ThomasDialogueAudio;
 
+
+    //VO Events
     public void PlayPeterAudio(GameObject gameObject)
     {
         PeterDialogueAudio.Post(gameObject);

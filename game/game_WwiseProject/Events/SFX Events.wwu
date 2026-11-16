@@ -863,6 +863,21 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="NPC Events" ID="{116359A7-7061-4B65-B660-BF2E0298A2D0}" ShortID="291005885">
+					<ChildrenList>
+						<Event Name="Play_Marg_Idle" ID="{1C89FD5A-68DF-426F-A8FD-9953B2A06873}">
+							<ChildrenList>
+								<Action Name="" ID="{02C13A82-D9E6-45FF-9B38-92BD8D59F7E5}" ShortID="951494612">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="RMC_Marg_Idle" ID="{94BA9102-95BC-4283-8A42-198BC265B345}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

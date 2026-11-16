@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{555DD64B-7A48-EEE2-B35E-FB2922F0BEAF}",
+    "Hash": "{3CFA0F6C-2B0C-7687-B887-98C324113929}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -848,6 +848,14 @@
       "CachePath": "93/{9388F7BF-D62F-1D6A-B6EA-1F3E87D4F0AB}.wem"
      },
      {
+      "Id": "728243037",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_margaret_idle_01_002.wav",
+      "CachePath": "FA/{FA13A6D1-AAE1-857D-68C3-45BD65A2208E}.wem"
+     },
+     {
       "Id": "730654876",
       "Language": "SFX",
       "Streaming": "false",
@@ -870,6 +878,14 @@
       "Location": "Memory",
       "ShortName": "sfx_vo_thomas_004.wav",
       "CachePath": "2A/{2A23A907-C861-868C-27B5-BB665C13D325}.wem"
+     },
+     {
+      "Id": "765077883",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_margaret_idle_02_002.wav",
+      "CachePath": "49/{4950E34C-6E0C-209F-F031-EC88F60DA71A}.wem"
      },
      {
       "Id": "768546859",
@@ -9294,6 +9310,33 @@
       ]
      },
      {
+      "Id": "3903059178",
+      "Name": "Play_Marg_Idle",
+      "ObjectPath": "\\Events\\SFX Events\\NPC Events\\Play_Marg_Idle",
+      "GUID": "{1C89FD5A-68DF-426F-A8FD-9953B2A06873}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "728243037"
+       },
+       {
+        "Id": "765077883"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       }
+      ]
+     },
+     {
       "Id": "2321812079",
       "Name": "Play_Margaret",
       "ObjectPath": "\\Events\\VO Events\\Play_Margaret",
@@ -9948,6 +9991,13 @@
       "Color": "10"
      },
      {
+      "Id": "1264247529",
+      "Name": "RTPC_NPCDistance",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\RTPC_NPCDistance",
+      "GUID": "{D3A35AE9-21F1-49A3-8B8E-B82DD3A3A437}",
+      "Color": "10"
+     },
+     {
       "Id": "3739513706",
       "Name": "RTPC_ShadowDistance",
       "ObjectPath": "\\Game Parameters\\RTPCs\\RTPC_ShadowDistance",
@@ -10213,6 +10263,6 @@
     ]
    }
   ],
-  "FileHash": "{B7FDFD19-D734-2795-42BC-697FC2274444}"
+  "FileHash": "{946EBDA2-806B-5FF3-BB50-235A18C884E1}"
  }
 }
