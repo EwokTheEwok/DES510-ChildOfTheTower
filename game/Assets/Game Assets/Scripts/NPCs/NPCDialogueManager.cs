@@ -35,7 +35,7 @@ public class NPCDialogueManager : MonoBehaviour
     private IEnumerator _DialogueCoroutine;
 
     [Header("NPC Think Bubble")]
-    private Animator _Animator;
+    [SerializeField] private Animator _Animator;
 
     [Header("Events")]
     public UnityEvent<GameObject> _PeterEvent = new();
@@ -65,7 +65,6 @@ public class NPCDialogueManager : MonoBehaviour
     private IEnumerator StartDia()
     {
         NPC npc = _CurrentNPC.GetComponent<NPC>();
-        _Animator = _CurrentNPC.GetComponent<Animator>();
         _ScreenNameText.text = npc.NPCName;
         _NameText.text = npc.NPCName;
 
