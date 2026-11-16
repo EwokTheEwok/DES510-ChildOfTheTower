@@ -299,6 +299,10 @@ PrefabInstance:
       propertyPath: _MaxTimeWait
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1377364740272849210, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _MinTimeWait
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1744924615411652172, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -390,6 +394,10 @@ PrefabInstance:
     - target: {fileID: 5769029285310065178, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: Lens.FieldOfView
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440392076667985014, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7191902283495994130, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: _PlaceEvent.m_PersistentCalls.m_Calls.Array.size
@@ -1619,8 +1627,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1392796963
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: acf8bdd83c6ff8644bcd60023764fe21, type: 3}
@@ -4122,8 +4130,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1392796963
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: a7cfa35e5a2c6754ebc8dae9965be049, type: 3}

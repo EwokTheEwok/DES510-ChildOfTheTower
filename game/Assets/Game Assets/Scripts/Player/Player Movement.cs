@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Animator
     [Header("Animations Settings")]
-    [SerializeField] private float _MinTimeWait = 5.0f;
+    [SerializeField] private float _MinTimeWait = 8.0f;
     [SerializeField] private float _MaxTimeWait = 15.0f;
     private Animator _Animator;
     private float _AirDistance;
@@ -185,7 +185,11 @@ public class PlayerMovement : MonoBehaviour
                 _Animator.SetTrigger("Play Idle 2");
                 _TotalWaitTime = 0f;
                 UpdateIdleWaitTime();
-            } 
+            }
+        }
+        else
+        {
+            _TotalWaitTime = 0f;
         }
     }
 
