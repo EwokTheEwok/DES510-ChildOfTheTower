@@ -10,7 +10,7 @@
     "Type": "Bus",
     "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
     "Language": "SFX",
-    "Hash": "{FDC458CA-7AAE-8333-6663-5E0F7B093DE0}",
+    "Hash": "{E2221B5C-E255-639D-913F-0A1FD184FD0A}",
     "ObjectPath": "Reverb_Outdoor",
     "ShortName": "Reverb_Outdoor",
     "Path": "Bus/Reverb_Outdoor.bnk",
@@ -30,7 +30,7 @@
      {
       "Id": "1578973140",
       "Name": "Reverb_Outdoor",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Outdoor",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Outdoor",
       "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
       "Color": "7",
       "PluginRefs": {
@@ -41,9 +41,25 @@
        ]
       }
      }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2582501215",
+      "Name": "RTPC_MasterVolume",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\Audio Settings\\RTPC_MasterVolume",
+      "GUID": "{93399D90-6A27-46BB-8BCB-98285DE5857E}",
+      "Color": "10"
+     },
+     {
+      "Id": "2644490154",
+      "Name": "RTPC_SFXVolume",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\Audio Settings\\RTPC_SFXVolume",
+      "GUID": "{4D458D68-15F6-4EBC-BB89-CA95811E7B14}",
+      "Color": "10"
+     }
     ]
    }
   ],
-  "FileHash": "{F9BC511C-544A-4A57-BBBA-B2DEF4FAD52E}"
+  "FileHash": "{490D988D-4E2D-E2F9-369D-9600B6452F52}"
  }
 }

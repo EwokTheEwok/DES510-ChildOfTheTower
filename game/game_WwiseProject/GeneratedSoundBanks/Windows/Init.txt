@@ -44,22 +44,27 @@ State	ID	Name	State Group			Notes
 	1257464028	MainLoop	MusicState_Level1			
 
 Game Parameter	ID	Name			Wwise Object Path	Notes
+	1226769967	RTPC_AmbVolume			\RTPCs\Audio Settings\RTPC_AmbVolume	
+	2378823330	RTPC_MusicVolume			\RTPCs\Audio Settings\RTPC_MusicVolume	
+	2582501215	RTPC_MasterVolume			\RTPCs\Audio Settings\RTPC_MasterVolume	
+	2644490154	RTPC_SFXVolume			\RTPCs\Audio Settings\RTPC_SFXVolume	
 	4238634557	RTPC_MXDucking			\RTPCs\RTPC_MXDucking	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	85412153	Ambience			\Default Work Unit\Ambience	
+	161171466	SFX_NPC			\Default Work Unit\SFX\SFX_NPC	
 	217780010	SFX_Player			\Default Work Unit\SFX\SFX_Player	
+	433831820	Reverb Aux Busses			\Default Work Unit\Reverb Aux Busses	
 	515334391	SFX_General			\Default Work Unit\SFX\SFX_General	
 	1534528548	VO			\Default Work Unit\VO	
-	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
 	2519613073	AudioObjects_Brick			\Default Work Unit\AudioObjects\AudioObjects_Brick	
 	3093856314	SFX_Ducking			\Default Work Unit\SFX\SFX_Ducking	
 	3862737079	SFX_UI			\Default Work Unit\SFX\SFX_UI	
 	3991942870	Music			\Default Work Unit\Music	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
-	202033071	Reverb_Tower			\Default Work Unit\Main Audio Bus\Reverb_Tower	
-	1578973140	Reverb_Outdoor			\Default Work Unit\Main Audio Bus\Reverb_Outdoor	
+	202033071	Reverb_Tower			\Default Work Unit\Reverb Aux Busses\Reverb_Tower	
+	1578973140	Reverb_Outdoor			\Default Work Unit\Reverb Aux Busses\Reverb_Outdoor	
 
 Effect plug-ins	ID	Name	Type				Notes
 	48620415	Have_U_Ever_Been_Outside	Wwise RoomVerb			

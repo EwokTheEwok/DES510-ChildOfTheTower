@@ -58,11 +58,13 @@ namespace AK
         static const AkUniqueID PLAY_BRICKVO_TARGETED_05 = 3764927783U;
         static const AkUniqueID PLAY_BRICKVO_TARGETED_06 = 3764927780U;
         static const AkUniqueID PLAY_CHECKPOINT = 2962822744U;
+        static const AkUniqueID PLAY_DOOR = 2547633870U;
         static const AkUniqueID PLAY_FALLING = 913957623U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
         static const AkUniqueID PLAY_INTROLOOP = 528465658U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_LAND = 4285282925U;
+        static const AkUniqueID PLAY_MARG_IDLE = 3903059178U;
         static const AkUniqueID PLAY_MARGARET = 2321812079U;
         static const AkUniqueID PLAY_PETER = 3201150064U;
         static const AkUniqueID PLAY_SHADOWS = 3234418437U;
@@ -159,7 +161,12 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID RTPC_AMBIENCESWITCHER = 1038293638U;
+        static const AkUniqueID RTPC_AMBVOLUME = 1226769967U;
+        static const AkUniqueID RTPC_MASTERVOLUME = 2582501215U;
+        static const AkUniqueID RTPC_MUSICVOLUME = 2378823330U;
         static const AkUniqueID RTPC_MXDUCKING = 4238634557U;
+        static const AkUniqueID RTPC_NPCDISTANCE = 1264247529U;
+        static const AkUniqueID RTPC_SFXVOLUME = 2644490154U;
         static const AkUniqueID RTPC_SHADOWDISTANCE = 3739513706U;
     } // namespace GAME_PARAMETERS
 
@@ -173,10 +180,11 @@ namespace AK
     {
         static const AkUniqueID AMBIENCE = 85412153U;
         static const AkUniqueID AUDIOOBJECTS_BRICK = 2519613073U;
-        static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
         static const AkUniqueID MUSIC = 3991942870U;
+        static const AkUniqueID REVERB_AUX_BUSSES = 433831820U;
         static const AkUniqueID SFX_DUCKING = 3093856314U;
         static const AkUniqueID SFX_GENERAL = 515334391U;
+        static const AkUniqueID SFX_NPC = 161171466U;
         static const AkUniqueID SFX_PLAYER = 217780010U;
         static const AkUniqueID SFX_UI = 3862737079U;
         static const AkUniqueID VO = 1534528548U;

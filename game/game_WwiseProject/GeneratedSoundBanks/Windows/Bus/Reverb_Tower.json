@@ -10,7 +10,7 @@
     "Type": "Bus",
     "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
     "Language": "SFX",
-    "Hash": "{508277EB-28B3-69AB-8FFD-8399B05F30BC}",
+    "Hash": "{2BC94E0C-02FF-2AB0-33EC-F2AB043FAFA4}",
     "ObjectPath": "Reverb_Tower",
     "ShortName": "Reverb_Tower",
     "Path": "Bus/Reverb_Tower.bnk",
@@ -30,7 +30,7 @@
      {
       "Id": "202033071",
       "Name": "Reverb_Tower",
-      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Reverb_Tower",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Tower",
       "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
       "Color": "7",
       "PluginRefs": {
@@ -41,9 +41,25 @@
        ]
       }
      }
+    ],
+    "GameParameters": [
+     {
+      "Id": "2582501215",
+      "Name": "RTPC_MasterVolume",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\Audio Settings\\RTPC_MasterVolume",
+      "GUID": "{93399D90-6A27-46BB-8BCB-98285DE5857E}",
+      "Color": "10"
+     },
+     {
+      "Id": "2644490154",
+      "Name": "RTPC_SFXVolume",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\Audio Settings\\RTPC_SFXVolume",
+      "GUID": "{4D458D68-15F6-4EBC-BB89-CA95811E7B14}",
+      "Color": "10"
+     }
     ]
    }
   ],
-  "FileHash": "{888736FD-D872-19DD-D5BA-92637C3C490D}"
+  "FileHash": "{F0440A93-3F8D-B361-5516-24A544C5B458}"
  }
 }
