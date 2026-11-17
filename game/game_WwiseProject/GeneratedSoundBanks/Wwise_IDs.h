@@ -64,6 +64,8 @@ namespace AK
         static const AkUniqueID PLAY_INTROLOOP = 528465658U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_LAND = 4285282925U;
+        static const AkUniqueID PLAY_LVL2 = 3682715550U;
+        static const AkUniqueID PLAY_LVL3 = 3682715551U;
         static const AkUniqueID PLAY_MARG_IDLE = 3903059178U;
         static const AkUniqueID PLAY_MARGARET = 2321812079U;
         static const AkUniqueID PLAY_PETER = 3201150064U;

@@ -263,6 +263,38 @@
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>
+				<SoundcasterSession Name="Music Transitions" ID="{F8E932ED-3BEA-4D47-8845-D6991BE7A829}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_IntroLoop" ID="{5141A12A-7C53-4A7C-8E8D-98DE16D8F73D}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Start_Music" ID="{9A97C6C1-0CEB-4330-A3F7-CD55E362B206}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="State_Pause" ID="{9E9D4539-175A-4288-802A-5555F3E84A75}" WorkUnitID="{3EB4204A-2BA8-4E8F-9C87-52AE27C69E25}"/>
+							<Position X="0" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Transition_MainLoop" ID="{27124751-2513-4E35-BAF6-513B2DBDB2AC}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="State_Play" ID="{11AE3E26-611F-4F40-9D44-C9A8F5480A62}" WorkUnitID="{3EB4204A-2BA8-4E8F-9C87-52AE27C69E25}"/>
+							<Position X="1" Y="4"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Lvl2" ID="{184C0B4B-323B-4A8A-A3CF-37D315055214}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Lvl3" ID="{18432390-5DDC-40FC-8CA3-E8351B0E7132}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>
