@@ -45,6 +45,8 @@ public class PlayerMovement : MonoBehaviour
     [Header("Block Settings")]
     public BlockController2 blockController;
     public bool _BlockActive;
+    public bool _IsRecovering;
+    public float _BlockDirection;
 
 
     private void Awake()
@@ -71,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
         _WorldMoveDir = Quaternion.AngleAxis(_Camera.transform.eulerAngles.y, new Vector3(0f, 1f, 0f)) * new Vector3(_MoveDir.x, 0f, _MoveDir.y);
         _Animator.SetBool("isGrounded", _CharControl.isGrounded);
         _BlockActive = blockController.IsBlockActive();
+        _IsRecovering = blockController.IsRecovering();
 
         PlayIdle2();
 
@@ -165,10 +168,14 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public void UndoBlock(int direction)
+    public void UndoBlock()
     {
-        Debug.Log("function fires brick retrive");
-        _Animator.SetFloat("brickPlaceX", direction);
+        //_BlockDirection = blockController.BlockDirection();
+        if (Input.GetKey(KeyCode.V))
+        {
+            _Animator.SetFloat("brickPlaceX", 7);
+        }
+
         _Animator.SetTrigger("Retrive");
 
     }
