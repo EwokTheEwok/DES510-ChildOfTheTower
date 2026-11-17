@@ -12,7 +12,6 @@ public class BlockController2 : MonoBehaviour
     CharacterController _CharacterController;
     Camera _Camera;
     PlayerCamera _PlayerCamera;
-    Transform _TrackingTarget;
 
     [Header("Bubbles")]
     public float _MissingBubbleDistance = 15f;
@@ -88,8 +87,6 @@ public class BlockController2 : MonoBehaviour
         _Camera = Camera.main;
         _PlayerCamera = GetComponentInChildren<PlayerCamera>();
 
-        _TrackingTarget = new GameObject("TrackingTarget").transform;
-
         _BlockContainer = GameManager.Instance.Blocks;
         _GuideBlock = Instantiate(_GuideBlockPrefab, _BlockContainer.transform);
 
@@ -133,9 +130,12 @@ public class BlockController2 : MonoBehaviour
                 UpdateControls(_Block.transform);
 
                 if (MinDistance() > _FarThreshold)
-                    _TrackingTarget.position = transform.position;
+                    _PlayerCamera.ResetTarget();
                 else
-                    _TrackingTarget.position = Vector3.Lerp(transform.position, _Block.transform.position, 0.5f);
+                {
+                    float betweenY = Mathf.Lerp(transform.position.y, _Block.transform.position.y, 0.5f);
+                    _PlayerCamera.SetPlayerBlockY(betweenY);
+                }
                 
 
                 if (!_IsMovingBlock)
@@ -218,7 +218,8 @@ public class BlockController2 : MonoBehaviour
         {
             if (!_Active && NearNodes())
             {   //place on node if block isnt active
-                _CinemachineCamera.Target.TrackingTarget = _TrackingTarget;
+                //_CinemachineCamera.Target.TrackingTarget = _BetweenTargets;
+                _PlayerCamera.SetBlockMode(true);
                 _Active = true;
                 GameObject nearestNode = NearestNode();
 
@@ -421,7 +422,8 @@ public class BlockController2 : MonoBehaviour
             _BlockList.RemoveAt(0);
             Destroy(_Block);
             _Block = null;
-            _CinemachineCamera.Target.TrackingTarget = transform;
+            _PlayerCamera.SetBlockMode(false);
+            //_CinemachineCamera.Target.TrackingTarget = transform;
         }
     }
 
@@ -554,18 +556,13 @@ public class BlockController2 : MonoBehaviour
         _AxisPlane.SetActive(false);
         _PlayerCamera.SetOctaMode();
         _Block = null;
-        _CinemachineCamera.Target.TrackingTarget = transform;
+        _PlayerCamera.SetBlockMode(false);
         _PlayerBlockUI.EmptyTiles();
     }
 
     public void Reset()
     {
         RetrieveBlock();
-    }
-
-    public void ResetCamera()
-    {
-        _CinemachineCamera.Target.TrackingTarget = transform;
     }
 
     private void DisplayBubble()

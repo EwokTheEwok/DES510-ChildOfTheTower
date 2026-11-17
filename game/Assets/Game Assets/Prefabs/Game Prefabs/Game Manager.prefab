@@ -4836,6 +4836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CheckpointManager
   _CheckpointTag: Checkpoint
   _Spawn: {fileID: 3167747328997121965}
+  _TowerCollider: {fileID: 5841426037874876817}
   _ShadowOcean: {fileID: 6036245783953171614}
   _MinSpeed: 0.25
   _MaxSpeed: 3
@@ -4843,7 +4844,7 @@ MonoBehaviour:
   _MaxDistance: 50
   _ResetDistance: -100
   _Rain: {fileID: 2535630413470978558}
-  _RainEmitter: {fileID: 0}
+  _RainEmitter: {fileID: 8233430351172053087}
   _PlayerPrefab: {fileID: 2435213661175931643, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
   _Blocks: {fileID: 1196601735004152940}
   _UI: {fileID: 8099956226453172422}
@@ -9801,6 +9802,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueManager
   _NPCTag: NPC
   _Canvas: {fileID: 6530382905784458048}
+  Peter: {fileID: 0}
+  Margaret: {fileID: 0}
+  Thomas: {fileID: 0}
   _DialogueBox: {fileID: 7778066800902604763}
   _NameBox: {fileID: 8777896790132945914}
   _NameText: {fileID: 4766152177747118939}

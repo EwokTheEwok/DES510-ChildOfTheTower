@@ -51,6 +51,7 @@ public class WindowTower : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GameManager.Instance.PlayerCamera.SetInsideMode(true);
             _Active = true;
             _EnterEvent?.Invoke(true);
             _TweenObject.Complete();
@@ -62,6 +63,7 @@ public class WindowTower : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            GameManager.Instance.PlayerCamera.SetInsideMode(false);
             _Active = false;
             _EnterEvent?.Invoke(false);
             _TweenObject.Complete();
