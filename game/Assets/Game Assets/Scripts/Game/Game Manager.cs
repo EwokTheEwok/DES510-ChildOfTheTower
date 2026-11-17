@@ -31,6 +31,10 @@ public class GameManager : MonoBehaviour
     Vector3 _ShadowInitialPosition;
 
     [Header("Player")]
+    [SerializeField] GameObject _Rain;
+    [SerializeField] GameObject _RainEmitter;
+
+    [Header("Player")]
     [SerializeField] GameObject _PlayerPrefab;
     GameObject _Player = null;
     public GameObject Player { get => _Player; }
@@ -55,6 +59,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator _RestartCoroutine;
 
+    private bool _Raining = true;
     private bool _Paused = false;
     public bool Paused
     {
@@ -117,6 +122,18 @@ public class GameManager : MonoBehaviour
             float distanceScale = Mathf.Clamp(distanceFromMinimum / (_MaxDistance - _MinDistance), 0f, 1f);
             float speed = Mathf.SmoothStep(_MinSpeed, _MaxSpeed, distanceScale);
             _ShadowOcean.transform.position += new Vector3(0f, speed * Time.fixedDeltaTime, 0f);
+        }
+
+        if (_Raining)
+        {
+            Vector3 rainPosition = _Rain.transform.position;
+            rainPosition.y = _Player.transform.position.y + 25f;
+            Vector3 rainEmitterPosition = _RainEmitter.transform.position;
+            rainEmitterPosition.x = _Player.transform.position.x;
+            rainEmitterPosition.z = _Player.transform.position.z;
+
+            _RainEmitter.transform.position = rainEmitterPosition;
+            _Rain.transform.position = rainPosition;
         }
     }
 
