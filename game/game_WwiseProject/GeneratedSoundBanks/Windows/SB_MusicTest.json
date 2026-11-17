@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{4A0645FE-123E-04E1-FBEE-C17FC354445A}",
+    "Hash": "{0881B208-674C-BBBB-FD01-C3FDCFD3D554}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -358,6 +358,14 @@
       "Location": "Memory",
       "ShortName": "sfx_vo_peter_019.wav",
       "CachePath": "92/{9223213B-3C3C-58AC-3254-9D5680B6CA6C}.wem"
+     },
+     {
+      "Id": "307054694",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_wakeup_001.wav",
+      "CachePath": "A5/{A5962999-3444-3DE3-F648-A1492F52F9FC}.wem"
      },
      {
       "Id": "317257852",
@@ -9832,6 +9840,37 @@
       ]
      },
      {
+      "Id": "1798093337",
+      "Name": "Play_WakeUp",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Play_WakeUp",
+      "GUID": "{F61FD2D8-6D42-4898-BD03-5304B1FEAE65}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "4.5",
+      "DurationMax": "4.5",
+      "MediaRefs": [
+       {
+        "Id": "307054694"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ]
+     },
+     {
       "Id": "540993415",
       "Name": "Start_Music",
       "ObjectPath": "\\Events\\Music Events\\Start_Music",
@@ -10284,6 +10323,6 @@
     ]
    }
   ],
-  "FileHash": "{124A365C-D8A4-F75F-323C-6413341D5837}"
+  "FileHash": "{5A9AA6FB-3803-6664-55C4-D78F5882BFB5}"
  }
 }

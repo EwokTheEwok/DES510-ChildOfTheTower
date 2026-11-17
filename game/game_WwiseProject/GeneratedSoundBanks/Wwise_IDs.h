@@ -73,6 +73,7 @@ namespace AK
         static const AkUniqueID PLAY_UI_BUTTON = 43599987U;
         static const AkUniqueID PLAY_UI_BUTTON_SCROLL = 1154567065U;
         static const AkUniqueID PLAY_UI_STANDARD = 123178096U;
+        static const AkUniqueID PLAY_WAKEUP = 1798093337U;
         static const AkUniqueID START_MUSIC = 540993415U;
         static const AkUniqueID STATE_PAUSE = 106931287U;
         static const AkUniqueID STATE_PLAY = 2483705881U;
