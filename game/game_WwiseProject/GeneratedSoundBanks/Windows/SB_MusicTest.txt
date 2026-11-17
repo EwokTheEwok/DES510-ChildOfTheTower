@@ -20,9 +20,11 @@ Event	ID	Name			Wwise Object Path	Notes
 	1154567065	Play_UI_Button_Scroll			\SFX Events\UI Events\Play_UI_Button_Scroll	
 	1200446142	MusicAmbTest			\Music Events\MusicAmbTest	
 	1355629322	Play_TitleLoop			\Music Events\Play_TitleLoop	
+	1416460443	Amb_Rain_Stop			\AMB Events\Amb_Rain_Stop	
 	1579460802	Brick_PlacementError			\SFX Events\Brick Events\Brick_PlacementError	
 	1798093337	Play_WakeUp			\SFX Events\Player Events\Play_WakeUp	
 	1901158208	Brick_ContinueBigUndo			\SFX Events\Brick Events\Big Undo\Brick_ContinueBigUndo	
+	2035306337	Amb_Rain_Start			\AMB Events\Amb_Rain_Start	
 	2321812079	Play_Margaret			\VO Events\Play_Margaret	
 	2454766738	Stop_Shadows_LongFade			\SFX Events\Shadow Events\Stop_Shadows_LongFade	
 	2475923824	BrickMode_Start			\SFX Events\Brick Events\BrickMode_Start	
@@ -151,7 +153,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	201017207	sfx_vo_marg_022	.cache\F6\{F69AC1F8-0E63-C75B-688B-1F1DEC47D7EE}.wem		\Containers\VO\RMC_Margaret\sfx_vo_marg_022		572604
 	210645277	sfx_shadow_001	.cache\97\{97ADF6EA-1832-49F3-BAC3-4E3721A2BAD0}.wem		\Containers\SFX\BLC_Shadows\sfx_shadow_001		679396
 	220746774	mx_lvl1_introloop_150bpm_001	.cache\8F\{8FB4D2FB-5755-9AEC-10CD-60280F3971B2}.wem		\Containers\Interactive Music Hierarchy\MSW_Master\MSW_Lvl1\IntroLoop\mx_lvl1_introloop_150bpm_001\mx_lvl1_introloop_150bpm_001		99840
-	230564223	sfx_amb_rain_001	.cache\02\{027D7BDE-B400-80E0-3B1E-FA6161E4D007}.wem		\Containers\Ambiences\BLC_Ambience_Lvl1\sfx_amb_rain_001		1931416
 	232675444	sfx_falling_loop_001	.cache\B6\{B65AAB66-20D7-C22D-00DD-D9830032D69F}.wem		\Containers\SFX\Player SFX\Falling\sfx_falling_loop_001		248584
 	235355313	sfx_vo_thomas_006	.cache\C2\{C2C24415-1D62-187E-DAB6-C8D8082A57CE}.wem		\Containers\VO\RMC_Thomas\sfx_vo_thomas_006		423484
 	236908620	sfx_vo_brick_random_005	.cache\93\{932FC408-F194-CE0A-AE71-BBD82A65F986}.wem		\Containers\VO\SWC_Brick_Random\sfx_vo_brick_random_005		515280
@@ -182,7 +183,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	391992555	sfx_vo_marg_025	.cache\28\{2893E6A3-52AC-9233-E95A-FB77D1A1D68A}.wem		\Containers\VO\RMC_Margaret\sfx_vo_marg_025		618776
 	423020785	sfx_vo_marg_019	.cache\FB\{FB685620-2D9F-2DB8-723E-A6C9E8D962FD}.wem		\Containers\VO\RMC_Margaret\sfx_vo_marg_019		368888
 	434276382	sfx_falling_start_001	.cache\A8\{A82BD75E-8BE3-5EFB-F6DC-1C0624B15F0F}.wem		\Containers\SFX\Player SFX\Falling\sfx_falling_start_001		31926
-	444589137	sfx_amb_lvl1_outdoor_002	.cache\5F\{5FE40D31-E961-B6EE-704C-B5211B3DC9D7}.wem		\Containers\Ambiences\BLC_Ambience_Lvl1\sfx_amb_lvl1_outdoor_002		883530
+	444589137	sfx_amb_lvl1_outdoor_002	.cache\5F\{5FE40D31-E961-B6EE-704C-B5211B3DC9D7}.wem		\Containers\Ambiences\BLC_Ambience_Lvl2\sfx_amb_lvl1_outdoor_002		883530
 	447239699	sfx_vo_thomas_017	.cache\E1\{E144CD6F-2E8A-E1E2-50C0-466C4C33F32B}.wem		\Containers\VO\RMC_Thomas\sfx_vo_thomas_017		684924
 	455860672	sfx_vo_brick_random_001	.cache\DC\{DCF3CB09-C52A-3A8A-6A06-AE7602B881D0}.wem		\Containers\VO\SWC_Brick_Random\sfx_vo_brick_random_001		231668
 	459018154	sfx_brickplace_010_002	.cache\25\{258A0BDD-9197-EA57-9E2D-4740F7E7C91B}.wem		\Containers\SFX\Brick SFX\SWC_BrickSwitcher\sfx_brickplace_010_002		192096
@@ -199,7 +200,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	520969401	sfx_vo_marg_008	.cache\00\{005C613A-47E4-368D-ECA8-C7A2901E78BE}.wem		\Containers\VO\RMC_Margaret\sfx_vo_marg_008		375004
 	526897721	sfx_brickplace_004_002	.cache\14\{14504A5C-71B1-1C6B-99E4-A9D1F3285AE4}.wem		\Containers\SFX\Brick SFX\SWC_BrickSwitcher\sfx_brickplace_004_002		192096
 	534321425	sfx_vo_thomas_011	.cache\6C\{6CD1C9BD-7D23-9F2C-C46E-262E08A6AE12}.wem		\Containers\VO\RMC_Thomas\sfx_vo_thomas_011		372796
-	534910962	sfx_amb_lvl2_indoor_001	.cache\B7\{B74FF311-B43C-94C7-E367-9DEB77590B7A}.wem		\Containers\Ambiences\BLC_Ambience_Lvl2\sfx_amb_lvl2_indoor_001		551256
+	534910962	sfx_amb_lvl2_indoor_001	.cache\9A\{9ACE6F4A-4D57-4F6F-7AD2-FB71EA730694}.wem		\Containers\Ambiences\BLC_Ambience_Lvl2\sfx_amb_lvl2_indoor_001		551256
 	538172765	sfx_vo_peter_009	.cache\4A\{4A3328B8-556E-FF61-5E03-1A576D51BE9C}.wem		\Containers\VO\RMC_Peter\sfx_vo_peter_009		436308
 	538850202	sfx_bigbrickreverse1_001	.cache\5C\{5C7D9FEC-39F4-CD41-D029-D8D973BEB1CE}.wem		\Containers\SFX\Brick SFX\BigBrickReverse\sfx_bigbrickreverse1_001		192096
 	541945125	sfx_brickreverse_005	.cache\19\{1966865C-4D28-D1C1-A7A1-13C4F9F04D46}.wem		\Containers\SFX\Brick SFX\RMC_BrickReverse\sfx_brickreverse_005		176744
@@ -271,6 +272,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	999715590	mx_titleloop_150bpm_001	.cache\F3\{F34B5D0C-A9AA-8864-D1A8-E08BB6C7CB25}.wem		\Containers\Interactive Music Hierarchy\MSW_Master\Titleloop\mx_titleloop_150bpm_001\mx_titleloop_150bpm_001		2056105
 	1009954480	sfx_brickreverse_002	.cache\1B\{1B6537A8-6006-D9ED-FE42-74D40CEC0A0D}.wem		\Containers\SFX\Brick SFX\RMC_BrickReverse\sfx_brickreverse_002		176744
 	1015105809	sfx_bigbrickreverse2_001	.cache\D8\{D8368D4A-3FDE-0E84-BA36-42609C618495}.wem		\Containers\SFX\Brick SFX\BigBrickReverse\sfx_bigbrickreverse2_001		192096
+	1021508531	sfx_amb_rain_002	.cache\E4\{E4F6ABFB-E3AC-B115-83CB-1988CF4D7963}.wem		\Containers\Ambiences\BLC_Ambience_Lvl2\sfx_amb_rain_002		1932305
 	1030108274	sfx_uipopup_4_001	.cache\05\{056812C4-DF19-AE3D-AC8F-53645F6D4A74}.wem		\Containers\SFX\UI SFX\RMC_UI_Standard\sfx_uipopup_4_001		384096
 	1034894193	sfx_vo_peter_001	.cache\6A\{6A5F2AA5-C8BD-10BF-4D44-F0133796F30D}.wem		\Containers\VO\RMC_Peter\sfx_vo_peter_001		497196
 	1041712424	sfx_vo_peter_016	.cache\4E\{4E29D64F-F495-D415-6614-16640220BE62}.wem		\Containers\VO\RMC_Peter\sfx_vo_peter_016		410968

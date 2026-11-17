@@ -13,6 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMB_RAIN_START = 2035306337U;
+        static const AkUniqueID AMB_RAIN_STOP = 1416460443U;
         static const AkUniqueID AMB_SWITCH_INSIDE = 2809561105U;
         static const AkUniqueID AMB_SWITCH_OUTSIDE = 3943071186U;
         static const AkUniqueID BRICK_0 = 3945088981U;

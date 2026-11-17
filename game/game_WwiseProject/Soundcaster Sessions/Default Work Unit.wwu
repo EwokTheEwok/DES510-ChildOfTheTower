@@ -126,6 +126,10 @@
 							<Position X="4" Y="3"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_Amb_Lvl2" ID="{D64E45A6-54F7-4786-9757-FA35420359BF}" WorkUnitID="{8125A5EA-BE73-4683-A280-F78FA24B2ACE}"/>
+							<Position X="5" Y="0"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Brick_04" ID="{9FFBE545-8E93-467A-93DD-3738E5FD312C}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
 							<Position X="5" Y="1"/>
 						</Module>
@@ -168,6 +172,22 @@
 						<Module>
 							<ObjectRef Name="Amb_Switch_Inside" ID="{821EEC11-A94A-4027-B116-A9C7F3F2C483}" WorkUnitID="{8125A5EA-BE73-4683-A280-F78FA24B2ACE}"/>
 							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_IntroLoop" ID="{5141A12A-7C53-4A7C-8E8D-98DE16D8F73D}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Lvl2" ID="{184C0B4B-323B-4A8A-A3CF-37D315055214}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Transition_MainLoop" ID="{27124751-2513-4E35-BAF6-513B2DBDB2AC}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="4" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_Lvl3" ID="{18432390-5DDC-40FC-8CA3-E8351B0E7132}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
+							<Position X="4" Y="2"/>
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>
@@ -234,6 +254,10 @@
 							<Position X="0" Y="3"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Amb_Rain_Start" ID="{3CCC8D56-1505-4DEE-9F00-3FD4FB5CC008}" WorkUnitID="{8125A5EA-BE73-4683-A280-F78FA24B2ACE}"/>
+							<Position X="0" Y="4"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_IntroLoop" ID="{5141A12A-7C53-4A7C-8E8D-98DE16D8F73D}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
 							<Position X="0" Y="5"/>
 						</Module>
@@ -244,6 +268,10 @@
 						<Module>
 							<ObjectRef Name="Start_Music" ID="{9A97C6C1-0CEB-4330-A3F7-CD55E362B206}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
 							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Amb_Rain_Stop" ID="{91AFEDDA-8B5B-4753-B944-F5424BDB7164}" WorkUnitID="{8125A5EA-BE73-4683-A280-F78FA24B2ACE}"/>
+							<Position X="1" Y="4"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Transition_MainLoop" ID="{27124751-2513-4E35-BAF6-513B2DBDB2AC}" WorkUnitID="{E2550DBC-FEFE-485A-94A3-7C65A37336B0}"/>
