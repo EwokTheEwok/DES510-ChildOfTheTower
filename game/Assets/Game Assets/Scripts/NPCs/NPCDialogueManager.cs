@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Events;
 
 public class NPCDialogueManager : MonoBehaviour
@@ -14,6 +15,10 @@ public class NPCDialogueManager : MonoBehaviour
     private bool _NPCActive;
     private GameObject _CurrentNPC;
     [SerializeField] private GameObject _Canvas;
+
+    public Image Peter;
+    public Image Margaret;
+    public Image Thomas;
 
     [Header("NPC Local Canvas")]
     [SerializeField] private GameObject _DialogueBox;
@@ -81,16 +86,25 @@ public class NPCDialogueManager : MonoBehaviour
 
                 if (_NameText.text == "Peter")
                 {
+                    Peter.enabled = true;
+                    Margaret.enabled = false;
+                    Thomas.enabled = false;
                     _PeterEvent?.Invoke(_CurrentNPC);
 
                 }
                 else if (_NameText.text == "Margaret")
                 {
+                    Peter.enabled = false;
+                    Margaret.enabled = true;
+                    Thomas.enabled = false;
                     _MargaretEvent?.Invoke(_CurrentNPC);
 
                 }
                 else if (_NameText.text == "Thomas")
                 {
+                    Peter.enabled = false;
+                    Margaret.enabled = false;
+                    Thomas.enabled = true;
                     _ThomasEvent?.Invoke(_CurrentNPC);
 
                 }
