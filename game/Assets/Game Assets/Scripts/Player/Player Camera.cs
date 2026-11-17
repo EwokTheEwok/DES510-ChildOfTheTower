@@ -24,8 +24,17 @@ public class PlayerCamera : MonoBehaviour
     float _BlockRotationY = 0f;
     float _CameraRotationY = 0f;
 
+    Transform _PlayerTowerTarget;
+    Transform _PlayerBlockTarget;
+
+    bool _InsideTower = false;
+    bool _BlockTargetActive = false;
+    GameObject _Player = null;
+
     void Start()
     {
+        _Player = transform.parent.gameObject;
+
         _TweenRotation = transform.eulerAngles.y;
         _CCamera = GetComponent<CinemachineCamera>();
         if (_RotationSidesOcta != 0)
@@ -38,27 +47,80 @@ public class PlayerCamera : MonoBehaviour
         else
             _RotationDegreesCube = 360f / 4f;
 
+        _PlayerTowerTarget = new GameObject("Player Tower Target").transform;
+        _PlayerBlockTarget = new GameObject("Player Block Target").transform;
+        //_TowerTrackingTarget.SetParent(transform);
+
+        _PlayerTowerTarget.position = GameManager.Instance.TowerPivot;
+        _PlayerBlockTarget.position = _PlayerTowerTarget.position;
     }
 
     void Update()
     {
-        if (_CCamera.enabled && !_IsCameraRotating)
+        if (_CCamera.enabled)
         {
-            if (_CameraMoveDir != 0f)
+            if (_InsideTower)
             {
-                if (!_CubeMode)
-                    TweenCamera(_CameraMoveDir * _RotationDegreesOcta);
-                else
+                Vector3 newPosition = _PlayerTowerTarget.position;
+                newPosition.y = transform.parent.position.y;
+                _PlayerTowerTarget.position = newPosition;
+            }
+
+            if (!_IsCameraRotating)
+            {
+                if (_CameraMoveDir != 0f)
                 {
-                    TweenCamera(_CameraMoveDir * _RotationDegreesCube);
+                    if (!_CubeMode)
+                        TweenCamera(_CameraMoveDir * _RotationDegreesOcta);
+                    else
+                    {
+                        TweenCamera(_CameraMoveDir * _RotationDegreesCube);
+                    }
+                }
+                else if (_SwapToCube)
+                {
+                    _SwapToCube = false;
+                    TweenNearest();
                 }
             }
-            else if (_SwapToCube)
-            {
-                _SwapToCube = false;
-                TweenNearest();
-            }
         }
+    }
+
+    public void SetPlayerBlockY(float _y)
+    {
+        Vector3 betweenPos = _PlayerBlockTarget.position;
+        betweenPos.y = _y;
+        _PlayerBlockTarget.position = betweenPos;
+    }
+
+    public void SetBlockMode(bool _active)
+    {
+        _BlockTargetActive = _active;
+        if (_BlockTargetActive)
+            _CCamera.Target.TrackingTarget = _PlayerBlockTarget;
+        else
+            _CCamera.Target.TrackingTarget = _PlayerTowerTarget;
+    }
+
+    public void SetInsideMode(bool _inside)
+    {
+        _InsideTower = _inside;
+        if (_InsideTower)
+        {
+            if (_BlockTargetActive)
+                _CCamera.Target.TrackingTarget = _PlayerBlockTarget;
+            else
+                _CCamera.Target.TrackingTarget = _PlayerTowerTarget;
+        }
+        else
+        {
+            _CCamera.Target.TrackingTarget = _Player.transform;
+        }
+    }
+
+    public void ResetTarget()
+    {
+        SetInsideMode(_InsideTower);
     }
 
     public void SetCubeMode(float _blockRotationY)

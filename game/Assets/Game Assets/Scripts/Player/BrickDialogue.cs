@@ -32,6 +32,7 @@ public class BrickDialogue : MonoBehaviour
     public float height = 3f;
 
     private RectTransform dialogueTransform;
+    Transform _PlayerTransform;
 
     private IEnumerator _RandomDialogueCoroutine;
     private IEnumerator _TargetedBrickCoroutine;
@@ -41,6 +42,7 @@ public class BrickDialogue : MonoBehaviour
     {
         _BrickCanvas = GameManager.Instance.UI.transform.Find("Block Canvas").gameObject;
         blockController = GameManager.Instance.Player.GetComponent<BlockController2>();
+        _PlayerTransform = GameManager.Instance.Player.transform;
 
         dialogueTransform = BrickBox.transform as RectTransform;
         _BetweenLineDelay = Random.Range(10.0f, 17.0f);
@@ -48,7 +50,7 @@ public class BrickDialogue : MonoBehaviour
 
     private void Update()
     {
-        dialogueTransform.position = Camera.main.WorldToScreenPoint(transform.position + new Vector3(0, height, 0));
+        dialogueTransform.position = Camera.main.WorldToScreenPoint(_PlayerTransform.position + new Vector3(0, height, 0));
 
         DisplayBrickSprite();
 

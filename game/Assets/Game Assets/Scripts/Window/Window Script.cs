@@ -32,5 +32,6 @@ public class WindowScript : MonoBehaviour
         Shader.SetGlobalVector("_Player_World_Position", playerWorldPos);
         Shader.SetGlobalVector("_Camera_Player_Rotation", cameraPlayerRotation);
         Shader.SetGlobalVector("_Camera_Position", cameraPos);
+        Shader.SetGlobalFloat("_Additive_Dither", _AdditiveDither);
     }
 } 
