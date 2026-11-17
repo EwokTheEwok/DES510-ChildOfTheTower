@@ -230,6 +230,11 @@ public class BlockController2 : MonoBehaviour
         return false;
     }
 
+    public bool IsRecovering()
+    {
+        return _InputUndo;
+    }
+
     public void OnPlaceBlock(InputAction.CallbackContext context)
     {
         if (context.started)
