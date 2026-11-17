@@ -7,6 +7,7 @@ public class PlayerAnimationAudio : MonoBehaviour
     public AK.Wwise.Event LandEvent;
     public AK.Wwise.Event FallEvent;
     public AK.Wwise.Event PlaceEvent;
+    public AK.Wwise.Event WakeEvent;
 
     bool isFalling = false;
 
@@ -44,5 +45,10 @@ public class PlayerAnimationAudio : MonoBehaviour
     public void PlayPlaceAnim()
     {
         PlaceEvent.Post(gameObject);
+    }
+
+    public void PlayWakeAnim()
+    {
+        WakeEvent.Post(gameObject);
     }
 }

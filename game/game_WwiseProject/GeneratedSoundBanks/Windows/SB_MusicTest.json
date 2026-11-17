@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{0881B208-674C-BBBB-FD01-C3FDCFD3D554}",
+    "Hash": "{BB4813D3-3BF3-D694-8A17-32806603D130}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -230,14 +230,6 @@
       "Location": "Memory",
       "ShortName": "mx_lvl1_introloop_150bpm_001.wav",
       "CachePath": "8F/{8FB4D2FB-5755-9AEC-10CD-60280F3971B2}.wem"
-     },
-     {
-      "Id": "230564223",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "sfx_amb_rain_001.wav",
-      "CachePath": "02/{027D7BDE-B400-80E0-3B1E-FA6161E4D007}.wem"
      },
      {
       "Id": "232675444",
@@ -621,7 +613,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "sfx_amb_lvl2_indoor_001.wav",
-      "CachePath": "B7/{B74FF311-B43C-94C7-E367-9DEB77590B7A}.wem"
+      "CachePath": "9A/{9ACE6F4A-4D57-4F6F-7AD2-FB71EA730694}.wem"
      },
      {
       "Id": "538172765",
@@ -1192,6 +1184,14 @@
       "CachePath": "D8/{D8368D4A-3FDE-0E84-BA36-42609C618495}.wem"
      },
      {
+      "Id": "1021508531",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_amb_rain_002.wav",
+      "CachePath": "E4/{E4F6ABFB-E3AC-B115-83CB-1988CF4D7963}.wem"
+     },
+     {
       "Id": "1030108274",
       "Language": "SFX",
       "Streaming": "false",
@@ -1269,6 +1269,28 @@
      ]
     },
     "Events": [
+     {
+      "Id": "2035306337",
+      "Name": "Amb_Rain_Start",
+      "ObjectPath": "\\Events\\AMB Events\\Amb_Rain_Start",
+      "GUID": "{3CCC8D56-1505-4DEE-9F00-3FD4FB5CC008}",
+      "Color": "4",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1416460443",
+      "Name": "Amb_Rain_Stop",
+      "ObjectPath": "\\Events\\AMB Events\\Amb_Rain_Stop",
+      "GUID": "{91AFEDDA-8B5B-4753-B944-F5424BDB7164}",
+      "Color": "4",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
      {
       "Id": "2809561105",
       "Name": "Amb_Switch_Inside",
@@ -7326,10 +7348,10 @@
         "Id": "143126068"
        },
        {
-        "Id": "230564223"
+        "Id": "444589137"
        },
        {
-        "Id": "444589137"
+        "Id": "1021508531"
        }
       ],
       "SwitchContainers": [
@@ -7430,10 +7452,10 @@
         "Id": "143126068"
        },
        {
-        "Id": "230564223"
+        "Id": "444589137"
        },
        {
-        "Id": "444589137"
+        "Id": "1021508531"
        }
       ]
      },
@@ -7443,12 +7465,16 @@
       "ObjectPath": "\\Events\\AMB Events\\Play_Amb_Lvl2",
       "GUID": "{D64E45A6-54F7-4786-9757-FA35420359BF}",
       "Color": "4",
-      "DurationType": "OneShot",
-      "DurationMin": "152.9796",
-      "DurationMax": "152.9796",
+      "DurationType": "Infinite",
       "MediaRefs": [
        {
+        "Id": "444589137"
+       },
+       {
         "Id": "534910962"
+       },
+       {
+        "Id": "1021508531"
        }
       ]
      },
@@ -9332,6 +9358,46 @@
       ]
      },
      {
+      "Id": "3682715550",
+      "Name": "Play_Lvl2",
+      "ObjectPath": "\\Events\\Music Events\\Play_Lvl2",
+      "GUID": "{184C0B4B-323B-4A8A-A3CF-37D315055214}",
+      "Color": "24",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "2782712965",
+        "Id": "141331489",
+        "Name": "Lvl2",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\Lvl2",
+        "GUID": "{9FC27A63-68FE-47C0-BA0E-77310CA275B5}"
+       }
+      ]
+     },
+     {
+      "Id": "3682715551",
+      "Name": "Play_Lvl3",
+      "ObjectPath": "\\Events\\Music Events\\Play_Lvl3",
+      "GUID": "{18432390-5DDC-40FC-8CA3-E8351B0E7132}",
+      "Color": "24",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "2782712965",
+        "Id": "141331488",
+        "Name": "Lvl3",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\Lvl3",
+        "GUID": "{E3F8CBF0-7A13-49BF-B957-A8DDC7832151}"
+       }
+      ]
+     },
+     {
       "Id": "3903059178",
       "Name": "Play_Marg_Idle",
       "ObjectPath": "\\Events\\SFX Events\\NPC Events\\Play_Marg_Idle",
@@ -10323,6 +10389,6 @@
     ]
    }
   ],
-  "FileHash": "{5A9AA6FB-3803-6664-55C4-D78F5882BFB5}"
+  "FileHash": "{7C084B9E-6BAF-1C9F-9745-51CF25FAF154}"
  }
 }

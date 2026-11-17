@@ -13,6 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMB_RAIN_START = 2035306337U;
+        static const AkUniqueID AMB_RAIN_STOP = 1416460443U;
         static const AkUniqueID AMB_SWITCH_INSIDE = 2809561105U;
         static const AkUniqueID AMB_SWITCH_OUTSIDE = 3943071186U;
         static const AkUniqueID BRICK_0 = 3945088981U;
@@ -64,6 +66,8 @@ namespace AK
         static const AkUniqueID PLAY_INTROLOOP = 528465658U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_LAND = 4285282925U;
+        static const AkUniqueID PLAY_LVL2 = 3682715550U;
+        static const AkUniqueID PLAY_LVL3 = 3682715551U;
         static const AkUniqueID PLAY_MARG_IDLE = 3903059178U;
         static const AkUniqueID PLAY_MARGARET = 2321812079U;
         static const AkUniqueID PLAY_PETER = 3201150064U;
