@@ -16,21 +16,26 @@ public class NPCDialogueManager : MonoBehaviour
     private GameObject _CurrentNPC;
     [SerializeField] private GameObject _Canvas;
 
-    public Image Peter;
-    public Image Margaret;
-    public Image Thomas;
+
 
     [Header("NPC Local Canvas")]
     [SerializeField] private GameObject _DialogueBox;
     [SerializeField] private GameObject _NameBox;
     [SerializeField] private TMP_Text _NameText;
     private RectTransform dialogueTransform;
+    public Image PeterLocal;
+    public Image MargaretLocal;
+    public Image ThomasLocal;
+
 
     [Header("NPC Screen Canvas")]
     [SerializeField] private GameObject _ScreenDialogueBox;
     [SerializeField] private GameObject _ScreenNameBox;
     [SerializeField] private TMP_Text _ScreenDialogueText;
     [SerializeField] private TMP_Text _ScreenNameText;
+    public Image PeterScreen;
+    public Image MargaretScreen;
+    public Image ThomasScreen;
 
     [Header("NPC Vars")]
     public float _LineDelay = 2f;
@@ -86,25 +91,37 @@ public class NPCDialogueManager : MonoBehaviour
 
                 if (_NameText.text == "Peter")
                 {
-                    Peter.enabled = true;
-                    Margaret.enabled = false;
-                    Thomas.enabled = false;
+                    PeterScreen.enabled = true;
+                    MargaretScreen.enabled = false;
+                    ThomasScreen.enabled = false;
+
+                    PeterLocal.enabled = true;
+                    MargaretLocal.enabled = false;
+                    ThomasLocal.enabled = false;
                     _PeterEvent?.Invoke(_CurrentNPC);
 
                 }
                 else if (_NameText.text == "Margaret")
                 {
-                    Peter.enabled = false;
-                    Margaret.enabled = true;
-                    Thomas.enabled = false;
+                    PeterScreen.enabled = false;
+                    MargaretScreen.enabled = true;
+                    ThomasScreen.enabled = false;
+
+                    PeterLocal.enabled = false;
+                    MargaretLocal.enabled = true;
+                    ThomasLocal.enabled = false;
                     _MargaretEvent?.Invoke(_CurrentNPC);
 
                 }
                 else if (_NameText.text == "Thomas")
                 {
-                    Peter.enabled = false;
-                    Margaret.enabled = false;
-                    Thomas.enabled = true;
+                    PeterScreen.enabled = false;
+                    MargaretScreen.enabled = false;
+                    ThomasScreen.enabled = true;
+
+                    PeterLocal.enabled = false;
+                    MargaretLocal.enabled = false;
+                    ThomasLocal.enabled = true;
                     _ThomasEvent?.Invoke(_CurrentNPC);
 
                 }
