@@ -295,6 +295,54 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 271766098097621373, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _UndoAnimationEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 271766098097621373, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _PlaceAnimationEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 271766098097621373, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _UndoAnimationEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1229133441}
+    - target: {fileID: 271766098097621373, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _PlaceAnimationEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1229133441}
+    - target: {fileID: 271766098097621373, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _UndoAnimationEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 271766098097621373, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _PlaceAnimationEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 271766098097621373, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _UndoAnimationEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UndoBlock
+      objectReference: {fileID: 0}
+    - target: {fileID: 271766098097621373, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _PlaceAnimationEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPlaceBrick
+      objectReference: {fileID: 0}
+    - target: {fileID: 271766098097621373, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _UndoAnimationEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 271766098097621373, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _PlaceAnimationEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PlayerMovement, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 271766098097621373, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _UndoAnimationEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 271766098097621373, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+      propertyPath: _PlaceAnimationEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 1377364740272849210, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
       propertyPath: _MaxTimeWait
       value: 10
@@ -1044,6 +1092,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2594790863751279335, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3106920582589704342, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
       propertyPath: m_LocalPosition.x
       value: -14.97
@@ -1117,9 +1169,25 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7389271475607995471, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
+      propertyPath: Peter
+      value: 
+      objectReference: {fileID: 2099159680}
+    - target: {fileID: 7389271475607995471, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
+      propertyPath: Thomas
+      value: 
+      objectReference: {fileID: 1185115698}
+    - target: {fileID: 7389271475607995471, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
+      propertyPath: Margaret
+      value: 
+      objectReference: {fileID: 403142158}
+    - target: {fileID: 7389271475607995471, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
       propertyPath: _Animator
       value: 
       objectReference: {fileID: 1570533144}
+    - target: {fileID: 8921055287763753888, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1310,7 +1378,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &403142157
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1755,7 +1823,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1185115697
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1813,6 +1881,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185115696}
   m_CullTransparentMesh: 1
+--- !u!114 &1229133441 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3827949712215586968, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
+  m_PrefabInstance: {fileID: 10960737}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c0cdd82e2e424448645fa2c6bbb352, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!1 &1313380208
 GameObject:
   m_ObjectHideFlags: 0
@@ -3759,7 +3838,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2099159679
 RectTransform:
   m_ObjectHideFlags: 0

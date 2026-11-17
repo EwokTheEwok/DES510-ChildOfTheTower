@@ -56,7 +56,8 @@ public class BlockController2 : MonoBehaviour
     public UnityEvent<GameObject> _UndoEvent = new();
     public UnityEvent<GameObject> _LimitEvent = new();
     public UnityEvent<GameObject, bool> _BubbleEvent = new();
-    public UnityEvent<int> _PlaceEvent = new();
+    public UnityEvent<int> _PlaceAnimationEvent = new();
+    public UnityEvent<int, bool> _UndoAnimationEvent = new();
 
     [Header("States")]
     bool _Active = false;
@@ -226,9 +227,9 @@ public class BlockController2 : MonoBehaviour
                 Debug.Log(nodeViewPos.x + " " + playerViewPos.x);
 
                 if (nodeViewPos.x < playerViewPos.x)
-                    _PlaceEvent?.Invoke(0);
+                    _PlaceAnimationEvent?.Invoke(0);
                 else
-                    _PlaceEvent?.Invoke(1);
+                    _PlaceAnimationEvent?.Invoke(1);
 
                 _AxisPlaneRenderer.material.SetVector("_Origin", new Vector3(
                             nearestNode.transform.position.x,
@@ -364,6 +365,8 @@ public class BlockController2 : MonoBehaviour
     {
         if (context.started)
         {
+            if (_Active)
+                _UndoAnimationEvent?.Invoke(BlockDirection(), false);
             _InputUndo = true;
             _FastRecover = false;
             foreach (GameObject block in _BlockList)
@@ -377,7 +380,11 @@ public class BlockController2 : MonoBehaviour
             }
         }
         else if (context.canceled)
+        {
             _InputUndo = false;
+            if (_Active)
+                _UndoAnimationEvent?.Invoke(BlockDirection(), true);
+        }
     }
 
     public void UndoBlock()
@@ -405,6 +412,7 @@ public class BlockController2 : MonoBehaviour
         }
         else
         {
+            _UndoAnimationEvent?.Invoke(BlockDirection(), true);
             _UndoEvent?.Invoke(_Block);
             _Active = false;
             _PlayerBlockUI.SetPanelsActive(false);
