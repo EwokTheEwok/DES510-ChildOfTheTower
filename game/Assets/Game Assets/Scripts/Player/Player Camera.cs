@@ -24,6 +24,8 @@ public class PlayerCamera : MonoBehaviour
     float _BlockRotationY = 0f;
     float _CameraRotationY = 0f;
 
+    Transform _TrackingTarget;
+
     void Start()
     {
         _TweenRotation = transform.eulerAngles.y;
@@ -38,6 +40,8 @@ public class PlayerCamera : MonoBehaviour
         else
             _RotationDegreesCube = 360f / 4f;
 
+        _TrackingTarget = new GameObject("TrackingTarget").transform;
+        _TrackingTarget.SetParent(transform);
     }
 
     void Update()
@@ -60,6 +64,8 @@ public class PlayerCamera : MonoBehaviour
             }
         }
     }
+
+
 
     public void SetCubeMode(float _blockRotationY)
     {
