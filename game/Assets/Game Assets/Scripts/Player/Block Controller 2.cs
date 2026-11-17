@@ -596,12 +596,12 @@ public class BlockController2 : MonoBehaviour
         return _InputUndo && _Active;
     }
 
-    public bool BlockDirection()
+    public int BlockDirection()
     {
         Vector3 blockViewPos = _Camera.WorldToViewportPoint(_BlockList[0].transform.position);
         Vector3 playerViewPos = _Camera.WorldToViewportPoint(transform.position);
         if (blockViewPos.x > playerViewPos.x)
-            return true;
-        return false;
+            return 1;
+        return 0;
     }
 }
