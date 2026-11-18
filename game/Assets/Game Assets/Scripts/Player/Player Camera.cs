@@ -24,6 +24,7 @@ public class PlayerCamera : MonoBehaviour
     float _BlockRotationY = 0f;
     float _CameraRotationY = 0f;
 
+    Vector3 _TowerPivotPosition;
     Transform _PlayerTowerTarget;
     Transform _PlayerBlockTarget;
 
@@ -49,10 +50,10 @@ public class PlayerCamera : MonoBehaviour
 
         _PlayerTowerTarget = new GameObject("Player Tower Target").transform;
         _PlayerBlockTarget = new GameObject("Player Block Target").transform;
-        //_TowerTrackingTarget.SetParent(transform);
 
-        _PlayerTowerTarget.position = GameManager.Instance.TowerPivot;
-        _PlayerBlockTarget.position = _PlayerTowerTarget.position;
+        _TowerPivotPosition = GameManager.Instance.TowerPivot;
+        _PlayerTowerTarget.position = _TowerPivotPosition;
+        _PlayerBlockTarget.position = _TowerPivotPosition;
     }
 
     void Update()
@@ -86,20 +87,38 @@ public class PlayerCamera : MonoBehaviour
         }
     }
 
-    public void SetPlayerBlockY(float _y)
+    public void SetPlayerBlockPosition(Vector3 _playerPposition, Vector3 _blockPosition, bool _farFromBlock)
     {
-        Vector3 betweenPos = _PlayerBlockTarget.position;
-        betweenPos.y = _y;
-        _PlayerBlockTarget.position = betweenPos;
+        if (_farFromBlock)
+        {
+            if (_InsideTower)
+                _PlayerBlockTarget.position = _PlayerTowerTarget.position;
+            else
+                _PlayerBlockTarget.position = _Player.transform.position;
+        }
+        else
+        {
+            if (_InsideTower)
+                _PlayerBlockTarget.position = Vector3.Lerp(_PlayerTowerTarget.position, _blockPosition, 0.5f);
+            else
+                _PlayerBlockTarget.position = Vector3.Lerp(_playerPposition, _blockPosition, 0.5f);
+        }
     }
 
     public void SetBlockMode(bool _active)
     {
         _BlockTargetActive = _active;
         if (_BlockTargetActive)
+        {
             _CCamera.Target.TrackingTarget = _PlayerBlockTarget;
+        }
         else
-            _CCamera.Target.TrackingTarget = _PlayerTowerTarget;
+        {
+            if (_InsideTower)
+                _CCamera.Target.TrackingTarget = _PlayerTowerTarget;
+            else
+                _CCamera.Target.TrackingTarget = _Player.transform;
+        }
     }
 
     public void SetInsideMode(bool _inside)
@@ -114,7 +133,10 @@ public class PlayerCamera : MonoBehaviour
         }
         else
         {
-            _CCamera.Target.TrackingTarget = _Player.transform;
+            if (_BlockTargetActive)
+                _CCamera.Target.TrackingTarget = _PlayerBlockTarget;
+            else
+                _CCamera.Target.TrackingTarget = _Player.transform;
         }
     }
 
