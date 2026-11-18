@@ -8,12 +8,12 @@ public class BrickDialogue : MonoBehaviour
     private BlockController2 blockController;
 
     private GameObject _BrickCanvas;
-    [SerializeField] private GameObject BrickBox;
-    [SerializeField] private TMP_Text BrickText;
+    private GameObject _BrickBox;
+    private TMP_Text _BrickText;
 
-    [SerializeField] private string[] BrickLines;
-    [SerializeField] private string[] targetedLines;
-    [SerializeField] private float TypeSpeed = 0.05f;
+    [SerializeField] private string[] _RandomLines;
+    [SerializeField] private string[] _TargetedLines;
+    [SerializeField] private float _TypeSpeed = 0.05f;
 
     [Header("Events")]
     public UnityEvent<int, GameObject> _RandomBrickDialogueEvent = new();
@@ -21,6 +21,8 @@ public class BrickDialogue : MonoBehaviour
 
     private bool _IsRandomTalking = false;
     private bool _IsTargetedTalking = false;
+    private bool _IsRestartTalking = false;
+    private bool _IsInsideTargetedCollider = false;
     private bool _NearNPC;
 
     [Header("Brick Box Parameters")]
@@ -29,28 +31,33 @@ public class BrickDialogue : MonoBehaviour
     public float _DisplayDelay = 5.0f;
     //public float _NewLineDelay = 10.0f;
     public float _BetweenLineDelay;
-    public float height = 3f;
+    public float _Height = 3f;
 
-    private RectTransform dialogueTransform;
+    private RectTransform _DialogueTransform;
     Transform _PlayerTransform;
 
     private IEnumerator _RandomDialogueCoroutine;
     private IEnumerator _TargetedBrickCoroutine;
+    private IEnumerator _RestartBrickCoroutine;
 
 
     private void Start()
     {
+        GameManager.Instance._RestartEvent.AddListener(OnRestart);
+
         _BrickCanvas = GameManager.Instance.UI.transform.Find("Block Canvas").gameObject;
+        _BrickBox = _BrickCanvas.transform.Find("BrickBox").gameObject;
+        _BrickText = _BrickBox.transform.Find("BrickText").GetComponent<TMP_Text>();
         blockController = GameManager.Instance.Player.GetComponent<BlockController2>();
         _PlayerTransform = GameManager.Instance.Player.transform;
 
-        dialogueTransform = BrickBox.transform as RectTransform;
+        _DialogueTransform = _BrickBox.transform as RectTransform;
         _BetweenLineDelay = Random.Range(10.0f, 17.0f);
     }
 
     private void Update()
     {
-        dialogueTransform.position = Camera.main.WorldToScreenPoint(_PlayerTransform.position + new Vector3(0, height, 0));
+        _DialogueTransform.position = Camera.main.WorldToScreenPoint(_PlayerTransform.position + new Vector3(0, _Height, 0));
 
         DisplayBrickSprite();
 
@@ -66,7 +73,7 @@ public class BrickDialogue : MonoBehaviour
         {
             StopTalking();
         }
-        else if (_BlockActive == false && !_IsRandomTalking && !_NearNPC)
+        else if (_BlockActive == false && !_IsRandomTalking && !_IsTargetedTalking && !_IsRestartTalking && !_NearNPC)
         {
             _RandomDialogueCoroutine = RandomDialogue();
             StartCoroutine(_RandomDialogueCoroutine);
@@ -82,21 +89,21 @@ public class BrickDialogue : MonoBehaviour
         while (true)
         {
             
-            BrickBox.SetActive(true);
-            BrickText.text = "";
+            _BrickBox.SetActive(true);
+            _BrickText.text = "";
 
-            int lineIndex = Random.Range(0, BrickLines.Length);
-            _RandomBrickDialogueEvent?.Invoke(lineIndex, BrickBox);
+            int lineIndex = Random.Range(0, _RandomLines.Length);
+            _RandomBrickDialogueEvent?.Invoke(lineIndex, _BrickBox);
 
-            foreach (char c in BrickLines[lineIndex])
+            foreach (char c in _RandomLines[lineIndex])
             {
-                BrickText.text += c;
-                yield return new WaitForSeconds(TypeSpeed);
+                _BrickText.text += c;
+                yield return new WaitForSeconds(_TypeSpeed);
             }
 
             yield return new WaitForSeconds(Mathf.Abs(_DisplayDelay));
 
-            BrickBox.SetActive(false);
+            _BrickBox.SetActive(false);
             _BetweenLineDelay = Random.Range(10.0f, 25.0f);
             yield return new WaitForSeconds(Mathf.Abs(_BetweenLineDelay));
         }
@@ -106,19 +113,50 @@ public class BrickDialogue : MonoBehaviour
     {
         _IsTargetedTalking = true;
 
-        BrickBox.SetActive(true);
-        BrickText.text = "";
-        _BrickDialogueEvent?.Invoke(index, BrickBox);
+        _BrickBox.SetActive(true);
+        _BrickText.text = "";
+        _BrickDialogueEvent?.Invoke(index, _BrickBox);
 
-        foreach (char c in targetedLines[index])
+        while (_IsInsideTargetedCollider)
         {
-            BrickText.text += c;
-            yield return new WaitForSeconds(TypeSpeed);
+            _BrickBox.SetActive(true);
+            _BrickText.text = "";
+
+            foreach (char c in _TargetedLines[index])
+            {
+                _BrickText.text += c;
+                yield return new WaitForSeconds(_TypeSpeed);
+            }
+
+            yield return new WaitForSeconds(Mathf.Abs(_DisplayDelay));
+
+            _BrickBox.SetActive(false);
+            _BetweenLineDelay = Random.Range(5.0f, 10.0f);
+            yield return new WaitForSeconds(Mathf.Abs(_BetweenLineDelay));
+        }
+
+        Debug.Log("blah");
+        _IsTargetedTalking = false;
+    }
+
+    private IEnumerator RestartDialogue(int index)
+    {
+        _IsRestartTalking = true;
+
+        _BrickBox.SetActive(true);
+        _BrickText.text = "";
+        _BrickDialogueEvent?.Invoke(index, _BrickBox);
+
+        foreach (char c in _TargetedLines[index])
+        {
+            _BrickText.text += c;
+            yield return new WaitForSeconds(_TypeSpeed);
         }
 
         yield return new WaitForSeconds(Mathf.Abs(_DisplayDelay));
-        BrickBox.SetActive(false);
-        _IsTargetedTalking = false;
+        _BrickBox.SetActive(false);
+
+        _IsRestartTalking = false;
     }
 
     private void StopTalking()
@@ -127,9 +165,13 @@ public class BrickDialogue : MonoBehaviour
             StopCoroutine(_RandomDialogueCoroutine);
         if (_TargetedBrickCoroutine != null)
             StopCoroutine(_TargetedBrickCoroutine);
+        if (_RestartBrickCoroutine != null)
+            StopCoroutine(_RestartBrickCoroutine);
         _IsRandomTalking = false;
-        BrickText.text = "";
-        BrickBox.SetActive(false);
+        _IsTargetedTalking = false;
+        _IsRestartTalking = false;
+        _BrickText.text = "";
+        _BrickBox.SetActive(false);
     }
    
     private void OnTriggerEnter(Collider collision)
@@ -139,23 +181,30 @@ public class BrickDialogue : MonoBehaviour
             _NearNPC = true;
             StopTalking();
         }
-        else if (collision.CompareTag("Block Dialogue 0"))
+        else if (collision.CompareTag("Block Dialogue"))
         {
-            StopTalking();
-            _TargetedBrickCoroutine = TargetedDialogue(0);
-            StartCoroutine(_TargetedBrickCoroutine);
-        }
-        else if (collision.CompareTag("Block Dialogue 1"))
-        {
-            StopTalking();
-            _TargetedBrickCoroutine = TargetedDialogue(Random.Range(1, 3));
-            StartCoroutine(_TargetedBrickCoroutine);
+            _IsInsideTargetedCollider = true;
+            if (!_IsTargetedTalking || _IsRandomTalking) {
+                StopTalking();
+                if (collision.name == "Block Dialogue 0")
+                {
+                    _TargetedBrickCoroutine = TargetedDialogue(0);
+                }
+                else if (collision.name == "Block Dialogue 1")
+                {
+                    _TargetedBrickCoroutine = TargetedDialogue(Random.Range(1, 3));
+
+                }
+                else if (collision.name == "Block Dialogue 2")
+                {
+
+                }
+                StartCoroutine(_TargetedBrickCoroutine);
+            }
         }
         else if (collision.CompareTag("Shadow Ocean"))
         {
-            StopTalking();
-            _TargetedBrickCoroutine = TargetedDialogue(Random.Range(3, 6));
-            StartCoroutine(_TargetedBrickCoroutine);
+
         }
     }
 
@@ -164,9 +213,16 @@ public class BrickDialogue : MonoBehaviour
         if (collision.CompareTag("NPC"))
         {
             _NearNPC = false;
+        } else if (collision.CompareTag("Block Dialogue"))
+        {
+            _IsInsideTargetedCollider = false;
         }
+    }
+
+    private void OnRestart()
+    {
         StopTalking();
-        _RandomDialogueCoroutine = RandomDialogue();
-        StartCoroutine(_RandomDialogueCoroutine);
+        _RestartBrickCoroutine = RestartDialogue(Random.Range(3, 6));
+        StartCoroutine(_RestartBrickCoroutine);
     }
 }

@@ -32,7 +32,7 @@ public class Controls : MonoBehaviour
         {
             TitleScreenFirstButton();
 
-            if (isPaused)
+            if (isPaused || ControlsMenu.activeInHierarchy == true)
             {
                 ResumeGame();
             }
