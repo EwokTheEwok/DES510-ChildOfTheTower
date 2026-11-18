@@ -129,14 +129,7 @@ public class BlockController2 : MonoBehaviour
                 DisplayBubble();
                 UpdateControls(_Block.transform);
 
-                if (MinDistance() > _FarThreshold)
-                    _PlayerCamera.ResetTarget();
-                else
-                {
-                    float betweenY = Mathf.Lerp(transform.position.y, _Block.transform.position.y, 0.5f);
-                    _PlayerCamera.SetPlayerBlockY(betweenY);
-                }
-                
+                _PlayerCamera.SetPlayerBlockPosition(transform.position, _Block.transform.position, MinDistance() > _FarThreshold);
 
                 if (!_IsMovingBlock)
                 {
