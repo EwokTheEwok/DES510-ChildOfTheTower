@@ -4732,10 +4732,34 @@ MonoBehaviour:
         m_CallState: 2
   _FallInShadowEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4077451109459590933}
+        m_TargetAssemblyTypeName: CheckpointAudio, Assembly-CSharp
+        m_MethodName: FallInShadows
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _RestartEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4077451109459590933}
+        m_TargetAssemblyTypeName: CheckpointAudio, Assembly-CSharp
+        m_MethodName: Respawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _PauseEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4759,6 +4783,14 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: adedccb05fd3fbb41af4ed94dc37ee3d, type: 2}
+  FallInShadowsEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 24722dd6c04e3a1409de99a989233647, type: 2}
+  RespawnEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: eb9e9a303b4fe5a4ea4f0469e8ae8fc8, type: 2}
 --- !u!114 &-7705706532379484958
 MonoBehaviour:
   m_ObjectHideFlags: 0

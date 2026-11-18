@@ -608,7 +608,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-7</Value>
+										<Value>-5</Value>
 									</ValueList>
 									<ModifierList>
 										<ModifierInfo>
@@ -697,7 +697,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-6</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1089,7 +1089,7 @@
 								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-7</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1298,7 +1298,6 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Death" ID="{AA6DC92F-5A66-4116-A6CB-E61AD938CBB2}" ShortID="291600242">
 							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
@@ -2510,11 +2509,6 @@
 					<PropertyList>
 						<Property Name="3DSpatialization" Type="int16" Value="1"/>
 						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-2</Value>
-							</ValueList>
-						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -2549,6 +2543,23 @@
 						</Sound>
 					</ChildrenList>
 					<ObjectLists>
+						<ObjectList Name="Effects">
+							<EffectSlot Name="" ID="{0AC188CA-AD45-4912-8B5C-CA7EF2AFCBEA}" ShortID="39858728">
+								<ReferenceList>
+									<Reference Name="Effect">
+										<Custom>
+											<Effect Name="Parametric EQ (Custom)" ID="{E8E5C7DB-94FB-4FE2-B618-CFE7340575FB}" ShortID="760867944" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+												<PropertyList>
+													<Property Name="FrequencyBand2" Type="Real32" Value="926.803"/>
+													<Property Name="GainBand2" Type="Real32" Value="4.769231"/>
+													<Property Name="QFactorBand2" Type="Real32" Value="2.9"/>
+												</PropertyList>
+											</Effect>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</EffectSlot>
+						</ObjectList>
 						<ObjectList Name="Playlist">
 							<PluginInnerObject Name="" ID="{2116544F-04C0-4D3E-BA05-6C6976A14B09}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
 								<ReferenceList>
@@ -2782,7 +2793,7 @@
 						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>6</Value>
+								<Value>7</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>

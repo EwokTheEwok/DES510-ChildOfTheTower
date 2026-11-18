@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{A667AA7C-B217-7468-3429-63739E208B92}",
+    "Hash": "{7FB82B9B-6DE3-988D-C556-1F30A7320349}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -1266,6 +1266,14 @@
     ],
     "Plugins": {
      "Custom": [
+      {
+       "Id": "760867944",
+       "Name": "Parametric EQ (Custom)",
+       "ObjectPath": "\\Containers\\SFX\\Checkpoint\\[Effect Slot [0]: (Parametric EQ)]\\Parametric EQ (Custom)",
+       "GUID": "{E8E5C7DB-94FB-4FE2-B618-CFE7340575FB}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
       {
        "Id": "1050995769",
        "Name": "Parametric EQ (Custom)",
@@ -9078,7 +9086,14 @@
        {
         "Id": "713383606"
        }
-      ]
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "760867944"
+        }
+       ]
+      }
      },
      {
       "Id": "1172822028",
@@ -9976,6 +9991,17 @@
       ]
      },
      {
+      "Id": "4279841335",
+      "Name": "Respawn",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Respawn",
+      "GUID": "{A7F842C9-816F-4701-9000-99B90E21B0CF}",
+      "Color": "13",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "540993415",
       "Name": "Start_Music",
       "ObjectPath": "\\Events\\Music Events\\Start_Music",
@@ -10428,6 +10454,6 @@
     ]
    }
   ],
-  "FileHash": "{17A6A6D6-A593-6316-2A23-DD780927FC48}"
+  "FileHash": "{EEDEFAD5-EFE4-5FCC-B885-0BA523A000F6}"
  }
 }
