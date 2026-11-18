@@ -681,6 +681,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_Death" ID="{1D82EDD9-84BD-4D06-990C-25A2168620D1}">
+							<ChildrenList>
+								<Action Name="" ID="{D8E39E34-1137-4CD5-863D-37885A70D316}" ShortID="971663530">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Death" ID="{AA6DC92F-5A66-4116-A6CB-E61AD938CBB2}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Shadow Events" ID="{74827103-E860-4E28-A7A3-64CED94E55C1}" ShortID="1050908823">

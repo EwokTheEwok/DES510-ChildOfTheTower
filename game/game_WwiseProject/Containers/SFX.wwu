@@ -1296,6 +1296,66 @@
 								</ObjectList>
 							</ObjectLists>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Death" ID="{AA6DC92F-5A66-4116-A6CB-E61AD938CBB2}" ShortID="291600242">
+							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+								<Reference Name="UserAuxSend1">
+									<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sfx_death_001" ID="{1B54783F-04E5-4FD9-AB27-5C1F361B7C9D}" ShortID="86325088">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_death_001" ID="{1C76C195-C775-4D40-806A-6D4C4AE3A25D}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_death_001.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="582327354"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_death_001" ID="{1C76C195-C775-4D40-806A-6D4C4AE3A25D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Playlist">
+									<PluginInnerObject Name="" ID="{17B20F70-10A4-4849-803C-63FA9BD58EAE}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+										<ReferenceList>
+											<Reference Name="PlaylistObject">
+												<ObjectRef Name="sfx_death_001" ID="{1B54783F-04E5-4FD9-AB27-5C1F361B7C9D}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+											</Reference>
+										</ReferenceList>
+									</PluginInnerObject>
+								</ObjectList>
+							</ObjectLists>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Brick SFX" ID="{18828119-4F4C-419E-A148-88FA670E45F8}" ShortID="212856489">

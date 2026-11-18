@@ -60,6 +60,7 @@ namespace AK
         static const AkUniqueID PLAY_BRICKVO_TARGETED_05 = 3764927783U;
         static const AkUniqueID PLAY_BRICKVO_TARGETED_06 = 3764927780U;
         static const AkUniqueID PLAY_CHECKPOINT = 2962822744U;
+        static const AkUniqueID PLAY_DEATH = 1172822028U;
         static const AkUniqueID PLAY_DOOR = 2547633870U;
         static const AkUniqueID PLAY_FALLING = 913957623U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
