@@ -212,153 +212,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!1 &228221160536143398
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5664165276201225912}
-  - component: {fileID: 5801619561491327152}
-  - component: {fileID: 3164753161920732080}
-  m_Layer: 0
-  m_Name: Block Dialogue
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5664165276201225912
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228221160536143398}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4145705096927853203}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5801619561491327152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228221160536143398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef640f8e5473cb46a3237fb6b4c3be7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BrickDialogue
-  BrickBox: {fileID: 7160434630850126561}
-  BrickText: {fileID: 5185698447216421960}
-  BrickLines:
-  - Up! Up!
-  - Home please. Want to go home.
-  - Up big tower! Not forever, just long time.
-  - "Don\u2019t fall! I would miss friend."
-  - Friend is so fast. Friend is the best!
-  - Shadows coming, shadows bad!
-  targetedLines:
-  - Shade nice. Shade lost like you!
-  - I help! Down please.
-  - I make path!
-  - Hello? Friend still there?
-  - Is Friend shade now?
-  - Oopsies.
-  - Test 7
-  TypeSpeed: 0.05
-  _RandomBrickDialogueEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3164753161920732080}
-        m_TargetAssemblyTypeName: BrickDialogueAudio, Assembly-CSharp
-        m_MethodName: PlayRandomBrickDialogue
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _BrickDialogueEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3164753161920732080}
-        m_TargetAssemblyTypeName: BrickDialogueAudio, Assembly-CSharp
-        m_MethodName: PlayTargetedBrickDialogue
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _BlockActive: 0
-  _DisplayDelay: 5
-  _BetweenLineDelay: 0
-  height: 3
---- !u!114 &3164753161920732080
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 228221160536143398}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91b8822d01ed8ca48b8cf98006183cfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BrickDialogueAudio
-  RandomBrickDialogueAudio:
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 23444d9a47d8dab42b8c7f1147797c22, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: db16a385e6697aa47a6c45b01ac0b420, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a52a8cca44f09bd44847151d996168aa, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9032a9cbd2bbc0043a50762dbf6bf59d, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 7c7d0b4bfd0a5324cbac9358092b2fe6, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 74dbdf35105380b4eb179984231d30c9, type: 2}
-  TargetedBrickDialogueAudio:
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 994ea581a35a694499654ba46045a329, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 65135e31286e26f459cbbe89161c7449, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: c1a8a54806ef82f4fa95bbc68cdcdf6c, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 94412c89a36415a44b7770bc154914d1, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d514a5d5a2f999d4bb0bbad06867a75c, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: b437a0eed35d6ce4b9dc1c8fb7f29010, type: 2}
 --- !u!1 &381823769354281636
 GameObject:
   m_ObjectHideFlags: 0
@@ -4812,7 +4665,6 @@ Transform:
   m_Children:
   - {fileID: 7797887231677027890}
   - {fileID: 846071709087439614}
-  - {fileID: 5664165276201225912}
   - {fileID: 6169125165462644029}
   - {fileID: 2475669917815852959}
   - {fileID: 5186464901698675871}
@@ -6447,10 +6299,26 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 68c8aa04ebae0454ba4162b180355dbc, type: 2}
+  RainSwitchOn:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  RainSwitchOff:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   AmbSwitchRTPC:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 7e5c68d7b405a3a4f980ca52628b7fc6, type: 2}
+  RainSwitchRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  TriggerAmb2:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &5850511189450367498
 GameObject:
   m_ObjectHideFlags: 0
@@ -9802,16 +9670,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueManager
   _NPCTag: NPC
   _Canvas: {fileID: 6530382905784458048}
-  Peter: {fileID: 0}
-  Margaret: {fileID: 0}
-  Thomas: {fileID: 0}
   _DialogueBox: {fileID: 7778066800902604763}
   _NameBox: {fileID: 8777896790132945914}
   _NameText: {fileID: 4766152177747118939}
+  PeterLocal: {fileID: 0}
+  MargaretLocal: {fileID: 0}
+  ThomasLocal: {fileID: 0}
   _ScreenDialogueBox: {fileID: 6357974843534728688}
   _ScreenNameBox: {fileID: 4387426963586982389}
   _ScreenDialogueText: {fileID: 5789507637239662811}
   _ScreenNameText: {fileID: 1054217397387456786}
+  PeterScreen: {fileID: 0}
+  MargaretScreen: {fileID: 0}
+  ThomasScreen: {fileID: 0}
   _LineDelay: 2
   _EndDelay: 7
   height: 3.5
@@ -10492,9 +10363,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4177609663571756333}
   - {fileID: 1583686268351466928}
   - {fileID: 6189052589336711810}
-  - {fileID: 4177609663571756333}
   - {fileID: 6145575024227520697}
   m_Father: {fileID: 4145705096927853203}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

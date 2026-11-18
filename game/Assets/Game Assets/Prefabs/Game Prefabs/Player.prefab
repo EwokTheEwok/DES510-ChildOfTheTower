@@ -259,6 +259,8 @@ GameObject:
   - component: {fileID: 3827949712215586968}
   - component: {fileID: 271766098097621373}
   - component: {fileID: 4797419537412347028}
+  - component: {fileID: 2339846696501332739}
+  - component: {fileID: 2121220300670925298}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -664,6 +666,113 @@ MonoBehaviour:
   blockUIDown: {fileID: 0}
   blockUILeft: {fileID: 0}
   blockUIRight: {fileID: 0}
+--- !u!114 &2339846696501332739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435213661175931643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef640f8e5473cb46a3237fb6b4c3be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BrickDialogue
+  _BrickLines:
+  - hey hey
+  - sefewgd
+  - 5y 4 gf vrdw
+  - w 4rytlrtfjdt
+  _TargetedLines:
+  - 'ryh5 4n5 ie tzehr '
+  - 3579 ,ee lu
+  - ' r6i 6o8 yrhgsd yt4'
+  - 8egr frg
+  _TypeSpeed: 0.05
+  _RandomBrickDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BrickDialogueAudio, Assembly-CSharp
+        m_MethodName: PlayRandomBrickDialogue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _BrickDialogueEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: BrickDialogueAudio, Assembly-CSharp
+        m_MethodName: PlayTargetedBrickDialogue
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _BlockActive: 0
+  _DisplayDelay: 5
+  _BetweenLineDelay: 0
+  _Height: 2.5
+--- !u!114 &2121220300670925298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2435213661175931643}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91b8822d01ed8ca48b8cf98006183cfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BrickDialogueAudio
+  RandomBrickDialogueAudio:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 23444d9a47d8dab42b8c7f1147797c22, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: db16a385e6697aa47a6c45b01ac0b420, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a52a8cca44f09bd44847151d996168aa, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9032a9cbd2bbc0043a50762dbf6bf59d, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7c7d0b4bfd0a5324cbac9358092b2fe6, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 74dbdf35105380b4eb179984231d30c9, type: 2}
+  TargetedBrickDialogueAudio:
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 994ea581a35a694499654ba46045a329, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 65135e31286e26f459cbbe89161c7449, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: c1a8a54806ef82f4fa95bbc68cdcdf6c, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 94412c89a36415a44b7770bc154914d1, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d514a5d5a2f999d4bb0bbad06867a75c, type: 2}
+  - idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b437a0eed35d6ce4b9dc1c8fb7f29010, type: 2}
 --- !u!1 &2819991752507397099
 GameObject:
   m_ObjectHideFlags: 0
