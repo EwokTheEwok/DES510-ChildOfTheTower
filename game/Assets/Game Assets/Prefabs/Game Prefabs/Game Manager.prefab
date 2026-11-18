@@ -4880,10 +4880,34 @@ MonoBehaviour:
         m_CallState: 2
   _FallInShadowEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4077451109459590933}
+        m_TargetAssemblyTypeName: CheckpointAudio, Assembly-CSharp
+        m_MethodName: FallInShadows
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _RestartEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4077451109459590933}
+        m_TargetAssemblyTypeName: CheckpointAudio, Assembly-CSharp
+        m_MethodName: Respawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _PauseEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -4907,6 +4931,14 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: adedccb05fd3fbb41af4ed94dc37ee3d, type: 2}
+  FallInShadowsEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 24722dd6c04e3a1409de99a989233647, type: 2}
+  RespawnEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: eb9e9a303b4fe5a4ea4f0469e8ae8fc8, type: 2}
 --- !u!114 &-7705706532379484958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6447,10 +6479,26 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 68c8aa04ebae0454ba4162b180355dbc, type: 2}
+  RainSwitchOn:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  RainSwitchOff:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   AmbSwitchRTPC:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 7e5c68d7b405a3a4f980ca52628b7fc6, type: 2}
+  RainSwitchRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  TriggerAmb2:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &5850511189450367498
 GameObject:
   m_ObjectHideFlags: 0
@@ -9802,16 +9850,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueManager
   _NPCTag: NPC
   _Canvas: {fileID: 6530382905784458048}
-  Peter: {fileID: 0}
-  Margaret: {fileID: 0}
-  Thomas: {fileID: 0}
   _DialogueBox: {fileID: 7778066800902604763}
   _NameBox: {fileID: 8777896790132945914}
   _NameText: {fileID: 4766152177747118939}
+  PeterLocal: {fileID: 0}
+  MargaretLocal: {fileID: 0}
+  ThomasLocal: {fileID: 0}
   _ScreenDialogueBox: {fileID: 6357974843534728688}
   _ScreenNameBox: {fileID: 4387426963586982389}
   _ScreenDialogueText: {fileID: 5789507637239662811}
   _ScreenNameText: {fileID: 1054217397387456786}
+  PeterScreen: {fileID: 0}
+  MargaretScreen: {fileID: 0}
+  ThomasScreen: {fileID: 0}
   _LineDelay: 2
   _EndDelay: 7
   height: 3.5
