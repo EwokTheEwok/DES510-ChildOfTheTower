@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{BB4813D3-3BF3-D694-8A17-32806603D130}",
+    "Hash": "{A667AA7C-B217-7468-3429-63739E208B92}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -686,6 +686,14 @@
       "Location": "Memory",
       "ShortName": "sfx_vo_marg_006.wav",
       "CachePath": "1D/{1DDA19FF-94D3-AB71-6333-BFBCA00D3D99}.wem"
+     },
+     {
+      "Id": "582327354",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_death_001.wav",
+      "CachePath": "A3/{A30B3E20-6E58-3E22-7CF9-175A34BC8D28}.wem"
      },
      {
       "Id": "596249139",
@@ -9073,6 +9081,37 @@
       ]
      },
      {
+      "Id": "1172822028",
+      "Name": "Play_Death",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Play_Death",
+      "GUID": "{1D82EDD9-84BD-4D06-990C-25A2168620D1}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "1.5",
+      "DurationMax": "1.5",
+      "MediaRefs": [
+       {
+        "Id": "582327354"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ]
+     },
+     {
       "Id": "2547633870",
       "Name": "Play_Door",
       "ObjectPath": "\\Events\\SFX Events\\Play_Door",
@@ -10389,6 +10428,6 @@
     ]
    }
   ],
-  "FileHash": "{D9353F30-0123-359C-0C35-3C752AA66B45}"
+  "FileHash": "{17A6A6D6-A593-6316-2A23-DD780927FC48}"
  }
 }
