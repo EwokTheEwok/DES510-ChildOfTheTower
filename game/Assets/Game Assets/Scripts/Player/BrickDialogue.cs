@@ -109,12 +109,15 @@ public class BrickDialogue : MonoBehaviour
         }
     }
 
-    private IEnumerator TargetedDialogue(int index)
+    private IEnumerator TargetedDialogue(int MinIndex, int MaxIndex)
     {
         _IsTargetedTalking = true;
 
         _BrickBox.SetActive(true);
         _BrickText.text = "";
+
+        int index = Random.Range(MinIndex, MaxIndex);
+
         _BrickDialogueEvent?.Invoke(index, _BrickBox);
 
         while (_IsInsideTargetedCollider)
@@ -188,11 +191,11 @@ public class BrickDialogue : MonoBehaviour
                 StopTalking();
                 if (collision.name == "Block Dialogue 0")
                 {
-                    _TargetedBrickCoroutine = TargetedDialogue(0);
+                    _TargetedBrickCoroutine = TargetedDialogue(0, 0);
                 }
                 else if (collision.name == "Block Dialogue 1")
                 {
-                    _TargetedBrickCoroutine = TargetedDialogue(Random.Range(1, 3));
+                    _TargetedBrickCoroutine = TargetedDialogue(1, 3);
 
                 }
                 else if (collision.name == "Block Dialogue 2")
@@ -202,10 +205,11 @@ public class BrickDialogue : MonoBehaviour
                 StartCoroutine(_TargetedBrickCoroutine);
             }
         }
-        else if (collision.CompareTag("Shadow Ocean"))
+        /*else if (collision.CompareTag("Shadow Ocean"))
         {
 
         }
+        */
     }
 
     private void OnTriggerExit(Collider collision)
