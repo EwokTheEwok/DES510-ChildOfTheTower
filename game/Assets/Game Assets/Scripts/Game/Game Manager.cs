@@ -6,6 +6,7 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using static Unity.Cinemachine.CinemachineCore;
 
 public class GameManager : MonoBehaviour
 {
@@ -63,6 +64,7 @@ public class GameManager : MonoBehaviour
     [Header("Events")]
     public UnityEvent<float> _ShadowDistanceEvent = new();
     public UnityEvent<GameObject> _CheckpointEvent = new();
+    public UnityEvent<bool> _RainEvent = new();
     public UnityEvent _FallInShadowEvent = new();
     public UnityEvent _RestartEvent = new();
     public UnityEvent<bool> _PauseEvent = new();
@@ -70,6 +72,8 @@ public class GameManager : MonoBehaviour
     IEnumerator _RestartCoroutine;
 
     private bool _Raining = true;
+    private ParticleSystem _RainSystem;
+
     private bool _Paused = false;
     public bool Paused
     {
@@ -120,6 +124,7 @@ public class GameManager : MonoBehaviour
         _PlayerActionMap = _Player.GetComponent<PlayerInput>().actions.FindActionMap("Player");
         _PlayerCCamera = _Player.transform.Find("CCamera").GetComponent<CinemachineCamera>();
         _DeathTrackingTarget = new GameObject("Death Tracking Target");
+        _RainSystem = transform.Find("Rain").Find("Rain Emitter").GetComponent<ParticleSystem>();
     }
 
     private void FixedUpdate()
@@ -190,9 +195,36 @@ public class GameManager : MonoBehaviour
         yield return null;
     }
 
-    private void CheckpointActivate(GameObject checkpointObject, bool startStop)
+    private void CheckpointActivate(GameObject checkpointObject, ShadowFlag shadowFlag, WorldFlag worldFlag)
     {
-        _Moving = startStop;
+        switch (shadowFlag)
+        {
+            case ShadowFlag.Start:
+                _Moving = true;
+                break;
+            case ShadowFlag.Stop:
+                _Moving = false;
+                break;
+            default:
+                break;
+        }
+
+        switch (worldFlag)
+        {
+            case WorldFlag.Rain:
+                _Raining = true;
+                _RainSystem.Play();
+                break;
+            case WorldFlag.Clear:
+                _Raining = false;
+                _RainSystem.Stop();
+                break;
+            default:
+                break;
+        }
+
+        _RainEvent?.Invoke(_Raining);
+
         _CurrentCheckpoint = checkpointObject;
         _CheckpointEvent?.Invoke(checkpointObject);
         Debug.Log("Checkpoint: " + _CheckpointList.IndexOf(_CurrentCheckpoint) + " Activated");
@@ -202,16 +234,4 @@ public class GameManager : MonoBehaviour
     {
         _PauseEvent.AddListener(call);
     }
-}
-
-[Serializable] // Makes the class serializable for Inspector
-public class Event
-{
-    public Event(string _name, UnityEvent _uevent)
-    {
-        name = _name;
-        onEvent = _uevent;
-    }
-    public string name; // Optional label for clarity
-    public UnityEvent onEvent; // UnityEvent visible in Inspector
 }

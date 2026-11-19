@@ -27,8 +27,15 @@ public class WindowTower : MonoBehaviour
         _Tower = gameObject;
         _Player = GameManager.Instance.Player;
         _TrackingY = _Player.transform.position.y;
-        Shader.SetGlobalFloat("_Tower_Active", 1);
+        Shader.SetGlobalInteger("_Tower_Active", 1);
         Shader.SetGlobalFloat("_Tower_Transition", _TransitionValue);
+
+        Vector3 cameraRotation = _Camera.transform.eulerAngles;
+        Vector3 TowerPos = _Tower.transform.position;
+
+        Shader.SetGlobalVector("_Tower_Position", TowerPos);
+        Shader.SetGlobalVector("_Tower_Camera_Rotation", cameraRotation);
+        Shader.SetGlobalFloat("_Tower_Player_Y", 0f);
     }
 
     void Update()

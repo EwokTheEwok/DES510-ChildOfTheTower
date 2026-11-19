@@ -13,17 +13,23 @@ public class WindowScript : MonoBehaviour
     {
         Shader.SetGlobalFloat("_Additive_Dither", _AdditiveDither);
         Shader.SetGlobalFloat("_Window_Size", _WindowSize);
-        Shader.SetGlobalFloat("_Window_Fade", _WindowFade);
+        Shader.SetGlobalInteger("_Window_Active", 1);
         _Camera = Camera.main.gameObject;
+        Window();
     }
 
     void Update()
+    {
+        Window();
+    }
+
+    void Window()
     {
         Vector3 playerCameraPos = Camera.main.transform.InverseTransformPoint(_Player.transform.position);
         Vector3 playerWorldPos = _Player.transform.position;
         Vector3 cameraPlayerRotation = Quaternion.LookRotation(_Player.transform.position - _Camera.transform.position, Vector3.up).eulerAngles;
         Vector3 cameraPos = _Camera.transform.position;
-        Ray floorRay = new (_Player.transform.position, Vector3.down);
+        Ray floorRay = new(_Player.transform.position, Vector3.down);
         Physics.Raycast(floorRay, out RaycastHit hitinfo);
         Vector3 floorPos = hitinfo.point;
 
@@ -32,6 +38,5 @@ public class WindowScript : MonoBehaviour
         Shader.SetGlobalVector("_Player_World_Position", playerWorldPos);
         Shader.SetGlobalVector("_Camera_Player_Rotation", cameraPlayerRotation);
         Shader.SetGlobalVector("_Camera_Position", cameraPos);
-        Shader.SetGlobalFloat("_Additive_Dither", _AdditiveDither);
     }
 } 
