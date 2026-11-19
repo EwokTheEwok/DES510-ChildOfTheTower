@@ -3821,6 +3821,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _RainEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5485462354051217142}
+        m_TargetAssemblyTypeName: AmbSwitcher, Assembly-CSharp
+        m_MethodName: RainSwitch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _FallInShadowEvent:
     m_PersistentCalls:
       m_Calls:
@@ -3877,11 +3892,11 @@ MonoBehaviour:
   FallInShadowsEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 24722dd6c04e3a1409de99a989233647, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 6202b939995d22b4a9fefcac875ffb81, type: 2}
   RespawnEvent:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: eb9e9a303b4fe5a4ea4f0469e8ae8fc8, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 076a71b8749b27c448db8e9cfaa1827d, type: 2}
 --- !u!114 &-7705706532379484958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5314,11 +5329,11 @@ MonoBehaviour:
   RainSwitchOn:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 590ddcb1e84583c4caabf1fd25fc9643, type: 2}
   RainSwitchOff:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 6efd85726945e2946a9fd473ba172191, type: 2}
   AmbSwitchRTPC:
     idInternal: 0
     valueGuidInternal: 
@@ -5326,11 +5341,11 @@ MonoBehaviour:
   RainSwitchRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 916eaaa421078194596adba17f54c342, type: 2}
   TriggerAmb2:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: e6becd75e4c479b49b99f60b9311b6b7, type: 2}
 --- !u!1 &5902108829138324946
 GameObject:
   m_ObjectHideFlags: 0
