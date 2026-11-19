@@ -590,36 +590,6 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_Footsteps" ID="{FC84159D-E028-4AD0-A9DC-323CD420D594}">
-							<PropertyList>
-								<Property Name="CooldownTime" Type="Real32">
-									<ValueList>
-										<Value>0.3</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ChildrenList>
-								<Action Name="" ID="{9C11BDFC-E6DD-4AE5-9824-8036D7314464}" ShortID="599474519">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-										<Property Name="FadeOutCurve" Type="int16" Value="5"/>
-										<Property Name="FadeTime" Type="Real64" Value="0.2"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Falling" ID="{7CCB4439-B8CA-4A39-B4EC-91884114D62E}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{6DF84696-C6CA-4614-A227-A4C5F48F7C20}" ShortID="758655246">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="RMC_PlayerFootsteps" ID="{9690513A-14AF-4208-84A1-E01521A7B4FC}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="Play_Land" ID="{A9B495E2-E378-4FC9-BAA4-DC4CF1BBAA53}">
 							<PropertyList>
 								<Property Name="CooldownTime" Type="Real32">
@@ -737,6 +707,96 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Folder Name="Footstep Events" ID="{2A124AA1-AF6A-4276-838C-30E6D51859FC}" ShortID="572161328">
+							<ChildrenList>
+								<Event Name="Play_Footsteps" ID="{FC84159D-E028-4AD0-A9DC-323CD420D594}">
+									<PropertyList>
+										<Property Name="CooldownTime" Type="Real32">
+											<ValueList>
+												<Value>0.3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ChildrenList>
+										<Action Name="" ID="{9C11BDFC-E6DD-4AE5-9824-8036D7314464}" ShortID="599474519">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Falling" ID="{7CCB4439-B8CA-4A39-B4EC-91884114D62E}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{6DF84696-C6CA-4614-A227-A4C5F48F7C20}" ShortID="758655246">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RMC_PlayerFootsteps" ID="{9690513A-14AF-4208-84A1-E01521A7B4FC}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Footstep_Material_Stone" ID="{A54A5952-B141-4938-9303-47A0F65A7C61}">
+									<ChildrenList>
+										<Action Name="" ID="{7E8EBC02-EB2B-4E6B-86E0-D4A271F02F24}" ShortID="803109449">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stone" ID="{3354DE29-168F-49AC-8268-B9300B160E62}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Footstep_Material_Wood" ID="{768B02D0-5621-4C23-B4A6-98E669CB5A92}">
+									<ChildrenList>
+										<Action Name="" ID="{79BC9E4B-8B38-4951-A190-E99EE7E6DB15}" ShortID="129164281">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Wood" ID="{6C0FB0C6-0291-40F1-A6D1-C2BEA4293806}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Footstep_Material_Block" ID="{07A5B3DF-7FAE-444E-BB8E-1808085CD510}">
+									<ChildrenList>
+										<Action Name="" ID="{2CA9C347-20CF-4F71-A8C9-AC8A086B04E5}" ShortID="554239686">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Block" ID="{3C9775C2-748C-4607-B4A6-614A08CD569B}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Footstep_Material_Sand" ID="{45A3FA50-7B1C-4314-B34F-FB7803491F85}">
+									<ChildrenList>
+										<Action Name="" ID="{AA0A1A34-B519-4EA6-9300-28993BBB874A}" ShortID="849024999">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Sand" ID="{D45CB0A4-6A93-4AD5-8968-2A2C20A34E4D}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Shadow Events" ID="{74827103-E860-4E28-A7A3-64CED94E55C1}" ShortID="1050908823">

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{6CAB8E2C-49B6-6E34-EDF5-BD4A0AB6468D}",
+    "Hash": "{A947D322-03B8-B224-1358-7AE4075049E4}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -346,6 +346,44 @@
     ],
     "StateGroups": [
      {
+      "Id": "2507554221",
+      "Name": "FootstepsState",
+      "ObjectPath": "\\States\\Default Work Unit\\FootstepsState",
+      "GUID": "{F7CA9691-3427-4F43-913F-B1A21D3AF620}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\None",
+        "GUID": "{CB41D4BD-BF33-4E02-AAF2-259499DA9BD6}"
+       },
+       {
+        "Id": "803837735",
+        "Name": "Sand",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\Sand",
+        "GUID": "{D45CB0A4-6A93-4AD5-8968-2A2C20A34E4D}"
+       },
+       {
+        "Id": "1216965916",
+        "Name": "Stone",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\Stone",
+        "GUID": "{3354DE29-168F-49AC-8268-B9300B160E62}"
+       },
+       {
+        "Id": "2058049674",
+        "Name": "Wood",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\Wood",
+        "GUID": "{6C0FB0C6-0291-40F1-A6D1-C2BEA4293806}"
+       },
+       {
+        "Id": "4001580976",
+        "Name": "Block",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\Block",
+        "GUID": "{3C9775C2-748C-4607-B4A6-614A08CD569B}"
+       }
+      ]
+     },
+     {
       "Id": "2782712965",
       "Name": "Level",
       "ObjectPath": "\\States\\Default Work Unit\\Level",
@@ -602,6 +640,6 @@
     ]
    }
   ],
-  "FileHash": "{E51DBBEC-D146-31C3-62CD-8E5626B006B3}"
+  "FileHash": "{52DA50C2-CD7E-842A-4283-DAB894CEA9C8}"
  }
 }

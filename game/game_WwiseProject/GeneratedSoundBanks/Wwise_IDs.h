@@ -43,6 +43,10 @@ namespace AK
         static const AkUniqueID BRICK_REVERSE = 2599784423U;
         static const AkUniqueID BRICK_STARTBIGUNDO = 1150887483U;
         static const AkUniqueID BRICKMODE_START = 2475923824U;
+        static const AkUniqueID FOOTSTEP_MATERIAL_BLOCK = 73867103U;
+        static const AkUniqueID FOOTSTEP_MATERIAL_SAND = 1911079010U;
+        static const AkUniqueID FOOTSTEP_MATERIAL_STONE = 1095520635U;
+        static const AkUniqueID FOOTSTEP_MATERIAL_WOOD = 3240422835U;
         static const AkUniqueID MUSICAMBTEST = 1200446142U;
         static const AkUniqueID PLAY_AMB_LVL1 = 3774444326U;
         static const AkUniqueID PLAY_AMB_LVL2 = 3774444325U;
@@ -135,6 +139,20 @@ namespace AK
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace BRICKDIALOGUE
+
+        namespace FOOTSTEPSSTATE
+        {
+            static const AkUniqueID GROUP = 2507554221U;
+
+            namespace STATE
+            {
+                static const AkUniqueID BLOCK = 4001580976U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID SAND = 803837735U;
+                static const AkUniqueID STONE = 1216965916U;
+                static const AkUniqueID WOOD = 2058049674U;
+            } // namespace STATE
+        } // namespace FOOTSTEPSSTATE
 
         namespace LEVEL
         {
