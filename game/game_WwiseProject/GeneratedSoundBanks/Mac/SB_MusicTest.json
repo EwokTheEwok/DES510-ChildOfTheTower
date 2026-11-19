@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{7FB82B9B-6DE3-988D-C556-1F30A7320349}",
+    "Hash": "{2710D418-6378-FFD8-34DA-9B3C8CF306A1}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -7353,6 +7353,86 @@
       ]
      },
      {
+      "Id": "73867103",
+      "Name": "Footstep_Material_Block",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Footstep Events\\Footstep_Material_Block",
+      "GUID": "{07A5B3DF-7FAE-444E-BB8E-1808085CD510}",
+      "Color": "13",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "2507554221",
+        "Id": "4001580976",
+        "Name": "Block",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\Block",
+        "GUID": "{3C9775C2-748C-4607-B4A6-614A08CD569B}"
+       }
+      ]
+     },
+     {
+      "Id": "1911079010",
+      "Name": "Footstep_Material_Sand",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Footstep Events\\Footstep_Material_Sand",
+      "GUID": "{45A3FA50-7B1C-4314-B34F-FB7803491F85}",
+      "Color": "13",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "2507554221",
+        "Id": "803837735",
+        "Name": "Sand",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\Sand",
+        "GUID": "{D45CB0A4-6A93-4AD5-8968-2A2C20A34E4D}"
+       }
+      ]
+     },
+     {
+      "Id": "1095520635",
+      "Name": "Footstep_Material_Stone",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Footstep Events\\Footstep_Material_Stone",
+      "GUID": "{A54A5952-B141-4938-9303-47A0F65A7C61}",
+      "Color": "13",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "2507554221",
+        "Id": "1216965916",
+        "Name": "Stone",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\Stone",
+        "GUID": "{3354DE29-168F-49AC-8268-B9300B160E62}"
+       }
+      ]
+     },
+     {
+      "Id": "3240422835",
+      "Name": "Footstep_Material_Wood",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Footstep Events\\Footstep_Material_Wood",
+      "GUID": "{768B02D0-5621-4C23-B4A6-98E669CB5A92}",
+      "Color": "13",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "2507554221",
+        "Id": "2058049674",
+        "Name": "Wood",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\Wood",
+        "GUID": "{6C0FB0C6-0291-40F1-A6D1-C2BEA4293806}"
+       }
+      ]
+     },
+     {
       "Id": "1200446142",
       "Name": "MusicAmbTest",
       "ObjectPath": "\\Events\\Music Events\\MusicAmbTest",
@@ -9185,7 +9265,7 @@
      {
       "Id": "3854155799",
       "Name": "Play_Footsteps",
-      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Play_Footsteps",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Footstep Events\\Play_Footsteps",
       "GUID": "{FC84159D-E028-4AD0-A9DC-323CD420D594}",
       "Color": "13",
       "DurationType": "OneShot",
@@ -10198,6 +10278,44 @@
     ],
     "StateGroups": [
      {
+      "Id": "2507554221",
+      "Name": "FootstepsState",
+      "ObjectPath": "\\States\\Default Work Unit\\FootstepsState",
+      "GUID": "{F7CA9691-3427-4F43-913F-B1A21D3AF620}",
+      "States": [
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\None",
+        "GUID": "{CB41D4BD-BF33-4E02-AAF2-259499DA9BD6}"
+       },
+       {
+        "Id": "803837735",
+        "Name": "Sand",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\Sand",
+        "GUID": "{D45CB0A4-6A93-4AD5-8968-2A2C20A34E4D}"
+       },
+       {
+        "Id": "1216965916",
+        "Name": "Stone",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\Stone",
+        "GUID": "{3354DE29-168F-49AC-8268-B9300B160E62}"
+       },
+       {
+        "Id": "2058049674",
+        "Name": "Wood",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\Wood",
+        "GUID": "{6C0FB0C6-0291-40F1-A6D1-C2BEA4293806}"
+       },
+       {
+        "Id": "4001580976",
+        "Name": "Block",
+        "ObjectPath": "\\States\\Default Work Unit\\FootstepsState\\Block",
+        "GUID": "{3C9775C2-748C-4607-B4A6-614A08CD569B}"
+       }
+      ]
+     },
+     {
       "Id": "2782712965",
       "Name": "Level",
       "ObjectPath": "\\States\\Default Work Unit\\Level",
@@ -10454,6 +10572,6 @@
     ]
    }
   ],
-  "FileHash": "{EEDEFAD5-EFE4-5FCC-B885-0BA523A000F6}"
+  "FileHash": "{609B6C8E-2CE6-B931-4293-6E36F9F83F14}"
  }
 }
