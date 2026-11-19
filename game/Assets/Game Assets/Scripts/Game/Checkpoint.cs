@@ -1,14 +1,30 @@
 using UnityEngine;
 using UnityEngine.Events;
 
+public enum ShadowFlag
+{
+    Default,
+    Start,
+    Stop
+}
+
+public enum WorldFlag
+{
+    Default,
+    Rain,
+    Clear
+}
+
 public class Checkpoint : MonoBehaviour
 {
-    public bool _StartStopOcean = true;
+    [SerializeField] ShadowFlag _ShadowFlag = ShadowFlag.Default;
+    [SerializeField] WorldFlag _WorldFlag = WorldFlag.Default;
+
     public ParticleSystem _FanfarePrefab;
 
     bool _Activated = false;
     Vector3 _RestartPosition;
-    UnityEvent<GameObject, bool> _ActivateEvent = new();
+    UnityEvent<GameObject, ShadowFlag, WorldFlag> _ActivateEvent = new();
 
     void Start()
     {
@@ -20,7 +36,7 @@ public class Checkpoint : MonoBehaviour
         return _RestartPosition;
     }
     
-    public void OnActivate(UnityAction<GameObject, bool> call)
+    public void OnActivate(UnityAction<GameObject, ShadowFlag, WorldFlag> call)
     {
         _ActivateEvent.AddListener(call);
     }
@@ -33,7 +49,7 @@ public class Checkpoint : MonoBehaviour
             fanfare.transform.position = _RestartPosition;
             fanfare.Play();
             _Activated = true;
-            _ActivateEvent?.Invoke(gameObject, _StartStopOcean);
+            _ActivateEvent?.Invoke(gameObject, _ShadowFlag, _WorldFlag);
         }
     }
 }
