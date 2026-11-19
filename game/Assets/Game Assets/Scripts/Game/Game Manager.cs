@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator _RestartCoroutine;
 
-    private bool _Raining = true;
+    private bool _Raining = false;
     private ParticleSystem _RainSystem;
 
     private bool _Paused = false;
@@ -142,6 +142,8 @@ public class GameManager : MonoBehaviour
         if (_Raining)
         {
             Vector3 rainPosition = _Rain.transform.position;
+            rainPosition.x = _TowerCollider.transform.position.x;
+            rainPosition.z = _TowerCollider.transform.position.z;
             rainPosition.y = _Player.transform.position.y + 25f;
             Vector3 rainEmitterPosition = _RainEmitter.transform.position;
             rainEmitterPosition.x = _Player.transform.position.x;
