@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{9C7173FB-7844-5D7E-F878-40316A77766C}",
+    "Hash": "{7FB82B9B-6DE3-988D-C556-1F30A7320349}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -352,6 +352,14 @@
       "CachePath": "92/{9223213B-3C3C-58AC-3254-9D5680B6CA6C}.wem"
      },
      {
+      "Id": "307054694",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_wakeup_001.wav",
+      "CachePath": "A5/{A5962999-3444-3DE3-F648-A1492F52F9FC}.wem"
+     },
+     {
       "Id": "317257852",
       "Language": "SFX",
       "Streaming": "false",
@@ -605,7 +613,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "sfx_amb_lvl2_indoor_001.wav",
-      "CachePath": "B7/{B74FF311-B43C-94C7-E367-9DEB77590B7A}.wem"
+      "CachePath": "9A/{9ACE6F4A-4D57-4F6F-7AD2-FB71EA730694}.wem"
      },
      {
       "Id": "538172765",
@@ -678,6 +686,14 @@
       "Location": "Memory",
       "ShortName": "sfx_vo_marg_006.wav",
       "CachePath": "1D/{1DDA19FF-94D3-AB71-6333-BFBCA00D3D99}.wem"
+     },
+     {
+      "Id": "582327354",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_death_001.wav",
+      "CachePath": "A3/{A30B3E20-6E58-3E22-7CF9-175A34BC8D28}.wem"
      },
      {
       "Id": "596249139",
@@ -1176,6 +1192,14 @@
       "CachePath": "D8/{D8368D4A-3FDE-0E84-BA36-42609C618495}.wem"
      },
      {
+      "Id": "1021508531",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_amb_rain_002.wav",
+      "CachePath": "E4/{E4F6ABFB-E3AC-B115-83CB-1988CF4D7963}.wem"
+     },
+     {
       "Id": "1030108274",
       "Language": "SFX",
       "Streaming": "false",
@@ -1243,6 +1267,14 @@
     "Plugins": {
      "Custom": [
       {
+       "Id": "760867944",
+       "Name": "Parametric EQ (Custom)",
+       "ObjectPath": "\\Containers\\SFX\\Checkpoint\\[Effect Slot [0]: (Parametric EQ)]\\Parametric EQ (Custom)",
+       "GUID": "{E8E5C7DB-94FB-4FE2-B618-CFE7340575FB}",
+       "LibName": "Wwise Parametric EQ",
+       "LibId": "6881283"
+      },
+      {
        "Id": "1050995769",
        "Name": "Parametric EQ (Custom)",
        "ObjectPath": "\\Containers\\SFX\\Brick SFX\\BigBrickReverseRumble\\[Effect Slot [0]: (Parametric EQ)]\\Parametric EQ (Custom)",
@@ -1253,6 +1285,28 @@
      ]
     },
     "Events": [
+     {
+      "Id": "2035306337",
+      "Name": "Amb_Rain_Start",
+      "ObjectPath": "\\Events\\AMB Events\\Amb_Rain_Start",
+      "GUID": "{3CCC8D56-1505-4DEE-9F00-3FD4FB5CC008}",
+      "Color": "4",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1416460443",
+      "Name": "Amb_Rain_Stop",
+      "ObjectPath": "\\Events\\AMB Events\\Amb_Rain_Stop",
+      "GUID": "{91AFEDDA-8B5B-4753-B944-F5424BDB7164}",
+      "Color": "4",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
      {
       "Id": "2809561105",
       "Name": "Amb_Switch_Inside",
@@ -7311,6 +7365,9 @@
        },
        {
         "Id": "444589137"
+       },
+       {
+        "Id": "1021508531"
        }
       ],
       "SwitchContainers": [
@@ -7412,6 +7469,9 @@
        },
        {
         "Id": "444589137"
+       },
+       {
+        "Id": "1021508531"
        }
       ]
      },
@@ -7421,12 +7481,16 @@
       "ObjectPath": "\\Events\\AMB Events\\Play_Amb_Lvl2",
       "GUID": "{D64E45A6-54F7-4786-9757-FA35420359BF}",
       "Color": "4",
-      "DurationType": "OneShot",
-      "DurationMin": "152.9796",
-      "DurationMax": "152.9796",
+      "DurationType": "Infinite",
       "MediaRefs": [
        {
+        "Id": "444589137"
+       },
+       {
         "Id": "534910962"
+       },
+       {
+        "Id": "1021508531"
        }
       ]
      },
@@ -9022,6 +9086,44 @@
        {
         "Id": "713383606"
        }
+      ],
+      "PluginRefs": {
+       "Custom": [
+        {
+         "Id": "760867944"
+        }
+       ]
+      }
+     },
+     {
+      "Id": "1172822028",
+      "Name": "Play_Death",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Play_Death",
+      "GUID": "{1D82EDD9-84BD-4D06-990C-25A2168620D1}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "1.5",
+      "DurationMax": "1.5",
+      "MediaRefs": [
+       {
+        "Id": "582327354"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
       ]
      },
      {
@@ -9306,6 +9408,46 @@
         "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Outdoor",
         "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
         "Color": "7"
+       }
+      ]
+     },
+     {
+      "Id": "3682715550",
+      "Name": "Play_Lvl2",
+      "ObjectPath": "\\Events\\Music Events\\Play_Lvl2",
+      "GUID": "{184C0B4B-323B-4A8A-A3CF-37D315055214}",
+      "Color": "24",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "2782712965",
+        "Id": "141331489",
+        "Name": "Lvl2",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\Lvl2",
+        "GUID": "{9FC27A63-68FE-47C0-BA0E-77310CA275B5}"
+       }
+      ]
+     },
+     {
+      "Id": "3682715551",
+      "Name": "Play_Lvl3",
+      "ObjectPath": "\\Events\\Music Events\\Play_Lvl3",
+      "GUID": "{18432390-5DDC-40FC-8CA3-E8351B0E7132}",
+      "Color": "24",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "ActionSetState": [
+       {
+        "GroupId": "2782712965",
+        "Id": "141331488",
+        "Name": "Lvl3",
+        "ObjectPath": "\\States\\Default Work Unit\\Level\\Lvl3",
+        "GUID": "{E3F8CBF0-7A13-49BF-B957-A8DDC7832151}"
        }
       ]
      },
@@ -9818,6 +9960,48 @@
       ]
      },
      {
+      "Id": "1798093337",
+      "Name": "Play_WakeUp",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Play_WakeUp",
+      "GUID": "{F61FD2D8-6D42-4898-BD03-5304B1FEAE65}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "4.5",
+      "DurationMax": "4.5",
+      "MediaRefs": [
+       {
+        "Id": "307054694"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       },
+       {
+        "Id": "1578973140",
+        "Name": "Reverb_Outdoor",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Outdoor",
+        "GUID": "{155B3A08-F768-4651-BAFB-B372D07CA325}",
+        "Color": "7"
+       }
+      ]
+     },
+     {
+      "Id": "4279841335",
+      "Name": "Respawn",
+      "ObjectPath": "\\Events\\SFX Events\\Player Events\\Respawn",
+      "GUID": "{A7F842C9-816F-4701-9000-99B90E21B0CF}",
+      "Color": "13",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "540993415",
       "Name": "Start_Music",
       "ObjectPath": "\\Events\\Music Events\\Start_Music",
@@ -9983,6 +10167,13 @@
      }
     ],
     "GameParameters": [
+     {
+      "Id": "803269845",
+      "Name": "RTPC_RainAmbience",
+      "ObjectPath": "\\Game Parameters\\RTPCs\\RTPC_RainAmbience",
+      "GUID": "{CD1AD836-EE6A-4436-B9AA-5A847EA8F06F}",
+      "Color": "10"
+     },
      {
       "Id": "1038293638",
       "Name": "RTPC_AmbienceSwitcher",
@@ -10263,6 +10454,6 @@
     ]
    }
   ],
-  "FileHash": "{C18033E3-99E7-7C40-07BF-FB5CBB53EA6A}"
+  "FileHash": "{1793EB12-CD47-2B63-E771-4E299EB9000E}"
  }
 }

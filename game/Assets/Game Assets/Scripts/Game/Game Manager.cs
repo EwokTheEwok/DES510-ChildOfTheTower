@@ -11,14 +11,24 @@ public class GameManager : MonoBehaviour
 {
     private static GameManager _Instance;
     public static GameManager Instance { get => _Instance; }
+    public Vector3 TowerPivot { get => _TowerCollider.transform.position; }
+    public GameObject Player { get => _Player; }
+    public GameObject Blocks { get => _Blocks; }
+    public GameObject UI { get => _UI; }
+    public PlayerCamera PlayerCamera { get => _PlayerCCamera.GetComponent<PlayerCamera>(); }
 
     [Header("Checkpoint")]
     [SerializeField] string _CheckpointTag = "Checkpoint";
-    private List<GameObject> _CheckpointList = new();
-    private GameObject _CurrentCheckpoint = null;
+    List<GameObject> _CheckpointList = new();
+    GameObject _CurrentCheckpoint = null;
 
     [Header("Spawn")]
     [SerializeField] GameObject _Spawn;
+
+    [Header("Tower")]
+    [SerializeField] GameObject _TowerCollider = null;
+
+
 
     [Header("Shadow Ocean")]
     [SerializeField] GameObject _ShadowOcean = null;
@@ -30,21 +40,25 @@ public class GameManager : MonoBehaviour
     bool _Moving = false;
     Vector3 _ShadowInitialPosition;
 
+    [Header("Rain")]
+    [SerializeField] GameObject _Rain;
+    [SerializeField] GameObject _RainEmitter;
+
     [Header("Player")]
     [SerializeField] GameObject _PlayerPrefab;
     GameObject _Player = null;
-    public GameObject Player { get => _Player; }
+
     GameObject _DeathTrackingTarget;
     CharacterController _CharaController;
     BlockController2 _BlockController;
     InputActionMap _PlayerActionMap;
     CinemachineCamera _PlayerCCamera;
     [SerializeField] GameObject _Blocks = null;
-    public GameObject Blocks { get => _Blocks; }
+
 
     [Header("UI")]
     [SerializeField] GameObject _UI;
-    public GameObject UI { get => _UI; }
+
 
     [Header("Events")]
     public UnityEvent<float> _ShadowDistanceEvent = new();
@@ -55,6 +69,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator _RestartCoroutine;
 
+    private bool _Raining = true;
     private bool _Paused = false;
     public bool Paused
     {
@@ -118,6 +133,18 @@ public class GameManager : MonoBehaviour
             float speed = Mathf.SmoothStep(_MinSpeed, _MaxSpeed, distanceScale);
             _ShadowOcean.transform.position += new Vector3(0f, speed * Time.fixedDeltaTime, 0f);
         }
+
+        if (_Raining)
+        {
+            Vector3 rainPosition = _Rain.transform.position;
+            rainPosition.y = _Player.transform.position.y + 25f;
+            Vector3 rainEmitterPosition = _RainEmitter.transform.position;
+            rainEmitterPosition.x = _Player.transform.position.x;
+            rainEmitterPosition.z = _Player.transform.position.z;
+
+            _RainEmitter.transform.position = rainEmitterPosition;
+            _Rain.transform.position = rainPosition;
+        }
     }
 
     private void FellInShadow()
@@ -157,7 +184,7 @@ public class GameManager : MonoBehaviour
         _CharaController.detectCollisions = true;
         _Moving = true;
         _PlayerActionMap.Enable();
-        _BlockController.ResetCamera();
+        PlayerCamera.ResetTarget();
         _RestartEvent?.Invoke();
 
         yield return null;

@@ -13,6 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID AMB_RAIN_START = 2035306337U;
+        static const AkUniqueID AMB_RAIN_STOP = 1416460443U;
         static const AkUniqueID AMB_SWITCH_INSIDE = 2809561105U;
         static const AkUniqueID AMB_SWITCH_OUTSIDE = 3943071186U;
         static const AkUniqueID BRICK_0 = 3945088981U;
@@ -58,12 +60,15 @@ namespace AK
         static const AkUniqueID PLAY_BRICKVO_TARGETED_05 = 3764927783U;
         static const AkUniqueID PLAY_BRICKVO_TARGETED_06 = 3764927780U;
         static const AkUniqueID PLAY_CHECKPOINT = 2962822744U;
+        static const AkUniqueID PLAY_DEATH = 1172822028U;
         static const AkUniqueID PLAY_DOOR = 2547633870U;
         static const AkUniqueID PLAY_FALLING = 913957623U;
         static const AkUniqueID PLAY_FOOTSTEPS = 3854155799U;
         static const AkUniqueID PLAY_INTROLOOP = 528465658U;
         static const AkUniqueID PLAY_JUMP = 3689126666U;
         static const AkUniqueID PLAY_LAND = 4285282925U;
+        static const AkUniqueID PLAY_LVL2 = 3682715550U;
+        static const AkUniqueID PLAY_LVL3 = 3682715551U;
         static const AkUniqueID PLAY_MARG_IDLE = 3903059178U;
         static const AkUniqueID PLAY_MARGARET = 2321812079U;
         static const AkUniqueID PLAY_PETER = 3201150064U;
@@ -73,6 +78,8 @@ namespace AK
         static const AkUniqueID PLAY_UI_BUTTON = 43599987U;
         static const AkUniqueID PLAY_UI_BUTTON_SCROLL = 1154567065U;
         static const AkUniqueID PLAY_UI_STANDARD = 123178096U;
+        static const AkUniqueID PLAY_WAKEUP = 1798093337U;
+        static const AkUniqueID RESPAWN = 4279841335U;
         static const AkUniqueID START_MUSIC = 540993415U;
         static const AkUniqueID STATE_PAUSE = 106931287U;
         static const AkUniqueID STATE_PLAY = 2483705881U;
@@ -166,6 +173,7 @@ namespace AK
         static const AkUniqueID RTPC_MUSICVOLUME = 2378823330U;
         static const AkUniqueID RTPC_MXDUCKING = 4238634557U;
         static const AkUniqueID RTPC_NPCDISTANCE = 1264247529U;
+        static const AkUniqueID RTPC_RAINAMBIENCE = 803269845U;
         static const AkUniqueID RTPC_SFXVOLUME = 2644490154U;
         static const AkUniqueID RTPC_SHADOWDISTANCE = 3739513706U;
     } // namespace GAME_PARAMETERS

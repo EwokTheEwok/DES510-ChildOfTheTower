@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
     public bool _BlockActive;
 
 
+
     private void Awake()
     {
         _Animator = GetComponentInChildren<Animator>();
@@ -165,12 +166,13 @@ public class PlayerMovement : MonoBehaviour
 
     }
 
-    public void UndoBlock(int direction)
+    public void UndoBlock(int direction, bool ended)
     {
-        Debug.Log("function fires brick retrive");
-        _Animator.SetFloat("brickPlaceX", direction);
-        _Animator.SetTrigger("Retrive");
-
+        _Animator.SetFloat("brickRetreive", direction);
+        if (!ended)
+            _Animator.SetTrigger("Retreive");
+        else
+            _Animator.SetTrigger("Retreived");
     }
 
     void PlayIdle2()

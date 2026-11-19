@@ -591,6 +591,13 @@
 							</ChildrenList>
 						</Event>
 						<Event Name="Play_Footsteps" ID="{FC84159D-E028-4AD0-A9DC-323CD420D594}">
+							<PropertyList>
+								<Property Name="CooldownTime" Type="Real32">
+									<ValueList>
+										<Value>0.3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ChildrenList>
 								<Action Name="" ID="{9C11BDFC-E6DD-4AE5-9824-8036D7314464}" ShortID="599474519">
 									<PropertyList>
@@ -665,6 +672,66 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="BrickPlace" ID="{52E22517-AAC8-4D48-A92F-5395F40EFAAA}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_WakeUp" ID="{F61FD2D8-6D42-4898-BD03-5304B1FEAE65}">
+							<ChildrenList>
+								<Action Name="" ID="{C28021EF-7361-45FA-9314-8F24670C1DCF}" ShortID="385324253">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="WakeUp" ID="{23F5FEDF-6F0E-40B1-93F5-E0FD3C2ECCAA}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Death" ID="{1D82EDD9-84BD-4D06-990C-25A2168620D1}">
+							<ChildrenList>
+								<Action Name="" ID="{C8B459EA-62FC-4FCD-B16C-8A5F61BF47E3}" ShortID="115899615">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Falling" ID="{7CCB4439-B8CA-4A39-B4EC-91884114D62E}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{D8E39E34-1137-4CD5-863D-37885A70D316}" ShortID="971663530">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Death" ID="{AA6DC92F-5A66-4116-A6CB-E61AD938CBB2}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{1BCC477D-98F9-4701-BAF5-970D66E17E2D}" ShortID="391763067">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="12"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Falling" ID="{7CCB4439-B8CA-4A39-B4EC-91884114D62E}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Respawn" ID="{A7F842C9-816F-4701-9000-99B90E21B0CF}">
+							<ChildrenList>
+								<Action Name="" ID="{E483324D-F873-498C-9EAA-F24B69FC70E7}" ShortID="801013395">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="16"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Falling" ID="{7CCB4439-B8CA-4A39-B4EC-91884114D62E}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

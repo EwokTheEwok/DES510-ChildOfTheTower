@@ -4,12 +4,14 @@ public class WindowScript : MonoBehaviour
 {
     public float _WindowSize = 5f;
     public float _WindowFade = 0.5f;
+    public float _AdditiveDither = 1.5f;
     public GameObject _Player;
     GameObject _Camera;
 
 
     private void Start()
     {
+        Shader.SetGlobalFloat("_Additive_Dither", _AdditiveDither);
         Shader.SetGlobalFloat("_Window_Size", _WindowSize);
         Shader.SetGlobalFloat("_Window_Fade", _WindowFade);
         _Camera = Camera.main.gameObject;
@@ -30,5 +32,6 @@ public class WindowScript : MonoBehaviour
         Shader.SetGlobalVector("_Player_World_Position", playerWorldPos);
         Shader.SetGlobalVector("_Camera_Player_Rotation", cameraPlayerRotation);
         Shader.SetGlobalVector("_Camera_Position", cameraPos);
+        Shader.SetGlobalFloat("_Additive_Dither", _AdditiveDither);
     }
 } 

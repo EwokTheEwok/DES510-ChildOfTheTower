@@ -21,6 +21,18 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{DBCE6465-18E5-4D1A-8DC3-0E1660C5E772}" ShortID="630229701">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="BypassGameParameterInternalTransition" Type="bool" Value="True"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_RainAmbience" ID="{CD1AD836-EE6A-4436-B9AA-5A847EA8F06F}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
 						<Action Name="" ID="{5FD4BB1F-618D-4BC9-9E61-4B5C1B324E82}" ShortID="162591426">
 							<PropertyList>
 								<Property Name="ActionType" Type="int16" Value="11"/>
@@ -84,14 +96,27 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
-						<Action Name="" ID="{9F054932-CE08-42C0-8EE5-D51FB737BF32}" ShortID="579789772">
+						<Action Name="" ID="{AE137EE8-9E8F-4D83-B1DA-E4C6C1A29028}" ShortID="225594680">
 							<PropertyList>
-								<Property Name="FadeInCurve" Type="int16" Value="5"/>
-								<Property Name="FadeTime" Type="Real64" Value="3"/>
+								<Property Name="ActionType" Type="int16" Value="2"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="BLC_Ambience_Lvl2" ID="{C435C84C-D153-474B-85AA-5344A7DB3A53}" WorkUnitID="{62A7DCA5-8F9D-473B-BD55-46E25E3FE3D1}"/>
+									<ObjectRef Name="BLC_Ambience_Lvl1" ID="{0CDB9107-013F-4B82-8225-9ED01BD38F66}" WorkUnitID="{62A7DCA5-8F9D-473B-BD55-46E25E3FE3D1}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+						<Action Name="" ID="{E4814592-51B3-47A9-BBAA-5D149A8B7B49}" ShortID="991027428">
+							<PropertyList>
+								<Property Name="FadeInCurve" Type="int16" Value="5"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="BLC_Ambience_Lvl2" ID="{D8261DDC-7EFB-4A9F-BC63-4697BAB2FCC5}" WorkUnitID="{62A7DCA5-8F9D-473B-BD55-46E25E3FE3D1}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
@@ -169,6 +194,37 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Amb_Rain_Start" ID="{3CCC8D56-1505-4DEE-9F00-3FD4FB5CC008}">
+					<ChildrenList>
+						<Action Name="" ID="{7F7ABF32-352E-4385-A367-798B03D28552}" ShortID="699928871">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_RainAmbience" ID="{CD1AD836-EE6A-4436-B9AA-5A847EA8F06F}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Amb_Rain_Stop" ID="{91AFEDDA-8B5B-4753-B944-F5424BDB7164}">
+					<ChildrenList>
+						<Action Name="" ID="{9EF3D36D-4658-47E7-ACC1-D7B950066B8C}" ShortID="466317536">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="RTPC_RainAmbience" ID="{CD1AD836-EE6A-4436-B9AA-5A847EA8F06F}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

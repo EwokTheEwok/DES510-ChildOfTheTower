@@ -79,6 +79,31 @@
 								<ActiveSource Name="sfx_amb_lvl1_outdoor_002" ID="{67EE0895-06B8-4C95-9F28-AFB3D84D66A5}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
+						<Sound Name="sfx_amb_rain_002" ID="{2C9FBCD4-926A-454A-88F1-EFD322EC23ED}" ShortID="825861720">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_amb_rain_002" ID="{CDD6490E-EF50-403F-B9E5-6748CBAEE411}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_amb_rain_002.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1021508531"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_amb_rain_002" ID="{CDD6490E-EF50-403F-B9E5-6748CBAEE411}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 					<BlendTrackList>
 						<BlendTrack Name="Lvl 1 Indoor" ID="{B0AA0AB2-4EDF-43F6-AED9-4CF0C8FE1BE1}" ShortID="826477271">
@@ -231,70 +256,20 @@
 								</BlendTrackAssoc>
 							</BlendTrackAssocList>
 						</BlendTrack>
-					</BlendTrackList>
-				</BlendContainer>
-				<BlendContainer Name="BLC_Ambience_Lvl2" ID="{C435C84C-D153-474B-85AA-5344A7DB3A53}" ShortID="425869731">
-					<PropertyList>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-8</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Ambience" ID="{7DEAD1D9-A9C5-4B87-9802-76B50CABE0C9}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<Sound Name="sfx_amb_lvl2_indoor_001" ID="{B6782787-511F-4552-BE90-74B79D77C156}" ShortID="831816303">
-							<PropertyList>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>3</Value>
-									</ValueList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="sfx_amb_lvl2_indoor_001" ID="{F644006C-DA85-4260-81C0-E28C7EE8B7A4}">
-									<Language>SFX</Language>
-									<AudioFile>sfx_amb_lvl2_indoor_001.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="534910962"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="sfx_amb_lvl2_indoor_001" ID="{F644006C-DA85-4260-81C0-E28C7EE8B7A4}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
-					</ChildrenList>
-					<BlendTrackList>
-						<BlendTrack Name="Lvl 2 Indoor" ID="{BA198251-009E-48DF-AF96-A89BC8A20304}" ShortID="402268967">
+						<BlendTrack Name="Rain" ID="{432F8F69-B3CD-407B-8C6B-89FA1502B2B0}" ShortID="837002765">
 							<ObjectLists>
 								<ObjectList Name="RTPC">
-									<RTPC Name="" ID="{6B24F2E5-C734-4DD3-9456-A40AC0D1E3DC}" ShortID="956277701">
+									<RTPC Name="" ID="{23BCCA4D-6D5A-4E9B-A84D-977892C2885D}" ShortID="487929232">
 										<PropertyList>
 											<Property Name="PropertyName" Type="string" Value="Volume"/>
 										</PropertyList>
 										<ReferenceList>
 											<Reference Name="ControlInput">
-												<ObjectRef Name="RTPC_AmbienceSwitcher" ID="{7DFAED41-25C6-48C0-A9B5-85A8591CD539}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+												<ObjectRef Name="RTPC_RainAmbience" ID="{CD1AD836-EE6A-4436-B9AA-5A847EA8F06F}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
 											</Reference>
 											<Reference Name="Curve">
 												<Custom>
-													<Curve Name="" ID="{DD4ECAEB-5635-4CDA-8C20-44261CE0B21B}">
+													<Curve Name="" ID="{C16378BF-D5B0-475C-93C3-D61C3E1806E1}">
 														<PropertyList>
 															<Property Name="Flags" Type="int32" Value="3"/>
 														</PropertyList>
@@ -316,7 +291,7 @@
 											</Reference>
 										</ReferenceList>
 									</RTPC>
-									<RTPC Name="" ID="{DFCCF0C9-42B8-4CDE-BB2E-6F82A3B90140}" ShortID="65029211">
+									<RTPC Name="" ID="{6C4C34BC-EDAE-429A-A148-0363C9CA4DB4}" ShortID="348199873">
 										<PropertyList>
 											<Property Name="PropertyName" Type="string" Value="Lowpass"/>
 										</PropertyList>
@@ -326,7 +301,182 @@
 											</Reference>
 											<Reference Name="Curve">
 												<Custom>
-													<Curve Name="" ID="{41C3FA93-7BFF-409D-AD86-247C0E7088ED}">
+													<Curve Name="" ID="{DD1F0872-6A05-45A3-9531-7DD83568F945}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>45</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<BlendTrackAssocList>
+								<BlendTrackAssoc>
+									<ItemRef Name="sfx_amb_rain_002" ID="{2C9FBCD4-926A-454A-88F1-EFD322EC23ED}"/>
+								</BlendTrackAssoc>
+							</BlendTrackAssocList>
+						</BlendTrack>
+					</BlendTrackList>
+				</BlendContainer>
+				<BlendContainer Name="BLC_Ambience_Lvl2" ID="{D8261DDC-7EFB-4A9F-BC63-4697BAB2FCC5}" ShortID="546269912">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Ambience" ID="{7DEAD1D9-A9C5-4B87-9802-76B50CABE0C9}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sfx_amb_lvl1_outdoor_002" ID="{F849B569-BC8A-458C-B5DE-674C76BA5584}" ShortID="606706613">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_amb_lvl1_outdoor_002" ID="{55BC4F50-6CD4-4C50-96F8-1636D5EFAFE3}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_amb_lvl1_outdoor_002.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="444589137"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_amb_lvl1_outdoor_002" ID="{55BC4F50-6CD4-4C50-96F8-1636D5EFAFE3}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_amb_lvl2_indoor_001" ID="{B6782787-511F-4552-BE90-74B79D77C156}" ShortID="831816303">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Vorbis Auto Detect High" ID="{6F6A99BE-4FD1-49D3-89AF-54BE30CA1588}" WorkUnitID="{F6B2880C-85E5-47FA-A126-645B5DFD9ACC}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Ambience" ID="{7DEAD1D9-A9C5-4B87-9802-76B50CABE0C9}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_amb_lvl2_indoor_001" ID="{F644006C-DA85-4260-81C0-E28C7EE8B7A4}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_amb_lvl2_indoor_001.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="534910962"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_amb_lvl2_indoor_001" ID="{F644006C-DA85-4260-81C0-E28C7EE8B7A4}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="sfx_amb_rain_002" ID="{C6AB116A-66EA-4162-A4C7-A4F0D2A9DAB1}" ShortID="399279001">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sfx_amb_rain_002" ID="{01949043-592B-400F-947E-1BCCE95C5D4A}">
+									<Language>SFX</Language>
+									<AudioFile>sfx_amb_rain_002.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1021508531"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sfx_amb_rain_002" ID="{01949043-592B-400F-947E-1BCCE95C5D4A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<BlendTrackList>
+						<BlendTrack Name="Lvl 2 Indoor" ID="{DDC09530-1376-4D3C-BCCF-E71BE9E87E3B}" ShortID="258886517">
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{A082A0F8-2959-4B54-8734-BEFC7B2E9CDA}" ShortID="114112620">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="RTPC_AmbienceSwitcher" ID="{7DFAED41-25C6-48C0-A9B5-85A8591CD539}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{FBAD3AE0-1DEF-4AD0-9D15-65B66549CE60}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+																<SegmentShape>SCurve</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+									<RTPC Name="" ID="{F7A2B8FE-6BFE-416A-A431-71A94F1329A8}" ShortID="578672521">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Lowpass"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="RTPC_AmbienceSwitcher" ID="{7DFAED41-25C6-48C0-A9B5-85A8591CD539}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{8CA68BCA-8874-4E3F-9027-074E65EE00E5}">
 														<PropertyList>
 															<Property Name="Flags" Type="int32" Value="65537"/>
 														</PropertyList>
@@ -356,10 +506,10 @@
 								</BlendTrackAssoc>
 							</BlendTrackAssocList>
 						</BlendTrack>
-						<BlendTrack Name="Lvl 1 Outdoor" ID="{32A69BF5-0D98-43D1-9CC9-353C868F6FE5}" ShortID="668976741">
+						<BlendTrack Name="Outdoor" ID="{0C3F0509-63C5-47C9-A194-6C5143D882D7}" ShortID="670959817">
 							<ObjectLists>
 								<ObjectList Name="RTPC">
-									<RTPC Name="" ID="{36A934D9-F4DE-4500-BB65-5DF18FE35AD2}" ShortID="816484493">
+									<RTPC Name="" ID="{3462CF74-42E7-4652-99AE-49BB031A618C}" ShortID="216420304">
 										<PropertyList>
 											<Property Name="PropertyName" Type="string" Value="Volume"/>
 										</PropertyList>
@@ -369,7 +519,7 @@
 											</Reference>
 											<Reference Name="Curve">
 												<Custom>
-													<Curve Name="" ID="{C00F4B7A-D085-4AD2-8D06-258CBAF86A37}">
+													<Curve Name="" ID="{6AAE3597-F3B5-46E2-80AA-0F5354A5B1FA}">
 														<PropertyList>
 															<Property Name="Flags" Type="int32" Value="3"/>
 														</PropertyList>
@@ -391,7 +541,7 @@
 											</Reference>
 										</ReferenceList>
 									</RTPC>
-									<RTPC Name="" ID="{9C75E6F7-E1BD-4403-B442-937948A4DD1E}" ShortID="30117713">
+									<RTPC Name="" ID="{58FD04A7-FAD7-4048-B55E-24FA91D5A455}" ShortID="1050642121">
 										<PropertyList>
 											<Property Name="PropertyName" Type="string" Value="Lowpass"/>
 										</PropertyList>
@@ -401,7 +551,7 @@
 											</Reference>
 											<Reference Name="Curve">
 												<Custom>
-													<Curve Name="" ID="{6DC4DCB5-66E6-4C7C-82F2-E1988CCC5353}">
+													<Curve Name="" ID="{4D38D90D-3E3D-418C-A7EC-8DAE041DBA24}">
 														<PropertyList>
 															<Property Name="Flags" Type="int32" Value="65537"/>
 														</PropertyList>
@@ -425,6 +575,85 @@
 									</RTPC>
 								</ObjectList>
 							</ObjectLists>
+							<BlendTrackAssocList>
+								<BlendTrackAssoc>
+									<ItemRef Name="sfx_amb_lvl1_outdoor_002" ID="{F849B569-BC8A-458C-B5DE-674C76BA5584}"/>
+								</BlendTrackAssoc>
+							</BlendTrackAssocList>
+						</BlendTrack>
+						<BlendTrack Name="Rain" ID="{6037C618-5072-4EEF-BB62-0E7C449F5704}" ShortID="18321740">
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{1A01A7A3-63B7-4D97-B569-04823809F4B4}" ShortID="112918426">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="RTPC_RainAmbience" ID="{CD1AD836-EE6A-4436-B9AA-5A847EA8F06F}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{CD081205-A14B-4F63-9E24-3EF11F7B98B9}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+																<SegmentShape>SCurve</SegmentShape>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+									<RTPC Name="" ID="{4C3BAABE-BBE9-431A-B8A4-AFA606B91C2D}" ShortID="931906814">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Lowpass"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="RTPC_AmbienceSwitcher" ID="{7DFAED41-25C6-48C0-A9B5-85A8591CD539}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{74438A78-A9E6-4856-B3F2-E1C6F23FEB0E}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="65537"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>0</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>1</XPos>
+																<YPos>45</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+							<BlendTrackAssocList>
+								<BlendTrackAssoc>
+									<ItemRef Name="sfx_amb_rain_002" ID="{C6AB116A-66EA-4162-A4C7-A4F0D2A9DAB1}"/>
+								</BlendTrackAssoc>
+							</BlendTrackAssocList>
 						</BlendTrack>
 					</BlendTrackList>
 				</BlendContainer>

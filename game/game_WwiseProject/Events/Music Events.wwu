@@ -104,6 +104,23 @@
 								</Reference>
 							</ReferenceList>
 						</Action>
+						<Action Name="" ID="{628723BE-7FA0-475D-B22B-0EAB13860E14}" ShortID="516717677">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="3"/>
+								<Property Name="FadeOutCurve" Type="int16" Value="5"/>
+								<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
+						<Action Name="" ID="{CABA0343-FA94-4F91-987B-0987054EF066}" ShortID="452830152">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="31"/>
+								<Property Name="FadeTime" Type="Real64" Value="1"/>
+								<Property Name="Scope" Type="int16" Value="1"/>
+							</PropertyList>
+							<ReferenceList/>
+						</Action>
 						<Action Name="" ID="{8B91837C-194F-49F0-94D7-2596C34FC5C3}" ShortID="604194356">
 							<ReferenceList>
 								<Reference Name="Target">
@@ -126,6 +143,34 @@
 							<ReferenceList>
 								<Reference Name="Target">
 									<ObjectRef Name="MSW_Master" ID="{BA9BC550-36F4-480B-8895-4D0BD3267772}" WorkUnitID="{6C3C909C-86D2-4B3E-93D4-FD4C2DADD8D7}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Lvl2" ID="{184C0B4B-323B-4A8A-A3CF-37D315055214}">
+					<ChildrenList>
+						<Action Name="" ID="{5C2372A5-1B39-4A24-9699-A9394F02D96F}" ShortID="148712124">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Lvl2" ID="{9FC27A63-68FE-47C0-BA0E-77310CA275B5}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Lvl3" ID="{18432390-5DDC-40FC-8CA3-E8351B0E7132}">
+					<ChildrenList>
+						<Action Name="" ID="{1CA36C9E-34E0-4F1F-855E-46F65CE08F47}" ShortID="828262738">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="22"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Lvl3" ID="{E3F8CBF0-7A13-49BF-B957-A8DDC7832151}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>

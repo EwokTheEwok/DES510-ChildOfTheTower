@@ -4,13 +4,14 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
 
 public class BlockController2 : MonoBehaviour
 {
     public CinemachineCamera _CinemachineCamera;
     public GameObject _MissingBlockSprite;
     CharacterController _CharacterController;
+    Camera _Camera;
+    PlayerCamera _PlayerCamera;
 
     [Header("Bubbles")]
     public float _MissingBubbleDistance = 15f;
@@ -54,9 +55,9 @@ public class BlockController2 : MonoBehaviour
     public UnityEvent<GameObject> _UndoEvent = new();
     public UnityEvent<GameObject> _LimitEvent = new();
     public UnityEvent<GameObject, bool> _BubbleEvent = new();
-    public UnityEvent<int> _PlaceEvent = new();
+    public UnityEvent<int> _PlaceAnimationEvent = new();
+    public UnityEvent<int, bool> _UndoAnimationEvent = new();
 
-    //Private
     [Header("States")]
     bool _Active = false;
     bool _Playing = true;
@@ -76,15 +77,6 @@ public class BlockController2 : MonoBehaviour
     Vector3 _InputModifierX;
     Vector3 _InputModifierY;
 
-    //Player
-    PlayerMovement _PlayerMovement;
-    Color _BlockColor;
-
-    //Camera
-    Camera _Camera;
-    PlayerCamera _PlayerCamera;
-    Transform _TrackingTarget;
-
     void Start()
     {
         GameManager.Instance.AddPauseListener(OnPause);
@@ -93,10 +85,7 @@ public class BlockController2 : MonoBehaviour
         _ArrowUIDistance = _BlockSize + 1f;
         _NearbyNodesList = new Collider[_MaxNearbyNodes];
         _Camera = Camera.main;
-        _PlayerMovement = GetComponent<PlayerMovement>();
         _PlayerCamera = GetComponentInChildren<PlayerCamera>();
-
-        _TrackingTarget = new GameObject("TrackingTarget").transform;
 
         _BlockContainer = GameManager.Instance.Blocks;
         _GuideBlock = Instantiate(_GuideBlockPrefab, _BlockContainer.transform);
@@ -109,7 +98,6 @@ public class BlockController2 : MonoBehaviour
         _AxisPlaneRenderer = _AxisPlane.GetComponent<Renderer>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (_Playing)
@@ -141,11 +129,7 @@ public class BlockController2 : MonoBehaviour
                 DisplayBubble();
                 UpdateControls(_Block.transform);
 
-                if (MinDistance() > _FarThreshold)
-                    _TrackingTarget.position = transform.position;
-                else
-                    _TrackingTarget.position = Vector3.Lerp(transform.position, _Block.transform.position, 0.5f);
-                
+                _PlayerCamera.SetPlayerBlockPosition(transform.position, _Block.transform.position, MinDistance() > _FarThreshold);
 
                 if (!_IsMovingBlock)
                 {
@@ -221,22 +205,14 @@ public class BlockController2 : MonoBehaviour
         return nearestNode;
     }
 
-    public bool IsBlockActive()
-    {
-        if (_BlockList.Count > 0)
-        {
-            return true;
-        }
-        return false;
-    }
-
     public void OnPlaceBlock(InputAction.CallbackContext context)
     {
         if (context.started)
         {
             if (!_Active && NearNodes())
             {   //place on node if block isnt active
-                _CinemachineCamera.Target.TrackingTarget = _TrackingTarget;
+                //_CinemachineCamera.Target.TrackingTarget = _BetweenTargets;
+                _PlayerCamera.SetBlockMode(true);
                 _Active = true;
                 GameObject nearestNode = NearestNode();
 
@@ -245,9 +221,9 @@ public class BlockController2 : MonoBehaviour
                 Debug.Log(nodeViewPos.x + " " + playerViewPos.x);
 
                 if (nodeViewPos.x < playerViewPos.x)
-                    _PlaceEvent?.Invoke(0);
+                    _PlaceAnimationEvent?.Invoke(0);
                 else
-                    _PlaceEvent?.Invoke(1);
+                    _PlaceAnimationEvent?.Invoke(1);
 
                 _AxisPlaneRenderer.material.SetVector("_Origin", new Vector3(
                             nearestNode.transform.position.x,
@@ -383,6 +359,8 @@ public class BlockController2 : MonoBehaviour
     {
         if (context.started)
         {
+            if (_Active)
+                _UndoAnimationEvent?.Invoke(BlockDirection(), false);
             _InputUndo = true;
             _FastRecover = false;
             foreach (GameObject block in _BlockList)
@@ -396,7 +374,11 @@ public class BlockController2 : MonoBehaviour
             }
         }
         else if (context.canceled)
+        {
             _InputUndo = false;
+            if (_Active)
+                _UndoAnimationEvent?.Invoke(BlockDirection(), true);
+        }
     }
 
     public void UndoBlock()
@@ -424,6 +406,7 @@ public class BlockController2 : MonoBehaviour
         }
         else
         {
+            _UndoAnimationEvent?.Invoke(BlockDirection(), true);
             _UndoEvent?.Invoke(_Block);
             _Active = false;
             _PlayerBlockUI.SetPanelsActive(false);
@@ -432,7 +415,8 @@ public class BlockController2 : MonoBehaviour
             _BlockList.RemoveAt(0);
             Destroy(_Block);
             _Block = null;
-            _CinemachineCamera.Target.TrackingTarget = transform;
+            _PlayerCamera.SetBlockMode(false);
+            //_CinemachineCamera.Target.TrackingTarget = transform;
         }
     }
 
@@ -565,18 +549,13 @@ public class BlockController2 : MonoBehaviour
         _AxisPlane.SetActive(false);
         _PlayerCamera.SetOctaMode();
         _Block = null;
-        _CinemachineCamera.Target.TrackingTarget = transform;
+        _PlayerCamera.SetBlockMode(false);
         _PlayerBlockUI.EmptyTiles();
     }
 
     public void Reset()
     {
         RetrieveBlock();
-    }
-
-    public void ResetCamera()
-    {
-        _CinemachineCamera.Target.TrackingTarget = transform;
     }
 
     private void DisplayBubble()
@@ -600,5 +579,27 @@ public class BlockController2 : MonoBehaviour
     public void OnPause(bool value)
     {
         _Playing = !value;
+    }
+    public bool IsBlockActive()
+    {
+        if (_BlockList.Count > 0)
+        {
+            return true;
+        }
+        return false;
+    }
+
+    public bool IsRecovering()
+    {
+        return _InputUndo && _Active;
+    }
+
+    public int BlockDirection()
+    {
+        Vector3 blockViewPos = _Camera.WorldToViewportPoint(_BlockList[0].transform.position);
+        Vector3 playerViewPos = _Camera.WorldToViewportPoint(transform.position);
+        if (blockViewPos.x > playerViewPos.x)
+            return 1;
+        return 0;
     }
 }

@@ -4,12 +4,14 @@ using UnityEngine.Events;
 public class BrickTrigger : MonoBehaviour
 {
     public UnityEvent onBrickDetected;
+    bool _Triggered = false;
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Block"))
+        if (other.CompareTag("Block") && !_Triggered)
         {
-            Debug.Log("HasBrick");
+            _Triggered = true;
+            //Debug.Log("HasBrick");
             onBrickDetected?.Invoke();
         }
     }
