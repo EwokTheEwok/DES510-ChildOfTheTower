@@ -5,8 +5,6 @@ public class NPCAnimAudio : MonoBehaviour
 {
     public AK.Wwise.Event MargIdleAnim;
 
-    public AK.Wwise.RTPC NPCDistance;
-
     private GameObject _player;
 
     void Start()

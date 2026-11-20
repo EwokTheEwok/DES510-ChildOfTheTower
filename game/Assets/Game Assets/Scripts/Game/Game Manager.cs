@@ -6,7 +6,6 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using static Unity.Cinemachine.CinemachineCore;
 
 public class GameManager : MonoBehaviour
 {
@@ -62,12 +61,11 @@ public class GameManager : MonoBehaviour
 
 
     [Header("Events")]
-    public UnityEvent<float> _ShadowDistanceEvent = new();
-    public UnityEvent<GameObject> _CheckpointEvent = new();
-    public UnityEvent<bool> _RainEvent = new();
-    public UnityEvent _FallInShadowEvent = new();
-    public UnityEvent _RestartEvent = new();
-    public UnityEvent<bool> _PauseEvent = new();
+    public UnityEvent FallOceanEvent = new();
+    public UnityEvent<GameObject> CheckpointEvent = new();
+    public UnityEvent RestartEvent = new();
+    public UnityEvent<bool> RainEvent = new();
+    public UnityEvent<bool> PauseEvent = new();
 
     IEnumerator _RestartCoroutine;
 
@@ -82,7 +80,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Game Manager: Pause (" + value + ")");
             _Paused = value;
-            _PauseEvent?.Invoke(value);
+            PauseEvent?.Invoke(value);
         }
     }
 
@@ -134,7 +132,7 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
         float distanceFromPlayer = _Player.transform.position.y - _ShadowOcean.transform.position.y;
-        _ShadowDistanceEvent?.Invoke(distanceFromPlayer);
+
         if (_Moving && !_Paused)
         {
             float distanceFromMinimum = distanceFromPlayer - _MinDistance;
@@ -160,7 +158,7 @@ public class GameManager : MonoBehaviour
 
     private void FellInShadow()
     {
-        _FallInShadowEvent?.Invoke();
+        FallOceanEvent?.Invoke();
         _BlockController.Reset();
         _CharaController.excludeLayers = ~0;
         _Moving = false;
@@ -195,7 +193,7 @@ public class GameManager : MonoBehaviour
         _CharaController.detectCollisions = true;
         _PlayerActionMap.Enable();
         PlayerCamera.ResetTarget();
-        _RestartEvent?.Invoke();
+        RestartEvent?.Invoke();
 
         yield return null;
     }
@@ -228,15 +226,20 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        _RainEvent?.Invoke(_Raining);
+        RainEvent?.Invoke(_Raining);
 
         _CurrentCheckpoint = checkpointObject;
-        _CheckpointEvent?.Invoke(checkpointObject);
+        CheckpointEvent?.Invoke(checkpointObject);
         Debug.Log("Checkpoint: " + _CheckpointList.IndexOf(_CurrentCheckpoint) + " Activated");
+    }
+
+    public float ShadowOceanDistance()
+    {
+        return _Player.transform.position.y - _ShadowOcean.transform.position.y;
     }
 
     public void AddPauseListener(UnityAction<bool> call)
     {
-        _PauseEvent.AddListener(call);
+        PauseEvent.AddListener(call);
     }
 }

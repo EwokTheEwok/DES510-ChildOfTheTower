@@ -6,6 +6,13 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
 
+public enum CharacterNames
+{
+    Peter,
+    Margaret,
+    Thomas
+}
+
 public class NPCDialogueManager : MonoBehaviour
 {
     
@@ -48,9 +55,8 @@ public class NPCDialogueManager : MonoBehaviour
     [SerializeField] private Animator _Animator;
 
     [Header("Events")]
-    public UnityEvent<GameObject> _PeterEvent = new();
-    public UnityEvent<GameObject> _MargaretEvent = new();
-    public UnityEvent<GameObject> _ThomasEvent = new();
+    UnityEvent<GameObject, CharacterNames> _NPCAudioEvent = new();
+    public UnityEvent<GameObject, CharacterNames> NPCAudioEvent { get => _NPCAudioEvent; }
 
 
 
@@ -98,7 +104,7 @@ public class NPCDialogueManager : MonoBehaviour
                     PeterLocal.enabled = true;
                     MargaretLocal.enabled = false;
                     ThomasLocal.enabled = false;
-                    _PeterEvent?.Invoke(_CurrentNPC);
+                    _NPCAudioEvent?.Invoke(_CurrentNPC, CharacterNames.Peter);
 
                 }
                 else if (_NameText.text == "Margaret")
@@ -110,7 +116,7 @@ public class NPCDialogueManager : MonoBehaviour
                     PeterLocal.enabled = false;
                     MargaretLocal.enabled = true;
                     ThomasLocal.enabled = false;
-                    _MargaretEvent?.Invoke(_CurrentNPC);
+                    _NPCAudioEvent?.Invoke(_CurrentNPC, CharacterNames.Margaret);
 
                 }
                 else if (_NameText.text == "Thomas")
@@ -122,7 +128,7 @@ public class NPCDialogueManager : MonoBehaviour
                     PeterLocal.enabled = false;
                     MargaretLocal.enabled = false;
                     ThomasLocal.enabled = true;
-                    _ThomasEvent?.Invoke(_CurrentNPC);
+                    _NPCAudioEvent?.Invoke(_CurrentNPC, CharacterNames.Thomas);
 
                 }
 

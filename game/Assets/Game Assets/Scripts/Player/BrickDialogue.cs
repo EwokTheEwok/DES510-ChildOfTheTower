@@ -43,7 +43,7 @@ public class BrickDialogue : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance._RestartEvent.AddListener(OnRestart);
+        GameManager.Instance.RestartEvent.AddListener(OnRestart);
 
         _BrickCanvas = GameManager.Instance.UI.transform.Find("Block Canvas").gameObject;
         _BrickBox = _BrickCanvas.transform.Find("BrickBox").gameObject;

@@ -1,7 +1,16 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+
+public enum PlayerEventType
+{
+    Walk,
+    Jump,
+    Land,
+    Falling,
+    Place,
+    WakeUp
+}
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -17,8 +26,7 @@ public class PlayerMovement : MonoBehaviour
     bool _HasJumped = false;
 
     //Events
-    [Header("Player Events")]
-    public UnityEvent<GameObject> _JumpEvent;
+    [HideInInspector] public UnityEvent<GameObject, PlayerEventType> PlayerAudioEvent = new();
 
     //Private
     Camera _Camera;
@@ -150,7 +158,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _HasJumped = true;
             _Animator.SetTrigger("Jumping");
-            _JumpEvent?.Invoke(gameObject);
+            PlayerAudioEvent?.Invoke(gameObject, PlayerEventType.Jump);
             _Velocity.y = _JumpSpeed;
 
             _Animator.SetFloat("inputX", _MoveDir.x);
@@ -199,6 +207,11 @@ public class PlayerMovement : MonoBehaviour
     {
         _RandomMulti = Random.Range(0.0f, 1.0f);
         _GoalWaitTime = _MinTimeWait + ((_MaxTimeWait - _MinTimeWait) * _RandomMulti);
+    }
+
+    public void PlayWalkAudio()
+    {
+        PlayerAudioEvent?.Invoke(gameObject, PlayerEventType.Walk);
     }
 
     public void OnPause(bool value)
