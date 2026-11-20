@@ -105,6 +105,10 @@ public class GameManager : MonoBehaviour
         }
 
         _Player = Instantiate(_PlayerPrefab);
+        _CharaController = _Player.GetComponent<CharacterController>();
+        _CharaController.enabled = false;
+        _Player.transform.position = _Spawn.transform.position;
+        _CharaController.enabled = true;
     }
     void Start()
     {
@@ -118,8 +122,8 @@ public class GameManager : MonoBehaviour
         _ShadowOcean.transform.position = new(0f, _ShadowOcean.transform.position.y, 0f);
         _ShadowInitialPosition = _ShadowOcean.transform.position;
 
-        _Player.transform.position = _Spawn.transform.position;
-        _CharaController = _Player.GetComponent<CharacterController>();
+
+
         _BlockController = _Player.GetComponent<BlockController2>();
         _PlayerActionMap = _Player.GetComponent<PlayerInput>().actions.FindActionMap("Player");
         _PlayerCCamera = _Player.transform.Find("CCamera").GetComponent<CinemachineCamera>();
@@ -180,16 +184,15 @@ public class GameManager : MonoBehaviour
 
         Vector3 shadowRestartPosition = new (0.0f, restartPosition.y + _ResetDistance, 0.0f);
         if (_ShadowInitialPosition.y > shadowRestartPosition.y)
-            _ShadowOcean.transform.position = shadowRestartPosition;
+            _ShadowOcean.transform.position = _ShadowInitialPosition;
         else
-            _ShadowOcean.transform.position = restartPosition + new Vector3(0f, _ResetDistance, 0f);
+            _ShadowOcean.transform.position = restartPosition;
 
         _CharaController.excludeLayers = 0;
         _CharaController.enabled = false;
         _Player.transform.position = restartPosition;
         _CharaController.enabled = true;
         _CharaController.detectCollisions = true;
-        _Moving = true;
         _PlayerActionMap.Enable();
         PlayerCamera.ResetTarget();
         _RestartEvent?.Invoke();

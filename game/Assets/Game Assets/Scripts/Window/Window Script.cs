@@ -3,8 +3,8 @@ using UnityEngine;
 public class WindowScript : MonoBehaviour
 {
     public float _WindowSize = 5f;
-    public float _WindowFade = 0.5f;
-    public float _AdditiveDither = 1.5f;
+    public float _WindowFade = 1.5f;
+    public float _AdditiveDither = 1.12f;
     public GameObject _Player;
     GameObject _Camera;
 
@@ -13,6 +13,7 @@ public class WindowScript : MonoBehaviour
     {
         Shader.SetGlobalFloat("_Additive_Dither", _AdditiveDither);
         Shader.SetGlobalFloat("_Window_Size", _WindowSize);
+        Shader.SetGlobalFloat("_Window_Fade", _WindowFade);
         Shader.SetGlobalInteger("_Window_Active", 1);
         _Camera = Camera.main.gameObject;
         Window();
@@ -38,5 +39,9 @@ public class WindowScript : MonoBehaviour
         Shader.SetGlobalVector("_Player_World_Position", playerWorldPos);
         Shader.SetGlobalVector("_Camera_Player_Rotation", cameraPlayerRotation);
         Shader.SetGlobalVector("_Camera_Position", cameraPos);
+
+        Shader.SetGlobalFloat("_Additive_Dither", _AdditiveDither);
+        Shader.SetGlobalFloat("_Window_Size", _WindowSize);
+        Shader.SetGlobalFloat("_Window_Fade", _WindowFade);
     }
 } 

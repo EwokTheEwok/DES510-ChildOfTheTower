@@ -438,8 +438,8 @@ Transform:
   m_GameObject: {fileID: 503646351121813291}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.40316737, z: -0, w: 0.9151263}
-  m_LocalPosition: {x: 34.913, y: 80.66, z: -25.302}
-  m_LocalScale: {x: 7.511065, y: 30.162857, z: 49.787025}
+  m_LocalPosition: {x: 5.4, y: 69.2, z: 13.57}
+  m_LocalScale: {x: 8.898358, y: 30.162857, z: 49.787025}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3252304863871818375}
@@ -477,12 +477,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  controlBox: {fileID: 0}
-  ControlBox: {fileID: 0}
-  ControlText1: {fileID: 0}
-  ControlText2: {fileID: 0}
-  buttons: {fileID: 0}
-  buttons2: {fileID: 0}
+  controlBox: {fileID: 6189687351217286242}
+  ControlBox: {fileID: 1103253770405237997}
+  ControlText1: {fileID: 7906782321134645714}
+  ControlText2: {fileID: 2462256969785569822}
+  buttons: {fileID: 6320213168108131278}
+  buttons2: {fileID: 3408065307518213129}
   UI1Text:
   - to place brick and start building
   UI2Text:
@@ -527,7 +527,6 @@ Transform:
   - {fileID: 1703188046168326863}
   - {fileID: 6411950635953905897}
   - {fileID: 7232011353909050868}
-  - {fileID: 2362719795371191564}
   m_Father: {fileID: 4145705096927853203}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1082898387342347954
@@ -1588,8 +1587,8 @@ Transform:
   m_GameObject: {fileID: 1866292453287951320}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.67254496, z: -0, w: 0.7400564}
-  m_LocalPosition: {x: 32.69, y: 21.3, z: -34.6}
-  m_LocalScale: {x: 13.160323, y: 48.848454, z: 16.589998}
+  m_LocalPosition: {x: 0.5, y: 21.3, z: 10.3}
+  m_LocalScale: {x: 15.300192, y: 48.848454, z: 16.589998}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3252304863871818375}
@@ -1627,12 +1626,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  controlBox: {fileID: 0}
-  ControlBox: {fileID: 0}
-  ControlText1: {fileID: 0}
-  ControlText2: {fileID: 0}
-  buttons: {fileID: 0}
-  buttons2: {fileID: 0}
+  controlBox: {fileID: 6114924556834870135}
+  ControlBox: {fileID: 3621430149484473827}
+  ControlText1: {fileID: 4934230145536843532}
+  ControlText2: {fileID: 4124359691455456721}
+  buttons: {fileID: 6973956362905214578}
+  buttons2: {fileID: 2524933759197898337}
   UI1Text:
   - 'to rotate the camera clockwise '
   UI2Text:
@@ -3203,8 +3202,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 187, y: 37}
-  m_SizeDelta: {x: 900, y: 100}
+  m_AnchoredPosition: {x: 188, y: 32}
+  m_SizeDelta: {x: 900, y: 127.5622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6651749861861536958
 CanvasRenderer:
@@ -3686,76 +3685,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &3964137608637429125
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2362719795371191564}
-  - component: {fileID: 1647449073455153399}
-  - component: {fileID: 6405253155462171539}
-  m_Layer: 0
-  m_Name: MusicSwitchCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &2362719795371191564
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964137608637429125}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 92.51, y: 2.89, z: -15.89}
-  m_LocalScale: {x: 3.7911, y: 10.7446785, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3252304863871818375}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1647449073455153399
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964137608637429125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14ee48f0e3ffc934e8f284f88d5cac22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TriggerMusicLoop
-  TriggerLevelMusicLoop:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 20b9165b41849a64a866be5f4b9effe1, type: 2}
---- !u!65 &6405253155462171539
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3964137608637429125}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4040110208350257545
 GameObject:
   m_ObjectHideFlags: 0
@@ -4754,13 +4683,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4869437353937148272}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.72268164, z: -0, w: 0.69118106}
-  m_LocalPosition: {x: 43.31, y: 84.09, z: -52.1}
-  m_LocalScale: {x: 7.1934333, y: 30.504364, z: 48.026524}
+  m_LocalRotation: {x: -0, y: 0.43700248, z: -0, w: 0.8994603}
+  m_LocalPosition: {x: -2.25, y: 70.34, z: 21.62}
+  m_LocalScale: {x: 8.542202, y: 30.504364, z: 48.026524}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3252304863871818375}
-  m_LocalEulerAnglesHint: {x: 0, y: 92.553, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 51.826, z: 0}
 --- !u!65 &6014650176760933886
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4794,12 +4723,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  controlBox: {fileID: 0}
-  ControlBox: {fileID: 0}
-  ControlText1: {fileID: 0}
-  ControlText2: {fileID: 0}
-  buttons: {fileID: 0}
-  buttons2: {fileID: 0}
+  controlBox: {fileID: 2160733282722525177}
+  ControlBox: {fileID: 3772054305698686256}
+  ControlText1: {fileID: 3532474159779760895}
+  ControlText2: {fileID: 673715375133659839}
+  buttons: {fileID: 8255985759015339859}
+  buttons2: {fileID: 2933596206004746074}
   UI1Text:
   - to undo one brick at a time
   UI2Text: []
@@ -5461,8 +5390,8 @@ Transform:
   m_GameObject: {fileID: 5171949775220626792}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.72268164, z: -0, w: 0.69118106}
-  m_LocalPosition: {x: 56.66, y: 120.87, z: -3.75}
-  m_LocalScale: {x: 31.195105, y: 40.35058, z: 82.53735}
+  m_LocalPosition: {x: 23.59, y: 175.15, z: 10.3}
+  m_LocalScale: {x: 13.414869, y: 40.398952, z: 82.53735}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3252304863871818375}
@@ -5500,12 +5429,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  controlBox: {fileID: 0}
-  ControlBox: {fileID: 0}
-  ControlText1: {fileID: 0}
-  ControlText2: {fileID: 0}
-  buttons: {fileID: 0}
-  buttons2: {fileID: 0}
+  controlBox: {fileID: 4235646450701665413}
+  ControlBox: {fileID: 2092528643631459572}
+  ControlText1: {fileID: 2143591371316582250}
+  ControlText2: {fileID: 4195469382813393516}
+  buttons: {fileID: 7134840818433499336}
+  buttons2: {fileID: 8341021827366295446}
   UI1Text:
   - blue spot indicators are activation panels. placing a block on them will change
     something within the level.
@@ -7819,7 +7748,7 @@ Transform:
   m_GameObject: {fileID: 7052267135866508719}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.3, y: 0, z: 56.1}
+  m_LocalPosition: {x: 4.27, y: 0, z: 54.2}
   m_LocalScale: {x: 9.7329, y: 25.935389, z: 65.86801}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7844,8 +7773,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.3388448, y: 0.9999998, z: 1}
-  m_Center: {x: -0.66942257, y: 0, z: 0}
+  m_Size: {x: 7.714078, y: 1.5629278, z: 1.4572283}
+  m_Center: {x: 2.0181932, y: -0.28146484, z: 0.2286128}
 --- !u!114 &4275294226460142253
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7858,12 +7787,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  controlBox: {fileID: 0}
-  ControlBox: {fileID: 0}
-  ControlText1: {fileID: 0}
-  ControlText2: {fileID: 0}
-  buttons: {fileID: 0}
-  buttons2: {fileID: 0}
+  controlBox: {fileID: 3565199980381943317}
+  ControlBox: {fileID: 4223789363855169368}
+  ControlText1: {fileID: 895203246638071093}
+  ControlText2: {fileID: 7881480400052688249}
+  buttons: {fileID: 4171528906822268182}
+  buttons2: {fileID: 3080900384043318344}
   UI1Text:
   - to move
   UI2Text: []
@@ -9366,13 +9295,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7768241033581063002}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.38268343, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 21.186, y: 89.494, z: -48.424}
-  m_LocalScale: {x: 12.979379, y: 19.184683, z: 3.3922126}
+  m_LocalRotation: {x: -0, y: 0.02080028, z: -0, w: 0.99978364}
+  m_LocalPosition: {x: -1.1525, y: 52.197, z: 16.155}
+  m_LocalScale: {x: 22.305063, y: 31.558804, z: 5.4896173}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3252304863871818375}
-  m_LocalEulerAnglesHint: {x: 0, y: -45, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 2.384, z: 0}
 --- !u!114 &8417676882776314365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9385,12 +9314,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  controlBox: {fileID: 0}
-  ControlBox: {fileID: 0}
-  ControlText1: {fileID: 0}
-  ControlText2: {fileID: 0}
-  buttons: {fileID: 0}
-  buttons2: {fileID: 0}
+  controlBox: {fileID: 8677132830636749849}
+  ControlBox: {fileID: 1363550929012087129}
+  ControlText1: {fileID: 6068176220773074631}
+  ControlText2: {fileID: 2871036311728729429}
+  buttons: {fileID: 1589682609847955457}
+  buttons2: {fileID: 5039584386043773200}
   UI1Text:
   - to jump
   UI2Text: []
@@ -9738,13 +9667,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7933672526863924608}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.72268164, z: -0, w: 0.69118106}
-  m_LocalPosition: {x: 71.353, y: 106.71, z: -22.233}
-  m_LocalScale: {x: 18.395763, y: 44.067654, z: 148.8465}
+  m_LocalRotation: {x: -0, y: 0.7076076, z: -0, w: 0.7066056}
+  m_LocalPosition: {x: 11.84, y: 72.08, z: 16.96}
+  m_LocalScale: {x: 4.0844703, y: 18.43886, z: 28.664297}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3252304863871818375}
-  m_LocalEulerAnglesHint: {x: 0, y: 92.553, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90.081, z: 0}
 --- !u!65 &1977914160476396384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9778,12 +9707,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  controlBox: {fileID: 0}
-  ControlBox: {fileID: 0}
-  ControlText1: {fileID: 0}
-  ControlText2: {fileID: 0}
-  buttons: {fileID: 0}
-  buttons2: {fileID: 0}
+  controlBox: {fileID: 7940377296766512143}
+  ControlBox: {fileID: 7673628842678899304}
+  ControlText1: {fileID: 4454323216803455078}
+  ControlText2: {fileID: 7584440644761431175}
+  buttons: {fileID: 541060328629082205}
+  buttons2: {fileID: 8869591934115283722}
   UI1Text:
   - to change the plane you are building on after placing the brick
   UI2Text:

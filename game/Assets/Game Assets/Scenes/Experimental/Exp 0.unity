@@ -257,22 +257,6 @@ MonoBehaviour:
   scalingFactor: 1
   m_posOffsetData: {fileID: 0}
   listenerMask: 1
---- !u!1 &243356417 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 118030202727208779, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-  m_PrefabInstance: {fileID: 2043937846}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &243356421 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1377364740272849210, guid: 6f78c765e7668a64b8613d1cf77f1d20, type: 3}
-  m_PrefabInstance: {fileID: 2043937846}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243356417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58c0cdd82e2e424448645fa2c6bbb352, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!1 &436758139
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,7 +548,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 914a56988097320499ec87a6594fbe04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WindowTower
-  _Radius: 10
+  _SmoothTime: 0.5
+  _EnterEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &550278229
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,8 +632,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550278229}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
-  m_LocalPosition: {x: -15.32, y: 21.351006, z: -54.224632}
+  m_LocalRotation: {x: 0.066452235, y: 0.9098438, z: -0.16042991, w: 0.37686962}
+  m_LocalPosition: {x: -5.7440042, y: 11.301003, z: 105.40973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2395,10 +2382,22 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: b42830ba3ecae0d4e95ab7c6a1e794e8, type: 2}
+    - target: {fileID: 3106920582589704342, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.736523
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106920582589704342, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3106920582589704342, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.9
+      objectReference: {fileID: 0}
     - target: {fileID: 3783110859233431772, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
       propertyPath: _Player
       value: 
-      objectReference: {fileID: 243356417}
+      objectReference: {fileID: 0}
     - target: {fileID: 3783110859233431772, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
       propertyPath: _Values
       value: 
@@ -2422,7 +2421,7 @@ PrefabInstance:
     - target: {fileID: 3783110859233431772, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
       propertyPath: _PauseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 243356421}
+      objectReference: {fileID: 0}
     - target: {fileID: 3783110859233431772, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
       propertyPath: _PauseEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2

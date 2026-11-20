@@ -8,9 +8,10 @@ public class TriggerMusicLoop : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!hasTriggered)
-        TriggerLevelMusicLoop.Post(gameObject);
-
-        hasTriggered = true;
+        if (other.CompareTag("Player") && !hasTriggered)
+        {
+            TriggerLevelMusicLoop.Post(gameObject);
+            hasTriggered = true;
+        }
     }
 }
