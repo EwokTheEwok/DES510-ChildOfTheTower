@@ -8,6 +8,7 @@ public class Controls : MonoBehaviour
     bool controlMenuActive = false;
 
     public GameObject ControlsMenu;
+    public GameObject PauseMenu;
     public GameObject resumeButton;
 
     EventSystem eventSystemScript;
@@ -55,6 +56,7 @@ public class Controls : MonoBehaviour
     public void PauseGame()
     {
         GameManager.Instance.Paused = true;
+        PauseMenu.SetActive(false);
         ControlsMenu.SetActive(true);
         isPaused = true;
         controlMenuActive = true;

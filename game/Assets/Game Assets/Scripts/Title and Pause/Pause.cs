@@ -23,6 +23,7 @@ public class Pause : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && ControlsMenu.activeSelf == true)
         {
+            isPaused = false;
             return;
         }
         else if (Input.GetKeyDown(KeyCode.Escape) && ControlsMenu.activeSelf == false)
@@ -39,7 +40,7 @@ public class Pause : MonoBehaviour
             }
 
 
-        } 
+        }
 
         TriggerScrollSound();
         TriggerControlMenuScrollSound();
