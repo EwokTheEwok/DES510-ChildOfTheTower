@@ -4,6 +4,13 @@
   "BasePlatform": "Windows",
   "PluginLibs": [
    {
+    "LibName": "Wwise Silence",
+    "LibId": "6619138",
+    "Type": "Source",
+    "DLL": "AkSilenceGenerator",
+    "StaticLib": "AkSilenceSource"
+   },
+   {
     "LibName": "Wwise Parametric EQ",
     "LibId": "6881283",
     "Type": "Effect",
@@ -42,6 +49,6 @@
     "StaticLib": "AkSidechainFX"
    }
   ],
-  "FileHash": "{5D9423CA-99A7-A5F2-2FF1-0244D8E40A2C}"
+  "FileHash": "{716A630B-175B-CF50-2B44-6B43FD5817EF}"
  }
 }
