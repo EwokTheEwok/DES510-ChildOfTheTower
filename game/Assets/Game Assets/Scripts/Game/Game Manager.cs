@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,13 +5,22 @@ using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using static Unity.Cinemachine.CinemachineCore;
+
+public enum GameEventTypes
+{
+    Fall,
+    Checkpoint,
+    Restart,
+    RainStart,
+    RainStop
+}
 
 public class GameManager : MonoBehaviour
 {
     private static GameManager _Instance;
     public static GameManager Instance { get => _Instance; }
     public Vector3 TowerPivot { get => _TowerCollider.transform.position; }
+    public Tower Tower { get => _TowerCollider.GetComponent<Tower>(); }
     public GameObject Player { get => _Player; }
     public GameObject Blocks { get => _Blocks; }
     public GameObject UI { get => _UI; }
@@ -62,12 +70,8 @@ public class GameManager : MonoBehaviour
 
 
     [Header("Events")]
-    public UnityEvent<float> _ShadowDistanceEvent = new();
-    public UnityEvent<GameObject> _CheckpointEvent = new();
-    public UnityEvent<bool> _RainEvent = new();
-    public UnityEvent _FallInShadowEvent = new();
-    public UnityEvent _RestartEvent = new();
-    public UnityEvent<bool> _PauseEvent = new();
+    [HideInInspector] public UnityEvent<GameEventTypes> GameEvent = new();
+    [HideInInspector] public UnityEvent<bool> PauseEvent = new();
 
     IEnumerator _RestartCoroutine;
 
@@ -82,7 +86,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Game Manager: Pause (" + value + ")");
             _Paused = value;
-            _PauseEvent?.Invoke(value);
+            PauseEvent?.Invoke(value);
         }
     }
 
@@ -134,7 +138,7 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
         float distanceFromPlayer = _Player.transform.position.y - _ShadowOcean.transform.position.y;
-        _ShadowDistanceEvent?.Invoke(distanceFromPlayer);
+
         if (_Moving && !_Paused)
         {
             float distanceFromMinimum = distanceFromPlayer - _MinDistance;
@@ -160,7 +164,7 @@ public class GameManager : MonoBehaviour
 
     private void FellInShadow()
     {
-        _FallInShadowEvent?.Invoke();
+        GameEvent?.Invoke(GameEventTypes.Fall);
         _BlockController.Reset();
         _CharaController.excludeLayers = ~0;
         _Moving = false;
@@ -195,7 +199,7 @@ public class GameManager : MonoBehaviour
         _CharaController.detectCollisions = true;
         _PlayerActionMap.Enable();
         PlayerCamera.ResetTarget();
-        _RestartEvent?.Invoke();
+        GameEvent?.Invoke(GameEventTypes.Restart);
 
         yield return null;
     }
@@ -218,25 +222,25 @@ public class GameManager : MonoBehaviour
         {
             case WorldFlag.Rain:
                 _Raining = true;
+                GameEvent?.Invoke(GameEventTypes.RainStart);
                 _RainSystem.Play();
                 break;
             case WorldFlag.Clear:
                 _Raining = false;
+                GameEvent?.Invoke(GameEventTypes.RainStop);
                 _RainSystem.Stop();
                 break;
             default:
                 break;
         }
 
-        _RainEvent?.Invoke(_Raining);
-
         _CurrentCheckpoint = checkpointObject;
-        _CheckpointEvent?.Invoke(checkpointObject);
+        GameEvent?.Invoke(GameEventTypes.Checkpoint);
         Debug.Log("Checkpoint: " + _CheckpointList.IndexOf(_CurrentCheckpoint) + " Activated");
     }
 
-    public void AddPauseListener(UnityAction<bool> call)
+    public float ShadowOceanDistance()
     {
-        _PauseEvent.AddListener(call);
+        return _Player.transform.position.y - _ShadowOcean.transform.position.y;
     }
 }

@@ -2,7 +2,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class WindowTower : MonoBehaviour
+public class Tower : MonoBehaviour
 {
     GameObject _Player;
     Camera _Camera;
@@ -19,7 +19,7 @@ public class WindowTower : MonoBehaviour
     bool _Active = false;
 
     [Header("Events")]
-    public UnityEvent<bool> _EnterEvent = new();
+    [HideInInspector] public UnityEvent<bool> InsideEvent = new();
 
     private void Start()
     {
@@ -60,7 +60,7 @@ public class WindowTower : MonoBehaviour
         {
             GameManager.Instance.PlayerCamera.SetInsideMode(true);
             _Active = true;
-            _EnterEvent?.Invoke(true);
+            InsideEvent?.Invoke(true);
             _TweenObject.Complete();
             _TweenObject = DOTween.To(() => _TransitionValue, x => _TransitionValue = x, 0f, _TweenDuration).SetEase(Ease.InOutSine);
         }
@@ -72,7 +72,7 @@ public class WindowTower : MonoBehaviour
         {
             GameManager.Instance.PlayerCamera.SetInsideMode(false);
             _Active = false;
-            _EnterEvent?.Invoke(false);
+            InsideEvent?.Invoke(false);
             _TweenObject.Complete();
             _TweenObject = DOTween.To(() => _TransitionValue, x => _TransitionValue = x, 1f, _TweenDuration).SetEase(Ease.InOutSine);
         }

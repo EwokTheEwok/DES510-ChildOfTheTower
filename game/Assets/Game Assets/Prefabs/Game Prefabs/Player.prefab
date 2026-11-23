@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 5149028594628649446}
   - component: {fileID: 6863664941801365428}
   - component: {fileID: 6265864327516568833}
-  - component: {fileID: 3920231712772468351}
+  - component: {fileID: 2691565516604770673}
   m_Layer: 0
   m_Name: Character Sprite
   m_TagString: Untagged
@@ -208,7 +208,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3920231712772468351
+--- !u!114 &2691565516604770673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,9 +217,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2108936073437521717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 886e764854a98734d822e34569d0305b, type: 3}
+  m_Script: {fileID: 11500000, guid: b03268f736dec20489e7cd87b7dc72dd, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TriggerPlayerAudio
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAudio
   FootstepsEvent:
     idInternal: 0
     valueGuidInternal: 
@@ -244,23 +244,27 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: c48c47048ed180c4f8d27ef02eed7c0b, type: 2}
-  StoneFootstepsState:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: fe3d0ef4980b8494c801f328ffb5993b, type: 2}
-  BlockFootstepsState:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: efca7fcabaf3c8f4a8ae10f023387cce, type: 2}
-  WoodFootstepsState:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 7af0a772ade7b9f41b4520b2f43ba687, type: 2}
-  SandFootstepsState:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 88003e68af5b57c4da5d9a4e6fe1fe26, type: 2}
-  CharControl: {fileID: 4300094999985306154}
+  _FootstepsEvents:
+  - AudioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: efca7fcabaf3c8f4a8ae10f023387cce, type: 2}
+    TagName: Block
+  - AudioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 88003e68af5b57c4da5d9a4e6fe1fe26, type: 2}
+    TagName: Sand
+  - AudioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: fe3d0ef4980b8494c801f328ffb5993b, type: 2}
+    TagName: Stone
+  - AudioEvent:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 7af0a772ade7b9f41b4520b2f43ba687, type: 2}
+    TagName: Wood
 --- !u!1 &2435213661175931643
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +280,6 @@ GameObject:
   - component: {fileID: 271766098097621373}
   - component: {fileID: 4797419537412347028}
   - component: {fileID: 2339846696501332739}
-  - component: {fileID: 2121220300670925298}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -297,7 +300,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
-  - {fileID: 8000011771249522385}
   - {fileID: 4126099233337113801}
   - {fileID: 4938834304659548170}
   - {fileID: 8345844457809112781}
@@ -513,21 +515,6 @@ MonoBehaviour:
   _MoveAccel: 30
   _MoveDeaccel: 70
   _FallingJumpTime: 0.25
-  _JumpEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3920231712772468351}
-        m_TargetAssemblyTypeName: PlayerAnimationAudio, Assembly-CSharp
-        m_MethodName: PlayJump
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _MinTimeWait: 8
   _MaxTimeWait: 15
   blockController: {fileID: 271766098097621373}
@@ -562,96 +549,24 @@ MonoBehaviour:
   _GuideBlockPrefab: {fileID: 2741366402790427780, guid: fefcb85cb12b5c940b655160ec18117a, type: 3}
   _BlockPrefab: {fileID: 8990706033399320676, guid: b0929d630b1f8204381e7f2148d7b6c5, type: 3}
   _AxisPlanePrefab: {fileID: 6094325047987311234, guid: 6a11b9a7a97f72840aadc222ec970750, type: 3}
-  _BlockEvent:
+  BlockEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7402535353090770308}
-        m_TargetAssemblyTypeName: BrickAudioSystem, Assembly-CSharp
-        m_MethodName: PlaceBrick
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _UndoEvent:
+      m_Calls: []
+  UndoEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7402535353090770308}
-        m_TargetAssemblyTypeName: BrickAudioSystem, Assembly-CSharp
-        m_MethodName: RemoveBrick
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _LimitEvent:
+      m_Calls: []
+  LimitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7402535353090770308}
-        m_TargetAssemblyTypeName: BrickAudioSystem, Assembly-CSharp
-        m_MethodName: BrickLimit
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _BubbleEvent:
+      m_Calls: []
+  BubbleEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3456890237149601674}
-        m_TargetAssemblyTypeName: BubbleAudio, Assembly-CSharp
-        m_MethodName: PlayBubbleEvent
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _PlaceAnimationEvent:
+      m_Calls: []
+  PlaceAnimationEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3827949712215586968}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: OnPlaceBrick
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _UndoAnimationEvent:
+      m_Calls: []
+  UndoAnimationEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3827949712215586968}
-        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
-        m_MethodName: UndoBlock
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &4797419537412347028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -710,90 +625,13 @@ MonoBehaviour:
   - Oopsies.
   - 
   _TypeSpeed: 0.05
-  _RandomBrickDialogueEvent:
+  BlockDialogueEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2121220300670925298}
-        m_TargetAssemblyTypeName: BrickDialogueAudio, Assembly-CSharp
-        m_MethodName: PlayRandomBrickDialogue
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _BrickDialogueEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2121220300670925298}
-        m_TargetAssemblyTypeName: BrickDialogueAudio, Assembly-CSharp
-        m_MethodName: PlayTargetedBrickDialogue
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _BlockActive: 0
   _DisplayDelay: 5
   _BetweenLineDelay: 0
   _Height: 2.5
---- !u!114 &2121220300670925298
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2435213661175931643}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91b8822d01ed8ca48b8cf98006183cfb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BrickDialogueAudio
-  RandomBrickDialogueAudio:
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 23444d9a47d8dab42b8c7f1147797c22, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: db16a385e6697aa47a6c45b01ac0b420, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a52a8cca44f09bd44847151d996168aa, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9032a9cbd2bbc0043a50762dbf6bf59d, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 7c7d0b4bfd0a5324cbac9358092b2fe6, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 74dbdf35105380b4eb179984231d30c9, type: 2}
-  TargetedBrickDialogueAudio:
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 994ea581a35a694499654ba46045a329, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 65135e31286e26f459cbbe89161c7449, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: c1a8a54806ef82f4fa95bbc68cdcdf6c, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 94412c89a36415a44b7770bc154914d1, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d514a5d5a2f999d4bb0bbad06867a75c, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: b437a0eed35d6ce4b9dc1c8fb7f29010, type: 2}
 --- !u!1 &2819991752507397099
 GameObject:
   m_ObjectHideFlags: 0
@@ -1149,137 +987,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShadow
   projector: {fileID: 7061298404472015250}
---- !u!1 &7647005384507880318
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8000011771249522385}
-  - component: {fileID: 7402535353090770308}
-  - component: {fileID: 3456890237149601674}
-  m_Layer: 0
-  m_Name: Player Audio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8000011771249522385
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7647005384507880318}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2578158340134977601}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7402535353090770308
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7647005384507880318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a24c4c4982f081a4f987d0633c1875d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BrickAudioSystem
-  BrickPlaceEvents:
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 2904430e621aa65439cbc7d359e3ce12, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: f81f0bcd05690fc419af3bfaa5924c66, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: c8f98528d75fe8e4b8fd26a450fec9db, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 9b705c1040dff3e4e93d2acc9196e51e, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 0803e2e7165231b4e90242003cd12436, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 1b3ef33379d10244399c471611703cb6, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e3a398251dfa52a4c8f3afc6d71dcc89, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 53ff16204489b1b4d81677b95be93e63, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 1115af2d5042d71469206a46cf991b29, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: cf5fab494ec0bea45b0fb8668dc46164, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d33a8870297dc5940b27e06e4e75af9b, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 23245ccd1173b62419043efabbb5b205, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: e5ba0054eebfdc74b97e0a125b423001, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d4cf2aef2eb7dd94f82808698b0c9f74, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 5072e358d9644284d9267aa9322d8742, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3abf8c30801ed534b83f84e2f2eda78e, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 415a9cd4010bdf74c957e69c9ba8e57c, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: c058cfc94f2537c43a8e60085f8ddb38, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 858b719e01c38774b8f10369a847eaac, type: 2}
-  - idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 3c17a06501a90534bb64d9f2dd358446, type: 2}
-  RemoveEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 6acd9d1018df62145b26b5323c919a81, type: 2}
-  BrickReset:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 5f8191e31a05a914b8da196408eb4504, type: 2}
-  LimitEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 6295a69da4531284e9155046546500f0, type: 2}
---- !u!114 &3456890237149601674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7647005384507880318}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7fe0c991a08736149a7f4b59bc85f910, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BubbleAudio
-  BubbleEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: d54a9f4970e66cc469d2d44b34ae269d, type: 2}

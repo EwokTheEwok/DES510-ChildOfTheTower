@@ -15,9 +15,10 @@ public class BrickDialogue : MonoBehaviour
     [SerializeField] private string[] _TargetedLines;
     [SerializeField] private float _TypeSpeed = 0.05f;
 
-    [Header("Events")]
-    public UnityEvent<int, GameObject> _RandomBrickDialogueEvent = new();
-    public UnityEvent<int, GameObject> _BrickDialogueEvent = new();
+
+    [HideInInspector] public UnityEvent<GameObject, BlockDialogueType> BlockDialogueEvent = new();
+    //UnityEvent<int, GameObject> _RandomBrickDialogueEvent = new();
+    //UnityEvent<int, GameObject> _BrickDialogueEvent = new();
 
     private bool _IsRandomTalking = false;
     private bool _IsTargetedTalking = false;
@@ -43,7 +44,7 @@ public class BrickDialogue : MonoBehaviour
 
     private void Start()
     {
-        GameManager.Instance._RestartEvent.AddListener(OnRestart);
+        GameManager.Instance.GameEvent.AddListener(OnRestart);
 
         _BrickCanvas = GameManager.Instance.UI.transform.Find("Block Canvas").gameObject;
         _BrickBox = _BrickCanvas.transform.Find("BrickBox").gameObject;
@@ -93,7 +94,7 @@ public class BrickDialogue : MonoBehaviour
             _BrickText.text = "";
 
             int lineIndex = Random.Range(0, _RandomLines.Length);
-            _RandomBrickDialogueEvent?.Invoke(lineIndex, _BrickBox);
+            BlockDialogueEvent?.Invoke(_BrickBox, BlockDialogueType.Random);
 
             foreach (char c in _RandomLines[lineIndex])
             {
@@ -118,7 +119,7 @@ public class BrickDialogue : MonoBehaviour
 
         int index = Random.Range(MinIndex, MaxIndex);
 
-        _BrickDialogueEvent?.Invoke(index, _BrickBox);
+        BlockDialogueEvent?.Invoke(_BrickBox, BlockDialogueType.Targeted);
 
         while (_IsInsideTargetedCollider)
         {
@@ -148,7 +149,7 @@ public class BrickDialogue : MonoBehaviour
 
         _BrickBox.SetActive(true);
         _BrickText.text = "";
-        _BrickDialogueEvent?.Invoke(index, _BrickBox);
+        BlockDialogueEvent?.Invoke(_BrickBox, BlockDialogueType.Targeted);
 
         foreach (char c in _TargetedLines[index])
         {
@@ -223,10 +224,13 @@ public class BrickDialogue : MonoBehaviour
         }
     }
 
-    private void OnRestart()
+    private void OnRestart(GameEventTypes _type)
     {
-        StopTalking();
-        _RestartBrickCoroutine = RestartDialogue(Random.Range(3, 6));
-        StartCoroutine(_RestartBrickCoroutine);
+        if (_type == GameEventTypes.Restart)
+        {
+            StopTalking();
+            _RestartBrickCoroutine = RestartDialogue(Random.Range(3, 6));
+            StartCoroutine(_RestartBrickCoroutine);
+        }
     }
 }
