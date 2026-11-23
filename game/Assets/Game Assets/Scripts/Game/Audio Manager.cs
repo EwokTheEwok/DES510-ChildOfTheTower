@@ -2,81 +2,99 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem.UI;
+using UnityEngine.UIElements;
 
 public class AudioManager : MonoBehaviour
 {
     GameManager _GameManagerInstance;
+    NPCDialogueManager _NPCDialogueManagerInstance;
+    Tower _Tower;
 
     [Header("Triggered Music")]
-    [SerializeField] List<TriggeredAudio> _TriggeredMusic;
+    [SerializeField] TriggeredAudio[] _TriggeredMusic;
 
     [Header("Ambience")]
     [SerializeField] AK.Wwise.Event _InsideAmbience;
     [SerializeField] AK.Wwise.Event _OutsideAmbience;
-    [SerializeField] Tower _TowerObject;
 
     [Header("Rain")]
     [SerializeField] AK.Wwise.Event _Rain;
     [SerializeField] AK.Wwise.Event _Clear;
 
     [Header("NPCs")]
-    [SerializeField] AK.Wwise.Event _PeterDialogueAudio;
-    [SerializeField] AK.Wwise.Event _MargDialogueAudio;
-    [SerializeField] AK.Wwise.Event _ThomasDialogueAudio;
-    [SerializeField] NPCDialogueManager _NPCDialogueManager;
+    [SerializeField] AK.Wwise.Event _PeterDialogue;
+    [SerializeField] AK.Wwise.Event _MargDialogue;
+    [SerializeField] AK.Wwise.Event _ThomasDialogue;
 
     [Header("Animation")]
-    [SerializeField] AK.Wwise.Event _PeterAnimationAudio;
-    [SerializeField] AK.Wwise.Event _MargaretAnimationAudio;
-    [SerializeField] AK.Wwise.Event _ThomasAnimationAudio;
-    List<NPC> _NPCList;
+    [SerializeField] AK.Wwise.Event _PeterIdle;
+    [SerializeField] AK.Wwise.Event _MargaretIdle;
+    [SerializeField] AK.Wwise.Event _ThomasIdle;
+    List<NPCAudio> _NPCAudioList;
     GameObject _Player;
 
     [Header("Shadow Ocean")]
-    [SerializeField] AK.Wwise.Event _ShadowOceanAudio;
-    [SerializeField] AK.Wwise.Event _FadeOceanAudio;
-    [SerializeField] AK.Wwise.Event _StopOceanAudio;
-    [SerializeField] AK.Wwise.Event _FallOceanAudio;
+    [SerializeField] AK.Wwise.Event _ShadowOcean;
+    [SerializeField] AK.Wwise.Event _FadeOcean;
+    [SerializeField] AK.Wwise.Event _StopOcean;
+    [SerializeField] AK.Wwise.Event _FallOcean;
     [SerializeField] float _playerDistanceThreshold = 13.1f;
     bool _OceanAudioPlaying = false;
 
     [Header("Checkpoints")]
-    public AK.Wwise.Event _CheckpointAudio;
-    public AK.Wwise.Event _RestartAudio;
+    [SerializeField] AK.Wwise.Event _Checkpoint;
+    [SerializeField] AK.Wwise.Event _Restart;
 
-    [Header("Player")]
-    public AK.Wwise.Event _JumpAudio;
-    public AK.Wwise.Event _WalkAudio;
+    [Header("Block Dialogue")]
+    [SerializeField] AK.Wwise.Event[] _RandomBlock;
+    [SerializeField] AK.Wwise.Event[] _TargetedBlock;
+
+    [Header("Bubble")]
+    [SerializeField] AK.Wwise.Event _MissingBubble;
+
+    [Header("Block")]
+    [SerializeField] AK.Wwise.Event[] _BlockMove;
+    [SerializeField] AK.Wwise.Event _BlockStart;
+    [SerializeField] AK.Wwise.Event _BlockLimit;
+    [SerializeField] AK.Wwise.Event _BlockUndo;
 
     //[Header("Doors")]
     //public AK.Wwise.Event DoorOpenEvent;
 
     void Start()
     {
+        InputSystemUIInputModule a;
+        a.
+        
         _GameManagerInstance = GameManager.Instance;
+        _NPCDialogueManagerInstance = NPCDialogueManager.Instance;
+        _Tower = _GameManagerInstance.Tower;
         _Player = GameManager.Instance.Player;
-        _NPCList = GetComponents<NPC>().ToList();
+        _NPCAudioList = FindObjectsByType<NPCAudio>().ToList();
 
         foreach (TriggeredAudio _tm in _TriggeredMusic)
         {
-            _tm.TriggerObject.ActivateEvent.AddListener(_tm.PlayAudio);
+            AudioTrigger at = _tm.TriggerObject.gameObject.AddComponent<AudioTrigger>();
+            at.ActivateEvent.AddListener(_tm.PlayAudio);
         }
 
-        foreach (NPC npc in _NPCList)
+        foreach (NPCAudio _npc in _NPCAudioList)
         {
-            npc.AnimationAudioEvent.AddListener(PlayAnimationAudio);
+            _npc.AnimationAudioEvent.AddListener(PlayNPCIdleAudio);
         }
 
-        _TowerObject.InsideEvent.AddListener(PlayAmbienceAudio);
-        _NPCDialogueManager.NPCAudioEvent.AddListener(PlayDialogueAudio);
-        
-        _GameManagerInstance.FallOceanEvent.AddListener(PlayFallOceanAudio);
-        _GameManagerInstance.CheckpointEvent.AddListener(PlayCheckpointAudio);
-        _GameManagerInstance.RestartEvent.AddListener(PlayCheckpointAudio);
-        _GameManagerInstance.RainEvent.AddListener(PlayRainAudio);
+        _Tower.InsideEvent.AddListener(PlayAmbienceAudio);
+        _NPCDialogueManagerInstance.NPCAudioEvent.AddListener(PlayNPCDialogueAudio);
+        _GameManagerInstance.GameEvent.AddListener(PlayEventAudio);
 
-        _Player.GetComponent<PlayerMovement>().PlayerAudioEvent.AddListener(PlayPlayerAudio);
-
+        _Player.GetComponentInChildren<BrickDialogue>().BlockDialogueEvent.AddListener(PlayBlockDialogueAudio);
+        BlockController2 _bc = _Player.GetComponentInChildren<BlockController2>();
+        _bc.BubbleEvent.AddListener(PlayBubbleAudio);
+        _bc.BlockEvent.AddListener(PlayBlockAudio);
+        _bc.UndoEvent.AddListener(PlayBlockUndoAudio);
+        _bc.LimitEvent.AddListener(PlayBlockLimitAudio);
     }
 
     void Update()
@@ -93,80 +111,109 @@ public class AudioManager : MonoBehaviour
             _OutsideAmbience.Post(gameObject);
     }
 
-    void PlayRainAudio(bool _start)
-    {
-        if (_start)
-            _Rain.Post(gameObject);
-        else
-            _Clear.Post(gameObject);
-    }
-
-    void PlayDialogueAudio(GameObject _obj, CharacterNames _charName)
+    void PlayNPCDialogueAudio(GameObject _obj, CharacterNames _charName)
     {
         switch (_charName)
         {
             case CharacterNames.Peter:
-                _PeterDialogueAudio.Post(_obj);
+                _PeterDialogue.Post(_obj);
                 break;
             case CharacterNames.Margaret:
-                _MargDialogueAudio.Post(_obj);
+                _MargDialogue.Post(_obj);
                 break;
             case CharacterNames.Thomas:
-                _ThomasDialogueAudio.Post(_obj);
+                _ThomasDialogue.Post(_obj);
                 break;
             default:
                 break;
         }
     }
 
-    void PlayAnimationAudio(GameObject _obj, CharacterNames _charName)
+    void PlayNPCIdleAudio(GameObject _obj, CharacterNames _charName)
     {
         switch (_charName)
         {
             case CharacterNames.Peter:
-                _PeterAnimationAudio.Post(_obj);
+                _PeterIdle.Post(_obj);
                 break;
             case CharacterNames.Margaret:
-                _MargaretAnimationAudio.Post(_obj);
+                _MargaretIdle.Post(_obj);
                 break;
             case CharacterNames.Thomas:
-                _ThomasAnimationAudio.Post(_obj);
+                _ThomasIdle.Post(_obj);
                 break;
             default:
                 break;
         }
     }
 
-    void PlayFallOceanAudio()
-    {
-        _FallOceanAudio.Post(_Player);
-    }
-
-    void PlayCheckpointAudio(GameObject _obj)
-    {
-        _CheckpointAudio.Post(_obj);
-    }
-
-    void PlayCheckpointAudio()
-    {
-        _RestartAudio.Post(_Player);
-    }
-
-    void PlayPlayerAudio(GameObject _obj, PlayerEventType _type)
+    void PlayEventAudio(GameEventTypes _type)
     {
         switch (_type)
         {
-            case PlayerEventType.Walk:
-                _WalkAudio.Post(_obj);
+            case GameEventTypes.Fall:
+                _FallOcean.Post(_Player);
+                _StopOcean.Post(gameObject);
+                _OceanAudioPlaying = false;
                 break;
-            case PlayerEventType.Jump:
-                _JumpAudio.Post(_obj);
+            case GameEventTypes.Checkpoint:
+                _Checkpoint.Post(_Player);
                 break;
-                //CONTINUE
+            case GameEventTypes.Restart:
+                _Restart.Post(_Player);
+                break;
+            case GameEventTypes.RainStart:
+                _Rain.Post(_Player);
+                break;
+            case GameEventTypes.RainStop:
+                _Clear.Post(_Player);
+                break;
             default:
                 break;
         }
-        
+    }
+
+    void PlayBlockDialogueAudio(GameObject _obj, BlockDialogueType _type)
+    {
+        switch (_type)
+        {
+            case BlockDialogueType.Random:
+                int randomIndex = UnityEngine.Random.Range(0, _RandomBlock.Length);
+                _RandomBlock[randomIndex].Post(_obj);
+                break;
+            case BlockDialogueType.Targeted:
+                int targetIndex = UnityEngine.Random.Range(0, _RandomBlock.Length);
+                _RandomBlock[targetIndex].Post(_obj);
+                break;
+            default:
+                break;
+        }
+    }
+
+    void PlayBubbleAudio()
+    {
+        _MissingBubble.Post(_Player);
+    }
+
+    void PlayBlockAudio(int _index, GameObject _obj)
+    {
+        if (_index == 0)
+        {
+            _BlockStart.Post(_obj);
+            _BlockMove[0].Post(_obj);
+        }
+        else if (_index < _BlockMove.Length)
+            _BlockMove[_index].Post(_obj);
+    }
+
+    void PlayBlockUndoAudio(GameObject _obj)
+    {
+        _BlockUndo.Post(_obj);
+    }
+
+    void PlayBlockLimitAudio(GameObject _obj)
+    {
+        _BlockLimit.Post(_obj);
     }
 
     void UpdateOceanDistance()
@@ -175,32 +222,23 @@ public class AudioManager : MonoBehaviour
 
         if (distance < _playerDistanceThreshold && !_OceanAudioPlaying)
         {
-            _ShadowOceanAudio.Post(gameObject);
+            _ShadowOcean.Post(gameObject);
             _OceanAudioPlaying = true;
         }
-
         else if (distance > _playerDistanceThreshold)
         {
-            _FadeOceanAudio.Post(gameObject);
+            _FadeOcean.Post(gameObject);
             _OceanAudioPlaying = false;
         }
-
-        /* do on fall in shadow
-        else if (distance < 2)
-        {
-            StopShadows.Post(gameObject);
-            _isPlaying = false;
-        }
-        */
     }
 
     void UpdateCharacterDistances()
     {
         float threshold = 1000f;
         float distance = threshold;
-        foreach (NPC npc in _NPCList)
+        foreach (NPCAudio _npc in _NPCAudioList)
         {
-            distance = Vector3.Distance(npc.transform.position, _Player.transform.position);
+            distance = Vector3.Distance(_npc.transform.position, _Player.transform.position);
             if (distance < threshold)
             {
                 threshold = distance;
@@ -215,10 +253,16 @@ public class AudioManager : MonoBehaviour
 public class TriggeredAudio
 {
     public AK.Wwise.Event AudioEvent;
-    public AudioTrigger TriggerObject;
+    public BoxCollider TriggerObject;
 
     public void PlayAudio(GameObject _obj)
     {
         AudioEvent.Post(_obj);
     }
+}
+
+public enum BlockDialogueType
+{
+    Random,
+    Targeted
 }

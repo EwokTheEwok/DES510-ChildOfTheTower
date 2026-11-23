@@ -2,16 +2,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
-public enum PlayerEventType
-{
-    Walk,
-    Jump,
-    Land,
-    Falling,
-    Place,
-    WakeUp
-}
-
 public class PlayerMovement : MonoBehaviour
 {
     //Public
@@ -26,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     bool _HasJumped = false;
 
     //Events
-    [HideInInspector] public UnityEvent<GameObject, PlayerEventType> PlayerAudioEvent = new();
+    //[HideInInspector] public UnityEvent<GameObject, PlayerEventType> PlayerAudioEvent = new();
 
     //Private
     Camera _Camera;
@@ -64,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         UpdateIdleWaitTime();
-        GameManager.Instance.AddPauseListener(OnPause);
+        GameManager.Instance.PauseEvent.AddListener(OnPause);
         _Camera = Camera.main;
         _CharControl = GetComponent<CharacterController>();
         _PlayerInput = GetComponent<PlayerInput>();
@@ -135,15 +125,17 @@ public class PlayerMovement : MonoBehaviour
             {
                 _Animator.SetBool("isWalking", false);
 
-                _Animator.SetFloat("lastInputX", _MoveDir.x);
-                _Animator.SetFloat("lastInputY", _MoveDir.y);
+                _Animator.SetFloat("lastInputX", Mathf.Round(_MoveDir.x));
+                _Animator.SetFloat("lastInputY", Mathf.Round(_MoveDir.y));
 
             }
 
             _MoveDir = context.ReadValue<Vector2>();
 
-            _Animator.SetFloat("inputX", _MoveDir.x);
-            _Animator.SetFloat("inputY", _MoveDir.y);
+            _Animator.SetFloat("inputX", Mathf.Round(_MoveDir.x));
+            _Animator.SetFloat("inputY", Mathf.Round(_MoveDir.y));
+
+            //_MoveDir.Normalize();
 
             if (_MoveDir.magnitude > 0.0f)
                 _MoveInput = true;
@@ -158,11 +150,10 @@ public class PlayerMovement : MonoBehaviour
         {
             _HasJumped = true;
             _Animator.SetTrigger("Jumping");
-            PlayerAudioEvent?.Invoke(gameObject, PlayerEventType.Jump);
+            //PlayerAudioEvent?.Invoke(gameObject, PlayerEventType.Jump);
             _Velocity.y = _JumpSpeed;
 
-            _Animator.SetFloat("inputX", _MoveDir.x);
-            _Animator.SetFloat("inputY", _MoveDir.y);
+
         }
     }
 
@@ -209,10 +200,10 @@ public class PlayerMovement : MonoBehaviour
         _GoalWaitTime = _MinTimeWait + ((_MaxTimeWait - _MinTimeWait) * _RandomMulti);
     }
 
-    public void PlayWalkAudio()
-    {
-        PlayerAudioEvent?.Invoke(gameObject, PlayerEventType.Walk);
-    }
+    //public void PlayWalkAudio()
+    //{
+    //    PlayerAudioEvent?.Invoke(gameObject, PlayerEventType.Walk);
+    //}
 
     public void OnPause(bool value)
     {

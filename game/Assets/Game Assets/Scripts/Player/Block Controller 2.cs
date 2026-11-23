@@ -51,12 +51,12 @@ public class BlockController2 : MonoBehaviour
     float _ArrowUIDistance;
 
     [Header("Events")]
-    public UnityEvent<int, GameObject> _BlockEvent = new();
-    public UnityEvent<GameObject> _UndoEvent = new();
-    public UnityEvent<GameObject> _LimitEvent = new();
-    public UnityEvent<GameObject, bool> _BubbleEvent = new();
-    public UnityEvent<int> _PlaceAnimationEvent = new();
-    public UnityEvent<int, bool> _UndoAnimationEvent = new();
+    [HideInInspector] public UnityEvent<int, GameObject> BlockEvent = new();
+    [HideInInspector] public UnityEvent<GameObject> UndoEvent = new();
+    [HideInInspector] public UnityEvent<GameObject> LimitEvent = new();
+    [HideInInspector] public UnityEvent BubbleEvent = new();
+    [HideInInspector] public UnityEvent<int> PlaceAnimationEvent = new();
+    [HideInInspector] public UnityEvent<int, bool> UndoAnimationEvent = new();
 
     [Header("States")]
     bool _Active = false;
@@ -79,7 +79,7 @@ public class BlockController2 : MonoBehaviour
 
     void Start()
     {
-        GameManager.Instance.AddPauseListener(OnPause);
+        GameManager.Instance.PauseEvent.AddListener(OnPause);
         _CharacterController = GetComponent<CharacterController>();
 
         _ArrowUIDistance = _BlockSize + 1f;
@@ -221,9 +221,9 @@ public class BlockController2 : MonoBehaviour
                 Debug.Log(nodeViewPos.x + " " + playerViewPos.x);
 
                 if (nodeViewPos.x < playerViewPos.x)
-                    _PlaceAnimationEvent?.Invoke(0);
+                    PlaceAnimationEvent?.Invoke(0);
                 else
-                    _PlaceAnimationEvent?.Invoke(1);
+                    PlaceAnimationEvent?.Invoke(1);
 
                 _AxisPlaneRenderer.material.SetVector("_Origin", new Vector3(
                             nearestNode.transform.position.x,
@@ -238,7 +238,7 @@ public class BlockController2 : MonoBehaviour
                 _Block.SetActive(true);
                 _AxisPlane.SetActive(true);
                 _GuideBlock.SetActive(false);
-                _BlockEvent?.Invoke(0, _Block);
+                BlockEvent?.Invoke(0, _Block);
                 _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
                 _PlayerBlockUI.SetTile(_BlockList.Count - 1, true);
                 _AxisBlockPosition = _Block.transform.position;
@@ -305,7 +305,7 @@ public class BlockController2 : MonoBehaviour
         if (!hit && _BlockList.Count < _BlockLimit)
         {
             _IsMovingBlock = true;
-            _BlockEvent?.Invoke(_BlockList.Count, _Block);
+            BlockEvent?.Invoke(_BlockList.Count, _Block);
             Vector3 newBlockPlacement = blockTransform.position + blockTransform.TransformDirection(localXY);
             _Block = Instantiate(_BlockPrefab, _Block.transform.position, blockTransform.rotation, _BlockContainer.transform);
             _TweenObject = _Block.transform.DOMove(newBlockPlacement, _TweenDuration).SetEase(_BlockEasing).OnComplete(() => {
@@ -323,7 +323,7 @@ public class BlockController2 : MonoBehaviour
             if (index == _BlockList.Count - 2)
             {   //hit previous block -> undo
                 _IsMovingBlock = true;
-                _UndoEvent?.Invoke(_Block);
+                UndoEvent?.Invoke(_Block);
                 Vector3 previousPosition = _BlockList[^2].transform.position;
                 _TweenObject = _Block.transform.DOMove(previousPosition, _TweenDuration).SetEase(_BlockEasing).OnComplete(() =>
                 {
@@ -348,7 +348,7 @@ public class BlockController2 : MonoBehaviour
 
         if (limitHit)
         {
-            _LimitEvent?.Invoke(_Block);
+            LimitEvent?.Invoke(_Block);
             _IsMovingBlock = true;
             float v = 0f;
             DOTween.To(() => v, x => v = x, 1f, _TweenDuration).OnComplete(() => _IsMovingBlock = false);
@@ -360,7 +360,7 @@ public class BlockController2 : MonoBehaviour
         if (context.started)
         {
             if (_Active)
-                _UndoAnimationEvent?.Invoke(BlockDirection(), false);
+                UndoAnimationEvent?.Invoke(BlockDirection(), false);
             _InputUndo = true;
             _FastRecover = false;
             foreach (GameObject block in _BlockList)
@@ -377,7 +377,7 @@ public class BlockController2 : MonoBehaviour
         {
             _InputUndo = false;
             if (_Active)
-                _UndoAnimationEvent?.Invoke(BlockDirection(), true);
+                UndoAnimationEvent?.Invoke(BlockDirection(), true);
         }
     }
 
@@ -385,7 +385,7 @@ public class BlockController2 : MonoBehaviour
     {
         if (_BlockList.Count > 1)
         {
-            _UndoEvent?.Invoke(_Block);
+            UndoEvent?.Invoke(_Block);
             _IsMovingBlock = true;
             Vector3 previousPosition = _BlockList[^2].transform.position;
 
@@ -406,8 +406,8 @@ public class BlockController2 : MonoBehaviour
         }
         else
         {
-            _UndoAnimationEvent?.Invoke(BlockDirection(), true);
-            _UndoEvent?.Invoke(_Block);
+            UndoAnimationEvent?.Invoke(BlockDirection(), true);
+            UndoEvent?.Invoke(_Block);
             _Active = false;
             _PlayerBlockUI.SetPanelsActive(false);
             _AxisPlane.SetActive(false);
@@ -569,7 +569,7 @@ public class BlockController2 : MonoBehaviour
         {
             if (!_MissingBubbleActive && !_InputUndo)
             {
-                _BubbleEvent?.Invoke(gameObject, true);
+                BubbleEvent?.Invoke();
                 _MissingBubbleActive = true;
                 _MissingBlockSprite.SetActive(_MissingBubbleActive);
             }

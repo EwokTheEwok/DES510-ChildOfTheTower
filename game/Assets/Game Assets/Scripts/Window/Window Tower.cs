@@ -19,8 +19,7 @@ public class Tower : MonoBehaviour
     bool _Active = false;
 
     [Header("Events")]
-    public UnityEvent<bool> _InsideEvent = new();
-    public UnityEvent<bool> InsideEvent { get => _InsideEvent; }
+    [HideInInspector] public UnityEvent<bool> InsideEvent = new();
 
     private void Start()
     {
@@ -61,7 +60,7 @@ public class Tower : MonoBehaviour
         {
             GameManager.Instance.PlayerCamera.SetInsideMode(true);
             _Active = true;
-            _InsideEvent?.Invoke(true);
+            InsideEvent?.Invoke(true);
             _TweenObject.Complete();
             _TweenObject = DOTween.To(() => _TransitionValue, x => _TransitionValue = x, 0f, _TweenDuration).SetEase(Ease.InOutSine);
         }
@@ -73,7 +72,7 @@ public class Tower : MonoBehaviour
         {
             GameManager.Instance.PlayerCamera.SetInsideMode(false);
             _Active = false;
-            _InsideEvent?.Invoke(false);
+            InsideEvent?.Invoke(false);
             _TweenObject.Complete();
             _TweenObject = DOTween.To(() => _TransitionValue, x => _TransitionValue = x, 1f, _TweenDuration).SetEase(Ease.InOutSine);
         }

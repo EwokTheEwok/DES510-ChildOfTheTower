@@ -5,16 +5,8 @@ public class NPC : MonoBehaviour
 {
     public string[] DialogueLines;
     public string NPCName;
-    public CharacterNames CharacterName;
 
     UnityEvent<GameObject, bool> _ActivateEvent = new();
-    [HideInInspector] public UnityEvent<GameObject, CharacterNames> AnimationAudioEvent = new();
-
-
-    public void PlayAnimationAudio()
-    {
-        AnimationAudioEvent?.Invoke(gameObject, CharacterName);
-    }
 
     private void OnTriggerEnter(Collider collision)
     {

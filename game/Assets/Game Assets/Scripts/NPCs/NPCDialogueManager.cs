@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public enum CharacterNames
 {
@@ -15,7 +15,9 @@ public enum CharacterNames
 
 public class NPCDialogueManager : MonoBehaviour
 {
-    
+    public static NPCDialogueManager Instance { get => _Instance; }
+    private static NPCDialogueManager _Instance;
+
     [Header("NPC")]
     [SerializeField] string _NPCTag = "NPC";
     private List<GameObject> _NPCList = new();
@@ -55,10 +57,20 @@ public class NPCDialogueManager : MonoBehaviour
     [SerializeField] private Animator _Animator;
 
     [Header("Events")]
-    UnityEvent<GameObject, CharacterNames> _NPCAudioEvent = new();
-    public UnityEvent<GameObject, CharacterNames> NPCAudioEvent { get => _NPCAudioEvent; }
+    [HideInInspector] public UnityEvent<GameObject, CharacterNames> NPCAudioEvent = new();
 
-
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            _Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -104,7 +116,7 @@ public class NPCDialogueManager : MonoBehaviour
                     PeterLocal.enabled = true;
                     MargaretLocal.enabled = false;
                     ThomasLocal.enabled = false;
-                    _NPCAudioEvent?.Invoke(_CurrentNPC, CharacterNames.Peter);
+                    NPCAudioEvent?.Invoke(_CurrentNPC, CharacterNames.Peter);
 
                 }
                 else if (_NameText.text == "Margaret")
@@ -116,7 +128,7 @@ public class NPCDialogueManager : MonoBehaviour
                     PeterLocal.enabled = false;
                     MargaretLocal.enabled = true;
                     ThomasLocal.enabled = false;
-                    _NPCAudioEvent?.Invoke(_CurrentNPC, CharacterNames.Margaret);
+                    NPCAudioEvent?.Invoke(_CurrentNPC, CharacterNames.Margaret);
 
                 }
                 else if (_NameText.text == "Thomas")
@@ -128,7 +140,7 @@ public class NPCDialogueManager : MonoBehaviour
                     PeterLocal.enabled = false;
                     MargaretLocal.enabled = false;
                     ThomasLocal.enabled = true;
-                    _NPCAudioEvent?.Invoke(_CurrentNPC, CharacterNames.Thomas);
+                    NPCAudioEvent?.Invoke(_CurrentNPC, CharacterNames.Thomas);
 
                 }
 
