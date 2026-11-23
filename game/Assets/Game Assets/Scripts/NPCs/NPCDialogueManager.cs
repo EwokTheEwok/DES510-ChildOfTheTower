@@ -64,7 +64,6 @@ public class NPCDialogueManager : MonoBehaviour
         if (Instance == null)
         {
             _Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
