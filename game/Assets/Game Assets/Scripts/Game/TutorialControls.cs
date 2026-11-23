@@ -1,30 +1,24 @@
 using System.Collections;
 using TMPro;
-using Unity.Collections;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UI;
-using static System.Net.Mime.MediaTypeNames;
 
 public class TutorialControls : MonoBehaviour
 {
-    [SerializeField] private UnityEngine.UI.Image controlBox;
-    [SerializeField] private GameObject ControlBox;
-    [SerializeField] private TMP_Text ControlText1;
-    [SerializeField] private TMP_Text ControlText2;
-    [SerializeField] private UnityEngine.UI.Image buttons;
-    [SerializeField] private UnityEngine.UI.Image buttons2;
+    [SerializeField] private UnityEngine.UI.Image tutorialBox;
+    [SerializeField] private GameObject TutorialBox;
+    [SerializeField] private UnityEngine.UI.Image TutorialImage1;
+    [SerializeField] private UnityEngine.UI.Image TutorialImage2;
+    [SerializeField] private TMP_Text TutorialText1;
+    [SerializeField] private TMP_Text TutorialText2;
+
  
 
     [SerializeField] private string[] UI1Text;
     [SerializeField] private string[] UI2Text;
     [SerializeField] private float TypeSpeed = 0.05f;
 
-    private int lineIndex = 0;
-
     private bool _InRange = false;
     private bool _IsActive = false;
-    private bool _IsTyping = false;
 
     public float _LineDelay = 2.0f;
     public float _EndDelay = 7.0f;
@@ -36,11 +30,11 @@ public class TutorialControls : MonoBehaviour
 
     private void Start()
     {
-        controlBox.CrossFadeAlpha(0.0f, 0.05f, false);
-        ControlText1.CrossFadeAlpha(0.0f, 0.05f, false);
-        ControlText2.CrossFadeAlpha(0.0f, 0.05f, false);
-        buttons.CrossFadeAlpha(0.0f, 0.05f, false);
-        buttons2.CrossFadeAlpha(0.0f, 0.05f, false);
+        tutorialBox.CrossFadeAlpha(0.0f, 0.05f, false);
+        TutorialText1.CrossFadeAlpha(0.0f, 0.05f, false);
+        TutorialText2.CrossFadeAlpha(0.0f, 0.05f, false);
+        TutorialImage1.CrossFadeAlpha(0.0f, 0.05f, false);
+        TutorialImage2.CrossFadeAlpha(0.0f, 0.05f, false);
 
     }
 
@@ -62,27 +56,22 @@ public class TutorialControls : MonoBehaviour
 
     private IEnumerator StartDia()
     {
-        lineIndex = 0;
         _IsActive = true;
-        ControlBox.SetActive(true);
-        controlBox.CrossFadeAlpha(1.0f, 0.5f, false);
-        ControlText1.CrossFadeAlpha(1.0f, 0.5f, false);
-        ControlText2.CrossFadeAlpha(1.0f, 0.5f, false);
-        buttons.CrossFadeAlpha(1.0f, 0.5f, false);
-        buttons2.CrossFadeAlpha(1.0f, 0.5f, false);
-
-
-
-
+        TutorialBox.SetActive(true);
+        tutorialBox.CrossFadeAlpha(1.0f, 0.5f, false);
+        TutorialText1.CrossFadeAlpha(1.0f, 0.5f, false);
+        TutorialText2.CrossFadeAlpha(1.0f, 0.5f, false);
+        TutorialImage1.CrossFadeAlpha(1.0f, 0.5f, false);
+        TutorialImage2.CrossFadeAlpha(1.0f, 0.5f, false);
 
 
         foreach (string line in UI1Text)
         {
-            ControlText1.text = "";
+            TutorialText1.text = "";
         
             foreach (char c in line)
             {
-                ControlText1.text += c;
+                TutorialText1.text += c;
                 yield return new WaitForSeconds(TypeSpeed);
             }
             yield return new WaitForSeconds(_LineDelay);
@@ -90,11 +79,11 @@ public class TutorialControls : MonoBehaviour
 
         foreach (string line in UI2Text)
         {
-            ControlText2.text = "";
+            TutorialText2.text = "";
 
             foreach (char c in line)
             {
-                ControlText2.text += c;
+                TutorialText2.text += c;
                 yield return new WaitForSeconds(TypeSpeed);
             }
             yield return new WaitForSeconds(_LineDelay);
@@ -105,14 +94,14 @@ public class TutorialControls : MonoBehaviour
     private void StopTalking()
     {
         _IsActive = false;
-        ControlText1.text = "";
-        ControlText2.text = "";
+        TutorialText1.text = "";
+        TutorialText2.text = "";
 
-        controlBox.CrossFadeAlpha(0.0f, 0.3f, false);
-        ControlText1.CrossFadeAlpha(0.0f, 0.3f, false);
-        ControlText2.CrossFadeAlpha(0.0f, 0.3f, false);
-        buttons.CrossFadeAlpha(0.0f, 0.3f, false);
-        buttons2.CrossFadeAlpha(0.0f, 0.3f, false);
+        tutorialBox.CrossFadeAlpha(0.0f, 0.3f, false);
+        TutorialText1.CrossFadeAlpha(0.0f, 0.3f, false);
+        TutorialText2.CrossFadeAlpha(0.0f, 0.3f, false);
+        TutorialImage1.CrossFadeAlpha(0.0f, 0.3f, false);
+        TutorialImage2.CrossFadeAlpha(0.0f, 0.3f, false);
 
 
         //ControlBox.SetActive(false);
