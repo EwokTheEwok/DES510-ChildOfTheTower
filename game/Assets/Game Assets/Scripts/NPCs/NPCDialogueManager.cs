@@ -1,7 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using System.IO;
 using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -15,6 +16,11 @@ public enum CharacterNames
 
 public class NPCDialogueManager : MonoBehaviour
 {
+    [SerializeField] TextAsset _DialogueTextFile;
+    List<List<string>> _PeterDialogue = new();
+    List<List<string>> _MargaretDialogue = new();
+    List<List<string>> _ThomasDialogue = new();
+
     public static NPCDialogueManager Instance { get => _Instance; }
     private static NPCDialogueManager _Instance;
 
@@ -57,7 +63,7 @@ public class NPCDialogueManager : MonoBehaviour
     [SerializeField] private Animator _Animator;
 
     [Header("Events")]
-    [HideInInspector] public UnityEvent<GameObject, CharacterNames> NPCAudioEvent = new();
+    [HideInInspector] public UnityEvent<GameObject, CharacterNames> NPCDialogueEvent = new();
 
     void Awake()
     {
@@ -74,12 +80,18 @@ public class NPCDialogueManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        
+
         dialogueTransform = _DialogueBox.transform as RectTransform;
+        /*
         _NPCList = GameObject.FindGameObjectsWithTag(_NPCTag).ToList();
         foreach (GameObject npcObject in _NPCList)
         {
             npcObject.GetComponent<NPC>().AddListener(NPCActivate);
         }
+        */
+        //GameManager.Instance.Player.GetComponentInChildren<PlayerDialogueTrigger>().NPCDialogueEvent.AddListener(NPCActivate);
+        LoadDialogue();
     }
 
     // Update is called once per frame
@@ -87,6 +99,84 @@ public class NPCDialogueManager : MonoBehaviour
     {
         if (_NPCActive)
             dialogueTransform.position = Camera.main.WorldToScreenPoint(_CurrentNPC.transform.position + new Vector3(0, height, 0));
+    }
+
+    void LoadDialogue()
+    {
+        //"Assets/Game Assets/Scripts/Game/CharacterDialogue.txt"
+        StreamReader reader = new StreamReader(AssetDatabase.GetAssetPath(_DialogueTextFile));
+        List<List<string>> currentDialogue = _PeterDialogue;
+        int currentIndex = -1;
+        string currentName = "";
+        string line = reader.ReadLine();
+
+        while (line != null)
+        {
+            Debug.Log(line);
+
+            if (string.Compare(line, "Peter", true) == 0)
+            {
+                if (string.Compare(line, currentName, true) != 0)
+                {
+                    currentIndex = -1;
+                }
+                currentName = "Peter";
+                currentDialogue = _PeterDialogue;
+                currentDialogue.Add(new List<string>());
+                currentIndex++;
+            }
+            else if (string.Compare(line, "Margaret", true) == 0)
+            {
+                if (string.Compare(line, currentName, true) != 0)
+                {
+                    currentIndex = -1;
+                }
+                currentName = "Margaret";
+                currentDialogue = _MargaretDialogue;
+                currentDialogue.Add(new List<string>());
+                currentIndex++;
+            }
+            else if (string.Compare(line, "Thomas", true) == 0)
+            {
+                if (string.Compare(line, currentName, true) != 0)
+                {
+                    currentIndex = -1;
+                }
+                currentName = "Thomas";
+                currentDialogue = _ThomasDialogue;
+                currentDialogue.Add(new List<string>());
+                currentIndex++;
+            }
+            else
+            {
+                currentDialogue[currentIndex].Add(line);
+            }
+            line = reader.ReadLine();
+        }
+
+        foreach (List<string> peterlines in _PeterDialogue)
+        {
+            foreach (string pline in peterlines)
+            {
+                Debug.Log(pline);
+            }
+        }
+
+        foreach (List<string> margaretlines in _MargaretDialogue)
+        {
+            foreach (string mline in margaretlines)
+            {
+                Debug.Log(mline);
+            }
+        }
+
+        foreach (List<string> thomaslines in _ThomasDialogue)
+        {
+            foreach (string tline in thomaslines)
+            {
+                Debug.Log(tline);
+            }
+        }
     }
 
     private IEnumerator StartDia()
@@ -115,7 +205,7 @@ public class NPCDialogueManager : MonoBehaviour
                     PeterLocal.enabled = true;
                     MargaretLocal.enabled = false;
                     ThomasLocal.enabled = false;
-                    NPCAudioEvent?.Invoke(_CurrentNPC, CharacterNames.Peter);
+                    NPCDialogueEvent?.Invoke(_CurrentNPC, CharacterNames.Peter);
 
                 }
                 else if (_NameText.text == "Margaret")
@@ -127,7 +217,7 @@ public class NPCDialogueManager : MonoBehaviour
                     PeterLocal.enabled = false;
                     MargaretLocal.enabled = true;
                     ThomasLocal.enabled = false;
-                    NPCAudioEvent?.Invoke(_CurrentNPC, CharacterNames.Margaret);
+                    NPCDialogueEvent?.Invoke(_CurrentNPC, CharacterNames.Margaret);
 
                 }
                 else if (_NameText.text == "Thomas")
@@ -139,7 +229,7 @@ public class NPCDialogueManager : MonoBehaviour
                     PeterLocal.enabled = false;
                     MargaretLocal.enabled = false;
                     ThomasLocal.enabled = true;
-                    NPCAudioEvent?.Invoke(_CurrentNPC, CharacterNames.Thomas);
+                    NPCDialogueEvent?.Invoke(_CurrentNPC, CharacterNames.Thomas);
 
                 }
 
@@ -168,7 +258,7 @@ public class NPCDialogueManager : MonoBehaviour
         _Animator.SetBool("isActive", false);
     }
 
-    private void NPCActivate(GameObject npcObject, bool enterExit)
+    private void NPCActivate(GameObject npcObject, bool enterExit, int index)
     {
         _CurrentNPC = npcObject;
         if (enterExit)

@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AK.Wwise.Event _PeterIdle;
     [SerializeField] AK.Wwise.Event _MargaretIdle;
     [SerializeField] AK.Wwise.Event _ThomasIdle;
-    List<NPCAudio> _NPCAudioList;
+    List<NPCAnimationAudio> _NPCAudioList;
     GameObject _Player;
 
     [Header("Shadow Ocean")]
@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
         _NPCDialogueManagerInstance = NPCDialogueManager.Instance;
         _Tower = _GameManagerInstance.Tower;
         _Player = GameManager.Instance.Player;
-        _NPCAudioList = FindObjectsByType<NPCAudio>().ToList();
+        _NPCAudioList = FindObjectsByType<NPCAnimationAudio>().ToList();
 
         foreach (TriggeredAudio _tm in _TriggeredMusic)
         {
@@ -77,13 +77,13 @@ public class AudioManager : MonoBehaviour
             at.ActivateEvent.AddListener(_tm.PlayAudio);
         }
 
-        foreach (NPCAudio _npc in _NPCAudioList)
+        foreach (NPCAnimationAudio _npc in _NPCAudioList)
         {
             _npc.AnimationAudioEvent.AddListener(PlayNPCIdleAudio);
         }
 
         _Tower.InsideEvent.AddListener(PlayAmbienceAudio);
-        _NPCDialogueManagerInstance.NPCAudioEvent.AddListener(PlayNPCDialogueAudio);
+        _NPCDialogueManagerInstance.NPCDialogueEvent.AddListener(PlayNPCDialogueAudio);
         _GameManagerInstance.GameEvent.AddListener(PlayEventAudio);
 
         _Player.GetComponentInChildren<BrickDialogue>().BlockDialogueEvent.AddListener(PlayBlockDialogueAudio);
@@ -233,7 +233,7 @@ public class AudioManager : MonoBehaviour
     {
         float threshold = 1000f;
         float distance = threshold;
-        foreach (NPCAudio _npc in _NPCAudioList)
+        foreach (NPCAnimationAudio _npc in _NPCAudioList)
         {
             distance = Vector3.Distance(_npc.transform.position, _Player.transform.position);
             if (distance < threshold)

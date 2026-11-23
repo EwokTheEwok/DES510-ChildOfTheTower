@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerAnimationAudio : MonoBehaviour
+public class PlayerAnimationAudioold : MonoBehaviour
 {
     [Header("Animation Audio Events")]
     public AK.Wwise.Event FootstepsEvent;

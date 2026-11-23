@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerAudio : MonoBehaviour
+public class PlayerAnimationAudio : MonoBehaviour
 {
     [Header("Animation Events")]
     public AK.Wwise.Event FootstepsEvent;

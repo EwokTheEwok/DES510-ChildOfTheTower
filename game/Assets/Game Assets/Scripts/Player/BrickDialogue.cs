@@ -17,8 +17,6 @@ public class BrickDialogue : MonoBehaviour
 
 
     [HideInInspector] public UnityEvent<GameObject, BlockDialogueType> BlockDialogueEvent = new();
-    //UnityEvent<int, GameObject> _RandomBrickDialogueEvent = new();
-    //UnityEvent<int, GameObject> _BrickDialogueEvent = new();
 
     private bool _IsRandomTalking = false;
     private bool _IsTargetedTalking = false;
@@ -30,7 +28,6 @@ public class BrickDialogue : MonoBehaviour
     public bool _BlockActive;
 
     public float _DisplayDelay = 5.0f;
-    //public float _NewLineDelay = 10.0f;
     public float _BetweenLineDelay;
     public float _Height = 3f;
 
@@ -185,32 +182,27 @@ public class BrickDialogue : MonoBehaviour
             _NearNPC = true;
             StopTalking();
         }
-        else if (collision.CompareTag("Block Dialogue"))
+        else if (collision.tag.StartsWith("Block Dialogue"))
         {
             _IsInsideTargetedCollider = true;
             if (!_IsTargetedTalking || _IsRandomTalking) {
                 StopTalking();
-                if (collision.name == "Block Dialogue 0")
+                if (collision.CompareTag("Block Dialogue 0"))
                 {
                     _TargetedBrickCoroutine = TargetedDialogue(0, 0);
                 }
-                else if (collision.name == "Block Dialogue 1")
+                else if (collision.CompareTag("Block Dialogue 1"))
                 {
                     _TargetedBrickCoroutine = TargetedDialogue(1, 3);
 
                 }
-                else if (collision.name == "Block Dialogue 2")
+                else if (collision.CompareTag("Block Dialogue 2"))
                 {
 
                 }
                 StartCoroutine(_TargetedBrickCoroutine);
             }
         }
-        /*else if (collision.CompareTag("Shadow Ocean"))
-        {
-
-        }
-        */
     }
 
     private void OnTriggerExit(Collider collision)
