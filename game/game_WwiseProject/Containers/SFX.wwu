@@ -777,296 +777,6 @@
 								</ObjectList>
 							</ObjectLists>
 						</RandomSequenceContainer>
-						<RandomSequenceContainer Name="RMC_PlayerFootsteps" ID="{9690513A-14AF-4208-84A1-E01521A7B4FC}" ShortID="687030596">
-							<PropertyList>
-								<Property Name="3DSpatialization" Type="int16" Value="1"/>
-								<Property Name="MaxSoundPerInstance" Type="int16">
-									<ValueList>
-										<Value>1</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Pitch" Type="int32">
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{ABFC82BF-4923-489C-8506-B6930BDE677B}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="5"/>
-													<Property Name="Min" Type="Real64" Value="-5"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-								<Property Name="UseMaxSoundPerInstance" Type="bool">
-									<ValueList>
-										<Value>True</Value>
-									</ValueList>
-								</Property>
-								<Property Name="UserAuxSendVolume0" Type="Real64">
-									<ValueList>
-										<Value>10</Value>
-									</ValueList>
-								</Property>
-								<Property Name="UserAuxSendVolume1" Type="Real64">
-									<ValueList>
-										<Value>8</Value>
-									</ValueList>
-								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-18</Value>
-									</ValueList>
-									<ModifierList>
-										<ModifierInfo>
-											<Modifier Name="" ID="{54C4229F-F385-4154-9B7D-EF5E416D8CDE}">
-												<PropertyList>
-													<Property Name="Enabled" Type="bool" Value="True"/>
-													<Property Name="Max" Type="Real64" Value="3"/>
-													<Property Name="Min" Type="Real64" Value="-3"/>
-												</PropertyList>
-											</Modifier>
-										</ModifierInfo>
-									</ModifierList>
-								</Property>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-								</Reference>
-								<Reference Name="UserAuxSend0">
-									<ObjectRef Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-								</Reference>
-								<Reference Name="UserAuxSend1">
-									<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="sfx_footsteps_003_001" ID="{1F6EA1A1-D9D9-41A6-81B4-E28217365946}" ShortID="836438211">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_footsteps_003_001" ID="{E8173A8F-9519-4518-99C8-003804B8DC63}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_footsteps_003_001.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="638969122"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_footsteps_003_001" ID="{E8173A8F-9519-4518-99C8-003804B8DC63}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_footsteps_003_002" ID="{04077076-66D0-41E7-B2EA-26D20A81F5AF}" ShortID="936504677">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_footsteps_003_002" ID="{EDF4CC20-B8B9-4055-9DDD-E5617FB7B55E}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_footsteps_003_002.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="257006643"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_footsteps_003_002" ID="{EDF4CC20-B8B9-4055-9DDD-E5617FB7B55E}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_footsteps_003_003" ID="{D6123798-3A22-4E5E-B4B3-2BDBDAE66FBF}" ShortID="110237095">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_footsteps_003_003" ID="{921BCB9F-51EA-4DB2-8E4D-9F4736FF4EB0}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_footsteps_003_003.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="179492109"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_footsteps_003_003" ID="{921BCB9F-51EA-4DB2-8E4D-9F4736FF4EB0}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_footsteps_003_004" ID="{EF40854F-F4E3-42CE-B2A0-112456EAE03F}" ShortID="488205592">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_footsteps_003_004" ID="{293C1E5D-2609-450E-BFC1-17C4F3E367AB}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_footsteps_003_004.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="237792949"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_footsteps_003_004" ID="{293C1E5D-2609-450E-BFC1-17C4F3E367AB}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_footsteps_003_005" ID="{6799E3CF-3BC3-4CE4-83A4-30E9E58D66B4}" ShortID="268417585">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_footsteps_003_005" ID="{DD9AB29E-EFD2-4EC6-A8D8-5DF8667CCAB9}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_footsteps_003_005.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="740899465"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_footsteps_003_005" ID="{DD9AB29E-EFD2-4EC6-A8D8-5DF8667CCAB9}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_footsteps_003_006" ID="{EAB2262C-0C96-48B2-B087-527B36D2177B}" ShortID="911445381">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_footsteps_003_006" ID="{837F2F0E-3667-4D66-A196-DE2665E3F9A0}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_footsteps_003_006.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="850230600"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_footsteps_003_006" ID="{837F2F0E-3667-4D66-A196-DE2665E3F9A0}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_footsteps_003_007" ID="{773F30F7-F02A-42F7-8242-77FB6D297513}" ShortID="711516884">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_footsteps_003_007" ID="{2DAFC441-51C9-436B-9417-0DF68936BB74}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_footsteps_003_007.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="615780904"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_footsteps_003_007" ID="{2DAFC441-51C9-436B-9417-0DF68936BB74}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_footsteps_003_008" ID="{0909BFBB-9C4E-495C-8AE3-5541BB78CA0C}" ShortID="111219335">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_footsteps_003_008" ID="{013D5DCE-FC68-4193-86B7-514E1F52167D}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_footsteps_003_008.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="953363089"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_footsteps_003_008" ID="{013D5DCE-FC68-4193-86B7-514E1F52167D}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_footsteps_003_009" ID="{F8436D00-A832-4F63-929D-3489FE856BE4}" ShortID="500129836">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_footsteps_003_009" ID="{80E4C16A-9D26-4C48-A455-520A6BEA43EC}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_footsteps_003_009.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="237216902"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_footsteps_003_009" ID="{80E4C16A-9D26-4C48-A455-520A6BEA43EC}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="sfx_footsteps_003_010" ID="{F688F143-EC4B-4D78-AF11-81CDAFF83898}" ShortID="467543021">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="sfx_footsteps_003_010" ID="{6EACF44D-5569-4DCF-BDA0-2CCC4A735EB4}">
-											<Language>SFX</Language>
-											<AudioFile>sfx_footsteps_003_010.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="619837463"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="sfx_footsteps_003_010" ID="{6EACF44D-5569-4DCF-BDA0-2CCC4A735EB4}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
-						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Falling" ID="{7CCB4439-B8CA-4A39-B4EC-91884114D62E}" ShortID="16855818">
 							<PropertyList>
 								<Property Name="3DSpatialization" Type="int16" Value="1"/>
@@ -1369,8 +1079,1620 @@
 								<Reference Name="SwitchGroupOrStateGroup">
 									<ObjectRef Name="FootstepsState" ID="{F7CA9691-3427-4F43-913F-B1A21D3AF620}" WorkUnitID="{595D8B45-8386-48E6-A777-B36127D6A1DB}"/>
 								</Reference>
+								<Reference Name="UserAuxSend0">
+									<ObjectRef Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+								<Reference Name="UserAuxSend1">
+									<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
 							</ReferenceList>
-							<GroupingInfo/>
+							<ChildrenList>
+								<RandomSequenceContainer Name="RMC_PlayerFootsteps_Stone" ID="{9690513A-14AF-4208-84A1-E01521A7B4FC}" ShortID="687030596">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{ABFC82BF-4923-489C-8506-B6930BDE677B}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="5"/>
+															<Property Name="Min" Type="Real64" Value="-5"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UserAuxSendVolume0" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UserAuxSendVolume1" Type="Real64">
+											<ValueList>
+												<Value>8</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-18</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{54C4229F-F385-4154-9B7D-EF5E416D8CDE}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="3"/>
+															<Property Name="Min" Type="Real64" Value="-3"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+										<Reference Name="UserAuxSend1">
+											<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="sfx_footsteps_003_001" ID="{1F6EA1A1-D9D9-41A6-81B4-E28217365946}" ShortID="836438211">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_003_001" ID="{E8173A8F-9519-4518-99C8-003804B8DC63}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_003_001.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="638969122"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_003_001" ID="{E8173A8F-9519-4518-99C8-003804B8DC63}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_003_002" ID="{04077076-66D0-41E7-B2EA-26D20A81F5AF}" ShortID="936504677">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_003_002" ID="{EDF4CC20-B8B9-4055-9DDD-E5617FB7B55E}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_003_002.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="257006643"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_003_002" ID="{EDF4CC20-B8B9-4055-9DDD-E5617FB7B55E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_003_003" ID="{D6123798-3A22-4E5E-B4B3-2BDBDAE66FBF}" ShortID="110237095">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_003_003" ID="{921BCB9F-51EA-4DB2-8E4D-9F4736FF4EB0}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_003_003.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="179492109"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_003_003" ID="{921BCB9F-51EA-4DB2-8E4D-9F4736FF4EB0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_003_004" ID="{EF40854F-F4E3-42CE-B2A0-112456EAE03F}" ShortID="488205592">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_003_004" ID="{293C1E5D-2609-450E-BFC1-17C4F3E367AB}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_003_004.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237792949"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_003_004" ID="{293C1E5D-2609-450E-BFC1-17C4F3E367AB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_003_005" ID="{6799E3CF-3BC3-4CE4-83A4-30E9E58D66B4}" ShortID="268417585">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_003_005" ID="{DD9AB29E-EFD2-4EC6-A8D8-5DF8667CCAB9}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_003_005.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="740899465"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_003_005" ID="{DD9AB29E-EFD2-4EC6-A8D8-5DF8667CCAB9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_003_006" ID="{EAB2262C-0C96-48B2-B087-527B36D2177B}" ShortID="911445381">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_003_006" ID="{837F2F0E-3667-4D66-A196-DE2665E3F9A0}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_003_006.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="850230600"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_003_006" ID="{837F2F0E-3667-4D66-A196-DE2665E3F9A0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_003_007" ID="{773F30F7-F02A-42F7-8242-77FB6D297513}" ShortID="711516884">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_003_007" ID="{2DAFC441-51C9-436B-9417-0DF68936BB74}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_003_007.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="615780904"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_003_007" ID="{2DAFC441-51C9-436B-9417-0DF68936BB74}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_003_008" ID="{0909BFBB-9C4E-495C-8AE3-5541BB78CA0C}" ShortID="111219335">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_003_008" ID="{013D5DCE-FC68-4193-86B7-514E1F52167D}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_003_008.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="953363089"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_003_008" ID="{013D5DCE-FC68-4193-86B7-514E1F52167D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_003_009" ID="{F8436D00-A832-4F63-929D-3489FE856BE4}" ShortID="500129836">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_003_009" ID="{80E4C16A-9D26-4C48-A455-520A6BEA43EC}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_003_009.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="237216902"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_003_009" ID="{80E4C16A-9D26-4C48-A455-520A6BEA43EC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_003_010" ID="{F688F143-EC4B-4D78-AF11-81CDAFF83898}" ShortID="467543021">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_003_010" ID="{6EACF44D-5569-4DCF-BDA0-2CCC4A735EB4}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_003_010.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="619837463"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_003_010" ID="{6EACF44D-5569-4DCF-BDA0-2CCC4A735EB4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="RMC_PlayerFootsteps_Sand" ID="{139ED431-0056-4D9A-A6B7-94ABD7E07DF7}" ShortID="1011339821">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{F8DDC06F-42DA-4F61-9687-FE425E28894E}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="5"/>
+															<Property Name="Min" Type="Real64" Value="-5"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UserAuxSendVolume0" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UserAuxSendVolume1" Type="Real64">
+											<ValueList>
+												<Value>8</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{DB2581CC-B60C-43FB-9EC5-8847FCA0925E}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="3"/>
+															<Property Name="Min" Type="Real64" Value="-3"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+										<Reference Name="UserAuxSend1">
+											<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="sfx_footsteps_sand_001" ID="{1306841D-B6EB-4900-B5BC-B42EF9A29F9A}" ShortID="221429912">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_sand_001" ID="{2DCE1B78-3481-4E8D-8CE1-E58FC155AC97}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_sand_001.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="359604301"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_sand_001" ID="{2DCE1B78-3481-4E8D-8CE1-E58FC155AC97}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_sand_002" ID="{7CA01426-0D31-4A99-BF9D-68010189C68E}" ShortID="665679732">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_sand_002" ID="{6550B09D-2477-4049-9D9A-84B5DDC70558}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_sand_002.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="906849660"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_sand_002" ID="{6550B09D-2477-4049-9D9A-84B5DDC70558}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_sand_003" ID="{CF887AA7-C771-45A2-BF36-697AE6C7E450}" ShortID="439695624">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_sand_003" ID="{CDD8AB7F-A92F-4606-920F-D9DCB551F4FC}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_sand_003.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="875251321"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_sand_003" ID="{CDD8AB7F-A92F-4606-920F-D9DCB551F4FC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_sand_004" ID="{47C11EFF-E674-4245-8848-A30A18F5437E}" ShortID="471395676">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_sand_004" ID="{978C5632-F355-4E7C-8D0F-FE896ADC79E8}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_sand_004.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="231236353"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_sand_004" ID="{978C5632-F355-4E7C-8D0F-FE896ADC79E8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="sfx_footsteps_sand_005" ID="{4D0D458F-26A0-4E9D-8B35-BC8BD1DC7D82}" ShortID="581885168">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="sfx_footsteps_sand_005" ID="{6EED4D39-10C6-4DEA-916A-B11E449B4CE4}">
+													<Language>SFX</Language>
+													<AudioFile>sfx_footsteps_sand_005.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1054829715"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="sfx_footsteps_sand_005" ID="{6EED4D39-10C6-4DEA-916A-B11E449B4CE4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="RMC_PlayerFootsteps_BlockContainer" ID="{8DB5D87C-23EC-4927-909D-48AFCF735255}" ShortID="634240740">
+									<PropertyList>
+										<Property Name="3DSpatialization" Type="int16" Value="1"/>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{3B62F675-831B-4759-8484-E256868F7931}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="5"/>
+															<Property Name="Min" Type="Real64" Value="-5"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UserAuxSendVolume0" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UserAuxSendVolume1" Type="Real64">
+											<ValueList>
+												<Value>8</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{A0DAFC0A-6D35-47F8-883E-117936185340}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="3"/>
+															<Property Name="Min" Type="Real64" Value="-3"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+										<Reference Name="UserAuxSend1">
+											<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="RMC_Footsteps_Block1" ID="{D4FC1097-066C-42C5-A627-55D385F8EE04}" ShortID="14841922">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="sfx_footsteps_brick_v1_001" ID="{69ED397B-815C-4A57-84F8-7717CF57C15D}" ShortID="674791736">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v1_001" ID="{0CEB2551-7310-445C-91F2-1E822F1844FB}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v1_001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1051672347"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v1_001" ID="{0CEB2551-7310-445C-91F2-1E822F1844FB}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v1_002" ID="{2E5DEB35-1ABA-4FB0-81D6-DB3C7A7F1400}" ShortID="955919740">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v1_002" ID="{0FC8D593-0023-43B9-93C5-A3A30FB3322F}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v1_002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="399827397"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v1_002" ID="{0FC8D593-0023-43B9-93C5-A3A30FB3322F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v1_003" ID="{509E5544-EBA3-44AD-96F7-7564233E68C5}" ShortID="387332686">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v1_003" ID="{4C72225D-F172-4E81-A25F-34C9A09CA782}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v1_003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="164352470"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v1_003" ID="{4C72225D-F172-4E81-A25F-34C9A09CA782}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v1_004" ID="{EA02B4C6-C4E2-4170-9212-119D72BAEDC1}" ShortID="414696972">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v1_004" ID="{D0A86D3B-9F34-44E5-AED1-7C71333C1454}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v1_004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="135406580"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v1_004" ID="{D0A86D3B-9F34-44E5-AED1-7C71333C1454}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v1_005" ID="{3683AFF6-3C34-44F1-87F3-D9C876704B87}" ShortID="985518179">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v1_005" ID="{A5FF5BFE-2785-4791-B2BC-3240CC4505AD}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v1_005.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="30805813"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v1_005" ID="{A5FF5BFE-2785-4791-B2BC-3240CC4505AD}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v1_006" ID="{B73A9DF6-2165-44E3-A1BC-8B834E4B74E6}" ShortID="132333393">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v1_006" ID="{F766313B-CA89-44EA-8E87-4F3EE108E88B}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v1_006.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="54177225"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v1_006" ID="{F766313B-CA89-44EA-8E87-4F3EE108E88B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v1_007" ID="{2677830A-A3AB-4D02-AC9E-D1C96B37B740}" ShortID="804411787">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v1_007" ID="{182DFC20-3A78-4ECA-B6CE-BC518862F183}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v1_007.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="882580995"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v1_007" ID="{182DFC20-3A78-4ECA-B6CE-BC518862F183}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v1_008" ID="{4A7C14F2-9021-4CD7-A8D9-A3E64275A6D6}" ShortID="599405084">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v1_008" ID="{81B1E53A-5378-4419-A2C5-50E845F45A35}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v1_008.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="635888587"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v1_008" ID="{81B1E53A-5378-4419-A2C5-50E845F45A35}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v1_009" ID="{DFD142FA-A5E0-48B8-85F0-6A9AC5DB3562}" ShortID="995865463">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v1_009" ID="{54B0DE31-39B4-4C7E-8017-E41E317448C1}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v1_009.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="603797057"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v1_009" ID="{54B0DE31-39B4-4C7E-8017-E41E317448C1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v1_010" ID="{5B098F96-6EB1-4E7E-955C-81119A4D89AF}" ShortID="496550591">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v1_010" ID="{BF0E2819-A642-492E-849D-DA98AD2CC1D2}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v1_010.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="202831461"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v1_010" ID="{BF0E2819-A642-492E-849D-DA98AD2CC1D2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="RMC_Footsteps_Block2" ID="{2294E17D-27B6-4FB0-B526-EAA14F8BA8D1}" ShortID="39218740">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="sfx_footsteps_brick_v2_001" ID="{B52A338B-B8CE-497E-B5E8-0B4E98050AC0}" ShortID="708395682">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v2_001" ID="{9F975283-6051-454A-A9EF-2DB5268133C1}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v2_001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="196172363"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v2_001" ID="{9F975283-6051-454A-A9EF-2DB5268133C1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v2_002" ID="{D5039098-5F5A-4948-BB61-7A3693BC7377}" ShortID="13386002">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v2_002" ID="{92E841CC-999D-4C89-9E48-0A57F47C9862}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v2_002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="925203574"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v2_002" ID="{92E841CC-999D-4C89-9E48-0A57F47C9862}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v2_003" ID="{B772D111-23CF-45B0-82C1-33671CB72F98}" ShortID="973584920">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v2_003" ID="{C2521A83-DCEC-421F-A22E-27625AE25FF8}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v2_003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="939678974"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v2_003" ID="{C2521A83-DCEC-421F-A22E-27625AE25FF8}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v2_004" ID="{326F24AD-7FE4-49B1-950A-BA5A0827EF05}" ShortID="867514569">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v2_004" ID="{56B80186-3373-4361-9962-B039EDFFF32F}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v2_004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1007533433"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v2_004" ID="{56B80186-3373-4361-9962-B039EDFFF32F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v2_005" ID="{E728254E-1F90-4024-A106-484EB875A2A4}" ShortID="190973040">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v2_005" ID="{0689A544-F663-46B5-BF69-1AD0B9AF123C}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v2_005.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="120589285"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v2_005" ID="{0689A544-F663-46B5-BF69-1AD0B9AF123C}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v2_006" ID="{9A6EAD40-672B-48D8-9AB6-01D4CF431E6F}" ShortID="883324042">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v2_006" ID="{1143F811-26C0-4398-90C7-D834CBB003F5}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v2_006.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="490088356"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v2_006" ID="{1143F811-26C0-4398-90C7-D834CBB003F5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v2_007" ID="{4DDB74B4-6C54-45E3-A336-6252E92CEE35}" ShortID="581825565">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v2_007" ID="{1DCCC2F6-B02C-4D63-901E-AB84FEEDE21C}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v2_007.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="848626949"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v2_007" ID="{1DCCC2F6-B02C-4D63-901E-AB84FEEDE21C}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v2_008" ID="{1D585BE3-164C-424C-B463-52406AA09AA6}" ShortID="780987774">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v2_008" ID="{9D5E13E6-2200-481B-820E-FFAFEEC2F987}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v2_008.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="122651108"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v2_008" ID="{9D5E13E6-2200-481B-820E-FFAFEEC2F987}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v2_009" ID="{88E5BBC1-03E3-4772-994E-B394845A6D7C}" ShortID="233725575">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v2_009" ID="{83EAFAA3-172F-4C2C-9601-43DFB7BF8D89}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v2_009.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="712511610"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v2_009" ID="{83EAFAA3-172F-4C2C-9601-43DFB7BF8D89}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_brick_v2_010" ID="{5AC9E0BD-53F5-4584-9C42-52A18ABA6D83}" ShortID="443282491">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_brick_v2_010" ID="{0D112F5B-27A3-45FA-8C12-E9438F84F0CC}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_brick_v2_010.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="642162084"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_brick_v2_010" ID="{0D112F5B-27A3-45FA-8C12-E9438F84F0CC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<BlendContainer Name="BLC_Wood" ID="{8D541091-728B-4797-8F1B-926D569B2630}" ShortID="239390378">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<RandomSequenceContainer Name="RMC_PlayerFootsteps_Wood" ID="{46DCF435-970D-4E3B-9F53-5001F126D8AB}" ShortID="547512640">
+											<PropertyList>
+												<Property Name="MaxSoundPerInstance" Type="int16">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Pitch" Type="int32">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{37B6C83E-58E3-465A-A8C5-8F2D2E5DB676}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="5"/>
+																	<Property Name="Min" Type="Real64" Value="-5"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="UseMaxSoundPerInstance" Type="bool">
+													<ValueList>
+														<Value>True</Value>
+													</ValueList>
+												</Property>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-18</Value>
+													</ValueList>
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{0AFE2AC1-3848-48A7-852F-9E2861B09FFA}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="3"/>
+																	<Property Name="Min" Type="Real64" Value="-3"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="SFX_Player" ID="{E7362750-41B7-424C-9FC4-DD2494D4374B}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+												<Reference Name="UserAuxSend0">
+													<ObjectRef Name="Reverb_Tower" ID="{F9E3844F-2E18-4414-894E-13324F08621F}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+												<Reference Name="UserAuxSend1">
+													<ObjectRef Name="Reverb_Outdoor" ID="{155B3A08-F768-4651-BAFB-B372D07CA325}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="sfx_footsteps_wood_001" ID="{EE7B2D30-0FD2-4275-BB0D-1E8091357492}" ShortID="134104283">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_wood_001" ID="{0257A1D5-205B-4F2D-B5BB-BC9E8F0EE5D9}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_wood_001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="97540834"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_wood_001" ID="{0257A1D5-205B-4F2D-B5BB-BC9E8F0EE5D9}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_wood_002" ID="{79767FA0-6D8C-4213-97D7-56044A4CC9C7}" ShortID="830320315">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_wood_002" ID="{641D84EE-89A2-4BC5-9F43-B0E825C58DAB}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_wood_002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="96425316"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_wood_002" ID="{641D84EE-89A2-4BC5-9F43-B0E825C58DAB}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_wood_003" ID="{665D460E-10DC-40C5-8559-F0A7D521D7C8}" ShortID="799176700">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_wood_003" ID="{F9E401B3-0527-45DC-B854-8AB6EF569A08}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_wood_003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="438942796"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_wood_003" ID="{F9E401B3-0527-45DC-B854-8AB6EF569A08}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_wood_004" ID="{94E50D97-844E-4BDC-9A09-B7443273B844}" ShortID="544731141">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_wood_004" ID="{216DE35A-6A15-43A1-8A42-821CCD7E8A88}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_wood_004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="433883134"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_wood_004" ID="{216DE35A-6A15-43A1-8A42-821CCD7E8A88}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_wood_005" ID="{C04FCE04-A206-4B32-816C-76AD529EF196}" ShortID="428279538">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_wood_005" ID="{E076563A-3C0A-4E00-946C-56C0CD526159}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_wood_005.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="559965971"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_wood_005" ID="{E076563A-3C0A-4E00-946C-56C0CD526159}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_wood_006" ID="{618437A2-F8BE-475C-AB1D-63A5C3C1C34F}" ShortID="206355206">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_wood_006" ID="{415FB3E6-C319-410F-887A-D9B19E26F178}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_wood_006.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="195602832"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_wood_006" ID="{415FB3E6-C319-410F-887A-D9B19E26F178}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_wood_007" ID="{86DA5390-DDC0-4AFF-B98E-FAD0D4492D16}" ShortID="10655495">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_wood_007" ID="{7686373E-7FCE-44B9-88A0-FE8462B33FEB}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_wood_007.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="625622473"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_wood_007" ID="{7686373E-7FCE-44B9-88A0-FE8462B33FEB}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_wood_008" ID="{E8066781-76FD-4184-AE27-054BFE7C9C5A}" ShortID="91431949">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_wood_008" ID="{EB86BF69-6F39-4E9E-950D-8D0036382508}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_wood_008.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="967327675"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_wood_008" ID="{EB86BF69-6F39-4E9E-950D-8D0036382508}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_wood_009" ID="{AC84B5AA-DB71-443A-A441-4C738B842E7A}" ShortID="601901346">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_wood_009" ID="{414FF392-8D65-4565-B6A7-314A1F84E17F}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_wood_009.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="440197167"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_wood_009" ID="{414FF392-8D65-4565-B6A7-314A1F84E17F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_wood_010" ID="{1B3880E4-3ACA-4956-A05A-2DCB75E3511D}" ShortID="1015010369">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_wood_010" ID="{E531D635-25C4-4D62-BE3C-A7B8FF2FEAE8}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_wood_010.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1033042818"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_wood_010" ID="{E531D635-25C4-4D62-BE3C-A7B8FF2FEAE8}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="RMC_WoodCreak" ID="{B8E1F3C4-570A-4650-9993-9A8F5B7E3A4B}" ShortID="1043350295">
+											<PropertyList>
+												<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>-8</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="sfx_footsteps_creak_001" ID="{9E98AC15-5077-4F0E-92B9-DB5F98D706DA}" ShortID="792031272">
+													<PropertyList>
+														<Property Name="Weight" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_creak_001" ID="{D27899AA-F184-4E23-ACDF-7EDB4592728E}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_creak_001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="299379442"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_creak_001" ID="{D27899AA-F184-4E23-ACDF-7EDB4592728E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_creak_002" ID="{47430762-9D85-4D9F-876D-0AF27352FCF7}" ShortID="336870727">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Weight" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_creak_002" ID="{799AEA86-7FDB-487D-A196-85A898D0AC8E}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_creak_002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="198110857"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_creak_002" ID="{799AEA86-7FDB-487D-A196-85A898D0AC8E}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_creak_003" ID="{2F5037E1-4585-40EF-9F7A-9462CE13B38F}" ShortID="252500789">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Weight" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_creak_003" ID="{16D6C62E-91C7-4314-86F5-609182CD1848}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_creak_003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="285117777"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_creak_003" ID="{16D6C62E-91C7-4314-86F5-609182CD1848}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_creak_004" ID="{75B7AA37-E6CE-457B-A142-B13DC83E5D76}" ShortID="436404022">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Weight" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_creak_004" ID="{DBC7B5AF-8EAC-427B-B606-9458BE1FA539}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_creak_004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1014501592"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_creak_004" ID="{DBC7B5AF-8EAC-427B-B606-9458BE1FA539}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_creak_005" ID="{3C22371A-E17B-4E7C-A597-2A2083E609D6}" ShortID="616141563">
+													<PropertyList>
+														<Property Name="Weight" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_creak_005" ID="{CF5E9085-73C4-44FF-9A78-DDE53FB0D9CE}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_creak_005.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="746769430"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_creak_005" ID="{CF5E9085-73C4-44FF-9A78-DDE53FB0D9CE}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="sfx_footsteps_creak_006" ID="{FD6F315F-A22E-47C0-AE73-A95C50E9ACF5}" ShortID="511444007">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Weight" Type="Real64">
+															<ValueList>
+																<Value>5</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="sfx_footsteps_creak_006" ID="{1FDCE827-643D-4F21-97D8-F2EF27376330}">
+															<Language>SFX</Language>
+															<AudioFile>sfx_footsteps_creak_006.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1019734506"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="sfx_footsteps_creak_006" ID="{1FDCE827-643D-4F21-97D8-F2EF27376330}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Silence" ID="{246BDF19-3719-47E0-B4AF-B6E21DB6B2E0}" ShortID="314407043">
+													<PropertyList>
+														<Property Name="Weight" Type="Real64">
+															<ValueList>
+																<Value>90</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<SourcePlugin Name="Silence" ID="{34978E4A-62D2-42B6-8B30-635513BE0ED0}" ShortID="843785869" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+															<Language>SFX</Language>
+														</SourcePlugin>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Silence" ID="{34978E4A-62D2-42B6-8B30-635513BE0ED0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Silence2" ID="{74479231-24C1-4991-9DA9-7B0A3175CB7C}" ShortID="1000510684">
+													<PropertyList>
+														<Property Name="Weight" Type="Real64">
+															<ValueList>
+																<Value>90</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<SourcePlugin Name="Silence" ID="{992B5627-CE3F-436E-985A-693E2F1AB950}" ShortID="100559914" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+															<Language>SFX</Language>
+														</SourcePlugin>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Silence" ID="{992B5627-CE3F-436E-985A-693E2F1AB950}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+									</ChildrenList>
+								</BlendContainer>
+							</ChildrenList>
+							<GroupingInfo>
+								<GroupingBehaviorList>
+									<GroupingBehavior>
+										<ItemRef Name="RMC_PlayerFootsteps_Sand" ID="{139ED431-0056-4D9A-A6B7-94ABD7E07DF7}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="RMC_PlayerFootsteps_Stone" ID="{9690513A-14AF-4208-84A1-E01521A7B4FC}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="RMC_PlayerFootsteps_BlockContainer" ID="{8DB5D87C-23EC-4927-909D-48AFCF735255}"/>
+									</GroupingBehavior>
+									<GroupingBehavior>
+										<ItemRef Name="BLC_Wood" ID="{8D541091-728B-4797-8F1B-926D569B2630}"/>
+									</GroupingBehavior>
+								</GroupingBehaviorList>
+								<GroupingList>
+									<Grouping>
+										<SwitchRef Name="Stone" ID="{3354DE29-168F-49AC-8268-B9300B160E62}"/>
+										<ItemList>
+											<ItemRef Name="RMC_PlayerFootsteps_Stone" ID="{9690513A-14AF-4208-84A1-E01521A7B4FC}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Sand" ID="{D45CB0A4-6A93-4AD5-8968-2A2C20A34E4D}"/>
+										<ItemList>
+											<ItemRef Name="RMC_PlayerFootsteps_Sand" ID="{139ED431-0056-4D9A-A6B7-94ABD7E07DF7}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="None" ID="{CB41D4BD-BF33-4E02-AAF2-259499DA9BD6}"/>
+										<ItemList>
+											<ItemRef Name="RMC_PlayerFootsteps_Stone" ID="{9690513A-14AF-4208-84A1-E01521A7B4FC}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Block" ID="{3C9775C2-748C-4607-B4A6-614A08CD569B}"/>
+										<ItemList>
+											<ItemRef Name="RMC_PlayerFootsteps_BlockContainer" ID="{8DB5D87C-23EC-4927-909D-48AFCF735255}"/>
+										</ItemList>
+									</Grouping>
+									<Grouping>
+										<SwitchRef Name="Wood" ID="{6C0FB0C6-0291-40F1-A6D1-C2BEA4293806}"/>
+										<ItemList>
+											<ItemRef Name="BLC_Wood" ID="{8D541091-728B-4797-8F1B-926D569B2630}"/>
+										</ItemList>
+									</Grouping>
+								</GroupingList>
+							</GroupingInfo>
 						</SwitchContainer>
 					</ChildrenList>
 				</Folder>

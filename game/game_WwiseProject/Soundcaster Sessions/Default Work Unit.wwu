@@ -323,6 +323,30 @@
 						</Module>
 					</ModuleList>
 				</SoundcasterSession>
+				<SoundcasterSession Name="Footsteps" ID="{455291AE-4DD7-4EC3-BF79-FFF837C4038E}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_Footsteps" ID="{FC84159D-E028-4AD0-A9DC-323CD420D594}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Footstep_Material_Block" ID="{07A5B3DF-7FAE-444E-BB8E-1808085CD510}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Footstep_Material_Stone" ID="{A54A5952-B141-4938-9303-47A0F65A7C61}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Footstep_Material_Sand" ID="{45A3FA50-7B1C-4314-B34F-FB7803491F85}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Footstep_Material_Wood" ID="{768B02D0-5621-4C23-B4A6-98E669CB5A92}" WorkUnitID="{787F8BBF-6F3C-4538-BDF2-7505BD7F7350}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+					</ModuleList>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>
