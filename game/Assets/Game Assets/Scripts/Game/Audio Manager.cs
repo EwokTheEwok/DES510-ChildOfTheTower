@@ -65,9 +65,6 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        InputSystemUIInputModule a;
-        a.
-        
         _GameManagerInstance = GameManager.Instance;
         _NPCDialogueManagerInstance = NPCDialogueManager.Instance;
         _Tower = _GameManagerInstance.Tower;
