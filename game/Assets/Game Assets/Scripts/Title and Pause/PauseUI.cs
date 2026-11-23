@@ -2,13 +2,19 @@ using UnityEngine;
 
 public class pauseUI : MonoBehaviour
 {
-    [SerializeField] private GameObject container;
+    [SerializeField] private GameObject PauseUIContainer;
+    [SerializeField] private GameObject PauseContainer;
+    [SerializeField] private GameObject ControlsContainer;
 
-    private void OnTriggerEnter(Collider collision)
+    private void Update()
     {
-        if (collision.CompareTag("Player"))
+        if (PauseContainer.activeSelf == true || ControlsContainer.activeSelf == true)
         {
-            container.SetActive(true);
+            PauseUIContainer.SetActive(false);
+
+        }else if (PauseContainer.activeSelf == false || ControlsContainer.activeSelf == false)
+        {
+            PauseUIContainer.SetActive(true);
         }
     }
 

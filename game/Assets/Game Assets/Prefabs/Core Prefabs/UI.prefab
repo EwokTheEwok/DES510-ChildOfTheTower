@@ -2142,6 +2142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7564fc0a83b1a8b4295aa0f60695b62d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Controls
+  pause: {fileID: 2168053000465365314}
   ControlsMenu: {fileID: 2934290136370680180}
   PauseMenu: {fileID: 3382229847974999214}
   resumeButton: {fileID: 5133184235502820756}
@@ -3577,7 +3578,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99b44b40d481e7f46bd646245847b307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::pauseUI
-  container: {fileID: 0}
+  PauseUIContainer: {fileID: 5531134258906638810}
+  PauseContainer: {fileID: 3382229847974999214}
+  ControlsContainer: {fileID: 2934290136370680180}
 --- !u!1 &3759813761946665983
 GameObject:
   m_ObjectHideFlags: 0
@@ -4766,6 +4769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477431a5799d9264da22ceb9c5026b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pause
+  isPaused: 0
   PauseMenu: {fileID: 3382229847974999214}
   ControlsMenu: {fileID: 2934290136370680180}
   resumeButton: {fileID: 4290572220198577535}

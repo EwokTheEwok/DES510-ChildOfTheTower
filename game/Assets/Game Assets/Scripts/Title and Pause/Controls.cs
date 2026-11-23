@@ -4,6 +4,8 @@ using UnityEngine.Events;
 
 public class Controls : MonoBehaviour
 {
+    public Pause pause;
+    
     bool isPaused = false;
     bool controlMenuActive = false;
 
@@ -44,6 +46,7 @@ public class Controls : MonoBehaviour
         }
 
         TriggerScrollSound();
+        PauseIsPaused();
     }
 
     public void TitleScreenFirstButton()
@@ -80,6 +83,10 @@ public class Controls : MonoBehaviour
         Application.Quit();
     }
 
+    public void PauseIsPaused()
+    {
+        pause.isPaused = isPaused;
+    }
     public void TriggerScrollSound()
     {
         if (controlMenuActive && Input.GetKeyDown(KeyCode.LeftArrow))
