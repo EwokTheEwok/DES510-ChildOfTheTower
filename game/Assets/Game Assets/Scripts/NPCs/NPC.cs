@@ -21,11 +21,6 @@ public class NPC : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             _ActivateEvent?.Invoke(gameObject, false);
-            /*
-            StopCoroutine(_DialogueCoroutine);
-            StopTalking();
-            _InRange = false;
-            */
         }
     }
 
