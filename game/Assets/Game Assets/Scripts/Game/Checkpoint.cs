@@ -12,7 +12,8 @@ public enum WorldFlag
 {
     Default,
     Rain,
-    Clear
+    Clear,
+    End
 }
 
 public class Checkpoint : MonoBehaviour

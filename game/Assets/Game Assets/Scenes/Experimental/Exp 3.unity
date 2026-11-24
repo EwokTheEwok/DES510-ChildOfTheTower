@@ -3423,7 +3423,6 @@ GameObject:
   - component: {fileID: 1778582251}
   - component: {fileID: 1778582250}
   - component: {fileID: 1778582249}
-  - component: {fileID: 1778582248}
   - component: {fileID: 1778582247}
   - component: {fileID: 1778582252}
   - component: {fileID: 1778582253}
@@ -3455,31 +3454,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 27.355585, y: 10.248358, z: 27.133455}
   m_Center: {x: -5.8860006, y: 2.6564672, z: 6.4870276}
---- !u!114 &1778582248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1778582246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb0115ab550010248ad569d0116cf47c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  DialogueLines:
-  - "Young Miss, please. I know this isn\u2019t apt of me but is there anything you
-    can spare? Some coin? Or some bread?"
-  - "That\u2019s quite alright, I suppose I shouldn't be asking for help from someone
-    so young anyways."
-  - "You know, you don\u2019t seem much older than my sister. Her and my mother are
-    both ill."
-  - There's very little food for those who work in the fields, and the nights are
-    freezing.
-  - You are quite warm though, if only I could take your warmth with me.
-  - 'Oh, thank you Miss. Thank you for listening, I find not many people care too. '
-  - May your travels be safe, for your warmth should aid my family for now.
-  NPCName: Peter
 --- !u!54 &1778582249
 Rigidbody:
   m_ObjectHideFlags: 0
