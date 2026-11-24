@@ -28,23 +28,18 @@ public class PlayerMovement : MonoBehaviour
     bool _MoveInput = false;
     Vector3 _WorldMoveDir;
     bool _Playing = true;
+    bool _CanControl = false;
 
     //Animator
     [Header("Animations Settings")]
-    [SerializeField] private float _MinTimeWait = 8.0f;
-    [SerializeField] private float _MaxTimeWait = 15.0f;
-    private Animator _Animator;
-    private float _AirDistance;
-    private readonly float _MinFalldistance = 1.25f;
-    private float _RandomMulti;
-    private float _TotalWaitTime;
-    private float _GoalWaitTime;
-
-    [Header("Block Settings")]
-    public BlockController2 blockController;
-    public bool _BlockActive;
-
-
+    Animator _Animator;
+    [SerializeField] float _MinTimeWait = 8.0f;
+    [SerializeField] float _MaxTimeWait = 15.0f;
+    readonly float _MinFalldistance = 1.25f;
+    float _AirDistance;
+    float _RandomMulti;
+    float _TotalWaitTime;
+    float _GoalWaitTime;
 
     private void Awake()
     {
@@ -60,7 +55,6 @@ public class PlayerMovement : MonoBehaviour
         _PlayerInput = GetComponent<PlayerInput>();
         _PlayerActionMap = _PlayerInput.actions.FindActionMap("Player");
         _PlayerActionMap.Enable();
-        blockController = GetComponent<BlockController2>();
     }
 
     private void Update()
@@ -69,7 +63,6 @@ public class PlayerMovement : MonoBehaviour
 
         _WorldMoveDir = Quaternion.AngleAxis(_Camera.transform.eulerAngles.y, new Vector3(0f, 1f, 0f)) * new Vector3(_MoveDir.x, 0f, _MoveDir.y);
         _Animator.SetBool("isGrounded", _CharControl.isGrounded);
-        _BlockActive = blockController.IsBlockActive();
 
         PlayIdle2();
 
@@ -82,10 +75,13 @@ public class PlayerMovement : MonoBehaviour
                 _Velocity.y -= _Gravity * deltaTime;
 
             //Horizontral movement
-            if (_MoveInput)
-                _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(_WorldMoveDir.x * _MaxSpeed, _Velocity.y, _WorldMoveDir.z * _MaxSpeed), _MoveAccel * deltaTime);
-            else
-                _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(0f, _Velocity.y, 0f), _MoveDeaccel * deltaTime);
+            if (_CanControl)
+            {
+                if (_MoveInput)
+                    _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(_WorldMoveDir.x * _MaxSpeed, _Velocity.y, _WorldMoveDir.z * _MaxSpeed), _MoveAccel * deltaTime);
+                else
+                    _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(0f, _Velocity.y, 0f), _MoveDeaccel * deltaTime);
+            }
 
             _CharControl.Move(_Velocity * deltaTime);
         }
@@ -146,7 +142,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.started && (_CharControl.isGrounded || _FallingTimer <= _FallingJumpTime) && !_HasJumped && _Playing)
+        if (context.started && (_CharControl.isGrounded || _FallingTimer <= _FallingJumpTime) && !_HasJumped && _Playing && _CanControl)
         {
             _HasJumped = true;
             _Animator.SetTrigger("Jumping");
@@ -200,16 +196,15 @@ public class PlayerMovement : MonoBehaviour
         _GoalWaitTime = _MinTimeWait + ((_MaxTimeWait - _MinTimeWait) * _RandomMulti);
     }
 
-    //public void PlayWalkAudio()
-    //{
-    //    PlayerAudioEvent?.Invoke(gameObject, PlayerEventType.Walk);
-    //}
-
     public void OnPause(bool value)
     {
         _Playing = !value;
         if (!value) _PlayerActionMap.Enable();
         else _PlayerActionMap.Disable();
-        Debug.Log(_PlayerActionMap.enabled);
+    }
+
+    public void CanControl(bool value)
+    {
+        _CanControl = value;
     }
 }

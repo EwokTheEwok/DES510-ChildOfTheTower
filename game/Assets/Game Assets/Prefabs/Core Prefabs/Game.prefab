@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 866492010313619430}
   - component: {fileID: 6029596449364133864}
   - component: {fileID: 8671720255476842858}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Tower Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 911621436982042707}
   - component: {fileID: 1842660501236728878}
   - component: {fileID: 3500132104723999075}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Rain Emitter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5064,10 +5064,10 @@ MonoBehaviour:
   _Spawn: {fileID: 2499161996501571985}
   _TowerCollider: {fileID: 1920205118397734901}
   _ShadowOcean: {fileID: 3833904350821634884}
-  _MinSpeed: 0.5
+  _MinSpeed: 0.25
   _MaxSpeed: 10
   _MinDistance: 5
-  _MaxDistance: 30
+  _MaxDistance: 100
   _ResetDistance: -30
   _Rain: {fileID: 818554545411281812}
   _RainEmitter: {fileID: 2053270882228459285}
@@ -5281,10 +5281,10 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 2048
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 4294967295
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0

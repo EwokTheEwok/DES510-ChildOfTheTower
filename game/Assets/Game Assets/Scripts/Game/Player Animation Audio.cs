@@ -24,7 +24,7 @@ public class PlayerAnimationAudio : MonoBehaviour
     {
         _Player = GameManager.Instance.Player;
         _Char = _Player.GetComponent<CharacterController>();
-        _WalkRayDistance = _Char.height;
+        _WalkRayDistance = _Char.height * 2f;
     }
 
     private void FixedUpdate()
@@ -73,14 +73,17 @@ public class PlayerAnimationAudio : MonoBehaviour
     {
         if (Physics.Raycast(_Player.transform.position, Vector3.down, out RaycastHit hitinfo, _WalkRayDistance, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
         {
+            bool tagged = false;
             foreach (FootstepEvent _fe in _FootstepsEvents)
             {
                 if (hitinfo.transform.gameObject.CompareTag(_fe.TagName))
                 {
-                    //Debug.Log(hitinfo.transform.tag);
+                    tagged = true;
                     _fe.AudioEvent.Post(gameObject);
                 }
             }
+            if (!tagged)
+                _FootstepsEvents[0].AudioEvent.Post(gameObject);
         }
     }
 }
