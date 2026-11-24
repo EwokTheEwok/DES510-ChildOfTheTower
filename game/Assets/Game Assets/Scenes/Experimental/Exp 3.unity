@@ -950,10 +950,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2435213661175931643, guid: e77693b96149e814e8c9caf86a739198, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1830212161}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e77693b96149e814e8c9caf86a739198, type: 3}
 --- !u!4 &557773108 stripped
 Transform:
@@ -1726,13 +1723,12 @@ GameObject:
   - component: {fileID: 967541096}
   - component: {fileID: 967541095}
   - component: {fileID: 967541094}
-  - component: {fileID: 967541093}
   - component: {fileID: 967541092}
   - component: {fileID: 967541097}
   - component: {fileID: 967541098}
   m_Layer: 0
   m_Name: Thomas
-  m_TagString: NPC
+  m_TagString: NPC Dialogue 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1758,34 +1754,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 21.628838, y: 5.12, z: 17.122437}
   m_Center: {x: 0.6962301, y: 0, z: -4.4747806}
---- !u!114 &967541093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 967541091}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb0115ab550010248ad569d0116cf47c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  DialogueLines:
-  - Eleanor?
-  - "Eleanor, it\u2019s Thomas, it\u2019s daddy."
-  - I- have you been watching me this whole time?
-  - "Look, I can explain. I know I haven\u2019t made the best choices recently, but
-    it's all for you. "
-  - And your mother of course, is she with you?
-  - "Ah, I suppose that\u2019s punishment for all I\u2019ve done."
-  - "In any case, the farm has been thriving recently so I\u2019m clearly doing something
-    right\u2026 Right?"
-  - "And the thing with Margaret, I apologised for that. And I also told her brothers
-    no when they suggested we marry so\u2026"
-  - "Please, Eleanor. Don\u2019t look at me like that. I\u2019ve been doing my best
-    but it's hard."
-  - "Eleanor, please don\u2019t leave, I can\u2019t lose you again."
-  NPCName: Thomas
 --- !u!54 &967541094
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2701,14 +2669,13 @@ GameObject:
   - component: {fileID: 1510943290}
   - component: {fileID: 1510943289}
   - component: {fileID: 1510943288}
-  - component: {fileID: 1510943287}
   - component: {fileID: 1510943286}
   - component: {fileID: 1510943285}
   - component: {fileID: 1510943284}
   - component: {fileID: 1510943291}
   m_Layer: 0
   m_Name: Margaret
-  m_TagString: NPC
+  m_TagString: NPC Dialogue 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2768,35 +2735,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1510943287
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1510943283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb0115ab550010248ad569d0116cf47c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Dialogue
-  DialogueLines:
-  - Hmm hm Hmm
-  - Oh! Hello little one. Are you here for a dress?
-  - No?
-  - "That\u2019s just as well. Not many people come to the shop nowadays."
-  - The war has taken most of the eligible men including my brothers.
-  - "Oh, it\u2019s alright. I suppose in a way I got what I wanted, the freedom to
-    run the shop on my own. "
-  - "Of course, it\u2019s not like I wanted my parents to be taken too."
-  - "They\u2019re not fighting, just making clothes for the soldiers. It\u2019s mostly
-    been quiet, well with the exception of one customer..."
-  - "I\u2019m sure there\u2019s more to it than what I see, but even so, it\u2019s
-    quite scary having a grown man yell with such rage."
-  - "Ah, I\u2019m so sorry little one, I\u2019m sure you don\u2019t care to know
-    all that. But even so, this was quite the pleasant experience."
-  - ' Please do come back again, I find you to be calming.'
-  NPCName: Margaret
 --- !u!54 &1510943288
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3271,7 +3209,7 @@ GameObject:
   - component: {fileID: 1778582253}
   m_Layer: 0
   m_Name: Peter
-  m_TagString: NPC
+  m_TagString: NPC Dialogue 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3450,31 +3388,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NPCAudio
   CharacterName: 0
   AnimationAudioEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!1 &1830212160 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2435213661175931643, guid: e77693b96149e814e8c9caf86a739198, type: 3}
-  m_PrefabInstance: {fileID: 526157071}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1830212161
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1830212160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 898ec8af9e5fbb842902b936db0775c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerDialogueTrigger
-  _NPCDialogueTag: NPC Dialogue
-  _BlockDialogueTag: Block Dialogue
-  NPCDialogueEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  BlockDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1 &1935790296

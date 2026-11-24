@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 3827949712215586968}
   - component: {fileID: 271766098097621373}
   - component: {fileID: 4797419537412347028}
-  - component: {fileID: 2339846696501332739}
+  - component: {fileID: 1427247562549443955}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -597,7 +597,7 @@ MonoBehaviour:
   blockUIDown: {fileID: 0}
   blockUILeft: {fileID: 0}
   blockUIRight: {fileID: 0}
---- !u!114 &2339846696501332739
+--- !u!114 &1427247562549443955
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -606,32 +606,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 2435213661175931643}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef640f8e5473cb46a3237fb6b4c3be7, type: 3}
+  m_Script: {fileID: 11500000, guid: 898ec8af9e5fbb842902b936db0775c6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BrickDialogue
-  _RandomLines:
-  - Up! Up!
-  - Home please. Want to go home.
-  - Up big tower! Not forever, just long time.
-  - "Don\u2019t fall! I would miss friend."
-  - Friend is so fast. Friend is the best!
-  - Shadows coming, shadows bad!
-  _TargetedLines:
-  - Shade nice. Shade lost like you!
-  - I help! Down please.
-  - I make path!
-  - Hello? Friend still there?
-  - Is Friend shade now?
-  - Oopsies.
-  - 
-  _TypeSpeed: 0.05
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDialogueTrigger
+  _NPCDialogueTag: NPC Dialogue
+  _BlockDialogueTag: Block Dialogue
+  NPCDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
   BlockDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
-  _BlockActive: 0
-  _DisplayDelay: 5
-  _BetweenLineDelay: 0
-  _Height: 2.5
 --- !u!1 &2819991752507397099
 GameObject:
   m_ObjectHideFlags: 0
