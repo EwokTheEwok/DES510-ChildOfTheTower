@@ -5993,6 +5993,61 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &6834407507248165747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6909248888652461618}
+  - component: {fileID: 5029506890357718715}
+  m_Layer: 0
+  m_Name: Brick Dialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6909248888652461618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6834407507248165747}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 5.668579, y: 2.2164304, z: -13.896126}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 9079827750109937308}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5029506890357718715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6834407507248165747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ef640f8e5473cb46a3237fb6b4c3be7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BrickDialogue
+  _DialogueTextFile: {fileID: 4900000, guid: 34ffaf801ce6ce44bbaf8a426d95897f, type: 3}
+  _BlockCanvas: {fileID: 1621050545064285664}
+  _BrickBox: {fileID: 1749597752152786629}
+  _TypeSpeed: 0.05
+  BlockDialogueEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  _BlockActive: 0
+  _DisplayDelay: 5
+  _BetweenLineDelay: 0
+  _Height: 3
 --- !u!1 &6881037630892298738
 GameObject:
   m_ObjectHideFlags: 0
@@ -7341,6 +7396,7 @@ Transform:
   - {fileID: 3503367778610286668}
   - {fileID: 3369790490449680923}
   - {fileID: 6378332826100888975}
+  - {fileID: 6909248888652461618}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8384906362200257772
@@ -7388,7 +7444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e800806254a52ec4f8942d3972816828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueManager
-  _NPCTag: NPC
+  _DialogueTextFile: {fileID: 4900000, guid: db565181ac4f7e64eaa695e55940ead5, type: 3}
   _Canvas: {fileID: 4535161505943526631}
   _DialogueBox: {fileID: 7569040686604530640}
   _NameBox: {fileID: 625028395374621218}
@@ -7408,7 +7464,7 @@ MonoBehaviour:
   height: 3.5
   TypeSpeed: 0.05
   _Animator: {fileID: 134581857168664735}
-  NPCAudioEvent:
+  NPCDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2765725553721345394

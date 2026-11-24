@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class NPCAudio : MonoBehaviour
+public class NPCAnimationAudio : MonoBehaviour
 {
     public CharacterNames CharacterName;
     [HideInInspector] public UnityEvent<GameObject, CharacterNames> AnimationAudioEvent = new();
