@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AK.Wwise.Event _PeterIdle;
     [SerializeField] AK.Wwise.Event _MargaretIdle;
     [SerializeField] AK.Wwise.Event _ThomasIdle;
-    List<NPCAudio> _NPCAudioList;
+    List<NPCAnimationAudio> _NPCAudioList;
     GameObject _Player;
 
     [Header("Shadow Ocean")]
@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
         _NPCDialogueManagerInstance = NPCDialogueManager.Instance;
         _Tower = _GameManagerInstance.Tower;
         _Player = GameManager.Instance.Player;
-        _NPCAudioList = FindObjectsByType<NPCAudio>().ToList();
+        _NPCAudioList = FindObjectsByType<NPCAnimationAudio>().ToList();
 
         foreach (TriggeredAudio _tm in _TriggeredMusic)
         {
@@ -77,16 +77,15 @@ public class AudioManager : MonoBehaviour
             at.ActivateEvent.AddListener(_tm.PlayAudio);
         }
 
-        foreach (NPCAudio _npc in _NPCAudioList)
+        foreach (NPCAnimationAudio _npc in _NPCAudioList)
         {
             _npc.AnimationAudioEvent.AddListener(PlayNPCIdleAudio);
         }
 
         _Tower.InsideEvent.AddListener(PlayAmbienceAudio);
-        _NPCDialogueManagerInstance.NPCAudioEvent.AddListener(PlayNPCDialogueAudio);
+        _NPCDialogueManagerInstance.NPCDialogueEvent.AddListener(PlayNPCDialogueAudio);
         _GameManagerInstance.GameEvent.AddListener(PlayEventAudio);
-
-        _Player.GetComponentInChildren<BrickDialogue>().BlockDialogueEvent.AddListener(PlayBlockDialogueAudio);
+        _GameManagerInstance.UI.GetComponentInChildren<BrickDialogue>().BlockDialogueEvent.AddListener(PlayBlockDialogueAudio);
         BlockController2 _bc = _Player.GetComponentInChildren<BlockController2>();
         _bc.BubbleEvent.AddListener(PlayBubbleAudio);
         _bc.BlockEvent.AddListener(PlayBlockAudio);
@@ -97,7 +96,7 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
         UpdateOceanDistance();
-        UpdateCharacterDistances();
+        UpdateNPCDistances();
     }
 
     void PlayAmbienceAudio(bool _inside)
@@ -216,24 +215,28 @@ public class AudioManager : MonoBehaviour
     void UpdateOceanDistance()
     {
         float distance = _GameManagerInstance.ShadowOceanDistance();
-
+        
         if (distance < _playerDistanceThreshold && !_OceanAudioPlaying)
         {
+            //Debug.Log("playing "+distance);
             _ShadowOcean.Post(gameObject);
             _OceanAudioPlaying = true;
         }
-        else if (distance > _playerDistanceThreshold)
+        else if (distance > _playerDistanceThreshold && _OceanAudioPlaying)
         {
+            //Debug.Log("fade " + distance);
             _FadeOcean.Post(gameObject);
             _OceanAudioPlaying = false;
         }
+
+        AkUnitySoundEngine.SetRTPCValue("RTPC_ShadowDistance", distance);
     }
 
-    void UpdateCharacterDistances()
+    void UpdateNPCDistances()
     {
         float threshold = 1000f;
         float distance = threshold;
-        foreach (NPCAudio _npc in _NPCAudioList)
+        foreach (NPCAnimationAudio _npc in _NPCAudioList)
         {
             distance = Vector3.Distance(_npc.transform.position, _Player.transform.position);
             if (distance < threshold)
@@ -241,6 +244,8 @@ public class AudioManager : MonoBehaviour
                 threshold = distance;
             }
         }
+        distance = threshold;
+        //Debug.Log(distance);
 
         AkUnitySoundEngine.SetRTPCValue("RTPC_NPCDistance", distance);
     }
