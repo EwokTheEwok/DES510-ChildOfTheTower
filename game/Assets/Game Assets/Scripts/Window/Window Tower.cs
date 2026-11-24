@@ -70,7 +70,8 @@ public class Tower : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            GameManager.Instance.PlayerCamera.SetInsideMode(false);
+            if (!GameManager.Instance.PlayerDied)
+                GameManager.Instance.PlayerCamera.SetInsideMode(false);
             _Active = false;
             InsideEvent?.Invoke(false);
             _TweenObject.Complete();

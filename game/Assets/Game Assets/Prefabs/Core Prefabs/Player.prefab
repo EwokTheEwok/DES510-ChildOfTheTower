@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 5149028594628649446}
   - component: {fileID: 6863664941801365428}
   - component: {fileID: 6265864327516568833}
+  - component: {fileID: 2030350012696507818}
   - component: {fileID: 2691565516604770673}
   m_Layer: 0
   m_Name: Character Sprite
@@ -208,6 +209,33 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2030350012696507818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108936073437521717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77a08ce560a63654b82381a46ed91a54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationEvents
+  WakeUpEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3827949712215586968}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: CanControl
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &2691565516604770673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,6 +276,11 @@ MonoBehaviour:
   - AudioEvent:
       idInternal: 0
       valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: fe3d0ef4980b8494c801f328ffb5993b, type: 2}
+    TagName: Stone
+  - AudioEvent:
+      idInternal: 0
+      valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: efca7fcabaf3c8f4a8ae10f023387cce, type: 2}
     TagName: Block
   - AudioEvent:
@@ -255,11 +288,6 @@ MonoBehaviour:
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 88003e68af5b57c4da5d9a4e6fe1fe26, type: 2}
     TagName: Sand
-  - AudioEvent:
-      idInternal: 0
-      valueGuidInternal: 
-      WwiseObjectReference: {fileID: 11400000, guid: fe3d0ef4980b8494c801f328ffb5993b, type: 2}
-    TagName: Stone
   - AudioEvent:
       idInternal: 0
       valueGuidInternal: 
@@ -517,8 +545,6 @@ MonoBehaviour:
   _FallingJumpTime: 0.25
   _MinTimeWait: 8
   _MaxTimeWait: 15
-  blockController: {fileID: 271766098097621373}
-  _BlockActive: 0
 --- !u!114 &271766098097621373
 MonoBehaviour:
   m_ObjectHideFlags: 0

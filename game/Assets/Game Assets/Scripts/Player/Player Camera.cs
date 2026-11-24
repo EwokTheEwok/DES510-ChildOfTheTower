@@ -107,6 +107,7 @@ public class PlayerCamera : MonoBehaviour
 
     public void SetBlockMode(bool _active)
     {
+        Debug.Log("block");
         _BlockTargetActive = _active;
         if (_BlockTargetActive)
         {
@@ -123,6 +124,7 @@ public class PlayerCamera : MonoBehaviour
 
     public void SetInsideMode(bool _inside)
     {
+        Debug.Log("inside "+ _inside);
         _InsideTower = _inside;
         if (_InsideTower)
         {

@@ -1,5 +1,6 @@
 using DG.Tweening;
 using System.Collections.Generic;
+using System.Drawing;
 using Unity.Cinemachine;
 using UnityEngine;
 using UnityEngine.Events;
@@ -23,6 +24,7 @@ public class BlockController2 : MonoBehaviour
     public LayerMask _BlockNodeLayer = 1 << 8;
     int _NearbyNodeTotal = 0;
     Collider[] _NearbyNodesList;
+    Collider[] _HitColliders;
 
     [Header("Block")]
     GameObject _BlockContainer;
@@ -84,6 +86,7 @@ public class BlockController2 : MonoBehaviour
 
         _ArrowUIDistance = _BlockSize + 1f;
         _NearbyNodesList = new Collider[_MaxNearbyNodes];
+        _HitColliders = new Collider[10];
         _Camera = Camera.main;
         _PlayerCamera = GetComponentInChildren<PlayerCamera>();
 
@@ -211,43 +214,64 @@ public class BlockController2 : MonoBehaviour
         {
             if (!_Active && NearNodes())
             {   //place on node if block isnt active
-                //_CinemachineCamera.Target.TrackingTarget = _BetweenTargets;
-                _PlayerCamera.SetBlockMode(true);
-                _Active = true;
+
                 GameObject nearestNode = NearestNode();
 
-                Vector3 nodeViewPos = _Camera.WorldToViewportPoint(nearestNode.transform.position);
-                Vector3 playerViewPos = _Camera.WorldToViewportPoint(transform.position);
-                Debug.Log(nodeViewPos.x + " " + playerViewPos.x);
+                if (!PlayerOverlapCheck(nearestNode))
+                {
+                    _PlayerCamera.SetBlockMode(true);
+                    _Active = true;
 
-                if (nodeViewPos.x < playerViewPos.x)
-                    PlaceAnimationEvent?.Invoke(0);
-                else
-                    PlaceAnimationEvent?.Invoke(1);
+                    Vector3 nodeViewPos = _Camera.WorldToViewportPoint(nearestNode.transform.position);
+                    Vector3 playerViewPos = _Camera.WorldToViewportPoint(transform.position);
+                    if (nodeViewPos.x < playerViewPos.x)
+                        PlaceAnimationEvent?.Invoke(0);
+                    else
+                        PlaceAnimationEvent?.Invoke(1);
 
-                _AxisPlaneRenderer.material.SetVector("_Origin", new Vector3(
-                            nearestNode.transform.position.x,
-                            nearestNode.transform.position.y,
-                            nearestNode.transform.position.z));
-                _Block = Instantiate(_BlockPrefab, _BlockContainer.transform);
-                _Block.transform.position = nearestNode.transform.position;
-                _Block.transform.eulerAngles = new Vector3(0f, nearestNode.transform.eulerAngles.y, 0f);
-                _BlockList.Add(_Block);
-                _PlayerBlockUI.placePanel.SetActive(false);
-                _PlayerBlockUI.playerPanel.SetActive(true);
-                _Block.SetActive(true);
-                _AxisPlane.SetActive(true);
-                _GuideBlock.SetActive(false);
-                BlockEvent?.Invoke(0, _Block);
-                _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
-                _PlayerBlockUI.SetTile(_BlockList.Count - 1, true);
-                _AxisBlockPosition = _Block.transform.position;
+                    _AxisPlaneRenderer.material.SetVector("_Origin", new Vector3(
+                                nearestNode.transform.position.x,
+                                nearestNode.transform.position.y,
+                                nearestNode.transform.position.z));
+
+                    _Block = Instantiate(_BlockPrefab, _BlockContainer.transform);
+                    _Block.transform.position = nearestNode.transform.position;
+                    _Block.transform.eulerAngles = new Vector3(0f, nearestNode.transform.eulerAngles.y, 0f);
+                    _BlockList.Add(_Block);
+                    _PlayerBlockUI.placePanel.SetActive(false);
+                    _PlayerBlockUI.playerPanel.SetActive(true);
+                    _Block.SetActive(true);
+                    _AxisPlane.SetActive(true);
+                    _GuideBlock.SetActive(false);
+                    BlockEvent?.Invoke(0, _Block);
+                    _PlayerCamera.SetCubeMode(_Block.transform.eulerAngles.y);
+                    _PlayerBlockUI.SetTile(_BlockList.Count - 1, true);
+                    _AxisBlockPosition = _Block.transform.position;
+                }
             }
             else if (_Active)
             {
                 _PlayerBlockUI.StartFade();
             }
         }
+    }
+
+    bool PlayerOverlapCheck(GameObject _node)
+    {
+        for (int i = 0; i < _HitColliders.Length; i++)
+        {
+            _HitColliders[i] = null;
+        }
+
+        Physics.OverlapBoxNonAlloc(_node.transform.position, new Vector3(1f, 1f, 1f), _HitColliders, _node.transform.rotation);
+        foreach (Collider col in _HitColliders)
+        {
+            if (col != null && col.CompareTag("Player"))
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public void OnMoveBlockVertical(InputAction.CallbackContext context)
@@ -298,7 +322,7 @@ public class BlockController2 : MonoBehaviour
             _BlockSize * _BlockRayScale,
             Physics.DefaultRaycastLayers,
             QueryTriggerInteraction.Ignore);
-        Debug.DrawRay(blockTransform.position, blockTransform.TransformDirection(localXY) * _BlockRayScale, Color.white, 5);
+        Debug.DrawRay(blockTransform.position, blockTransform.TransformDirection(localXY) * _BlockRayScale, UnityEngine.Color.white, 5);
 
         bool limitHit = false;
         //can move block
@@ -459,9 +483,9 @@ public class BlockController2 : MonoBehaviour
                 break;
         }
 
-        Debug.DrawRay(blockTransform.position, blockTransform.right * 0.5f, Color.softRed);
-        Debug.DrawRay(blockTransform.position, blockTransform.up * 0.5f, Color.softGreen);
-        Debug.DrawRay(blockTransform.position, blockTransform.forward * 0.5f, Color.softBlue);
+        Debug.DrawRay(blockTransform.position, blockTransform.right * 0.5f, UnityEngine.Color.softRed);
+        Debug.DrawRay(blockTransform.position, blockTransform.up * 0.5f, UnityEngine.Color.softGreen);
+        Debug.DrawRay(blockTransform.position, blockTransform.forward * 0.5f, UnityEngine.Color.softBlue);
     }
 
     private void Modify(Vector3 inputModY, Transform transform, Vector3 zDir, Vector3 xUI, float sign, float sign2)

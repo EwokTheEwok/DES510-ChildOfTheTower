@@ -37,8 +37,6 @@ public class GameManager : MonoBehaviour
     [Header("Tower")]
     [SerializeField] GameObject _TowerCollider = null;
 
-
-
     [Header("Shadow Ocean")]
     [SerializeField] GameObject _ShadowOcean = null;
     [SerializeField] float _MinSpeed = 0.5f;
@@ -56,6 +54,8 @@ public class GameManager : MonoBehaviour
     [Header("Player")]
     [SerializeField] GameObject _PlayerPrefab;
     GameObject _Player = null;
+    public bool PlayerDied { get => _PlayerDied; }
+    bool _PlayerDied = false;
 
     GameObject _DeathTrackingTarget;
     CharacterController _CharaController;
@@ -110,7 +110,10 @@ public class GameManager : MonoBehaviour
         _Player = Instantiate(_PlayerPrefab);
         _CharaController = _Player.GetComponent<CharacterController>();
         _CharaController.enabled = false;
-        _Player.transform.position = _Spawn.transform.position;
+        Physics.Raycast(_Spawn.transform.position, Vector3.down, out RaycastHit hitinfo, 50f, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore);
+        Vector3 newPosition = hitinfo.point;
+        newPosition.y += _CharaController.height / 1.95f;
+        _Player.transform.position = newPosition;
         _CharaController.enabled = true;
     }
     void Start()
@@ -163,13 +166,15 @@ public class GameManager : MonoBehaviour
 
     private void FellInShadow()
     {
+        _PlayerDied = true;
         GameEvent?.Invoke(GameEventTypes.Fall);
         _BlockController.Reset();
         _CharaController.excludeLayers = ~0;
-        _Moving = false;
         _PlayerActionMap.Disable();
+        
         _DeathTrackingTarget.transform.position = _Player.transform.position;
         _PlayerCCamera.Target.TrackingTarget = _DeathTrackingTarget.transform;
+        Debug.Log("death");
 
         _RestartCoroutine = Restart();
         StartCoroutine(_RestartCoroutine);  
@@ -179,26 +184,28 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
 
-        Vector3 restartPosition;
+        Vector3 playerRestartPosition;
         if (_CurrentCheckpoint != null)
-            restartPosition = _CurrentCheckpoint.GetComponent<Checkpoint>().RestartPosition();
+            playerRestartPosition = _CurrentCheckpoint.GetComponent<Checkpoint>().RestartPosition();
         else
-            restartPosition = _Spawn.transform.position;
+            playerRestartPosition = _Spawn.transform.position;
 
-        Vector3 shadowRestartPosition = new (0.0f, restartPosition.y + _ResetDistance, 0.0f);
+        Vector3 shadowRestartPosition = new (0.0f, playerRestartPosition.y + _ResetDistance, 0.0f);
         if (_ShadowInitialPosition.y > shadowRestartPosition.y)
             _ShadowOcean.transform.position = _ShadowInitialPosition;
         else
-            _ShadowOcean.transform.position = restartPosition;
+            _ShadowOcean.transform.position = shadowRestartPosition;
 
         _CharaController.excludeLayers = 0;
+        _CharaController.detectCollisions = true;
         _CharaController.enabled = false;
-        _Player.transform.position = restartPosition;
+        _Player.transform.position = playerRestartPosition;
         _CharaController.enabled = true;
         _CharaController.detectCollisions = true;
         _PlayerActionMap.Enable();
         PlayerCamera.ResetTarget();
         GameEvent?.Invoke(GameEventTypes.Restart);
+        _PlayerDied = false;
 
         yield return null;
     }
