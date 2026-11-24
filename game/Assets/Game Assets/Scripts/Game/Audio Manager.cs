@@ -85,8 +85,7 @@ public class AudioManager : MonoBehaviour
         _Tower.InsideEvent.AddListener(PlayAmbienceAudio);
         _NPCDialogueManagerInstance.NPCDialogueEvent.AddListener(PlayNPCDialogueAudio);
         _GameManagerInstance.GameEvent.AddListener(PlayEventAudio);
-
-        _Player.GetComponentInChildren<BrickDialogue>().BlockDialogueEvent.AddListener(PlayBlockDialogueAudio);
+        _GameManagerInstance.UI.GetComponentInChildren<BrickDialogue>().BlockDialogueEvent.AddListener(PlayBlockDialogueAudio);
         BlockController2 _bc = _Player.GetComponentInChildren<BlockController2>();
         _bc.BubbleEvent.AddListener(PlayBubbleAudio);
         _bc.BlockEvent.AddListener(PlayBlockAudio);

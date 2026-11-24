@@ -6037,8 +6037,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ef640f8e5473cb46a3237fb6b4c3be7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BrickDialogue
-  _RandomLines: []
-  _TargetedLines: []
+  _DialogueTextFile: {fileID: 4900000, guid: 34ffaf801ce6ce44bbaf8a426d95897f, type: 3}
+  _BlockCanvas: {fileID: 1621050545064285664}
+  _BrickBox: {fileID: 1749597752152786629}
   _TypeSpeed: 0.05
   BlockDialogueEvent:
     m_PersistentCalls:
@@ -7443,7 +7444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e800806254a52ec4f8942d3972816828, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogueManager
-  _NPCTag: NPC
+  _DialogueTextFile: {fileID: 4900000, guid: db565181ac4f7e64eaa695e55940ead5, type: 3}
   _Canvas: {fileID: 4535161505943526631}
   _DialogueBox: {fileID: 7569040686604530640}
   _NameBox: {fileID: 625028395374621218}
@@ -7463,7 +7464,7 @@ MonoBehaviour:
   height: 3.5
   TypeSpeed: 0.05
   _Animator: {fileID: 134581857168664735}
-  NPCAudioEvent:
+  NPCDialogueEvent:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &2765725553721345394
