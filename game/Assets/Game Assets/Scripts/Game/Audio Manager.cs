@@ -96,7 +96,7 @@ public class AudioManager : MonoBehaviour
     void Update()
     {
         UpdateOceanDistance();
-        UpdateCharacterDistances();
+        UpdateNPCDistances();
     }
 
     void PlayAmbienceAudio(bool _inside)
@@ -215,20 +215,24 @@ public class AudioManager : MonoBehaviour
     void UpdateOceanDistance()
     {
         float distance = _GameManagerInstance.ShadowOceanDistance();
-
+        
         if (distance < _playerDistanceThreshold && !_OceanAudioPlaying)
         {
+            //Debug.Log("playing "+distance);
             _ShadowOcean.Post(gameObject);
             _OceanAudioPlaying = true;
         }
-        else if (distance > _playerDistanceThreshold)
+        else if (distance > _playerDistanceThreshold && _OceanAudioPlaying)
         {
+            //Debug.Log("fade " + distance);
             _FadeOcean.Post(gameObject);
             _OceanAudioPlaying = false;
         }
+
+        AkUnitySoundEngine.SetRTPCValue("RTPC_ShadowDistance", distance);
     }
 
-    void UpdateCharacterDistances()
+    void UpdateNPCDistances()
     {
         float threshold = 1000f;
         float distance = threshold;
@@ -240,6 +244,8 @@ public class AudioManager : MonoBehaviour
                 threshold = distance;
             }
         }
+        distance = threshold;
+        //Debug.Log(distance);
 
         AkUnitySoundEngine.SetRTPCValue("RTPC_NPCDistance", distance);
     }

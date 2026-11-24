@@ -76,7 +76,10 @@ public class PlayerAnimationAudio : MonoBehaviour
             foreach (FootstepEvent _fe in _FootstepsEvents)
             {
                 if (hitinfo.transform.gameObject.CompareTag(_fe.TagName))
+                {
+                    //Debug.Log(hitinfo.transform.tag);
                     _fe.AudioEvent.Post(gameObject);
+                }
             }
         }
     }
