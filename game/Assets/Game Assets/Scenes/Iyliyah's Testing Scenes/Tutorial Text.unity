@@ -1656,6 +1656,7 @@ GameObject:
   - component: {fileID: 1313380211}
   - component: {fileID: 1313380210}
   - component: {fileID: 1313380214}
+  - component: {fileID: 1313380215}
   m_Layer: 0
   m_Name: Peter
   m_TagString: NPC
@@ -1823,6 +1824,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83984a49e37556b49836af3545def438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteBillboard
+--- !u!95 &1313380215
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313380208}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 14e83121a2caee042855e2d5e766506d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1352424870
 GameObject:
   m_ObjectHideFlags: 0
@@ -3211,6 +3234,7 @@ GameObject:
   - component: {fileID: 2065195101}
   - component: {fileID: 2065195107}
   - component: {fileID: 2065195109}
+  - component: {fileID: 2065195110}
   m_Layer: 0
   m_Name: Margaret
   m_TagString: NPC
@@ -3404,6 +3428,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83984a49e37556b49836af3545def438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpriteBillboard
+--- !u!114 &2065195110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2065195100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f2dcc914c73b347a303f124c38efdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCIdle
+  _MinTimeWait: 8
+  _MaxTimeWait: 10
 --- !u!1 &2068664112
 GameObject:
   m_ObjectHideFlags: 0
