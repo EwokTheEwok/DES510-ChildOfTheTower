@@ -82,6 +82,11 @@
 						<Sound Name="sfx_amb_rain_002" ID="{2C9FBCD4-926A-454A-88F1-EFD322EC23ED}" ShortID="825861720">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-1</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -313,7 +318,7 @@
 															</Point>
 															<Point>
 																<XPos>1</XPos>
-																<YPos>45</YPos>
+																<YPos>40</YPos>
 																<Flags>37</Flags>
 															</Point>
 														</PointList>

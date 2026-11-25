@@ -692,7 +692,7 @@
 								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 								<Property Name="UserAuxSendVolume0" Type="Real64">
 									<ValueList>
-										<Value>10</Value>
+										<Value>8</Value>
 									</ValueList>
 								</Property>
 								<Property Name="Volume" Type="Real64">
@@ -971,7 +971,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="sfx_wakeup_001" ID="{5263D2C1-3B5C-424E-AD43-3EA189DD3711}" ShortID="187416939">
+								<Sound Name="sfx_wakeup_002" ID="{C7E92C23-86EF-4BB9-A380-A4EB8ED5E744}" ShortID="123238273">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
@@ -981,25 +981,25 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="sfx_wakeup_001" ID="{7E627368-BEBA-41D3-A6F0-406570F7C7C5}">
+										<AudioFileSource Name="sfx_wakeup_002" ID="{6B9BB620-4054-445F-B104-6C1361BA39B3}">
 											<Language>SFX</Language>
-											<AudioFile>sfx_wakeup_001.wav</AudioFile>
+											<AudioFile>sfx_wakeup_002.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="307054694"/>
+												<MediaID ID="325734573"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="sfx_wakeup_001" ID="{7E627368-BEBA-41D3-A6F0-406570F7C7C5}" Platform="Linked"/>
+										<ActiveSource Name="sfx_wakeup_002" ID="{6B9BB620-4054-445F-B104-6C1361BA39B3}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
 							<ObjectLists>
 								<ObjectList Name="Playlist">
-									<PluginInnerObject Name="" ID="{0DEEF4F4-BB6A-44DF-A810-0C40A431A67D}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+									<PluginInnerObject Name="" ID="{1C6EA88C-FF8A-4A29-A60A-C73D2EB6EAC5}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
 										<ReferenceList>
 											<Reference Name="PlaylistObject">
-												<ObjectRef Name="sfx_wakeup_001" ID="{5263D2C1-3B5C-424E-AD43-3EA189DD3711}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+												<ObjectRef Name="sfx_wakeup_002" ID="{C7E92C23-86EF-4BB9-A380-A4EB8ED5E744}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
 											</Reference>
 										</ReferenceList>
 									</PluginInnerObject>
@@ -1011,7 +1011,7 @@
 								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-4</Value>
+										<Value>-5</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1069,7 +1069,7 @@
 							<PropertyList>
 								<Property Name="UserAuxSendVolume0" Type="Real64">
 									<ValueList>
-										<Value>6</Value>
+										<Value>7</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -4307,6 +4307,59 @@
 											</Reference>
 										</ReferenceList>
 									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Thomas_Idle" ID="{916491AD-F42A-4AAA-B857-25BAC80C1CB7}" ShortID="297355258">
+							<PropertyList>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="SFX_NPC" ID="{90830356-FDC1-4616-9636-AD65E24CB37C}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="sfx_thomas_idle_001" ID="{6BC0068C-AB87-4259-A02C-B169A9DCDFCA}" ShortID="914839704">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Reverb Aux Busses" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{B37BDA2B-9BEF-4146-B88F-E9EBF743126F}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="sfx_thomas_idle_001" ID="{104F9FE6-3BF8-4F98-870E-4C412CD15CDC}">
+											<Language>SFX</Language>
+											<AudioFile>sfx_thomas_idle_001.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="616260085"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="sfx_thomas_idle_001" ID="{104F9FE6-3BF8-4F98-870E-4C412CD15CDC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Playlist">
+									<PluginInnerObject Name="" ID="{1569BDC6-7F89-4988-BB15-862419BA8580}" PluginName="PlaylistSlot" CompanyID="0" PluginID="86">
+										<ReferenceList>
+											<Reference Name="PlaylistObject">
+												<ObjectRef Name="sfx_thomas_idle_001" ID="{6BC0068C-AB87-4259-A02C-B169A9DCDFCA}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+											</Reference>
+										</ReferenceList>
+									</PluginInnerObject>
 								</ObjectList>
 							</ObjectLists>
 						</RandomSequenceContainer>
