@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{7B3610EC-078A-BAAC-9C35-318C2379D11F}",
+    "Hash": "{3BE19BD2-9562-7869-BE84-04BFEA49339C}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -902,6 +902,14 @@
       "Location": "Memory",
       "ShortName": "sfx_footsteps_003_007.wav",
       "CachePath": "97/{974A71D4-AE58-0D0F-6281-ED736DBA9BE8}.wem"
+     },
+     {
+      "Id": "616260085",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_thomas_idle_001.wav",
+      "CachePath": "98/{98FB2FEB-3E6E-4E9D-92D3-4B5B9384FE78}.wem"
      },
      {
       "Id": "619837463",
@@ -10441,6 +10449,21 @@
       ]
      },
      {
+      "Id": "3493479751",
+      "Name": "Play_Thomas_Idle",
+      "ObjectPath": "\\Events\\SFX Events\\NPC Events\\Play_Thomas_Idle",
+      "GUID": "{7D564E3D-C4C0-4A06-B197-D53ABC350B2F}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "3",
+      "DurationMax": "3",
+      "MediaRefs": [
+       {
+        "Id": "616260085"
+       }
+      ]
+     },
+     {
       "Id": "1355629322",
       "Name": "Play_TitleLoop",
       "ObjectPath": "\\Events\\Music Events\\Play_TitleLoop",
@@ -11132,6 +11155,6 @@
     ]
    }
   ],
-  "FileHash": "{B07CD259-A72B-570A-6375-323333FA5685}"
+  "FileHash": "{264D3BD2-41EF-A6EF-9B19-151C4737FDF5}"
  }
 }
