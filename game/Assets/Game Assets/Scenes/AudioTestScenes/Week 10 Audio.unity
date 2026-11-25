@@ -2529,9 +2529,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6638906893507327073, guid: 742b00d3bc62aaf4e95c79b242d2a098, type: 3}
+      propertyPath: m_TagString
+      value: Stone
+      objectReference: {fileID: 0}
     - target: {fileID: -3143650053994482845, guid: 742b00d3bc62aaf4e95c79b242d2a098, type: 3}
       propertyPath: m_Convex
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2571958757387108284, guid: 742b00d3bc62aaf4e95c79b242d2a098, type: 3}
+      propertyPath: m_TagString
+      value: Stone
       objectReference: {fileID: 0}
     - target: {fileID: -1000177065083091350, guid: 742b00d3bc62aaf4e95c79b242d2a098, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2540,6 +2548,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 742b00d3bc62aaf4e95c79b242d2a098, type: 3}
       propertyPath: m_Name
       value: Rest section Margaret Export 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5067194439933864430, guid: 742b00d3bc62aaf4e95c79b242d2a098, type: 3}
+      propertyPath: m_TagString
+      value: Wood
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4001,15 +4013,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3106920582589704342, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.5
+      value: -16.25
       objectReference: {fileID: 0}
     - target: {fileID: 3106920582589704342, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.1099997
+      value: 272.32
       objectReference: {fileID: 0}
     - target: {fileID: 3106920582589704342, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 109.509995
+      value: -14.54
       objectReference: {fileID: 0}
     - target: {fileID: 3621430149484473827, guid: b564423f20d4c2347a61a6d2b82f8f09, type: 3}
       propertyPath: m_IsActive
@@ -8725,6 +8737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7564fc0a83b1a8b4295aa0f60695b62d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Controls
+  pause: {fileID: 0}
   ControlsMenu: {fileID: 1495795536}
   PauseMenu: {fileID: 206458851}
   resumeButton: {fileID: 1502083274}
@@ -17961,6 +17974,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477431a5799d9264da22ceb9c5026b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pause
+  isPaused: 0
   PauseMenu: {fileID: 206458851}
   ControlsMenu: {fileID: 1495795536}
   resumeButton: {fileID: 370553783}
@@ -18624,6 +18638,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 625692284}
     m_Modifications:
+    - target: {fileID: 4720959938090177748, guid: 8a2550943e4a47c4c82acb16f5ab3574, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4881849172340707980, guid: 8a2550943e4a47c4c82acb16f5ab3574, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.61908
