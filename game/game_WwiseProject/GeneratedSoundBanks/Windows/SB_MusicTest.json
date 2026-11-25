@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{3BE19BD2-9562-7869-BE84-04BFEA49339C}",
+    "Hash": "{165C0E40-48F4-ECD8-375D-9D45EB5A2862}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -472,14 +472,6 @@
       "CachePath": "1B/{1BA4E07E-AD17-EBEE-0AF3-550A9394AC63}.wem"
      },
      {
-      "Id": "307054694",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "sfx_wakeup_001.wav",
-      "CachePath": "A5/{A5962999-3444-3DE3-F648-A1492F52F9FC}.wem"
-     },
-     {
       "Id": "317257852",
       "Language": "SFX",
       "Streaming": "false",
@@ -502,6 +494,14 @@
       "Location": "Memory",
       "ShortName": "sfx_vo_marg_003.wav",
       "CachePath": "5D/{5D12D8F7-FDD6-DD52-183A-F0B4E5B1142C}.wem"
+     },
+     {
+      "Id": "325734573",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_wakeup_002.wav",
+      "CachePath": "49/{4998F604-FE1A-95F4-222E-FC326A9A3302}.wem"
      },
      {
       "Id": "327232913",
@@ -10629,11 +10629,11 @@
       "GUID": "{F61FD2D8-6D42-4898-BD03-5304B1FEAE65}",
       "Color": "13",
       "DurationType": "OneShot",
-      "DurationMin": "4.5",
-      "DurationMax": "4.5",
+      "DurationMin": "4.83",
+      "DurationMax": "4.83",
       "MediaRefs": [
        {
-        "Id": "307054694"
+        "Id": "325734573"
        }
       ],
       "AuxBusRefs": [
@@ -11155,6 +11155,6 @@
     ]
    }
   ],
-  "FileHash": "{E97988E9-2E72-6404-9556-01D7D1E7EC92}"
+  "FileHash": "{DBDB0613-2706-DF49-3380-8704C8985267}"
  }
 }
