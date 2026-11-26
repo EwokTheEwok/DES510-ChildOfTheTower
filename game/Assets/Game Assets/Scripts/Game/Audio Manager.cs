@@ -2,9 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem.UI;
-using UnityEngine.UIElements;
 
 public class AudioManager : MonoBehaviour
 {
@@ -60,9 +57,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AK.Wwise.Event _BlockLimit;
     [SerializeField] AK.Wwise.Event _BlockUndo;
 
-    //[Header("Doors")]
-    //public AK.Wwise.Event DoorOpenEvent;
-
     void Start()
     {
         _GameManagerInstance = GameManager.Instance;
@@ -70,6 +64,9 @@ public class AudioManager : MonoBehaviour
         _Tower = _GameManagerInstance.Tower;
         _Player = GameManager.Instance.Player;
         _NPCAudioList = FindObjectsByType<NPCAnimationAudio>().ToList();
+
+        Camera mainCamera = Camera.main;
+        mainCamera.GetComponent<AkListenerDistanceProbe>().distanceProbe = _Player.transform.Find("Listener").GetComponent<AkGameObj>();
 
         foreach (TriggeredAudio _tm in _TriggeredMusic)
         {
