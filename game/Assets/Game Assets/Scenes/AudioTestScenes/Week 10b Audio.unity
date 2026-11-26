@@ -2592,6 +2592,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -16.239475
       objectReference: {fileID: 0}
+    - target: {fileID: -2299420495576962388, guid: 4b2da41496f41b54daf9fc5197a89940, type: 3}
+      propertyPath: m_TagString
+      value: Sand
+      objectReference: {fileID: 0}
     - target: {fileID: -2188657976187392874, guid: 4b2da41496f41b54daf9fc5197a89940, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2962,6 +2966,7 @@ GameObject:
   - component: {fileID: 1510943285}
   - component: {fileID: 1510943284}
   - component: {fileID: 1510943291}
+  - component: {fileID: 1510943292}
   m_Layer: 0
   m_Name: Margaret
   m_TagString: NPC Dialogue 0
@@ -3142,6 +3147,20 @@ MonoBehaviour:
   AnimationAudioEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1510943292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1510943283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67f2dcc914c73b347a303f124c38efdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCIdle
+  _MinTimeWait: 8
+  _MaxTimeWait: 10
 --- !u!1 &1530624631
 GameObject:
   m_ObjectHideFlags: 0

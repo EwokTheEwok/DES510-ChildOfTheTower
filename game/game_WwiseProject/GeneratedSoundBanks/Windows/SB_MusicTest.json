@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{78925537-2F61-4D79-829C-D531D5A2A024}",
     "Language": "SFX",
-    "Hash": "{165C0E40-48F4-ECD8-375D-9D45EB5A2862}",
+    "Hash": "{14EC4701-8711-D7B6-AF31-702E342E68AA}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\SB_MusicTest",
     "ShortName": "SB_MusicTest",
     "Path": "SB_MusicTest.bnk",
@@ -550,6 +550,14 @@
       "Location": "Memory",
       "ShortName": "sfx_vo_thomas_002.wav",
       "CachePath": "1B/{1B0819C6-3706-C09C-CDA9-932EA764FDBE}.wem"
+     },
+     {
+      "Id": "348576882",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "sfx_peter_idle_001.wav",
+      "CachePath": "10/{10B9819A-E842-4FB6-B510-38C3FCE6C265}.wem"
      },
      {
       "Id": "353335601",
@@ -10342,6 +10350,30 @@
       ]
      },
      {
+      "Id": "3365647529",
+      "Name": "Play_Peter_Idle",
+      "ObjectPath": "\\Events\\SFX Events\\NPC Events\\Play_Peter_Idle",
+      "GUID": "{DC3A8B2A-AFB4-41BE-8DD0-E0E754E229DF}",
+      "Color": "13",
+      "DurationType": "OneShot",
+      "DurationMin": "2.25",
+      "DurationMax": "2.25",
+      "MediaRefs": [
+       {
+        "Id": "348576882"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "202033071",
+        "Name": "Reverb_Tower",
+        "ObjectPath": "\\Busses\\Default Work Unit\\Reverb Aux Busses\\Reverb_Tower",
+        "GUID": "{F9E3844F-2E18-4414-894E-13324F08621F}",
+        "Color": "7"
+       }
+      ]
+     },
+     {
       "Id": "3234418437",
       "Name": "Play_Shadows",
       "ObjectPath": "\\Events\\SFX Events\\Shadow Events\\Play_Shadows",
@@ -10629,8 +10661,8 @@
       "GUID": "{F61FD2D8-6D42-4898-BD03-5304B1FEAE65}",
       "Color": "13",
       "DurationType": "OneShot",
-      "DurationMin": "4.83",
-      "DurationMax": "4.83",
+      "DurationMin": "5.43",
+      "DurationMax": "5.43",
       "MediaRefs": [
        {
         "Id": "325734573"
@@ -11155,6 +11187,6 @@
     ]
    }
   ],
-  "FileHash": "{DBDB0613-2706-DF49-3380-8704C8985267}"
+  "FileHash": "{96F1A764-9FC8-2DA5-5A44-3BB7AB80AFF6}"
  }
 }
