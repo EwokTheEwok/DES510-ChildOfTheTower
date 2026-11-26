@@ -650,6 +650,9 @@
 						<Event Name="Play_WakeUp" ID="{F61FD2D8-6D42-4898-BD03-5304B1FEAE65}">
 							<ChildrenList>
 								<Action Name="" ID="{C28021EF-7361-45FA-9314-8F24670C1DCF}" ShortID="385324253">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.6"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="WakeUp" ID="{23F5FEDF-6F0E-40B1-93F5-E0FD3C2ECCAA}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
@@ -678,6 +681,18 @@
 										</Reference>
 									</ReferenceList>
 								</Action>
+								<Action Name="" ID="{2C2F6CC3-D8EC-4DA2-B5B7-41FD2C23A9D2}" ShortID="495524330">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="12"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+										<Property Name="Volume" Type="Real64" Value="-96"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="BLC_Shadows" ID="{672B4107-335F-42F3-B5D3-265214C71EAE}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
 								<Action Name="" ID="{1BCC477D-98F9-4701-BAF5-970D66E17E2D}" ShortID="391763067">
 									<PropertyList>
 										<Property Name="ActionType" Type="int16" Value="12"/>
@@ -702,6 +717,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Falling" ID="{7CCB4439-B8CA-4A39-B4EC-91884114D62E}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{DBB3753B-C3AE-4B88-AF1B-689C958B21F3}" ShortID="995033953">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="16"/>
+										<Property Name="Scope" Type="int16" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="BLC_Shadows" ID="{672B4107-335F-42F3-B5D3-265214C71EAE}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -1009,6 +1035,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Thomas_Idle" ID="{916491AD-F42A-4AAA-B857-25BAC80C1CB7}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Peter_Idle" ID="{DC3A8B2A-AFB4-41BE-8DD0-E0E754E229DF}">
+							<ChildrenList>
+								<Action Name="" ID="{A6F2ECB9-8229-4277-9339-EA61B1E5091C}" ShortID="610589760">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Peter_Idle" ID="{533825A1-89EB-4DB9-B1AA-D9608CA80CFF}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

@@ -76,6 +76,7 @@ namespace AK
         static const AkUniqueID PLAY_MARG_IDLE = 3903059178U;
         static const AkUniqueID PLAY_MARGARET = 2321812079U;
         static const AkUniqueID PLAY_PETER = 3201150064U;
+        static const AkUniqueID PLAY_PETER_IDLE = 3365647529U;
         static const AkUniqueID PLAY_SHADOWS = 3234418437U;
         static const AkUniqueID PLAY_THOMAS = 3273402534U;
         static const AkUniqueID PLAY_THOMAS_IDLE = 3493479751U;
