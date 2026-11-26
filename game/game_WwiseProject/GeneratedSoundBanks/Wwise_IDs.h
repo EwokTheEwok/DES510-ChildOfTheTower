@@ -189,6 +189,7 @@ namespace AK
     {
         static const AkUniqueID RTPC_AMBIENCESWITCHER = 1038293638U;
         static const AkUniqueID RTPC_AMBVOLUME = 1226769967U;
+        static const AkUniqueID RTPC_INTROSHADOWMUTE = 132273420U;
         static const AkUniqueID RTPC_MASTERVOLUME = 2582501215U;
         static const AkUniqueID RTPC_MUSICVOLUME = 2378823330U;
         static const AkUniqueID RTPC_MXDUCKING = 4238634557U;

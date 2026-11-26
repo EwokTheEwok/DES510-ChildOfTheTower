@@ -54,12 +54,13 @@
 								</Action>
 								<Action Name="" ID="{102EB4D1-FC91-4848-A307-00CD1F56CC40}" ShortID="296788337">
 									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="16"/>
+										<Property Name="ActionType" Type="int16" Value="38"/>
+										<Property Name="GameParameterValue" Type="Real64" Value="100"/>
 										<Property Name="Scope" Type="int16" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="BLC_Shadows" ID="{672B4107-335F-42F3-B5D3-265214C71EAE}" WorkUnitID="{C502D811-6269-42B0-80CC-FD5B75FF0583}"/>
+											<ObjectRef Name="RTPC_IntroShadowMute" ID="{5E405A02-26FC-4FE1-A418-F5B64B50F976}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
