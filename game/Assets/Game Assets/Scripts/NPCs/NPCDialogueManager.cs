@@ -85,6 +85,7 @@ public class NPCDialogueManager : MonoBehaviour
     {
         dialogueTransform = _DialogueBox.transform as RectTransform;
         GameManager.Instance.Player.GetComponentInChildren<PlayerDialogueTrigger>().NPCDialogueEvent.AddListener(NPCActivate);
+        GameManager.Instance.PauseEvent.AddListener(OnPause);
         LoadDialogue();
     }
 
@@ -191,8 +192,6 @@ public class NPCDialogueManager : MonoBehaviour
             {
                 _ScreenDialogueText.text = "";
 
-
-
                 foreach (char c in line)
                 {
                     _ScreenDialogueText.text += c;
@@ -237,6 +236,21 @@ public class NPCDialogueManager : MonoBehaviour
         {
             StopCoroutine(_DialogueCoroutine);
             StopTalking();
+        }
+    }
+
+    void OnPause(bool pause)
+    {
+        if (_DialogueCoroutine != null && _NPCActive)
+        {
+            if (pause)
+            {
+                StopCoroutine(_DialogueCoroutine);
+            }
+            else
+            {
+                StartCoroutine(_DialogueCoroutine);
+            }
         }
     }
 }
