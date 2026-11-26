@@ -57,6 +57,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AK.Wwise.Event _BlockLimit;
     [SerializeField] AK.Wwise.Event _BlockUndo;
 
+    [Header("States")]
+    [SerializeField] AK.Wwise.Event _Pause;
+    [SerializeField] AK.Wwise.Event _Resume;
+
     void Start()
     {
         _GameManagerInstance = GameManager.Instance;
@@ -78,13 +82,18 @@ public class AudioManager : MonoBehaviour
 
         _Tower.InsideEvent.AddListener(PlayAmbienceAudio);
         _NPCDialogueManagerInstance.NPCDialogueEvent.AddListener(PlayNPCDialogueAudio);
+
         _GameManagerInstance.GameEvent.AddListener(PlayEventAudio);
         _GameManagerInstance.UI.GetComponentInChildren<BrickDialogue>().BlockDialogueEvent.AddListener(PlayBlockDialogueAudio);
+        _GameManagerInstance.PauseEvent.AddListener(PlayStateAudio);
+
         BlockController2 _bc = _Player.GetComponentInChildren<BlockController2>();
         _bc.BubbleEvent.AddListener(PlayBubbleAudio);
         _bc.BlockEvent.AddListener(PlayBlockAudio);
         _bc.UndoEvent.AddListener(PlayBlockUndoAudio);
         _bc.LimitEvent.AddListener(PlayBlockLimitAudio);
+
+
     }
 
     void Update()
@@ -204,6 +213,14 @@ public class AudioManager : MonoBehaviour
     void PlayBlockLimitAudio(GameObject _obj)
     {
         _BlockLimit.Post(_obj);
+    }
+
+    void PlayStateAudio(bool value)
+    {
+        if (value)
+            _Pause.Post(gameObject);
+        else
+            _Resume.Post(gameObject);
     }
 
     void UpdateOceanDistance()

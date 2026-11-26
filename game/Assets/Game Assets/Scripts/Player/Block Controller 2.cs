@@ -441,7 +441,6 @@ public class BlockController2 : MonoBehaviour
         }
         else
         {
-            //_RetrievingAnimation = false;
             UndoAnimationEvent?.Invoke(BlockDirection(), true);
             _PlayerMovement.CanControl(true);
             UndoEvent?.Invoke(_Block);
