@@ -27,6 +27,7 @@ public class SceneSwitch : MonoBehaviour
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
         Debug.Log(sceneName);
+        yield return new WaitForSeconds(2);
         yield return sceneFade.FadeOutCoroutine(SceneFadeDuration);
         yield return SceneManager.LoadSceneAsync(sceneName);
         Debug.Log(sceneName);
