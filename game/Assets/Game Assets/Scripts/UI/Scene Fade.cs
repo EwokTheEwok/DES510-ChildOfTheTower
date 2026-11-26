@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class SceneFade : MonoBehaviour
 {
     [SerializeField] private Image BlackScreen;
+    [SerializeField] private float elapsedPercentage;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -33,7 +34,7 @@ public class SceneFade : MonoBehaviour
     private IEnumerator FadeCoroutine(Color startColor, Color targetColor, float duration)
     {
         float elapsedTime = 0;
-        float elapsedPercentage = 0;
+        elapsedPercentage = 0;
 
         while(elapsedPercentage < 1)
         {

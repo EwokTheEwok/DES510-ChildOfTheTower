@@ -302,7 +302,7 @@ GameObject:
   - component: {fileID: 219236571}
   m_Layer: 0
   m_Name: Thomas
-  m_TagString: NPC
+  m_TagString: NPC Dialogue 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1427,7 +1427,7 @@ GameObject:
   - component: {fileID: 1313380215}
   m_Layer: 0
   m_Name: Peter
-  m_TagString: NPC
+  m_TagString: NPC Dialogue 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1622,6 +1622,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1022119506}
     m_Modifications:
+    - target: {fileID: 5957756892591578974, guid: 28bc6b0974845e5499b9b1bacfe01b73, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af625bf82fb13424ab4d6f57c334fa01, type: 3}
+    - target: {fileID: 5957756892591578974, guid: 28bc6b0974845e5499b9b1bacfe01b73, type: 3}
+      propertyPath: m_SpriteState.m_SelectedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af625bf82fb13424ab4d6f57c334fa01, type: 3}
+    - target: {fileID: 5957756892591578974, guid: 28bc6b0974845e5499b9b1bacfe01b73, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: af625bf82fb13424ab4d6f57c334fa01, type: 3}
+    - target: {fileID: 7488749164466898125, guid: 28bc6b0974845e5499b9b1bacfe01b73, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a2f549531522dc0489a0c057bf66799f, type: 3}
     - target: {fileID: 8249696220706054994, guid: 28bc6b0974845e5499b9b1bacfe01b73, type: 3}
       propertyPath: m_Name
       value: UI
@@ -1867,7 +1883,7 @@ GameObject:
   - component: {fileID: 1591350644}
   m_Layer: 0
   m_Name: Block Dialogue 0
-  m_TagString: Block Dialogue
+  m_TagString: Block Dialogue 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2944,7 +2960,7 @@ GameObject:
   - component: {fileID: 2049101711}
   m_Layer: 0
   m_Name: Block Dialogue 1
-  m_TagString: Block Dialogue
+  m_TagString: Block Dialogue 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3003,7 +3019,7 @@ GameObject:
   - component: {fileID: 2065195110}
   m_Layer: 0
   m_Name: Margaret
-  m_TagString: NPC
+  m_TagString: NPC Dialogue 0
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

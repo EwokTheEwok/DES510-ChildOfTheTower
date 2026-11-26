@@ -26,13 +26,13 @@ public class CreditsRoll : MonoBehaviour
         ThankYou.gameObject.SetActive(true);
         yield return sceneFade.FadeInCoroutine(SceneFadeDuration);
 
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         yield return sceneFade.FadeOutCoroutine(SceneFadeDuration);
         ThankYou.gameObject.SetActive(false);
         Credits.SetActive(true);
         yield return sceneFade.FadeInCoroutine(SceneFadeDuration);
 
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(4);
         yield return sceneFade.FadeOutCoroutine(SceneFadeDuration);
         Credits.SetActive(false);
         FinalScreen.SetActive(true);
