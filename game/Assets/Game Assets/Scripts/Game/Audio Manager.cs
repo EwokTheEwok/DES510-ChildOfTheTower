@@ -32,7 +32,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] AK.Wwise.Event _PeterIdle;
     [SerializeField] AK.Wwise.Event _MargaretIdle;
     [SerializeField] AK.Wwise.Event _ThomasIdle;
-    List<NPCAnimationAudio> _NPCAudioList;
+    List<NPCAnimationAudio> _NPCAudioList = new();
     GameObject _Player;
 
     [Header("Shadow Ocean")]

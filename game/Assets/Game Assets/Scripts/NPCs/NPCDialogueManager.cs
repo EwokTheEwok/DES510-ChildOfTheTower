@@ -181,8 +181,6 @@ public class NPCDialogueManager : MonoBehaviour
         MargaretLocal.enabled = character == CharacterNames.Margaret;
         ThomasLocal.enabled = character == CharacterNames.Thomas;
 
-        NPCDialogueEvent?.Invoke(_CurrentNPC, character);
-
         while (_NPCActive)
         {
             _Canvas.SetActive(true);
@@ -191,6 +189,7 @@ public class NPCDialogueManager : MonoBehaviour
             foreach (string line in currentDialogue)
             {
                 _ScreenDialogueText.text = "";
+                NPCDialogueEvent?.Invoke(_CurrentNPC, character);
 
                 foreach (char c in line)
                 {
