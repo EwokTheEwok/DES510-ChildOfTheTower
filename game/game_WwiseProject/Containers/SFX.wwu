@@ -4217,6 +4217,9 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_NPC" ID="{F42B3B68-EE92-4BCD-A5FB-F0E820D3C1A5}" WorkUnitID="{F604FF2A-7F60-4543-83FD-4F32A042A5AF}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
 								</Reference>
@@ -4273,47 +4276,6 @@
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
-							<ObjectLists>
-								<ObjectList Name="RTPC">
-									<RTPC Name="" ID="{630F37AE-D940-4A9F-92A3-5CA31FA9D451}" ShortID="444627460">
-										<PropertyList>
-											<Property Name="PropertyName" Type="string" Value="Volume"/>
-										</PropertyList>
-										<ReferenceList>
-											<Reference Name="ControlInput">
-												<ObjectRef Name="RTPC_NPCDistance" ID="{D3A35AE9-21F1-49A3-8B8E-B82DD3A3A437}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
-											</Reference>
-											<Reference Name="Curve">
-												<Custom>
-													<Curve Name="" ID="{CDE41D07-3CE5-469A-BEC5-D03F92D3D15D}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-0.09815</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>5</XPos>
-																<YPos>0</YPos>
-																<Flags>0</Flags>
-																<SegmentShape>SCurve</SegmentShape>
-															</Point>
-															<Point>
-																<XPos>17</XPos>
-																<YPos>-200</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</Custom>
-											</Reference>
-										</ReferenceList>
-									</RTPC>
-								</ObjectList>
-							</ObjectLists>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Thomas_Idle" ID="{916491AD-F42A-4AAA-B857-25BAC80C1CB7}" ShortID="297355258">
 							<PropertyList>
@@ -4326,6 +4288,9 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_NPC" ID="{F42B3B68-EE92-4BCD-A5FB-F0E820D3C1A5}" WorkUnitID="{F604FF2A-7F60-4543-83FD-4F32A042A5AF}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
 								</Reference>
@@ -4367,45 +4332,6 @@
 										</ReferenceList>
 									</PluginInnerObject>
 								</ObjectList>
-								<ObjectList Name="RTPC">
-									<RTPC Name="" ID="{12ED64F4-A536-4FB3-B7FA-76FA067437AF}" ShortID="171610809">
-										<PropertyList>
-											<Property Name="PropertyName" Type="string" Value="Volume"/>
-										</PropertyList>
-										<ReferenceList>
-											<Reference Name="ControlInput">
-												<ObjectRef Name="RTPC_NPCDistance" ID="{D3A35AE9-21F1-49A3-8B8E-B82DD3A3A437}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
-											</Reference>
-											<Reference Name="Curve">
-												<Custom>
-													<Curve Name="" ID="{471BC49B-5055-4140-BB2C-FD5DA836B7DA}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-0.098150000000004</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>5</XPos>
-																<YPos>0</YPos>
-																<Flags>0</Flags>
-																<SegmentShape>SCurve</SegmentShape>
-															</Point>
-															<Point>
-																<XPos>17</XPos>
-																<YPos>-200</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</Custom>
-											</Reference>
-										</ReferenceList>
-									</RTPC>
-								</ObjectList>
 							</ObjectLists>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Peter_Idle" ID="{533825A1-89EB-4DB9-B1AA-D9608CA80CFF}" ShortID="731579515">
@@ -4419,6 +4345,9 @@
 								</Property>
 							</PropertyList>
 							<ReferenceList>
+								<Reference Name="Attenuation">
+									<ObjectRef Name="Attenuation_NPC" ID="{F42B3B68-EE92-4BCD-A5FB-F0E820D3C1A5}" WorkUnitID="{F604FF2A-7F60-4543-83FD-4F32A042A5AF}"/>
+								</Reference>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{384F03D1-5CD6-4CBA-86BA-F4EA2C94A23D}"/>
 								</Reference>
@@ -4462,45 +4391,6 @@
 											</Reference>
 										</ReferenceList>
 									</PluginInnerObject>
-								</ObjectList>
-								<ObjectList Name="RTPC">
-									<RTPC Name="" ID="{97F8CD2E-5788-416F-9F9E-35D8191503F4}" ShortID="219992566">
-										<PropertyList>
-											<Property Name="PropertyName" Type="string" Value="Volume"/>
-										</PropertyList>
-										<ReferenceList>
-											<Reference Name="ControlInput">
-												<ObjectRef Name="RTPC_NPCDistance" ID="{D3A35AE9-21F1-49A3-8B8E-B82DD3A3A437}" WorkUnitID="{83F6AF07-ACF7-4E52-BB53-04F7EBD8AEAF}"/>
-											</Reference>
-											<Reference Name="Curve">
-												<Custom>
-													<Curve Name="" ID="{EF8BCCB9-529A-4F8F-9921-9C87356AAE1B}">
-														<PropertyList>
-															<Property Name="Flags" Type="int32" Value="3"/>
-														</PropertyList>
-														<PointList>
-															<Point>
-																<XPos>0</XPos>
-																<YPos>-0.098150000000004</YPos>
-																<Flags>5</Flags>
-															</Point>
-															<Point>
-																<XPos>5</XPos>
-																<YPos>0</YPos>
-																<Flags>0</Flags>
-																<SegmentShape>SCurve</SegmentShape>
-															</Point>
-															<Point>
-																<XPos>17</XPos>
-																<YPos>-200</YPos>
-																<Flags>37</Flags>
-															</Point>
-														</PointList>
-													</Curve>
-												</Custom>
-											</Reference>
-										</ReferenceList>
-									</RTPC>
 								</ObjectList>
 							</ObjectLists>
 						</RandomSequenceContainer>
