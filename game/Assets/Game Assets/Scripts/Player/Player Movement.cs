@@ -147,16 +147,12 @@ public class PlayerMovement : MonoBehaviour
         {
             _HasJumped = true;
             _Animator.SetTrigger("Jumping");
-            //PlayerAudioEvent?.Invoke(gameObject, PlayerEventType.Jump);
             _Velocity.y = _JumpSpeed;
-
-
         }
     }
 
     public void OnPlaceBrick(int direction)
     {
-        Debug.Log("function fires");
         _Animator.SetFloat("brickPlaceX", direction);
         _Animator.SetTrigger("Placing");
 
