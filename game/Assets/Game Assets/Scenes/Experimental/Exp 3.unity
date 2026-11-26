@@ -1060,23 +1060,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 5107910143074527822, guid: e77693b96149e814e8c9caf86a739198, type: 3}
-    - {fileID: 8842509904589410422, guid: e77693b96149e814e8c9caf86a739198, type: 3}
+    - {fileID: 0}
+    - {fileID: 0}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e77693b96149e814e8c9caf86a739198, type: 3}
---- !u!114 &526157072 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2925398901675614982, guid: e77693b96149e814e8c9caf86a739198, type: 3}
-  m_PrefabInstance: {fileID: 526157071}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5580556ec5f03243bb4bedf8c297192, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkGameObj
 --- !u!4 &557773108 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4881849172340707980, guid: 8a2550943e4a47c4c82acb16f5ab3574, type: 3}
@@ -3725,7 +3714,7 @@ PrefabInstance:
     - target: {fileID: 3705442265808061381, guid: c6454c1c536bc3148a9109bf722bf489, type: 3}
       propertyPath: distanceProbe
       value: 
-      objectReference: {fileID: 526157072}
+      objectReference: {fileID: 0}
     - target: {fileID: 4301899469002649638, guid: c6454c1c536bc3148a9109bf722bf489, type: 3}
       propertyPath: m_Name
       value: Main Camera

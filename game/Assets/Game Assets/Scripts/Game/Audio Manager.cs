@@ -65,9 +65,6 @@ public class AudioManager : MonoBehaviour
         _Player = GameManager.Instance.Player;
         _NPCAudioList = FindObjectsByType<NPCAnimationAudio>().ToList();
 
-        Camera mainCamera = Camera.main;
-        mainCamera.GetComponent<AkListenerDistanceProbe>().distanceProbe = _Player.transform.Find("Listener").GetComponent<AkGameObj>();
-
         foreach (TriggeredAudio _tm in _TriggeredMusic)
         {
             AudioTrigger at = _tm.TriggerObject.gameObject.AddComponent<AudioTrigger>();
