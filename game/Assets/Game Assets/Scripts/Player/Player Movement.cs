@@ -15,9 +15,6 @@ public class PlayerMovement : MonoBehaviour
     float _FallingTimer = 0f;
     bool _HasJumped = false;
 
-    //Events
-    //[HideInInspector] public UnityEvent<GameObject, PlayerEventType> PlayerAudioEvent = new();
-
     //Private
     Camera _Camera;
     CharacterController _CharControl;
@@ -55,19 +52,25 @@ public class PlayerMovement : MonoBehaviour
         _PlayerInput = GetComponent<PlayerInput>();
         _PlayerActionMap = _PlayerInput.actions.FindActionMap("Player");
         _PlayerActionMap.Enable();
+
+        BlockController2 blockController2 = GetComponent<BlockController2>();
+        blockController2.PlaceAnimationEvent.AddListener(OnPlaceBrick);
+        blockController2.UndoAnimationEvent.AddListener(UndoBlock);
     }
 
     private void Update()
     {
         float deltaTime = Time.deltaTime;
 
-        _WorldMoveDir = Quaternion.AngleAxis(_Camera.transform.eulerAngles.y, new Vector3(0f, 1f, 0f)) * new Vector3(_MoveDir.x, 0f, _MoveDir.y);
         _Animator.SetBool("isGrounded", _CharControl.isGrounded);
 
         PlayIdle2();
 
         if (_Playing)
         {
+            if (_CanControl)
+                _WorldMoveDir = Quaternion.AngleAxis(_Camera.transform.eulerAngles.y, new Vector3(0f, 1f, 0f)) * new Vector3(_MoveDir.x, 0f, _MoveDir.y);
+
             //Vertical movement (gravity)
             if (_CharControl.isGrounded && _Velocity.y < 0)
                 _Velocity.y = -1.0f;
@@ -75,15 +78,14 @@ public class PlayerMovement : MonoBehaviour
                 _Velocity.y -= _Gravity * deltaTime;
 
             //Horizontral movement
-            if (_CanControl)
-            {
-                if (_MoveInput)
-                    _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(_WorldMoveDir.x * _MaxSpeed, _Velocity.y, _WorldMoveDir.z * _MaxSpeed), _MoveAccel * deltaTime);
-                else
-                    _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(0f, _Velocity.y, 0f), _MoveDeaccel * deltaTime);
-            }
+            if (_MoveInput)
+                _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(_WorldMoveDir.x * _MaxSpeed, _Velocity.y, _WorldMoveDir.z * _MaxSpeed), _MoveAccel * deltaTime);
+            else
+                _Velocity = Vector3.MoveTowards(_Velocity, new Vector3(0f, _Velocity.y, 0f), _MoveDeaccel * deltaTime);
 
             _CharControl.Move(_Velocity * deltaTime);
+
+            HandleAnimation();
         }
 
         if (!_CharControl.isGrounded)
@@ -111,27 +113,26 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void OnMove(InputAction.CallbackContext context)
+    void HandleAnimation()
     {
-        if (_Playing)
+        if (_WorldMoveDir.magnitude > 0f)
         {
             _Animator.SetBool("isWalking", true);
+        }
+        else
+        {
+            _Animator.SetBool("isWalking", false);
+        }
+    }
 
-            if (context.canceled)
-            {
-                _Animator.SetBool("isWalking", false);
-
-                _Animator.SetFloat("lastInputX", Mathf.Round(_MoveDir.x));
-                _Animator.SetFloat("lastInputY", Mathf.Round(_MoveDir.y));
-
-            }
-
+    public void OnMove(InputAction.CallbackContext context)
+    {
+        if (_Playing && _CanControl)
+        {
             _MoveDir = context.ReadValue<Vector2>();
 
             _Animator.SetFloat("inputX", Mathf.Round(_MoveDir.x));
             _Animator.SetFloat("inputY", Mathf.Round(_MoveDir.y));
-
-            //_MoveDir.Normalize();
 
             if (_MoveDir.magnitude > 0.0f)
                 _MoveInput = true;
@@ -206,5 +207,11 @@ public class PlayerMovement : MonoBehaviour
     public void CanControl(bool value)
     {
         _CanControl = value;
+        if (!value)
+        {
+            _WorldMoveDir = Vector3.zero;
+            _Animator.SetFloat("inputX", Mathf.Round(_MoveDir.x));
+            _Animator.SetFloat("inputY", Mathf.Round(_MoveDir.y));
+        }
     }
 }
