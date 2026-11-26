@@ -697,7 +697,7 @@
 								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
-										<Value>-5</Value>
+										<Value>-7</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1013,6 +1013,7 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Death" ID="{AA6DC92F-5A66-4116-A6CB-E61AD938CBB2}" ShortID="291600242">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
@@ -1072,9 +1073,15 @@
 						</RandomSequenceContainer>
 						<SwitchContainer Name="SWC_Footsteps" ID="{9FC0EB31-43DF-46D1-8C5E-BCEF07CF21FD}" ShortID="2968080">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="UserAuxSendVolume0" Type="Real64">
 									<ValueList>
 										<Value>7</Value>
+									</ValueList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-1</Value>
 									</ValueList>
 								</Property>
 							</PropertyList>
@@ -1607,6 +1614,9 @@
 											</ValueList>
 										</Property>
 										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
 													<Modifier Name="" ID="{A0DAFC0A-6D35-47F8-883E-117936185340}">
@@ -2395,7 +2405,7 @@
 												<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>-8</Value>
+														<Value>-15</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -3936,6 +3946,7 @@
 					<ChildrenList>
 						<RandomSequenceContainer Name="RMC_UI_Standard" ID="{17B88AD7-8677-46CC-862D-DF62A7D3DB38}" ShortID="794532618">
 							<PropertyList>
+								<Property Name="3DSpatialization" Type="int16" Value="1"/>
 								<Property Name="MaxSoundPerInstance" Type="int16">
 									<ValueList>
 										<Value>1</Value>
