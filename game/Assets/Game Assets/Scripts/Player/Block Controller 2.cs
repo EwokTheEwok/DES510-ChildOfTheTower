@@ -64,6 +64,7 @@ public class BlockController2 : MonoBehaviour
     [Header("States")]
     bool _Active = false;
     bool _Playing = true;
+    bool _RetrievingAnimation = false;
     bool _IsMovingBlock = false;
     bool _InputSwapAxis = false;
     bool _InputMoveVertical = false;
@@ -387,6 +388,7 @@ public class BlockController2 : MonoBehaviour
         {
             if (_Active)
             {
+                _RetrievingAnimation = true;
                 UndoAnimationEvent?.Invoke(BlockDirection(), false);
                 _PlayerMovement.CanControl(false);
             }
@@ -405,8 +407,9 @@ public class BlockController2 : MonoBehaviour
         else if (context.canceled)
         {
             _InputUndo = false;
-            if (_Active)
+            if (_Active || _RetrievingAnimation)
             {
+                _RetrievingAnimation = false;
                 UndoAnimationEvent?.Invoke(BlockDirection(), true);
                 _PlayerMovement.CanControl(true);
             }
@@ -438,6 +441,7 @@ public class BlockController2 : MonoBehaviour
         }
         else
         {
+            //_RetrievingAnimation = false;
             UndoAnimationEvent?.Invoke(BlockDirection(), true);
             _PlayerMovement.CanControl(true);
             UndoEvent?.Invoke(_Block);
