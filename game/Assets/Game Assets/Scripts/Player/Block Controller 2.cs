@@ -13,6 +13,7 @@ public class BlockController2 : MonoBehaviour
     CharacterController _CharacterController;
     Camera _Camera;
     PlayerCamera _PlayerCamera;
+    PlayerMovement _PlayerMovement;
 
     [Header("Bubbles")]
     public float _MissingBubbleDistance = 15f;
@@ -83,6 +84,7 @@ public class BlockController2 : MonoBehaviour
     {
         GameManager.Instance.PauseEvent.AddListener(OnPause);
         _CharacterController = GetComponent<CharacterController>();
+        _PlayerMovement = GetComponent<PlayerMovement>();
 
         _ArrowUIDistance = _BlockSize + 1f;
         _NearbyNodesList = new Collider[_MaxNearbyNodes];
@@ -384,7 +386,10 @@ public class BlockController2 : MonoBehaviour
         if (context.started)
         {
             if (_Active)
+            {
                 UndoAnimationEvent?.Invoke(BlockDirection(), false);
+                _PlayerMovement.CanControl(false);
+            }
             _InputUndo = true;
             _FastRecover = false;
             foreach (GameObject block in _BlockList)
@@ -401,7 +406,10 @@ public class BlockController2 : MonoBehaviour
         {
             _InputUndo = false;
             if (_Active)
+            {
                 UndoAnimationEvent?.Invoke(BlockDirection(), true);
+                _PlayerMovement.CanControl(true);
+            }
         }
     }
 
@@ -431,6 +439,7 @@ public class BlockController2 : MonoBehaviour
         else
         {
             UndoAnimationEvent?.Invoke(BlockDirection(), true);
+            _PlayerMovement.CanControl(true);
             UndoEvent?.Invoke(_Block);
             _Active = false;
             _PlayerBlockUI.SetPanelsActive(false);
