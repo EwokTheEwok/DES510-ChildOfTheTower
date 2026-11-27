@@ -58,9 +58,12 @@ public class NPCDialogueManager : MonoBehaviour
     [Header("NPC Vars")]
     public float _LineDelay = 2f;
     public float _EndDelay = 7f;
-    public float height = 3.5f;
     public float TypeSpeed = 0.05f;
     private IEnumerator _DialogueCoroutine;
+    float _Height;
+    [SerializeField] float _PeterHeight = 0f;
+    [SerializeField] float _MargaretHeight = 0f;
+    [SerializeField] float _ThomasHeight = 0f;
 
     [Header("NPC Think Bubble")]
     [SerializeField] private Animator _Animator;
@@ -93,7 +96,7 @@ public class NPCDialogueManager : MonoBehaviour
     void Update()
     {
         if (_NPCActive)
-            dialogueTransform.position = Camera.main.WorldToScreenPoint(_CurrentNPC.transform.position + new Vector3(0, height, 0));
+            dialogueTransform.position = Camera.main.WorldToScreenPoint(_CurrentNPC.transform.position + new Vector3(0, _Height, 0));
     }
 
     void LoadDialogue()
@@ -221,6 +224,14 @@ public class NPCDialogueManager : MonoBehaviour
     {
         _CurrentNPC = npcObject;
         _DialogueIndex = index;
+
+        _Height = _CurrentNPC.name switch
+        {
+            "Peter" => _PeterHeight,
+            "Margaret" => _MargaretHeight,
+            "Thomas" => _ThomasHeight,
+            _ => 0f,
+        };
 
         if (enterExit)
         {

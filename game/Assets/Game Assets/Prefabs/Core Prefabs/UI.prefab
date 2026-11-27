@@ -4769,7 +4769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477431a5799d9264da22ceb9c5026b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pause
-  isPaused: 0
   PauseMenu: {fileID: 3382229847974999214}
   ControlsMenu: {fileID: 2934290136370680180}
   resumeButton: {fileID: 4290572220198577535}
@@ -7461,8 +7460,10 @@ MonoBehaviour:
   ThomasScreen: {fileID: 6384964933494271971}
   _LineDelay: 2
   _EndDelay: 7
-  height: 3.5
   TypeSpeed: 0.05
+  _PeterHeight: 4.5
+  _MargaretHeight: 6
+  _ThomasHeight: 6.5
   _Animator: {fileID: 134581857168664735}
   NPCDialogueEvent:
     m_PersistentCalls:
