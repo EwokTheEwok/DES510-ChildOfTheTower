@@ -21,32 +21,31 @@ public class Controls : MonoBehaviour
     public UnityEvent<GameObject> _uiButtonEvent;
     public UnityEvent<GameObject> _uiScrollEvent;
 
+    GameManager _GameInstance;
+
     private void Start()
     {
         eventSystemScript = GameObject.Find("EventSystem").GetComponent<EventSystem>();
         eventSystemScript.SetSelectedGameObject(resumeButton);
+        _GameInstance = GameManager.Instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-   
-        if (Input.GetKeyDown(KeyCode.Tab))
+        isPaused = _GameInstance.Paused;
+
+        if (Input.GetKeyDown(KeyCode.Tab) && !PauseMenu.activeInHierarchy)
         {
             TitleScreenFirstButton();
 
-            if (isPaused || ControlsMenu.activeInHierarchy == true)
-            {
+            if (isPaused)
                 ResumeGame();
-            }
             else
-            {
                 PauseGame();
-            }
         }
 
         TriggerScrollSound();
-        PauseIsPaused();
     }
 
     public void TitleScreenFirstButton()
@@ -61,7 +60,6 @@ public class Controls : MonoBehaviour
         GameManager.Instance.Paused = true;
         PauseMenu.SetActive(false);
         ControlsMenu.SetActive(true);
-        isPaused = true;
         controlMenuActive = true;
         _pauseFilterEvent?.Invoke(gameObject);
     }
@@ -72,7 +70,6 @@ public class Controls : MonoBehaviour
         GameManager.Instance.Paused = false;
         Debug.Log("shes free");
         ControlsMenu.SetActive(false);
-        isPaused = false;
         controlMenuActive = false;
         _uiButtonEvent?.Invoke(gameObject);
         _stopPauseFilterEvent?.Invoke(gameObject);
@@ -83,10 +80,6 @@ public class Controls : MonoBehaviour
         Application.Quit();
     }
 
-    public void PauseIsPaused()
-    {
-        pause.isPaused = isPaused;
-    }
     public void TriggerScrollSound()
     {
         if (controlMenuActive && Input.GetKeyDown(KeyCode.LeftArrow))

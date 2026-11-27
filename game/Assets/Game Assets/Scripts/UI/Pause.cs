@@ -4,7 +4,7 @@ using UnityEngine.Events;
 
 public class Pause : MonoBehaviour
 {
-    public bool isPaused = false;
+    bool isPaused = false;
     bool controlMenuActive = false;
 
     public GameObject PauseMenu;
@@ -18,28 +18,32 @@ public class Pause : MonoBehaviour
     public UnityEvent<GameObject> _uiButtonEvent;
     public UnityEvent<GameObject> _uiScrollEvent;
 
+    GameManager _GameInstance;
+
+    private void Start()
+    {
+        _GameInstance = GameManager.Instance;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape) && ControlsMenu.activeSelf == true)
+        isPaused = _GameInstance.Paused;
+
+        if (Input.GetKeyDown(KeyCode.Escape) && ControlsMenu.activeInHierarchy)
         {
-            isPaused = false;
-            return;
+            TitleScreenFirstButton();
+            ControlsMenu.SetActive(false);
+            PauseMenu.SetActive(true);
         }
-        else if (Input.GetKeyDown(KeyCode.Escape) && ControlsMenu.activeSelf == false)
+        else if (Input.GetKeyDown(KeyCode.Escape))
         {
             TitleScreenFirstButton();
 
-            if (!isPaused)
-            {
-                PauseGame();
-            }
-            else
-            {
+            if (isPaused)
                 ResumeGame();
-            }
-
-
+            else
+                PauseGame();
         }
 
         TriggerScrollSound();
@@ -58,7 +62,6 @@ public class Pause : MonoBehaviour
     {
         GameManager.Instance.Paused = true;
         PauseMenu.SetActive(true);
-        isPaused = true;
         _pauseFilterEvent?.Invoke(gameObject);
     }
 
@@ -69,13 +72,11 @@ public class Pause : MonoBehaviour
         controlMenuActive = true;
         _uiButtonEvent?.Invoke(gameObject);
         PauseMenu.SetActive(false);
-        isPaused = false;
     }
     public void ResumeGame()
     {
         GameManager.Instance.Paused = false;
         PauseMenu.SetActive(false);
-        isPaused = false;
         _uiButtonEvent?.Invoke(gameObject);
         _stopPauseFilterEvent?.Invoke(gameObject);
     }
