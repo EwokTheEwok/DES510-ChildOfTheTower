@@ -1,84 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &77060252114330017
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 569398744336829748}
-  - component: {fileID: 3202572038869610699}
-  - component: {fileID: 1798223965118698668}
-  m_Layer: 0
-  m_Name: VCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &569398744336829748
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77060252114330017}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.43700248, z: -0, w: 0.8994603}
-  m_LocalPosition: {x: -2.25, y: 70.34, z: 21.62}
-  m_LocalScale: {x: 8.542202, y: 30.504364, z: 48.026524}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3369790490449680923}
-  m_LocalEulerAnglesHint: {x: 0, y: 51.826, z: 0}
---- !u!65 &3202572038869610699
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77060252114330017}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0984857, y: 0.28320628, z: 0.18224208}
-  m_Center: {x: 1.2862713, y: 0.13421577, z: -0.27890462}
---- !u!114 &1798223965118698668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77060252114330017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  tutorialBox: {fileID: 2496454605021996369}
-  TutorialBox: {fileID: 7137752842547265661}
-  TutorialImage1: {fileID: 5267734341015784536}
-  TutorialImage2: {fileID: 6884264000662109439}
-  TutorialText1: {fileID: 662139411814466672}
-  TutorialText2: {fileID: 1035991463025728092}
-  UI1Text:
-  - to undo one brick at a time
-  UI2Text: []
-  TypeSpeed: 0.02
-  _LineDelay: 2
-  _EndDelay: 7
-  height: 2
 --- !u!1 &224478851054080060
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,44 +787,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &791995616137836320
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3369790490449680923}
-  m_Layer: 0
-  m_Name: Tutorial Colliders
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3369790490449680923
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 791995616137836320}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.634051, y: -2.42829, z: 25.12708}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7270512720001543305}
-  - {fileID: 7703524408534216190}
-  - {fileID: 2917910587059366211}
-  - {fileID: 1892137477115726884}
-  - {fileID: 569398744336829748}
-  - {fileID: 5977445778939974210}
-  - {fileID: 9016003735107797945}
-  m_Father: {fileID: 9079827750109937308}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &989181652487715200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1857,166 +1740,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &1826955486739000400
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7703524408534216190}
-  - component: {fileID: 4404456126505470877}
-  - component: {fileID: 5238267327065751764}
-  m_Layer: 0
-  m_Name: QnECollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7703524408534216190
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826955486739000400}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.67254496, z: -0, w: 0.7400564}
-  m_LocalPosition: {x: 0.5, y: 21.3, z: 10.3}
-  m_LocalScale: {x: 15.300192, y: 48.848454, z: 16.589998}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3369790490449680923}
-  m_LocalEulerAnglesHint: {x: 0, y: -84.528, z: 0}
---- !u!65 &4404456126505470877
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826955486739000400}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.621729, y: 0.9999998, z: 2.1736958}
-  m_Center: {x: -0.8108643, y: 0, z: 0.07456542}
---- !u!114 &5238267327065751764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1826955486739000400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  tutorialBox: {fileID: 2496454605021996369}
-  TutorialBox: {fileID: 7137752842547265661}
-  TutorialImage1: {fileID: 2891424196164794884}
-  TutorialImage2: {fileID: 7567906289101428882}
-  TutorialText1: {fileID: 4761308151752912467}
-  TutorialText2: {fileID: 1497577315266702214}
-  UI1Text:
-  - 'to rotate the camera clockwise '
-  UI2Text:
-  - to rotate the camera counter clockwise
-  TypeSpeed: 0.05
-  _LineDelay: 2
-  _EndDelay: 7
-  height: 2
---- !u!1 &1855423898034998368
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5977445778939974210}
-  - component: {fileID: 8856774659730653201}
-  - component: {fileID: 5427011616715568997}
-  m_Layer: 0
-  m_Name: Shift Collider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5977445778939974210
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855423898034998368}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.7076076, z: -0, w: 0.7066056}
-  m_LocalPosition: {x: 11.84, y: 72.08, z: 16.96}
-  m_LocalScale: {x: 4.0844703, y: 18.43886, z: 28.664297}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3369790490449680923}
-  m_LocalEulerAnglesHint: {x: 0, y: 90.081, z: 0}
---- !u!65 &8856774659730653201
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855423898034998368}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0984857, y: 0.28320628, z: 0.18224208}
-  m_Center: {x: 1.2862713, y: 0.13421577, z: -0.27890462}
---- !u!114 &5427011616715568997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855423898034998368}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  tutorialBox: {fileID: 2496454605021996369}
-  TutorialBox: {fileID: 7137752842547265661}
-  TutorialImage1: {fileID: 414043620600066976}
-  TutorialImage2: {fileID: 2330421228175133818}
-  TutorialText1: {fileID: 4761308151752912467}
-  TutorialText2: {fileID: 1142064096830801789}
-  UI1Text:
-  - to change the plane you are building on after placing the brick
-  UI2Text:
-  - to move the brick in any direction
-  TypeSpeed: 0.02
-  _LineDelay: 2
-  _EndDelay: 7
-  height: 2
 --- !u!1 &1909031058166482660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2206,6 +1929,86 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1948112227206608965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7420986496310719634}
+  - component: {fileID: 2946887642566429563}
+  - component: {fileID: 1966217112830998868}
+  m_Layer: 0
+  m_Name: ArrowsCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7420986496310719634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948112227206608965}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.40316737, z: -0, w: 0.9151263}
+  m_LocalPosition: {x: -13.47, y: 81.25, z: 13.13}
+  m_LocalScale: {x: 8.898358, y: 30.162857, z: 49.787025}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6404506127580355483}
+  m_LocalEulerAnglesHint: {x: 0, y: 47.553, z: 0}
+--- !u!65 &2946887642566429563
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948112227206608965}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.3109587, y: 0.1394978, z: 0.10715293}
+  m_Center: {x: 1.1799433, y: 0.03882916, z: -0.24138103}
+--- !u!114 &1966217112830998868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948112227206608965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
+  tutorialBox: {fileID: 2496454605021996369}
+  TutorialBox: {fileID: 7137752842547265661}
+  TutorialImage1: {fileID: 6528852075083733571}
+  TutorialImage2: {fileID: 2330421228175133818}
+  TutorialText1: {fileID: 4761308151752912467}
+  TutorialText2: {fileID: 1142064096830801789}
+  UI1Text:
+  - to place brick and start building
+  UI2Text:
+  - to extend the brick directionally
+  TypeSpeed: 0.02
+  _LineDelay: 2
+  _EndDelay: 7
+  height: 2
 --- !u!1 &1975036267635826638
 GameObject:
   m_ObjectHideFlags: 0
@@ -2650,85 +2453,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &2862857843698542403
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2917910587059366211}
-  - component: {fileID: 7826194520768029980}
-  - component: {fileID: 9070124628709260482}
-  m_Layer: 0
-  m_Name: SpaceCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2917910587059366211
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2862857843698542403}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.02080028, z: -0, w: 0.99978364}
-  m_LocalPosition: {x: -1.1525, y: 52.197, z: 16.155}
-  m_LocalScale: {x: 22.305063, y: 31.558804, z: 5.4896173}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3369790490449680923}
-  m_LocalEulerAnglesHint: {x: 0, y: 2.384, z: 0}
---- !u!114 &7826194520768029980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2862857843698542403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  tutorialBox: {fileID: 2496454605021996369}
-  TutorialBox: {fileID: 7137752842547265661}
-  TutorialImage1: {fileID: 2976506352416107057}
-  TutorialImage2: {fileID: 6884264000662109439}
-  TutorialText1: {fileID: 662139411814466672}
-  TutorialText2: {fileID: 1035991463025728092}
-  UI1Text:
-  - to jump
-  UI2Text: []
-  TypeSpeed: 0.05
-  _LineDelay: 2
-  _EndDelay: 7
-  height: 100000
---- !u!65 &9070124628709260482
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2862857843698542403}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.9403492, y: 0.54800034, z: 3.5253205}
-  m_Center: {x: 0.02982359, y: -0.22599965, z: -0.64272773}
 --- !u!1 &2934290136370680180
 GameObject:
   m_ObjectHideFlags: 0
@@ -3325,6 +3049,85 @@ Transform:
   - {fileID: 717939257100134303}
   m_Father: {fileID: 9079827750109937308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3507361315387365412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4984870078221560401}
+  - component: {fileID: 185719352853195722}
+  - component: {fileID: 6754272725089733253}
+  m_Layer: 0
+  m_Name: WASDCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4984870078221560401
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507361315387365412}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -39.3, y: 17.1, z: 54.2}
+  m_LocalScale: {x: 9.7329, y: 25.935389, z: 65.86801}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6404506127580355483}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &185719352853195722
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507361315387365412}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 7.714078, y: 1.5629278, z: 1.4572283}
+  m_Center: {x: 2.0181932, y: -0.28146484, z: 0.2286128}
+--- !u!114 &6754272725089733253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3507361315387365412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
+  tutorialBox: {fileID: 2496454605021996369}
+  TutorialBox: {fileID: 7137752842547265661}
+  TutorialImage1: {fileID: 4852304545028673110}
+  TutorialImage2: {fileID: 6884264000662109439}
+  TutorialText1: {fileID: 1035991463025728092}
+  TutorialText2: {fileID: 1497577315266702214}
+  UI1Text:
+  - to move
+  UI2Text: []
+  TypeSpeed: 0.05
+  _LineDelay: 2
+  _EndDelay: 7
+  height: 2
 --- !u!1 &3590029699092332044
 GameObject:
   m_ObjectHideFlags: 0
@@ -3656,85 +3459,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &4141641698014975958
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7270512720001543305}
-  - component: {fileID: 2574994191187827284}
-  - component: {fileID: 2640561814405388803}
-  m_Layer: 0
-  m_Name: WASDCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7270512720001543305
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4141641698014975958}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.27, y: 0, z: 54.2}
-  m_LocalScale: {x: 9.7329, y: 25.935389, z: 65.86801}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3369790490449680923}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &2574994191187827284
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4141641698014975958}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 7.714078, y: 1.5629278, z: 1.4572283}
-  m_Center: {x: 2.0181932, y: -0.28146484, z: 0.2286128}
---- !u!114 &2640561814405388803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4141641698014975958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  tutorialBox: {fileID: 2496454605021996369}
-  TutorialBox: {fileID: 7137752842547265661}
-  TutorialImage1: {fileID: 4852304545028673110}
-  TutorialImage2: {fileID: 6884264000662109439}
-  TutorialText1: {fileID: 1035991463025728092}
-  TutorialText2: {fileID: 4761308151752912467}
-  UI1Text:
-  - to move
-  UI2Text: []
-  TypeSpeed: 0.05
-  _LineDelay: 2
-  _EndDelay: 7
-  height: 2
 --- !u!1 &4196437199839329358
 GameObject:
   m_ObjectHideFlags: 0
@@ -4429,6 +4153,86 @@ MonoBehaviour:
   m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &5043332572593567830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3648062556019348188}
+  - component: {fileID: 2925511460611147361}
+  - component: {fileID: 5923723883729590996}
+  m_Layer: 0
+  m_Name: Shift Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3648062556019348188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043332572593567830}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.9427361, z: -0, w: -0.33353966}
+  m_LocalPosition: {x: -14.366823, y: 88.33, z: -5.9991446}
+  m_LocalScale: {x: 4.0844703, y: 18.43886, z: 28.664297}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6404506127580355483}
+  m_LocalEulerAnglesHint: {x: 0, y: 218.968, z: 0}
+--- !u!65 &2925511460611147361
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043332572593567830}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.78798, y: 0.31041425, z: 0.46431443}
+  m_Center: {x: 0.5050557, y: 0.14782198, z: -0.39049244}
+--- !u!114 &5923723883729590996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5043332572593567830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
+  tutorialBox: {fileID: 2496454605021996369}
+  TutorialBox: {fileID: 7137752842547265661}
+  TutorialImage1: {fileID: 414043620600066976}
+  TutorialImage2: {fileID: 6884264000662109439}
+  TutorialText1: {fileID: 662139411814466672}
+  TutorialText2: {fileID: 1035991463025728092}
+  UI1Text:
+  - to change the plane you are building on after placing the brick
+  UI2Text:
+  - to move the brick in any direction
+  TypeSpeed: 0.02
+  _LineDelay: 2
+  _EndDelay: 7
+  height: 2
 --- !u!1 &5133184235502820756
 GameObject:
   m_ObjectHideFlags: 0
@@ -4720,6 +4524,124 @@ MonoBehaviour:
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
+--- !u!1 &5316357247492789544
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3168082792032960659}
+  - component: {fileID: 7847424969615095567}
+  - component: {fileID: 2504793797176033251}
+  m_Layer: 0
+  m_Name: Blue Indicator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3168082792032960659
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5316357247492789544}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.9238153, z: -0, w: 0.38283855}
+  m_LocalPosition: {x: -6.032345, y: 137.44, z: 7.9054694}
+  m_LocalScale: {x: 13.414869, y: 40.398952, z: 82.53735}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6404506127580355483}
+  m_LocalEulerAnglesHint: {x: 0, y: 134.981, z: 0}
+--- !u!65 &7847424969615095567
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5316357247492789544}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6608085, y: 0.19110036, z: 0.15130544}
+  m_Center: {x: 1.0236013, y: 0.3071243, z: -0.32860795}
+--- !u!114 &2504793797176033251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5316357247492789544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
+  tutorialBox: {fileID: 2496454605021996369}
+  TutorialBox: {fileID: 7137752842547265661}
+  TutorialImage1: {fileID: 4705353227014922745}
+  TutorialImage2: {fileID: 6884264000662109439}
+  TutorialText1: {fileID: 662139411814466672}
+  TutorialText2: {fileID: 1035991463025728092}
+  UI1Text:
+  - blue spot indicators are activation panels. placing a block on them will change
+    something within the level
+  UI2Text: []
+  TypeSpeed: 0.02
+  _LineDelay: 2
+  _EndDelay: 7
+  height: 2
+--- !u!1 &5386379023480047175
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6404506127580355483}
+  m_Layer: 0
+  m_Name: Tutorial Colliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6404506127580355483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5386379023480047175}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.21, y: -11.08, z: -9.53}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4984870078221560401}
+  - {fileID: 4641702284646848584}
+  - {fileID: 8367932743157349407}
+  - {fileID: 7420986496310719634}
+  - {fileID: 8259029634144595951}
+  - {fileID: 3648062556019348188}
+  - {fileID: 3168082792032960659}
+  m_Father: {fileID: 9079827750109937308}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5416750193548979594
 GameObject:
   m_ObjectHideFlags: 0
@@ -6047,86 +5969,6 @@ MonoBehaviour:
   _DisplayDelay: 5
   _BetweenLineDelay: 0
   _Height: 3
---- !u!1 &6881037630892298738
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1892137477115726884}
-  - component: {fileID: 10703395273717401}
-  - component: {fileID: 7111070113930065418}
-  m_Layer: 0
-  m_Name: ArrowsCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1892137477115726884
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6881037630892298738}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.40316737, z: -0, w: 0.9151263}
-  m_LocalPosition: {x: 5.4, y: 69.2, z: 13.57}
-  m_LocalScale: {x: 8.898358, y: 30.162857, z: 49.787025}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3369790490449680923}
-  m_LocalEulerAnglesHint: {x: 0, y: 47.553, z: 0}
---- !u!65 &10703395273717401
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6881037630892298738}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0984857, y: 0.28320628, z: 0.18224208}
-  m_Center: {x: 1.2862713, y: 0.13421577, z: -0.27890462}
---- !u!114 &7111070113930065418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6881037630892298738}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  tutorialBox: {fileID: 2496454605021996369}
-  TutorialBox: {fileID: 7137752842547265661}
-  TutorialImage1: {fileID: 6528852075083733571}
-  TutorialImage2: {fileID: 2330421228175133818}
-  TutorialText1: {fileID: 4761308151752912467}
-  TutorialText2: {fileID: 1142064096830801789}
-  UI1Text:
-  - to place brick and start building
-  UI2Text:
-  - to extend the brick directionally
-  TypeSpeed: 0.02
-  _LineDelay: 2
-  _EndDelay: 7
-  height: 2
 --- !u!1 &6907594746058980846
 GameObject:
   m_ObjectHideFlags: 0
@@ -6277,86 +6119,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!1 &6975298020106704215
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9016003735107797945}
-  - component: {fileID: 6742649766211508852}
-  - component: {fileID: 8704649314752158469}
-  m_Layer: 0
-  m_Name: Blue Indicator
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9016003735107797945
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6975298020106704215}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.72268164, z: -0, w: 0.69118106}
-  m_LocalPosition: {x: 23.59, y: 175.15, z: 10.3}
-  m_LocalScale: {x: 13.414869, y: 40.398952, z: 82.53735}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 3369790490449680923}
-  m_LocalEulerAnglesHint: {x: 0, y: 92.553, z: 0}
---- !u!65 &6742649766211508852
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6975298020106704215}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1.0984857, y: 0.28320628, z: 0.18224208}
-  m_Center: {x: 1.2862713, y: 0.13421577, z: -0.27890462}
---- !u!114 &8704649314752158469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6975298020106704215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
-  tutorialBox: {fileID: 2496454605021996369}
-  TutorialBox: {fileID: 7137752842547265661}
-  TutorialImage1: {fileID: 4705353227014922745}
-  TutorialImage2: {fileID: 6884264000662109439}
-  TutorialText1: {fileID: 662139411814466672}
-  TutorialText2: {fileID: 1035991463025728092}
-  UI1Text:
-  - blue spot indicators are activation panels. placing a block on them will change
-    something within the level
-  UI2Text: []
-  TypeSpeed: 0.02
-  _LineDelay: 2
-  _EndDelay: 7
-  height: 2
 --- !u!1 &7073887345459500936
 GameObject:
   m_ObjectHideFlags: 0
@@ -6570,6 +6332,86 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &7164204795302579537
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4641702284646848584}
+  - component: {fileID: 1504521804434699988}
+  - component: {fileID: 849545359709914345}
+  m_Layer: 0
+  m_Name: QnECollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4641702284646848584
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164204795302579537}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.70391953, z: -0, w: 0.7102797}
+  m_LocalPosition: {x: -21.777037, y: 36.699997, z: 10.491404}
+  m_LocalScale: {x: 15.300192, y: 48.848454, z: 16.589998}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6404506127580355483}
+  m_LocalEulerAnglesHint: {x: 0, y: -89.485, z: 0}
+--- !u!65 &1504521804434699988
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164204795302579537}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.621729, y: 0.70894885, z: 1.8785156}
+  m_Center: {x: -0.8108641, y: -0.1455266, z: -0.07302597}
+--- !u!114 &849545359709914345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7164204795302579537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
+  tutorialBox: {fileID: 2496454605021996369}
+  TutorialBox: {fileID: 7137752842547265661}
+  TutorialImage1: {fileID: 2891424196164794884}
+  TutorialImage2: {fileID: 7567906289101428882}
+  TutorialText1: {fileID: 4761308151752912467}
+  TutorialText2: {fileID: 1497577315266702214}
+  UI1Text:
+  - 'to rotate the camera clockwise '
+  UI2Text:
+  - to rotate the camera counter clockwise
+  TypeSpeed: 0.05
+  _LineDelay: 2
+  _EndDelay: 7
+  height: 2
 --- !u!1 &7363643862310095895
 GameObject:
   m_ObjectHideFlags: 0
@@ -7362,6 +7204,85 @@ MonoBehaviour:
   m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &8243405045467765458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8259029634144595951}
+  - component: {fileID: 7859608798456231349}
+  - component: {fileID: 8411008089457794468}
+  m_Layer: 0
+  m_Name: VCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8259029634144595951
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8243405045467765458}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.40580758, z: -0, w: 0.91395855}
+  m_LocalPosition: {x: -22.908848, y: 77.21, z: 23.512054}
+  m_LocalScale: {x: 8.542202, y: 30.504364, z: 48.026524}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6404506127580355483}
+  m_LocalEulerAnglesHint: {x: 0, y: 47.883, z: 0}
+--- !u!65 &7859608798456231349
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8243405045467765458}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.5528423, y: 0.20799121, z: 0.112261824}
+  m_Center: {x: 1.0590518, y: 0.20824793, z: -0.27847964}
+--- !u!114 &8411008089457794468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8243405045467765458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
+  tutorialBox: {fileID: 2496454605021996369}
+  TutorialBox: {fileID: 7137752842547265661}
+  TutorialImage1: {fileID: 5267734341015784536}
+  TutorialImage2: {fileID: 6884264000662109439}
+  TutorialText1: {fileID: 662139411814466672}
+  TutorialText2: {fileID: 1035991463025728092}
+  UI1Text:
+  - to undo one brick at a time
+  UI2Text: []
+  TypeSpeed: 0.02
+  _LineDelay: 2
+  _EndDelay: 7
+  height: 2
 --- !u!1 &8249696220706054994
 GameObject:
   m_ObjectHideFlags: 0
@@ -7393,7 +7314,7 @@ Transform:
   m_Children:
   - {fileID: 2651206821610491157}
   - {fileID: 3503367778610286668}
-  - {fileID: 3369790490449680923}
+  - {fileID: 6404506127580355483}
   - {fileID: 6378332826100888975}
   - {fileID: 6909248888652461618}
   m_Father: {fileID: 0}
@@ -7567,6 +7488,85 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1 &8610723011885574296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8367932743157349407}
+  - component: {fileID: 3599029652727918659}
+  - component: {fileID: 2937515346054330188}
+  m_Layer: 0
+  m_Name: SpaceCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8367932743157349407
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610723011885574296}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.41138938, z: -0, w: 0.91145974}
+  m_LocalPosition: {x: -24.17, y: 69.75, z: 15.61}
+  m_LocalScale: {x: 30.636003, y: 31.558804, z: 6.421176}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6404506127580355483}
+  m_LocalEulerAnglesHint: {x: 0, y: 48.584, z: 0}
+--- !u!65 &3599029652727918659
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610723011885574296}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5144125, y: 0.6044495, z: 4.4109397}
+  m_Center: {x: 0.108576216, y: -0.22359489, z: -0.7849784}
+--- !u!114 &2937515346054330188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8610723011885574296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bedab87cddc3b74f9b039ae37a5ba5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TutorialControls
+  tutorialBox: {fileID: 2496454605021996369}
+  TutorialBox: {fileID: 7137752842547265661}
+  TutorialImage1: {fileID: 2976506352416107057}
+  TutorialImage2: {fileID: 6884264000662109439}
+  TutorialText1: {fileID: 662139411814466672}
+  TutorialText2: {fileID: 1035991463025728092}
+  UI1Text:
+  - to jump
+  UI2Text: []
+  TypeSpeed: 0.05
+  _LineDelay: 2
+  _EndDelay: 7
+  height: 100000
 --- !u!1 &8747752246602804966
 GameObject:
   m_ObjectHideFlags: 0
