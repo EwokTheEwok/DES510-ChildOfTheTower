@@ -98,7 +98,7 @@ public class NPCDialogueManager : MonoBehaviour
 
     void LoadDialogue()
     {
-        string path = AssetDatabase.GetAssetPath(_DialogueTextFile);
+        string path = "Assets/Game Assets/UI/Text Assets/Character Dialogue.txt";
         if (string.IsNullOrEmpty(path))
             Debug.Log("Could not load file path");
         StreamReader reader = new (path);
